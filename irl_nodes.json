@@ -1,0 +1,14 @@
+{
+  "neptune_lounge_oconnor": {
+    "label": "Neptune Lounge \u2013 O'Connor, WA",
+    "coordinates": [
+      -32.06,
+      115.819
+    ],
+    "linked_room": "neptune_lounge",
+    "quest": "Recover the Crystal Dice beneath the sound desk",
+    "token": "NTR-Q1-DICE",
+    "type": "anchor",
+    "public": true
+  }
+}

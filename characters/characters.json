@@ -1,0 +1,40 @@
+{
+    "542565502720016386": {
+        "name": "efiishent",
+        "birthdate": "1976-03-04",
+        "race": "Human",
+        "class": "Explorer",
+        "faction": "Free Nomads",
+        "timeline": "The Neon Horizon",
+        "chakras": {
+            "ajna": 5,
+            "sahasrara": 2
+        },
+        "stats": {
+            "strength": 10,
+            "dexterity": 10,
+            "constitution": 10,
+            "intelligence": 10,
+            "wisdom": 10,
+            "charisma": 10
+        },
+        "mana": {
+            "earth": 10,
+            "water": 10,
+            "fire": 10,
+            "air": 10,
+            "ether": 10
+        },
+        "spirit": 5,
+        "health": 100,
+        "alignment": "Neutral",
+        "reputation": 0,
+        "xp": 25,
+        "inventory": [
+            "Gold Coin",
+            "Worn Battery",
+            "Health Potion"
+        ],
+        "current_room": "sector_72"
+    }
+}

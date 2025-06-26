@@ -1,0 +1,23 @@
+{
+  "neptune_lounge": {
+    "description": "The heart of Triton Central. Warm neon light floods a space buzzing with off-worlders, smugglers, and storytellers. Neptune looms huge through a reinforced viewing dome. The chips smell divine.",
+    "image": "https://neptunelounge.au/wp-content/uploads/2025/02/neptune-lounge-main.jpg",
+    "items": [
+      "Mysterious Cube",
+      "Menu Chip",
+      "Triton Lager"
+    ],
+    "exits": {
+      "north": "main_square",
+      "up": "sector_16",
+      "south": "sector_48"
+    },
+    "irl_node": true,
+    "irl_coordinates": [
+      -32.06,
+      115.819
+    ],
+    "irl_hint": "Behind the geodesic dome near Elemental Sound",
+    "irl_token": "NTR-Q1-DICE"
+  }
+}

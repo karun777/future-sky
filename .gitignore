@@ -1,0 +1,7 @@
+.env
+*.log
+*.jar
+__pycache__/
+discord-bot-env/
+*.pyc
+*.backup
