@@ -1,0 +1,26 @@
+{
+    "global_ambient": [
+        "A distant klaxon echoes through the station, sharp and brief.",
+        "Gravity fluctuates slightly — just enough to make you lightheaded.",
+        "A deep hum resonates through the structure, almost musical.",
+        "A faint tremor passes underfoot — as if the station shifted.",
+        "You hear muffled laughter from somewhere unseen.",
+        "A soft chime sounds in the distance, but its purpose is unclear.",
+        "Lights flicker momentarily, casting ghostly shadows.",
+        "A maintenance drone zooms by overhead with a burst of static.",
+        "You catch a glimmer of something shimmering before it vanishes.",
+        "A sudden gust of air rushes past, cold and dry."
+    ],
+    "player_feelings": [
+        "You feel a creeping sense of boredom.",
+        "Your stomach reminds you it's been a while since your last meal.",
+        "A sudden need to stretch overtakes you.",
+        "You feel the urge to socialize, despite the emptiness.",
+        "You become acutely aware of the recycled air's dryness.",
+        "A yawn escapes you involuntarily.",
+        "You find yourself pacing to break the monotony.",
+        "You start humming a tune, unsure where it came from.",
+        "You feel a brief wave of nostalgia, but can't place its source."
+    ]
+}
+

@@ -1,0 +1,129 @@
+{
+  "drq_sneak_lesson": {
+    "triggers": {
+      "on_enter_room": ["dark_rat_queen_den"],
+      "once_per_character": true,
+      "requirements": {
+        "must_not_have_unlocked_commands": ["sneak"]
+      }
+    },
+    "title": "A Scrape of Teeth in the Dark",
+    "text": "The Dark Rat Queen drifts from behind the bar like a shadow with a grin. A small rat crests the edge of the bench-seat and stares at you like it already knows your secrets.\n\n“Too loud,” she murmurs. “Even when you stand still.”\n\nThe rat taps the floor twice. Once. Twice.\n\nA rhythm like a hidden door.\n\nYour body understands before your brain does:\n**quiet is an action.**",
+    "reprompt": "🧷 The Dark Rat Queen’s grin doesn’t move. The rat’s rhythm waits. Your next breath is a choice.",
+    "effects": [
+      { "type": "unlock_command", "command": "sneak" },
+      { "type": "mark_complete" }
+    ]
+  },
+
+  "pressure_in_the_veins_v1": {
+    "triggers": {
+      "on_enter_room": ["main_square"],
+      "once_per_character": true,
+      "requirements": {
+        "must_not_have_unlocked_commands": ["absorb", "descalate", "catalyse"]
+      }
+    },
+    "title": "Pressure in the Veins",
+    "text": "The square tightens.\n\nA voice rises too fast. Someone shoves back harder than they meant to. A bottle breaks — not thrown, just dropped — and the sound cuts through the crowd like a signal.\n\nYou feel it in your chest before your mind names it:\n**the moment tipping.**\n\nPeople are watching. Someone is about to make a decision.\n\nSo are you.",
+    "reprompt": "🧷 The crowd is still reading you. You can almost hear the next mistake being written.",
+    "effects": [{ "type": "mark_complete" }]
+  },
+
+  "nl_barmaid_chips_name": {
+    "triggers": {
+      "on_enter_room": ["chip_counter"],
+      "on_idle_room": ["chip_counter"],
+      "min_seconds": 20,
+      "once_per_character": true,
+      "requirements": { "flag_not_set": "name_known" }
+    },
+
+    "title": "Which Pod?",
+    "text": "You realise you’re hungry — properly hungry — and you’ve been drawn here without noticing.\n\nThe queue feels like a ritual. Someone behind you whispers, reverent:\n“Best chips in the galaxy.”\n\nA tray slides out from a stainless slot with the soft confidence of a machine that’s done this for centuries.\n\nA counterkeeper — not quite staff, not quite priest — glances at the charge screen.\n\n“Pod name?” they ask, already typing. “What do I put it under?”",
+    "prompt": {
+      "input_type": "text",
+      "text": "Give a name to charge the chips to."
+    },
+    "effects": [
+      { "type": "set_character_name" },
+      { "type": "set_flag", "params": { "flag": "name_known", "value": true } },
+      { "type": "set_flag", "params": { "flag": "chips_ordered", "value": true } },
+      { "type": "mark_complete" }
+    ],
+    "after_text": "The counterkeeper nods once. “Done.”\n\nSomewhere in the line a stranger murmurs, approving: “First time, hey?”"
+  },
+
+  "nl_chips_delivered_anywhere": {
+    "triggers": {
+      "on_enter_room": [
+        "neptune_lounge",
+        "neptune_lounge_kitchen",
+        "kitchen_backline",
+        "main_square",
+        "pod_room",
+        "lounge_service_gate",
+        "lounge_priest_alcove",
+        "sector_48"
+      ],
+      "once_per_character": true,
+      "requirements": { "flag_not_set": "chips_delivered" }
+    },
+
+    "title": "Late Delivery",
+    "text": "You’ve barely settled when a smell cuts through everything else.\n\nChips.\n\nA service-runner drone skids to a stop beside you, tray held out with unmistakable irritation.\n\n“I walked half the Lounge for this,” it says flatly. “Queue protocol exists for a reason.”\n\nIt pauses, recalculates, then adds:\n\n“…Enjoy.”",
+    "effects": [
+      { "type": "set_flag", "params": { "flag": "chips_delivered", "value": true } },
+      { "type": "add_item", "item": "itm_tin_rations", "qty": 1 },
+      { "type": "mark_complete" }
+    ],
+    "after_text": "They’re perfect anyway. Whatever tension was in your body drains out with the first bite."
+  },
+
+  "nl_security_scan_designation": {
+    "triggers": {
+      "on_enter_room": ["lounge_service_gate"],
+      "once_per_character": true,
+      "requirements": { "flag_not_set": "name_registered" }
+    },
+    "title": "Identity Required",
+    "text": "A chrome security droid pivots into view.\n\nA soft tone. Pale scanner light.\n\n“IDENTITY REQUIRED.”\n“PRESENT DESIGNATION.”\n\nIts lens irises slightly, like it’s trying to look polite.",
+    "reprompt": "🧷 The scanner light stays on you. The droid waits, perfectly patient, perfectly unstoppable.",
+    "prompt": {
+      "input_type": "text",
+      "text": "The scanner waits.\n\n(Type YES to confirm your current name, or enter a different designation.)"
+    },
+    "effects": [
+      { "type": "confirm_or_update_name" },
+      { "type": "set_flag", "params": { "flag": "name_registered", "value": true } },
+      { "type": "mark_complete" }
+    ]
+  },
+
+  "nl_priest_origin_birthday": {
+    "triggers": {
+      "on_idle_room": ["lounge_priest_alcove"],
+      "min_seconds": 45,
+      "once_per_character": true,
+      "requirements": { "flag_not_set": "birthdate_known" }
+    },
+    "title": "Questions of Origin",
+    "text": "The Lounge noise thins without disappearing.\n\nA robed figure sits calmly, as if she’s been waiting since before the building was built.\n\n“People arrive here from many directions,” she says.\n“But everyone arrives from somewhere.”\n\nShe tilts her head.\n\n“When were you born?”",
+    "reprompt": "🧷 Her gaze stays gentle and unblinking. “When were you born?” she asks again — like it matters to the wiring of the world.",
+    "prompt": {
+      "input_type": "text_or_empty",
+      "text": "Enter a date, or say nothing."
+    },
+    "effects": [
+      { "type": "set_birthdate_if_provided" },
+      {
+        "type": "conditional_flag",
+        "params": {
+          "if_birthdate_provided": { "flag": "birthdate_known", "value": true },
+          "else": { "flag": "birthdate_declined", "value": true }
+        }
+      },
+      { "type": "mark_complete" }
+    ]
+  }
+}

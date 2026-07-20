@@ -1,0 +1,369 @@
+{
+  "542565502720016386": {
+    "id": "542565502720016386",
+    "name": "Efiishent",
+    "birthdate": "1987-03-21",
+    "current_room": "neptune_lounge",
+    "stats": {
+      "strength": 10,
+      "dexterity": 10,
+      "constitution": 10,
+      "intelligence": 10,
+      "wisdom": 10,
+      "charisma": 10,
+      "max_hp": 10,
+      "hp": 10
+    },
+    "bag": {
+      "Rusty Dagger": 1,
+      "Pilot Jacket": 1
+    },
+    "equipped": {},
+    "flags": {
+      "unlocked_commands": [],
+      "in_combat": false
+    },
+    "run_channel_id": "1463795985775067158",
+    "extra": {
+      "profile": {
+        "class_id": "unwritten",
+        "origin_note": ""
+      },
+      "thread_nodes": {
+        "active_thread_node": null,
+        "events_completed": []
+      },
+      "status": {
+        "hunger": 0,
+        "thirst": 0,
+        "fatigue": 0,
+        "stress": 0,
+        "shelter": "unknown",
+        "temperature": "ok",
+        "luck": 0,
+        "intoxication": 0,
+        "tripping": 0,
+        "withdrawal": 0,
+        "sneaking": false,
+        "pending_return_echo": false
+      },
+      "pools": {
+        "mana": {
+          "earth": {
+            "current": 11,
+            "max": 11
+          },
+          "water": {
+            "current": 11,
+            "max": 11
+          },
+          "fire": {
+            "current": 16,
+            "max": 16
+          },
+          "air": {
+            "current": 11,
+            "max": 11
+          },
+          "ether": {
+            "current": 10,
+            "max": 10
+          },
+          "notes": {
+            "v": "mana_pools_v0",
+            "stat_basis": {
+              "earth": "strength",
+              "water": "dexterity",
+              "fire": "constitution",
+              "air": "charisma",
+              "ether": "intelligence"
+            },
+            "astro_influence": "elements_from_planet_signs (small bonuses)"
+          }
+        }
+      },
+      "astrology": {
+        "assumptions": {
+          "time_assumed": true,
+          "tz_assumed": true,
+          "tropical_zodiac": true,
+          "houses_computed": false,
+          "rising_computed": false,
+          "aspects_computed": false,
+          "ephemeris_mode": "MOSEPH",
+          "birth_input": {
+            "birthdate": "1987-03-21",
+            "birth_time": "12:00 (assumed)",
+            "tz_offset_minutes": "0 (assumed)"
+          },
+          "computed_utc": "1987-03-21T12:00:00+00:00"
+        },
+        "placements": {
+          "sun": {
+            "sign": "Aries",
+            "lon_deg": 0.336626,
+            "deg_in_sign": 0.336626,
+            "speed_deg_per_day": 0.993165
+          },
+          "moon": {
+            "sign": "Sagittarius",
+            "lon_deg": 254.822975,
+            "deg_in_sign": 14.822975,
+            "speed_deg_per_day": 14.046366
+          },
+          "mercury": {
+            "sign": "Pisces",
+            "lon_deg": 333.260373,
+            "deg_in_sign": 3.260373,
+            "speed_deg_per_day": 0.709881
+          },
+          "venus": {
+            "sign": "Aquarius",
+            "lon_deg": 321.441059,
+            "deg_in_sign": 21.441059,
+            "speed_deg_per_day": 1.189201
+          },
+          "mars": {
+            "sign": "Taurus",
+            "lon_deg": 49.759472,
+            "deg_in_sign": 19.759472,
+            "speed_deg_per_day": 0.677411
+          },
+          "jupiter": {
+            "sign": "Aries",
+            "lon_deg": 4.48862,
+            "deg_in_sign": 4.48862,
+            "speed_deg_per_day": 0.241946
+          },
+          "saturn": {
+            "sign": "Sagittarius",
+            "lon_deg": 261.084037,
+            "deg_in_sign": 21.084037,
+            "speed_deg_per_day": 0.016301
+          },
+          "uranus": {
+            "sign": "Sagittarius",
+            "lon_deg": 266.677707,
+            "deg_in_sign": 26.677707,
+            "speed_deg_per_day": 0.009436
+          },
+          "neptune": {
+            "sign": "Capricorn",
+            "lon_deg": 277.896622,
+            "deg_in_sign": 7.896622,
+            "speed_deg_per_day": 0.01088
+          },
+          "pluto": {
+            "sign": "Scorpio",
+            "lon_deg": 219.57506,
+            "deg_in_sign": 9.57506,
+            "speed_deg_per_day": -0.019891
+          }
+        },
+        "version": "astrology_signs_v0"
+      }
+    },
+    "run_seeded_channel_id": 1463795985775067158,
+    "locker_tier": 1,
+    "in_cube": false,
+    "cube_context": null,
+    "cube": {
+      "owned": false,
+      "level": 0,
+      "name": null
+    },
+    "pools": {
+      "earth": {
+        "current": 0,
+        "max": 0
+      },
+      "water": {
+        "current": 0,
+        "max": 0
+      },
+      "fire": {
+        "current": 0,
+        "max": 0
+      },
+      "air": {
+        "current": 0,
+        "max": 0
+      },
+      "ether": {
+        "current": 0,
+        "max": 0
+      },
+      "spirit": {
+        "current": 0,
+        "max": 0
+      }
+    }
+  },
+  "1457253286607589551": {
+    "id": "1457253286607589551",
+    "name": "TestGuy",
+    "birthdate": "2000-01-01",
+    "birth_time": null,
+    "tz_offset_minutes": null,
+    "current_room": "neptune_lounge",
+    "stats": {
+      "strength": 9,
+      "dexterity": 10,
+      "constitution": 10,
+      "intelligence": 12,
+      "wisdom": 12,
+      "charisma": 10,
+      "max_hp": 10,
+      "hp": 10
+    },
+    "pools": {
+      "earth": {
+        "current": 12,
+        "max": 12
+      },
+      "water": {
+        "current": 12,
+        "max": 12
+      },
+      "fire": {
+        "current": 12,
+        "max": 12
+      },
+      "air": {
+        "current": 11,
+        "max": 11
+      },
+      "ether": {
+        "current": 12,
+        "max": 12
+      },
+      "spirit": {
+        "current": 0,
+        "max": 0
+      }
+    },
+    "bag": {
+      "Rusty Dagger": 1,
+      "Pilot Jacket": 1
+    },
+    "equipped": {},
+    "flags": {
+      "unlocked_commands": [],
+      "in_combat": false
+    },
+    "run_channel_id": "1464096652708286610",
+    "run_seeded_channel_id": 1464096652708286610,
+    "extra": {
+      "profile": {
+        "class_id": "dreamer_technician",
+        "origin_note": ""
+      },
+      "thread_nodes": {
+        "active_thread_node": null,
+        "events_completed": []
+      },
+      "status": {
+        "hunger": 0,
+        "thirst": 0,
+        "fatigue": 0,
+        "stress": 0,
+        "shelter": "unknown",
+        "temperature": "ok",
+        "luck": 0,
+        "intoxication": 0,
+        "tripping": 0,
+        "withdrawal": 0,
+        "sneaking": false,
+        "pending_return_echo": false
+      },
+      "astrology": {
+        "assumptions": {
+          "time_assumed": true,
+          "tz_assumed": true,
+          "tropical_zodiac": true,
+          "houses_computed": false,
+          "rising_computed": false,
+          "aspects_computed": false,
+          "ephemeris_mode": "MOSEPH",
+          "birth_input": {
+            "birthdate": "2000-01-01",
+            "birth_time": "12:00 (assumed)",
+            "tz_offset_minutes": "0 (assumed)"
+          },
+          "computed_utc": "2000-01-01T12:00:00+00:00"
+        },
+        "placements": {
+          "sun": {
+            "sign": "Capricorn",
+            "lon_deg": 280.36892,
+            "deg_in_sign": 10.36892,
+            "speed_deg_per_day": 1.019432
+          },
+          "moon": {
+            "sign": "Scorpio",
+            "lon_deg": 223.323775,
+            "deg_in_sign": 13.323775,
+            "speed_deg_per_day": 12.021183
+          },
+          "mercury": {
+            "sign": "Capricorn",
+            "lon_deg": 271.889275,
+            "deg_in_sign": 1.889275,
+            "speed_deg_per_day": 1.556254
+          },
+          "venus": {
+            "sign": "Sagittarius",
+            "lon_deg": 241.565798,
+            "deg_in_sign": 1.565798,
+            "speed_deg_per_day": 1.20904
+          },
+          "mars": {
+            "sign": "Aquarius",
+            "lon_deg": 327.963313,
+            "deg_in_sign": 27.963313,
+            "speed_deg_per_day": 0.775673
+          },
+          "jupiter": {
+            "sign": "Aries",
+            "lon_deg": 25.25303,
+            "deg_in_sign": 25.25303,
+            "speed_deg_per_day": 0.040761
+          },
+          "saturn": {
+            "sign": "Taurus",
+            "lon_deg": 40.395639,
+            "deg_in_sign": 10.395639,
+            "speed_deg_per_day": -0.019945
+          },
+          "uranus": {
+            "sign": "Aquarius",
+            "lon_deg": 314.809223,
+            "deg_in_sign": 14.809223,
+            "speed_deg_per_day": 0.050344
+          },
+          "neptune": {
+            "sign": "Aquarius",
+            "lon_deg": 303.192981,
+            "deg_in_sign": 3.192981,
+            "speed_deg_per_day": 0.03557
+          },
+          "pluto": {
+            "sign": "Sagittarius",
+            "lon_deg": 251.454709,
+            "deg_in_sign": 11.454709,
+            "speed_deg_per_day": 0.035153
+          }
+        },
+        "version": "astrology_signs_v0"
+      }
+    },
+    "locker_tier": 1,
+    "in_cube": false,
+    "cube_context": null,
+    "cube": {
+      "owned": false,
+      "level": 0,
+      "name": null
+    }
+  }
+}

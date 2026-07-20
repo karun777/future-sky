@@ -1,0 +1,238 @@
+{
+  "_meta": {
+    "canonical": "internal_narratives.json",
+    "version": "v0.1",
+    "last_updated": "2026-06-20",
+    "notes": [
+      "Internal Narratives are private player-facing thoughts.",
+      "They do not block movement.",
+      "They do not require responses.",
+      "They do not grant abilities.",
+      "They may originate from self, cube, familiar, future self, comet, or other narrative sources.",
+      "Narratives are designed to feel like thoughts, memories, intuitions, dreams, echoes, or impressions."
+    ]
+  },
+
+  "pod_disorientation_01": {
+    "triggers": {
+      "on_enter_room": [
+        "pod_room"
+      ],
+      "once_per_character": true
+    },
+
+    "source": "self",
+
+    "text": [
+      "For a moment you are certain you have awakened here before.",
+      "The feeling disappears before you can examine it."
+    ]
+  },
+
+  "pod_disorientation_02": {
+    "triggers": {
+      "on_enter_room": [
+        "pod_room"
+      ],
+      "once_per_character": true
+    },
+
+    "source": "self",
+
+    "text": [
+      "Something about the pod feels familiar.",
+      "Not remembered.",
+      "Recognised."
+    ]
+  },
+
+  "pod_key_recognition": {
+    "triggers": {
+      "flag_set": "pod_key_discovered"
+    },
+
+    "once_per_character": true,
+
+    "source": "self",
+
+    "text": [
+      "The key feels less like an object and more like a responsibility."
+    ]
+  },
+
+  "pod_cube_recognition": {
+    "triggers": {
+      "flag_set": "pod_cube_discovered"
+    },
+
+    "once_per_character": true,
+
+    "source": "cube",
+
+    "text": [
+      "The cube sits quietly in your hand.",
+      "You cannot shake the feeling that it already knows you."
+    ]
+  },
+
+  "arrival_first_lounge": {
+    "triggers": {
+      "on_enter_room": [
+        "neptune_lounge"
+      ],
+      "once_per_character": true
+    },
+
+    "source": "self",
+
+    "text": [
+      "You expected somewhere larger.",
+      "You expected somewhere smaller.",
+      "You are no longer sure what you expected."
+    ]
+  },
+
+  "chips_are_important": {
+    "triggers": {
+      "flag_set": "chips_delivered"
+    },
+
+    "once_per_character": true,
+
+    "source": "self",
+
+    "text": [
+      "You have absolutely no evidence for this.",
+      "Yet somehow these feel like important chips."
+    ]
+  },
+
+  "stress_echo_01": {
+    "triggers": {
+      "status": {
+        "stress_min": 5
+      }
+    },
+
+    "once_per_character": true,
+
+    "source": "self",
+
+    "text": [
+      "You briefly consider leaving.",
+      "You do not know where 'away' would be."
+    ]
+  },
+
+  "fatigue_echo_01": {
+    "triggers": {
+      "status": {
+        "fatigue_min": 5
+      }
+    },
+
+    "once_per_character": true,
+
+    "source": "self",
+
+    "text": [
+      "You lose the thread of a thought.",
+      "The absence lingers longer than the thought itself."
+    ]
+  },
+
+  "cube_whisper_01": {
+    "triggers": {
+      "on_idle_room": [
+        "neptune_lounge"
+      ],
+      "min_seconds": 90
+    },
+
+    "source": "cube",
+
+    "text": [
+      "The cube does not speak.",
+      "You nevertheless receive an impression.",
+      "Wait."
+    ]
+  },
+
+  "future_self_01": {
+    "triggers": {
+      "on_idle_room": [
+        "main_square"
+      ],
+      "min_seconds": 120,
+      "once_per_character": true
+    },
+
+    "source": "future_self",
+
+    "text": [
+      "You have the strange feeling that someone is rooting for you.",
+      "The feeling feels oddly specific."
+    ]
+  },
+  "pod_disorientation_03": {
+  "triggers": {
+    "on_enter_room": ["pod_room"],
+    "once_per_character": true
+  },
+  "source": "self",
+  "text": [
+    "You become aware of your breathing.",
+    "You are not entirely convinced these are your hands."
+  ]
+  },
+
+  "pod_disorientation_04": {
+    "triggers": {
+      "on_enter_room": ["pod_room"],
+      "once_per_character": true
+    },
+    "source": "self",
+    "text": [
+      "The air smells strangely familiar.",
+      "Fresh earth.",
+      "Rain.",
+      "Something else."
+    ]
+  },
+
+  "pod_disorientation_05": {
+    "triggers": {
+      "on_enter_room": ["pod_room"],
+      "once_per_character": true
+    },
+    "source": "self",
+    "text": [
+      "You feel as though you have forgotten something important.",
+      "You cannot determine whether that is alarming."
+    ]
+  },
+
+  "pod_disorientation_06": {
+    "triggers": {
+      "on_enter_room": ["pod_room"],
+      "once_per_character": true
+    },
+    "source": "self",
+    "text": [
+      "A faint vibration moves through your body.",
+      "You are unsure whether it came from the pod or from you."
+    ]
+  },
+
+  "pod_feed7_recognition": {
+    "triggers": {
+      "on_enter_room": ["pod_room"],
+      "once_per_character": true
+    },
+    "source": "self",
+    "text": [
+      "A display flickers quietly nearby.",
+      "Something called FEED7 seems important."
+    ]
+  }
+}

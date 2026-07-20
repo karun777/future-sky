@@ -1,0 +1,128 @@
+{
+  "542565502720016386": {
+    "id": "542565502720016386",
+    "name": "efiishent",
+    "birthdate": "1976-03-04",
+    "current_room": "neptune_lounge",
+    "stats": {
+      "strength": 10,
+      "dexterity": 10,
+      "constitution": 10,
+      "intelligence": 10,
+      "wisdom": 10,
+      "charisma": 10,
+      "hp": 20,
+      "max_hp": 20
+    },
+    "flags": {
+      "unlocked_commands": [],
+      "in_combat": false
+    },
+    "run_channel_id": "1457385867134898270",
+    "extra": {
+      "thread_nodes": {
+        "active_thread_node": "pressure_in_the_veins_v1",
+        "events_completed": []
+      },
+      "status": {
+        "sneaking": true,
+        "pending_return_echo": false
+      }
+    },
+    "bag": {},
+    "equipped": {},
+    "locker_tier": 1,
+    "in_cube": false,
+    "cube_context": null,
+    "cube": {
+      "owned": false,
+      "level": 0,
+      "name": null
+    },
+    "run_seeded_channel_id": 1457385867134898270
+  },
+  "1424016816375861409": {
+    "id": "1424016816375861409",
+    "name": "Dark Rat Queen",
+    "birthdate": "1997-03-07",
+    "current_room": "neptune_lounge",
+    "stats": {
+      "strength": 10,
+      "dexterity": 10,
+      "constitution": 10,
+      "intelligence": 10,
+      "wisdom": 10,
+      "charisma": 10,
+      "hp": 20,
+      "max_hp": 20
+    },
+    "flags": {
+      "unlocked_commands": [],
+      "in_combat": false
+    },
+    "run_channel_id": "1457384357969920182",
+    "extra": {
+      "thread_nodes": {
+        "active_thread_node": null,
+        "events_completed": []
+      },
+      "status": {
+        "sneaking": false,
+        "pending_return_echo": false
+      }
+    },
+    "bag": {},
+    "equipped": {},
+    "locker_tier": 1,
+    "in_cube": false,
+    "cube_context": null,
+    "cube": {
+      "owned": false,
+      "level": 0,
+      "name": null
+    },
+    "run_seeded_channel_id": 1457384357969920182
+  },
+  "1457253286607589551": {
+    "id": "1457253286607589551",
+    "name": "kruza777",
+    "birthdate": "1991-05-12",
+    "current_room": "neptune_lounge",
+    "stats": {
+      "strength": 10,
+      "dexterity": 10,
+      "constitution": 10,
+      "intelligence": 10,
+      "wisdom": 10,
+      "charisma": 10,
+      "hp": 20,
+      "max_hp": 20
+    },
+    "flags": {
+      "unlocked_commands": [],
+      "in_combat": false
+    },
+    "run_channel_id": "1458328842400956468",
+    "extra": {
+      "thread_nodes": {
+        "active_thread_node": "pressure_in_the_veins_v1",
+        "events_completed": []
+      },
+      "status": {
+        "sneaking": false,
+        "pending_return_echo": true
+      }
+    },
+    "bag": {},
+    "equipped": {},
+    "locker_tier": 1,
+    "in_cube": false,
+    "cube_context": null,
+    "cube": {
+      "owned": false,
+      "level": 0,
+      "name": null
+    },
+    "run_seeded_channel_id": 1458328842400956468
+  }
+}

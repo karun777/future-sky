@@ -1,0 +1,19 @@
+{
+  "normal": {
+    "coherence": true,
+    "parallelism": true,
+    "commotion": true
+  },
+
+  "signal_degraded": {
+    "coherence": true,
+    "parallelism": false,
+    "commotion": true
+  },
+
+  "dark_mode": {
+    "coherence": false,
+    "parallelism": false,
+    "commotion": false
+  }
+}

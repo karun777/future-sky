@@ -1,0 +1,36 @@
+{
+  "Rusty Dagger": {
+    "type": "weapon",
+    "slot": "main_hand",
+    "damage": [
+      2,
+      5
+    ],
+    "scaling": "DEX",
+    "weight": 1,
+    "rarity": "common"
+  },
+  "Pilot Jacket": {
+    "type": "armor",
+    "slot": "body",
+    "defense": 2,
+    "resists": {
+      "cold": 1
+    },
+    "rarity": "common"
+  },
+  "Triton Lager": {
+    "type": "consumable",
+    "heal": 4,
+    "stackable": true,
+    "rarity": "common"
+  },
+  "Key of Commotion (Prototype)": {
+    "type": "artifact",
+    "effects": [
+      "unlock_shared_portal"
+    ],
+    "consumable": false,
+    "rarity": "quest"
+  }
+}

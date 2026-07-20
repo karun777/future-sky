@@ -1,0 +1,425 @@
+from __future__ import annotations
+
+import inspect
+import logging
+import time
+from collections import defaultdict, deque
+from copy import deepcopy
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from typing import Any, Awaitable, Callable, DefaultDict, Deque, Dict, List, Mapping, Optional
+from uuid import uuid4
+
+Event = Dict[str, Any]
+
+
+@dataclass(frozen=True)
+class EventResult:
+    """Optional structured outcome returned by an event subscriber."""
+
+    status: str
+    detail: Optional[str] = None
+    data: Optional[Mapping[str, Any]] = None
+
+    def __post_init__(self) -> None:
+        status = str(self.status or "").strip()
+        if not status:
+            raise ValueError("EventResult.status is required")
+        object.__setattr__(self, "status", status)
+
+        if self.detail is not None:
+            detail = str(self.detail).strip()
+            object.__setattr__(self, "detail", detail or None)
+
+        if self.data is not None and not isinstance(self.data, Mapping):
+            raise TypeError("EventResult.data must be a mapping or None")
+
+    @classmethod
+    def ok(cls, detail: str | None = None, **data: Any) -> "EventResult":
+        return cls("ok", detail, data or None)
+
+    @classmethod
+    def delivered(cls, detail: str | None = None, **data: Any) -> "EventResult":
+        return cls("delivered", detail, data or None)
+
+    @classmethod
+    def matched(cls, detail: str | None = None, **data: Any) -> "EventResult":
+        return cls("matched", detail, data or None)
+
+    @classmethod
+    def no_match(cls, detail: str | None = None, **data: Any) -> "EventResult":
+        return cls("no_match", detail, data or None)
+
+    @classmethod
+    def suppressed(cls, detail: str | None = None, **data: Any) -> "EventResult":
+        return cls("suppressed", detail, data or None)
+
+    @classmethod
+    def queued(cls, detail: str | None = None, **data: Any) -> "EventResult":
+        return cls("queued", detail, data or None)
+
+    @classmethod
+    def applied(cls, detail: str | None = None, **data: Any) -> "EventResult":
+        return cls("applied", detail, data or None)
+
+    @classmethod
+    def skipped(cls, detail: str | None = None, **data: Any) -> "EventResult":
+        return cls("skipped", detail, data or None)
+
+
+EventHandlerReturn = Optional[EventResult]
+EventHandler = Callable[
+    [Event],
+    EventHandlerReturn | Awaitable[EventHandlerReturn],
+]
+
+
+def create_event(
+    *,
+    event_type: str,
+    source_system: str,
+    actor_id: str | None = None,
+    world_time: int = 0,
+    scope: dict | None = None,
+    payload: dict | None = None,
+    causation_id: str | None = None,
+    correlation_id: str | None = None,
+) -> Event:
+    """Build a canonical in-memory Future Sky event envelope."""
+    event_type = str(event_type or "").strip()
+    source_system = str(source_system or "").strip()
+
+    if not event_type:
+        raise ValueError("event_type is required")
+    if not source_system:
+        raise ValueError("source_system is required")
+
+    return {
+        "event_id": f"evt_{uuid4().hex}",
+        "event_type": event_type,
+        "occurred_at_world_time": max(0, int(world_time or 0)),
+        "occurred_at_utc": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "source": {
+            "system": source_system,
+            "actor_id": str(actor_id) if actor_id is not None else None,
+        },
+        "scope": deepcopy(scope) if isinstance(scope, dict) else {},
+        "payload": deepcopy(payload) if isinstance(payload, dict) else {},
+        "causation_id": str(causation_id) if causation_id else None,
+        "correlation_id": str(correlation_id) if correlation_id else None,
+        "schema_version": "v0",
+    }
+
+
+class EventBus:
+    """In-memory async event bus with a bounded runtime flight recorder.
+
+    It announces facts, traces subscriber reactions, and remembers recent traces.
+    It owns no gameplay state and performs no persistence.
+    """
+
+    def __init__(
+        self,
+        *,
+        logger: logging.Logger | None = None,
+        recent_trace_limit: int = 100,
+    ):
+        self.log = logger or logging.getLogger("futuresky.events")
+        self._subscribers: DefaultDict[str, List[EventHandler]] = defaultdict(list)
+        self._recent_traces: Deque[Dict[str, Any]] = deque(
+            maxlen=max(1, int(recent_trace_limit)),
+        )
+
+    def subscribe(self, event_type: str, handler: EventHandler) -> None:
+        key = str(event_type or "").strip()
+        if not key:
+            raise ValueError("event_type is required")
+        if not callable(handler):
+            raise TypeError("handler must be callable")
+        if handler in self._subscribers[key]:
+            return
+
+        self._subscribers[key].append(handler)
+        self.log.info(
+            "[EVENT_SUBSCRIBE] type=%s subscriber=%s",
+            key,
+            self._handler_name(handler),
+        )
+
+    def unsubscribe(self, event_type: str, handler: EventHandler) -> None:
+        key = str(event_type or "").strip()
+        handlers = self._subscribers.get(key)
+        if not handlers:
+            return
+
+        try:
+            handlers.remove(handler)
+        except ValueError:
+            return
+
+        if not handlers:
+            self._subscribers.pop(key, None)
+
+        self.log.info(
+            "[EVENT_UNSUBSCRIBE] type=%s subscriber=%s",
+            key,
+            self._handler_name(handler),
+        )
+
+    async def publish(self, event: Event) -> List[Dict[str, Any]]:
+        """Publish an event and return subscriber trace records."""
+        self._validate_event(event)
+
+        event_type = str(event["event_type"])
+        handlers = tuple(self._subscribers.get(event_type, ()))
+        source = event.get("source") if isinstance(event.get("source"), dict) else {}
+        scope = event.get("scope") if isinstance(event.get("scope"), dict) else {}
+        payload = event.get("payload") if isinstance(event.get("payload"), dict) else {}
+
+        short_id = self._short_event_id(event.get("event_id"))
+        from_room = payload.get("from_room_id")
+        to_room = payload.get("to_room_id") or scope.get("room_id")
+
+        self.log.info(
+            "[EVENT_TRACE] ── %s %s ──────────────────────────────",
+            short_id,
+            event_type,
+        )
+        self.log.info(
+            "[EVENT_TRACE] source=%s actor=%s from=%s to=%s movement=%s "
+            "world_time=%s subscribers=%d",
+            source.get("system"),
+            source.get("actor_id"),
+            from_room,
+            to_room,
+            payload.get("movement_type"),
+            event.get("occurred_at_world_time"),
+            len(handlers),
+        )
+        if event.get("causation_id") or event.get("correlation_id"):
+            self.log.info(
+                "[EVENT_TRACE] causation=%s correlation=%s",
+                event.get("causation_id"),
+                event.get("correlation_id"),
+            )
+
+        traces: List[Dict[str, Any]] = []
+
+        for index, handler in enumerate(handlers, start=1):
+            trace = await self._invoke_subscriber(
+                event=event,
+                event_type=event_type,
+                handler=handler,
+                index=index,
+                total=len(handlers),
+            )
+            traces.append(trace)
+
+        self._log_event_summary(event, traces)
+        self._remember_trace(event, traces)
+        return traces
+
+    async def _invoke_subscriber(
+        self,
+        *,
+        event: Event,
+        event_type: str,
+        handler: EventHandler,
+        index: int,
+        total: int,
+    ) -> Dict[str, Any]:
+        subscriber = self._handler_name(handler)
+        isolated_event = deepcopy(event)
+        started = time.perf_counter()
+
+        try:
+            raw_result = handler(isolated_event)
+            if inspect.isawaitable(raw_result):
+                raw_result = await raw_result
+
+            result = self._normalise_result(raw_result)
+            elapsed_ms = (time.perf_counter() - started) * 1000.0
+
+            trace = {
+                "subscriber": subscriber,
+                "ok": True,
+                "status": result.status,
+                "detail": result.detail,
+                "data": dict(result.data) if result.data is not None else None,
+                "elapsed_ms": round(elapsed_ms, 3),
+            }
+
+            marker = "✓"
+            detail_suffix = f" ({result.detail})" if result.detail else ""
+            self.log.info(
+                "[EVENT_TRACE] %s %d/%d %-48s %-12s %8.3f ms%s",
+                marker,
+                index,
+                total,
+                subscriber,
+                result.status,
+                elapsed_ms,
+                detail_suffix,
+            )
+            return trace
+
+        except Exception as exc:
+            elapsed_ms = (time.perf_counter() - started) * 1000.0
+            trace = {
+                "subscriber": subscriber,
+                "ok": False,
+                "status": "error",
+                "detail": f"{type(exc).__name__}: {exc}",
+                "data": None,
+                "elapsed_ms": round(elapsed_ms, 3),
+            }
+
+            self.log.error(
+                "[EVENT_TRACE] ✗ %d/%d %-48s error        %8.3f ms "
+                "(%s: %s)",
+                index,
+                total,
+                subscriber,
+                elapsed_ms,
+                type(exc).__name__,
+                exc,
+            )
+            return trace
+
+    def _log_event_summary(
+        self,
+        event: Event,
+        traces: List[Dict[str, Any]],
+    ) -> None:
+        ok_count = sum(1 for trace in traces if trace.get("ok"))
+        error_count = len(traces) - ok_count
+        total_ms = sum(float(trace.get("elapsed_ms") or 0.0) for trace in traces)
+
+        outcome_counts: Dict[str, int] = {}
+        for trace in traces:
+            status = str(trace.get("status") or "unknown")
+            outcome_counts[status] = outcome_counts.get(status, 0) + 1
+
+        outcome_text = ", ".join(
+            f"{status}={count}"
+            for status, count in sorted(outcome_counts.items())
+        ) or "none"
+
+        self.log.info(
+            "[EVENT_TRACE] complete subscribers=%d ok=%d errors=%d "
+            "total=%8.3f ms outcomes=[%s]",
+            len(traces),
+            ok_count,
+            error_count,
+            total_ms,
+            outcome_text,
+        )
+        self.log.info(
+            "[EVENT_TRACE] ────────────────────────────────────────────────"
+        )
+
+    def _remember_trace(
+        self,
+        event: Event,
+        traces: List[Dict[str, Any]],
+    ) -> None:
+        """Keep a bounded in-memory flight recorder for future diagnostics."""
+        self._recent_traces.append(
+            {
+                "event": deepcopy(event),
+                "subscribers": deepcopy(traces),
+                "recorded_at_utc": datetime.now(timezone.utc)
+                .isoformat()
+                .replace("+00:00", "Z"),
+            }
+        )
+
+    def recent_traces(
+        self,
+        *,
+        limit: int = 10,
+        event_type: str | None = None,
+    ) -> List[Dict[str, Any]]:
+        """Return newest trace records first.
+
+        This is an in-memory diagnostic view only. It owns no persistence.
+        """
+        wanted = str(event_type or "").strip()
+        records = list(reversed(self._recent_traces))
+
+        if wanted:
+            records = [
+                record
+                for record in records
+                if str((record.get("event") or {}).get("event_type")) == wanted
+            ]
+
+        return deepcopy(records[: max(0, int(limit))])
+
+    @staticmethod
+    def _short_event_id(event_id: Any) -> str:
+        raw = str(event_id or "evt_unknown")
+        if raw.startswith("evt_"):
+            raw = raw[4:]
+        return f"evt_{raw[:8]}"
+
+    @staticmethod
+    def _normalise_result(result: Any) -> EventResult:
+        """Normalise backwards-compatible subscriber return values."""
+        if result is None:
+            return EventResult.ok()
+
+        if isinstance(result, EventResult):
+            return result
+
+        if isinstance(result, str):
+            text = result.strip()
+            return EventResult.ok(text or None)
+
+        if isinstance(result, Mapping):
+            status = str(result.get("status") or "ok").strip() or "ok"
+            detail_raw = result.get("detail")
+            detail = str(detail_raw).strip() if detail_raw is not None else None
+            data_raw = result.get("data")
+            data = data_raw if isinstance(data_raw, Mapping) else None
+            return EventResult(status=status, detail=detail, data=data)
+
+        raise TypeError(
+            "event subscriber must return None, EventResult, str, or mapping"
+        )
+
+    def subscriber_count(self, event_type: str) -> int:
+        return len(self._subscribers.get(str(event_type or "").strip(), ()))
+
+    @staticmethod
+    def _handler_name(handler: EventHandler) -> str:
+        owner = getattr(handler, "__self__", None)
+        name = getattr(handler, "__name__", handler.__class__.__name__)
+        if owner is not None:
+            return f"{owner.__class__.__name__}.{name}"
+        return str(name)
+
+    @staticmethod
+    def _validate_event(event: Event) -> None:
+        if not isinstance(event, dict):
+            raise TypeError("event must be a dict")
+
+        for field in (
+            "event_id",
+            "event_type",
+            "occurred_at_world_time",
+            "occurred_at_utc",
+            "source",
+            "scope",
+            "payload",
+            "schema_version",
+        ):
+            if field not in event:
+                raise ValueError(f"event missing required field: {field}")
+
+        if not isinstance(event.get("source"), dict):
+            raise TypeError("event.source must be a dict")
+        if not isinstance(event.get("scope"), dict):
+            raise TypeError("event.scope must be a dict")
+        if not isinstance(event.get("payload"), dict):
+            raise TypeError("event.payload must be a dict")

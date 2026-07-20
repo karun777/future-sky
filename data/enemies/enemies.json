@@ -1,0 +1,20 @@
+{
+    "Goblin": {
+        "hp": 20,
+        "attack": 5,
+        "xp": 10,
+        "loot": ["Gold Coin", "Rusty Dagger"]
+    },
+    "Cyber-Rat": {
+        "hp": 15,
+        "attack": 3,
+        "xp": 5,
+        "loot": ["Worn Battery", "Scrap Metal"]
+    },
+    "Rogue AI": {
+        "hp": 30,
+        "attack": 8,
+        "xp": 20,
+        "loot": ["AI Core", "Glowing Circuit"]
+    }
+}

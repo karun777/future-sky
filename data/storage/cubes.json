@@ -1,0 +1,80 @@
+{
+  "cube_efiishent_prime": {
+    "id": "cube_efiishent_prime",
+    "cube_type": "prime",
+    "owner": {
+      "type": "npc",
+      "name": "efiishent"
+    },
+    "integrity": {
+      "current": 100,
+      "max": 100,
+      "note": "THE Cube (v0 marker only)"
+    },
+    "flags": {},
+    "meta": {
+      "created_at": "2026-01-22T06:55:29.155952Z",
+      "updated_at": "2026-01-22T07:31:05.439008+00:00",
+      "dpc_user_id": "542565502720016386"
+    }
+  },
+  "cube_personal_1424016816375861409": {
+    "id": "cube_personal_1424016816375861409",
+    "cube_type": "personal_cube_v0",
+    "owner": {
+      "type": "player",
+      "user_id": "1424016816375861409"
+    },
+    "integrity": {
+      "current": 100,
+      "max": 100
+    },
+    "flags": {},
+    "meta": {
+      "created_at": "2026-01-22T07:31:05.438988+00:00",
+      "updated_at": "2026-01-22T07:31:05.438993+00:00"
+    }
+  },
+  "cube_personal_1457253286607589551": {
+    "id": "cube_personal_1457253286607589551",
+    "cube_type": "personal_cube_v0",
+    "owner": {
+      "type": "player",
+      "user_id": "1457253286607589551"
+    },
+    "integrity": {
+      "current": 100,
+      "max": 100
+    },
+    "flags": {},
+    "meta": {
+      "created_at": "2026-01-22T15:25:44+08:00",
+      "updated_at": "2026-01-23T11:17:23+08:00"
+    }
+  },
+  "cube_personal_542565502720016386": {
+    "id": "cube_personal_542565502720016386",
+    "cube_type": "personal_cube_v0",
+    "owner": {
+      "type": "player",
+      "user_id": "542565502720016386"
+    },
+    "integrity": {
+      "current": 100,
+      "max": 100
+    },
+    "flags": {},
+    "meta": {
+      "created_at": "2026-01-22T15:18:08+08:00",
+      "updated_at": "2026-01-22T07:31:05.439006+00:00"
+    }
+  },
+  "1457253286607589551": {
+    "owned": false,
+    "level": 0,
+    "name": null,
+    "style": "empty_atrium",
+    "capacity": 50,
+    "items": {}
+  }
+}

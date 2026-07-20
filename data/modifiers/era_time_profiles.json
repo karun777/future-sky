@@ -1,0 +1,53 @@
+{
+  "version": "v0",
+  "default": "manzo",
+  "profiles": {
+    "jyotzon": {
+      "label": "Jyotzon — Compressed / Terminal",
+      "era_time_multiplier": 43200,
+      "needs_multiplier": 2.5,
+      "opportunity_fade_multiplier": 3.0,
+      "ambient_intensity_multiplier": 1.2,
+      "hard_time_threshold": 0.35,
+      "death_model": {
+        "mode": "era_hard_reset",
+        "lives_max": 1,
+        "retain": ["meta_abilities", "unlocked_reflexes"],
+        "drop": ["inventory", "currency", "room_state", "quest_state", "local_flags"],
+        "respawn_anchor": "jyotzon_start"
+      }
+    },
+
+    "omnicron": {
+      "label": "Omnicron — Elastic / Recoverable",
+      "era_time_multiplier": 600,
+      "needs_multiplier": 1.0,
+      "opportunity_fade_multiplier": 1.0,
+      "ambient_intensity_multiplier": 1.0,
+      "hard_time_threshold": 0.55,
+      "death_model": {
+        "mode": "deathpile_resume",
+        "lives_max": 7,
+        "retain": ["cube_inventory", "skills", "unlocked_reflexes", "reputation"],
+        "drop": ["buffs", "temporary_flags"],
+        "respawn_anchor": "death_context"
+      }
+    },
+
+    "manzo": {
+      "label": "Manzo — Expansive / Non-Urgent",
+      "era_time_multiplier": 60,
+      "needs_multiplier": 0.6,
+      "opportunity_fade_multiplier": 0.7,
+      "ambient_intensity_multiplier": 0.9,
+      "hard_time_threshold": 0.75,
+      "death_model": {
+        "mode": "continuity",
+        "lives_max": -1,
+        "retain": ["everything_except_temporary"],
+        "drop": ["buffs", "temporary_flags"],
+        "respawn_anchor": "nearest_safe"
+      }
+    }
+  }
+}

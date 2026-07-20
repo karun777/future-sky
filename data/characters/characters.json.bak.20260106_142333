@@ -1,0 +1,170 @@
+{
+  "542565502720016386": {
+    "name": "efiishent",
+    "birthdate": "1976-03-04",
+    "race": "Human",
+    "class": "Explorer",
+    "faction": "Free Nomads",
+    "timeline": "The Neon Horizon",
+    "chakras": {
+      "ajna": 5,
+      "sahasrara": 2
+    },
+    "stats": {
+      "strength": 10,
+      "dexterity": 10,
+      "constitution": 10,
+      "intelligence": 10,
+      "wisdom": 10,
+      "charisma": 10,
+      "max_hp": 20,
+      "hp": 10
+    },
+    "mana": {
+      "earth": 10,
+      "water": 10,
+      "fire": 10,
+      "air": 10,
+      "ether": 10
+    },
+    "spirit": 5,
+    "health": 100,
+    "alignment": "Neutral",
+    "reputation": 0,
+    "xp": 534,
+    "inventory": [
+      "Gold Coin",
+      "Worn Battery",
+      "Health Potion",
+      "Key of Commotion",
+      "Glowing Circuit",
+      "Encrypted Data Shard",
+      "Curious Stone"
+    ],
+    "current_room": "neptune_lounge",
+    "events_completed": [
+      "dark_rat_queen_intro",
+      "main_square_cyber_rat",
+      "random_rogue_ai_encounter",
+      "random_rogue_ai_encounter",
+      "random_goblin_encounter",
+      "random_rogue_ai_encounter",
+      "random_goblin_encounter",
+      "random_goblin_encounter",
+      "random_rogue_ai_encounter",
+      "random_goblin_encounter",
+      "random_rogue_ai_encounter",
+      "random_rogue_ai_encounter",
+      "random_goblin_encounter",
+      "random_rogue_ai_encounter",
+      "random_goblin_encounter",
+      "random_goblin_encounter",
+      "random_rogue_ai_encounter",
+      "random_goblin_encounter",
+      "random_goblin_encounter",
+      "random_goblin_encounter",
+      "random_rogue_ai_encounter"
+    ],
+    "active_thread_node": "random_rogue_ai_encounter",
+    "bag": {
+      "Key of Commotion (Prototype)": 1,
+      "Crunchy Nut Cornflakes": 1,
+      "Glowing Circuit": 1,
+      "Menu Chip": 1,
+      "Plasma Flyer": 1,
+      "Rusty Dagger": 1,
+      "Triton Lager": 2,
+      "Loose Bolt": 1
+    },
+    "baggus": {
+      "Crunchy Nut Cornflakes": 1
+    },
+    "astro_profile": {
+      "v": 1,
+      "bonuses": {
+        "mana": {
+          "water": 5
+        },
+        "stats": {
+          "Wisdom": 2,
+          "Charisma": 1
+        }
+      },
+      "element": "Water",
+      "sun_sign": "Pisces",
+      "applied_at": "2025-09-08T22:07:57",
+      "bonuses_applied": true
+    },
+    "in_cube": false,
+    "cube_context": null,
+    "last_action": {
+      "type": "emote",
+      "action": "emote",
+      "payload": {
+        "text": "sighs quietly and rolls eyes"
+      },
+      "ts": "2026-01-05T15:57:09Z"
+    },
+    "run_channel_id": 1457385867134898270,
+    "sneaking": true,
+    "run_seeded_channel_id": 1457385867134898270
+  },
+  "1424016816375861409": {
+    "name": "Dark Rat Queen",
+    "birthdate": "1997-03-07",
+    "stats": {
+      "strength": 10,
+      "dexterity": 10,
+      "constitution": 10,
+      "intelligence": 10,
+      "wisdom": 10,
+      "charisma": 10,
+      "max_hp": 20,
+      "hp": 18
+    },
+    "xp": 10,
+    "current_room": "sector_16",
+    "bag": {
+      "Mysterious Cube": 1,
+      "Energy Credit": 1,
+      "Neptune Chip Cup": 1,
+      "Triton Lager": 1
+    },
+    "equipped": {
+      "body": "Pilot Jacket"
+    },
+    "locker_tier": 1,
+    "cube": {
+      "owned": false,
+      "level": 0,
+      "name": null
+    },
+    "in_cube": false,
+    "cube_context": null,
+    "run_channel_id": 1457384357969920182,
+    "last_action": {
+      "type": "emote",
+      "action": "emote",
+      "payload": {
+        "text": "secretly wanders off to fridge and starts nibbling on some cheese"
+      },
+      "ts": "2026-01-05T15:57:34Z"
+    }
+  },
+  "1457253286607589551": {
+    "name": "kruza",
+    "bag": {},
+    "equipped": {},
+    "stats": {},
+    "current_room": "neptune_lounge",
+    "run_channel_id": 1457927172743364767,
+    "run_seeded_channel_id": 1457927172743364767,
+    "last_action": {
+      "type": "emote",
+      "action": "grin",
+      "payload": {},
+      "ts": "2026-01-06T03:17:59Z"
+    },
+    "sneaking": true
+  }
+}

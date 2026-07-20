@@ -1,0 +1,62 @@
+## 5. Encounter Design: Thread Nodes
+
+In *Future Sky*, encounters are not static. They are threads — braided points of possibility that react, remember, and reconfigure. The thread node system enables modular, reusable narrative blocks that anchor world logic, player choice, and temporal causality.
+
+A thread node is a **living knot** — a self-contained microcosm of choice and consequence. It may appear as a story beat, puzzle, fight, dream, or glitch. Nodes can branch, mutate, or recur differently across timelines depending on memory, class, or player state.
+
+---
+
+### 🧱 Thread Node Anatomy
+
+Each node contains:
+
+- **`node_id`**: Unique identifier
+- **`trigger_type`**: Room-based, random, item-based, timed, or quest-linked
+- **`description`**: The prompt, scene, or situation presented
+- **`options`**: A list of player choices (label + response + effects)
+- **`effects`**: XP gain, stat change, enemy spawn, memory tag, item drop, etc.
+- **`completion_logic`**: Determines if node disappears, evolves, or persists
+- **`memory_flags`**: Tags attached to the player that influence future events
+
+---
+
+### 🔀 Branching & Repetition
+
+- Nodes **can repeat** under different triggers if memory tags allow
+- Outcomes may alter the **world state**, including room descriptions, enemy behavior, or NPC dialogue
+- Players with different **chakra resonance** or class alignment may unlock hidden options
+
+---
+
+### 🔁 Sample Options Format (JSON Schema)
+
+```json
+{
+  "node_id": "cyber_rat_encounter",
+  "trigger_type": "room",
+  "description": "A cyber-rat scurries from the shadows, eyes glowing blue.",
+  "options": [
+    {
+      "label": "Offer food",
+      "response": "The rat sniffs, then drops a glimmering tooth at your feet.",
+      "effects": ["gain_item:glimmering_tooth", "set_memory:fed_cyber_rat"]
+    },
+    {
+      "label": "Attack",
+      "response": "You lunge forward — it sparks and vanishes!",
+      "effects": ["start_combat:cyber_rat"]
+    }
+  ],
+  "completion_logic": "one_time",
+  "memory_flags": ["cyber_rat_seen"]
+}
+🧠 Narrative Guidelines
+Minimalism with hooks: Thread nodes should open space for interpretation, not over-explain.
+
+Resonant choice: Options should reflect tension between chakras, class tendencies, or meta-state.
+
+Causal lattice: Every thread pulled may ripple outward — but not every ripple is immediate.
+
+Fallback states: If no action is taken, idle or ambient outcomes can nudge the narrative.
+
+“Every choice is a song the world remembers — even if the singer forgets.”

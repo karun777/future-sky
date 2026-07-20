@@ -1,0 +1,396 @@
+{
+  "_meta": {
+    "canonical": "thread_nodes.json",
+    "version": "v0.4",
+    "last_updated": "2026-02-08",
+    "notes": [
+      "Refactor: consistent ordering, explicit requirements, and movement-friendly gating where appropriate.",
+      "Key rule: chips delivery MUST NOT fire unless chips_ordered is set (flag_set).",
+      "Optional: allows_movement can be used to make a node non-blocking during GO/TELEPORT (navigation v3.6.4 supports it)."
+    ]
+  },
+  "drq_sneak_lesson": {
+    "triggers": {
+      "on_enter_room": [
+        "dark_rat_queen_den"
+      ],
+      "once_per_character": true,
+      "requirements": {
+        "must_not_have_unlocked_commands": [
+          "sneak"
+        ]
+      }
+    },
+    "title": "A Scrape of Teeth in the Dark",
+    "text": "The Dark Rat Queen drifts from behind the bar like a shadow with a grin. A small rat crests the edge of the bench-seat and stares at you like it already knows your secrets.\n\n“Too loud,” she murmurs. “Even when you stand still.”\n\nThe rat taps the floor twice. Once. Twice.\n\nA rhythm like a hidden door.\n\nYour body understands before your brain does:\n**quiet is an action.**",
+    "reprompt": "🧷 The Dark Rat Queen’s grin doesn’t move. The rat’s rhythm waits. Your next breath is a choice.",
+    "options": [
+      {
+        "key": "1",
+        "label": "Try the rhythm. Quiet your body.",
+        "result": "You breathe shallow. You soften your steps in your mind. The rat’s tapping becomes a map you can feel.",
+        "effects": [
+          {
+            "type": "unlock_command",
+            "command": "sneak"
+          },
+          {
+            "type": "mark_complete"
+          }
+        ]
+      },
+      {
+        "key": "2",
+        "label": "Stay loud. Shrug it off.",
+        "result": "You shrug like it doesn’t matter.\n\nThe Queen’s grin widens — not cruel, just amused.\n\n“Later,” she says. “When you’re ready to stop announcing yourself.”",
+        "effects": [
+          {
+            "type": "mark_complete"
+          }
+        ]
+      }
+    ]
+  },
+  "pressure_in_the_veins_v1": {
+    "triggers": {
+      "on_enter_room": [
+        "main_square"
+      ],
+      "once_per_character": true,
+      "requirements": {
+        "must_not_have_unlocked_commands": [
+          "absorb",
+          "descalate",
+          "catalyse"
+        ]
+      }
+    },
+    "title": "Pressure in the Veins",
+    "text": "The square tightens.\n\nA voice rises too fast. Someone shoves back harder than they meant to. A bottle breaks — not thrown, just dropped — and the sound cuts through the crowd like a signal.\n\nYou feel it in your chest before your mind names it:\n**the moment tipping.**\n\nPeople are watching. Someone is about to make a decision.\n\nSo are you.",
+    "reprompt": "🧷 The crowd is still reading you. You can almost hear the next mistake being written.",
+    "options": [
+      {
+        "key": "1",
+        "label": "Absorb it. Hold the spike inside yourself.",
+        "result": "You draw the heat inward. The crowd’s edge dulls slightly — as if you just stole a match from a hand that wanted to burn.",
+        "effects": [
+          {
+            "type": "unlock_command",
+            "command": "absorb"
+          },
+          {
+            "type": "mark_complete"
+          }
+        ]
+      },
+      {
+        "key": "2",
+        "label": "De-escalate. Drop your voice and widen the room.",
+        "result": "You speak low. Not persuasive — just steady.\n\nSomeone laughs, relieved, and it breaks the spell. A few shoulders drop.",
+        "effects": [
+          {
+            "type": "unlock_command",
+            "command": "descalate"
+          },
+          {
+            "type": "mark_complete"
+          }
+        ]
+      },
+      {
+        "key": "3",
+        "label": "Catalyse. Push the moment through before it turns ugly.",
+        "result": "You clap once, sharp. You point. You re-route attention like a conductor.\n\nThe moment moves — not solved, but redirected.",
+        "effects": [
+          {
+            "type": "unlock_command",
+            "command": "catalyse"
+          },
+          {
+            "type": "mark_complete"
+          }
+        ]
+      }
+    ]
+  },
+  "nl_barmaid_chips_name": {
+    "triggers": {
+      "on_enter_room": [
+        "chip_counter"
+      ],
+      "on_idle_room": [
+        "chip_counter"
+      ],
+      "min_seconds": 20,
+      "once_per_character": true,
+      "requirements": {
+        "flag_not_set": "name_known",
+        "character_name_is_null": true
+      }
+    },
+    "title": "Which Pod?",
+    "text": "You realise you’re hungry — properly hungry — and you’ve been drawn here without noticing.\n\nThe queue feels like a ritual. Someone behind you whispers, reverent:\n“Best chips in the galaxy.”\n\nA tray slides out from a stainless slot with the soft confidence of a machine that’s done this for centuries.\n\nA counterkeeper — not quite staff, not quite priest — glances at the charge screen.\n\n“Pod name?” they ask, already typing. “What do I put it under?”",
+    "reprompt": "🧷 The counterkeeper waits with the charge screen open. “Pod name?”",
+    "prompt": {
+      "input_type": "text",
+      "text": "Give a name to charge the chips to."
+    },
+    "effects": [
+      {
+        "type": "set_character_name"
+      },
+      {
+        "type": "set_flag",
+        "params": {
+          "flag": "name_known",
+          "value": true
+        }
+      },
+      {
+        "type": "set_flag",
+        "params": {
+          "flag": "chips_ordered",
+          "value": true
+        }
+      },
+      {
+        "type": "set_status",
+        "params": {
+          "key": "hunger",
+          "value": 2,
+          "min": 0,
+          "max": 10
+        }
+      },
+      {
+        "type": "mark_complete"
+      }
+    ],
+    "after_text": "The counterkeeper nods once. “Done.”\n\nSomewhere in the line a stranger murmurs, approving: “First time, hey?”"
+  },
+  "nl_chips_delivered_anywhere": {
+    "triggers": {
+      "on_enter_room": [
+        "neptune_lounge",
+        "neptune_lounge_kitchen",
+        "kitchen_backline",
+        "main_square",
+        "pod_room",
+        "lounge_service_gate",
+        "lounge_priest_alcove",
+        "sector_48"
+      ],
+      "once_per_character": true,
+      "requirements": {
+        "flag_set": "chips_ordered",
+        "flag_not_set": "chips_delivered"
+      }
+    },
+    "title": "Late Delivery",
+    "text": "You’ve barely settled when a smell cuts through everything else.\n\nChips.\n\nA service-runner drone skids to a stop beside you, tray held out with unmistakable irritation.\n\n“I walked half the Lounge for this,” it says flatly. “Queue protocol exists for a reason.”\n\nIt pauses, recalculates, then adds:\n\n“…Enjoy.”",
+    "effects": [
+      {
+        "type": "set_flag",
+        "params": {
+          "flag": "chips_delivered",
+          "value": true
+        }
+      },
+      {
+        "type": "add_item",
+        "item": "itm_neptune_chips",
+        "qty": 1
+      },
+      {
+        "type": "adjust_status",
+        "params": {
+          "key": "hunger",
+          "delta": -2,
+          "min": 0,
+          "max": 10
+        }
+      },
+      {
+        "type": "mark_complete"
+      }
+    ],
+    "after_text": "They’re perfect anyway. Whatever tension was in your body drains out with the first bite."
+  },
+  "nl_security_scan_designation": {
+    "triggers": {
+      "on_enter_room": [
+        "lounge_service_gate"
+      ],
+      "once_per_character": true,
+      "requirements": {
+        "flag_not_set": "name_registered"
+      }
+    },
+    "title": "Identity Required",
+    "text": "A chrome security droid pivots into view.\n\nA soft tone. Pale scanner light.\n\n“IDENTITY REQUIRED.”\n“PRESENT DESIGNATION.”\n\nIts lens irises slightly, like it’s trying to look polite.",
+    "reprompt": "🧷 The scanner light stays on you. The droid waits, perfectly patient, perfectly unstoppable.",
+    "prompt": {
+      "input_type": "text",
+      "text": "The scanner waits.\n\n(Type YES to confirm your current name, or enter a different designation.)"
+    },
+    "effects": [
+      {
+        "type": "confirm_or_update_name"
+      },
+      {
+        "type": "set_flag",
+        "params": {
+          "flag": "name_registered",
+          "value": true
+        }
+      },
+      {
+        "type": "mark_complete"
+      }
+    ]
+  },
+  "nl_priest_origin_birthday": {
+    "triggers": {
+      "on_idle_room": [
+        "lounge_priest_alcove"
+      ],
+      "min_seconds": 45,
+      "once_per_character": true,
+      "requirements": {
+        "flag_not_set": "birthdate_known"
+      }
+    },
+    "title": "Questions of Origin",
+    "text": "The Lounge noise thins without disappearing.\n\nA robed figure sits calmly, as if she’s been waiting since before the building was built.\n\n“People arrive here from many directions,” she says.\n“But everyone arrives from somewhere.”\n\nShe tilts her head.\n\n“When were you born?”",
+    "reprompt": "🧷 Her gaze stays gentle and unblinking. “When were you born?” she asks again — like it matters to the wiring of the world.",
+    "prompt": {
+      "input_type": "text_or_empty",
+      "text": "Enter a date, or say nothing."
+    },
+    "effects": [
+      {
+        "type": "set_birthdate_if_provided"
+      },
+      {
+        "type": "conditional_flag",
+        "params": {
+          "if_birthdate_provided": {
+            "flag": "birthdate_known",
+            "value": true
+          },
+          "else": {
+            "flag": "birthdate_declined",
+            "value": true
+          }
+        }
+      },
+      {
+        "type": "mark_complete"
+      }
+    ]
+  },
+  "arrival_awakening_v1": {
+    "triggers": {
+      "on_enter_room": [
+        "pod_room"
+      ],
+      "once_per_character": true
+    },
+    "title": "Transit Pod 3417",
+    "text": "You awaken inside a transit pod.\n\nCold blue light filters through a frosted viewport.\n\nCondensation beads across the glass.\n\nYour memory feels fractured.\n\nYou cannot remember boarding.\n\nYou cannot remember arriving.\n\nSomething cold rests against your chest.\n\nA thin chain disappears beneath your transit garment.\n\nBeyond the pod walls you hear machinery.\n\nConstruction.\n\nVoices.\n\nTHUMP.\n\nTHUMP.\n\nTHUMP.\n\nThe rhythm continues.\n\nConstruction machinery.\n\nProbably.\n\nStatus Light: RED.\n\nSomeone outside is arguing.\n\n\"...not ready...\"\n\n\"...the Lounge wasn't supposed to open this cycle...\"\n\n\"...just get them settled...\"\n\nA folded brochure protrudes halfway from a dispenser slot.\n\nWELCOME TO TRITON CENTRAL.\n\nSafest Biodome in the Neptune Sector.\n\nSix consecutive cycles.",
+    "reprompt": "🧷 The red light glows steadily. Something cold hangs around your neck. Outside, the rhythmic banging continues.",
+    "options": [
+      {
+        "key": "1",
+        "label": "Listen.",
+        "result": "You hold still.\n\nA voice crackles through a wall speaker.\n\n'Drone 12, consciousness check complete.'\n\n'Drone 7, memory integrity?'\n\n'Stable enough.'\n\nA pause.\n\n'Good. Open them when the light changes.'\n\nTHUMP.\n\nTHUMP.\n\nTHUMP.\n\nThe voice waits for the rhythm to pass before continuing.\n\n'Or whatever they're calling maintenance this cycle.'",
+        "effects": [
+          {
+            "type": "set_flag",
+            "params": {
+              "flag": "arrival_listened",
+              "value": true
+            }
+          }
+        ]
+      },
+      {
+        "key": "2",
+        "label": "Press the red button.",
+        "result": "WARNING\n\nMANUAL OVERRIDE ACCEPTED.\n\nThe viewport briefly clears.\n\nFor a single impossible moment you see stars.\n\nAnd beyond them...\n\nSomething vast and blue.\n\nThen the frost returns.\n\nYou are no longer entirely certain the stars were outside.",
+        "effects": [
+          {
+            "type": "set_flag",
+            "params": {
+              "flag": "pressed_red_button",
+              "value": true
+            }
+          }
+        ]
+      },
+      {
+        "key": "3",
+        "label": "Inspect the brochure.",
+        "result": "The brochure unfolds automatically.\n\nWELCOME TO TRITON CENTRAL\n\nPlease enjoy your stay.\n\nPlease remain calm.\n\nPlease disregard any contradictory onboarding information.\n\nA loud metallic crash echoes somewhere outside.\n\nThe brochure does not acknowledge it.",
+        "effects": [
+          {
+            "type": "set_flag",
+            "params": {
+              "flag": "pod_brochure_read",
+              "value": true
+            }
+          }
+        ]
+      },
+      {
+        "key": "4",
+        "label": "Investigate the object around your neck.",
+        "result": "A thin chain disappears beneath the collar of your transit garment.\n\nAttached to it is a small metal key.\n\nBound to the key by a worn loop of cord hangs a small wooden cube.\n\nSix symbols have been burned into its faces.\n\nOne resembles a circle.\n\nOne resembles a heart.\n\nAnother resembles a crossed mark.\n\nThe remaining symbols feel directional somehow, though you cannot explain why.\n\nThe cube fits comfortably in your palm.\n\nUnremarkable.\n\nExcept for one detail.\n\nYou have absolutely no memory of acquiring either the key or the cube.\n\nAnd yet they feel strangely familiar.",
+        "effects": [
+          {
+            "type": "set_flag",
+            "params": {
+              "flag": "pod_key_discovered",
+              "value": true
+            }
+          },
+          {
+            "type": "set_flag",
+            "params": {
+              "flag": "pod_cube_discovered",
+              "value": true
+            }
+          }
+        ]
+      },
+      {
+        "key": "5",
+        "label": "Wait.",
+        "result": "You wait.\n\nThe machinery noise begins to fade.\n\nSomewhere outside a chime sounds.\n\nStatus Light: GREEN.\n\nFor the briefest moment you think you see a circular indentation beside the hatch.\n\nThen it is gone.",
+        "effects": [
+          {
+            "type": "set_flag",
+            "params": {
+              "flag": "waited_for_green",
+              "value": true
+            }
+          }
+        ]
+      },
+      {
+        "key": "6",
+        "label": "Question the situation.",
+        "result": "You stand.\n\nYou pace the small confines of the pod.\n\nYou examine the seams.\n\nThe speaker.\n\nThe viewport.\n\nThe brochure.\n\nThe red button.\n\nThe key.\n\nThe cube.\n\nNone of it makes sense.\n\nYou are suddenly struck by a simple possibility.\n\nWhat if this is all a mistake?\n\nThe thought arrives fully formed.\n\nNot panic.\n\nNot rebellion.\n\nJust a willingness to question the script.\n\nFor a moment the pod seems unusually quiet.\n\nThen a faint tone sounds from somewhere beyond the wall.\n\nAs if something has noticed.",
+        "effects": [
+          {
+            "type": "set_flag",
+            "params": {
+              "flag": "questioned_the_script",
+              "value": true
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

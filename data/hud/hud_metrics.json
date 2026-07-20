@@ -1,0 +1,19 @@
+{
+  "coherence": {
+    "label": "COHERENCE",
+    "default": 97,
+    "hidden": false
+  },
+
+  "parallelism": {
+    "label": "PARALLELISM",
+    "default": 78,
+    "hidden": false
+  },
+
+  "commotion": {
+    "label": "COMMOTION",
+    "default": "LOW",
+    "hidden": false
+  }
+}

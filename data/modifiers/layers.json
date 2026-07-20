@@ -1,0 +1,350 @@
+[
+  {
+    "id": "kruza_hit_harder_v2",
+    "enabled": true,
+    "priority": 100,
+    "meta": {
+      "label": "Kruza — Hit Harder",
+      "description": "+3 flat damage per hit (temporary tuning layer)",
+      "created_by": "dev",
+      "notes": [
+        "Combat tuning harness",
+        "Used for balance validation",
+        "Safe to remove once baseline is verified"
+      ]
+    },
+    "scope": "character",
+    "era_scope": {
+      "allowed": [
+        "manzo"
+      ],
+      "blocked": []
+    },
+    "selector": {
+      "user_ids": [
+        "1457253286607589551"
+      ]
+    },
+    "effects": [
+      {
+        "op": "add",
+        "path": "combat.damage_bonus",
+        "value": 3,
+        "note": "+3 flat damage per hit"
+      }
+    ]
+  },
+  {
+    "id": "signal_astro_resonance_v0",
+    "enabled": false,
+    "priority": 10,
+    "meta": {
+      "label": "Signal — Astro Resonance (v0)",
+      "description": "Expose astrological resonance as a readable signal (no power)",
+      "created_by": "dev",
+      "notes": [
+        "Does not modify stats",
+        "Purely descriptive / inspectable",
+        "Backed by extra.astrology data",
+        "No arithmetic permitted at v0"
+      ]
+    },
+    "scope": "character",
+    "era_scope": {
+      "allowed": [
+        "jyotzon",
+        "omnicron",
+        "manzo"
+      ],
+      "blocked": []
+    },
+    "selector": {
+      "all": true
+    },
+    "effects": [],
+    "signals": {
+      "astro_resonance": {
+        "source": "extra.astrology.placements",
+        "planets": [
+          "sun",
+          "moon",
+          "mercury",
+          "venus",
+          "mars",
+          "jupiter",
+          "saturn",
+          "uranus",
+          "neptune",
+          "pluto"
+        ],
+        "notes": [
+          "Used for narrative flavour",
+          "May later influence descriptions or choice framing",
+          "No arithmetic permitted at v0"
+        ]
+      }
+    }
+  },
+  {
+    "id": "signal_chakra_visibility_v0",
+    "enabled": false,
+    "priority": 10,
+    "meta": {
+      "label": "Signal — Chakra Visibility (v0)",
+      "description": "Declare chakra pools as visible concepts without mechanics",
+      "created_by": "dev",
+      "notes": [
+        "No spend or regen",
+        "No cross-chakra conversion",
+        "Supports UI and narrative surfacing only",
+        "Pool numbers remain in characters.pools (authoritative)"
+      ]
+    },
+    "scope": "character",
+    "era_scope": {
+      "allowed": [
+        "jyotzon",
+        "omnicron",
+        "manzo"
+      ],
+      "blocked": []
+    },
+    "selector": {
+      "all": true
+    },
+    "effects": [],
+    "signals": {
+      "chakra_pools": {
+        "earth": {
+          "label": "Muladhara",
+          "element": "earth",
+          "sense": "smell"
+        },
+        "water": {
+          "label": "Svadhisthana",
+          "element": "water",
+          "sense": "taste"
+        },
+        "fire": {
+          "label": "Manipura",
+          "element": "fire",
+          "sense": "vision"
+        },
+        "air": {
+          "label": "Anahata",
+          "element": "air",
+          "sense": "touch"
+        },
+        "ether": {
+          "label": "Vishuddha",
+          "element": "ether",
+          "sense": "hearing"
+        },
+        "spirit": {
+          "label": "Ajna/Sahasrara",
+          "element": "spirit",
+          "sense": "beyond"
+        }
+      }
+    }
+  },
+  {
+    "id": "signal_witness_momentum_parallelism_v0",
+    "enabled": false,
+    "priority": 9,
+    "meta": {
+      "label": "Signal — Witness/Momentum/Parallelism (v0)",
+      "description": "Expose witnessing + samskara momentum + coherence as inspectable signals (no mechanics)",
+      "created_by": "dev",
+      "notes": [
+        "Read-only narrative surfacing of the Anandamurtijii spine",
+        "No arithmetic, no stat modification, no pool mutation",
+        "Allows cogs to render metaphysics consistently without hardcoding prose",
+        "Sources are best-effort; missing fields must degrade gracefully"
+      ]
+    },
+    "scope": "character",
+    "era_scope": {
+      "allowed": [
+        "jyotzon",
+        "omnicron",
+        "manzo"
+      ],
+      "blocked": []
+    },
+    "selector": {
+      "all": true
+    },
+    "effects": [],
+    "signals": {
+      "witnessing_entity": {
+        "label": "Atman/Jivatman",
+        "source_candidates": [
+          "extra.status.witnessing_entity",
+          "extra.samskara.witnessing_entity",
+          "extra.metaphysics.witnessing_entity"
+        ],
+        "fallback": {
+          "mode": "constant",
+          "value": "witness_present"
+        },
+        "notes": [
+          "Witness is assumed present for any character record",
+          "This is not a power toggle; it is a framing signal"
+        ]
+      },
+      "cit_shakti": {
+        "label": "Cit (Consciousness)",
+        "source_candidates": [
+          "extra.metaphysics.cit_shakti",
+          "extra.status.cit_shakti"
+        ],
+        "fallback": {
+          "mode": "constant",
+          "value": "cosmic_consciousness"
+        },
+        "notes": [
+          "Cit is the capacity for subjectivation/perception",
+          "Narrative only at v0"
+        ]
+      },
+      "ananda_signal": {
+        "label": "Ananda (Divine bliss)",
+        "source_candidates": [
+          "extra.metaphysics.ananda_signal",
+          "extra.status.ananda_signal"
+        ],
+        "fallback": {
+          "mode": "constant",
+          "value": "latent"
+        },
+        "notes": [
+          "Used to colour descriptions of rest, safety, alignment",
+          "No mechanics at v0"
+        ]
+      },
+      "samskara_momentum": {
+        "label": "Samskara (momentum)",
+        "source_candidates": [
+          "extra.samskara.momentum_tags",
+          "extra.samskara.momentum_score",
+          "extra.status.momentum"
+        ],
+        "fallback": {
+          "mode": "constant",
+          "value": []
+        },
+        "notes": [
+          "This is the bridge term for 'karma loops'",
+          "At v0, only tags or a scalar may exist; both are tolerated"
+        ]
+      },
+      "parallelism_coherence": {
+        "label": "Parallelism (psyche/body coherence)",
+        "source_candidates": [
+          "extra.status.coherence",
+          "extra.metaphysics.parallelism"
+        ],
+        "fallback": {
+          "mode": "constant",
+          "value": "unknown"
+        },
+        "notes": [
+          "Used to narrate 'life' vs 'death' risk states",
+          "No mechanics at v0"
+        ]
+      },
+      "prana_vayus": {
+        "label": "Prana-vayus (10)",
+        "source_candidates": [
+          "extra.metaphysics.prana_vayus",
+          "extra.status.prana_vayus"
+        ],
+        "fallback": {
+          "mode": "constant",
+          "value": {
+            "internal": [
+              "prana",
+              "apana",
+              "samana",
+              "udana",
+              "vyana"
+            ],
+            "external": [
+              "naga",
+              "kurma",
+              "krkara",
+              "devadatta",
+              "dhananjaya"
+            ]
+          }
+        },
+        "notes": [
+          "Do not model physiology; this is a vocabulary index",
+          "If later used mechanically, it must be declared in JSON_CONTRACTS.md first"
+        ]
+      }
+    }
+  },
+  {
+    "id": "spec_skill_expression_layer_v0",
+    "enabled": false,
+    "priority": 0,
+    "meta": {
+      "label": "SPEC — Skill Expression Layer (v0)",
+      "description": "Labels-only scaffold for player expression (no mechanics)",
+      "created_by": "dev",
+      "notes": [
+        "This is not a skill tree",
+        "This does not grant abilities",
+        "Anchors vocabulary and structure only"
+      ]
+    },
+    "scope": "global",
+    "era_scope": {
+      "allowed": [
+        "jyotzon",
+        "omnicron",
+        "manzo"
+      ],
+      "blocked": []
+    },
+    "selector": {
+      "all": true
+    },
+    "effects": [],
+    "spec": {
+      "skill_expression_layer": {
+        "purpose": [
+          "Expose capability as player-facing expression",
+          "Differentiate outcomes by awareness, not speed",
+          "Support AFK continuity with attentive play peaks"
+        ],
+        "expression_channels": [
+          "combat",
+          "navigation",
+          "perception",
+          "speech",
+          "attunement",
+          "stealth",
+          "deescalation",
+          "craft"
+        ],
+        "expression_primitives": [
+          "stance",
+          "intent",
+          "timing_window",
+          "tradeoff",
+          "risk_acceptance",
+          "focus_target",
+          "resource_commitment"
+        ],
+        "constraints": [
+          "Must not mutate XP",
+          "Must not grant stats",
+          "Must not unlock commands"
+        ]
+      }
+    }
+  }
+]

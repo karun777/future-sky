@@ -1,0 +1,307 @@
+{
+  "neptune_lounge": {
+    "title": "Neptune Lounge — Domefront Arrival",
+    "description": "The heart of Triton Central. Warm neon light floods a space buzzing with off-worlders, smugglers, and storytellers. Neptune looms huge through a reinforced viewing dome. The chips smell divine.",
+    "image": "https://via.placeholder.com/800x600",
+    "soundcloud": "https://soundcloud.com/portal-sluts/surrendering_to_the_void_that_is_actually_a_million_hands_waiting_to_catch_us",
+    "tags": [
+      "hub",
+      "social",
+      "safe-zone"
+    ],
+    "items": [
+      "Triton Lager"
+    ],
+    "enemies": {
+      "Sewer Cyber-Rat": {
+        "hp": 12,
+        "attack": 4,
+        "xp": 3,
+        "loot": [
+          "Triton Lager"
+        ]
+      }
+    },
+    "exits": {
+      "north": "main_square",
+      "up": "sector_16",
+      "south": "sector_48"
+    },
+    "ambient_events": [
+      "A waitress bustles past carrying a sizzling plate of chips, the scent making your mouth water.",
+      "A docking flare from the spaceport briefly silhouettes the neon haze through the dome.",
+      "A synthwave track glitches and loops momentarily, before correcting itself with a bass drop.",
+      "A group of smugglers huddle in a corner, their conversation muffled but intense.",
+      "Someone drops a glass — it shatters with a cosmic echo, quickly swept away by a nimble cleaner drone."
+    ],
+    "return_echoes": [
+      "For a moment, the lights hesitate — as if the Lounge is quietly confirming you.",
+      "The low hum of the dome drifts out of sync, then settles again.",
+      "Something in the room seems to pause, just long enough to register your return.",
+      "The air carries a faint pressure, like the echo of a decision already made.",
+      "A soft flicker ripples across the glass above, unnoticed by anyone else.",
+      "The Lounge feels briefly misaligned — as though you arrived a heartbeat earlier than expected.",
+      "For an instant, the space around you feels rehearsed… then carries on."
+    ]
+  },
+  "main_square": {
+    "title": "Main Square — Market Confluence",
+    "description": "A central plaza under a translucent dome. Traders bark deals in dozens of tongues. Gigs echo from alley venues. A statue of a humanoid with a cracked face plate dominates the square.",
+    "image": "https://via.placeholder.com/800x600",
+    "tags": [
+      "market",
+      "encounter-zone"
+    ],
+    "items": [],
+    "enemies": {
+      "Pickpocket Drone": {
+        "hp": 10,
+        "attack": 3,
+        "xp": 3,
+        "loot": [
+          "Loose Bolt",
+          "Triton Lager"
+        ]
+      }
+    },
+    "exits": {
+      "south": "neptune_lounge",
+      "up": "sector_42"
+    },
+    "ambient_events": [
+      "A trader yells out an offer in a language you don't understand, but the urgency is universal.",
+      "An alley band strikes up a chaotic but catchy rhythm.",
+      "A street artist sprays neon graffiti on a service wall, the paint shimmering oddly.",
+      "A sudden gust under the dome carries the scent of ozone and roasted spices.",
+      "A dome maintenance drone whirs overhead, inspecting the aging transparent panels."
+    ]
+  },
+  "efiishents_office": {
+    "title": "Efiishent's Office",
+    "description": "A dim office with curved glass walls and alien ferns. Efiishent keeps strange hours and stranger company. The Dark Rat Queen's perfume still lingers.",
+    "image": "https://via.placeholder.com/800x600",
+    "tags": [
+      "private",
+      "lore-node"
+    ],
+    "items": [
+      "Key of Commotion",
+      "Encrypted Ledger"
+    ],
+    "enemies": {
+      "Glitch Mote": {
+        "hp": 8,
+        "attack": 2,
+        "xp": 4,
+        "loot": [
+          "Encrypted Ledger",
+          "Radiant Lichen"
+        ]
+      }
+    },
+    "exits": {
+      "down": "neptune_lounge",
+      "east": "sector_50"
+    },
+    "ambient_events": [
+      "A faint whisper in an alien tongue seems to echo from nowhere — or perhaps the plants.",
+      "The scent of the Dark Rat Queen's perfume briefly intensifies, then fades like a memory.",
+      "A stray light flickers, casting dancing shadows from the ferns and orbs.",
+      "You hear a quiet, rhythmic tapping — is it Efiishent meditating, or something else?",
+      "A small orb of light floats lazily across the room before dimming into nothingness."
+    ]
+  },
+  "sector_48": {
+    "title": "Sector 48",
+    "description": "A dimly lit maintenance corridor. The hum of Triton Central's infrastructure is louder here.",
+    "image": "https://via.placeholder.com/800x600",
+    "tags": [
+      "utility",
+      "transit"
+    ],
+    "items": [
+      "Loose Bolt",
+      "Radiant Lichen"
+    ],
+    "enemies": {
+      "Maintenance Gremlin": {
+        "hp": 14,
+        "attack": 5,
+        "xp": 5,
+        "loot": [
+          "Loose Bolt",
+          "Radiant Lichen"
+        ]
+      }
+    },
+    "exits": {
+      "north": "neptune_lounge"
+    },
+    "ambient_events": [
+      "A low rumble shakes the corridor — somewhere deep, machinery is re-aligning.",
+      "Sparks briefly cascade from an exposed wire, hissing before fading out.",
+      "The scent of radiant lichen sharpens, almost sweet before turning metallic.",
+      "A distant clang reverberates — maintenance or something else moving?",
+      "A ventilation fan kicks in suddenly, creating a tunnel of cool air that passes through."
+    ]
+  },
+  "sector_55": {
+    "title": "Sector 55",
+    "description": "A dusty walkway beneath the artificial light of Triton Central. Pipes hum in the walls and distant echoes raise questions.",
+    "image": "https://via.placeholder.com/800x600",
+    "tags": [
+      "tunnel",
+      "transition-zone"
+    ],
+    "items": [
+      "Ration Pack",
+      "Empty Syringe"
+    ],
+    "enemies": {
+      "Tunnel Skitterling": {
+        "hp": 9,
+        "attack": 3,
+        "xp": 3,
+        "loot": [
+          "Ration Pack"
+        ]
+      }
+    },
+    "exits": {
+      "north": "sector_54",
+      "down": "subjunction_12"
+    },
+    "ambient_events": [
+      "A deep mechanical thrum pulses through the walkway, felt more than heard.",
+      "Footsteps echo briefly — but you see no one ahead or behind.",
+      "Water drips methodically from a condensation pipe, the rhythm strangely comforting.",
+      "A flickering wall panel struggles to stay lit, casting eerie shadows.",
+      "You catch a fleeting glimpse of a maintenance drone disappearing around a bend."
+    ]
+  },
+  "sector_16": {
+    "title": "Sector 16 — Upper Walkway",
+    "description": "An elevated promenade above the Lounge, lined with conduits and observation rails. Triton Central’s pulse feels closer up here.",
+    "image": "https://via.placeholder.com/800x600",
+    "tags": [
+      "transit",
+      "upper"
+    ],
+    "items": [],
+    "enemies": {
+      "Rail Warden": {
+        "hp": 16,
+        "attack": 5,
+        "xp": 6,
+        "loot": [
+          "Pilot Jacket",
+          "Loose Bolt"
+        ]
+      }
+    },
+    "exits": {
+      "down": "neptune_lounge"
+    },
+    "ambient_events": [
+      "A soft vibration runs through the rail as a transit pod passes beneath the floor plating."
+    ]
+  },
+  "sector_42": {
+    "title": "Sector 42 — Balcony of Noise",
+    "description": "A mezzanine overlooking the market chaos. Sound bounces weirdly here, like the dome is remembering every shout.",
+    "image": "https://via.placeholder.com/800x600",
+    "tags": [
+      "overlook",
+      "transit"
+    ],
+    "items": [],
+    "enemies": {
+      "Echo Vagrant": {
+        "hp": 11,
+        "attack": 4,
+        "xp": 4,
+        "loot": [
+          "Triton Lager",
+          "Radiant Lichen"
+        ]
+      }
+    },
+    "exits": {
+      "down": "main_square"
+    },
+    "ambient_events": [
+      "A ripple of applause erupts below for a performer you can’t quite see."
+    ]
+  },
+  "sector_50": {
+    "title": "Sector 50 — Back Corridors",
+    "description": "Narrow corridors behind private rooms. Maintenance panels and hidden service doors suggest more than official routes.",
+    "image": "https://via.placeholder.com/800x600",
+    "tags": [
+      "service",
+      "transit"
+    ],
+    "items": [],
+    "enemies": {
+      "Service Stalker": {
+        "hp": 13,
+        "attack": 4,
+        "xp": 4,
+        "loot": [
+          "Empty Syringe",
+          "Loose Bolt"
+        ]
+      }
+    },
+    "exits": {
+      "west": "efiishents_office"
+    },
+    "ambient_events": [
+      "A panel clicks once, as if it almost opened — then decides not to."
+    ]
+  },
+  "sector_54": {
+    "title": "Sector 54 — Junction Walk",
+    "description": "A junction of pipes and footpaths where the hum of Triton Central turns into a steady chant.",
+    "image": "https://via.placeholder.com/800x600",
+    "tags": [
+      "junction",
+      "transit"
+    ],
+    "items": [],
+    "enemies": {},
+    "exits": {
+      "south": "sector_55"
+    },
+    "ambient_events": [
+      "A cool draft carries faint echoes of distant music, as if the Lounge is leaking through the walls."
+    ]
+  },
+  "subjunction_12": {
+    "title": "Subjunction 12 — Underworks",
+    "description": "Below the main routes, you find underworks where condensation drips and cables hang like vines. The city’s guts, exposed.",
+    "image": "https://via.placeholder.com/800x600",
+    "tags": [
+      "underground",
+      "danger"
+    ],
+    "items": [],
+    "enemies": {
+      "Cable Serpent": {
+        "hp": 18,
+        "attack": 6,
+        "xp": 7,
+        "loot": [
+          "Radiant Lichen",
+          "Loose Bolt"
+        ]
+      }
+    },
+    "exits": {
+      "up": "sector_55"
+    },
+    "ambient_events": [
+      "Something skitters in the dark, then goes still the moment you listen."
+    ]
+  }
+}

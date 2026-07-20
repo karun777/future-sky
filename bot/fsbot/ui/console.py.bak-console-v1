@@ -1,0 +1,221 @@
+from __future__ import annotations
+
+import discord
+
+# ============================================================
+# Future Sky Console
+# ============================================================
+
+FS_BLUE = 0x2F6BFF
+FS_PURPLE = 0x7C4DFF
+FS_GOLD = 0xF5C451
+FS_RED = 0xC63F3F
+FS_GREY = 0x555555
+
+
+# ============================================================
+# Room Panels
+# ============================================================
+
+def room_embed(
+    title: str,
+    description: str,
+    *,
+    color: int = FS_BLUE,
+    image: str | None = None,
+    thumbnail: str | None = None,
+) -> discord.Embed:
+
+    embed = discord.Embed(
+        title=f"🜂 {title}",
+        description=description,
+        color=color,
+    )
+
+    if thumbnail:
+        embed.set_thumbnail(url=thumbnail)
+
+    if image:
+        embed.set_image(url=image)
+
+    return embed
+
+
+# ============================================================
+# Thread Panels
+# ============================================================
+
+def thread_embed(
+    title: str,
+    description: str,
+    *,
+    color: int = FS_PURPLE,
+    image: str | None = None,
+    thumbnail: str | None = None,
+) -> discord.Embed:
+
+    embed = discord.Embed(
+        title=f"◈ {title}",
+        description=description,
+        color=color,
+    )
+
+    if thumbnail:
+        embed.set_thumbnail(url=thumbnail)
+
+    if image:
+        embed.set_image(url=image)
+
+    return embed
+
+
+def arrival_embed(
+    title: str,
+    description: str,
+    *,
+    image: str | None = None,
+) -> discord.Embed:
+
+    embed = discord.Embed(
+        title=f"◈ ARRIVAL EVENT • {title}",
+        description=description,
+        color=FS_RED,
+    )
+
+    if image:
+        embed.set_image(url=image)
+
+    embed.set_footer(
+        text="STATUS: ENTANGLED"
+    )
+
+    return embed
+
+
+# ============================================================
+# Internal
+# ============================================================
+
+def internal_embed(
+    text: str,
+) -> discord.Embed:
+
+    return discord.Embed(
+        title="💭 INTERNAL",
+        description=text,
+        color=FS_GREY,
+    )
+
+
+# ============================================================
+# Choices
+# ============================================================
+
+def choices_embed(
+    title: str,
+    choices: list[str],
+) -> discord.Embed:
+
+    body = "\n".join(
+        f"{i + 1}. {choice}"
+        for i, choice in enumerate(choices)
+    )
+
+    return discord.Embed(
+        title=f"◈ {title}",
+        description=body,
+        color=FS_GOLD,
+    )
+
+
+# ============================================================
+# System
+# ============================================================
+
+def system_embed(
+    title: str,
+    text: str,
+    *,
+    color: int = FS_GOLD,
+) -> discord.Embed:
+
+    return discord.Embed(
+        title=title,
+        description=text,
+        color=color,
+    )
+
+
+def error_embed(
+    text: str,
+) -> discord.Embed:
+
+    return discord.Embed(
+        title="⚠ SYSTEM",
+        description=text,
+        color=FS_RED,
+    )
+
+def hud_embed(
+    *,
+    coherence: int = 97,
+    parallelism: int = 78,
+    commotion: str = "LOW",
+) -> discord.Embed:
+
+    embed = discord.Embed(
+        title="◉ TELEMETRY",
+        color=FS_GREY,
+    )
+
+    embed.add_field(
+        name="♆ COHERENCE",
+        value=f"{coherence}%",
+        inline=True,
+    )
+
+    embed.add_field(
+        name="♄ PARALLELISM",
+        value=f"{parallelism}%",
+        inline=True,
+    )
+
+    embed.add_field(
+        name="✦ COMMOTION",
+        value=str(commotion),
+        inline=True,
+    )
+
+    return embed
+
+# ============================================================
+# HUD
+# ============================================================
+
+def add_hud(
+    embed: discord.Embed,
+    *,
+    coherence: int = 97,
+    parallelism: int = 78,
+    commotion: str = "LOW",
+) -> discord.Embed:
+
+    embed.add_field(
+        name="♆ COHERENCE",
+        value=f"{coherence}%",
+        inline=True,
+    )
+
+    embed.add_field(
+        name="♄ PARALLELISM",
+        value=f"{parallelism}%",
+        inline=True,
+    )
+
+    embed.add_field(
+        name="✦ COMMOTION",
+        value=str(commotion),
+        inline=True,
+    )
+
+    return embed
