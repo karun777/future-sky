@@ -225,3 +225,24 @@ sandbox/
 ###############################################################################
 
 !docs/**
+
+# OS metadata
+.DS_Store
+
+# Historical/local backup trees
+*.bak
+*.bak-*
+*.bak.*
+*.backup
+*.backup-*
+*.backup.*
+
+# Environment files
+.env
+.env.*
+*.env
+
+# Backup directories
+*.bak*/
+*.bak-*/
+*.bak.*/
