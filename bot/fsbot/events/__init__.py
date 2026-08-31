@@ -26,6 +26,7 @@ from datetime import datetime, timezone
 from typing import Any, Awaitable, Callable, DefaultDict, Deque, Dict, List, Mapping, Optional
 
 from .result import EventResult
+from .history import EventHistory
 from uuid import uuid4
 
 Event = Dict[str, Any]
@@ -87,8 +88,10 @@ class EventBus:
         *,
         logger: logging.Logger | None = None,
         recent_trace_limit: int = 100,
+        history: EventHistory | None = None,
     ):
         self.log = logger or logging.getLogger("futuresky.events")
+        self.history = history
         self._subscribers: DefaultDict[str, List[EventHandler]] = defaultdict(list)
         self._recent_traces: Deque[Dict[str, Any]] = deque(
             maxlen=max(1, int(recent_trace_limit)),
@@ -181,6 +184,7 @@ class EventBus:
 
         self._log_event_summary(event, traces)
         self._remember_trace(event, traces)
+        self._persist_history(event, traces)
         return traces
 
     async def _invoke_subscriber(
@@ -297,6 +301,25 @@ class EventBus:
                 .replace("+00:00", "Z"),
             }
         )
+
+    def _persist_history(
+        self,
+        event: Event,
+        traces: List[Dict[str, Any]],
+    ) -> None:
+        """Persist completed dispatch history without affecting publication."""
+        if self.history is None:
+            return
+
+        try:
+            self.history.append(event, traces)
+        except Exception as exc:
+            self.log.error(
+                "[EVENT_HISTORY] persistence failed for %s: %s: %s",
+                event.get("event_id"),
+                type(exc).__name__,
+                exc,
+            )
 
     def recent_traces(
         self,

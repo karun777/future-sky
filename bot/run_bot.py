@@ -75,6 +75,7 @@ from fsbot.cogs.router import RunRoutedContext
 from fsbot.state import GameState
 from fsbot.storage import Storage
 from fsbot.events import EventBus
+from fsbot.events.history import EventHistory
 from fsbot.presence import Presence
 from fsbot.scenarios import ScenarioService
 
@@ -104,7 +105,9 @@ bot = FutureSkyBot(command_prefix="!", intents=intents, help_command=None)
 
 # ---- Singletons shared across cogs ----
 storage = Storage()
-state = GameState(storage=storage)
+event_history = EventHistory()
+events = EventBus(logger=log, history=event_history)
+state = GameState(storage=storage, events=events)
 presence = Presence(storage=storage, state=state)
 scenarios = ScenarioService(
     world_time_provider=lambda: state.world_time_seconds,
@@ -116,7 +119,7 @@ bot.storage = storage    # type: ignore[attr-defined]
 bot.state = state        # type: ignore[attr-defined]
 bot.presence = presence  # type: ignore[attr-defined]
 bot.scenarios = scenarios  # type: ignore[attr-defined]
-bot.events = EventBus(logger=log)  # type: ignore[attr-defined]
+bot.events = events      # type: ignore[attr-defined]
 
 
 # ---- Boot integrity checks (observability, not architecture) ----
@@ -312,6 +315,16 @@ EXTENSIONS = [
     "fsbot.cogs.core",
     "fsbot.cogs.navigation",
     "fsbot.cogs.scenario_engine",
+    "fsbot.cogs.astrological_clock",
+    "fsbot.cogs.comet_cycle",
+    "fsbot.cogs.comet_observation",
+    "fsbot.cogs.temporal_resolver",
+    "fsbot.cogs.comet_pressure_field",
+    "fsbot.cogs.world_moments",
+    "fsbot.cogs.world_moment_context",
+    "fsbot.cogs.world_opportunity_matcher",
+    "fsbot.cogs.world_opportunity_gate",
+    "fsbot.cogs.world_opportunity_runtime",
     "fsbot.cogs.combat",
     "fsbot.cogs.ambient",
     "fsbot.cogs.threadnodes",

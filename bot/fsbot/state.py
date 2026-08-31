@@ -2,8 +2,8 @@
 # FILE META — fsbot/state.py
 # Canonical name: GameState (world clock + era resolution + heartbeat)
 #
-# Version: v0.4.0
-# Last edited: 2026-07-17
+# Version: v0.6.0 — Feather 8: Temporal Resolver Consumption
+# Last edited: 2026-08-04
 #
 # Authority:
 # - AUTHORITATIVE for runtime temporal state:
@@ -74,6 +74,8 @@ import time
 import logging
 from typing import Any, Dict, Optional
 
+from fsbot.events import EventBus, create_event
+
 # Kept: other modules may rely on discord import side-effects or typing
 import discord  # noqa: F401
 
@@ -89,8 +91,9 @@ except Exception:
 
 
 class GameState:
-    def __init__(self, storage):
+    def __init__(self, storage, events: Optional[EventBus] = None):
         self.storage = storage
+        self.events = events
         self.waves_ok = WAVES_OK
         self._audio_ready = False
 
@@ -103,6 +106,7 @@ class GameState:
         # World clock (persisted)
         self.world_time_seconds: int = 0
         self.WORLD_CLOCK_FILE = "data/time/world_clock.json"
+        self.TEMPORAL_RESOLVER_FILE = "data/time/temporal_resolver.json"
         self._heartbeat_ticks: int = 0
         self._persist_every_ticks: int = 5  # save every N heartbeats
 
@@ -196,14 +200,16 @@ class GameState:
             self.log.warning(f"[CLOCK] load failed: {type(e).__name__}: {e}")
             self.world_time_seconds = 0
 
-    def save_world_clock(self) -> None:
-        """Persist world_time_seconds atomically to avoid corruption on crash."""
+    def save_world_clock(self) -> bool:
+        """Persist world_time_seconds atomically. Return True only when durable."""
         try:
             payload = {"version": "v1", "world_time_seconds": int(self.world_time_seconds)}
             self._atomic_write_json(self.WORLD_CLOCK_FILE, payload)
             self.log.info(f"[CLOCK] saved world_time={self.world_time_seconds}s")
+            return True
         except Exception as e:
             self.log.warning(f"[CLOCK] save failed: {type(e).__name__}: {e}")
+            return False
 
     # ---------------------------
     # Era Time Profiles (v0) — Loader + Lookup
@@ -268,6 +274,61 @@ class GameState:
             return self.resolve_default_era()
 
     # ---------------------------
+    # Temporal resolution reader (Feather 8)
+    # ---------------------------
+
+    def get_resolved_temporal_state(self) -> Dict[str, Any]:
+        """Return the last durable Temporal Resolver truth for the next heartbeat.
+
+        The Clock does not calculate temporal behaviour and does not read
+        individual temporal authorities. It consumes only the resolver's
+        persisted public state.
+
+        Missing, malformed, non-finite, or unsafe state degrades to a neutral
+        multiplier of 1.0. This allows a fresh world to produce its first
+        heartbeat, after which the Temporal Resolver can establish canonical
+        state for subsequent heartbeats.
+        """
+        fallback = {
+            "effective_temporal_multiplier": 1.0,
+            "era": "unknown",
+            "version": "clock_neutral_fallback",
+        }
+
+        try:
+            with open(self.TEMPORAL_RESOLVER_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            if not isinstance(data, dict):
+                raise ValueError("temporal resolver state must be an object")
+
+            multiplier = float(data.get("effective_temporal_multiplier"))
+            if not (0.001 <= multiplier <= 1000000.0):
+                raise ValueError(
+                    f"unsafe effective_temporal_multiplier={multiplier!r}"
+                )
+
+            era = str(data.get("era") or "unknown").strip().lower()
+
+            return {
+                "effective_temporal_multiplier": multiplier,
+                "era": era or "unknown",
+                "version": str(data.get("version") or "unknown"),
+            }
+
+        except FileNotFoundError:
+            self.log.warning(
+                "[CLOCK] temporal resolver state unavailable; using neutral 1.0"
+            )
+            return fallback
+        except Exception as e:
+            self.log.warning(
+                f"[CLOCK] invalid temporal resolver state; using neutral 1.0: "
+                f"{type(e).__name__}: {e}"
+            )
+            return fallback
+
+    # ---------------------------
     # Heartbeat (v0)
     # ---------------------------
 
@@ -281,19 +342,51 @@ class GameState:
                 real_elapsed = max(1, int(now - last))
                 last = now
 
-                era = self.resolve_default_era()
-                profile = self.get_era_time_profile(era)
-                mult = int(profile.get("era_time_multiplier", 60))
+                # Feather 8: consume one previously persisted resolved truth.
+                # The current heartbeat can never rewrite its own rate.
+                temporal_state = self.get_resolved_temporal_state()
+                effective_time_multiplier = float(
+                    temporal_state["effective_temporal_multiplier"]
+                )
+                era = str(temporal_state.get("era") or "unknown")
+                temporal_resolution_version = str(
+                    temporal_state.get("version") or "unknown"
+                )
 
-                era_advanced = real_elapsed * mult
+                previous_world_time = int(self.world_time_seconds)
+                era_advanced = max(1, round(real_elapsed * effective_time_multiplier))
                 self.world_time_seconds += era_advanced
 
                 self._heartbeat_ticks += 1
-                if self._persist_every_ticks > 0 and (self._heartbeat_ticks % self._persist_every_ticks == 0):
-                    self.save_world_clock()
+
+                # A heartbeat announces durable reality, never an unpersisted intention.
+                persisted = self.save_world_clock()
+                if persisted and self.events is not None:
+                    event = create_event(
+                        event_type="heartbeat.advanced",
+                        source_system="clock",
+                        world_time=self.world_time_seconds,
+                        scope={"era": era},
+                        payload={
+                            "tick": self._heartbeat_ticks,
+                            "real_elapsed_seconds": real_elapsed,
+                            "effective_time_multiplier": effective_time_multiplier,
+                            "temporal_resolution_version": temporal_resolution_version,
+                            "era_advanced_seconds": era_advanced,
+                            "previous_world_time_seconds": previous_world_time,
+                            "world_time_seconds": int(self.world_time_seconds),
+                        },
+                    )
+                    await self.events.publish(event)
+                elif not persisted:
+                    self.log.warning(
+                        "[HEARTBEAT] event suppressed because world clock persistence failed"
+                    )
 
                 self.log.info(
-                    f"[HEARTBEAT] real={real_elapsed}s era={era} mult={mult} "
+                    f"[HEARTBEAT] real={real_elapsed}s era={era} "
+                    f"resolved_mult={effective_time_multiplier:.2f} "
+                    f"resolver={temporal_resolution_version} "
                     f"era_advanced={era_advanced}s world_time={self.world_time_seconds}s"
                 )
 

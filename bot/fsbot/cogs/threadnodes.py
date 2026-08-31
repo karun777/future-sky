@@ -27,8 +27,7 @@
 # - Subscribes to `character.entered_room`.
 # - Navigation remains authoritative for movement.
 # - Thread Nodes react to the published fact and own entanglement state/presentation.
-# - The legacy direct `maybe_trigger_on_enter(ctx, ...)` hook remains temporarily
-#   as a fallback until Navigation's direct bridge is removed.
+# - Room-entry triggering occurs only through the EventBus subscription.
 
 from __future__ import annotations
 
@@ -715,23 +714,6 @@ class ThreadNodesCog(commands.Cog):
         )
 
         return EventResult.delivered(node_id, room_id=rid)
-
-    # Legacy direct hook retained temporarily during Navigation cutover.
-    async def maybe_trigger_on_enter(self, ctx: commands.Context, user_id: str, room_id: str) -> None:
-        try:
-            self.reload_nodes()
-            char = self._get_char(user_id)
-
-            # Reset idle timer on room enter
-            rid = (room_id or "").strip().lower()
-            if rid:
-                self._idle_seen[(str(user_id), rid)] = time.time()
-
-            node_id = self._pick_on_enter_node_id(char, room_id)
-            if node_id:
-                await self._start_node(ctx, user_id, node_id)
-        except Exception:
-            return
 
     async def maybe_trigger_on_idle(self, ctx: commands.Context, user_id: str, room_id: str) -> None:
         try:

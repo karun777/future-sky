@@ -3,11 +3,11 @@
 # v3.8.0 refactor goals:
 # - Route all room-membership queries through bot.presence
 # - Remove Navigation's dependency on GameState.get_players_in_room()
-# - Preserve all existing movement, rendering, ThreadNodes, and EventBus behaviour
+# - Preserve all existing movement, rendering, entanglement, and EventBus behaviour
 #
 # Earlier v3.6.4 goals retained:
 # - Keep v3.6.3 behavior:
-#     - ThreadNodesCog on_enter triggers fire on GO and TELEPORT
+#     - ThreadNodesCog on_enter triggers fire through `character.entered_room`
 #     - If a node entangles, present it and avoid re-render spam
 # - Add "walkable entanglement" rule:
 #     - If active thread node has `allows_movement: true`, DO NOT block movement
@@ -22,8 +22,8 @@
 # Event Model:
 # - Navigation owns movement and publishes `character.entered_room` after persistence.
 # - Narrator reacts only through the EventBus; Navigation no longer knows Narrator exists.
-# - Thread Nodes remain on the legacy direct bridge temporarily because entanglement affects
-#   immediate movement/render sequencing.
+# - Thread Nodes react to room entry only through the EventBus. Navigation still reads
+#   entanglement state for movement and presentation sequencing.
 #
 # Notes:
 # - Room broadcast uses each player's run channel via ensure_player_run_channel().
@@ -138,20 +138,6 @@ async def _present_entanglement_if_any(bot, ctx: commands.Context, user_id: str)
     except Exception:
         return False
 
-
-async def _maybe_trigger_threadnodes_on_enter(bot, ctx: commands.Context, user_id: str, room_id: str) -> None:
-    """
-    Best-effort hook: after a room enter (go/teleport), let ThreadNodesCog decide
-    whether an on_enter_room node should fire.
-
-    Never raises: navigation must not break because narrative failed.
-    """
-    try:
-        tn = _get_threadnodes_cog(bot)
-        if tn and hasattr(tn, "maybe_trigger_on_enter"):
-            await tn.maybe_trigger_on_enter(ctx, str(user_id), str(room_id))  # type: ignore[attr-defined]
-    except Exception:
-        return
 
 
 def _has_unlocked_command(ch: Dict[str, Any], cmd: str) -> bool:
@@ -579,9 +565,6 @@ class NavigationCog(commands.Cog):
             except Exception:
                 pass
 
-        # Thread node auto-trigger on enter (if cog is loaded)
-        await _maybe_trigger_threadnodes_on_enter(self.bot, ctx, user_id, new_room)
-
         # If an on-enter thread node entangled the player, present it (and skip room render)
         if await _present_entanglement_if_any(self.bot, ctx, user_id):
             return
@@ -665,9 +648,6 @@ class NavigationCog(commands.Cog):
             await ctx.send(f"🌀 Teleported to **{self._room_title(room_id)}**.")
         else:
             await ctx.send(f"🌀 Teleported {target_member.mention} to **{self._room_title(room_id)}**.")
-
-        # Teleport counts as "enter room" for thread nodes
-        await _maybe_trigger_threadnodes_on_enter(self.bot, ctx, uid, room_id)
 
         # If teleport caused an entanglement moment, present it and stop.
         if await _present_entanglement_if_any(self.bot, ctx, uid):

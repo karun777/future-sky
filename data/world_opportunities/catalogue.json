@@ -1,0 +1,23 @@
+{
+  "version": "world_opportunity_catalogue_v0",
+  "opportunities": [
+    {
+      "id": "manzo_low_comet_signal_test",
+      "enabled": true,
+      "requirements": {
+        "era": [
+          "manzo"
+        ],
+        "comet_pressure_band": [
+          "still"
+        ]
+      },
+      "gate": {
+        "mode": "single_active"
+      },
+      "lifecycle": {
+        "expires_after_world_hours": 12
+      }
+    }
+  ]
+}
