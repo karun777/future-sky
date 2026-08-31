@@ -246,3 +246,8 @@ sandbox/
 *.bak*/
 *.bak-*/
 *.bak.*/
+
+# Local documentary intake and generated review bundles
+/docs/intake/
+/docs/review/*
+!/docs/review/items_recovered_v0.1.json

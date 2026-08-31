@@ -219,6 +219,7 @@ Located in `docs/archive/process-history/`:
 - `arrival.md`
 - `BIKERACK.md`
 - `BOOTSTRAP.md`
+- `BOOTSTRAP_v1.0_PRE_RECONCILIATION.md`
 - `R3GPT_FEATHERING.md`
 - `R3GPT_RESET_RITUAL.md`
 - `reset.md`
