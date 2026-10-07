@@ -136,7 +136,7 @@ Applies to every history treated as a member of a particular family.
 
 ### 5.3 Era
 
-Applies throughout Jyotzon, Manzo, Ominicron or another declared temporal grammar.
+Applies throughout Jyotzon, Manzo, Omincron or another declared temporal grammar.
 
 ### 5.4 Regional or institutional
 
@@ -450,7 +450,7 @@ It is a change to the conditions under which histories can remain coherent with 
 
 ---
 
-## 13. Vitriol and Efiishent
+## 13. Vitriol and efiishent
 
 The following material is preserved as working narrative context, not resolved canon.
 
@@ -459,18 +459,18 @@ Candidate givens:
 - Lord Vitriol possesses a genuine vision of nurturing human destructive potentiality.
 - Vitriol intends to break time.
 - Vitriol is also bound to the structure he seeks to break.
-- Efiishent believes he perceives Vitriol's plan.
-- Efiishent's reply is associated with Saturn in Aries.
+- efiishent believes he perceives Vitriol's plan.
+- efiishent's reply is associated with Saturn in Aries.
 - Autonomy and automation form a live opposition.
 - Freedom and order form a live opposition.
-- Vitriol and Efiishent are distinct Characters operating from mirrored potentiality.
+- Vitriol and efiishent are distinct Characters operating from mirrored potentiality.
 - Both are playing Roles within a larger drama.
 
 Explicitly unresolved:
 
 - whether either understands the mirroring;
 - whether their opposition is necessary, contingent or cultivated;
-- whether Efiishent's resistance reproduces part of Vitriol's method;
+- whether efiishent's resistance reproduces part of Vitriol's method;
 - whether Vitriol's destructive role ultimately serves a larger light;
 - whether either Character could exchange, refuse or transform their Role;
 - what Saturn in Aries ultimately expresses;
@@ -497,7 +497,7 @@ For each Anchor, the model should preserve:
 - who benefits from public misunderstanding;
 - which knowledge has been erased or displaced.
 
-Efiishent's suspicion is therefore not equivalent to proof.
+efiishent's suspicion is therefore not equivalent to proof.
 
 Vitriol's ignorance, if retained, is not evidence that the mirrored relationship is false.
 
@@ -646,7 +646,7 @@ Describe the narrow constellation surrounding one coming comet:
 
 ### Trial B — Mirrored Potentiality
 
-Test the relationship between Vitriol and Efiishent:
+Test the relationship between Vitriol and efiishent:
 
 - which propositions are given;
 - which remain authorially unresolved;

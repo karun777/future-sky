@@ -18,10 +18,12 @@ The macro structure contains:
 - three eras;
 - three era-scale Anchor constellations;
 - three comets, one associated with each era;
-- Efiishent and Lord Vitriol present within all three contexts;
-- seven timelines to be considered later across the complete three-era structure.
+- efiishent and Lord Vitriol present within all three contexts;
+- one fixed timeline in Jyotzon;
+- seven timelines, A–G, within Omincron;
+- one fixed timeline in Manzo.
 
-This document does not yet define the seven timelines or fully populate any era constellation.
+This document does not yet fully populate any era constellation or define the seven Omincron timelines.
 
 The first detailed constellation will be Manzo.
 
@@ -35,18 +37,20 @@ FUTURE SKY MACRO CONSTELLATION
 ├── Jyotzon Era Constellation
 │     └── Jyotzon Comet
 │
-├── Ominicron Era Constellation
-│     └── Comet Ominicron
+├── Omincron Era Constellation
+│     └── Comet Omincron
 │
 └── Manzo Era Constellation
       └── Manzo Comet
 
 Cross-context presences:
-  Efiishent
+  efiishent
   Lord Vitriol
 
-Later temporal reading:
-  Seven timelines across the three era constellations
+Timeline topology:
+  Jyotzon  → one fixed timeline
+  Omincron → seven timelines (A–G; later mapping)
+  Manzo    → one fixed timeline
 ```
 
 The three eras are not merely levels or sequential chapters. Each is a distinct temporal and civilizational context with its own experience of the comet, its own pressures and its own expression of recurring Characters.
@@ -64,7 +68,7 @@ The following propositions are treated as working givens for this research field
 The macro narrative spans:
 
 1. Jyotzon;
-2. Ominicron;
+2. Omincron;
 3. Manzo.
 
 ### A-002 — Three era constellations
@@ -98,9 +102,9 @@ This document does not yet assert whether the comets:
 
 The count of three is presently anchored. Their deeper relationship remains open.
 
-### A-004 — Cross-context Efiishent
+### A-004 — Cross-context efiishent
 
-Efiishent is present within all three era contexts.
+efiishent is present within all three era contexts.
 
 This may involve different versions, incarnations, expressions or historically connected selves. Exact identity and continuity across the three eras remain to be mapped.
 
@@ -123,17 +127,25 @@ Presence is anchored. Mechanism remains open.
 
 ### A-006 — Mirrored potentiality
 
-Efiishent and Vitriol are distinct Characters operating from mirrored potentiality.
+efiishent and Vitriol are distinct Characters operating from mirrored potentiality.
 
 The relationship remains a live question. Its ultimate meaning is not fixed.
 
-### A-007 — Seven timelines are deferred
+### A-007 — Timeline topology
 
-Seven timelines will later be considered across the three era constellations.
+The timeline count is distributed asymmetrically across the three eras:
 
-Version 0.1 does not map, number or assign those timelines.
+```text
+Jyotzon:  1 fixed timeline
+Omincron: 7 timelines — A, B, C, D, E, F and G
+Manzo:    1 fixed timeline
+```
 
-Existing seven-phase or seven-timeline material is retained as source material but is not silently imported into this macro structure.
+The seven timelines exist, in code and narrative modelling, within Omincron only.
+
+This document does not yet map timelines A–F. Timeline G has enough authored footing to be treated as the first detailed case, but not yet as the original, correct or privileged line.
+
+Existing seven-phase and seven-timeline material remains source material. It must not be silently imported where it conflicts with this topology.
 
 ---
 
@@ -166,15 +178,15 @@ A comet associated with Jyotzon is coming.
 - who can perceive it;
 - whether it is prophecy, memory or astronomical fact;
 - what Jyotzon civilisation knows;
-- how Efiishent appears in relation to it;
+- how efiishent appears in relation to it;
 - how Vitriol appears in relation to it;
-- whether its passage establishes conditions inherited by Ominicron or Manzo.
+- whether its passage establishes conditions inherited by Omincron or Manzo.
 
 ### Cross-context Characters
 
-**Efiishent**
+**efiishent**
 
-Existing material describes Efiishent of the Jyotzon as familiar and alien to later incarnations. The exact continuity remains open.
+Existing material describes efiishent of the Jyotzon as familiar and alien to later incarnations. The exact continuity remains open.
 
 **Vitriol**
 
@@ -182,27 +194,27 @@ Vitriol's Jyotzon presence is now a macro given. Its form, knowledge, actions an
 
 ---
 
-## 5. Era Constellation Two — Ominicron
+## 5. Era Constellation Two — Omincron
 
 **Era expression:** The Fracturing Now  
-**Comet identity:** Comet Ominicron  
+**Comet identity:** Comet Omincron  
 **Development status:** Macro outline
 
 ### Spelling note
 
-This research document uses **Ominicron**, reflecting the author's intentional project spelling.
+This research document uses **Omincron** as the authoritative spelling.
 
-Existing documents also contain **Omnicron**. That form is retained as a documentary variant and should not be silently deleted or normalised until the corpus is deliberately reconciled.
+The wider corpus contains several historical mutations of the name. Those forms remain documentary evidence, but this research layer does not treat them as alternate canonical spellings.
 
 ### Existing authored footing
 
 Current Red Book material describes:
 
 - the Cube returning to Earth;
-- Efiishent finding and decoding it;
-- Efiishent and allies gathering wizards and First Nations warriors across cultures;
+- efiishent finding and decoding it;
+- efiishent and allies gathering wizards and First Nations warriors across cultures;
 - Earth shifting its orbit;
-- humanity narrowly dodging Comet Ominicron;
+- humanity narrowly dodging Comet Omincron;
 - the comet searing past Earth's atmosphere;
 - debris, viruses, alien technology and interdimensional arrivals;
 - time-space becoming fractured;
@@ -214,7 +226,7 @@ These remain source propositions requiring later Anchor-by-Anchor classification
 ### Working Anchor
 
 ```text
-Comet Ominicron approaches Earth and is narrowly dodged.
+Comet Omincron approaches Earth and is narrowly dodged.
 ```
 
 ### Candidate surrounding Anchors
@@ -222,7 +234,7 @@ Comet Ominicron approaches Earth and is narrowly dodged.
 These are candidates, not yet sealed:
 
 - the Cube contains knowledge relevant to intervention;
-- Efiishent participates in decoding that knowledge;
+- efiishent participates in decoding that knowledge;
 - collective participation is required to shift Earth's orbit;
 - the comet passes close enough to leave material and temporal consequences;
 - the near passage contributes to time-space fracture;
@@ -239,13 +251,13 @@ Each candidate must later be classified as:
 
 ### Cross-context Characters
 
-**Efiishent**
+**efiishent**
 
-Efiishent's Ominicron participation has substantial authored footing, but his complete knowledge and motives remain bounded.
+efiishent's Omincron participation has substantial authored footing, but his complete knowledge and motives remain bounded.
 
 **Vitriol**
 
-Vitriol's Ominicron presence is anchored at macro level. His relationship to the comet, human destructive potentiality, the intervention and the resulting fractures remains open.
+Vitriol's Omincron presence is anchored at macro level. His relationship to the comet, human destructive potentiality, the intervention and the resulting fractures remains open.
 
 ---
 
@@ -281,17 +293,17 @@ A comet associated with Manzo returns.
 - what catching it requires;
 - whether catching it is desirable;
 - which Institutions prepare for it;
-- what records connect it to Jyotzon or Ominicron;
+- what records connect it to Jyotzon or Omincron;
 - what Vitriol seeks to break, corrupt, erase or redirect;
-- what Efiishent believes he perceives;
+- what efiishent believes he perceives;
 - which Anchors are vulnerable;
 - what remains beyond every participant's knowledge.
 
 ### Cross-context Characters
 
-**Efiishent**
+**efiishent**
 
-Efiishent is present in Manzo and is associated with the Cube and Neptune Lounge. His suspicions regarding Vitriol do not become proof merely because they are narratively important.
+efiishent is present in Manzo and is associated with the Cube and Neptune Lounge. His suspicions regarding Vitriol do not become proof merely because they are narratively important.
 
 **Vitriol**
 
@@ -307,7 +319,7 @@ The Manzo constellation should next identify:
 2. surrounding comet Anchors;
 3. continuity Anchors;
 4. vulnerable records and dependencies;
-5. Efiishent's knowledge boundary;
+5. efiishent's knowledge boundary;
 6. Vitriol's known actions and unknown role;
 7. Institutions and places affected;
 8. permitted variability;
@@ -337,9 +349,9 @@ The model must allow the author to discover the relationship rather than force a
 
 ---
 
-## 8. Efiishent and Vitriol across contexts
+## 8. efiishent and Vitriol across contexts
 
-Efiishent and Vitriol are macro-presences crossing all three era constellations.
+efiishent and Vitriol are macro-presences crossing all three era constellations.
 
 Their cross-context mapping should eventually distinguish:
 
@@ -360,8 +372,8 @@ Their cross-context mapping should eventually distinguish:
 ### Current invariant
 
 ```text
-Efiishent and Vitriol remain distinct Characters.
-Both are present across Jyotzon, Ominicron and Manzo.
+efiishent and Vitriol remain distinct Characters.
+Both are present across Jyotzon, Omincron and Manzo.
 They operate from mirrored potentiality.
 Both play Roles within a larger drama.
 The meaning of their relationship remains unresolved.
@@ -371,32 +383,73 @@ The system must not infer that one is secretly the other.
 
 ---
 
-## 9. Seven timelines — reserved layer
+## 9. Omincron's seven timelines — reserved layer
 
-Seven timelines will later be mapped across the three era constellations.
-
-This creates a future analytical surface:
+The seven timelines belong specifically to the Omincron era:
 
 ```text
-               Timeline 1 ... Timeline 7
-Jyotzon          [deferred mapping]
-Ominicron        [deferred mapping]
-Manzo            [deferred mapping]
+Omincron A
+Omincron B
+Omincron C
+Omincron D
+Omincron E
+Omincron F
+Omincron G
 ```
 
-The timelines may reveal:
+Jyotzon and Manzo each remain fixed to one timeline.
 
-- different comet outcomes;
-- different states of Anchor integrity;
-- different versions of Efiishent and Vitriol;
-- different knowledge distributions;
-- different interventions;
-- different histories of the Cube;
-- different relationships among the eras.
+This topology creates several deliberately open questions:
 
-Version 0.1 does not assume that every timeline has an equally accessible or complete expression in every era.
+- do all seven Omincron timelines inherit one shared Jyotzon past?
+- do all seven converge upon the same fixed Manzo history?
+- is Manzo outside, after or across the Omincron fracture?
+- can information, Characters or consequences cross between Omincron timelines?
+- does an Anchor breach create a line, destroy one, or disconnect it from the fixed eras?
+- are all seven lines equally real even when some are inaccessible or erased?
 
-It also does not assume that seven timelines are equivalent to seven simple branch outcomes.
+The seven lines are not cosmetic endings, progress stages or interchangeable simulations. Each may carry a distinct causal history, distribution of knowledge and state of Anchor integrity.
+
+### 9.1 Timeline G — first detailed case
+
+Timeline G is presently the best-formed Omincron timeline in the author's narrative.
+
+It is also:
+
+- narratively rich;
+- deliberately obfuscated;
+- only partially available to its own participants;
+- a candidate macro Anchor in its own right.
+
+Its possible Anchor status concerns **existence**, not privileged truth.
+
+A working proposition is:
+
+```text
+Timeline G must exist for the larger Omincron field to retain its intended structure.
+```
+
+That proposition does **not** yet mean that Timeline G is:
+
+- the original timeline;
+- the correct timeline;
+- the least corrupted timeline;
+- the destination of the other six;
+- fully recoverable;
+- fully understood by efiishent, Vitriol or the author.
+
+Future work on Timeline G should distinguish:
+
+1. Timeline G as a narrative container;
+2. the existence of Timeline G as a possible macro Anchor;
+3. the Anchors operating inside Timeline G;
+4. records, memories and observations of Timeline G;
+5. deliberate obfuscation surrounding it;
+6. whether obfuscation protects, imprisons or corrupts it;
+7. what efiishent and Vitriol each know, suspect and misread;
+8. which propositions are givens and which remain perspectival.
+
+The relatively complete Timeline G narrative should be recorded before its internal Anchors are classified.
 
 ---
 
@@ -404,22 +457,22 @@ It also does not assume that seven timelines are equivalent to seven simple bran
 
 ### Inside the present field
 
-- Jyotzon, Ominicron and Manzo;
+- Jyotzon, Omincron and Manzo;
 - one era constellation for each;
 - three comets;
-- Efiishent and Vitriol across all three;
+- efiishent and Vitriol across all three;
 - the Cube where relevant;
 - Anchor integrity and disturbance;
-- later seven-timeline mapping;
+- later mapping of Omincron timelines A–G;
 - possible continuity across eras;
 - partial knowledge and contradictory records.
 
 ### Outside the present task
 
-- fully defining the seven timelines;
+- fully defining the seven Omincron timelines;
 - naming the Jyotzon and Manzo comets;
 - resolving the relationship among the three comets;
-- resolving the ultimate meaning of Vitriol and Efiishent;
+- resolving the ultimate meaning of Vitriol and efiishent;
 - implementing Anchor machinery;
 - assigning runtime consequences;
 - rewriting canonical Red Book material;
@@ -448,7 +501,7 @@ Do not begin with schema design.
 
 Do not begin with runtime implementation.
 
-Do not begin by mapping all seven timelines.
+Do not begin by mapping all seven Omincron timelines.
 
 First establish what remains true across the Manzo field and what may honestly change.
 
@@ -463,17 +516,19 @@ First establish what remains true across the Manzo field and what may honestly c
 5. Does each comet possess its own life cycle?
 6. Which comet relationships are visible to the Cube?
 7. Does Vitriol attack the comets, their paths, their functions, their histories or knowledge of them?
-8. Which Anchor does Efiishent most fear naming?
-9. What persists across all seven timelines?
-10. Are some timelines produced by comet encounters while others precede them?
-11. Can an Era remember another Era accurately?
-12. What makes a timeline belong to the same macro constellation after an Anchor breach?
-13. What do Efiishent and Vitriol each carry across contexts?
-14. Which parts of their mirrored potentiality are given, and which remain interpretation?
-15. Can the larger drama be experienced without ever being fully known?
+8. Which Anchor does efiishent most fear naming?
+9. What persists across all seven Omincron timelines?
+10. Does one fixed Jyotzon history precede all seven lines?
+11. Does one fixed Manzo history follow all seven lines, or stand outside their fracture?
+12. Can an Era remember another Era accurately?
+13. What makes an Omincron timeline belong to the same macro constellation after an Anchor breach?
+14. What do efiishent and Vitriol each carry across contexts?
+15. Which parts of their mirrored potentiality are given, and which remain interpretation?
+16. Can the larger drama be experienced without ever being fully known?
+17. Is Timeline G's existence anchored even if its history remains obfuscated?
 
 ---
 
 ## Closing orientation
 
-> **Three eras. Three comets. Three constellations held within one bounded narrative field. Seven timelines will later reveal how the same givens produce different histories. Efiishent and Vitriol move through every context—not as omniscient masters, but as participants bound within the drama they help shape.**
+> **Three eras. Three comets. Three constellations held within one bounded narrative field. Jyotzon and Manzo remain fixed to one timeline; Omincron fractures into seven. Timeline G may itself be an Anchor, even while its history remains the most obfuscated. efiishent and Vitriol move through every context—not as omniscient masters, but as participants bound within the drama they help shape.**
