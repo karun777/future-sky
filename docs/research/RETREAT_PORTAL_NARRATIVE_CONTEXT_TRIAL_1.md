@@ -21,6 +21,7 @@ The live system may continue operating from `main` independently of this work.
 
 - `docs/research/NARRATIVE_CONTEXT_MODEL_v0.1.md`
 - `docs/research/ANCHOR_MODEL_v0.1.md`
+- `docs/research/THREE_ERAS_COMET_MACRO_CONSTELLATION_v0.1.md`
 - `docs/research/narrative-context-trials/MANZO_TREMBLING_GLASS_TRIAL_v0.1.md`
 
 ## Retreat
