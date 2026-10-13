@@ -3,6 +3,7 @@
 **Status:** Working research outline — not canon  
 **Version:** 0.2  
 **Date:** 2026-10-08  
+**Last updated:** 2026-10-13  
 **Scope:** Macro narrative field spanning three eras, one recurring comet, the Cube Loop and persistent cross-era Characters  
 **Runtime status:** Not implemented  
 **Supersedes:** `THREE_ERAS_COMET_MACRO_CONSTELLATION_v0.1.md`  
@@ -418,7 +419,95 @@ Manzo's comet encounter may contain:
 
 Celebration does not guarantee safety.
 
-The precise purpose of the Manzo quest, what is being "caught," and how its success closes the Omincron intervention remain to be authored.
+### 9.4 Story opening — displaced protagonists
+
+The story begins in Manzo. The protagonists must find one another.
+
+They do not know how they arrived and have forgotten who they are. Together they piece their identities and histories back together, then learn consciously to exercise capacities they used unconsciously during the 2019 intervention.
+
+The capabilities behind the Omincron intervention are ordinary within Manzo's technological world. Ubiquitous technological mediation has nevertheless allowed many inhabitants' direct faculties to atrophy.
+
+Which faculties are personally exercised, technologically mediated or dormant remains to be specified.
+
+### 9.5 Vitriol and the Earth-directed threat
+
+Lord Vitriol operates overtly in Manzo at the will of a dark cosmic entity. The entity has possessed the comet.
+
+Vitriol's agents spread a virus infecting a large percentage of Manzo citizens. The infected people **on Earth** generate the collective magnetic force that minutely adjusts the comet's trajectory toward direct impact with Earth.
+
+Earth is the target. Infection elsewhere in the system must not automatically be treated as contributing to this Earth-centred attraction.
+
+The movement is a literal death cult. Its participants include:
+
+- unwittingly infected citizens;
+- people corrupted or deceived by Vitriol;
+- agents willingly participating in his designs.
+
+Vitriol tells many lies. Very few know his actual purpose.
+
+The virus and attraction are authored world premises; a conventional biological or electromagnetic mechanism has not been established.
+
+### 9.6 Authored outcome — a new moon
+
+The protagonists overcome Vitriol and catch the comet.
+
+Catching is substantially harder than dodging. Earth gains a new moon: a great gift is delivered in place of catastrophe.
+
+This fixes the outcome, while leaving the detailed capture mechanism open.
+
+The comet's capture ends its previous recurring solar itinerary, unless a later authored intervention releases it.
+
+The precise action connecting this success back to the 2019 intervention remains unresolved.
+
+### 9.7 Cosmic revelation and knowledge boundaries
+
+At author level, the apparently dark entity is ultimately benign within a larger revelation: the cosmos is the dance of light and dark, the liila of existence scripted by cosmic consciousness.
+
+This revelation is not ordinary public knowledge in Manzo.
+
+Keep separate:
+
+- the author's cosmological knowledge;
+- the entity's and Vitriol's knowledge;
+- what agents are told;
+- what the protagonists discover;
+- what the broader population believes.
+
+How the revelation relates to suffering, responsibility and agency remains a philosophical and narrative question.
+
+### 9.8 Accepted capture scaffold — mechanics unresolved
+
+The author accepts the following direction as broadly matching the intended story:
+
+1. Long advance preparation and technology reshape the comet's arrival.
+2. Braking and trajectory control reduce its velocity relative to Earth.
+3. Vitriol turns the arrival toward catastrophe; the exact relationship to the preparations is open.
+4. Recovered human faculties and collective coordination contribute to overcoming Vitriol and completing capture.
+5. The comet becomes a stable additional Earth satellite, with continuing management of ice, outgassing and debris.
+
+These are working mechanisms, not a calculated mission design.
+
+Physical requirements:
+
+- energy and momentum must be transferred somewhere;
+- deflection alone is insufficient for permanent capture;
+- the final orbit must avoid Earth and the existing Moon and remain stable under solar and lunar perturbations;
+- the comet must remain structurally intact or have its fragments deliberately managed;
+- a small new moon is far easier to justify than a Moon-mass body;
+- ordinary human magnetism cannot account for the virus-driven attraction of a comet: this requires a declared speculative coupling or amplification mechanism.
+
+Gravity assists, propulsion and long preparation provide a physically grounded scaffold. The ritual, possession and retrocausal elements remain explicit Future Sky cosmology.
+
+Scientific grounding:
+
+- ESA, orbital energy exchange through gravity assists: <https://www.esa.int/Enabling_Support/Operations/What_are_gravity_assists>
+- NASA/JPL, study of propulsion-based small asteroid retrieval: <https://ntrs.nasa.gov/citations/20130010670>
+
+The asteroid study concerns metre-scale objects, not a kilometre-scale comet. It supports the principle of deliberate orbital relocation, not the engineering feasibility of this story's scale.
+
+Next calculation requires comet mass, arrival velocity and direction, preparation time, desired orbit and available technology.
+
+
 
 ---
 
@@ -476,7 +565,7 @@ Jyotzon and Manzo remain fixed to one timeline each. Whether all Omincron lines 
 When the author is ready:
 
 1. continue the Manzo overview without forcing implementation;
-2. state what the participants must accomplish there;
+2. detail how the protagonists recover their faculties and accomplish comet capture;
 3. identify how Manzo success closes the 2019 intervention;
 4. distinguish celebration from danger;
 5. determine how Timeline G relates to Omincron A–F;
@@ -487,4 +576,4 @@ When the author is ready:
 
 ## Closing orientation
 
-> **One comet passes through three eras and receives three names. In Jyotzon it brings catastrophe. In Omincron humanity narrowly turns it aside and breaks the sky. In Manzo its return is anticipated with celebration. The Cube carries Jyotzon forward; the Manzo quest reaches causally backward; efiishent and Vitriol move within a drama whose causes do not obey ordinary chronological order.**
+> **One comet passes through three eras and receives three names. In Jyotzon it brings catastrophe. In Omincron humanity narrowly turns it aside and breaks the sky. In Manzo its return is anticipated with celebration, its threat is overcome, and the comet is caught as Earth's new moon. The Cube carries Jyotzon forward; the Manzo quest reaches causally backward; efiishent and Vitriol move within a drama whose causes do not obey ordinary chronological order.**
