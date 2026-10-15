@@ -8,6 +8,8 @@ import discord
 from discord.ext import commands
 
 from fsbot.pod_wardrobe import WardrobeError, current_fit, select_uniform
+from fsbot.first_impression import first_impression
+from fsbot.cogs.router import get_run_channel_by_guild_if_any
 
 CATALOGUE_PATH = Path(__file__).resolve().parents[3] / "data/arrival/pod_uniforms.json"
 
@@ -20,6 +22,53 @@ def load_catalogue() -> dict:
 class WardrobeCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
+    async def cog_load(self):
+        events = getattr(self.bot, "events", None)
+        if events:
+            events.subscribe("character.entered_room", self._on_room_entry)
+
+    def cog_unload(self):
+        events = getattr(self.bot, "events", None)
+        if events:
+            try:
+                events.unsubscribe("character.entered_room", self._on_room_entry)
+            except Exception:
+                pass
+
+    async def _on_room_entry(self, event):
+        source = event.get("source") or {}
+        payload = event.get("payload") or {}
+        uid = str(source.get("actor_id") or "")
+        room = payload.get("to_room_id")
+        character = self.bot.storage.characters.get(uid)
+        if not isinstance(character, dict):
+            return
+        reaction = first_impression(character, room)
+        if not reaction:
+            return
+        channel = None
+        for guild in getattr(self.bot, "guilds", []):
+            channel = await get_run_channel_by_guild_if_any(self.bot, guild, uid)
+            if channel:
+                break
+        if channel is None:
+            return
+        # Mark only after we have somewhere to deliver. Save before sending
+        # to prevent repeated first impressions after later room entries.
+        arrival = character.setdefault("extra", {}).setdefault("arrival", {})
+        arrival["first_impression_seen"] = True
+        try:
+            self.bot.storage.save_characters()
+        except Exception:
+            arrival.pop("first_impression_seen", None)
+            return
+        title, dialogue = reaction
+        await channel.send(embed=discord.Embed(
+            title=title + " // FIRST IMPRESSION",
+            description=dialogue,
+            color=0x555555,
+        ))
 
     def _character(self, ctx):
         return self.bot.storage.characters.get(str(ctx.author.id))
