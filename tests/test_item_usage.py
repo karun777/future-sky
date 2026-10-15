@@ -18,11 +18,14 @@ class ItemUseTests(unittest.TestCase):
         self.assertTrue(consumed)
         self.assertEqual(self.ch["pools"]["hp"]["current"], 7)
 
-    def test_no_waste_at_full_hp(self):
+    def test_enjoy_at_full_hp(self):
         self.ch["pools"]["hp"]["current"] = 10
-        with self.assertRaises(ItemUseError):
-            use_item(self.ch, self.items, "Triton Lager")
-        self.assertEqual(self.ch["bag"]["Triton Lager"], 2)
+        self.items["Triton Lager"]["use_action"]["full_health_text"] = "A refreshing drink."
+        updated, message, consumed = use_item(self.ch, self.items, "Triton Lager")
+        self.assertEqual(message, "A refreshing drink.")
+        self.assertEqual(updated["pools"]["hp"]["current"], 10)
+        self.assertEqual(updated["bag"]["Triton Lager"], 1)
+        self.assertTrue(consumed)
 
     def test_read_does_not_consume(self):
         ch, message, consumed = use_item(self.ch, self.items, "Tiny Book")
@@ -40,12 +43,14 @@ class ItemUseTests(unittest.TestCase):
         self.assertEqual(updated["bag"]["Triton Lager"], 1)
         self.assertTrue(consumed)
 
-    def test_legacy_full_health_does_not_consume(self):
+    def test_legacy_full_health_consumes_without_healing(self):
         self.ch["pools"] = {"earth": {"current": 0, "max": 0}}
         self.ch["stats"] = {"hp": 10, "max_hp": 10}
-        with self.assertRaisesRegex(ItemUseError, "full health"):
-            use_item(self.ch, self.items, "Triton Lager")
-        self.assertEqual(self.ch["bag"]["Triton Lager"], 2)
+        updated, message, consumed = use_item(self.ch, self.items, "Triton Lager")
+        self.assertEqual(updated["stats"]["hp"], 10)
+        self.assertEqual(updated["pools"], self.ch["pools"])
+        self.assertEqual(updated["bag"]["Triton Lager"], 1)
+        self.assertTrue(consumed)
 
     def test_missing_item(self):
         with self.assertRaises(ItemUseError):
