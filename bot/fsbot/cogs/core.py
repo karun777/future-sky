@@ -409,7 +409,7 @@ class CoreCog(commands.Cog):
             return 1
 
     def _is_equipment(self, item_def: Dict[str, Any]) -> bool:
-        return str(item_def.get("type", "")).strip().lower() == "equipment"
+        return (str(item_def.get("type", "")).strip().lower() in {"equipment", "weapon", "armor"}\n                and bool(self._allowed_slots(item_def)))
 
     def _allowed_slots(self, item_def: Dict[str, Any]) -> set:
         equip_def = item_def.get("equip") if isinstance(item_def.get("equip"), dict) else {}
@@ -719,23 +719,11 @@ class CoreCog(commands.Cog):
         if not isinstance(equipped, dict) or not equipped:
             equipped = default_equipped_slots_v0()
 
-        # --- Equipped IDs (unique set so 2H mirror doesn't subtract twice) ---
-        equipped_ids = set()
-        for _, v in equipped.items():
-            if isinstance(v, str) and v.strip():
-                equipped_ids.add(v.strip())
-
-        # --- Bag (copy) and reconcile equipped items (display rule) ---
+        # Bag stores carried quantities only. Equipped items are stored in
+        # character.equipped and must not be subtracted from the bag again.
         bag = c.get("bag", {}) if isinstance(c.get("bag"), dict) else {}
-        bag_view = dict(bag)  # display copy
-        for iid in equipped_ids:
-            if iid in bag_view:
-                try:
-                    bag_view[iid] = max(0, int(bag_view.get(iid, 0)) - 1)
-                except Exception:
-                    bag_view[iid] = 0
-
-        bag_view = {k: v for k, v in bag_view.items() if isinstance(v, int) and v > 0}
+        bag_view = {key: qty for key, qty in bag.items()
+                    if isinstance(qty, int) and qty > 0}
 
         # Pretty display: show names where possible
         items_db = getattr(s, "items_db", {}) or {}
