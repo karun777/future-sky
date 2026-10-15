@@ -314,6 +314,7 @@ EXTENSIONS = [
     # Core gameplay layer
     "fsbot.cogs.core",
     "fsbot.cogs.wardrobe",
+    "fsbot.cogs.item_transfer",
     "fsbot.cogs.navigation",
     "fsbot.cogs.scenario_engine",
     "fsbot.cogs.astrological_clock",
