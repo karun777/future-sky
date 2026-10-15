@@ -1,0 +1,35 @@
+{
+  "version": "0.1-proposal",
+  "status": "playtest-provisional",
+  "slot": "chest",
+  "uniforms": [
+    {
+      "id": "pod_utility",
+      "name": "Utility Uniform",
+      "item_id": "itm_pod_uniform_utility",
+      "impression": "practical",
+      "description": "Plain workwear, carefully maintained. A tiny patch has been repaired by hand."
+    },
+    {
+      "id": "pod_formal",
+      "name": "Formal Uniform",
+      "item_id": "itm_pod_uniform_formal",
+      "impression": "official",
+      "description": "An immaculate tailored uniform. Its insignia is unfamiliar."
+    },
+    {
+      "id": "pod_technical",
+      "name": "Technical Uniform",
+      "item_id": "itm_pod_uniform_technical",
+      "impression": "technical",
+      "description": "Flexible fabric, tool loops, and seams that glow when touched."
+    },
+    {
+      "id": "pod_freeform",
+      "name": "Freeform Attire",
+      "item_id": "itm_pod_uniform_freeform",
+      "impression": "expressive",
+      "description": "Layered, adaptable clothing with a peculiar embroidered motif."
+    }
+  ]
+}
