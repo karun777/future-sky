@@ -1,6 +1,7 @@
 """Room item take/drop commands."""
 from discord.ext import commands
 from fsbot.item_transfer import transfer, TransferError
+from fsbot.lounge_freebies import seed_freebies, record_free_take
 
 
 class ItemTransferCog(commands.Cog):
@@ -25,6 +26,13 @@ class ItemTransferCog(commands.Cog):
         except (TransferError, ValueError, TypeError) as exc:
             await ctx.send(str(exc))
             return
+        freebie_message = None
+        if direction == "take":
+            try:
+                updated_character, freebie_message = record_free_take(updated_character, room_id, name)
+            except ValueError as exc:
+                await ctx.send(str(exc))
+                return
         # Save both sides, restoring in-memory state if either write fails.
         storage.characters[uid] = updated_character
         storage.rooms[room_id] = updated_room
@@ -43,7 +51,26 @@ class ItemTransferCog(commands.Cog):
             await ctx.send("The transfer could not be saved.")
             return
         verb = "take" if direction == "take" else "drop"
-        await ctx.send("You " + verb + " **" + name + "**.")
+        await ctx.send("You " + verb + " **" + name + "**." + (" " + freebie_message if freebie_message else ""))
+
+    @commands.Cog.listener()
+    async def on_ready(self):
+        storage = self.bot.storage
+        room = storage.rooms.get("neptune_lounge")
+        if not isinstance(room, dict):
+            return
+        try:
+            updated, changed = seed_freebies(room)
+            if changed:
+                storage.rooms["neptune_lounge"] = updated
+                try:
+                    storage.save_rooms()
+                except Exception:
+                    storage.rooms["neptune_lounge"] = room
+                    raise
+        except (ValueError, TypeError, OSError):
+            import logging
+            logging.getLogger("futuresky").exception("Could not seed Neptune Lounge free lagers")
 
     @commands.command(name="take")
     async def take(self, ctx, *, item: str = ""):
