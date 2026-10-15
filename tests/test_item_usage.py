@@ -30,6 +30,23 @@ class ItemUseTests(unittest.TestCase):
         self.assertEqual(ch["bag"]["itm_tiny_book"], 1)
         self.assertFalse(consumed)
 
+    def test_legacy_stats_hp_preserves_elemental_pools(self):
+        self.ch.pop("pools")
+        self.ch["stats"] = {"hp": 7, "max_hp": 10}
+        self.ch["pools"] = {"earth": {"current": 2, "max": 5}}
+        updated, message, consumed = use_item(self.ch, self.items, "Triton Lager")
+        self.assertEqual(updated["stats"]["hp"], 10)
+        self.assertEqual(updated["pools"], self.ch["pools"])
+        self.assertEqual(updated["bag"]["Triton Lager"], 1)
+        self.assertTrue(consumed)
+
+    def test_legacy_full_health_does_not_consume(self):
+        self.ch["pools"] = {"earth": {"current": 0, "max": 0}}
+        self.ch["stats"] = {"hp": 10, "max_hp": 10}
+        with self.assertRaisesRegex(ItemUseError, "full health"):
+            use_item(self.ch, self.items, "Triton Lager")
+        self.assertEqual(self.ch["bag"]["Triton Lager"], 2)
+
     def test_missing_item(self):
         with self.assertRaises(ItemUseError):
             use_item(self.ch, self.items, "Rusty Knife")
