@@ -165,9 +165,14 @@
     },
     "uses": [
       {
-        "label": "Drink (interaction not yet implemented)"
+        "label": "Drink (restores up to 4 HP)"
       }
-    ]
+    ],
+    "use_action": {
+      "kind": "heal",
+      "amount": 4,
+      "consume": true
+    }
   },
   "Key of Commotion (Prototype)": {
     "name": "Key of Commotion (Prototype)",
@@ -356,8 +361,15 @@
       {
         "label": "Offer to the Dark Rat Queen",
         "discovery": "queen_interest"
+      },
+      {
+        "label": "Read"
       }
     ],
-    "image": "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/objects/tiny_book/tiny_book_discord_v001.webp"
+    "image": "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/objects/tiny_book/tiny_book_discord_v001.webp",
+    "use_action": {
+      "kind": "read",
+      "text": "You open the Tiny Book. Its delicate pages invite closer study, but their meaning remains elusive."
+    }
   }
 }
