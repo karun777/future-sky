@@ -315,5 +315,12 @@
     "weight": 0,
     "rarity": "unusual",
     "provenance": "pod_room_hidden_panel"
+  },
+  "itm_tiny_book": {
+    "name": "Tiny Book",
+    "type": "quest",
+    "weight": 0,
+    "rarity": "unusual",
+    "description": "A book scarcely larger than a rat's paw. Its miniature pages are carefully bound, though its purpose remains unknown."
   }
 }
