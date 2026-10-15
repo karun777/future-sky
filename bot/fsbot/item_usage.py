@@ -46,12 +46,16 @@ def use_item(character, items, query):
         raise ItemUseError("Your health values are unavailable.")
     if type(current) is not int or type(maximum) is not int or maximum <= 0 or current < 0 or current > maximum:
         raise ItemUseError("Your health values are invalid.")
-    if current >= maximum:
-        raise ItemUseError("You're already at full health.")
     recovered = min(amount, maximum - current)
-    hp_target[hp_field] = current + recovered
-    if action.get("consume", True):
+    if recovered:
+        hp_target[hp_field] = current + recovered
+    consumed = bool(action.get("consume", True))
+    if consumed:
         updated["bag"][key] -= 1
         if updated["bag"][key] == 0:
             del updated["bag"][key]
-    return updated, f"You use {name} and recover {recovered} HP.", bool(action.get("consume", True))
+    if recovered:
+        message = f"You use {name} and recover {recovered} HP."
+    else:
+        message = str(action.get("full_health_text") or f"You enjoy {name}.")
+    return updated, message, consumed
