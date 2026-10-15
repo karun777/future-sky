@@ -318,6 +318,7 @@ EXTENSIONS = [
     "fsbot.cogs.inspection",
     "fsbot.cogs.gifting",
     "fsbot.cogs.item_usage",
+    "fsbot.cogs.bar_shop",
     "fsbot.cogs.navigation",
     "fsbot.cogs.scenario_engine",
     "fsbot.cogs.astrological_clock",
