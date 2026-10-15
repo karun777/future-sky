@@ -9,6 +9,7 @@ from discord.ext import commands
 
 from fsbot.pod_wardrobe import WardrobeError, current_fit, select_uniform
 from fsbot.first_impression import first_impression
+from fsbot.token_exchange import ExchangeError, discover_token, exchange_token
 from fsbot.cogs.router import get_run_channel_by_guild_if_any
 
 CATALOGUE_PATH = Path(__file__).resolve().parents[3] / "data/arrival/pod_uniforms.json"
@@ -165,6 +166,54 @@ class WardrobeCog(commands.Cog):
             await nodes.present_active_node(ctx, str(ctx.author.id))
             return
         await nodes._start_node(ctx, str(ctx.author.id), node_id)
+
+    async def _persist_item_action(self, ctx, updated, original):
+        uid = str(ctx.author.id)
+        self.bot.storage.characters[uid] = updated
+        try:
+            self.bot.storage.save_characters()
+        except Exception:
+            self.bot.storage.characters[uid] = original
+            await ctx.send("The world failed to remember that action. Try again.")
+            return False
+        return True
+
+    @commands.command(name="search")
+    async def search_pod(self, ctx: commands.Context, *, target: str = ""):
+        character = self._character(ctx)
+        if not isinstance(character, dict):
+            await ctx.send("You need a character first.")
+            return
+        if character.get("current_room") != "pod_room":
+            await ctx.send("You search the area, but find nothing tucked away.")
+            return
+        if target.strip().lower() not in ("", "pod", "panel", "loose panel"):
+            await ctx.send("You find no hidden compartment there. Try `!search panel`.")
+            return
+        try:
+            updated = discover_token(character)
+        except ExchangeError as exc:
+            await ctx.send(str(exc))
+            return
+        if await self._persist_item_action(ctx, updated, character):
+            await ctx.send("Your fingertips catch a loose panel beneath the pod berth. Behind it: an **Unmarked Brass Token**, warm despite the cold metal around it. You pocket it. (`!inventory`)")
+
+    @commands.command(name="offer")
+    async def offer_item(self, ctx: commands.Context, *, target: str = ""):
+        character = self._character(ctx)
+        if not isinstance(character, dict):
+            await ctx.send("You need a character first.")
+            return
+        if target.strip().lower() not in ("token", "brass token", "counterkeeper token", "token counterkeeper"):
+            await ctx.send("To offer the found object, use `!offer token`.")
+            return
+        try:
+            updated = exchange_token(character)
+        except ExchangeError as exc:
+            await ctx.send(str(exc))
+            return
+        if await self._persist_item_action(ctx, updated, character):
+            await ctx.send("You place the brass token on the counter. The counterkeeper stops polishing. They turn it over, find the notch, and close their fingers around it. “Where did you find this?” They glance at your clothes, then back at the token. “No. Don't answer that here.” The token disappears beneath the counter. **The exchange is remembered.**")
 
     @commands.command(name="fit")
     async def fit(self, ctx: commands.Context):
