@@ -173,7 +173,8 @@
       "amount": 4,
       "consume": true,
       "full_health_text": "You crack open a chilled Triton Lager. The first sip is magnificent. Somewhere beyond the dome, Neptune turns slowly in the darkness."
-    }
+    },
+    "image": "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/objects/triton_lager/triton_lager_discord_v001.webp"
   },
   "Key of Commotion (Prototype)": {
     "name": "Key of Commotion (Prototype)",
