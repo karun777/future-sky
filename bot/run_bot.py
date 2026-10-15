@@ -315,6 +315,7 @@ EXTENSIONS = [
     "fsbot.cogs.core",
     "fsbot.cogs.wardrobe",
     "fsbot.cogs.item_transfer",
+    "fsbot.cogs.inspection",
     "fsbot.cogs.navigation",
     "fsbot.cogs.scenario_engine",
     "fsbot.cogs.astrological_clock",
