@@ -398,7 +398,7 @@
       "once_per_character": true
     },
     "title": "The Thread in the Motif",
-    "text": "The counterkeeper is polishing the same glass for the third time. Their eyes return to the embroidery at your shoulder.\\n\\n“Where did you get that?”\\n\\nYou have the distinct feeling they know more than they're saying.",
+    "text": "The counterkeeper is polishing the same glass for the third time. Their eyes return to the embroidery at your shoulder.\n\n“Where did you get that?”\n\nYou have the distinct feeling they know more than they're saying.",
     "reprompt": "The counterkeeper waits. The glass remains suspiciously spotless.",
     "options": [
       {
