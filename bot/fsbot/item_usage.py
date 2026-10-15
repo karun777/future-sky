@@ -33,15 +33,23 @@ def use_item(character, items, query):
         raise ItemUseError(f"{name} has invalid healing data.")
     pools = updated.get("pools")
     hp_pool = pools.get("hp") if isinstance(pools, dict) else None
-    if not isinstance(hp_pool, dict):
-        raise ItemUseError("Your health pool is unavailable.")
-    current, maximum = hp_pool.get("current"), hp_pool.get("max")
-    if type(current) is not int or type(maximum) is not int or maximum <= 0:
-        raise ItemUseError("Your health pool is invalid.")
+    stats = updated.get("stats")
+    # Match the combat resolver's precedence: explicit HP pool first,
+    # legacy stats.hp/max_hp second. Never replace elemental pools.
+    if isinstance(hp_pool, dict):
+        current, maximum = hp_pool.get("current"), hp_pool.get("max")
+        hp_target, hp_field = hp_pool, "current"
+    elif isinstance(stats, dict) and "hp" in stats and "max_hp" in stats:
+        current, maximum = stats["hp"], stats["max_hp"]
+        hp_target, hp_field = stats, "hp"
+    else:
+        raise ItemUseError("Your health values are unavailable.")
+    if type(current) is not int or type(maximum) is not int or maximum <= 0 or current < 0 or current > maximum:
+        raise ItemUseError("Your health values are invalid.")
     if current >= maximum:
         raise ItemUseError("You're already at full health.")
     recovered = min(amount, maximum - current)
-    hp_pool["current"] = current + recovered
+    hp_target[hp_field] = current + recovered
     if action.get("consume", True):
         updated["bag"][key] -= 1
         if updated["bag"][key] == 0:
