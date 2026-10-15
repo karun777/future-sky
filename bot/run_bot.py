@@ -319,6 +319,7 @@ EXTENSIONS = [
     "fsbot.cogs.gifting",
     "fsbot.cogs.item_usage",
     "fsbot.cogs.bar_shop",
+    "fsbot.cogs.work",
     "fsbot.cogs.bouncer",
     "fsbot.cogs.intoxication",
     "fsbot.cogs.rumours",
