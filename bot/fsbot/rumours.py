@@ -9,7 +9,7 @@ RUMOUR_ID = "lounge_efiishent_drinking_v1"
 
 
 def witness_drinking(character, level):
-    if level < 3 or character.get("room") != "neptune_lounge":
+    if level < 3 or character.get("current_room") != "neptune_lounge":
         return character, None
     updated = deepcopy(character)
     rumours = updated.setdefault("rumours_heard_about_self", [])
@@ -38,4 +38,4 @@ def local_rumours(character):
     rumours = character.get("rumours_heard_about_self", [])
     if not isinstance(rumours, list):
         return []
-    return [r for r in rumours if isinstance(r, dict) and r.get("room_id") == character.get("room")]
+    return [r for r in rumours if isinstance(r, dict) and r.get("room_id") == character.get("current_room")]
