@@ -159,7 +159,7 @@ class WardrobeCog(commands.Cog):
         node_id = "nl_counterkeeper_motif"
         nodes.reload_nodes()
         if nodes._has_completed(character, node_id):
-            await ctx.send("The counterkeeper remembers your conversation, but isn't ready to say more.")
+            await ctx.send({"invented_story": "The counterkeeper looks up. “How is that story of yours coming along?” A flicker of amusement. “Don’t worry. I haven’t told anyone.”", "pod_truth": "The counterkeeper lowers their voice. “I have been thinking about that pod. Who stocked it, I mean.”", "asked_about_motif": "The counterkeeper glances at the embroidery. “I said I had seen it. I never said I understood it.”"}.get((character.get("flags") or {}).get("counterkeeper_motif_answer"), "The counterkeeper recognises you, but says nothing more."))
             return
         if nodes._get_active_node_id(character):
             await nodes.present_active_node(ctx, str(ctx.author.id))
