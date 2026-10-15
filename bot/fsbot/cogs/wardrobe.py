@@ -9,7 +9,7 @@ from discord.ext import commands
 
 from fsbot.pod_wardrobe import WardrobeError, current_fit, select_uniform
 
-CATALOGUE_PATH = Path("data/arrival/pod_uniforms.json")
+CATALOGUE_PATH = Path(__file__).resolve().parents[3] / "data/arrival/pod_uniforms.json"
 
 
 def load_catalogue() -> dict:
