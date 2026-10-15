@@ -763,6 +763,26 @@ class CoreCog(commands.Cog):
         embed.add_field(name="Bag", value=fmt_bag(bag_pretty), inline=False)
         await ctx.send(embed=embed)
 
+    @commands.command(name="inventory_debug", aliases=["invdebug"])
+    async def inventory_debug(self, ctx: commands.Context):
+        """Read-only inspection of the actual saved bag and equipment mapping."""
+        character = self.bot.storage.characters.get(str(ctx.author.id))
+        if not isinstance(character, dict):
+            await ctx.send("You need a character first.")
+            return
+        bag = character.get("bag") if isinstance(character.get("bag"), dict) else {}
+        equipped = character.get("equipped") if isinstance(character.get("equipped"), dict) else {}
+        lines = ["**Bag (stored quantities)**"]
+        lines.extend(f"`{key}`: {qty}" for key, qty in sorted(bag.items()))
+        lines.append("**Equipment (stored slots)**")
+        lines.extend(f"`{slot}`: `{iid}`" for slot, iid in equipped.items() if iid)
+        if not any(equipped.values()):
+            lines.append("No occupied slots")
+        lines.append("**Starter kit definition**")
+        lines.append("One Rusty Knife and one Leather Jacket per new character.")
+        lines.append("This diagnostic does not modify saved state.")
+        await ctx.send("\n".join(lines))
+
     # -------------------------
     # Equip / Unequip (v0)
     # -------------------------
