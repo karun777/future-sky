@@ -392,5 +392,66 @@
         ]
       }
     ]
+  },
+  "nl_counterkeeper_motif": {
+    "triggers": {
+      "once_per_character": true
+    },
+    "title": "The Thread in the Motif",
+    "text": "The counterkeeper is polishing the same glass for the third time. Their eyes return to the embroidery at your shoulder.\\n\\n“Where did you get that?”\\n\\nYou have the distinct feeling they know more than they're saying.",
+    "reprompt": "The counterkeeper waits. The glass remains suspiciously spotless.",
+    "options": [
+      {
+        "key": "1",
+        "label": "Tell the truth: it was waiting in the pod.",
+        "result": "“In the pod?” The counterkeeper sets down the glass. “Then somebody wanted you wearing it.” They say nothing more, but they remember your answer.",
+        "effects": [
+          {
+            "type": "set_flag",
+            "params": {
+              "flag": "counterkeeper_motif_answer",
+              "value": "pod_truth"
+            }
+          },
+          {
+            "type": "mark_complete"
+          }
+        ]
+      },
+      {
+        "key": "2",
+        "label": "Invent a story about where you found it.",
+        "result": "“That's a good story,” they say, without smiling. “Keep it. You'll need one.” Their gaze returns to the motif.",
+        "effects": [
+          {
+            "type": "set_flag",
+            "params": {
+              "flag": "counterkeeper_motif_answer",
+              "value": "invented_story"
+            }
+          },
+          {
+            "type": "mark_complete"
+          }
+        ]
+      },
+      {
+        "key": "3",
+        "label": "Ask why the motif matters.",
+        "result": "The counterkeeper turns the glass slowly. “Because I've seen it before. Not here.” They slide it under the counter. “Not yet.”",
+        "effects": [
+          {
+            "type": "set_flag",
+            "params": {
+              "flag": "counterkeeper_motif_answer",
+              "value": "asked_about_motif"
+            }
+          },
+          {
+            "type": "mark_complete"
+          }
+        ]
+      }
+    ]
   }
 }

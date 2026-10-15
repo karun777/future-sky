@@ -135,6 +135,37 @@ class WardrobeCog(commands.Cog):
         embed.add_field(name="Next", value="Try `!fit`, `!inventory` or `!sheet`.", inline=False)
         await ctx.send(embed=embed)
 
+    @commands.command(name="counterkeeper")
+    async def counterkeeper(self, ctx: commands.Context):
+        """Follow up the freeform motif recognition through Thread Nodes."""
+        character = self._character(ctx)
+        if not isinstance(character, dict):
+            await ctx.send("You need a character first.")
+            return
+        if character.get("current_room") != "neptune_lounge":
+            await ctx.send("The counterkeeper is at the Neptune Lounge arrival counter.")
+            return
+        arrival = (character.get("extra") or {}).get("arrival") or {}
+        if not arrival.get("first_impression_seen") or arrival.get("pod_uniform_selected") != "pod_freeform":
+            await ctx.send("The counterkeeper gives you a polite nod, then returns to work.")
+            return
+        if (character.get("equipped") or {}).get("chest") != "itm_pod_uniform_freeform":
+            await ctx.send("Without the embroidered attire, the counterkeeper has nothing to ask.")
+            return
+        nodes = self.bot.get_cog("ThreadNodesCog")
+        if nodes is None:
+            await ctx.send("The counterkeeper seems distracted. Try again later.")
+            return
+        node_id = "nl_counterkeeper_motif"
+        nodes.reload_nodes()
+        if nodes._has_completed(character, node_id):
+            await ctx.send("The counterkeeper remembers your conversation, but isn't ready to say more.")
+            return
+        if nodes._get_active_node_id(character):
+            await nodes.present_active_node(ctx, str(ctx.author.id))
+            return
+        await nodes._start_node(ctx, str(ctx.author.id), node_id)
+
     @commands.command(name="fit")
     async def fit(self, ctx: commands.Context):
         character = self._character(ctx)
