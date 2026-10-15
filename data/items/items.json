@@ -307,5 +307,13 @@
     "appearance_key": "pod_freeform",
     "social_cue": "expressive",
     "provenance": "feather_34_provisional_pod_wardrobe"
+  },
+  "itm_pod_brass_token": {
+    "name": "Unmarked Brass Token",
+    "type": "quest",
+    "description": "A warm brass disc found beneath a loose panel in the transit pod. Its edge carries a notch like a missing syllable.",
+    "weight": 0,
+    "rarity": "unusual",
+    "provenance": "pod_room_hidden_panel"
   }
 }
