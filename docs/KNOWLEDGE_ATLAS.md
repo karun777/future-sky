@@ -365,6 +365,16 @@ The most important current seams are:
 
 These are recorded work, not a licence for a broad refactor.
 
+## Current R3GPT continuity reset
+
+### `docs/R3GPT_RESET_RITUAL_v2.0.md`
+
+**Status:** adopted continuity and state-refresh protocol (2026-10-15).  
+**Invocation:** `RESET RITUAL — WAKE UP IN LOVE` or `RESET`.  
+**Purpose:** recover this Atlas, relevant branches and handovers, and verified task-specific state without making the author reassemble context. Report a compact state summary and one verifiable feather; do not mutate live state during reset.
+
+The January v1.0 reset ritual and `R3GPT_FEATHERING.md` remain preserved in `docs/archive/process-history/` as lineage. The v2.0 ritual supersedes v1.0's blanket `DEV_STATE.md` precedence and manual-paste requirements; feathering and Code is Love remain binding.
+
 ## Development method
 
 Future Sky advances one feather at a time.
