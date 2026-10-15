@@ -101,3 +101,67 @@ def relevance_for_context_transition(
         "source_observation_event_ids": list(ids) if evidence_valid else [],
         "relevance_version": "comet_pressure_transition_relevance_v0",
     }
+
+
+def relevance_for_context_sequence(
+    pattern: Dict[str, Any],
+    context_events: list[Dict[str, Any]],
+) -> Dict[str, Any]:
+    """Compare an ordered sequence of 3+ contexts to a remembered suffix.
+
+    A caller supplies events in chronological order. This is an exact,
+    descriptive correspondence, not prediction, significance or meaning.
+    """
+    contexts = []
+    if isinstance(context_events, list):
+        for event in context_events:
+            if not isinstance(event, dict) or event.get("event_type") != "world_moment.context":
+                contexts = []
+                break
+            payload = event.get("payload")
+            comet = payload.get("comet") if isinstance(payload, dict) else None
+            band = comet.get("pressure_band") if isinstance(comet, dict) else None
+            time = payload.get("moment_world_time_seconds") if isinstance(payload, dict) else None
+            event_id = event.get("event_id")
+            if (
+                not isinstance(event_id, str) or not event_id.strip()
+                or not isinstance(band, str) or not band.strip()
+                or type(time) is not int or time < 0
+            ):
+                contexts = []
+                break
+            contexts.append((event_id, band.strip(), time))
+
+    context_valid = (
+        len(contexts) >= 3
+        and len({entry[0] for entry in contexts}) == len(contexts)
+        and all(contexts[i][2] < contexts[i + 1][2] for i in range(len(contexts) - 1))
+    )
+
+    bands = pattern.get("pressure_bands") if isinstance(pattern, dict) else None
+    ids = pattern.get("source_observation_event_ids") if isinstance(pattern, dict) else None
+    evidence_valid = (
+        isinstance(pattern, dict)
+        and pattern.get("pattern_type") == "comet_pressure_sequence"
+        and isinstance(bands, list) and isinstance(ids, list)
+        and context_valid and len(bands) >= len(contexts)
+        and len(bands) == len(ids)
+        and all(isinstance(b, str) and bool(b.strip()) for b in bands)
+        and all(isinstance(i, str) and bool(i.strip()) for i in ids)
+    )
+
+    if not evidence_valid:
+        status = "insufficient_evidence"
+    elif bands[-len(contexts):] == [entry[1] for entry in contexts]:
+        status = "applicable"
+    else:
+        status = "not_applicable"
+
+    return {
+        "relevance_type": "comet_pressure_sequence_continuity",
+        "status": status,
+        "context_event_ids": [entry[0] for entry in contexts] if context_valid else [],
+        "context_pressure_bands": [entry[1] for entry in contexts] if context_valid else [],
+        "source_observation_event_ids": list(ids) if evidence_valid else [],
+        "relevance_version": "comet_pressure_sequence_relevance_v0",
+    }
