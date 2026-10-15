@@ -409,7 +409,8 @@ class CoreCog(commands.Cog):
             return 1
 
     def _is_equipment(self, item_def: Dict[str, Any]) -> bool:
-        return (str(item_def.get("type", "")).strip().lower() in {"equipment", "weapon", "armor"}\n                and bool(self._allowed_slots(item_def)))
+        return (str(item_def.get("type", "")).strip().lower() in {"equipment", "weapon", "armor"}
+                and bool(self._allowed_slots(item_def)))
 
     def _allowed_slots(self, item_def: Dict[str, Any]) -> set:
         equip_def = item_def.get("equip") if isinstance(item_def.get("equip"), dict) else {}
