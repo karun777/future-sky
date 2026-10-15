@@ -1,6 +1,7 @@
 """Discord item use command."""
 from discord.ext import commands
 from fsbot.item_usage import use_item, ItemUseError
+from fsbot.intoxication import drink
 
 
 class ItemUsageCog(commands.Cog):
@@ -20,6 +21,9 @@ class ItemUsageCog(commands.Cog):
         except (ItemUseError, ValueError, TypeError) as exc:
             await ctx.send(str(exc))
             return
+        if changed and item.strip().casefold() == 'triton lager':
+            updated, feeling = drink(updated)
+            message = message + ' ' + feeling
         if updated != character:
             storage.characters[uid] = updated
             try:
