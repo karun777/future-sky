@@ -28,7 +28,7 @@ class LoungeFreebiesTests(unittest.TestCase):
         self.assertEqual(original, {"bag": {}})
         self.assertEqual(three["social_counters"]["neptune_free_lagers_taken"], 3)
         self.assertIn("bartender", second)
-        self.assertIn("keeping count", third)
+        self.assertIn("bouncer", third)
 
     def test_other_items_and_rooms_do_not_count(self):
         original = {"bag": {}}
