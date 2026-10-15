@@ -15,7 +15,17 @@
       ],
       "hands_required": 1
     },
-    "provenance": "reconstructed_from_live_equipment_20260831"
+    "provenance": "reconstructed_from_live_equipment_20260831",
+    "description": "A well-used blade, its edge worn and its metal spotted with rust.",
+    "attributes": {
+      "damage": "1–3",
+      "hand": "Main hand"
+    },
+    "uses": [
+      {
+        "label": "Equip"
+      }
+    ]
   },
   "itm_leather_jacket": {
     "name": "Leather Jacket",
@@ -148,7 +158,16 @@
     "heal": 4,
     "stackable": true,
     "rarity": "common",
-    "provenance": "historical_storage_fallback"
+    "provenance": "historical_storage_fallback",
+    "description": "A chilled bottle of Triton's familiar local brew.",
+    "attributes": {
+      "restorative": "4 HP (catalogue value)"
+    },
+    "uses": [
+      {
+        "label": "Drink (interaction not yet implemented)"
+      }
+    ]
   },
   "Key of Commotion (Prototype)": {
     "name": "Key of Commotion (Prototype)",
@@ -321,6 +340,23 @@
     "type": "quest",
     "weight": 0,
     "rarity": "unusual",
-    "description": "A book scarcely larger than a rat's paw. Its miniature pages are carefully bound, though its purpose remains unknown."
+    "description": "A book scarcely larger than a rat's paw. Its miniature pages are carefully bound, though its purpose remains unknown.",
+    "attributes": {
+      "size": "Fits between a rat's paws",
+      "binding": "Miniature stitched pages"
+    },
+    "discoveries": {
+      "queen_interest": {
+        "attributes": {
+          "significance": "The Dark Rat Queen recognizes it"
+        }
+      }
+    },
+    "uses": [
+      {
+        "label": "Offer to the Dark Rat Queen",
+        "discovery": "queen_interest"
+      }
+    ]
   }
 }
