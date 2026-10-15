@@ -11,13 +11,13 @@ class BouncerError(ValueError):
 def resolve_bouncer(character, choice):
     if character.get("current_room") != "neptune_lounge":
         raise BouncerError("The bouncer is back at Neptune Lounge.")
-    if not character.get("social_flags", {}).get("neptune_bouncer_pending"):
+    if not character.get("social_flags", {}).get("neptune_bouncer_pending") and (character.get("social_counters", {}).get("neptune_free_lagers_taken", 0) < 3 or character.get("social_flags", {}).get("neptune_bouncer_resolved")):
         raise BouncerError("The bouncer isn't waiting for you.")
     choice = (choice or "").strip().casefold()
     if choice not in CHOICES:
         raise BouncerError("Try !bouncer apologise, buy, charm, or bluff.")
     updated = deepcopy(character)
-    flags = updated["social_flags"]
+    flags = updated.setdefault("social_flags", {})
     if choice == "buy":
         credits = updated.get("credits", 20)
         if type(credits) is not int or credits < 5:
