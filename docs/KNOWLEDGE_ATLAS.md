@@ -1,8 +1,9 @@
 # Future Sky — Knowledge Atlas
 
-**Version:** 1.0  
+**Version:** 1.1  
 **Status:** Current documentary entry point  
 **Established:** 2026-08-31  
+**Research routing updated:** 2026-10-15  
 **Runtime boundary:** Sealed through Feather 20
 
 ## Purpose
@@ -257,6 +258,24 @@ They are not live code and should never be mistaken for the operational source t
 Contains intake identity/inventory metadata and the original archive bundle. `docs/intake/flat/` is now empty.
 
 An empty flat intake is the completion condition of the 2026-08-31 classification pass.
+
+## September–October narrative-context research (not canon)
+
+The 31 August architectural reconciliation was followed by **isolated authoring research** on GitHub branch `research/narrative-context-trial-1`, 10 commits ahead of `main` as checked 2026-10-15. This branch is intentionally not merged into the live Neptune Lounge checkout.
+
+**Begin with:** `docs/handover/FUTURE_SKY_OCTOBER_RESEARCH_RECONCILIATION_20261015.md` on the documentation reconciliation branch, and `docs/research/RETREAT_PORTAL_NARRATIVE_CONTEXT_TRIAL_1.md` on the research branch.
+
+Research branch files:
+
+- `docs/research/NARRATIVE_CONTEXT_MODEL_v0.1.md` — contextualise authored writing while separating perspective, possibility and actual history.
+- `docs/research/ANCHOR_MODEL_v0.1.md` — authored givens bound possibility without prescribing outcomes; scope, attack, evidence, continuity and causal cascade remain research.
+- `docs/research/THREE_ERAS_COMET_MACRO_CONSTELLATION_v0.2.md` — current *working research* outline for one comet, three eras, Omincron timelines A–G, Manzo's opening and new-moon outcome; v0.1 is superseded **within research only**.
+- `docs/research/TIMELINE_G_CUBE_LOOP_v0.1.md` — Cube Loop and proposed retrocausal closure.
+- `docs/research/narrative-context-trials/MANZO_TREMBLING_GLASS_TRIAL_v0.1.md` — prose/context trial, not a sealed canonical scene.
+
+**Authority boundary:** none of these documents modifies the Red Book, the seven current architectural documents, the runtime, or the Feather 20 seal. Author-level givens recorded in working research must not be conflated with formal canonical promotion. The research explicitly does not implement relevance, resonance, interpretation or meaning.
+
+**Next review:** evaluate the prose and context trial, reconcile candidate Anchors with the author's intended story, and clarify open questions before choosing any runtime feather.
 
 ## Runtime evidence boundary
 
