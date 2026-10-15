@@ -171,7 +171,8 @@
     "use_action": {
       "kind": "heal",
       "amount": 4,
-      "consume": true
+      "consume": true,
+      "full_health_text": "You crack open a chilled Triton Lager. The first sip is magnificent. Somewhere beyond the dome, Neptune turns slowly in the darkness."
     }
   },
   "Key of Commotion (Prototype)": {
