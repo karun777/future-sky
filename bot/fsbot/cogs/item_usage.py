@@ -2,6 +2,7 @@
 from discord.ext import commands
 from fsbot.item_usage import use_item, ItemUseError
 from fsbot.intoxication import drink
+from fsbot.rumours import witness_drinking
 
 
 class ItemUsageCog(commands.Cog):
@@ -24,6 +25,9 @@ class ItemUsageCog(commands.Cog):
         if changed and item.strip().casefold() == 'triton lager':
             updated, feeling = drink(updated)
             message = message + ' ' + feeling
+            updated, whisper = witness_drinking(updated, updated['intoxication']['level'])
+            if whisper:
+                message += ' ' + whisper
         if updated != character:
             storage.characters[uid] = updated
             try:
