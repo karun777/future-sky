@@ -21,15 +21,8 @@ STAT_KEYS = ["strength", "dexterity", "constitution", "intelligence", "wisdom", 
 
 # Canonical equip slots
 EQUIP_SLOTS = [
-    "main_hand",
-    "off_hand",
-    "head",
-    "body",
-    "hands",
-    "legs",
-    "feet",
-    "accessory1",
-    "accessory2",
+    "main_hand", "off_hand", "head", "neck", "chest", "back",
+    "hands", "waist", "legs", "feet", "ring_1", "ring_2", "trinket",
 ]
 
 
