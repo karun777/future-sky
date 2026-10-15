@@ -39,4 +39,12 @@ def record_free_take(character, room_id, item_name):
         return updated, "A complimentary lager. Someone must be feeling generous."
     if previous == 1:
         return updated, "Another free lager? The bartender glances in your direction."
-    return updated, "You pocket the lager. Someone behind the bar seems to be keeping count."
+    if previous == 2:
+        updated.setdefault("social_flags", {})["neptune_bouncer_pending"] = True
+        return updated, ("You pocket the lager. A large shadow falls across the table. "
+                         "The bouncer folds his arms. Three complimentary lagers, mate? "
+                         "The first is hospitality. The second is generosity. The third is taking the piss. "
+                         "Use !bouncer apologise, !bouncer buy, !bouncer charm, or !bouncer bluff.")
+    if updated.get("social_flags", {}).get("neptune_bouncer_pending"):
+        return updated, "The bouncer is still waiting for an answer. Use !bouncer."
+    return updated, "The bartender watches you closely. You have been noticed."
