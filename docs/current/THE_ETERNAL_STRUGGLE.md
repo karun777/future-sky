@@ -108,7 +108,7 @@ In the Manzo arc, the comet is ultimately *caught*, not merely dodged: Vitriol i
 
 The deeper invitation is for participants to recognise that their own moment also asks something of them. The story must invite reflection and agency, not prescribe a contemporary political allegiance.
 
-## 9. Implications for Manzo Chapter One (provisional)
+## 10. Implications for Manzo Chapter One (provisional)
 
 Before assigning fixed governmental structures or faction allegiances, establish:
 
