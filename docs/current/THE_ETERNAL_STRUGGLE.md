@@ -45,7 +45,29 @@ No person or cohort is rendered incorruptible by claiming sadvipra status. Leade
 
 This philosophical frame must not be implemented as an automatic moral score, faction alignment or deterministic cycle engine. The current System Map explicitly treats the Social Cycle as a constitutional frame rather than runtime authority.
 
-## 5. The Mahabharata's recurring predicament
+## 5. Leadership that multiplies agency
+
+Bold, courageous, moral leadership is indispensable to the development of a just society. It is not confined to public office, charismatic personalities, military command or moments of spectacular crisis. Leadership is needed in families, clans, tribes, neighbourhoods, local governments, workplaces, corporations, activist movements, planetary and interstellar institutions — and within the inner universe of a single human being.
+
+The essential question is not *Who will save us?* but *Who will help us discover and exercise our own responsibility?*
+
+Leadership is not the accumulation of followers. Its deepest achievement is the cultivation of others' courage, discernment, competence and freedom to act. The measure of a leader is therefore visible not only in what that person accomplishes, but in **who becomes capable because they were there**.
+
+One practical teaching expresses this as **one step forward, then two steps back**: offer an example, open a path, then make room for others to enter, lead, question, disagree and surpass the initiator. This image was shared by the author from a friend's work teaching culture to young men; it is retained here without naming that person.
+
+The Mahabharata offers a productive lens: Krishna's guidance matters, but Arjuna cannot be reduced to an instrument of another's greatness. He must confront the dilemma, make sense of his obligations and act. Future Sky should similarly foreground those whose agency is awakened by guidance rather than constructing monuments to a guiding personality.
+
+A movement of minds changes the world. Individual initiative matters; so do shared learning, mutual accountability, institutional memory, and the countless acts of people whose names never become celebrated.
+
+The danger of idealising a leader is that admiration can become dependency. Reverence can silence scrutiny. Even an authentic teacher or sadvipra can be turned by followers into an object of personality worship, weakening the very human capacities the teaching seeks to develop. The narrative should resist glamorising its protagonists, its mentors, its spiritual exemplars and its authors.
+
+Leadership also requires moral courage: naming exploitation, exercising power when necessary, accepting consequences, and refusing the comfort of passive virtue. But courage without humility, accountability or the willingness to yield space can reproduce the domination it opposes.
+
+**A leader's finest legacy may be the moment they are no longer needed at the centre.**
+
+This is a narrative ethic, not a universal formula or an in-world ranking of morally superior people. Characters may embody it imperfectly; communities may dispute what good leadership requires.
+
+## 6. The Mahabharata's recurring predicament
 
 The Mahabharata is a creative and philosophical touchstone, not a template requiring every era to reproduce its cast or events. Its enduring questions concern dharma, legitimate power, obligation, restraint, loyalty, complicity and action under imperfect knowledge.
 
@@ -53,7 +75,7 @@ Who may exercise might? On whose behalf? When does restraint become complicity? 
 
 The external circumstances change; the ethical demands remain alive. Characters should face genuine dilemmas, not merely discover which faction has been labelled good.
 
-## 6. Capability, dependence and the capture of virtue
+## 7. Capability, dependence and the capture of virtue
 
 Civilisational capability and collective welfare do not necessarily advance together. Institutions may preserve themselves at the expense of their purpose. A society may gain astonishing technical capacities while losing the ability to recognise what its inhabitants can no longer do unaided.
 
@@ -63,7 +85,7 @@ Power can also **recruit virtues into its service**: passionate causes, focused 
 
 This is especially relevant to Manzo, but must not be treated as a settled claim about every institution there.
 
-## 7. Power, love and responsibility
+## 8. Power, love and responsibility
 
 Future Sky must resist two simplifications:
 
@@ -74,7 +96,7 @@ The question is not whether power will exist, but how it is exercised, constrain
 
 Love is not passive sentiment. It may require courage, opposition, construction, repair, sacrifice and persistent attention. The Code is Love remains the constitutional horizon, not a numerical mechanic.
 
-## 8. The protagonists and the present
+## 9. The protagonists and the present
 
 In Manzo, the protagonists begin separated, without memory of who they are or how they arrived. They must find one another and recover capacities they once exercised without conscious understanding. What was extraordinary to them may be ordinary technological practice in Manzo; what is ordinary to a healthy living being may have atrophied among Manzo's inhabitants.
 
@@ -100,13 +122,13 @@ Before assigning fixed governmental structures or faction allegiances, establish
 
 **Do not yet canonise** the proposed Civic Authority, commercial syndicates or any specific balance of power. They remain questions for the Chapter One world-state feather.
 
-## 10. Authorial source notes
+## 11. Authorial source notes
 
-The following poems are primary creative material shared by Karun Cowper. Their words and historical context should inform the project's voice without being mistaken for in-world canon. The first was identified by the author as written around the Occupy movement; its exact date was not supplied. The second was dated **19 February 2011** in the supplied email header.
+The following poems are primary creative material attributed for publication to **Efiishent — Scrapes Across the Timelines**. Their words and historical context should inform the project's voice without being mistaken for in-world canon. The first was identified by the author as written around the Occupy movement; its exact date was not supplied. The second was dated **19 February 2011** in the supplied email header.
 
 ### The Right to Might
 
-*Karun Cowper — around the Occupy movement; exact date unconfirmed*
+*Efiishent — Scrapes Across the Timelines — around the Occupy movement; exact date unconfirmed*
 
 > People far away…  
 > As far away as my ipod  
@@ -144,7 +166,7 @@ The following poems are primary creative material shared by Karun Cowper. Their 
 
 ### Amidst the haste...
 
-*Karun Cowper — 19 February 2011; untitled in the supplied text, identified by its opening line*
+*Efiishent — Scrapes Across the Timelines — 19 February 2011; untitled in the supplied text, identified by its opening line*
 
 > Amidst the haste...
 >
@@ -178,7 +200,7 @@ The following poems are primary creative material shared by Karun Cowper. Their 
 > Shall then we band together?  
 > Amidst the haste I ask this and with haste I implore your reply
 
-## 11. Stewardship and boundaries
+## 12. Stewardship and boundaries
 
 This feather is **narrative/philosophical guidance**. It:
 
