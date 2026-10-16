@@ -92,6 +92,38 @@ What the protagonists once did unconsciously may now require painstaking underst
 
 This makes **leadership that multiplies agency** a playable principle: progress can depend on helping another person act, not simply accumulating personal abilities.
 
+## 6A. Abundance and the fall from grace
+
+The protagonists begin with essentially unlimited credits. Material abundance is their starting blessing, not a reward to grind towards. Extraordinary spiritual or superhuman capacities are also under consideration, though their precise form is not yet settled. They begin separated and without memory of their identities.
+
+The fall from grace arises through encounters with established power structures and through choices, rather than an automatic confiscation of possessions. A protagonist might retain wealth while losing trust, gain followers while diminishing others' agency, or acquire status while becoming dependent on an institution. Apparent success may conceal a loss of discernment. Exercising power creates the *possibility* of corruption, not its inevitability; refusing to act can also carry consequences.
+
+Regaining capacities therefore means learning to exercise them responsibly, not simply accumulating more resources. How unlimited starting credits relate to the existing small-credit bar economy remains an explicit gameplay design question.
+
+## 6B. Division and lateral violence
+
+Lord Vitriol and his agents excel at turning people against one another: rumours, insinuations, partial truths, manipulated grievances, scapegoating, competitive status and divide-and-conquer strategies. The Omnicron virus is a particularly consequential instrument of his campaign, although its exact mechanism and effects require separate lore work.
+
+Historical colonial practices of encouraging division among oppressed communities offer a thematic parallel. The story must not imply that Indigenous or First Nations communities lack agency, that their disagreements are inherently illegitimate, or that every conflict is manufactured by an outsider.
+
+The existing Neptune Lounge rumour is a small beginning: reputations can alter relationships, and relationships can alter collective action. Future gameplay should allow investigation, correction, accountability and repair rather than only escalation.
+
+## 6C. Accountability without disposability
+
+An attachment to moral purity can itself become divisive. Movements pursuing justice may mistake condemnation of a person for accountability for an action, or treat imperfect participants as beyond growth.
+
+Future Sky should distinguish harmful conduct, necessary consequences and protection of those affected from an absolute verdict on a person's worth. Boundaries, restitution and removal of authority can be necessary; no one harmed is obliged to forgive or participate in reconciliation. Nevertheless, people should have meaningful opportunities to learn and change.
+
+The challenge is to oppose exploitation without dehumanising those responsible. This applies to protagonists, allies, bystanders and antagonists alike. It should not be reduced to a simple karma score.
+
+## 6D. Vitriol's unfinished journey
+
+Vitriol is also on a journey. His motives, formative experiences and internal contradictions belong to the unfolding narrative. He is responsible for the suffering he causes, but he is not outside the possibility of transformation.
+
+Understanding him is not the same as excusing him. Redemption is neither guaranteed nor owed; forgiveness is not a mandatory ending. The protagonists may ultimately discover that overcoming Vitriol demands more than defeating his immediate designs, without erasing the harm he has done.
+
+His relationship with the dark cosmic entity and the wider dance of light and darkness should unfold gradually. Do not decide his ultimate motives or fate in this scaffold.
+
 ## 7. Vitriol and the comet
 
 Lord Vitriol acts overtly in Manzo in service of a dark cosmic entity, whose ultimate significance is more complex than the characters initially know.
