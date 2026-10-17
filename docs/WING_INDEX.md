@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W5 Time**, first pass complete and parked. Latest sealed contribution: **W5-F2 — The Next Tick**.
-W1 Mythos, W2 Worlds, W3 Beings, W4 Play, W5 Time and W8 Stewardship each have two completed feathers. W6 Expression is the next proposed wing; no next feather activated.
+Current home: **W6 Expression**. Latest sealed contribution: **W6-F1 — How the World Reaches Us**.
+W1 Mythos, W2 Worlds, W3 Beings, W4 Play, W5 Time and W8 Stewardship are parked at two completed feathers each. No next feather activated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. We are establishing the chassis; this is not a permanent cap.
 
@@ -15,7 +15,7 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
 | W4 Play | 2 | [W4-F2](wings/W4-F2_ONE_LOOP_THAT_HOLDS.md) | W4-F3 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
-| W6 Expression | 0 | — | W6-F1 |
+| W6 Expression | 1 | [W6-F1](wings/W6-F1_HOW_THE_WORLD_REACHES_US.md) | W6-F2 |
 | W7 Engine | 0 | — | W7-F1 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
@@ -72,9 +72,10 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 
 ### W6 — Expression
 - Trajectory: coherent sensory language → consistent scenes → responsive atmosphere.
-- Reached: [compass document](current/items/I_HAVE_NO_COMPASS.md) describes approved art and deferred production. GitHub main at 6ebc3de includes an inspection-image URL, later than that document's “not yet hosted” claim.
-- Open: actual URL delivery and Discord rendering were not verified. Art approval, a committed URL and live delivery are distinct.
-- Candidate return: verify one selected asset's provenance, delivery and player presentation. Links: W2, W4, W7.
+- Sealed: [W6-F1 — How the World Reaches Us](wings/W6-F1_HOW_THE_WORLD_REACHES_US.md). 43 room descriptions/images/ambient sets, 15 private narratives, image/HUD/scene render paths, routing and optional audio inventoried.
+- Sampled first-party delivery: Dance Floor, Lager, Tiny Book and Compass images returned HTTP 200 and exact local bytes; FEED7 returned HTML 200. Discord rendering and audio not verified.
+- Open: 40 room placeholder references; several newer commands absent from routing allowlist; Tiny Book/Compass artwork untracked in runtime checkout; older global ambient JSON not the expected current loader path.
+- Candidate W6-F2: isolated item inspection card with discovery-boundary and image-reference checks. W6 count 1; W6-F2 unallocated. No presentation change performed.
 
 ### W7 — Engine
 - Trajectory: verified operational truth → reliable reproduction → bounded extension.
