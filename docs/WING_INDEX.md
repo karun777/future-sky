@@ -1,14 +1,14 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W1 Mythos**. Current feather: **W1-F1 — Manzo: The World We Wake Into**, in review.
-Latest sealed contribution: **W8-F2 — Bring the Dragon’s Memory Home**. W8 is parked with two completed feathers.
+Current home: **W1 Mythos**. Latest sealed contribution: **W1-F1 — Manzo: The World We Wake Into**.
+No next feather activated. W8 is parked with two completed feathers.
 
 ## Feather register
 
 | Wing | Completed since adoption | Latest sealed feather | Next unallocated ID |
 | --- | --- | --- | --- |
-| W1 Mythos | 0 | — | W1-F2 |
+| W1 Mythos | 1 | [W1-F1](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md) | W1-F2 |
 | W2 Worlds | 0 | — | W2-F1 |
 | W3 Beings | 0 | — | W3-F1 |
 | W4 Play | 0 | — | W4-F1 |
@@ -17,7 +17,7 @@ Latest sealed contribution: **W8-F2 — Bring the Dragon’s Memory Home**. W8 i
 | W7 Engine | 0 | — | W7-F1 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
-Allocated, in review: [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md). Its completed count stays zero pending Karun's review.
+[W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md) is reviewed and sealed. Karun selected finding one's way through space, memory or relationships as the creative doorway; specific mechanisms remain open.
 
 Counts exclude historical global feathers; do not renumber them. Sealed means the documented deliverable and checks are complete in this revision, not necessarily deployed to the live host.
 
@@ -30,8 +30,8 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Reached: global Feather 55, [The Eternal Struggle](current/THE_ETERNAL_STRUGGLE.md), is committed to main but its header still says proposed/review-before-merge. Merge does not itself settle canon promotion.
 - Settled: preserve [Red Book](RedBook_V7.2.md) authority and distinguish author knowledge from character knowledge.
 - Open: Manzo institutions, factions, collective welfare and atrophied faculties. October research remains research; [handover](handover/FUTURE_SKY_OCTOBER_RESEARCH_RECONCILIATION_20261015.md) provides the research-branch route.
-- Current feather: [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md), prepared for Karun's review. Separates Red Book foundation, working authored direction, open questions and character/runtime knowledge boundaries.
-- Return action: review/correct the checkpoint and discuss its one world-state question: what ordinary capability is technologically mediated for a resident but must be recovered directly by the protagonists? W1 count remains zero until review and sealing. No new canon adopted.
+- Sealed: [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md). Karun chose finding one's way through space, memory or relationships as the first creative doorway. W1 completed count is 1.
+- Return question: what does a resident experience when their usual means of finding their way is unavailable? W1-F2 is unallocated; technology, direct faculties and mechanics remain undecided. Research corpus is not promoted by this choice.
 
 ### W2 — Worlds
 - Trajectory: reconciled geography → coherent local exploration → connected regions.
@@ -82,6 +82,6 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 
 ## Shared direction and switching
 
-Approved direction is content-first, preserving the existing architecture. Karun activated W1-F1 on 17 October 2026: the Manzo checkpoint is prepared and in review. The wider Chapter One world-state design is not automatically authorised by that checkpoint.
+Approved direction is content-first, preserving the existing architecture. Karun reviewed and sealed W1-F1 on 17 October 2026, selecting orientation through space, memory or relationships. The wider Chapter One world-state design is not automatically authorised by that checkpoint.
 
 Leave: outcome and evidence, source revision/date, settled/open questions, affected wings, and the next bounded candidate. Resume by reading those sources and verifying changed facts. Update the home checkpoint and count when sealing; update linked checkpoints only where their evidence changed.
