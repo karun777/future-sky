@@ -373,5 +373,44 @@
       "kind": "read",
       "text": "You open the Tiny Book. Its delicate pages invite closer study, but their meaning remains elusive."
     }
+  },
+  "itm_i_have_no_compass": {
+    "name": "I Have No Compass",
+    "type": "artifact",
+    "rarity": "unique",
+    "stackable": false,
+    "portability": "portable",
+    "bind_policy": "unbound",
+    "transfer_policy": "tradeable",
+    "provenance": "Omincron-era device belonging to Efiishent; recovered in his Manzo-era office",
+    "description": "A small, weathered pocket compass. Its needle has slipped from the central pivot and lies awkwardly beneath the scratched glass. It looks as though a steady hand might set it right.",
+    "attributes": {
+      "condition": "Needle dislodged",
+      "origin": "Omincron era"
+    },
+    "uses": [
+      {
+        "label": "Attempt to reseat the needle"
+      }
+    ],
+    "discoveries": {
+      "seven_left_directions": {
+        "attributes": {
+          "anomaly": "Points in the left direction seven times a day"
+        }
+      },
+      "temporal_compulsion": {
+        "attributes": {
+          "anomaly": "An absorbed recipient can become trapped in a temporal stasis loop"
+        }
+      }
+    },
+    "tags": [
+      "temporal",
+      "compass",
+      "efiishent",
+      "omincron"
+    ],
+    "notes": "Authored artefact. Repair check difficulty, trigger/resistance, stasis duration, and runtime action handlers remain unspecified; hidden abilities are not yet executable."
   }
 }
