@@ -6,6 +6,12 @@
 **Research routing updated:** 2026-10-15  
 **Runtime boundary:** Sealed through Feather 20
 
+## Eight-wing continuity — adopted 17 October 2026
+
+For current development position, counts and return checkpoints, read the [Wing Index](WING_INDEX.md) and its [adopted charter](current/EIGHT_WINGS_CHARTER.md). Record the current wing and feather when restoring or switching work.
+
+The Feather 20 material below is an older architectural checkpoint. Read the [approved content-first phase closure](current/PHASE_CLOSURE_EPISTEMIC_FOUNDATIONS_2026-10-15.md) and the index before naming a next feather. Verify repository and live state separately; this navigation does not rewrite architectural authority or promote research.
+
 ## Purpose
 
 This Atlas tells a future steward where Future Sky’s knowledge lives, what kind of authority each source carries and how to resolve apparent conflict.
