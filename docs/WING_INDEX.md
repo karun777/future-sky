@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W4 Play**, first pass complete and parked. Latest sealed contribution: **W4-F2 — One Loop That Holds**.
-W1 Mythos, W2 Worlds, W3 Beings, W4 Play and W8 Stewardship each have two completed feathers. W5 Time is the next proposed wing; no next feather activated.
+Current home: **W5 Time**. Latest sealed contribution: **W5-F1 — What Time Is It Here?**.
+W1 Mythos, W2 Worlds, W3 Beings, W4 Play and W8 Stewardship are parked at two completed feathers each. No next feather activated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. We are establishing the chassis; this is not a permanent cap.
 
@@ -14,7 +14,7 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | W2-F3 |
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
 | W4 Play | 2 | [W4-F2](wings/W4-F2_ONE_LOOP_THAT_HOLDS.md) | W4-F3 |
-| W5 Time | 0 | — | W5-F1 |
+| W5 Time | 1 | [W5-F1](wings/W5-F1_WHAT_TIME_IS_IT_HERE.md) | W5-F2 |
 | W6 Expression | 0 | — | W6-F1 |
 | W7 Engine | 0 | — | W7-F1 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
@@ -64,10 +64,10 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 
 ### W5 — Time
 - Trajectory: implemented canonical time → observable cycles → plural temporal experience.
-- Reached: live sample showed heartbeat, comet/temporal processing, six subscribers and zero errors in that dispatch. This is a narrow observation, not a full health audit.
-- Settled: [phase closure](current/PHASE_CLOSURE_EPISTEMIC_FOUNDATIONS_2026-10-15.md) parks further resonance work and records the cadence mismatch.
-- Open: [Trajectory](current/TRAJECTORY_v2.2.md)'s Feather 20 descriptions predate Feathers 21–31; do not confuse the older documentary boundary with current source.
-- Candidate return: select an explicit temporal question before extending the engine. Links: W1, W7.
+- Sealed: [W5-F1 — What Time Is It Here?](wings/W5-F1_WHAT_TIME_IS_IT_HERE.md). Shared persisted world clock consumes prior resolver output; era baseline × comet factor affects later ticks. Real-sky observation uses heartbeat UTC.
+- Live sample 17 October 16:00 AWST: Manzo 60×, dormant comet factor 1, +3600 world seconds on reported 60-real-second heartbeat. Six subscriber outcomes successful. Dated sample, not perpetual state.
+- Open: !time shows baseline rather than effective multiplier; v0 configured profiles versus v1 duplicate; 48-world-day runtime cycle versus long-orbit narrative; individual temporal experience and calendar mapping. Phase-closure cadence mismatch stays parked.
+- Candidate W5-F2: isolated phase-boundary → resolver → next-clock-tick verification. W5 count 1; W5-F2 unallocated. No live time change.
 
 ### W6 — Expression
 - Trajectory: coherent sensory language → consistent scenes → responsive atmosphere.
