@@ -1,7 +1,7 @@
 # W1-F2 — Finding Our Way: The Brochure
 
 Home: W1 Mythos. Linked: W3 Beings, W4 Play, W6 Expression.
-Status: REVIEW — analysis of existing authored material, awaiting Karun's review.
+Status: COMPLETE — Karun approved the analysis on 17 October 2026.
 Date: 17 October 2026.
 Previous: [W1-F1](W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md).
 Source: [arrival_awakening_v1, Transit Pod 3417](https://github.com/karun777/future-sky/blob/9a4246a9c43c2d0a78b8f549ae9d230b1f61d129/data/thread_nodes/thread_nodes.json), inspected at 9a4246a9c43c2d0a78b8f549ae9d230b1f61d129.
@@ -52,6 +52,6 @@ No scene rewrite, mandatory lesson, new faction or mechanic is proposed by this 
 Reached: existing brochure scene examined rather than replaced by a new incident.
 Settled source facts: authored reassurance, contrary-seeming sensory evidence, separate questioning option and declared flags.
 Proposed interpretation: mediated orientation versus directly exercised attention and judgement.
-Open for Karun: does this reading capture the scene's intended role in finding one's way?
-Status: W1-F2 allocated and in review; W1 completed count remains 1, W8 remains 2. Next unallocated W1 ID: W1-F3.
-Completion requires review of this reading; no further feather is activated. The source scene and runtime remain unchanged.
+Reviewed: Karun confirmed this reading with “perfect”; mediated guidance versus direct attention and judgement is accepted as the scene analysis. Wider resident atrophy and runtime delivery remain open.
+Status: W1-F2 reviewed and sealed; W1 completed count is 2, W8 remains 2. W1-F3 is unallocated.
+Karun chose a first pass of two completed feathers per wing, then a switch. Mythos is parked while Worlds begins. This is a temporary development cadence, not a permanent cap. The source scene and runtime remain unchanged.
