@@ -383,9 +383,11 @@
     "bind_policy": "unbound",
     "transfer_policy": "tradeable",
     "provenance": "Omincron-era device belonging to Efiishent; recovered in his Manzo-era office",
-    "description": "A small, weathered pocket compass. Its needle has slipped from the central pivot and lies awkwardly beneath the scratched glass. It looks as though a steady hand might set it right.",
+    "description": "A weathered pocket compass with a permanently sealed glass face. Its needle has slipped from the pivot but remains trapped inside the narrow casing. Careful tilting and jiggling might set it right.",
     "attributes": {
-      "condition": "Needle dislodged",
+      "condition": "Needle loose behind sealed glass",
+      "glass": "Cannot be removed",
+      "needle": "Always inside the casing",
       "origin": "Omincron era"
     },
     "uses": [
@@ -394,14 +396,16 @@
       }
     ],
     "discoveries": {
-      "seven_left_directions": {
+      "restored_navigation": {
         "attributes": {
-          "anomaly": "Points in the left direction seven times a day"
+          "navigation": "Inspection after restoration reveals a meaningful direction forward",
+          "frequency": "Points seven times daily in the left direction"
         }
       },
       "temporal_compulsion": {
         "attributes": {
-          "anomaly": "An absorbed recipient can become trapped in a temporal stasis loop"
+          "compulsion": "Anyone attempting to reseat the needle enters a temporal stasis loop until successful",
+          "mastery": "Advanced bearer may determine another recipient's duration of entrapment"
         }
       }
     },
@@ -411,6 +415,6 @@
       "efiishent",
       "omincron"
     ],
-    "notes": "Authored artefact. Repair check difficulty, trigger/resistance, stasis duration, and runtime action handlers remain unspecified; hidden abilities are not yet executable."
+    "notes": "Canon: needle never exits sealed casing; glass cannot be removed; cramped space requires dexterous jiggling. Needle anomalously falls off pivot again, usually meaningfully. Repairer, including wielder, enters temporal stasis until successful. Advanced bearer controls another recipient's entrapment duration. Repair DC, duration-success interaction, activation timing, and runtime handlers unresolved. Close-up item image approved in chat but not yet hosted."
   }
 }
