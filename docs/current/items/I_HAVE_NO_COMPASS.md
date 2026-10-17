@@ -1,45 +1,41 @@
 # I Have No Compass
 
-**Status:** Authored item; mechanics awaiting implementation  
-**Item ID:** `itm_i_have_no_compass`  
-**Origin:** Omincron era  
-**Recovered:** Efiishent's Office, Manzo era  
-**Runtime item definition:** `data/items/items.json`  
-**World placement:** `data/rooms/rooms.json` → `efiishents_office`
+**Status:** Physical and narrative attributes formalised; runtime mechanics pending
+**Item ID:** `itm_i_have_no_compass`
+**Origin:** Omincron era
+**Recovered:** Efiishent's Office, Manzo era
+**Definition:** `data/items/items.json`
+**Placement:** `data/rooms/rooms.json` → `efiishents_office`
 
-## Canonical premise
+## Physical attributes
+The weathered pocket compass has an intact glass face that **cannot be removed**. Its needle **always remains inside** the narrow casing, even when dislodged from its pivot. The only way to reseat it is to manipulate and jiggle the whole instrument in its cramped interior. This requires a Dexterity check.
 
-An Omincron-era pocket compass belonging to Efiishent, recovered in his office during the Manzo era. Its needle has slipped off its pivot. The bearer must reseat the needle before using it; this requires a Dexterity check. Once usable, it points seven times a day in the **left direction**.
+The needle anomalously falls off its pivot again, usually at a meaningful moment. This is characteristic behaviour, not ordinary mechanical failure.
 
-The phrase “left direction” is deliberately preserved without interpretation.
+## Initial inspection (player-facing)
+> A weathered pocket compass with a permanently sealed glass face. Its needle has slipped from the pivot but remains trapped inside the narrow casing. Careful tilting and jiggling might set it right.
 
-## Player-facing initial inspection
+## Navigation and revelation
+After the needle is reseated, inspection reveals a direction forward relevant to the moment. The compass points **seven times a day in the left direction**. The interpretation of “left direction,” its timing and relationship to spontaneous dislodgement remain deliberately open.
 
-> A small, weathered pocket compass. Its needle has slipped from the central pivot and lies awkwardly beneath the scratched glass. It looks as though a steady hand might set it right.
+## Hidden effect: The Compulsion
+**Anyone** attempting to reseat the needle, including the wielder, enters a temporal stasis loop and cannot turn to other activities until they succeed. The object can be given to another person as a distraction: the recipient is compelled to reseat the needle and becomes trapped. An advanced bearer can determine how long another recipient remains trapped. The interaction between advanced duration control and successful repair remains to be specified.
 
-## Secret: The Compulsion
+Do not disclose the hidden effect in initial inspection.
 
-The bearer can give the dislodged compass to someone as a distraction. The recipient becomes compelled to reseat the needle, a deceptively tricky task, and is bound within a temporal stasis loop. They cannot turn their attention to other actions while trapped. An advanced bearer can decide how long the recipient remains caught in the compulsion.
+## Open gameplay parameters
+- Dexterity check difficulty, failure consequences and retry rules.
+- Temporal physics and exact elapsed/subjective time behaviour.
+- Scheduling of the seven directions, and interpretation of “left.”
+- Mastery threshold and duration-control semantics.
+- Actual repair, compulsion, and revelation runtime handlers.
 
-This is facilitator/world-engine knowledge, not information exposed in the initial inspection.
+No numerical rules should be silently invented.
 
-## Open implementation decisions
+## Image provenance and production
+The original user photograph is the primary physical reference. The **latest clean close-up generated compass image was approved by the creator** in chat. Earlier journal scene and text-heavy dossier remain concept art, not the primary item image. The approved image has not yet been published to a hosted production URL.
 
-- Dexterity check DC and consequences of failure.
-- Whether and how a recipient can resist or escape.
-- How bearer mastery is determined and how duration is specified.
-- Whether the loop affects external elapsed time, subjective time, or both.
-- What determines the seven daily activations and what “left” means.
-- Item-state tracking (needle seated/dislodged) and use-action handlers.
+The deferred asset pipeline calls for a PNG master, production WebP, 1024px Discord WebP, 512px thumbnail, permanent asset ID, version and attribution. Production deployment remains a separate step.
 
-Do not silently turn these unresolved details into canon.
-
-## Visual asset notes
-
-The original real-world photograph is the primary visual reference. Preserve the weathered circular casing, compass face, degree ring and dislodged needle. The previously generated journal scene and item dossier are **concepts**, not approved production assets. Do not use a text-heavy dossier as the item image.
-
-The deferred asset pipeline specifies PNG master, WebP production, 1024px Discord WebP and 512px thumbnail, with permanent asset ID, version, attribution and explicit approval. No production image URL has been assigned yet.
-
-## Implementation boundary
-
-The current Discord `!inspect` command can show this item when present in the room, including its public description and known attributes. Its listed repair interaction is descriptive only; no Dexterity-check or temporal-compulsion handler has been implemented. Hidden discoveries must be granted by a future authoritative gameplay system.
+## Runtime boundary
+The item exists in the current item catalogue and Efiishent's Office. The Discord inspection command supports its public description and discovery-gated attributes. Repair and temporal effects are authored only, **not executable** yet.
