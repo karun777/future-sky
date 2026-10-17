@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W3 Beings**, first pass complete and parked. Latest sealed contribution: **W3-F2 — Who Carries Whom**.
-W1 Mythos, W2 Worlds, W3 Beings and W8 Stewardship each have two completed feathers. W4 Play is the next proposed wing; no next feather activated.
+Current home: **W4 Play**. Latest sealed contribution: **W4-F1 — What Can We Actually Do?**.
+W1 Mythos, W2 Worlds, W3 Beings and W8 Stewardship are parked at two completed feathers each. No next feather activated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. We are establishing the chassis; this is not a permanent cap.
 
@@ -13,7 +13,7 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | W1-F3 |
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | W2-F3 |
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
-| W4 Play | 0 | — | W4-F1 |
+| W4 Play | 1 | [W4-F1](wings/W4-F1_WHAT_CAN_WE_ACTUALLY_DO.md) | W4-F2 |
 | W5 Time | 0 | — | W5-F1 |
 | W6 Expression | 0 | — | W6-F1 |
 | W7 Engine | 0 | — | W7-F1 |
@@ -56,9 +56,10 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 
 ### W4 — Play
 - Trajectory: verified loops → choices and consequences → integrated experience.
-- Reached: source history on the server includes global Feather 54, bar work, following purchases, freebies, bouncer, intoxication and rumours. [Gameplay integration](current/NEPTUNE_LOUNGE_GAMEPLAY_INTEGRATION_v0.1.md) is an earlier plan; do not replay its task list as if later work never happened.
-- Open: complete first-player walkthrough not verified in this reset.
-- Candidate return: check one chosen player-facing loop against present source and isolated fixtures. Links: W2, W3, W6, W7.
+- Sealed: [W4-F1 — What Can We Actually Do?](wings/W4-F1_WHAT_CAN_WE_ACTUALLY_DO.md): 80 source command definitions, 15 aliases; action/requirement/consequence map; startup log records 43 cog loads. No live gameplay trial performed.
+- Settled: automatic combat intent, participant-side state, scripted responses and stance expression are distinct. WardrobeCog explicitly dispatches the motif follow-up; !use exists in current source.
+- Open: end-to-end journey, command/help mismatches (!combat on, advertised !cube_exit / archived !code love), failure/concurrency behaviour and full combat/renewal outcomes.
+- Candidate W4-F2: one isolated non-combat loop using existing helpers and fixtures, documenting integration and persistence limits. W4 completed count is 1; W4-F2 unallocated.
 
 ### W5 — Time
 - Trajectory: implemented canonical time → observable cycles → plural temporal experience.
