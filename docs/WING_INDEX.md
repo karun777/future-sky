@@ -1,14 +1,14 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W1 Mythos**. Latest sealed contribution: **W1-F1 — Manzo: The World We Wake Into**.
-No next feather activated. W8 is parked with two completed feathers.
+Current home: **W1 Mythos**. Current feather: **W1-F2 — Finding Our Way: The Brochure**, in review.
+Latest sealed contribution: **W1-F1 — Manzo: The World We Wake Into**. W8 is parked with two completed feathers.
 
 ## Feather register
 
 | Wing | Completed since adoption | Latest sealed feather | Next unallocated ID |
 | --- | --- | --- | --- |
-| W1 Mythos | 1 | [W1-F1](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md) | W1-F2 |
+| W1 Mythos | 1 | [W1-F1](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md) | W1-F3 |
 | W2 Worlds | 0 | — | W2-F1 |
 | W3 Beings | 0 | — | W3-F1 |
 | W4 Play | 0 | — | W4-F1 |
@@ -21,6 +21,8 @@ No next feather activated. W8 is parked with two completed feathers.
 
 Counts exclude historical global feathers; do not renumber them. Sealed means the documented deliverable and checks are complete in this revision, not necessarily deployed to the live host.
 
+Current allocated review: [W1-F2 — Finding Our Way: The Brochure](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md). Preparing an analysis does not increase the completed count.
+
 ## Return checkpoints
 
 Initial checkpoints below are deliberately lightweight. They describe known stopping places, not eight active work queues. Their shared evidence date is 17 October 2026; refresh before treating them as current.
@@ -31,7 +33,8 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Settled: preserve [Red Book](RedBook_V7.2.md) authority and distinguish author knowledge from character knowledge.
 - Open: Manzo institutions, factions, collective welfare and atrophied faculties. October research remains research; [handover](handover/FUTURE_SKY_OCTOBER_RESEARCH_RECONCILIATION_20261015.md) provides the research-branch route.
 - Sealed: [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md). Karun chose finding one's way through space, memory or relationships as the first creative doorway. W1 completed count is 1.
-- Return question: what does a resident experience when their usual means of finding their way is unavailable? W1-F2 is unallocated; technology, direct faculties and mechanics remain undecided. Research corpus is not promoted by this choice.
+- Current return: [W1-F2 — Finding Our Way: The Brochure](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md), in review. Karun redirected us to existing arrival scenes; analysis pairs supplied onboarding information with direct attention and judgement. Review this reading before sealing.
+- Open: the scene does not yet demonstrate an ordinary resident's atrophied faculty or dependence. Source scene unchanged; no mandatory response, outage or new mechanic invented. W1 completed count stays 1; W1-F3 remains unallocated.
 
 ### W2 — Worlds
 - Trajectory: reconciled geography → coherent local exploration → connected regions.
