@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W3 Beings**. Latest sealed contribution: **W3-F1 — Who Is Already Here**.
-W1 Mythos, W2 Worlds and W8 Stewardship are parked at two completed feathers each. No next feather activated.
+Current home: **W3 Beings**, first pass complete and parked. Latest sealed contribution: **W3-F2 — Who Carries Whom**.
+W1 Mythos, W2 Worlds, W3 Beings and W8 Stewardship each have two completed feathers. W4 Play is the next proposed wing; no next feather activated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. We are establishing the chassis; this is not a permanent cap.
 
@@ -12,7 +12,7 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 | --- | --- | --- | --- |
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | W1-F3 |
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | W2-F3 |
-| W3 Beings | 1 | [W3-F1](wings/W3-F1_WHO_IS_ALREADY_HERE.md) | W3-F2 |
+| W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
 | W4 Play | 0 | — | W4-F1 |
 | W5 Time | 0 | — | W5-F1 |
 | W6 Expression | 0 | — | W6-F1 |
@@ -51,7 +51,8 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Sealed: [W3-F1 — Who Is Already Here](wings/W3-F1_WHO_IS_ALREADY_HERE.md). Named lore, eight authored encounter nodes, source-expressed social roles, five live stored character records, and 20 room enemy entries distinguished.
 - Settled: Character, Role and Driver remain distinct. An account-character name, scripted dialogue or prose reference does not establish an autonomous NPC or online presence.
 - Open: stable NPC identities, role equivalences, current drivers and actual encounter delivery. Private account/birth data is not copied into the inventory.
-- Candidate W3-F2: identity/role/driver map of the existing cast, keeping unknowns explicit. W3 completed count is 1; W3-F2 is unallocated.
+- Sealed: [W3-F2 — Who Carries Whom](wings/W3-F2_WHO_CARRIES_WHOM.md) maps character identity, situated roles, account input, scripted response and participant-side persistence. Driver transfer and autonomous NPC control are not established.
+- Parked return: W3 completed count is 2; W3-F3 remains unallocated. Preserve identity/role/driver distinctions before deeper character authoring or controller changes.
 
 ### W4 — Play
 - Trajectory: verified loops → choices and consequences → integrated experience.
