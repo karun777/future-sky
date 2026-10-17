@@ -1,11 +1,11 @@
 # W1-F1 — Manzo: The World We Wake Into
 
 Home: W1 Mythos. Links: W2 Worlds, W3 Beings, W4 Play.
-Status: REVIEW — source-grounded checkpoint prepared; awaiting Karun's recognition/correction before sealing.
+Status: COMPLETE — checkpoint reviewed and orientation direction selected by Karun on 17 October 2026.
 Prepared: 17 October 2026.
 Main source revision: f44cf3eb0dbcbbef254881e9de76f836ed1c5fea.
 Research source revision: dfe9e4a803bc75c852697af298c6d3f29c346c65 on research/narrative-context-trial-1.
-No canon promotion, gameplay implementation or historical event is created by this document.
+Authorial adoption is limited to the orientation direction below. This does not promote the research corpus, create a historical event or implement gameplay.
 
 ## 1. Established foundation
 
@@ -48,19 +48,30 @@ That sentence is a reading of the sources, not newly established canon.
 - Specific protagonist identities. Sera and the barmaid in [A Glass Trembling](https://github.com/karun777/future-sky/blob/dfe9e4a803bc75c852697af298c6d3f29c346c65/docs/research/narrative-context-trials/MANZO_TREMBLING_GLASS_TRIAL_v0.1.md) are exploratory candidate material, not confirmed Chapter One casting.
 - Which authored experiences actually run. The [living-world inventory](https://github.com/karun777/future-sky/blob/f44cf3eb0dbcbbef254881e9de76f836ed1c5fea/docs/current/LIVING_WORLD_INVENTORY_v0.1.md) is a dated inventory, not a live walkthrough.
 
-## 4. First world-state question
+## 4. Adopted direction — Finding one's way
 
-**What is one ordinary thing a Triton Central resident relies on technology to do, which our protagonists must learn to do directly?**
+On 17 October 2026, Karun selected **finding one's way through space, memory or relationships** as the doorway into Manzo's technological mediation and the protagonists' recovered faculties.
 
-Suggested starting lens, for discussion only: finding one's way — through physical space, memory or relationships. The resident can obtain directions; the newcomer may have to discover orientation.
+This is an adopted creative direction. It is not yet a claim that every resident has lost a faculty or that a particular technology, institution or power exists.
 
-Choosing one example will let us ground dependence, retained capacity and everyday life in something a player could encounter at the Lounge. No answer is selected here, and this does not assign navigation powers to the compass.
+Three connected lenses guide later authoring:
+
+- **Space:** locating oneself and finding a route.
+- **Memory:** recognising an experience, its source and its relationship to identity.
+- **Relationships:** recognising others, rebuilding connection and learning whom to trust.
+
+The exact forms of mediation, retained direct faculties, variation among inhabitants, and recovery practices remain open. These lenses need not share one technical mechanism.
+
+Working proposition for later review: technology can provide an answer while the protagonists must recover an ability to orient themselves. This proposition does not yet settle how either process works.
+
+Neither literal “left direction” nor any navigation effect of I Have No Compass is defined here. The object may be connected in later work only by an explicit authorial decision; thematic affinity alone does not create a mechanic.
 
 ## Return checkpoint and completion
 
-Reached: source distinctions recovered; one reviewable Manzo checkpoint written.
-Settled: existing Red Book foundation remains intact; research, author-level givens, character knowledge and runtime claims remain separate.
-Open: Karun's recognition/correction of this account and the world-state question above.
-Next action within W1-F1: review this checkpoint with Karun; revise if needed, then explicitly seal it. Do not allocate another feather for this review.
-Completed W1 count remains 0 until review succeeds. W1-F1 is allocated and in review; the next unallocated ID is W1-F2.
+Reached: source distinctions recovered, checkpoint reviewed, and orientation chosen as the first creative doorway.
+Settled: space, memory and relationships are the selected lenses; existing Red Book foundation and research-status boundaries remain intact.
+Open: the first concrete example of mediation and directly exercised orientation.
+Candidate next question, not an activated feather: what does a resident experience when their usual means of finding their way is unavailable?
+Verification: Karun explicitly selected the suggested direction in this session; the register and this full checkpoint record that choice without inventing mechanisms.
+W1-F1 is sealed. Completed W1 count: 1. Next unallocated ID: W1-F2.
 W8 remains parked at two completed feathers. No runtime or live world-state change is part of W1-F1.
