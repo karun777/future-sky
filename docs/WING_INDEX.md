@@ -34,7 +34,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Reached: global Feather 55, [The Eternal Struggle](current/THE_ETERNAL_STRUGGLE.md), is committed to main but its header still says proposed/review-before-merge. Merge does not itself settle canon promotion.
 - Settled: preserve [Red Book](RedBook_V7.2.md) authority and distinguish author knowledge from character knowledge.
 - Open: Manzo institutions, factions, collective welfare and atrophied faculties. October research remains research; [handover](handover/FUTURE_SKY_OCTOBER_RESEARCH_RECONCILIATION_20261015.md) provides the research-branch route.
-- Sealed: [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md). Karun chose finding one's way through space, memory or relationships as the first creative doorway. W1 completed count is 1.
+- Sealed: [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md). Karun chose finding one's way through space, memory or relationships as the first creative doorway. W1-F1 remains the first completed Mythos feather; the current total is 2.
 - Parked return: [W1-F2 — Finding Our Way: The Brochure](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) is approved and sealed. The supplied onboarding account versus direct attention/judgement is accepted as the analysis; no scene rewrite or new mechanics.
 - Open: ordinary resident atrophy and runtime delivery remain unproven. W1 has 2 completed feathers. W1-F3 remains unallocated while the first pass moves to other wings.
 
