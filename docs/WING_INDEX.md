@@ -1,7 +1,7 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W8 Stewardship**. Current sealed contribution in this revision: **W8-F1 — Give the Dragon a Memory**.
+Current home: **W8 Stewardship**. Current sealed contribution in this revision: **W8-F2 — Bring the Dragon’s Memory Home**.
 No next feather is activated by this index.
 
 ## Feather register
@@ -15,7 +15,7 @@ No next feather is activated by this index.
 | W5 Time | 0 | — | W5-F1 |
 | W6 Expression | 0 | — | W6-F1 |
 | W7 Engine | 0 | — | W7-F1 |
-| W8 Stewardship | 1 | [W8-F1](wings/W8-F1_GIVE_THE_DRAGON_A_MEMORY.md) | W8-F2 |
+| W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
 Counts exclude historical global feathers; do not renumber them. Sealed means the documented deliverable and checks are complete in this revision, not necessarily deployed to the live host.
 
@@ -65,16 +65,17 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Trajectory: verified operational truth → reliable reproduction → bounded extension.
 - Reached: read-only server checkpoint around 13:52 AWST: /opt/futuresky on main at 937c007 (global Feather 54); futuresky-bot active/running; modified characters, items, rooms, room base and clock, plus untracked artwork/backups. Preserve these.
 - Repository: GitHub main verified at 6ebc3de4bc9d17290cb912085e454ff76b80babb during W8-F1; server's cached origin/main had been a96dddf. Never infer deployment from either ref.
-- Access: MacBook Desktop Commander → SSH alias neptunelounge as efiishent worked during reset. MacBook went offline during W8-F1; continued through GitHub. Refresh device availability before use.
+- Documentation sync (W8-F2, 14:16 AWST): the seven changed docs from GitHub main at d47d99c were copied as a documentation overlay; runtime HEAD stays 937c007. Four protected character/item/room files were byte-identical during the sync; bot PID/start time stayed unchanged. The world clock continues normally. See the W8-F2 record for provenance and rollback. W8-F2 then updates this index and its record; their sealed revision is verified separately.
+- Access: MacBook Desktop Commander → SSH alias neptunelounge as efiishent worked again during W8-F2. Refresh availability before use.
 - Open: precise deployment/content divergence and current operational state need re-verification before mutation.
 - Candidate return: scope one operational verification; no pull, reset, restart or data overwrite is authorised by this index. Links: all affected wings.
 
 ### W8 — Stewardship
 - Trajectory: navigable checkpoints → reliable switching → collaborative continuity.
-- Reached: [W8-F1](wings/W8-F1_GIVE_THE_DRAGON_A_MEMORY.md) establishes this register and links it from Atlas/reset.
+- Reached: [W8-F1](wings/W8-F1_GIVE_THE_DRAGON_A_MEMORY.md) establishes this register and links it from Atlas/reset. [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) brings the documentation home to Neptune Lounge with a verified return route.
 - Settled: eight wing identities, independent counts, preserved historical numbering, one home wing per feather, and a return checkpoint before switching.
 - Open: the Atlas and reset still contain older Feather 20 pointers; the added navigation directs readers to later phase evidence without silently rewriting architectural history.
-- Candidate return: use this index on Karun's chosen wing switch and verify its checkpoint. W8-F2 is unallocated; choosing a next track remains with Karun.
+- Candidate return: use this index on Karun's chosen wing switch and verify its checkpoint. W8-F3 is unallocated; choosing a next track remains with Karun.
 
 ## Shared direction and switching
 
