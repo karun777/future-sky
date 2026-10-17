@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W2 Worlds**. Latest sealed contribution: **W2-F1 — Where Everything Is**.
-W1 Mythos and W8 Stewardship are parked with two completed feathers each. No next feather activated.
+Current home: **W2 Worlds**, first pass complete and parked. Latest sealed contribution: **W2-F2 — The Local Atlas**.
+W1 Mythos, W2 Worlds and W8 Stewardship each have two completed feathers. W3 Beings is the next proposed wing; no next feather activated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. We are establishing the chassis; this is not a permanent cap.
 
@@ -11,7 +11,7 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 | Wing | Completed since adoption | Latest sealed feather | Next unallocated ID |
 | --- | --- | --- | --- |
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | W1-F3 |
-| W2 Worlds | 1 | [W2-F1](wings/W2-F1_WHERE_EVERYTHING_IS.md) | W2-F2 |
+| W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | W2-F3 |
 | W3 Beings | 0 | — | W3-F1 |
 | W4 Play | 0 | — | W4-F1 |
 | W5 Time | 0 | — | W5-F1 |
@@ -43,7 +43,8 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Sealed: [W2-F1 — Where Everything Is](wings/W2-F1_WHERE_EVERYTHING_IS.md). On-host source/CWD/symlink check resolves configured storage to /opt/futuresky/data/rooms/rooms.json.
 - Verified disk graph: 43 Manzo rooms, 100 directed exits, no absent targets, all rooms reachable from pod and Lounge; matches main's exit graph. In-process room data and a gated live walkthrough are not verified.
 - Open: four one-way connections, a 10-room reset baseline, duplicate room files, and wider-era geography; no repairs performed.
-- Candidate W2-F2: readable local atlas of the existing graph, clearly marking labels and unresolved shortcuts. Not activated.
+- Sealed: [W2-F2 — The Local Atlas](wings/W2-F2_THE_LOCAL_ATLAS.md) accounts for all 43 rooms and 100 exact exits, with a group overview, example routes and four one-way markers. Live source hash rechecked unchanged before authoring.
+- Parked return: Worlds has 2 completed feathers; W2-F3 is unallocated. Before later map changes, refresh the configured graph and unresolved seams; no geography changed during this first pass.
 
 ### W3 — Beings
 - Trajectory: identity and arrival → consequential relationships → growth.
