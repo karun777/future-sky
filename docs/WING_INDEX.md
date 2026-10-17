@@ -1,15 +1,17 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W1 Mythos**. Current feather: **W1-F2 — Finding Our Way: The Brochure**, in review.
-Latest sealed contribution: **W1-F1 — Manzo: The World We Wake Into**. W8 is parked with two completed feathers.
+Current home: **W2 Worlds**. Latest sealed contribution: **W2-F1 — Where Everything Is**.
+W1 Mythos and W8 Stewardship are parked with two completed feathers each. No next feather activated.
+
+First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. We are establishing the chassis; this is not a permanent cap.
 
 ## Feather register
 
 | Wing | Completed since adoption | Latest sealed feather | Next unallocated ID |
 | --- | --- | --- | --- |
-| W1 Mythos | 1 | [W1-F1](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md) | W1-F3 |
-| W2 Worlds | 0 | — | W2-F1 |
+| W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | W1-F3 |
+| W2 Worlds | 1 | [W2-F1](wings/W2-F1_WHERE_EVERYTHING_IS.md) | W2-F2 |
 | W3 Beings | 0 | — | W3-F1 |
 | W4 Play | 0 | — | W4-F1 |
 | W5 Time | 0 | — | W5-F1 |
@@ -21,7 +23,7 @@ Latest sealed contribution: **W1-F1 — Manzo: The World We Wake Into**. W8 is p
 
 Counts exclude historical global feathers; do not renumber them. Sealed means the documented deliverable and checks are complete in this revision, not necessarily deployed to the live host.
 
-Current allocated review: [W1-F2 — Finding Our Way: The Brochure](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md). Preparing an analysis does not increase the completed count.
+[W1-F2 — Finding Our Way: The Brochure](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) is approved and sealed. [W2-F1](wings/W2-F1_WHERE_EVERYTHING_IS.md) records the verified source and disk-map inspection.
 
 ## Return checkpoints
 
@@ -33,14 +35,15 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Settled: preserve [Red Book](RedBook_V7.2.md) authority and distinguish author knowledge from character knowledge.
 - Open: Manzo institutions, factions, collective welfare and atrophied faculties. October research remains research; [handover](handover/FUTURE_SKY_OCTOBER_RESEARCH_RECONCILIATION_20261015.md) provides the research-branch route.
 - Sealed: [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md). Karun chose finding one's way through space, memory or relationships as the first creative doorway. W1 completed count is 1.
-- Current return: [W1-F2 — Finding Our Way: The Brochure](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md), in review. Karun redirected us to existing arrival scenes; analysis pairs supplied onboarding information with direct attention and judgement. Review this reading before sealing.
-- Open: the scene does not yet demonstrate an ordinary resident's atrophied faculty or dependence. Source scene unchanged; no mandatory response, outage or new mechanic invented. W1 completed count stays 1; W1-F3 remains unallocated.
+- Parked return: [W1-F2 — Finding Our Way: The Brochure](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) is approved and sealed. The supplied onboarding account versus direct attention/judgement is accepted as the analysis; no scene rewrite or new mechanics.
+- Open: ordinary resident atrophy and runtime delivery remain unproven. W1 has 2 completed feathers. W1-F3 remains unallocated while the first pass moves to other wings.
 
 ### W2 — Worlds
 - Trajectory: reconciled geography → coherent local exploration → connected regions.
-- Reached: [First Night](current/NEPTUNE_LOUNGE_FIRST_NIGHT_v0.1.md) maps an existing pod-to-Lounge journey, but is an audit checkpoint, not proof that all beats work.
-- Open: current room connectivity and live versus committed placement. A narrow read-only check found the compass definition in live items but not its ID inside the live office record; no broader placement audit was done.
-- Candidate return: trace one selected route against configured room data and source. Links: W1, W4, W7.
+- Sealed: [W2-F1 — Where Everything Is](wings/W2-F1_WHERE_EVERYTHING_IS.md). On-host source/CWD/symlink check resolves configured storage to /opt/futuresky/data/rooms/rooms.json.
+- Verified disk graph: 43 Manzo rooms, 100 directed exits, no absent targets, all rooms reachable from pod and Lounge; matches main's exit graph. In-process room data and a gated live walkthrough are not verified.
+- Open: four one-way connections, a 10-room reset baseline, duplicate room files, and wider-era geography; no repairs performed.
+- Candidate W2-F2: readable local atlas of the existing graph, clearly marking labels and unresolved shortcuts. Not activated.
 
 ### W3 — Beings
 - Trajectory: identity and arrival → consequential relationships → growth.
