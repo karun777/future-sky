@@ -1,10 +1,10 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W7 Engine**. Latest sealed contribution: **W7-F1 — What Is Actually Running?**.
-All other wings are parked at two completed feathers each. No next feather activated.
+Current home: **W7 Engine**, first pass complete and parked. Latest sealed contribution: **W7-F2 — Recovery Capsule**.
+**All eight wings have two completed feathers each: 16 sealed wing feathers. The chassis first pass is complete.** No next feather or deployment activated.
 
-First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. We are establishing the chassis; this is not a permanent cap.
+First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. All next IDs remain unallocated until the next bounded action is chosen.
 
 ## Feather register
 
@@ -16,7 +16,7 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 | W4 Play | 2 | [W4-F2](wings/W4-F2_ONE_LOOP_THAT_HOLDS.md) | W4-F3 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 2 | [W6-F2](wings/W6-F2_ONE_CARD_THAT_TELLS_THE_TRUTH.md) | W6-F3 |
-| W7 Engine | 1 | [W7-F1](wings/W7-F1_WHAT_IS_ACTUALLY_RUNNING.md) | W7-F2 |
+| W7 Engine | 2 | [W7-F2](wings/W7-F2_RECOVERY_CAPSULE.md) | W7-F3 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
 [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md) is reviewed and sealed. Karun selected finding one's way through space, memory or relationships as the creative doorway; specific mechanisms remain open.
@@ -83,7 +83,8 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Sealed: [W7-F1 — What Is Actually Running?](wings/W7-F1_WHAT_IS_ACTUALLY_RUNNING.md). Bot active at 937c007/PID 799778; tracked bot source matches inspected main reference despite older HEAD. Live data and documented overlays must be preserved.
 - Delivery: nginx root /var/www/html; assets symlink into /opt/futuresky/assets; website and FEED7 returned HTTP 200. Asset changes can affect delivery directly.
 - Open: Docker inventory permission-blocked; named DB/audio systemd units not found, which does not prove no container services. Full backup/restore coverage unverified; event ledger ~231 MB at inspection.
-- Candidate W7-F2: narrowly scoped recovery capsule restored and byte-verified in a disposable directory. No live restore. W7 count 1; W7-F2 unallocated.
+- Sealed: [W7-F2 — Recovery Capsule](wings/W7-F2_RECOVERY_CAPSULE.md): 165 selected files restored/hash-verified; 21 JSON files parsed; restored map 43 rooms/100 exits; bot unchanged. Private on-host capsule preserves selected live state and untracked art; no private contents committed to Git.
+- Parked return: W7 has 2 completed feathers; W7-F3 unallocated. Sequential same-host capture is not an atomic world snapshot or full disaster recovery. Scope exclusions and capsule path are recorded in W7-F2.
 
 ### W8 — Stewardship
 - Trajectory: navigable checkpoints → reliable switching → collaborative continuity.
