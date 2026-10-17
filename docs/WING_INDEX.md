@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W6 Expression**, first pass complete and parked. Latest sealed contribution: **W6-F2 — One Card That Tells the Truth**.
-W1 Mythos, W2 Worlds, W3 Beings, W4 Play, W5 Time, W6 Expression and W8 Stewardship each have two completed feathers. W7 Engine is the next proposed wing; no next feather activated.
+Current home: **W7 Engine**. Latest sealed contribution: **W7-F1 — What Is Actually Running?**.
+All other wings are parked at two completed feathers each. No next feather activated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. We are establishing the chassis; this is not a permanent cap.
 
@@ -16,7 +16,7 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 | W4 Play | 2 | [W4-F2](wings/W4-F2_ONE_LOOP_THAT_HOLDS.md) | W4-F3 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 2 | [W6-F2](wings/W6-F2_ONE_CARD_THAT_TELLS_THE_TRUTH.md) | W6-F3 |
-| W7 Engine | 0 | — | W7-F1 |
+| W7 Engine | 1 | [W7-F1](wings/W7-F1_WHAT_IS_ACTUALLY_RUNNING.md) | W7-F2 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
 [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md) is reviewed and sealed. Karun selected finding one's way through space, memory or relationships as the creative doorway; specific mechanisms remain open.
@@ -80,12 +80,10 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 
 ### W7 — Engine
 - Trajectory: verified operational truth → reliable reproduction → bounded extension.
-- Reached: read-only server checkpoint around 13:52 AWST: /opt/futuresky on main at 937c007 (global Feather 54); futuresky-bot active/running; modified characters, items, rooms, room base and clock, plus untracked artwork/backups. Preserve these.
-- Repository: GitHub main verified at 6ebc3de4bc9d17290cb912085e454ff76b80babb during W8-F1; server's cached origin/main had been a96dddf. Never infer deployment from either ref.
-- Documentation sync (W8-F2, 14:16 AWST): the seven changed docs from GitHub main at d47d99c were copied as a documentation overlay; runtime HEAD stays 937c007. Four protected character/item/room files were byte-identical during the sync; bot PID/start time stayed unchanged. The world clock continues normally. See the W8-F2 record for provenance and rollback. W8-F2 then updates this index and its record; their sealed revision is verified separately.
-- Access: MacBook Desktop Commander → SSH alias neptunelounge as efiishent worked again during W8-F2. Refresh availability before use.
-- Open: precise deployment/content divergence and current operational state need re-verification before mutation.
-- Candidate return: scope one operational verification; no pull, reset, restart or data overwrite is authorised by this index. Links: all affected wings.
+- Sealed: [W7-F1 — What Is Actually Running?](wings/W7-F1_WHAT_IS_ACTUALLY_RUNNING.md). Bot active at 937c007/PID 799778; tracked bot source matches inspected main reference despite older HEAD. Live data and documented overlays must be preserved.
+- Delivery: nginx root /var/www/html; assets symlink into /opt/futuresky/assets; website and FEED7 returned HTTP 200. Asset changes can affect delivery directly.
+- Open: Docker inventory permission-blocked; named DB/audio systemd units not found, which does not prove no container services. Full backup/restore coverage unverified; event ledger ~231 MB at inspection.
+- Candidate W7-F2: narrowly scoped recovery capsule restored and byte-verified in a disposable directory. No live restore. W7 count 1; W7-F2 unallocated.
 
 ### W8 — Stewardship
 - Trajectory: navigable checkpoints → reliable switching → collaborative continuity.
