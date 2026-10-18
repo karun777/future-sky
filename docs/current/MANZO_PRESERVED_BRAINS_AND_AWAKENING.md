@@ -77,3 +77,15 @@ Manufactured birth is the norm, natural birth is less common, and preserved-brai
 **W4 Play:** retain the mission account while reconciling memory and arrival; no gameplay rewrite yet.
 
 This is a canon note within ongoing work, not a newly allocated or completed feather. W4-F3 and W2-F3 retain their review status. No Red Book text, runtime, live character state or service changed.
+
+## Repair, reanimation and old-brainer restoration — clarification, 17:44–17:48
+
+Bodies are valuable. Triton Central is challenging; military and workplace safety equipment prioritises protecting the brain so bodies can be rebuilt after extreme physical trauma. Repair is common for naturally born and manufactured people. Brain recovery after serious trauma has medical and spiritual challenges.
+
+Old brainers are literally very old brains restored from rare individuals who usually made exceptional arrangements. Historical restoration is not an ordinary public-health service. A few restorations occurred without consent or agency. Character-specific unrevealed histories belong to author knowledge, not player-facing recovery messages.
+
+Current authorial direction: all possessions carried/worn at death (the death pile) are automatically posted back to the character's pod in a timely manner; bodily reanimation takes **seven days**. This is a new explicit recovery-duration requirement, distinct from the earlier qualified memory-reintegration account. It does not establish that all memories return after exactly seven days.
+
+Brain death is a harder reset boundary. Do not equate recoverable brain trauma with irrecoverable brain loss or automatically assign exact memory, soul, inventory or progression consequences. Those ramifications remain to be authored.
+
+Implementation review and return: [Reset and recovery audit](../handover/RESET_AND_RECOVERY_REVIEW_20261018.md). No reset has been performed. Duration clock basis and delivery timing remain open implementation choices.
