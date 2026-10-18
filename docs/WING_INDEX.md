@@ -1,17 +1,17 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current position: first pass complete; **W1 Mythos / W1-F3 (historical Feather 57)** is allocated and parked for return. Latest sealed contribution: **W7-F2 — Recovery Capsule**. Karun intends to work in another wing next; that wing is not yet selected.
-**All eight wings have two completed feathers each: 16 sealed wing feathers. The chassis first pass is complete.** No feather is currently active; no deployment activated.
+Current home: **W2 Worlds / W2-F3 — The Opening We Can Inhabit**, in REVIEW. [Immersive player experience](current/IMMERSIVE_PLAYER_EXPERIENCE_20261018.md) is the adopted focus; larger World Engine expansion is on hold. W1-F3 / historical Feather 57 remains parked. Latest sealed contribution: W7-F2.
+**All eight wings have two completed feathers each: 16 sealed wing feathers. The chassis first pass is complete.** W2-F3 is in review and is not counted complete; no deployment activated.
 
-First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is now allocated and parked; all other next IDs remain unallocated.
+First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 is allocated and in review; other next IDs remain unallocated.
 
 ## Feather register
 
 | Wing | Completed since adoption | Latest sealed feather | Reserved return / next unallocated ID |
 | --- | --- | --- | --- |
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
-| W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | W2-F3 |
+| W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
 | W4 Play | 2 | [W4-F2](wings/W4-F2_ONE_LOOP_THAT_HOLDS.md) | W4-F3 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
@@ -27,7 +27,7 @@ Counts exclude historical global feathers; do not renumber them. Sealed means th
 
 ## Return checkpoints
 
-Initial checkpoints below are deliberately lightweight. They describe known stopping places, not eight active work queues. Their initial evidence date is 17 October 2026; W1's parked return was updated on 18 October. Refresh dated runtime evidence before treating it as current.
+Initial checkpoints below are deliberately lightweight. They describe known stopping places, not eight active work queues. Their initial evidence date is 17 October 2026; W1's parked return and W2's opening review were updated on 18 October. Refresh dated runtime evidence before treating it as current.
 
 ### W1 — Mythos
 - Trajectory: authored givens → coherent story spine → discoverable mythology.
@@ -44,7 +44,8 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Verified disk graph: 43 Manzo rooms, 100 directed exits, no absent targets, all rooms reachable from pod and Lounge; matches main's exit graph. In-process room data and a gated live walkthrough are not verified.
 - Open: four one-way connections, a 10-room reset baseline, duplicate room files, and wider-era geography; no repairs performed.
 - Sealed: [W2-F2 — The Local Atlas](wings/W2-F2_THE_LOCAL_ATLAS.md) accounts for all 43 rooms and 100 exact exits, with a group overview, example routes and four one-way markers. Live source hash rechecked unchanged before authoring.
-- Parked return: Worlds has 2 completed feathers; W2-F3 is unallocated. Before later map changes, refresh the configured graph and unresolved seams; no geography changed during this first pass.
+- Current review: [W2-F3 — The Opening We Can Inhabit](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md) traces existing arrival through the first choice and stages one listening passage. Source seams: creation welcome/location mismatch, initial scene bootstrap and one-choice completion. Prose awaits Karun's review; no production change or live playthrough.
+- Return: Worlds has 2 completed feathers; W2-F3 allocated in REVIEW, next unallocated W2-F4. Larger World Engine expansion is on hold under the adopted experience direction. Source checkpoint 48ff5b8; refresh live state before implementation.
 
 ### W3 — Beings
 - Trajectory: identity and arrival → consequential relationships → growth.
@@ -84,6 +85,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Delivery: nginx root /var/www/html; assets symlink into /opt/futuresky/assets; website and FEED7 returned HTTP 200. Asset changes can affect delivery directly.
 - Open: Docker inventory permission-blocked; named DB/audio systemd units not found, which does not prove no container services. Full backup/restore coverage unverified; event ledger ~231 MB at inspection.
 - Sealed: [W7-F2 — Recovery Capsule](wings/W7-F2_RECOVERY_CAPSULE.md): 165 selected files restored/hash-verified; 21 JSON files parsed; restored map 43 rooms/100 exits; bot unchanged. Private on-host capsule preserves selected live state and untracked art; no private contents committed to Git.
+- Development hold: larger World Engine expansion is parked while player experience, world-building and the opening supply context; bounded support work needs a demonstrated player need. See [adopted direction](current/IMMERSIVE_PLAYER_EXPERIENCE_20261018.md).
 - Parked return: W7 has 2 completed feathers; W7-F3 unallocated. Sequential same-host capture is not an atomic world snapshot or full disaster recovery. Scope exclusions and capsule path are recorded in W7-F2.
 
 ### W8 — Stewardship
@@ -95,6 +97,6 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 
 ## Shared direction and switching
 
-Approved direction is content-first, preserving the existing architecture. Karun reviewed and sealed W1-F1 on 17 October 2026, selecting orientation through space, memory or relationships. The wider Chapter One world-state design is not automatically authorised by that checkpoint.
+Approved direction is [immersive player experience, world-building and the opening sequence](current/IMMERSIVE_PLAYER_EXPERIENCE_20261018.md), preserving existing architecture and putting larger World Engine expansion on hold. W2-F3 is the current review; the parked Mythos return remains connected. Karun reviewed and sealed W1-F1 on 17 October 2026, selecting orientation through space, memory or relationships. The wider Chapter One world-state design is not automatically authorised by that checkpoint.
 
 Leave: outcome and evidence, source revision/date, settled/open questions, affected wings, and the next bounded candidate. Resume by reading those sources and verifying changed facts. Update the home checkpoint and count when sealing; update linked checkpoints only where their evidence changed.
