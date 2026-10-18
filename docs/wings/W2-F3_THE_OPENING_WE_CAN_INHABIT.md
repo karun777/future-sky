@@ -60,7 +60,11 @@ Cold blue light. A breath.
 
 Your breath.
 
-Condensation beads on the viewport. You lift a hand towards it, then stop. There is something unfamiliar about the hand.
+Condensation beads on the viewport. You lift your hands. Turn them over. Open them. Close them.
+
+They move when you mean them to.
+
+You do not recognise them.
 
 You cannot remember boarding.
 
@@ -175,3 +179,11 @@ Render the pod's physical setting concretely while leaving its purpose, the Char
 **Carry forward:** Worlds maintains spatial coherence and what is discoverable. Expression maintains visual treatment, framing, prose/media balance and continuity across later images. The first image is a review concept generated in conversation; a selected production asset will need its own versioned repository placement and delivery check. Live-host documentation sync remains pending.
 
 **Generation brief:** cinematic photorealistic science-fiction still, landscape, seated/reclining first-person eye height inside a compact habitable transit pod; tactile, slightly worn materials, cold blue practical lighting and soft red indicator; condensation obscures the viewport; integrated hatch controls and partly dispensed paper brochure; restrained, intimate, mysterious and humane rather than horror. No visible person, no exterior reveal, no added objects or signage beyond pod number and brochure heading. Review-only, no media installation.
+
+## Shared checkpoint — W2 / W3 / W4 / W6: Attention and recognition
+
+Karun's 18 October direction: every discernible thing shown should support closer investigation, with text and/or close-up media and authored contextual differences. Prioritise depth in a small inhabited Triton Central. Keep early unfamiliar hands and recover FEED7 after bodily awareness; looking for one's reflection is a natural player intention.
+
+The [pod inspection and recognition pass](W2-F3_POD_INSPECTION_AND_RECOGNITION.md) owns the complete visual inventory, source recovery, hands-first revision, FEED7 boundary and proposed wardrobe mirror. W3 joins the crossing for embodied identity, W4 for investigation and W6 for visual promises; W2 remains home. Generated props and mirror placement are proposals, not adopted lore or implemented affordances. No extra feather allocated; W2-F3 remains in REVIEW.
+
+The next candidate in this follow-up refines the earlier creation-handoff candidate: review the pod inspection slice first so any implementation carries the recovered experience rather than simply wiring an incomplete scene.
