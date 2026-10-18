@@ -1,7 +1,7 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W6 Expression / W6-F4 — A Pod We Can Inhabit**, allocated and in visual review: reconcile one pod layout and generate a first room-facing cinematic still. W6-F3 is sealed following live checks. W4-F4/F5 remain deployed; recovery gameplay remains untested live. W2-F3/W4-F3 remain in REVIEW; W1-F3 / historical Feather 57 remains parked. Larger World Engine expansion remains on hold.
+Current home: **W6 Expression / W6-F4 — A Pod We Can Inhabit**, in REVIEW: five versioned cinematic stills bound to pod views/inspection; text-only open wardrobe and conditional contents preserved. Verification/deployment pending. W6-F3 is sealed following live checks. W4-F4/F5 remain deployed; recovery gameplay remains untested live. W2-F3/W4-F3 remain in REVIEW; W1-F3 / historical Feather 57 remains parked. Larger World Engine expansion remains on hold.
 **19 sealed wing feathers: W4 has four, W6 has three; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
@@ -107,7 +107,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W5 has 2 completed feathers; W5-F3 unallocated. [W1-F3](wings/W1-F3_THE_EIGHT_TIMELINES.md) links this wing for cross-era causality, without allocating a W5 feather. Failed clock persistence advances memory before suppressing publication; later save may include it. Recovery/replay policy remains open. No live time change.
 
 ### W6 — Expression
-- Current visual feather: [W6-F4 — A Pod We Can Inhabit](wings/W6-F4_A_POD_WE_CAN_INHABIT.md), layout proposal and first review still. No media deployment or count increment. W6-F5 next unallocated.
+- Current visual feather: [W6-F4 — A Pod We Can Inhabit](wings/W6-F4_A_POD_WE_CAN_INHABIT.md), five-still binding implementation in REVIEW; wardrobe remains text-only. Deployment pending; no count increment. W6-F5 next unallocated.
 - Shared implementation node: [W4-F4 — Whose Hands Are These?](wings/W4-F4_WHOSE_HANDS_ARE_THESE.md) connects pod fixtures (W2), bodily recognition and attire (W3), and discoverable presentation (W6). W4 owns the feather; no duplicate count. Existing outfit choices remain; richer work garments and cinematic media remain open.
 - Shared attention checkpoint: [W2 / W3 / W4 / W6 — Pod inspection and recognition](wings/W2-F3_POD_INSPECTION_AND_RECOGNITION.md). Hands-first and early FEED7 recovered; all visible features inventoried; wardrobe mirror and prop responses proposed. W2-F3 remains in REVIEW; no linked feather allocated.
 - Shared checkpoint: [W2 ↔ W6 — Cinematic storytelling](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md#shared-checkpoint--w2--w6-cinematic-storytelling), owned by W2-F3. Compose images, prose and choices together; render physical presence while preserving mystery. First pod still remains under review. W6-F3 is now separately allocated for the HUD; no completed-count change.

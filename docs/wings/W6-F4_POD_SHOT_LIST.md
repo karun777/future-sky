@@ -8,7 +8,7 @@ The first room image is approved as visual direction (“we can implement someth
 | P01 | The pod revealed | Room-facing establishing view: berth, frosted window, hatch, separate red indicator/button, brochure/dispenser, closed wardrobe, small side display | First concept approved as direction; review image |
 | P02 | Side wall | Same closed wardrobe, recessed grips, lower storage, physical display, wall junction | Draft generated from P01; contents hidden |
 | P03 | Physical display | FEED7 plus separate unread performance-notification heading | Draft generated from P01; no early tomorrow-night detail |
-| P04 | Wardrobe opened | Clothes and preparation | Pending contents decision: four implemented options versus desired five work categories/casual gear; do not invent or change inventory |
+| P04 | Wardrobe opened | Clothes and preparation | TEXT ONLY by Karun, 20:54 AWST. Excluded from image package; contents condition-dependent and undefined |
 | P05 | Hatch-side details | Red indicator, separate button, brochure and dispenser, surface wear | Draft generated from P01; brochure marketing image is not a geographic fact |
 | P06 | Viewport | Condensation, glass, uncertain reflection, light | Draft generated/revised from P01; no defined face/person/exterior |
 
@@ -79,3 +79,13 @@ These are generated companion views, not pixel-identical crops or a measured 3D 
 P03 is specifically an UNREAD-state image. It must not be reused after the booking is read without a state-appropriate variant or text-safe treatment. This reveals a necessary additional display-state variant if that view is installed. No UI is allowed to claim unread after stored discovery.
 
 Five of six planned views now have draft imagery (P01/P02/P03/P05/P06). P04 remains pending clothing contents. Hands, neck objects and clear mirror remain separate pending decisions. No image installed, no new inspection/action capability claimed, W6-F4 not sealed.
+
+## Binding pass — 18 October, 20:57 AWST onward
+
+Current package is **five stills**, not six. P04 is text-only, not a missing image. Earlier generation/pending-contents statements above are superseded by Karun's flexibility decision. No fixed exhaustive wardrobe categories or new inventory rules.
+
+Versioned repository assets are `assets/images/world/manzo/triton_central/neptune_lounge/pod/v1/p01.png`, p02, p03, p05 and p06. Room look / pod survey → P01; panels → P02; display before booking-read → P03; light/button/brochure/picture → P05; viewport/reflection → P06. Other body/wardrobe/material inspections remain prose. No room image in the explicit awakening body introduction.
+
+After booking discovery, display inspection is text-only: no false UNREAD artwork. Images never grant items or operate controls. Existing code room-data placeholder is overridden specifically for pod look, preserving live room data and other rooms. No new sense-return engine or character phenotype.
+
+User requested moving the other shared-pod occupant to Neptune Lounge as a temporary operational workaround. Unique per-player pods remain future work; do not claim room instancing/privacy is solved or hide occupancy through presentation alone.

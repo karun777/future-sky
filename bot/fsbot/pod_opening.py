@@ -21,6 +21,16 @@ TARGETS = {
             "An interface waits quietly for your attention. Signals and notices you discover can be revisited here. "
             "Your inward impressions are not messages from this display.",
             "Use `!hud` to review what you have found. `!hud off` hides the display; `!hud on` restores it."),
+    "surfaces": ("The pod's surfaces", "Warm-grey panels meet at softened seams. Scuffs gather at edges and grips. "
+                 "The floor has a close, practical weave; the ceiling and walls keep their fittings recessed. "
+                 "Ordinary wear suggests use without identifying any previous occupant.",
+                 "Try `!inspect hatch`, `!inspect panels` or `!inspect berth`."),
+    "lighting": ("The interior light", "A warm strip above the side display picks out the cabinet edges. "
+                 "Cold blue light filters through the wet viewport. The small red status light is separate.",
+                 "Try `!inspect light`, `!inspect display` or `!inspect viewport`."),
+    "brochure_art": ("The brochure's picture", "A printed landscape lies beneath the welcome heading. "
+                    "It is promotional artwork, not a map or a clear view of the world beyond the pod.",
+                    "Read the leaflet with `!inspect brochure`."),
     "hands": ("Your hands", "They answer each movement. You turn them over slowly. "
               "Familiar control; unfamiliar hands. Looking closer does not give you a name.",
               "Try `!inspect body`, `!inspect garment` or `!inspect pod`."),
@@ -33,7 +43,7 @@ TARGETS = {
     "chain": ("The object at your chest", "A small metal key hangs from the chain. "
               "A worn loop of cord binds a little wooden cube to it. Circle, heart, crossed mark; "
               "the other symbols feel directional. You do not remember acquiring either object.",
-              "Observation alone adds no item to your bag. Try `!inspect pod`."),
+              "The key and cube rest against your chest. Try `!inspect pod`."),
     "pod": ("The cubicle", "A berth, a frosted viewport and a hatch within reach. "
             "A red light burns beside a button. A welcome brochure protrudes from a dispenser. "
             "Storage panels occupy the side wall; their recessed grips invite a closer look.",
@@ -57,7 +67,7 @@ TARGETS = {
                  "Please disregard any contradictory onboarding information.\n\n"
                  "A metallic crash sounds outside. The brochure does not acknowledge it.",
                  "Try `!inspect panels` or return to `!inspect pod`."),
-    "panels": ("The side wall", "One recessed compartment is a wardrobe. Beside it, a small display "
+    "panels": ("The side wall", "A closed wardrobe and lower storage drawer have recessed grips. Beside them, a small display "
                "flickers. A signal tile reads **FEED7**. Below it is a separate notification: "
                "**Performance booking**.",
                "Try `!inspect display`, `!inspect wardrobe` or open the compartment with `!wardrobe`."),
@@ -68,7 +78,7 @@ TARGETS = {
                  "There are outfits to examine before you enter the Lounge. "
                  "What you wear is not proof of a job, a faction or a remembered identity.",
                  "Use `!wardrobe` for the existing outfit choices. Review what you wear with `!fit`."),
-    "berth": ("The berth", "The surface has supported your weight. Below its edge is a panel seam "
+    "berth": ("The berth", "A plain woven cover lies across the berth. Its padded edge has supported your weight. Below it is a panel seam "
               "you can follow with your fingertips.",
               "Try the existing `!search panel` action, or turn to `!inspect panels`."),
     "booking": ("Tomorrow night", "**PERFORMANCE BOOKING — TOMORROW NIGHT**\n\n"
@@ -84,7 +94,15 @@ ALIASES = {
     "breath": "body", "breathing": "body", "my body": "body",
     "clothes": "garment", "clothing": "garment", "transit garment": "garment",
     "neck": "chain", "chest": "chain", "key": "chain", "cube": "chain",
-    "room": "pod", "cubicle": "pod", "walls": "pod", "door": "hatch",
+    "room": "pod", "cubicle": "pod", "door": "hatch",
+    "wall": "surfaces", "walls": "surfaces", "floor": "surfaces", "ceiling": "surfaces",
+    "seams": "surfaces", "scuffs": "surfaces", "carpet": "surfaces",
+    "hinges": "hatch", "frame": "hatch", "seals": "hatch", "screws": "hatch",
+    "handle": "panels", "handles": "panels", "drawer": "panels", "drawers": "panels",
+    "cabinet": "panels", "cabinets": "panels", "lower storage": "panels",
+    "blanket": "berth", "cover": "berth", "bedding": "berth", "fabric": "berth",
+    "warm light": "lighting", "strip light": "lighting", "cabinet light": "lighting",
+    "brochure picture": "brochure_art", "brochure illustration": "brochure_art", "printed landscape": "brochure_art",
     "grips": "panels", "dispenser": "brochure",
     "window": "viewport", "glass": "viewport", "condensation": "viewport",
     "mirror": "reflection", "face": "reflection", "my face": "reflection",

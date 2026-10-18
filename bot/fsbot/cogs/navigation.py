@@ -39,6 +39,7 @@ from discord.ext import commands
 from fsbot.cogs.router import ensure_player_run_channel
 from fsbot.events import create_event
 from fsbot.pod_opening import pod_bearings, GUIDANCE
+from fsbot.pod_media import pod_image
 
 
 # ============================================================
@@ -426,8 +427,9 @@ class NavigationCog(commands.Cog):
         hud_cog = self.bot.get_cog("HudCog")
         hud_panel = hud_cog.panel(user_id) if hud_cog else None
 
-        if isinstance(room.get("image"), str) and room.get("image"):
-            embed.set_image(url=room["image"])
+        image_url = pod_image(ch, "room") or room.get("image")
+        if isinstance(image_url, str) and image_url:
+            embed.set_image(url=image_url)
 
         if changed:
             s.save_characters()

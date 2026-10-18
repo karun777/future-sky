@@ -1,7 +1,7 @@
 # W6-F4 — A Pod We Can Inhabit
 
 Home wing: **W6 Expression**. Allocated by Karun, 18 October 2026, 20:23 AWST.
-Status: **IN PROGRESS / visual review**. Layout proposal and first cinematic review still. No runtime/media deployment or completed-count increment.
+Status: **REVIEW — five-image binding implementation being verified**, no completion increment. Earlier concept-only statements are dated history; deployment evidence will govern installed state.
 
 ## Purpose
 
@@ -66,3 +66,20 @@ Generated in this conversation using the built-in image tool: `exec-7681a51e-407
 The frame keeps the proposed seated view, berth at left, frosted viewport, hatch, separate red indicator/button, brochure/dispenser, right-wall wardrobe and small physical screen. No visible body, face, mirror or defined exterior. Warm interior light is stronger than the initial cold-blue wording, with blue concentrated at the viewport; this is a reviewable art-direction choice, not a canon change. Brochure artwork suggests a promotional landscape; it must not be treated as a map or identified real exterior. Any retained border fittings, lights, handles, lower drawers and textile details need grouped inspection coverage or more specific authored responses before deployment.
 
 Candidate selected for author review, not final acceptance. Do not auto-install it or delete the earlier concept. Next decision: does this space feel like the pod, and how much warmth, wear and wizardly character should its final treatment carry?
+
+## Five-still implementation and operational boundary
+
+Karun approved the six-shot planning direction, then explicitly chose text-only open wardrobe at 20:54 AWST. Five image files (P01/P02/P03/P05/P06) now form the package; P04 stays text-only and no exhaustive garment catalogue is implied. [Shot list and binding details](W6-F4_POD_SHOT_LIST.md).
+
+New `pod_media.py` owns versioned selection. Navigation uses P01 for pod look; Inspection chooses close-ups only for matching targets. P03 is suppressed once the booking is read. Awakening/body, HUD and wardrobe remain text-led. Architectural fittings, warm lighting, cover, grips, drawer and brochure art receive grouped inspectable prose/natural aliases; printed landscape is promotional artwork, not a map. Chain guidance no longer exposes inventory implementation language.
+
+Generated source checksums:
+- P01: `5d3d369e9715377234f82baeb5d413edbc982dfba96bbe0bc320ce9d22b6c1d6` (PNG, 2096972 bytes)
+- P02: `4e98d45dbc91969b4239b3ac470938d92d02cf6785b9ac5f4a253228fbbd690a` (PNG, 1777493 bytes)
+- P03: `68e3e9861b65bccef1d3ea36f082916f1ae72d4c3c79242b4af09575712e19be` (PNG, 1965481 bytes)
+- P05: `36ac6256e011c95f8515cf223bf7104c01291af22e82034bfb07c0211cb25905` (PNG, 1813391 bytes)
+- P06: `7927ccd85968e85995993188b25a9cd56c478f5fc1fd524f77fb98ac3fb57431` (PNG, 2404638 bytes)
+
+Temporary occupancy workaround authorised: move only `wanderer-0466` from pod_room to neptune_lounge, preserving all other fields. Back up and perform alongside a controlled restart so runtime reloads the change. Efiishent and other character records remain intact. No per-player room system, event replay or false relocation narration is added. Unique pods require a later explicit design.
+
+Verification/deployment results will be appended after checks. W6-F4 remains REVIEW. W6 completed 3; total sealed 19.

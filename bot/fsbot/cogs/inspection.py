@@ -2,6 +2,7 @@
 import discord
 from discord.ext import commands
 from fsbot.item_inspection import inspect_item
+from fsbot.pod_media import pod_image
 from fsbot.pod_opening import (GUIDANCE, opening_state, scene_target, prepare_observation, pod_bearings)
 
 
@@ -41,6 +42,9 @@ class InspectionCog(commands.Cog):
                 text = ("You are wearing **" + title + "**. A thin chain rests beneath the collar. "
                         "Clothes alone do not establish a job, a faction or a remembered identity.")
         embed = discord.Embed(title=title, description=text, color=discord.Color.dark_teal())
+        image_url = pod_image(updated, target)
+        if image_url:
+            embed.set_image(url=image_url)
         embed.add_field(name="Your attention", value=guidance, inline=False)
         if target is None or target == "pod":
             exits = storage.rooms.get("pod_room", {}).get("exits", {})

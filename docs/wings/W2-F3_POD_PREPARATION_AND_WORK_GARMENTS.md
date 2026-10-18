@@ -39,3 +39,9 @@ Connect this to [W3's Character / Role / Driver distinctions](W3-F2_WHO_CARRIES_
 W2 owns the preparation space, W3 identity/jobs/factions, W4 teaching through action and consequences, W6 the rendered wardrobe and inspectable visual detail. [The inspection pass](W2-F3_POD_INSPECTION_AND_RECOGNITION.md) still owns its proposed mirror and object inventory; a mirror fixture has not been established by this addendum.
 
 The [two-day mission map](W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md) gives the pod a concrete upcoming life to prepare for. It does not authorise production outfit changes, entry/exit gates or a character-creation rewrite.
+
+## Later clarification — 18 October, 20:54 AWST
+
+Karun chooses a **text-only open wardrobe** to preserve flexibility. Its contents can vary under conditions not yet defined. Do not freeze the earlier five work-garment categories into a categorical or exhaustive catalogue; retain them as earlier requested possibilities. No open-wardrobe still is required for this run. The closed wardrobe may appear in room imagery. Existing four-option runtime browsing remains legacy implementation, not the final conditional catalogue; no new selection rules are inferred.
+
+Shared visual reference: [W6-F4 shot list](W6-F4_POD_SHOT_LIST.md).
