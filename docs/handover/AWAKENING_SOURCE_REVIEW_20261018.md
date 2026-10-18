@@ -122,3 +122,11 @@ Synthetic half-open intervals and sample retention are explicitly experimental p
 This reconstruction is complete as a bounded source review, synthesis and isolated logic demonstration. It does **not** seal W2-F3 or W4-F3 as approved playable content. Counts remain 16.
 
 The original research branches, Red Book and live gameplay remain unchanged. The reconstructed entry point, primary notes, revisions and rehearsal are saved together so the next session can resume without Karun re-explaining the world.
+
+## Author clarification — 18 October 2026, 17:05
+
+Karun clarified that Efiishent's preservation was near the end of his ordinary earthly human life in Omincron; the earlier portal passage was at Earthdance 2024. In his encounter, the sadvipran alien embassy representative, ambassador, princess and Dark Rat Queen are one person.
+
+The common mission is available to any player: meet an allied-faction representative and trade, with romance optional. Puzzler and Queen particular instances are for later authoring. The reconstruction and W4-F3 now distinguish that common quest from Efiishent's performance/private encounter. Every quest leaves a footprint with privacy paramount; discoverability does not confer unrestricted access to private history.
+
+Four common-quest boundary cases were added to the offline rehearsal. **Current total: 23 passing tests** (the 19-test results above describe the original reconstruction run). They exercise a common trade opportunity without musical or romantic facts, missing exchange information, refusal and an expired window. Production access control/privacy enforcement remains outside this rehearsal; no such guarantee is claimed.

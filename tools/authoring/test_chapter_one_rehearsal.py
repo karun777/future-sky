@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 from chapter_one_rehearsal import (
     Rehearsal, Result, following_set, private_exchange, receipt_meaning_condition,
+    allied_trade_opportunity,
 )
 
 
@@ -57,6 +58,26 @@ class WindowCases(unittest.TestCase):
 
     def test_closed_window_cannot_be_rescued_by_all_other_conditions(self):
         self.assertEqual(self.exchange(opportunity=Result.CLOSED), Result.CLOSED)
+
+
+class CommonQuestCases(unittest.TestCase):
+    def opportunity(self, **overrides):
+        facts = dict(window_open=True, representative_present=True,
+                     mutually_willing=True, exchange_available=True)
+        facts.update(overrides)
+        return allied_trade_opportunity(**facts)
+
+    def test_diplomatic_trade_needs_no_romance_or_performance_fact(self):
+        self.assertEqual(self.opportunity(), Result.POSSIBLE)
+
+    def test_a_meeting_without_an_established_exchange_is_unresolved(self):
+        self.assertEqual(self.opportunity(exchange_available=None), Result.UNRESOLVED)
+
+    def test_refusal_closes_the_proposed_trade(self):
+        self.assertEqual(self.opportunity(mutually_willing=False), Result.CLOSED)
+
+    def test_expired_window_cannot_be_overridden_by_other_conditions(self):
+        self.assertEqual(self.opportunity(window_open=False), Result.CLOSED)
 
 
 class MemoryCases(unittest.TestCase):

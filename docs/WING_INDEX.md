@@ -8,7 +8,7 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 
 ## Reconnected return — 18 October 2026
 
-Begin with [Awakening — a connected reconstruction](handover/AWAKENING_RECONSTRUCTION_20261018.md), then [Karun's recovered words](handover/AUTHORIAL_NOTES_20261018.md) and the [source/live-state review](handover/AWAKENING_SOURCE_REVIEW_20261018.md). W4-F3 remains home and in REVIEW; W2-F3 is parked in REVIEW. Source review, synthesis and a 19-case offline rehearsal are complete, while playable approval remains open. No completed-count increment.
+Begin with [Awakening — a connected reconstruction](handover/AWAKENING_RECONSTRUCTION_20261018.md), then [Karun's recovered words](handover/AUTHORIAL_NOTES_20261018.md) and the [source/live-state review](handover/AWAKENING_SOURCE_REVIEW_20261018.md). W4-F3 remains home and in REVIEW; W2-F3 is parked in REVIEW. Source review, synthesis and a 23-case offline rehearsal are complete, while playable approval remains open. No completed-count increment.
 
 The connection to Neptune Lounge is restored and today's documentation is brought home. Runtime HEAD and active bot remain unchanged. Dated operational evidence is in the review; refresh before future runtime work.
 
@@ -72,6 +72,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W3 completed count is 2; W3-F3 remains unallocated. Preserve identity/role/driver distinctions before deeper character authoring or controller changes.
 
 ### W4 — Play
+- Clarified 18 October 17:05: the common quest is meeting an allied-faction representative and trading, available to any player with romance optional. Efiishent's ambassador/princess/Queen is one person; Puzzler and Queen instances await authoring. Footprints persist with privacy paramount. [Connected account](handover/AWAKENING_RECONSTRUCTION_20261018.md#6-one-quest-many-particular-passages).
 - Author-declared canon, 18 October: [Preserved brains, manufactured bodies and awakening](current/MANZO_PRESERVED_BRAINS_AND_AWAKENING.md). Efiishent's self-made preservation cube, Triton revival instructions, retained faculties and body/parallelism relationship. Corrected population: 10% natural / 89% manufactured / 1% old brain. Memory emerges gradually during reintegration, usually seven days, qualified by an instruction manual none is known to possess; manual implications remain open. No new feather count.
 - Shared attention checkpoint: [W2 / W3 / W4 / W6 — Pod inspection and recognition](wings/W2-F3_POD_INSPECTION_AND_RECOGNITION.md). Hands-first and early FEED7 recovered; all visible features inventoried; wardrobe mirror and prop responses proposed. W2-F3 remains in REVIEW; no linked feather allocated.
 - Trajectory: verified loops → choices and consequences → integrated experience.

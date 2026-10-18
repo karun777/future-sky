@@ -179,3 +179,15 @@ The correction supersedes the initial percentages. The unknown manual's implicat
 The exact final boss, received mission item, public name/identity presentation of the royal visitor, performance criterion, deadline timestamps, reset retention policy and specific body-appearance system remain open. The origin story is explicitly canon; other notes retain their stated authorial status, possibilities and qualifications.
 
 This file preserves the source. [The reconstruction](AWAKENING_RECONSTRUCTION_20261018.md) distinguishes its synthesis and design proposals from these words.
+
+## 17:05 — Arrival specificity, shared quest and privacy
+
+> Towards the end of his *ordinary earthly human life during omincron period), Efiishent designed and manufactured...
+>
+> He comes from Omincron through Earthdance > change to > he comes from omincron through a portal he stepped through in omincron era earthdance 2024
+>
+> the ambassador (sadvipran alien embassy representative) and the princess are the same person (also dark rat queen)
+>
+> i used the example of the puzzler to illustrate that he could undertake the same mission to meet an alien princess at the neptune lounge.  we will actually eventually author the puzzler's, and the dark rat queen's specific instance of this quest but the point here is that any player can undertake the same quest to meet a representative from an allied faction, perhaps but not necessarily have a romantic connection, make a trade.  - i hope this is clear it's important.  all quests leave a footprint of evidence whilst of course making sure that privacy is held paramount.
+
+This later clarification settles the ambassador/princess relationship and the common quest's scope. It supersedes earlier unresolved wording on those points, without retroactively altering the earlier quotations.

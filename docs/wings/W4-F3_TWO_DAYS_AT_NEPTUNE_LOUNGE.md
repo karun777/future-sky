@@ -23,10 +23,21 @@ All S references below identify Karun's messages in this conversation on **18 Oc
 - **S2 — 13:41:** Chapter 1 / Timeline 1, Efiishent's passage, Earthdance, performance, princess, exchange, return, persistent evidence and real-world receipt condition.
 - **S3 — 14:00:** two-day window, ordered beats, missed timing, possible repeat cycle, recurring other princes/princesses and future human participants in currently NPC roles.
 - **S4 — 14:16:** a different princess's physical gift; distinct from the Dark Rat Queen's gift.
+- **S7 — 17:05:** Omincron earthly-life specificity; Earthdance 2024 portal; ambassador/princess/Queen identity; common diplomatic-trade quest, optional romance, future particular Puzzler/Queen instances and privacy paramount.
 - **S6 — 14:55 and 14:59:** explicit preserved-brain canon, gradual reintegration, seven-day/manual qualification and corrected population. See the [canon note](../current/MANZO_PRESERVED_BRAINS_AND_AWAKENING.md).
 - **S5 — 14:19:** Karun authorises W4-F3 as proposed: documentary preservation and logic mapping, not runtime implementation.
 
 These are source pointers into the conversation, not invented external citations. The account below is a faithful structured rendering, not a verbatim transcript. Assistant suggestions are not silently promoted into S1–S4.
+
+## Common quest and instance scope — clarified 17:05
+
+Any player can undertake the mission to meet a representative from an allied faction at Neptune Lounge and make a trade. Romance is possible but not necessary. The Puzzler was an illustration of that general availability; the Puzzler's and the Dark Rat Queen's particular quest instances will be authored later.
+
+Efiishent's musical performance, bodily interruption, romantic meeting and particular gift exchange are his authored instance. The performance gate, private-room sequence and IRL relevance condition are not universal prerequisites for every participant's version.
+
+In Efiishent's instance, **ambassador = sadvipran alien embassy representative = princess = Dark Rat Queen**. This relationship is settled, while its in-world disclosure remains constrained.
+
+All quests leave a footprint; privacy is paramount. A durable occurrence is not automatically a public or identity-revealing trace. See [the reconstruction's privacy treatment](../handover/AWAKENING_RECONSTRUCTION_20261018.md#footprints-with-privacy-paramount).
 
 ## 1. The story to preserve — Efiishent's account (S2)
 
@@ -34,7 +45,7 @@ Other versions of Chapter 1, “Awakening,” will exist on other timelines. Thi
 
 Karun tells the mission through Efiishent's lived perspective. Efiishent does not know whether what he is living is real. Nevertheless, within the authored world, events happen and leave logic, evidence, artefacts, records and clues. Completing the quest need not make the accomplishment publicly known. Deeply curious participants may find buried traces.
 
-Efiishent has come from Omincron through Earthdance, a substantial quest from another era. He is to meet an ambassador from alien sadvipran friends concerning a gift. Vitriol's agents are trying to intercept it. The phrase “which he needs to get from Omincron” is preserved as an unresolved direction-of-transfer statement; later in the same account he needs to take the received item back to Omincron.
+Efiishent has come from Omincron through a portal he stepped through at Earthdance 2024 in the Omincron era. He is to meet a sadvipran alien embassy representative concerning a gift. That ambassador is the princess and the Dark Rat Queen in this instance. Vitriol's agents are trying to intercept it. The phrase “which he needs to get from Omincron” is preserved as an unresolved direction-of-transfer statement; later in the same account he needs to take the received item back to Omincron.
 
 He awakens in a pod, not remembering and not necessarily motivated to recover his memory. Karun's later canon clarification explains retained memory without immediate access: preserved-brain rebirth requires gradual reintegration. Usually seven days, qualified by reading an instruction manual none is known to possess; exact mechanics remain open. He has a gig tomorrow night. He does not know whether it is a DJ set, for which he has no prepared set, or a live acoustic performance, which instrument it would involve, whether he can play it, whether he has collaborators, who plays before him, or who has come to see him. Fairly early, he learns that he must meet someone after his performance.
 
@@ -59,9 +70,9 @@ The Chapter 1 final boss has been mentioned as conceived but **has not been iden
 | Distinction | Rule for this map | Source |
 | --- | --- | --- |
 | Occurrence / credit | An event has a definite occurrence even when who “kicked the goal” is unresolved to people. Ambiguous attribution does not erase world truth. | S2 |
-| Efiishent / another participant | The Puzzler can attempt the same quest and encounter traces of Efiishent's earlier attempt. Their exact contributions and paths must be authored, not substituted by convenience. | S2 |
+| Efiishent / another participant | The Puzzler can attempt the same quest and encounter traces of Efiishent's earlier attempt. The common allied-representative meeting/trade quest is available to any player; individual routes and contributions are authored instances. | S2 |
 | Particular / recurring encounter | Efiishent's Dark Rat Queen encounter is particular to him. Other participants do not repeat that relationship by replaying the chapter. | S3 |
-| Other royalty / Queen | Other princes/princesses visit nightly looking to hook up and exchange gifts with Earth hotties. Their individual identities and intentions are not automatically the Queen's. | S3 |
+| Other royalty / Queen | Other princes/princesses visit nightly looking to hook up and exchange gifts with Earth hotties. Their individual identities and intentions are not automatically the Queen's; romance is optional in the common quest. | S3 |
 | Gift / mission item | A gift with unclear significance can matter without fulfilling this mission. The photographed feather ornament is explicitly another gift. | S4; [gift record](../current/items/PRINCESS_FEATHER_GIFT_20261018.md) |
 | Job / faction / clothes | Jobs and factions differ; cleaners and spies can exist across factions. An outfit is not proof of employment, allegiance or competence. | S1; last sentence is a modelling distinction for review |
 | Character / Role / Driver | A participant may later fill a role currently run by a scripted character. Preserve identity, knowledge and continuity; do not assume current driver-transfer capability. | S3; [ontology](../current/ARCHITECTURE_v1.1.md), [W3-F2](W3-F2_WHO_CARRIES_WHOM.md) |
@@ -142,7 +153,7 @@ These are requirements for the model, not new database fields adopted here.
 | Passage | What can be mapped now | What must not be invented |
 | --- | --- | --- |
 | Efiishent's particular passage | S2 sequence and named identity secret. | Rewrite into a generic romance reward loop. |
-| Puzzler after Efiishent | Existing world contains traces of the earlier attempt; Puzzler's attempt is real too. | Repeat the same unique Queen exchange or erase the earlier event. Exact valid Puzzler route remains open. |
+| Puzzler after Efiishent | Existing world contains traces of the earlier attempt; Puzzler's attempt is real too. | Repeat the same unique Queen exchange or erase the earlier event. Puzzler's specific instance will be authored later; the common meeting/trade mission is available. |
 | Two participants at one moment | They can share performance/dance-floor context and witness different things. | Automatic shared victory, identical knowledge, duplicated unique gifts or a rule that one participant must lose. |
 
 The earlier assistant suggestion that helping an artist automatically substitutes for performing is **not authored** and is not a valid alternate route in this map.
@@ -151,7 +162,7 @@ The earlier assistant suggestion that helping an artist automatically substitute
 
 Karun supplies **the existence of lasting evidence**, not its final placement. An evidence record should eventually distinguish the originating occurrence, physical/recorded trace, who can encounter it, what it shows and what it does not establish.
 
-A schedule, mark, witness memory or receipt could serve later, but none is placed here merely to fill the table. Clues can be deeply buried without requiring illogical withholding when someone actually discovers them. A reset cannot silently delete evidence required by the authored persistent-world premise.
+A schedule, mark, witness memory or receipt could serve later, but none is placed here merely to fill the table. Privacy governs who may discover a trace and what it reveals: curiosity alone does not authorise access to private identity, intimacy, conversation or gift contents. All quests leave a footprint without requiring a public completion feed. A reset cannot silently delete evidence required by the authored persistent-world premise.
 
 ## 6. Knowledge boundary at the identity secret
 
@@ -202,7 +213,7 @@ Checked: all declared mission conditions trace to S1–S4; assistant inferences 
 
 Reached: account preserved, relative time boundaries mapped, one explicit performance-loss condition distinguished from open dependencies, unique/recurring encounters separated, shared reality and knowledge constrained, review cases recorded.
 
-Open: exact window bounds and next-morning placement; time scale; gig format and performance criterion; discovery of appointment; counterpart/ambassador relationship; item identity and transfer direction; final boss; other valid routes; shared outcome/custody; reset retention; IRL receipt acknowledgement. Do not demand all answers at once.
+Open: exact window bounds and next-morning placement; time scale; gig format and performance criterion; discovery of appointment; item identity and transfer direction; final boss; other valid routes; shared outcome/custody; reset retention; IRL receipt acknowledgement. Do not demand all answers at once.
 
 **Return after reconstruction:** review the connected opening as an experience, including what makes tomorrow's gig discoverable during preparation. The ambassador's stay/leave boundary and performance criterion remain the first explicit mission gate to define when that scene is developed; no numeric quality system is selected.
 
@@ -210,4 +221,4 @@ W4-F3 remains in REVIEW. W4 completed count stays 2; total completed wing feathe
 
 ## Reconnected review — 18 October 2026
 
-The source and lived account have been reread in a [connected reconstruction](../handover/AWAKENING_RECONSTRUCTION_20261018.md). An [offline authoring rehearsal](../../tools/authoring/chapter_one_rehearsal.py), with [19 passing boundary cases](../../tools/authoring/test_chapter_one_rehearsal.py), now demonstrates supplied-fact deadlines, separate perspectives, gift custody and example retained traces. Its synthetic timing and reset policy are not live rules. No production code imports it. Author review and actual gameplay integration remain pending.
+The source and lived account have been reread in a [connected reconstruction](../handover/AWAKENING_RECONSTRUCTION_20261018.md). An [offline authoring rehearsal](../../tools/authoring/chapter_one_rehearsal.py), with [23 passing boundary cases](../../tools/authoring/test_chapter_one_rehearsal.py), now demonstrates supplied-fact deadlines, separate perspectives, gift custody and example retained traces. Its synthetic timing and reset policy are not live rules. No production code imports it. Author review and actual gameplay integration remain pending.
