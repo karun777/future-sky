@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W4 Play / W4-F5 — The Body Returns, the World Remembers**, sealed after isolated implementation verification; not deployed. W4-F3 remains in REVIEW: authorial account and conditional mission map saved. W2-F3 is parked in REVIEW with pod/wardrobe decisions preserved; W1-F3 / historical Feather 57 remains parked. [Immersive player experience](current/IMMERSIVE_PLAYER_EXPERIENCE_20261018.md) remains the focus; larger World Engine expansion is on hold.
-**18 sealed wing feathers: W4 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; no deployment activated.
+Current home: **W4 Play / W4-F5 — The Body Returns, the World Remembers**, sealed after isolated implementation verification; deployed 18 October at 18:11 AWST. Discord playthrough remains open. W4-F3 remains in REVIEW: authorial account and conditional mission map saved. W2-F3 is parked in REVIEW with pod/wardrobe decisions preserved; W1-F3 / historical Feather 57 remains parked. [Immersive player experience](current/IMMERSIVE_PLAYER_EXPERIENCE_20261018.md) remains the focus; larger World Engine expansion is on hold.
+**18 sealed wing feathers: W4 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
@@ -11,6 +11,10 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 Begin with [Awakening — a connected reconstruction](handover/AWAKENING_RECONSTRUCTION_20261018.md), then [Karun's recovered words](handover/AUTHORIAL_NOTES_20261018.md) and the [source/live-state review](handover/AWAKENING_SOURCE_REVIEW_20261018.md). This reconstruction preceded W4-F4; W4-F3 remains in REVIEW and W2-F3 is parked in REVIEW. Source review, synthesis and a 23-case offline rehearsal are complete, while playable approval remains open. No completed-count increment.
 
 The connection to Neptune Lounge is restored and today's documentation is brought home. Runtime HEAD and active bot remain unchanged. Dated operational evidence is in the review; refresh before future runtime work.
+
+## W4-F4/F5 deployment — 18 October, 18:11 AWST
+
+[Deployment record](handover/W4_F4_F5_DEPLOYMENT_20261018.md): 11 tested code files installed selectively, all 61 data files unchanged at installation, bot reconnected and Recovery heartbeat successful. No character reset or live command playthrough. Earlier not-deployed statements below describe their dated verification checkpoints.
 
 ## Feather register
 
@@ -88,7 +92,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Current review: [W4-F3 — Two Days at Neptune Lounge](wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md) preserves Karun's Timeline 1 account and maps conditions, relative deadlines, knowledge and evidence. Unique Queen encounter differs from nightly other royalty; exact clock/reset policy remains open. No runtime implementation.
 - Sealed: [W4-F4 — Whose Hands Are These?](wings/W4-F4_WHOSE_HANDS_ARE_THESE.md): explicitly entered pod opening, persistent inspection discoveries, FEED7/wardrobe discovery and performance booking clue. 13 opening tests and 73 total isolated tests pass; no deployment or Discord client playtest.
 - Sealed: [W4-F5 — The Body Returns, the World Remembers](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md): shared voluntary/combat recovery, private pod deliveries, seven persisted world days, action gate and unresolved brain-continuity hold. 21 new recovery tests; 94 total pass in isolation. Not deployed; Efiishent untouched.
-- Return: W4 completed count is 4; W4-F3 remains in REVIEW; next unallocated W4-F6. Next bounded candidate: prepare a combined W4-F4/F5 deployment and a private field-level plan for Efiishent before any reset. Performance criteria and ambassador stay/leave remain open in W4-F3.
+- Return: W4 completed count is 4; W4-F3 remains in REVIEW; next unallocated W4-F6. Next bounded candidate: playtest the deployed opening as Efiishent. No reset performed; inspect current state before any renewal. Performance criteria and ambassador stay/leave remain open in W4-F3.
 
 ### W5 — Time
 - Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.

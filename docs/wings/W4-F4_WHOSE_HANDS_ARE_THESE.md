@@ -48,3 +48,7 @@ Read alongside [W4-F3](W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md), [W2-F3](W2-F3_THE_O
 Shared node: W2 supplies inspectable space; W3 bodily recognition and attire; W6 presentation. W4 owns the implementation and completed count.
 
 W4 completed count: **3** (F1, F2, F4). W4-F3 remains REVIEW. Next unallocated: **W4-F5**. Suggested next step: author review of this passage, followed by separately authorised deployment and a fictional-character Discord playtest.
+
+## Deployment addendum — 18 October 2026, 18:11 AWST
+
+Deployed jointly with W4-F4/F5 from source `9707200bd5874a440b6ee2c80bccc8020b6d896b`. [Deployment evidence](../handover/W4_F4_F5_DEPLOYMENT_20261018.md) supersedes the earlier not-deployed status. Discord login, all 44 cog loads and Recovery heartbeat verified; actual player command delivery remains open. No character reset occurred.

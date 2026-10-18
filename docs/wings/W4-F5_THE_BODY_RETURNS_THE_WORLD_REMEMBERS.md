@@ -49,3 +49,7 @@ Limits: existing atomic replacement is not a power-loss durability guarantee; no
 [Reset audit](../handover/RESET_AND_RECOVERY_REVIEW_20261018.md) · [Canon](../current/MANZO_PRESERVED_BRAINS_AND_AWAKENING.md) · [W4-F4](W4-F4_WHOSE_HANDS_ARE_THESE.md)
 
 Shared nodes: W1/W3 continuity and brain/soul questions; W2 owned pod; W5 clock domain; W7 persistent transitions. W4 owns this feather. Completed W4 count **4** (F1, F2, F4, F5); W4-F3 remains REVIEW. Total sealed **18**. Next unallocated **W4-F6**.
+
+## Deployment addendum — 18 October 2026, 18:11 AWST
+
+Deployed jointly with W4-F4/F5 from source `9707200bd5874a440b6ee2c80bccc8020b6d896b`. [Deployment evidence](../handover/W4_F4_F5_DEPLOYMENT_20261018.md) supersedes the earlier not-deployed status. Discord login, all 44 cog loads and Recovery heartbeat verified; actual player command delivery remains open. No character reset occurred.
