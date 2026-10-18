@@ -7,6 +7,8 @@
 **Source baseline:** main `fa7d751d5b4bfcba714772d526a60eea38ee5694`  
 **Return:** [Wing Index](../WING_INDEX.md)
 
+**Read first:** [Awakening — the connected reconstruction](../handover/AWAKENING_RECONSTRUCTION_20261018.md), with [Karun's words](../handover/AUTHORIAL_NOTES_20261018.md) and the [source/logic review](../handover/AWAKENING_SOURCE_REVIEW_20261018.md). This map is the analytical companion.
+
 ## One feather
 
 Preserve Karun's Chapter 1 / Timeline 1 account and map its conditions, deadlines, missed opportunities, participant knowledge and lasting evidence. Distinguish author-specified facts from open mechanics. Do not invent alternative winning routes, numeric thresholds or a new scenario engine.
@@ -21,6 +23,7 @@ All S references below identify Karun's messages in this conversation on **18 Oc
 - **S2 — 13:41:** Chapter 1 / Timeline 1, Efiishent's passage, Earthdance, performance, princess, exchange, return, persistent evidence and real-world receipt condition.
 - **S3 — 14:00:** two-day window, ordered beats, missed timing, possible repeat cycle, recurring other princes/princesses and future human participants in currently NPC roles.
 - **S4 — 14:16:** a different princess's physical gift; distinct from the Dark Rat Queen's gift.
+- **S6 — 14:55 and 14:59:** explicit preserved-brain canon, gradual reintegration, seven-day/manual qualification and corrected population. See the [canon note](../current/MANZO_PRESERVED_BRAINS_AND_AWAKENING.md).
 - **S5 — 14:19:** Karun authorises W4-F3 as proposed: documentary preservation and logic mapping, not runtime implementation.
 
 These are source pointers into the conversation, not invented external citations. The account below is a faithful structured rendering, not a verbatim transcript. Assistant suggestions are not silently promoted into S1–S4.
@@ -33,7 +36,7 @@ Karun tells the mission through Efiishent's lived perspective. Efiishent does no
 
 Efiishent has come from Omincron through Earthdance, a substantial quest from another era. He is to meet an ambassador from alien sadvipran friends concerning a gift. Vitriol's agents are trying to intercept it. The phrase “which he needs to get from Omincron” is preserved as an unresolved direction-of-transfer statement; later in the same account he needs to take the received item back to Omincron.
 
-He awakens in a pod, not remembering and not necessarily motivated to recover his memory. He has a gig tomorrow night. He does not know whether it is a DJ set, for which he has no prepared set, or a live acoustic performance, which instrument it would involve, whether he can play it, whether he has collaborators, who plays before him, or who has come to see him. Fairly early, he learns that he must meet someone after his performance.
+He awakens in a pod, not remembering and not necessarily motivated to recover his memory. Karun's later canon clarification explains retained memory without immediate access: preserved-brain rebirth requires gradual reintegration. Usually seven days, qualified by reading an instruction manual none is known to possess; exact mechanics remain open. He has a gig tomorrow night. He does not know whether it is a DJ set, for which he has no prepared set, or a live acoustic performance, which instrument it would involve, whether he can play it, whether he has collaborators, who plays before him, or who has come to see him. Fairly early, he learns that he must meet someone after his performance.
 
 Unknown to him, if he does not play well, the ambassador will not remain for the following set. His set must build the atmosphere for the next artist and he must hand over smoothly. He urgently needs the toilet and wonders whether he has a bladder issue. He gets there and back, returns to the dance floor and contributes to its energy during a stagnant transition. The following artist is playing exceptionally well.
 
@@ -65,7 +68,7 @@ The Chapter 1 final boss has been mentioned as conceived but **has not been iden
 | World / belief / record | Store or author what happened separately from who observed it, what they concluded and which traces survive. | S2; modelling requirement |
 | Real-world receipt / fictional receipt | Neither an in-game item nor a fictional claim verifies physical receipt. Preserve reported provenance and uncertainty. | S2, S4 |
 
-The existing repository Tiny Book is a possible source to compare later, not an automatically confirmed identity for every book in this account.
+Recovered prior author notes explicitly describe a rat-sized Tiny Book to give the Queen, placed in Efiishent's office/quarters. The live item definition and gifting callback corroborate that strand. This is a concrete continuity lead, rather than an empty placeholder; exact item custody and its role in this particular exchange still need alignment.
 
 ## 3. Time: relative constraints, not invented timestamps
 
@@ -201,6 +204,10 @@ Reached: account preserved, relative time boundaries mapped, one explicit perfor
 
 Open: exact window bounds and next-morning placement; time scale; gig format and performance criterion; discovery of appointment; counterpart/ambassador relationship; item identity and transfer direction; final boss; other valid routes; shared outcome/custody; reset retention; IRL receipt acknowledgement. Do not demand all answers at once.
 
-**One next bounded decision:** define when the ambassador's following-set opportunity opens and closes, and what counts as the performance that keeps them there. That would make the first decisive gate concrete before implementation.
+**Return after reconstruction:** review the connected opening as an experience, including what makes tomorrow's gig discoverable during preparation. The ambassador's stay/leave boundary and performance criterion remain the first explicit mission gate to define when that scene is developed; no numeric quality system is selected.
 
 W4-F3 remains in REVIEW. W4 completed count stays 2; total completed wing feathers stays 16. W2-F3 is parked in REVIEW, W1-F3 / Feather 57 stays parked. No runtime, live data, service, clock or deployment changes; on-host documentation availability is not claimed.
+
+## Reconnected review — 18 October 2026
+
+The source and lived account have been reread in a [connected reconstruction](../handover/AWAKENING_RECONSTRUCTION_20261018.md). An [offline authoring rehearsal](../../tools/authoring/chapter_one_rehearsal.py), with [19 passing boundary cases](../../tools/authoring/test_chapter_one_rehearsal.py), now demonstrates supplied-fact deadlines, separate perspectives, gift custody and example retained traces. Its synthetic timing and reset policy are not live rules. No production code imports it. Author review and actual gameplay integration remain pending.

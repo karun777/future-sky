@@ -7,6 +7,8 @@
 **Source revision:** `48ff5b822ca81c8551e4e84b83eeb8a2922d2f90` on main  
 **Return:** [Wing Index](../WING_INDEX.md)
 
+**Connected return:** [Awakening reconstruction](../handover/AWAKENING_RECONSTRUCTION_20261018.md) now reads the pod, reintegration, wardrobe, FEED7 and tomorrow's gig together. [Source review](../handover/AWAKENING_SOURCE_REVIEW_20261018.md) records the live checks and revisions.
+
 ## The experience we are building
 
 An immersive MUD 7.0: a world worth inhabiting, an opening that invites attention, and actions that let the player find their bearings. Karun has put larger World Engine expansion on hold while world-building and player experience provide its context.
