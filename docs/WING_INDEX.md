@@ -39,6 +39,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Open: ordinary resident atrophy and runtime delivery remain unproven. W1 has 2 completed feathers. [W1-F3 / historical Feather 57 — The Eight Timelines: A Constellation of Possibilities](wings/W1-F3_THE_EIGHT_TIMELINES.md) is allocated and parked (18 October 2026). Source review records seven-line legacy material and October A–G research; the proposed eight-part structure is unresolved. Next unallocated W1-F4. Preparation does not increment the completed count.
 
 ### W2 — Worlds
+- Shared attention checkpoint: [W2 / W3 / W4 / W6 — Pod inspection and recognition](wings/W2-F3_POD_INSPECTION_AND_RECOGNITION.md). Hands-first and early FEED7 recovered; all visible features inventoried; wardrobe mirror and prop responses proposed. W2-F3 remains in REVIEW; no linked feather allocated.
 - Trajectory: reconciled geography → coherent local exploration → connected regions.
 - Sealed: [W2-F1 — Where Everything Is](wings/W2-F1_WHERE_EVERYTHING_IS.md). On-host source/CWD/symlink check resolves configured storage to /opt/futuresky/data/rooms/rooms.json.
 - Verified disk graph: 43 Manzo rooms, 100 directed exits, no absent targets, all rooms reachable from pod and Lounge; matches main's exit graph. In-process room data and a gated live walkthrough are not verified.
@@ -49,6 +50,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Return: Worlds has 2 completed feathers; W2-F3 allocated in REVIEW, next unallocated W2-F4. Larger World Engine expansion is on hold under the adopted experience direction. Source checkpoint 48ff5b8; refresh live state before implementation.
 
 ### W3 — Beings
+- Shared attention checkpoint: [W2 / W3 / W4 / W6 — Pod inspection and recognition](wings/W2-F3_POD_INSPECTION_AND_RECOGNITION.md). Hands-first and early FEED7 recovered; all visible features inventoried; wardrobe mirror and prop responses proposed. W2-F3 remains in REVIEW; no linked feather allocated.
 - Trajectory: identity and arrival → consequential relationships → growth.
 - Sealed: [W3-F1 — Who Is Already Here](wings/W3-F1_WHO_IS_ALREADY_HERE.md). Named lore, eight authored encounter nodes, source-expressed social roles, five live stored character records, and 20 room enemy entries distinguished.
 - Settled: Character, Role and Driver remain distinct. An account-character name, scripted dialogue or prose reference does not establish an autonomous NPC or online presence.
@@ -57,6 +59,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W3 completed count is 2; W3-F3 remains unallocated. Preserve identity/role/driver distinctions before deeper character authoring or controller changes.
 
 ### W4 — Play
+- Shared attention checkpoint: [W2 / W3 / W4 / W6 — Pod inspection and recognition](wings/W2-F3_POD_INSPECTION_AND_RECOGNITION.md). Hands-first and early FEED7 recovered; all visible features inventoried; wardrobe mirror and prop responses proposed. W2-F3 remains in REVIEW; no linked feather allocated.
 - Trajectory: verified loops → choices and consequences → integrated experience.
 - Sealed: [W4-F1 — What Can We Actually Do?](wings/W4-F1_WHAT_CAN_WE_ACTUALLY_DO.md): 80 source command definitions, 15 aliases; action/requirement/consequence map; startup log records 43 cog loads. No live gameplay trial performed.
 - Settled: automatic combat intent, participant-side state, scripted responses and stance expression are distinct. WardrobeCog explicitly dispatches the motif follow-up; !use exists in current source.
@@ -73,6 +76,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W5 has 2 completed feathers; W5-F3 unallocated. [W1-F3](wings/W1-F3_THE_EIGHT_TIMELINES.md) links this wing for cross-era causality, without allocating a W5 feather. Failed clock persistence advances memory before suppressing publication; later save may include it. Recovery/replay policy remains open. No live time change.
 
 ### W6 — Expression
+- Shared attention checkpoint: [W2 / W3 / W4 / W6 — Pod inspection and recognition](wings/W2-F3_POD_INSPECTION_AND_RECOGNITION.md). Hands-first and early FEED7 recovered; all visible features inventoried; wardrobe mirror and prop responses proposed. W2-F3 remains in REVIEW; no linked feather allocated.
 - Shared checkpoint: [W2 ↔ W6 — Cinematic storytelling](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md#shared-checkpoint--w2--w6-cinematic-storytelling), owned by W2-F3. Compose images, prose and choices together; render physical presence while preserving mystery. First pod still under review; no W6-F3 allocation or completed-count change.
 - Trajectory: coherent sensory language → consistent scenes → responsive atmosphere.
 - Sealed: [W6-F1 — How the World Reaches Us](wings/W6-F1_HOW_THE_WORLD_REACHES_US.md). 43 room descriptions/images/ambient sets, 15 private narratives, image/HUD/scene render paths, routing and optional audio inventoried.
