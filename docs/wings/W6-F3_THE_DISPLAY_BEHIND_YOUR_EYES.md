@@ -1,7 +1,7 @@
 # W6-F3 — The Display Behind Your Eyes
 
 Home wing: **W6 Expression**. Allocated by Karun on 18 October 2026, 18:46 AWST.
-Status: **SCOPED / OPEN**. Discuss internal voice and ambient events before implementation. No completed-count increment, runtime change or deployment.
+Status: **REVIEW — bounded implementation tested in isolation**, 18 October 2026. Internal voice and ambient boundaries discussed. Not deployed; live Discord verification remains open. No completed-count increment.
 
 ## Purpose and scope
 
@@ -11,8 +11,8 @@ The implant can develop through character proficiency and gameplay upgrades. Hac
 
 The three coordinated channels:
 - HUD: technological observation and interpretation.
-- Internal voice: inward response; exact boundaries still to discuss.
-- Ambient events: situated occurrences around the character; timing and persistence still to discuss.
+- Internal voice: developing intuition/sixth sense, ordinary sensory enhancement and subtle perception beyond technological access; independent of HUD enablement. Source review and development mechanics remain deferred.
+- Ambient events: distinguish continuing atmosphere, particular occurrences and character-specific reception. Larger event simulation remains deferred.
 
 The transport/display problem and in-world technology are distinct. Automatic presentation remains an author preference; the character should not repeatedly request a status command merely to experience the HUD.
 
@@ -50,10 +50,36 @@ W6 owns the feather; connected wings receive no duplicate count.
 
 W4-F4/F5 remain deployed. Karun's first live walkthrough demonstrated hands/body/garment inspection, FEED7, wardrobe and booking discovery. It exposed a returning-player wardrobe invitation that cannot be fulfilled, shared pod presence, repeat awakening framing, repeated brochure crash and implementation-language hints. These remain connected playtest findings; allocating this HUD feather does not claim to fix them all. No live character reset occurred.
 
-Next conversation: internal voice, then ambient events. Return here to settle the small HUD implementation after those boundaries are clear.
+Internal-voice and ambient discussions are recorded in the coordinated review below. Next: review/deploy this bounded implementation and verify the display in Discord.
 
 W6 completed count remains **2**; total sealed remains **18**. W6-F3 allocated/open; next unallocated **W6-F4**. W4-F6 remains unallocated.
 
 ## Coordinated perception checkpoint — 18 October, 19:29 AWST
 
 [Ambient and internal-voice review](../handover/W6_F3_AMBIENT_AND_PERCEPTION_REVIEW_20261018.md) preserves Dragonfly Goggles direction, independent subtle-perception development, the authored sensory-return sequence, recovered ambient preferences and verified implementation gaps. Detailed Sarkar source review remains deferred. This checkpoint informs W6-F3; it does not authorise a general world-engine expansion or mark implementation complete.
+
+## First implementation pass — 18 October 2026
+
+Base source: `49d69c6ebfbd65fcfe646aee90dee3e39408ce89`. Built in isolated archive `/tmp/futuresky-w6f3-5w5irv30` on Neptune Lounge; live service and characters untouched.
+
+Implemented:
+- HudCog owns one renderer used by both navigation and explicit HUD commands. Off hides the automatic panel; explicit `!hud` confirms offline. Dark mode conceals telemetry; degraded state reports readings unavailable. Normal shows UNCALIBRATED for coherence, parallelism and commotion. No measurement producer is invented.
+- Existing authored 97/78/LOW values remain in storage, but are not rendered as measured reality. HUD reads do not seed or save character state. Preference changes persist copied records with rollback on save failure.
+- HUD commands added to private run-channel routing eligibility.
+- First hands inspection notices the display once when visible. `!inspect hud` explains the display and working commands, respecting off/dimmed/degraded settings. This does not grant or disable intuition, narrator records or sensory capabilities.
+- Brochure crash occurs only on its first recorded inspection per character. Previously recorded brochure discoveries count as already experienced; no replay on return/reload. Observation is persisted before presentation; this guarantees no duplicate on retry after a failed write, not exactly-once delivery across network failure.
+- ActivityCog typing/messages in the owner's run channel now feed AmbientCog's monotonic activity path, cancelling pending rest/sleep. Recognized commands still update Ambient directly. No conversion/mixing of epoch and monotonic timestamps.
+- Existing 120-second idle breathing space remains; after an idle Thread Node opens, Ambient rechecks current character state and suppresses atmosphere in that iteration.
+
+Verification: **112 tests passed**, including **18 new tests** in `tests/test_display.py`, via `PYTHONPATH=bot /opt/futuresky/.venv/bin/python -m unittest discover -s tests`. Actual HUD/inspection/navigation callbacks, Activity listeners, Ambient loop body, production JSON writer and failure injection use synthetic temporary records. Fresh/legacy preferences, all display modes, repeat reads, save/reload, isolation, typing elsewhere/bots, failed discovery and HUD saves, and new-choice suppression are covered. No live command delivery claimed.
+
+Scope limits:
+- No calibration gameplay or numeric formula, upgrade tree, actual hacking/corruption, full sense-return sequence, chakra simulation, or new intuitive messages.
+- Legacy `!hud_state` remains a display-state control; it does not prove physical damage or implement hacking.
+- No global ambient loader/fallback overhaul, shared crash event, global NPC/object effects or general scheduling system. Those audit findings remain open.
+- No change to returning-player wardrobe policy, shared pod presence or office secrecy prose.
+- Console's older generic HUD helpers remain for compatibility, but Navigation and HudCog no longer use their default-percent path.
+- The first display notice and crash are per-character authored experiences, not shared-world event instances. Richer event/perception integration remains future work.
+- A successful state save followed by failed network delivery can consume a once-only presentation. No distributed exactly-once claim is made.
+
+W6-F3 remains REVIEW pending live delivery/playtest. W6 completed count **2**, total sealed **18**, next unallocated **W6-F4**. W4-F6 unallocated.

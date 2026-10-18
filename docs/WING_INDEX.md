@@ -1,7 +1,7 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W6 Expression / W6-F3 — The Display Behind Your Eyes**, allocated and scoped; discuss internal voice and ambient events before implementation. W4-F4/F5 remain deployed. A first player walkthrough of the opening is recorded in W6-F3; recovery gameplay remains untested live. W4-F3 remains in REVIEW: authorial account and conditional mission map saved. W2-F3 is parked in REVIEW with pod/wardrobe decisions preserved; W1-F3 / historical Feather 57 remains parked. [Immersive player experience](current/IMMERSIVE_PLAYER_EXPERIENCE_20261018.md) remains the focus; larger World Engine expansion is on hold.
+Current home: **W6 Expression / W6-F3 — The Display Behind Your Eyes**, in REVIEW after its first isolated implementation pass; 112 tests pass, not deployed. W4-F4/F5 remain deployed. A first player walkthrough of the opening is recorded in W6-F3; recovery gameplay remains untested live. W4-F3 remains in REVIEW: authorial account and conditional mission map saved. W2-F3 is parked in REVIEW with pod/wardrobe decisions preserved; W1-F3 / historical Feather 57 remains parked. [Immersive player experience](current/IMMERSIVE_PLAYER_EXPERIENCE_20261018.md) remains the focus; larger World Engine expansion is on hold.
 **18 sealed wing feathers: W4 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
@@ -25,7 +25,7 @@ The connection to Neptune Lounge is restored and today's documentation is brough
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
 | W4 Play | 4 | [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) | [W4-F3 — review](wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md); next unallocated W4-F6 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
-| W6 Expression | 2 | [W6-F2](wings/W6-F2_ONE_CARD_THAT_TELLS_THE_TRUTH.md) | [W6-F3 — scoped/open](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md); next unallocated W6-F4 |
+| W6 Expression | 2 | [W6-F2](wings/W6-F2_ONE_CARD_THAT_TELLS_THE_TRUTH.md) | [W6-F3 — review](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md); next unallocated W6-F4 |
 | W7 Engine | 2 | [W7-F2](wings/W7-F2_RECOVERY_CAPSULE.md) | W7-F3 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
@@ -82,7 +82,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W3 completed count is 2; W3-F3 remains unallocated. Preserve identity/role/driver distinctions before deeper character authoring or controller changes.
 
 ### W4 — Play
-- Shared HUD node: [W6-F3](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) owns the display feather following the first live opening walkthrough. Internal voice/ambient discussion precedes implementation; W4-F6 remains unallocated.
+- Shared HUD node: [W6-F3](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) owns the display feather following the first live opening walkthrough. Internal voice/ambient boundaries are recorded; the first isolated pass is in REVIEW, with no deployment. W4-F6 remains unallocated.
 - Clarified 18 October 17:05: the common quest is meeting an allied-faction representative and trading, available to any player with romance optional. Efiishent's ambassador/princess/Queen is one person; Puzzler and Queen instances await authoring. Footprints persist with privacy paramount. [Connected account](handover/AWAKENING_RECONSTRUCTION_20261018.md#6-one-quest-many-particular-passages).
 - Author-declared canon, 18 October: [Preserved brains, manufactured bodies and awakening](current/MANZO_PRESERVED_BRAINS_AND_AWAKENING.md). Efiishent's self-made preservation cube, Triton revival instructions, retained faculties and body/parallelism relationship. Corrected population: 10% natural / 89% manufactured / 1% old brain. Memory emerges gradually during reintegration, usually seven days, qualified by an instruction manual none is known to possess; manual implications remain open. No new feather count.
 - Shared attention checkpoint: [W2 / W3 / W4 / W6 — Pod inspection and recognition](wings/W2-F3_POD_INSPECTION_AND_RECOGNITION.md). Hands-first and early FEED7 recovered; all visible features inventoried; wardrobe mirror and prop responses proposed. W2-F3 remains in REVIEW; no linked feather allocated.
@@ -115,7 +115,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Sampled first-party delivery: Dance Floor, Lager, Tiny Book and Compass images returned HTTP 200 and exact local bytes; FEED7 returned HTML 200. Discord rendering and audio not verified.
 - Open: 40 room placeholder references; several newer commands absent from routing allowlist; Tiny Book/Compass artwork untracked in runtime checkout; older global ambient JSON not the expected current loader path.
 - Sealed: [W6-F2 — One Card That Tells the Truth](wings/W6-F2_ONE_CARD_THAT_TELLS_THE_TRUTH.md): nine isolated tests verify the Compass card's public/discovered attributes, image reference, visibility and non-mutation using the real callback and embed. Discovery acquisition and Discord client display are not tested.
-- Current: [W6-F3 — The Display Behind Your Eyes](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) is allocated/scoped. HUD as implant, capability/proficiency and reliability direction recorded alongside live rendering findings. Discuss internal voice and ambient events before implementation. W6 completed count stays 2; next unallocated W6-F4. W4-F6 remains unallocated.
+- Current: [W6-F3 — The Display Behind Your Eyes](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) is in REVIEW after a tested first implementation: consistent truthful HUD states, once-only display notice and brochure crash, shared typing/activity input and idle-choice quiet. 112 isolated tests pass; live delivery remains open. Implant/subtle-perception direction is recorded; larger progression remains deferred. W6 completed count stays 2; next unallocated W6-F4. W4-F6 remains unallocated.
 
 ### W7 — Engine
 - Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.

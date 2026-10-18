@@ -41,6 +41,9 @@ class ActivityCog(commands.Cog):
     # ---------- Helpers ----------
     def bump_activity(self, user_id: str) -> None:
         self.bot.state.last_activity_at[user_id] = _now()
+        ambient = self.bot.get_cog("AmbientCog")
+        if ambient is not None:
+            ambient.note_activity(str(user_id))
 
     def _get_char_name(self, user_id: str) -> str:
         """

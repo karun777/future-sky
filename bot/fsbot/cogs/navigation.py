@@ -413,7 +413,7 @@ class NavigationCog(commands.Cog):
                 oc_name = oc.get("name", "Unknown")
                 content += f"- {oc_name}\n"
 
-        from fsbot.ui.console import room_embed, hud_embed
+        from fsbot.ui.console import room_embed
 
         embed = room_embed(
             title,
@@ -423,46 +423,8 @@ class NavigationCog(commands.Cog):
         # TELEMETRY
         # --------------------------------------------------
 
-        try:
-            hud_cog = self.bot.get_cog("HudCog")
-
-            if hud_cog:
-                hud = hud_cog._get_hud(user_id)
-
-                if hud:
-
-                    if not hud.get("enabled", True):
-
-                        telemetry_text = (
-                            "SYSTEM OFFLINE\n"
-                            "NO ACTIVE TELEMETRY"
-                        )
-
-                    elif hud.get("state") == "dark_mode":
-
-                        telemetry_text = (
-                            "SIGNAL LOST\n"
-                            "..."
-                        )
-
-                    elif hud.get("state") == "signal_degraded":
-
-                        telemetry_text = (
-                            "♆ COHERENCE .......... ???\n"
-                            "♄ PARALLELISM ........ ???\n"
-                            f"✦ COMMOTION ........ {hud.get('commotion', 'LOW')}"
-                        )
-
-                    else:
-
-                        telemetry_text = (
-                            f"♆ COHERENCE .......... {hud.get('coherence', 97)}%\n"
-                            f"♄ PARALLELISM ........ {hud.get('parallelism', 78)}%\n"
-                            f"✦ COMMOTION ........ {hud.get('commotion', 'LOW')}"
-                        )
-
-        except Exception:
-            pass
+        hud_cog = self.bot.get_cog("HudCog")
+        hud_panel = hud_cog.panel(user_id) if hud_cog else None
 
         if isinstance(room.get("image"), str) and room.get("image"):
             embed.set_image(url=room["image"])
@@ -470,20 +432,9 @@ class NavigationCog(commands.Cog):
         if changed:
             s.save_characters()
 
-        if hud_cog and hud:
-
-            hud_panel = hud_embed(
-                coherence=hud.get("coherence", 97),
-                parallelism=hud.get("parallelism", 78),
-                commotion=hud.get("commotion", "LOW"),
-            )
- 
-            await ctx.send(embed=embed)
+        await ctx.send(embed=embed)
+        if hud_panel is not None:
             await ctx.send(embed=hud_panel)
-
-        else:
-
-            await ctx.send(embed=embed)
 
         # Optional room music
         if isinstance(room.get("soundcloud"), str) and room.get("soundcloud"):

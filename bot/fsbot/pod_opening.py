@@ -17,6 +17,10 @@ GUIDANCE = (
 )
 # All targets below are fixtures/body observations, not portable item definitions.
 TARGETS = {
+    "hud": ("The display behind your eyes", "The markings stay with your field of vision when you turn away from the pod screen. "
+            "Coherence. Parallelism. Commotion. The labels are clear; their readings are uncalibrated. "
+            "This display offers no explanation of your inward impressions.",
+            "Check the display with `!hud`. Use `!hud_off` or `!hud_on` to hide or restore it."),
     "hands": ("Your hands", "They answer each movement. You turn them over slowly. "
               "Familiar control; unfamiliar hands. Looking closer does not give you a name.",
               "Try `!inspect body`, `!inspect garment` or `!inspect pod`."),
@@ -75,6 +79,7 @@ TARGETS = {
                 "`!wardrobe` offers somewhere practical to begin."),
 }
 ALIASES = {
+    "telemetry": "hud", "goggles": "hud", "implant": "hud", "internal display": "hud",
     "hand": "hands", "my hands": "hands", "fingers": "hands", "palms": "hands",
     "breath": "body", "breathing": "body", "my body": "body",
     "clothes": "garment", "clothing": "garment", "transit garment": "garment",
@@ -122,9 +127,28 @@ def prepare_observation(character, target=None):
     if target == "booking" and not any(k in discoveries for k in ("panels", "display")):
         return character, ("A notice?", "You have not located a booking notice yet.",
                            "Look around with `!inspect pod` and `!inspect panels`.")
-    if target not in discoveries:
+    first = target not in discoveries
+    if first:
         discoveries.append(target)
-    return updated, TARGETS[target]
+    title, text, guidance = TARGETS[target]
+    hud = extra.get("hud") or {}
+    hud_visible = hud.get("enabled", True) and hud.get("state") != "dark_mode"
+    if target == "hands" and "hud_presence" not in discoveries and hud_visible:
+        discoveries.append("hud_presence")
+        text += ("\n\nAt the edge of your vision, small markings remain when you turn your head. "
+                 "They are not on the wall. Something is displaying information within your sight.")
+        guidance = "Examine the markings with `!inspect hud`, or follow `!inspect body`."
+    if target == "hud":
+        if not hud.get("enabled", True):
+            text = "Your display is switched off. Your inward impressions remain your own."
+        elif hud.get("state") == "dark_mode":
+            text = "Your display is dimmed. Its readings are concealed."
+        elif hud.get("state") == "signal_degraded":
+            text = "The display remains in your field of vision, but the signal is degraded. Readings are unavailable."
+    if target == "brochure" and not first:
+        text = text.replace("A metallic crash sounds outside. The brochure does not acknowledge it.",
+                            "The brochure offers the same reassurance as before.")
+    return updated, (title, text, guidance)
 
 
 def pod_bearings(character):
