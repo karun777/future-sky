@@ -6,6 +6,12 @@ Current home: **W4 Play / W4-F3 — Two Days at Neptune Lounge**, in REVIEW: aut
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
+## Reconnected return — 18 October 2026
+
+Begin with [Awakening — a connected reconstruction](handover/AWAKENING_RECONSTRUCTION_20261018.md), then [Karun's recovered words](handover/AUTHORIAL_NOTES_20261018.md) and the [source/live-state review](handover/AWAKENING_SOURCE_REVIEW_20261018.md). W4-F3 remains home and in REVIEW; W2-F3 is parked in REVIEW. Source review, synthesis and a 19-case offline rehearsal are complete, while playable approval remains open. No completed-count increment.
+
+The connection to Neptune Lounge is restored and today's documentation is brought home. Runtime HEAD and active bot remain unchanged. Dated operational evidence is in the review; refresh before future runtime work.
+
 ## Feather register
 
 | Wing | Completed since adoption | Latest sealed feather | Reserved return / next unallocated ID |

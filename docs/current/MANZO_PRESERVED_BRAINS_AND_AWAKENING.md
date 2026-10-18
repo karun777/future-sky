@@ -6,6 +6,8 @@
 **Related work:** [W4-F3](../wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md), [W2-F3](../wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md), [W3-F2](../wings/W3-F2_WHO_CARRIES_WHOM.md)  
 **Authority:** Explicit authorial adoption alongside the [Red Book](../RedBook_V7.2.md); earlier documents remain unchanged for lineage.
 
+**Connected reading:** [Awakening reconstruction](../handover/AWAKENING_RECONSTRUCTION_20261018.md) places this canon in the pod and two-day mission context. [Karun's words](../handover/AUTHORIAL_NOTES_20261018.md) preserve the original declaration and clarification.
+
 ## Efiishent's preservation and return
 
 Towards the end of his life, Efiishent placed his brain in stasis. It is preserved in a cube that he designed and manufactured himself.
