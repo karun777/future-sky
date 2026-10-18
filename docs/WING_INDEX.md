@@ -1,16 +1,16 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W7 Engine**, first pass complete and parked. Latest sealed contribution: **W7-F2 — Recovery Capsule**.
-**All eight wings have two completed feathers each: 16 sealed wing feathers. The chassis first pass is complete.** No next feather or deployment activated.
+Current position: first pass complete; **W1 Mythos / W1-F3 (historical Feather 57)** is allocated and parked for return. Latest sealed contribution: **W7-F2 — Recovery Capsule**. Karun intends to work in another wing next; that wing is not yet selected.
+**All eight wings have two completed feathers each: 16 sealed wing feathers. The chassis first pass is complete.** No feather is currently active; no deployment activated.
 
-First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. All next IDs remain unallocated until the next bounded action is chosen.
+First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is now allocated and parked; all other next IDs remain unallocated.
 
 ## Feather register
 
-| Wing | Completed since adoption | Latest sealed feather | Next unallocated ID |
+| Wing | Completed since adoption | Latest sealed feather | Reserved return / next unallocated ID |
 | --- | --- | --- | --- |
-| W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | W1-F3 |
+| W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | W2-F3 |
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
 | W4 Play | 2 | [W4-F2](wings/W4-F2_ONE_LOOP_THAT_HOLDS.md) | W4-F3 |
@@ -27,7 +27,7 @@ Counts exclude historical global feathers; do not renumber them. Sealed means th
 
 ## Return checkpoints
 
-Initial checkpoints below are deliberately lightweight. They describe known stopping places, not eight active work queues. Their shared evidence date is 17 October 2026; refresh before treating them as current.
+Initial checkpoints below are deliberately lightweight. They describe known stopping places, not eight active work queues. Their initial evidence date is 17 October 2026; W1's parked return was updated on 18 October. Refresh dated runtime evidence before treating it as current.
 
 ### W1 — Mythos
 - Trajectory: authored givens → coherent story spine → discoverable mythology.
@@ -36,7 +36,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Open: Manzo institutions, factions, collective welfare and atrophied faculties. October research remains research; [handover](handover/FUTURE_SKY_OCTOBER_RESEARCH_RECONCILIATION_20261015.md) provides the research-branch route.
 - Sealed: [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md). Karun chose finding one's way through space, memory or relationships as the first creative doorway. W1-F1 remains the first completed Mythos feather; the current total is 2.
 - Parked return: [W1-F2 — Finding Our Way: The Brochure](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) is approved and sealed. The supplied onboarding account versus direct attention/judgement is accepted as the analysis; no scene rewrite or new mechanics.
-- Open: ordinary resident atrophy and runtime delivery remain unproven. W1 has 2 completed feathers. W1-F3 remains unallocated while the first pass moves to other wings.
+- Open: ordinary resident atrophy and runtime delivery remain unproven. W1 has 2 completed feathers. [W1-F3 / historical Feather 57 — The Eight Timelines: A Constellation of Possibilities](wings/W1-F3_THE_EIGHT_TIMELINES.md) is allocated and parked (18 October 2026). Source review records seven-line legacy material and October A–G research; the proposed eight-part structure is unresolved. Next unallocated W1-F4. Preparation does not increment the completed count.
 
 ### W2 — Worlds
 - Trajectory: reconciled geography → coherent local exploration → connected regions.
@@ -68,7 +68,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Live sample 17 October 16:00 AWST: Manzo 60×, dormant comet factor 1, +3600 world seconds on reported 60-real-second heartbeat. Six subscriber outcomes successful. Dated sample, not perpetual state.
 - Open: !time shows baseline rather than effective multiplier; v0 configured profiles versus v1 duplicate; 48-world-day runtime cycle versus long-orbit narrative; individual temporal experience and calendar mapping. Phase-closure cadence mismatch stays parked.
 - Sealed: [W5-F2 — The Next Tick](wings/W5-F2_THE_NEXT_TICK.md): three isolated integration tests verify acceleration, cycle-wrap slowdown and suppression of an undurable heartbeat. Real clock loop/EventBus/comet/resolver with controlled elapsed input and temporary files.
-- Parked return: W5 has 2 completed feathers; W5-F3 unallocated. Failed clock persistence advances memory before suppressing publication; later save may include it. Recovery/replay policy remains open. No live time change.
+- Parked return: W5 has 2 completed feathers; W5-F3 unallocated. [W1-F3](wings/W1-F3_THE_EIGHT_TIMELINES.md) links this wing for cross-era causality, without allocating a W5 feather. Failed clock persistence advances memory before suppressing publication; later save may include it. Recovery/replay policy remains open. No live time change.
 
 ### W6 — Expression
 - Trajectory: coherent sensory language → consistent scenes → responsive atmosphere.
@@ -91,7 +91,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Reached: [W8-F1](wings/W8-F1_GIVE_THE_DRAGON_A_MEMORY.md) establishes this register and links it from Atlas/reset. [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) brings the documentation home to Neptune Lounge with a verified return route.
 - Settled: eight wing identities, independent counts, preserved historical numbering, one home wing per feather, and a return checkpoint before switching.
 - Open: the Atlas and reset still contain older Feather 20 pointers; the added navigation directs readers to later phase evidence without silently rewriting architectural history.
-- Parked return: W8-F1 and W8-F2 remain complete. The first switch is now to W1-F1; its sources were recovered from the index and linked research. W8-F3 remains unallocated. Preserve the return path when coming back.
+- Parked return: W8-F1 and W8-F2 remain complete. The first switch went to W1-F1; the two-per-wing first pass is now complete, and W1-F3 has a parked return card. W8-F3 remains unallocated. Preserve the return path when coming back.
 
 ## Shared direction and switching
 
