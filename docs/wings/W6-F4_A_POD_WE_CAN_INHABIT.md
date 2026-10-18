@@ -89,3 +89,7 @@ Verification/deployment results will be appended after checks. W6-F4 remains REV
 **130 tests passed**, including **11 new media tests**. Actual navigation/inspection/wardrobe callbacks, versioned PNG signatures, unread/read state across reload, save-failure retry, inventory/participant isolation and preservation of non-pod imagery/music are covered. Tests use fictional temporary records in `/tmp/futuresky-w6f4-media-20261018`; no live character movement in tests.
 
 Public asset delivery and Discord image rendering remain deployment/player checks. No completed-count increment.
+
+## Deployment checkpoint — 18 October, 21:06 AWST
+
+[Deployment evidence](../handover/W6_F4_MEDIA_DEPLOYMENT_20261018.md): four code files, five PNGs/manifest and coordinated docs installed from `cd4d28e8988d207c2b718553acede87093640e35`. 130 isolated tests pass; all five public asset URLs HTTP 200 and exact source hashes; 44 cog loads, Discord readiness and Recovery heartbeat verified. Authorised occupant relocation is the sole character change; Efiishent untouched. Earlier non-deployment language is historical. W6-F4 REVIEW pending actual Discord image display/inspection; count remains 19.
