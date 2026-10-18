@@ -17,3 +17,17 @@ Player check: `!hud` → `!hud_off` → `!look` (no automatic telemetry) → `!h
 Rollback: snapshot has prior six code paths. Restore only those code files with process paused, restart and verify; do not roll live data back. Added per-character discovery flags can remain; no migration was performed.
 
 W6-F3 stays REVIEW until player delivery evidence. Total sealed remains 18; no new feather count.
+
+## Functional follow-up — 20:19 AWST
+
+Authorised by Karun's “ok let's go” following the functional close-out plan. Tested source `3ccfd56248258f407fff8c839153f877e98c8690`; **119 isolated tests pass**, including 25 HUD/pod/activity cases. Actual argument parser tests cover space-separated commands and states, legacy compatibility and invalid suffixes.
+
+Installed three code files only: HUD, pod_opening and Help. Live files matched previous deployed source `cbab82763e7453d63d0ba54792b7ab04c4809935`; all new files matched the tested candidate. Private snapshot `/opt/futuresky/backups/w6f3-functional-20261018-201856` contains pre-install state, manifests and staged files. Permissions restrict access; do not publish backup contents.
+
+Same paused-snapshot/install and supervised on-failure forced-restart procedure as prior deployment. All **61 data files** hash-identical across installation. Character-file hash unchanged after restart. PID 812193 → 812667. All **44 cogs loaded**, Discord readiness true, no extension-load failures, Recovery heartbeat successful. Three installed source paths byte-match the tested commit.
+
+Explicit `!hud` now presents only discoveries; no automatic telemetry panels in any mode. On/off and state changes use spaces. Old underscore commands remain hidden compatibility entries. Preferences, possessions and discoveries were not reset or migrated.
+
+A short player check remains before sealing: `!look`, `!hud`, `!hud off`, `!hud on`. Ambient tests are automated, not a fresh live idle-pacing trial. No full calibration, sensory-return, subtle perception or upgrade engine is claimed. Next creative work: agree pod layout/visible props and improve cinematic presentation.
+
+Rollback only these three code files from this snapshot if needed; preserve current gameplay data. Runtime HEAD remains historical; deployed source is the manifest's target. W6-F3 REVIEW; sealed count unchanged at 18.

@@ -101,3 +101,7 @@ Evidence: **119 isolated tests pass**, including **25 HUD/pod/activity tests**. 
 This follow-up modifies only HUD, pod opening, Help and tests/documentation. No wardrobe, NPC, sensory-progression, subtle-perception or image implementation is introduced. Discovery persistence, saved preferences and atmosphere protections remain. Deployment and short player confirmation are the remaining close-out steps; do not increment the sealed count until then.
 
 Visual return: establish pod layout and inspectable visible props before image generation; use staged hearing → touch → vision as the authored presentation direction without inventing timings. Compose a few consistent views of one pod. Existing placeholder image/shared-pod presence/wardrobe friction remain open and are not silently repaired here.
+
+## Functional follow-up deployed — 18 October, 20:19 AWST
+
+Source `3ccfd56248258f407fff8c839153f877e98c8690` installed after 119 passing isolated tests. [Deployment evidence](../handover/W6_F3_DEPLOYMENT_20261018.md#functional-follow-up--2019-awst) records all 44 cog loads, Discord readiness, Recovery heartbeat and unchanged live character hash. Final player check: `!look` (no panel), `!hud` (discovered information), `!hud off`, `!hud on`. This supersedes the pending-deployment language immediately above. REVIEW until that short check; total sealed 18.
