@@ -79,6 +79,13 @@ from discord.ext import commands
 # - Keep it broad for player-facing gameplay so UX is consistent.
 ROUTE_GAMEPLAY_COMMANDS: Set[str] = {
     # Core / onboarding
+    "create_character",
+    "awaken",
+    "feed7",
+    "wardrobe",
+    "uniform",
+    "fit",
+    "search",
     "help",
     "commands",
     "command",

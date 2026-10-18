@@ -692,8 +692,8 @@ class CoreCog(commands.Cog):
             print(f"[RUN-CHANNEL] create failed for {user_id}: {type(e).__name__}: {e}")
 
         await ctx.send(
-            f"**Welcome, {name}.** You stumble through a blue-edged portal into the Neptune Lounge. "
-            f"Neptune’s storms glow beyond the dome. Chips sizzle. Somewhere, a Cube hums."
+            f"**Welcome, {name}.** Your character is in a transit pod at Neptune Lounge. "
+            "Begin finding your bearings with `!awaken`, or survey your surroundings with `!look`."
         )
 
         if hasattr(self.bot, "send_to_realm_feed"):
