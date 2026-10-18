@@ -39,6 +39,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Open: ordinary resident atrophy and runtime delivery remain unproven. W1 has 2 completed feathers. [W1-F3 / historical Feather 57 — The Eight Timelines: A Constellation of Possibilities](wings/W1-F3_THE_EIGHT_TIMELINES.md) is allocated and parked (18 October 2026). Source review records seven-line legacy material and October A–G research; the proposed eight-part structure is unresolved. Next unallocated W1-F4. Preparation does not increment the completed count.
 
 ### W2 — Worlds
+- Collected context: [18 October princess gift — feather and metal ornament](current/items/PRINCESS_FEATHER_GIFT_20261018.md), author-reported real-world receipt with photo-observed detail. Explicitly distinct from the Dark Rat Queen's gift; purpose/value unresolved. Documentary record only, no live item or extra feather.
 - Shared attention checkpoint: [W2 / W3 / W4 / W6 — Pod inspection and recognition](wings/W2-F3_POD_INSPECTION_AND_RECOGNITION.md). Hands-first and early FEED7 recovered; all visible features inventoried; wardrobe mirror and prop responses proposed. W2-F3 remains in REVIEW; no linked feather allocated.
 - Trajectory: reconciled geography → coherent local exploration → connected regions.
 - Sealed: [W2-F1 — Where Everything Is](wings/W2-F1_WHERE_EVERYTHING_IS.md). On-host source/CWD/symlink check resolves configured storage to /opt/futuresky/data/rooms/rooms.json.
