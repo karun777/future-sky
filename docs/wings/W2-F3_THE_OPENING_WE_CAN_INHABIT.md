@@ -187,3 +187,7 @@ Karun's 18 October direction: every discernible thing shown should support close
 The [pod inspection and recognition pass](W2-F3_POD_INSPECTION_AND_RECOGNITION.md) owns the complete visual inventory, source recovery, hands-first revision, FEED7 boundary and proposed wardrobe mirror. W3 joins the crossing for embodied identity, W4 for investigation and W6 for visual promises; W2 remains home. Generated props and mirror placement are proposals, not adopted lore or implemented affordances. No extra feather allocated; W2-F3 remains in REVIEW.
 
 The next candidate in this follow-up refines the earlier creation-handoff candidate: review the pod inspection slice first so any implementation carries the recovered experience rather than simply wiring an incomplete scene.
+
+## Switch checkpoint — W4-F3, 18 October 2026
+
+W2-F3 stays in REVIEW while [W4-F3 — Two Days at Neptune Lounge](W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md) maps the concrete mission the pod prepares a participant to enter. [Preparation and work garments](W2-F3_POD_PREPARATION_AND_WORK_GARMENTS.md) records Karun's subsequent existential-spy framing, basic creation before ordinary departure, possible unprepared exit, five explicit work outfits, casual gear and jobs separate from factions. Earlier mirror/prop responses remain proposals. No production changes or W2 completion increment.
