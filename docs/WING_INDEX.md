@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W4 Play / W4-F4 — Whose Hands Are These?**, sealed after isolated implementation verification; not deployed. W4-F3 remains in REVIEW: authorial account and conditional mission map saved. W2-F3 is parked in REVIEW with pod/wardrobe decisions preserved; W1-F3 / historical Feather 57 remains parked. [Immersive player experience](current/IMMERSIVE_PLAYER_EXPERIENCE_20261018.md) remains the focus; larger World Engine expansion is on hold.
-**17 sealed wing feathers: W4 has three; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; no deployment activated.
+Current home: **W4 Play / W4-F5 — The Body Returns, the World Remembers**, sealed after isolated implementation verification; not deployed. W4-F3 remains in REVIEW: authorial account and conditional mission map saved. W2-F3 is parked in REVIEW with pod/wardrobe decisions preserved; W1-F3 / historical Feather 57 remains parked. [Immersive player experience](current/IMMERSIVE_PLAYER_EXPERIENCE_20261018.md) remains the focus; larger World Engine expansion is on hold.
+**18 sealed wing feathers: W4 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; no deployment activated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
@@ -19,7 +19,7 @@ The connection to Neptune Lounge is restored and today's documentation is brough
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
-| W4 Play | 3 | [W4-F4](wings/W4-F4_WHOSE_HANDS_ARE_THESE.md) | [W4-F3 — review](wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md); next unallocated W4-F5 |
+| W4 Play | 4 | [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) | [W4-F3 — review](wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md); next unallocated W4-F6 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 2 | [W6-F2](wings/W6-F2_ONE_CARD_THAT_TELLS_THE_TRUTH.md) | W6-F3 |
 | W7 Engine | 2 | [W7-F2](wings/W7-F2_RECOVERY_CAPSULE.md) | W7-F3 |
@@ -36,6 +36,7 @@ Counts exclude historical global feathers; do not renumber them. Sealed means th
 Initial checkpoints below are deliberately lightweight. They describe known stopping places, not eight active work queues. Their initial evidence date is 17 October 2026; W1's parked return and W2's opening review were updated on 18 October. Refresh dated runtime evidence before treating it as current.
 
 ### W1 — Mythos
+- Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
 - Author-declared canon, 18 October: [Preserved brains, manufactured bodies and awakening](current/MANZO_PRESERVED_BRAINS_AND_AWAKENING.md). Efiishent's self-made preservation cube, Triton revival instructions, retained faculties and body/parallelism relationship. Corrected population: 10% natural / 89% manufactured / 1% old brain. Memory emerges gradually during reintegration, usually seven days, qualified by an instruction manual none is known to possess; manual implications remain open. No new feather count.
 - Shared mission checkpoint: [W4-F3 — Two Days at Neptune Lounge](wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md) owns the conditional mission/knowledge map; [pod preparation](wings/W2-F3_POD_PREPARATION_AND_WORK_GARMENTS.md) preserves character creation, five work-garment options, casual gear and job/faction distinctions. Linked work does not allocate another feather.
 - Trajectory: authored givens → coherent story spine → discoverable mythology.
@@ -47,6 +48,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Open: ordinary resident atrophy and runtime delivery remain unproven. W1 has 2 completed feathers. [W1-F3 / historical Feather 57 — The Eight Timelines: A Constellation of Possibilities](wings/W1-F3_THE_EIGHT_TIMELINES.md) is allocated and parked (18 October 2026). Source review records seven-line legacy material and October A–G research; the proposed eight-part structure is unresolved. Next unallocated W1-F4. Preparation does not increment the completed count.
 
 ### W2 — Worlds
+- Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
 - Shared implementation node: [W4-F4 — Whose Hands Are These?](wings/W4-F4_WHOSE_HANDS_ARE_THESE.md) connects pod fixtures (W2), bodily recognition and attire (W3), and discoverable presentation (W6). W4 owns the feather; no duplicate count. Existing outfit choices remain; richer work garments and cinematic media remain open.
 - Author-declared canon, 18 October: [Preserved brains, manufactured bodies and awakening](current/MANZO_PRESERVED_BRAINS_AND_AWAKENING.md). Efiishent's self-made preservation cube, Triton revival instructions, retained faculties and body/parallelism relationship. Corrected population: 10% natural / 89% manufactured / 1% old brain. Memory emerges gradually during reintegration, usually seven days, qualified by an instruction manual none is known to possess; manual implications remain open. No new feather count.
 - Shared mission checkpoint: [W4-F3 — Two Days at Neptune Lounge](wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md) owns the conditional mission/knowledge map; [pod preparation](wings/W2-F3_POD_PREPARATION_AND_WORK_GARMENTS.md) preserves character creation, five work-garment options, casual gear and job/faction distinctions. Linked work does not allocate another feather.
@@ -62,6 +64,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Return: Worlds has 2 completed feathers; W2-F3 allocated in REVIEW, next unallocated W2-F4. Larger World Engine expansion is on hold under the adopted experience direction. Source checkpoint 48ff5b8; refresh live state before implementation.
 
 ### W3 — Beings
+- Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
 - Shared implementation node: [W4-F4 — Whose Hands Are These?](wings/W4-F4_WHOSE_HANDS_ARE_THESE.md) connects pod fixtures (W2), bodily recognition and attire (W3), and discoverable presentation (W6). W4 owns the feather; no duplicate count. Existing outfit choices remain; richer work garments and cinematic media remain open.
 - Author-declared canon, 18 October: [Preserved brains, manufactured bodies and awakening](current/MANZO_PRESERVED_BRAINS_AND_AWAKENING.md). Efiishent's self-made preservation cube, Triton revival instructions, retained faculties and body/parallelism relationship. Corrected population: 10% natural / 89% manufactured / 1% old brain. Memory emerges gradually during reintegration, usually seven days, qualified by an instruction manual none is known to possess; manual implications remain open. No new feather count.
 - Shared mission checkpoint: [W4-F3 — Two Days at Neptune Lounge](wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md) owns the conditional mission/knowledge map; [pod preparation](wings/W2-F3_POD_PREPARATION_AND_WORK_GARMENTS.md) preserves character creation, five work-garment options, casual gear and job/faction distinctions. Linked work does not allocate another feather.
@@ -84,9 +87,11 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Sealed: [W4-F2 — One Loop That Holds](wings/W4-F2_ONE_LOOP_THAT_HOLDS.md): pod token discovery/exchange command callbacks and production JSON writer pass five isolated tests covering save/reload, repeat prevention, participant isolation and failed-save retries.
 - Current review: [W4-F3 — Two Days at Neptune Lounge](wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md) preserves Karun's Timeline 1 account and maps conditions, relative deadlines, knowledge and evidence. Unique Queen encounter differs from nightly other royalty; exact clock/reset policy remains open. No runtime implementation.
 - Sealed: [W4-F4 — Whose Hands Are These?](wings/W4-F4_WHOSE_HANDS_ARE_THESE.md): explicitly entered pod opening, persistent inspection discoveries, FEED7/wardrobe discovery and performance booking clue. 13 opening tests and 73 total isolated tests pass; no deployment or Discord client playtest.
-- Return: W4 completed count is 3; W4-F3 remains in REVIEW; next unallocated W4-F5. Next bounded candidate: review this playable passage, then separately deploy and test delivery. Performance criteria and ambassador stay/leave remain open in W4-F3.
+- Sealed: [W4-F5 — The Body Returns, the World Remembers](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md): shared voluntary/combat recovery, private pod deliveries, seven persisted world days, action gate and unresolved brain-continuity hold. 21 new recovery tests; 94 total pass in isolation. Not deployed; Efiishent untouched.
+- Return: W4 completed count is 4; W4-F3 remains in REVIEW; next unallocated W4-F6. Next bounded candidate: prepare a combined W4-F4/F5 deployment and a private field-level plan for Efiishent before any reset. Performance criteria and ambassador stay/leave remain open in W4-F3.
 
 ### W5 — Time
+- Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
 - Shared mission checkpoint: [W4-F3 — Two Days at Neptune Lounge](wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md) owns the conditional mission/knowledge map; [pod preparation](wings/W2-F3_POD_PREPARATION_AND_WORK_GARMENTS.md) preserves character creation, five work-garment options, casual gear and job/faction distinctions. Linked work does not allocate another feather.
 - Trajectory: implemented canonical time → observable cycles → plural temporal experience.
 - Sealed: [W5-F1 — What Time Is It Here?](wings/W5-F1_WHAT_TIME_IS_IT_HERE.md). Shared persisted world clock consumes prior resolver output; era baseline × comet factor affects later ticks. Real-sky observation uses heartbeat UTC.
@@ -107,6 +112,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W6 has 2 completed feathers; W6-F3 unallocated. Presentation gaps from W6-F1 remain open; no media, item mechanics or routing changed.
 
 ### W7 — Engine
+- Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
 - Trajectory: verified operational truth → reliable reproduction → bounded extension.
 - Sealed: [W7-F1 — What Is Actually Running?](wings/W7-F1_WHAT_IS_ACTUALLY_RUNNING.md). Bot active at 937c007/PID 799778; tracked bot source matches inspected main reference despite older HEAD. Live data and documented overlays must be preserved.
 - Delivery: nginx root /var/www/html; assets symlink into /opt/futuresky/assets; website and FEED7 returned HTTP 200. Asset changes can affect delivery directly.
@@ -124,6 +130,6 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 
 ## Shared direction and switching
 
-Approved direction is [immersive player experience, world-building and the opening sequence](current/IMMERSIVE_PLAYER_EXPERIENCE_20261018.md), preserving existing architecture and putting larger World Engine expansion on hold. W4-F4 is the current sealed implementation; W4-F3 remains in review; W2-F3 remains parked in review; the parked Mythos return remains connected. Karun reviewed and sealed W1-F1 on 17 October 2026, selecting orientation through space, memory or relationships. The wider Chapter One world-state design is not automatically authorised by that checkpoint.
+Approved direction is [immersive player experience, world-building and the opening sequence](current/IMMERSIVE_PLAYER_EXPERIENCE_20261018.md), preserving existing architecture and putting larger World Engine expansion on hold. W4-F5 is the current sealed implementation; W4-F3 remains in review; W2-F3 remains parked in review; the parked Mythos return remains connected. Karun reviewed and sealed W1-F1 on 17 October 2026, selecting orientation through space, memory or relationships. The wider Chapter One world-state design is not automatically authorised by that checkpoint.
 
 Leave: outcome and evidence, source revision/date, settled/open questions, affected wings, and the next bounded candidate. Resume by reading those sources and verifying changed facts. Update the home checkpoint and count when sealing; update linked checkpoints only where their evidence changed.

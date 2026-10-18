@@ -49,6 +49,8 @@ from __future__ import annotations
 
 import asyncio
 import random
+from copy import deepcopy
+from fsbot.recovery import RecoveryService, recovering
 from typing import Optional, Set, Dict, Any, List, Tuple
 
 from discord.ext import commands
@@ -617,6 +619,10 @@ class CombatCog(commands.Cog):
                 return
 
             ch = self._ensure_character_schema(uid)
+            if recovering(ch):
+                st["engaged"].discard(uid)
+                st["intents"].pop(uid, None)
+                return
             name = ch.get("name", "traveler")
 
             intent = self._get_intent(room_id, uid)
@@ -700,7 +706,7 @@ class CombatCog(commands.Cog):
 
             label = self._enemy_label(enemy_inst_id, enemy)
 
-            room_players = self._room_members(room_id)
+            room_players = [(uid, ch) for uid, ch in self._room_members(room_id) if not recovering(ch)]
             engaged_players = [uid for uid, _ch in room_players if uid in st["engaged"]]
             non_engaged_players = [uid for uid, _ch in room_players if uid not in st["engaged"]]
 
@@ -718,6 +724,7 @@ class CombatCog(commands.Cog):
                 return
 
             target = self._ensure_character_schema(target_uid)
+            target_before = deepcopy(target)
             target_name = target.get("name", "traveler")
 
             enemy_atk = int(enemy.get("attack", 4))
@@ -735,32 +742,26 @@ class CombatCog(commands.Cog):
             if int(target["stats"]["hp"]) <= 0:
                 msg_death_room = f"☠️ **{target_name}** falls."
 
-                safe = "neptune_lounge"
-                target["current_room"] = safe
-                target["stats"]["hp"] = int(target["stats"].get("max_hp", 20))
-                target["pending_return_echo"] = True
-
+                try:
+                    RecoveryService(self.bot).start(target_uid, cause="combat")
+                except Exception:
+                    s.characters[target_uid] = target_before
+                    raise
                 st["engaged"].discard(target_uid)
-                self._set_engaged_flag(target_uid, False)
+                if isinstance(st.get("pending_join"), set):
+                    st["pending_join"].discard(target_uid)
                 st["intents"].pop(target_uid, None)
-
-                whispers = [
-                    "The Cube hums once — a low, intimate note — and stitches you back into continuity.",
-                    "For a moment you are nowhere. Then the Lounge catches you like a net of warm light.",
-                    "You feel a soft rewind behind your eyes. Reality re-aligns with a quiet click.",
-                    "A thin static crawls over your skin… and then the smell of chips returns like a blessing.",
-                    "Somewhere nearby, a presence notices — not alarmed, not amused. Simply *aware*.",
-                ]
-                whisper = random.choice(whispers)
-
                 msg_death_target = (
                     f"☠️ **{target_name}** falls.\n"
-                    f"🧊 *{whisper}*\n"
-                    f"🛋️ **Respawned** in the Neptune Lounge."
-                )
-                realm_feed = f"☠️ **{target_name}** fractures — the Cube rethreads them in the Neptune Lounge."
-
-            s.save_characters()
+                    "Reanimation takes seven in-world days. Your possessions have been secured "
+                    "in your pod. Use `!recovery`.")
+                realm_feed = f"☠️ **{target_name}** falls and is taken into recovery."
+            else:
+                try:
+                    s.save_characters()
+                except Exception:
+                    s.characters[target_uid] = target_before
+                    raise
 
         if target_uid and msg_to_target:
             await self._send_to_player(ctx, target_uid, target_name, msg_to_target, critical=True)

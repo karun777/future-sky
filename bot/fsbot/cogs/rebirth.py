@@ -5,13 +5,14 @@ from __future__ import annotations
 # FILE META — fsbot/cogs/rebirth.py
 # Canonical name: RebirthCog (reincarnate + suicide / severance)
 #
-# Version: v1.1.0
-# Last edited: 2026-02-04 (Australia/Perth)
+# Version: v1.2.0
+# Last edited: 2026-10-18 (Australia/Perth)
 #
 # Purpose:
-# - Provides player-facing commands to reset a character body while preserving (or wiping) meta.
-# - Moves bag inventory into personal cube stash on reincarnate (Option B: cube state lives in cubes.json).
-# - Archives the player's run channel (best-effort) without creating channels.
+# - Voluntary same-person renewal delegates to RecoveryService.
+# - Preserves continuity/routing; delivers carried/worn items privately to the pod.
+# - Legacy severance is disabled pending brain-death rules.
+# - Older builder/archive helpers remain for compatibility, not the renewal execution path.
 #
 # Contract notes (STRICT):
 # - Character record NEVER stores cube/in_cube/cube_context.
@@ -26,6 +27,7 @@ from datetime import datetime
 from typing import Any, Dict, Optional, Tuple
 
 import discord
+from fsbot.recovery import RecoveryService, recovering
 from discord.ext import commands
 
 
@@ -334,250 +336,58 @@ class RebirthCog(commands.Cog):
     # ============================================================
     @commands.command()
     async def reincarnate(self, ctx: commands.Context, *, arg: str | None = None):
-        user_id = str(ctx.author.id)
-        s = self.bot.storage
-
-        if not isinstance(getattr(s, "characters", None), dict) or user_id not in s.characters:
-            await ctx.send("You do not yet have a body to shed.")
+        uid = str(ctx.author.id)
+        storage = self.bot.storage
+        character = storage.characters.get(uid)
+        if not isinstance(character, dict):
+            await ctx.send("Create a character first.")
             return
-
-        pending = self._pending.get(user_id)
-
-        if arg == "confirm" and not pending:
-            await ctx.send("There is no reincarnation in progress.")
+        if recovering(character):
+            await ctx.send("Recovery is already underway. Use `!recovery`.")
             return
-
-        # Start
+        if arg == "cancel":
+            self._pending.pop(uid, None)
+            await ctx.send("Renewal cancelled.")
+            return
         if arg != "confirm":
-            new_name, birthdate = _parse_name_and_birthdate(arg)
-            new_name = new_name.strip()
-
-            if not new_name:
-                await ctx.send(
-                    "🧊 **Reincarnation**\n\n"
-                    "Choose a name for your next body:\n"
-                    "`!reincarnate <new_name> [YYYY-MM-DD]`\n\n"
-                    "Birthdate is optional (defaults to 2000-01-01).\n"
-                    "You may reuse your old name if it is not taken."
-                )
+            name, birthdate = _parse_name_and_birthdate(arg)
+            name = name or character.get("name", "Traveller")
+            if not _is_name_unique(storage, name, exclude_user_id=uid):
+                await ctx.send("That name is already in use.")
                 return
-
-            if not _is_name_unique(s, new_name, exclude_user_id=user_id):
-                await ctx.send(f"⚠️ The name **{new_name}** is already in use.")
-                return
-
-            birthdate = _valid_birthdate(birthdate)
-
-            self._pending[user_id] = {"mode": "reincarnate", "new_name": new_name, "birthdate": birthdate}
-
+            self._pending[uid] = {"mode": "renewal", "name": name, "birthdate": birthdate}
             await ctx.send(
-                "🧊 **Reincarnation**\n\n"
-                f"New body name: **{new_name}**\n"
-                f"Birthdate: **{birthdate}**\n\n"
-                "Your progress will persist.\n"
-                "Your items will be stored in your personal Cube.\n\n"
-                "Type `!reincarnate confirm` to proceed."
-            )
+                "Bodily renewal preserves your identity and progress. Carried and worn possessions "
+                "will be delivered privately to your pod. Reanimation takes seven in-world days. "
+                "The world continues during recovery. Use `!reincarnate confirm` or `!reincarnate cancel`.")
             return
-
-        # Confirm
-        if not pending or pending.get("mode") != "reincarnate":
-            await ctx.send("There is no reincarnation in progress.")
+        pending = self._pending.get(uid)
+        if not pending or pending.get("mode") != "renewal":
+            await ctx.send("No renewal is awaiting confirmation.")
             return
-
-        new_name = pending["new_name"]
-        birthdate = _valid_birthdate(pending.get("birthdate"))
-        char = s.characters.get(user_id)
-        if not isinstance(char, dict):
-            char = {}
-
-        # Move inventory into personal cube (Option B)
-        cube = _get_personal_cube_record(s, user_id)
-        if isinstance(cube, dict):
-            items = _cube_items_dict(cube)
-            bag = char.get("bag", {})
-            if isinstance(bag, dict):
-                for item, qty in bag.items():
-                    try:
-                        q = int(qty)
-                    except Exception:
-                        q = 0
-                    if q > 0:
-                        items[item] = items.get(item, 0) + q
-
-        # Preserve allowed meta
-        preserved_flags = char.get("flags", {})
-        if not isinstance(preserved_flags, dict):
-            preserved_flags = {}
-        preserved_flags.setdefault("unlocked_commands", [])
-        preserved_flags.setdefault("in_combat", False)
-
-        preserved = {
-            "xp": char.get("xp", 0),
-            "badges": char.get("badges", []),
-            "knowledge": char.get("knowledge", []),
-            "flags": preserved_flags,
-            "extra": char.get("extra", {}),
-        }
-
-        # Best-effort archive the current run channel (we do not assume we can clear routing here)
-        await self._archive_run_channel(
-            ctx,
-            char,
-            "🧊 *This run has been archived.*\nA new body has taken the thread."
-        )
-
-        # New body (canonical, no cube inline)
-        s.characters[user_id] = build_canonical_character_record(
-            user_id=user_id,
-            name=new_name,
-            birthdate=birthdate,
-            stats=_default_stats(),
-            flags=preserved_flags,
-            current_room="pod_room",
-            preserved=preserved,
-            carry_progress=True,
-        )
-
+        if not _is_name_unique(storage, pending["name"], exclude_user_id=uid):
+            await ctx.send("That name is now in use. Begin again.")
+            return
+        if character.get("flags", {}).get("in_combat"):
+            await ctx.send("Leave combat before voluntary bodily renewal.")
+            return
+        if character.get("in_cube"):
+            await ctx.send("Leave the Cube before voluntary bodily renewal.")
+            return
         try:
-            s.save_characters()
+            RecoveryService(self.bot).start(uid, name=pending["name"], birthdate=pending["birthdate"])
         except Exception:
-            pass
-        try:
-            s.save_cubes()
-        except Exception:
-            pass
-
-        # Router creates/ensures the fresh run channel and will set routing fields.
-        from fsbot.cogs.router import ensure_player_run_channel
-        await ensure_player_run_channel(self.bot, ctx, user_id, new_name)
-
-        await ctx.send(
-            "🧊 *The Cube opens without ceremony.*\n"
-            "You step sideways.\n"
-            "The world does not notice — but you do."
-        )
-
-        self._pending.pop(user_id, None)
+            await ctx.send("Renewal could not be saved safely. Nothing has been transferred; please retry.")
+            return
+        self._pending.pop(uid, None)
+        await ctx.send("Reanimation has begun. Your possessions are secured in your pod. Use `!recovery`.")
 
     # ============================================================
     # !suicide <new_name> [YYYY-MM-DD]
     # ============================================================
     @commands.command()
     async def suicide(self, ctx: commands.Context, *, arg: str | None = None):
-        user_id = str(ctx.author.id)
-        s = self.bot.storage
-
-        if not isinstance(getattr(s, "characters", None), dict) or user_id not in s.characters:
-            await ctx.send("There is no thread to end.")
-            return
-
-        pending = self._pending.get(user_id)
-
-        if arg == "confirm" and not pending:
-            await ctx.send("There is no severance in progress.")
-            return
-
-        # Start
-        if arg != "confirm":
-            new_name, birthdate = _parse_name_and_birthdate(arg)
-            new_name = new_name.strip()
-
-            if not new_name:
-                await ctx.send(
-                    "⚠️ **Severance Warning**\n\n"
-                    "Choose the name of the one who will arrive after you:\n"
-                    "`!suicide <new_name> [YYYY-MM-DD]`\n\n"
-                    "Birthdate is optional (defaults to 2000-01-01).\n"
-                    "Your current body and its progress will be severed."
-                )
-                return
-
-            if not _is_name_unique(s, new_name):
-                await ctx.send(f"⚠️ The name **{new_name}** is already in use.")
-                return
-
-            birthdate = _valid_birthdate(birthdate)
-
-            self._pending[user_id] = {"mode": "suicide", "step": 1, "new_name": new_name, "birthdate": birthdate}
-
-            await ctx.send(
-                "⚠️ **Severance Warning**\n\n"
-                "This will erase your current character progress.\n"
-                "A new body will arrive with a blank progression spine.\n\n"
-                "Type `!suicide confirm` to continue."
-            )
-            return
-
-        # Confirm step 2
-        if not pending or pending.get("mode") != "suicide":
-            await ctx.send("There is no severance in progress.")
-            return
-
-        if pending.get("step") == 1:
-            pending["step"] = 2
-            await ctx.send(
-                "⚠️ **Final Confirmation**\n\n"
-                "This cannot be undone.\n\n"
-                "Type `!suicide confirm` again to end the thread."
-            )
-            return
-
-        # Execute severance
-        char = s.characters.get(user_id)
-        if not isinstance(char, dict):
-            char = {}
-
-        new_name = pending["new_name"]
-        birthdate = _valid_birthdate(pending.get("birthdate"))
-
-        await self._archive_run_channel(
-            ctx,
-            char,
-            "…\nThis run has been archived.\nThe thread ended here."
-        )
-
-        # Full wipe (canonical, no cube inline; no progress carry)
-        s.characters[user_id] = build_canonical_character_record(
-            user_id=user_id,
-            name=new_name,
-            birthdate=birthdate,
-            stats=_default_stats(),
-            flags={"unlocked_commands": [], "in_combat": False},
-            current_room="arrival_lounge",
-            preserved={},  # nothing carries
-            carry_progress=False,
-        )
-
-        # Remove personal cube record WITHOUT creating a cube (Option B)
-        try:
-            cubes = getattr(s, "cubes", None)
-            if isinstance(cubes, dict):
-                cid = _personal_cube_id(s, user_id)
-                cubes.pop(str(cid), None)
-        except Exception:
-            pass
-
-        try:
-            s.save_characters()
-        except Exception:
-            pass
-        try:
-            s.save_cubes()
-        except Exception:
-            pass
-
-        from fsbot.cogs.router import ensure_player_run_channel
-        await ensure_player_run_channel(self.bot, ctx, user_id, new_name)
-
-        await ctx.send(
-            "…\n"
-            "There is no echo.\n"
-            "The Cube does not hum.\n"
-            "A new thread begins."
-        )
-
-        self._pending.pop(user_id, None)
+        await ctx.send("Severance is unavailable while brain-death continuity rules are being authored. No character or possessions have been erased.")
 
     # ============================================================
     # Helpers
