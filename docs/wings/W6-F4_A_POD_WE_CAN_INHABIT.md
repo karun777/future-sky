@@ -58,3 +58,11 @@ Shared nodes: W2 layout/affordances, W3 embodiment, W4 attention/actions, W5 unf
 Open live presentation issues: shared pod occupant, placeholder image, returning-character wardrobe instructions, arrival-vs-return wording and office secrecy. This visual concept does not resolve those systems.
 
 W6 completed count **3**; total sealed **19**. W6-F4 allocated/open; next unallocated **W6-F5**. W4-F6 unallocated.
+
+## First rendered concept — visual check
+
+Generated in this conversation using the built-in image tool: `exec-7681a51e-4071-4daa-987a-3abb861a7521.png`. Preview-only; not installed or referenced by production code.
+
+The frame keeps the proposed seated view, berth at left, frosted viewport, hatch, separate red indicator/button, brochure/dispenser, right-wall wardrobe and small physical screen. No visible body, face, mirror or defined exterior. Warm interior light is stronger than the initial cold-blue wording, with blue concentrated at the viewport; this is a reviewable art-direction choice, not a canon change. Brochure artwork suggests a promotional landscape; it must not be treated as a map or identified real exterior. Any retained border fittings, lights, handles, lower drawers and textile details need grouped inspection coverage or more specific authored responses before deployment.
+
+Candidate selected for author review, not final acceptance. Do not auto-install it or delete the earlier concept. Next decision: does this space feel like the pod, and how much warmth, wear and wizardly character should its final treatment carry?
