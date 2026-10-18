@@ -2,6 +2,7 @@
 from pathlib import Path
 from copy import deepcopy
 import unittest
+from unittest.mock import AsyncMock
 import test_display
 from fsbot.cogs.inspection import InspectionCog
 from fsbot.cogs.navigation import NavigationCog
@@ -106,8 +107,10 @@ class PodMediaTests(unittest.IsolatedAsyncioTestCase):
     async def test_non_pod_look_retains_existing_room_image(self):
         self.char()["current_room"] = "neptune_lounge"
         self.storage.rooms["neptune_lounge"]["image"] = "https://example.test/lounge.png"
+        self.bot.state.play_music = AsyncMock()
         await self.look()
         self.assertEqual(self.ctx.messages[0]["embed"].image.url, "https://example.test/lounge.png")
+        self.bot.state.play_music.assert_awaited_once()
 
 
 if __name__ == "__main__":

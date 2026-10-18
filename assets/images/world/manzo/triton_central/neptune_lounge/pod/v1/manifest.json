@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "origin": "W6-F4 generated concepts approved for this binding pass",
+  "images": {
+    "P01": {
+      "file": "p01.png",
+      "sha256": "5d3d369e9715377234f82baeb5d413edbc982dfba96bbe0bc320ce9d22b6c1d6",
+      "bytes": 2096972
+    },
+    "P02": {
+      "file": "p02.png",
+      "sha256": "4e98d45dbc91969b4239b3ac470938d92d02cf6785b9ac5f4a253228fbbd690a",
+      "bytes": 1777493
+    },
+    "P03": {
+      "file": "p03.png",
+      "sha256": "68e3e9861b65bccef1d3ea36f082916f1ae72d4c3c79242b4af09575712e19be",
+      "bytes": 1965481
+    },
+    "P05": {
+      "file": "p05.png",
+      "sha256": "36ac6256e011c95f8515cf223bf7104c01291af22e82034bfb07c0211cb25905",
+      "bytes": 1813391
+    },
+    "P06": {
+      "file": "p06.png",
+      "sha256": "7927ccd85968e85995993188b25a9cd56c478f5fc1fd524f77fb98ac3fb57431",
+      "bytes": 2404638
+    }
+  },
+  "wardrobe": "Text only; contents/conditions deferred",
+  "display": "p03 only before booking discovery"
+}

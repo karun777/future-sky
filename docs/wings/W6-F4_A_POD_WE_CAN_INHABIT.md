@@ -83,3 +83,9 @@ Generated source checksums:
 Temporary occupancy workaround authorised: move only `wanderer-0466` from pod_room to neptune_lounge, preserving all other fields. Back up and perform alongside a controlled restart so runtime reloads the change. Efiishent and other character records remain intact. No per-player room system, event replay or false relocation narration is added. Unique pods require a later explicit design.
 
 Verification/deployment results will be appended after checks. W6-F4 remains REVIEW. W6 completed 3; total sealed 19.
+
+## Isolated verification
+
+**130 tests passed**, including **11 new media tests**. Actual navigation/inspection/wardrobe callbacks, versioned PNG signatures, unread/read state across reload, save-failure retry, inventory/participant isolation and preservation of non-pod imagery/music are covered. Tests use fictional temporary records in `/tmp/futuresky-w6f4-media-20261018`; no live character movement in tests.
+
+Public asset delivery and Discord image rendering remain deployment/player checks. No completed-count increment.
