@@ -1,7 +1,7 @@
 # W6-F3 — The Display Behind Your Eyes
 
 Home wing: **W6 Expression**. Allocated by Karun on 18 October 2026, 18:46 AWST.
-Status: **REVIEW — bounded implementation tested in isolation**, 18 October 2026. Internal voice and ambient boundaries discussed. Deployed 18 October at 19:44 AWST; live player verification remains open. No completed-count increment.
+Status: **SEALED — bounded functionality tested, deployed and player-verified**, 18 October 2026, 20:21 AWST. Earlier review/pending statements below are dated history; the seal checkpoint at the end governs current status.
 
 ## Purpose and scope
 
@@ -105,3 +105,17 @@ Visual return: establish pod layout and inspectable visible props before image g
 ## Functional follow-up deployed — 18 October, 20:19 AWST
 
 Source `3ccfd56248258f407fff8c839153f877e98c8690` installed after 119 passing isolated tests. [Deployment evidence](../handover/W6_F3_DEPLOYMENT_20261018.md#functional-follow-up--2019-awst) records all 44 cog loads, Discord readiness, Recovery heartbeat and unchanged live character hash. Final player check: `!look` (no panel), `!hud` (discovered information), `!hud off`, `!hud on`. This supersedes the pending-deployment language immediately above. REVIEW until that short check; total sealed 18.
+
+## Seal checkpoint — Karun's 20:21 AWST playtest
+
+Karun supplied live Discord output confirming:
+- `!look` presents the room without an automatic HUD panel.
+- `!hud` presents FEED7 and the remembered booking already discovered by Efiishent.
+- `!hud off` and `!hud on` work with spaces and preserve the discovered information.
+Earlier supplied live output verifies degraded-state concealment/restoration, once-only display introduction, HUD inspection and brochure crash non-repetition.
+
+Combined evidence: **119 isolated tests**, deployed source `3ccfd56248258f407fff8c839153f877e98c8690`, startup/readiness checks and the author's command playthrough. Ambient timing/activity protection has automated coverage, not a new live idle trial. Deeper faculty/calibration/progression mechanics remain deferred, as agreed.
+
+W6-F3 **SEALED** for this bounded deliverable. W6 completed **3**; total sealed **19**. Next unallocated W6-F4. No new runtime or character change for this checkpoint.
+
+Visual return: one coherent pod layout, inspectable props and a few consistent cinematic views. Track placeholder artwork, shared-pod presence, repeated arrival framing, returning wardrobe guidance and office secrecy separately; none is silently resolved by this seal.
