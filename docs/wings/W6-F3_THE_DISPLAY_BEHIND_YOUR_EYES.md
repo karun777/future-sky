@@ -53,3 +53,7 @@ W4-F4/F5 remain deployed. Karun's first live walkthrough demonstrated hands/body
 Next conversation: internal voice, then ambient events. Return here to settle the small HUD implementation after those boundaries are clear.
 
 W6 completed count remains **2**; total sealed remains **18**. W6-F3 allocated/open; next unallocated **W6-F4**. W4-F6 remains unallocated.
+
+## Coordinated perception checkpoint — 18 October, 19:29 AWST
+
+[Ambient and internal-voice review](../handover/W6_F3_AMBIENT_AND_PERCEPTION_REVIEW_20261018.md) preserves Dragonfly Goggles direction, independent subtle-perception development, the authored sensory-return sequence, recovered ambient preferences and verified implementation gaps. Detailed Sarkar source review remains deferred. This checkpoint informs W6-F3; it does not authorise a general world-engine expansion or mark implementation complete.
