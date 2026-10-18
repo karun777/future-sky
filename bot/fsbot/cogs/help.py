@@ -11,6 +11,8 @@ CATALOG = {
     "character_sheet": {"tier": 0, "category": "core", "desc": "Show your character summary."},
     "inventory": {"tier": 0, "category": "items", "desc": "Show what you’re carrying."},
 
+    "hud": {"tier": 0, "category": "core", "desc": "Review discovered signals/notices. `!hud on`, `!hud off`, `!hud state normal`."},
+
     # Combat (core-visible)
     "combat": {"tier": 0, "category": "combat", "desc": "Opt in/out of combat. `!combat on|off|status`."},
     "draw": {"tier": 0, "category": "combat", "desc": "Draw a weapon (flavour). `!draw` or `!draw <name>`."},
@@ -29,7 +31,7 @@ CATALOG = {
 }
 
 ALWAYS_LIST = {
-    "look", "go", "character_sheet", "inventory",
+    "look", "go", "character_sheet", "inventory", "hud",
     "combat", "draw", "status", "attack",
     "say", "emote",
 }
@@ -86,6 +88,9 @@ class HelpCog(commands.Cog):
             "- `!combat on` (opt in)\n"
             "- `!draw`\n"
             "- `!attack <enemy>`\n\n"
+            "Your display:\n"
+            "- `!hud` — discovered signals and notices\n"
+            "- `!hud on` / `!hud off`\n\n"
             "Want the deeper toolbox?\n"
             "- `!commands` (your discovered verbs)\n"
         )

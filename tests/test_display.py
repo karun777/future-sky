@@ -7,7 +7,11 @@ from unittest.mock import AsyncMock, patch
 import json
 import unittest
 
+import discord
+from discord.ext import commands
+from discord.ext.commands.view import StringView
 from fsbot.cogs.hud import HudCog, render_panel
+from fsbot.cogs.help import HelpCog
 from fsbot.cogs.navigation import NavigationCog
 from fsbot.cogs.inspection import InspectionCog
 from fsbot.cogs.ambient import AmbientCog, DEFAULT_GLOBAL_AMBIENT
@@ -73,14 +77,16 @@ class DisplayTests(unittest.IsolatedAsyncioTestCase):
         self.storage.save_characters()
         before = self.path.read_text()
         await HudCog.hud.callback(self.hud, self.ctx)
-        self.assertIn("UNCALIBRATED", self.ctx.text())
+        self.assertIn("No signals or notices", self.ctx.text())
         self.assertNotIn("hud", self.char()["extra"])
         self.assertEqual(self.path.read_text(), before)
 
     async def test_legacy_defaults_preserved_without_false_readings(self):
         before = deepcopy(self.char())
         await self.look()
-        self.assertIn("UNCALIBRATED", self.ctx.text())
+        self.assertEqual(len(self.ctx.messages), 1)
+        await HudCog.hud.callback(self.hud, self.ctx)
+        self.assertIn("YOUR DISPLAY", self.ctx.text())
         self.assertNotIn("97%", self.ctx.text())
         self.assertNotIn("78%", self.ctx.text())
         self.assertNotIn("LOW", self.ctx.text())
@@ -98,9 +104,11 @@ class DisplayTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_degraded_and_dimmed_never_leak_readings(self):
         for state, label in [("signal_degraded", "SIGNAL DEGRADED"), ("dark_mode", "DISPLAY DIMMED")]:
-            await HudCog.hud_state.callback(self.hud, self.ctx, state)
+            await HudCog.hud_state.callback(self.hud, self.ctx, state=state)
             self.reload()
             await self.look()
+            self.assertEqual(len(self.ctx.messages), 1)
+            await HudCog.hud.callback(self.hud, self.ctx)
             self.assertIn(label, self.ctx.text())
             self.assertNotIn("97", self.ctx.text())
             self.assertNotIn("78", self.ctx.text())
@@ -118,7 +126,7 @@ class DisplayTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_invalid_state_and_repeated_settings_preserve_state(self):
         before = self.path.read_text()
-        await HudCog.hud_state.callback(self.hud, self.ctx, "hacked")
+        await HudCog.hud_state.callback(self.hud, self.ctx, state="hacked")
         self.assertEqual(self.path.read_text(), before)
         count = self.storage.save_calls
         await HudCog.hud_on.callback(self.hud, self.ctx)
@@ -133,8 +141,8 @@ class DisplayTests(unittest.IsolatedAsyncioTestCase):
         await self.inspect("hands")
         self.assertNotIn("edge of your vision", self.ctx.text())
         await self.inspect("hud")
-        self.assertIn("uncalibrated", self.ctx.text())
-        self.assertIn("!hud_off", self.ctx.text())
+        self.assertIn("interface waits quietly", self.ctx.text())
+        self.assertIn("!hud off", self.ctx.text())
 
     async def test_hud_off_does_not_disable_internal_impressions(self):
         await HudCog.hud_off.callback(self.hud, self.ctx)
@@ -226,6 +234,102 @@ class DisplayTests(unittest.IsolatedAsyncioTestCase):
              patch("fsbot.cogs.ambient.asyncio.sleep", new=AsyncMock()):
             await AmbientCog.ambient_loop.coro(self.ambient)
         self.ambient._send_embed.assert_not_awaited()
+
+    async def parse_hud(self, action, command_name="hud"):
+        bot = commands.Bot(command_prefix="!", intents=discord.Intents.none())
+        bot.presence, bot.storage = self.bot.presence, self.storage
+        await bot.add_cog(self.hud)
+        cmd = bot.get_command(command_name)
+        message = SimpleNamespace(_state=SimpleNamespace(), attachments=[], author=self.ctx.author, channel=self.ctx.channel)
+        context = commands.Context(message=message, bot=bot, view=StringView(action), prefix="!", command=cmd)
+        context.send = self.ctx.send
+        await cmd._parse_arguments(context)
+        await cmd.callback(*context.args, **context.kwargs)
+        await bot.close()
+
+    async def test_spaced_on_off_real_parser_and_reload(self):
+        await self.parse_hud("off")
+        self.assertIn("DISPLAY OFFLINE", self.ctx.text())
+        self.reload()
+        self.assertFalse(self.char()["extra"]["hud"]["enabled"])
+        self.ctx.messages.clear()
+        await self.parse_hud("ON")
+        self.assertIn("YOUR DISPLAY", self.ctx.text())
+        self.reload()
+        self.assertTrue(self.char()["extra"]["hud"]["enabled"])
+
+    async def test_spaced_states_real_parser_accepts_multiple_words(self):
+        for action, state, label in [
+                ("state signal degraded", "signal_degraded", "SIGNAL DEGRADED"),
+                ("state dark mode", "dark_mode", "DISPLAY DIMMED"),
+                ("state normal", "normal", "YOUR DISPLAY")]:
+            self.ctx.messages.clear()
+            await self.parse_hud(action)
+            self.assertEqual(self.char()["extra"]["hud"]["state"], state)
+            self.assertIn(label, self.ctx.text())
+
+    async def test_underscore_compatibility_and_invalid_alias_arguments(self):
+        await self.parse_hud("", "hud_off")
+        self.assertFalse(self.char()["extra"]["hud"]["enabled"])
+        await self.parse_hud("", "hud_on")
+        self.assertTrue(self.char()["extra"]["hud"]["enabled"])
+        await self.parse_hud("signal_degraded", "hud_state")
+        self.assertEqual(self.char()["extra"]["hud"]["state"], "signal_degraded")
+        for alias in ["hud_on", "hud_off"]:
+            before = deepcopy(self.char())
+            self.ctx.messages.clear()
+            await self.parse_hud("nonsense", alias)
+            self.assertIn("Use `!hud`", self.ctx.text())
+            self.assertEqual(self.char(), before)
+
+    async def test_unknown_or_trailing_arguments_never_silently_ignored(self):
+        before = deepcopy(self.char())
+        disk = self.path.read_text()
+        for action in ["off please", "state", "state mystery", "on nonsense", "frobnicate"]:
+            self.ctx.messages.clear()
+            await self.parse_hud(action)
+            self.assertIn("Use `!hud`", self.ctx.text())
+            self.assertEqual(self.char(), before)
+            self.assertEqual(self.path.read_text(), disk)
+
+    async def test_discovery_panel_does_not_reveal_undiscovered_signal_or_booking(self):
+        await self.start()
+        await HudCog.hud.callback(self.hud, self.ctx)
+        self.assertNotIn("Remembered booking", self.ctx.text())
+        self.assertNotIn("!feed7", self.ctx.text())
+        await self.inspect("panels")
+        self.ctx.messages.clear()
+        await HudCog.hud.callback(self.hud, self.ctx)
+        self.assertIn("Unread notice", [field.name for field in self.ctx.messages[-1]["embed"].fields])
+        self.assertNotIn("!feed7", self.ctx.text())
+        await self.inspect("display")
+        self.ctx.messages.clear()
+        await HudCog.hud.callback(self.hud, self.ctx)
+        self.assertIn("!feed7", self.ctx.text())
+        self.assertNotIn("tomorrow night", self.ctx.text())
+        await self.inspect("booking")
+        self.reload()
+        self.ctx.messages.clear()
+        await HudCog.hud.callback(self.hud, self.ctx)
+        self.assertIn("Remembered booking", [field.name for field in self.ctx.messages[-1]["embed"].fields])
+        self.assertIn("tomorrow night", self.ctx.text())
+
+    async def test_off_and_degraded_conceal_discovered_information(self):
+        await self.start()
+        await self.inspect("display")
+        await self.inspect("booking")
+        for action in ["off", "on", "state signal degraded", "state dark mode"]:
+            self.ctx.messages.clear()
+            await HudCog.hud.callback(self.hud, self.ctx, action=action)
+            if action != "on":
+                self.assertNotIn("FEED7", self.ctx.text())
+                self.assertNotIn("tomorrow night", self.ctx.text())
+
+    async def test_player_help_uses_spaced_hud_forms(self):
+        await HelpCog.help_cmd.callback(HelpCog(self.bot), self.ctx)
+        self.assertIn("!hud on", self.ctx.text())
+        self.assertIn("!hud off", self.ctx.text())
+        self.assertNotIn("!hud_", self.ctx.text())
 
     def test_all_hud_commands_route_privately(self):
         for name in ("hud", "hud_on", "hud_off", "hud_state"):

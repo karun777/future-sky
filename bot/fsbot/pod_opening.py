@@ -18,9 +18,9 @@ GUIDANCE = (
 # All targets below are fixtures/body observations, not portable item definitions.
 TARGETS = {
     "hud": ("The display behind your eyes", "The markings stay with your field of vision when you turn away from the pod screen. "
-            "Coherence. Parallelism. Commotion. The labels are clear; their readings are uncalibrated. "
-            "This display offers no explanation of your inward impressions.",
-            "Check the display with `!hud`. Use `!hud_off` or `!hud_on` to hide or restore it."),
+            "An interface waits quietly for your attention. Signals and notices you discover can be revisited here. "
+            "Your inward impressions are not messages from this display.",
+            "Use `!hud` to review what you have found. `!hud off` hides the display; `!hud on` restores it."),
     "hands": ("Your hands", "They answer each movement. You turn them over slowly. "
               "Familiar control; unfamiliar hands. Looking closer does not give you a name.",
               "Try `!inspect body`, `!inspect garment` or `!inspect pod`."),
@@ -142,9 +142,9 @@ def prepare_observation(character, target=None):
         if not hud.get("enabled", True):
             text = "Your display is switched off. Your inward impressions remain your own."
         elif hud.get("state") == "dark_mode":
-            text = "Your display is dimmed. Its readings are concealed."
+            text = "Your display is dimmed. Its information is concealed."
         elif hud.get("state") == "signal_degraded":
-            text = "The display remains in your field of vision, but the signal is degraded. Readings are unavailable."
+            text = "The display remains in your field of vision, but the signal is degraded. Information is unavailable."
     if target == "brochure" and not first:
         text = text.replace("A metallic crash sounds outside. The brochure does not acknowledge it.",
                             "The brochure offers the same reassurance as before.")

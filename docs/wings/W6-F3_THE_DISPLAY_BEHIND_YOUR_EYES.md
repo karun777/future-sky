@@ -87,3 +87,17 @@ W6-F3 remains REVIEW pending live delivery/playtest. W6 completed count **2**, t
 ## Deployment — 18 October, 19:44 AWST
 
 [Deployment record](../handover/W6_F3_DEPLOYMENT_20261018.md): six code files installed from `cbab82763e7453d63d0ba54792b7ab04c4809935`; all 112 tests passed again; all 44 cogs loaded, Discord readiness and Recovery heartbeat verified. Character-file hash unchanged across deployment/restart. REVIEW pending player command delivery; no seal/count change.
+
+## Functional close-out — 18 October, after player walkthrough
+
+Karun verified normal/off/degraded output, restoration, once-only HUD introduction and brochure non-repetition in Discord. The walkthrough exposed `!hud off` silently ignoring its argument. Karun adopted spaces as preferred player-facing command language and questioned the utility of persistent coherence/parallelism/commotion fields.
+
+The follow-up retires the automatic panel entirely in all modes. Explicit `!hud` now shows only discovered signals/notices: FEED7 after display discovery, an unread notice after panels/display, and a remembered booking after reading it. It does not reveal undiscovered content or invent measurements. Existing legacy metric values remain stored; their concepts and future instrumentation remain open.
+
+Canonical forms: `!hud`, `!hud on`, `!hud off`, `!hud state normal`, `!hud state signal degraded`, `!hud state dark mode`. Underscore entry points and state values remain compatible. Full trailing input is parsed; invalid root/alias input returns guidance without mutation. Help and pod descriptions use spaces. [Command-language convention](../current/PLAYER_COMMAND_LANGUAGE.md).
+
+Evidence: **119 isolated tests pass**, including **25 HUD/pod/activity tests**. Seven additional follow-up cases cover real discord.py argument parsing, spaced multiword values, compatibility aliases, invalid suffixes, discovery eligibility and updated help. Other tests now check quiet navigation and explicit information rather than the retired automatic meters.
+
+This follow-up modifies only HUD, pod opening, Help and tests/documentation. No wardrobe, NPC, sensory-progression, subtle-perception or image implementation is introduced. Discovery persistence, saved preferences and atmosphere protections remain. Deployment and short player confirmation are the remaining close-out steps; do not increment the sealed count until then.
+
+Visual return: establish pod layout and inspectable visible props before image generation; use staged hearing → touch → vision as the authored presentation direction without inventing timings. Compose a few consistent views of one pod. Existing placeholder image/shared-pod presence/wardrobe friction remain open and are not silently repaired here.

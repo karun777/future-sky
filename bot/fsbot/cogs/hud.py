@@ -1,31 +1,48 @@
-"""Character HUD preferences and one presentation path for commands/navigation."""
+"""Discoverable HUD capabilities; navigation stays quiet unless explicitly requested."""
 from copy import deepcopy
 import discord
 from discord.ext import commands
+from fsbot.pod_opening import opening_state
 
 DEFAULT_HUD = {"enabled": True, "state": "normal"}
 STATES = {"normal", "signal_degraded", "dark_mode"}
+USAGE = "Use `!hud`, `!hud on`, `!hud off`, or `!hud state normal|signal degraded|dark mode`."
 
 
 def hud_preferences(character):
-    value = (character.get("extra") or {}).get("hud")
+    extra = character.get("extra")
+    value = extra.get("hud") if isinstance(extra, dict) else None
     return value if isinstance(value, dict) else DEFAULT_HUD
 
 
+def display_state(value):
+    words = " ".join(str(value).casefold().replace("_", " ").split())
+    return {"normal": "normal", "signal degraded": "signal_degraded", "dark mode": "dark_mode"}.get(words)
+
+
 def render_panel(character, *, explicit=False):
+    # No speculative meters or repeated automatic panel after room descriptions.
+    if not explicit:
+        return None
     hud = hud_preferences(character)
     if not hud.get("enabled", True):
-        return discord.Embed(title="◉ DISPLAY OFFLINE", description="No active telemetry.", color=0x555555) if explicit else None
+        return discord.Embed(title="◉ DISPLAY OFFLINE", description="Use `!hud on` to restore the display.", color=0x555555)
     state = hud.get("state", "normal")
     if state == "dark_mode":
-        return discord.Embed(title="◉ DISPLAY DIMMED", description="Telemetry is concealed.", color=0x555555)
+        return discord.Embed(title="◉ DISPLAY DIMMED", description="Information is concealed. Use `!hud state normal` to restore it.", color=0x555555)
     if state == "signal_degraded":
-        return discord.Embed(title="◉ SIGNAL DEGRADED", description="Readings unavailable.", color=0x555555)
-    embed = discord.Embed(title="◉ TELEMETRY", description="Calibration incomplete. No current assessment is available.", color=0x555555)
-    # Legacy 97/78/LOW fields are authored defaults, not measured assessments.
-    # Preserve them in storage, but do not display them as current truth.
-    for label in ("♆ COHERENCE", "♄ PARALLELISM", "✦ COMMOTION"):
-        embed.add_field(name=label, value="UNCALIBRATED", inline=True)
+        return discord.Embed(title="◉ SIGNAL DEGRADED", description="Information is unavailable. Use `!hud state normal` to restore the display.", color=0x555555)
+    embed = discord.Embed(title="◉ YOUR DISPLAY", description="The interface rests at the edge of your vision.", color=0x555555)
+    discovered = (opening_state(character) or {}).get("discoveries", [])
+    if "display" in discovered:
+        embed.add_field(name="FEED7", value="A signal you found in the pod. Open it with `!feed7`.", inline=False)
+    if "booking" in discovered:
+        embed.add_field(name="Remembered booking", value="A gig tomorrow night. Format still unclear. Revisit the notice in the pod with `!inspect booking`.", inline=False)
+    elif any(target in discovered for target in ("panels", "display")):
+        embed.add_field(name="Unread notice", value="You found a performance notification in the pod. Read it there with `!inspect booking`.", inline=False)
+    if not embed.fields:
+        embed.description += " No signals or notices have been discovered yet."
+    embed.set_footer(text="!hud on · !hud off · !hud state normal")
     return embed
 
 
@@ -61,27 +78,48 @@ class HudCog(commands.Cog):
         await ctx.send(embed=render_panel(updated, explicit=True))
 
     @commands.command(name="hud")
-    async def hud(self, ctx):
+    async def hud(self, ctx, *, action: str = ""):
+        """Inspect or configure your display: on, off, state normal/signal degraded/dark mode."""
+        words = " ".join(action.casefold().split())
+        if words in {"on", "off"}:
+            await self._update(ctx, enabled=words == "on")
+            return
+        if words.startswith("state "):
+            state = display_state(words[6:])
+            if state:
+                await self._update(ctx, state=state)
+                return
+        if words:
+            await ctx.send(USAGE)
+            return
         panel = self.panel(str(ctx.author.id), explicit=True)
         if panel is None:
             await ctx.send("Create a character first.")
         else:
             await ctx.send(embed=panel)
 
-    @commands.command(name="hud_on")
-    async def hud_on(self, ctx):
+    # Compatibility entry points; player-facing help teaches spaced commands.
+    @commands.command(name="hud_on", hidden=True)
+    async def hud_on(self, ctx, *, extra: str = ""):
+        if extra:
+            await ctx.send(USAGE)
+            return
         await self._update(ctx, enabled=True)
 
-    @commands.command(name="hud_off")
-    async def hud_off(self, ctx):
+    @commands.command(name="hud_off", hidden=True)
+    async def hud_off(self, ctx, *, extra: str = ""):
+        if extra:
+            await ctx.send(USAGE)
+            return
         await self._update(ctx, enabled=False)
 
-    @commands.command(name="hud_state")
-    async def hud_state(self, ctx, state: str):
-        if state not in STATES:
-            await ctx.send("Valid display states: normal, signal_degraded, dark_mode.")
+    @commands.command(name="hud_state", hidden=True)
+    async def hud_state(self, ctx, *, state: str):
+        value = display_state(state)
+        if value is None:
+            await ctx.send(USAGE)
             return
-        await self._update(ctx, state=state)
+        await self._update(ctx, state=value)
 
 
 async def setup(bot):
