@@ -22,6 +22,7 @@
 # - Reset destination defaults to pod_room.
 # - After resting, ambient pauses until the player runs a command again.
 
+from fsbot.recovery import recovering
 import asyncio
 import inspect
 import random
@@ -442,6 +443,8 @@ class AmbientCog(commands.Cog):
         Returns True if the loop handled this player with a rest action
         and should not continue to normal ambient.
         """
+        if recovering(char):
+            return True
         if not self._rest_enabled():
             return False
 
@@ -508,6 +511,9 @@ class AmbientCog(commands.Cog):
         for user_id, char in list(presence.iter_character_records()):
             try:
                 if not isinstance(char, dict):
+                    continue
+
+                if recovering(char):
                     continue
 
                 # After Rest v0.1 completes, suppress ambient until the player acts again.

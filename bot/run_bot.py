@@ -346,6 +346,7 @@ EXTENSIONS = [
     "fsbot.cogs.emotes",
     "fsbot.cogs.speech",
     "fsbot.cogs.activity",
+    "fsbot.cogs.recovery",
     "fsbot.cogs.rebirth",
 
     # Skill Expression Layer (v0 exemplars)
@@ -386,6 +387,8 @@ async def load_extensions() -> None:
             log.info(f"🔌 Loaded: {ext}")
         except Exception as e:
             log.error(f"❌ Failed to load {ext}: {type(e).__name__}: {e}")
+            if ext == "fsbot.cogs.recovery":
+                raise RuntimeError("Recovery action gate is required; refusing partial startup") from e
 
 
 @bot.event
