@@ -1,171 +1,87 @@
-#python
-# ============================================================
-# FILE META — fsbot/cogs/hud.py
-#
-# HUD v0.1
-# Future Sky telemetry layer
-#
-# Commands:
-#   !hud
-#   !hud_on
-#   !hud_off
-#   !hud_state <state>
-#
-# States:
-#   normal
-#   signal_degraded
-#   dark_mode
-# ============================================================
-
-from __future__ import annotations
-
+"""Character HUD preferences and one presentation path for commands/navigation."""
+from copy import deepcopy
 import discord
 from discord.ext import commands
 
+DEFAULT_HUD = {"enabled": True, "state": "normal"}
+STATES = {"normal", "signal_degraded", "dark_mode"}
 
-DEFAULT_HUD = {
-    "enabled": True,
-    "state": "normal",
-    "coherence": 97,
-    "parallelism": 78,
-    "commotion": "LOW",
-}
+
+def hud_preferences(character):
+    value = (character.get("extra") or {}).get("hud")
+    return value if isinstance(value, dict) else DEFAULT_HUD
+
+
+def render_panel(character, *, explicit=False):
+    hud = hud_preferences(character)
+    if not hud.get("enabled", True):
+        return discord.Embed(title="◉ DISPLAY OFFLINE", description="No active telemetry.", color=0x555555) if explicit else None
+    state = hud.get("state", "normal")
+    if state == "dark_mode":
+        return discord.Embed(title="◉ DISPLAY DIMMED", description="Telemetry is concealed.", color=0x555555)
+    if state == "signal_degraded":
+        return discord.Embed(title="◉ SIGNAL DEGRADED", description="Readings unavailable.", color=0x555555)
+    embed = discord.Embed(title="◉ TELEMETRY", description="Calibration incomplete. No current assessment is available.", color=0x555555)
+    # Legacy 97/78/LOW fields are authored defaults, not measured assessments.
+    # Preserve them in storage, but do not display them as current truth.
+    for label in ("♆ COHERENCE", "♄ PARALLELISM", "✦ COMMOTION"):
+        embed.add_field(name=label, value="UNCALIBRATED", inline=True)
+    return embed
 
 
 class HudCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    # --------------------------------------------------------
-    # Helpers
-    # --------------------------------------------------------
+    def _get_hud(self, user_id):
+        character = self.bot.presence.get_character(str(user_id))
+        return deepcopy(hud_preferences(character)) if isinstance(character, dict) else None
 
-    def _get_hud(self, user_id: str):
-        char = self.bot.presence.get_character(user_id)
-        if not isinstance(char, dict):
-            return None
+    def panel(self, user_id, *, explicit=False):
+        character = self.bot.presence.get_character(str(user_id))
+        return render_panel(character, explicit=explicit) if isinstance(character, dict) else None
 
-        extra = char.setdefault("extra", {})
-        hud = extra.setdefault("hud", dict(DEFAULT_HUD))
-
-        return hud
-
-    def _save(self):
-        try:
-            self.bot.storage.save_characters()
-        except Exception:
-            pass
-
-    def _render_hud(self, hud: dict) -> str:
-
-        if not hud.get("enabled", True):
-            return (
-                "```"
-                "\nNO ACTIVE TELEMETRY"
-                "\n```"
-            )
-
-        state = hud.get("state", "normal")
-
-        if state == "dark_mode":
-            return (
-                "```"
-                "\n..."
-                "\n```"
-            )
-
-        coherence = hud.get("coherence", 97)
-        parallelism = hud.get("parallelism", 78)
-        commotion = hud.get("commotion", "LOW")
-
-        if state == "signal_degraded":
-            coherence = "???"
-            parallelism = "???"
-
-        return (
-            "```"
-            "\n╔════════════════════╗"
-            f"\n║ COHERENCE      {str(coherence).rjust(3)} ║"
-            f"\n║ PARALLELISM    {str(parallelism).rjust(3)} ║"
-            f"\n║ COMMOTION   {str(commotion).ljust(6)} ║"
-            "\n╚════════════════════╝"
-            "\n```"
-        )
-
-    # --------------------------------------------------------
-    # Commands
-    # --------------------------------------------------------
+    async def _update(self, ctx, **values):
+        uid = str(ctx.author.id)
+        original = self.bot.storage.characters.get(uid)
+        if not isinstance(original, dict):
+            await ctx.send("Create a character first.")
+            return
+        updated = deepcopy(original)
+        hud = updated.setdefault("extra", {}).setdefault("hud", deepcopy(DEFAULT_HUD))
+        hud.update(values)
+        if updated != original:
+            self.bot.storage.characters[uid] = updated
+            try:
+                self.bot.storage.save_characters()
+            except Exception:
+                self.bot.storage.characters[uid] = original
+                await ctx.send("The display could not save that setting. Please try again.")
+                return
+        await ctx.send(embed=render_panel(updated, explicit=True))
 
     @commands.command(name="hud")
     async def hud(self, ctx):
-
-        user_id = str(ctx.author.id)
-
-        hud = self._get_hud(user_id)
-
-        if not hud:
-            await ctx.send("No character found.")
-            return
-
-        await ctx.send(self._render_hud(hud))
+        panel = self.panel(str(ctx.author.id), explicit=True)
+        if panel is None:
+            await ctx.send("Create a character first.")
+        else:
+            await ctx.send(embed=panel)
 
     @commands.command(name="hud_on")
     async def hud_on(self, ctx):
-
-        user_id = str(ctx.author.id)
-        hud = self._get_hud(user_id)
-
-        if not hud:
-            return
-
-        hud["enabled"] = True
-
-        self._save()
-
-        await ctx.send("📡 HUD ONLINE")
+        await self._update(ctx, enabled=True)
 
     @commands.command(name="hud_off")
     async def hud_off(self, ctx):
-
-        user_id = str(ctx.author.id)
-        hud = self._get_hud(user_id)
-
-        if not hud:
-            return
-
-        hud["enabled"] = False
-
-        self._save()
-
-        await ctx.send("📴 HUD OFFLINE")
+        await self._update(ctx, enabled=False)
 
     @commands.command(name="hud_state")
     async def hud_state(self, ctx, state: str):
-
-        allowed = {
-            "normal",
-            "signal_degraded",
-            "dark_mode",
-        }
-
-        if state not in allowed:
-            await ctx.send(
-                "Valid states: normal, signal_degraded, dark_mode"
-            )
+        if state not in STATES:
+            await ctx.send("Valid display states: normal, signal_degraded, dark_mode.")
             return
-
-        user_id = str(ctx.author.id)
-
-        hud = self._get_hud(user_id)
-
-        if not hud:
-            return
-
-        hud["state"] = state
-
-        self._save()
-
-        await ctx.send(f"HUD STATE → {state}")
+        await self._update(ctx, state=state)
 
 
 async def setup(bot):

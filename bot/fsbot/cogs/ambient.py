@@ -264,14 +264,16 @@ class AmbientCog(commands.Cog):
     # Activity tracking
     # -------------------------
 
+    def note_activity(self, user_id: str) -> None:
+        """Shared monotonic activity input; typing/commands also cancel pending rest."""
+        uid = str(user_id)
+        self._last_action[uid] = time.monotonic()
+        self._resting.pop(uid, None)
+        self._sleeping.discard(uid)
+
     @commands.Cog.listener()
     async def on_command(self, ctx: commands.Context):
-        user_id = str(ctx.author.id)
-        self._last_action[user_id] = time.monotonic()
-
-        # A player command means consciousness has returned.
-        self._resting.pop(user_id, None)
-        self._sleeping.discard(user_id)
+        self.note_activity(str(ctx.author.id))
 
     def _get_guild(self) -> Optional[discord.Guild]:
         return self.bot.guilds[0] if self.bot.guilds else None
@@ -565,6 +567,9 @@ class AmbientCog(commands.Cog):
                             await tn.maybe_trigger_on_idle(ctx, user_id, room_key, idle_for)
                 except Exception:
                     pass
+
+                if _is_entangled(s.characters.get(user_id, char)):
+                    continue
 
                 room = s.rooms.get(room_key, {})
                 picked = self._pick_local_then_global(
