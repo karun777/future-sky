@@ -93,3 +93,7 @@ Public asset delivery and Discord image rendering remain deployment/player check
 ## Deployment checkpoint — 18 October, 21:06 AWST
 
 [Deployment evidence](../handover/W6_F4_MEDIA_DEPLOYMENT_20261018.md): four code files, five PNGs/manifest and coordinated docs installed from `cd4d28e8988d207c2b718553acede87093640e35`. 130 isolated tests pass; all five public asset URLs HTTP 200 and exact source hashes; 44 cog loads, Discord readiness and Recovery heartbeat verified. Authorised occupant relocation is the sole character change; Efiishent untouched. Earlier non-deployment language is historical. W6-F4 REVIEW pending actual Discord image display/inspection; count remains 19.
+
+## Session close — 18 October, approximately 21:37 AWST
+
+Karun reports “looking good” after deployment and supplies the read-display response with no image, confirming the UNREAD safeguard. Explicit close-up checks remain the next bounded action; this feather stays REVIEW and is not counted sealed. [Full handoff](../handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md) records state, source differences, decisions and the next-run entry point. No runtime changes for close-out.

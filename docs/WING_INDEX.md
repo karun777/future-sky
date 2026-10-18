@@ -16,6 +16,10 @@ The connection to Neptune Lounge is restored and today's documentation is brough
 
 [Deployment record](handover/W4_F4_F5_DEPLOYMENT_20261018.md): 11 tested code files installed selectively, all 61 data files unchanged at installation, bot reconnected and Recovery heartbeat successful. No character reset or live command playthrough. Earlier not-deployed statements below describe their dated verification checkpoints.
 
+## Session return — 18 October, evening close
+
+Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md) before the next run. Home remains W6-F4 in REVIEW; 19 sealed. Live illustrated pod and read-state image safeguard received initial player feedback; finish close-up checks next. Four pre-existing live source differences are recorded explicitly. No close-out reset or runtime change.
+
 ## Feather register
 
 | Wing | Completed since adoption | Latest sealed feather | Reserved return / next unallocated ID |

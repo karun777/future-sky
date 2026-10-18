@@ -14,6 +14,10 @@ During discovery, read the [Knowledge Atlas](KNOWLEDGE_ATLAS.md), then the [Wing
 
 The Feather 20 pointers below are historical checkpoints, not a ceiling on later committed work. Consult the [content-first phase closure](current/PHASE_CLOSURE_EPISTEMIC_FOUNDATIONS_2026-10-15.md) and verify current branch, source and live state. Wing counts preserve historical global feather IDs and count only completed, verified wing feathers.
 
+## Latest session handoff — 18 October 2026, evening
+
+After the Wing Index, read [the session close-out](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md). Current home W6-F4 remains REVIEW; 19 sealed. Refresh connectivity and live evidence first. Deployed code is selectively overlaid on an older checkout HEAD, with four preserved source differences; the handoff identifies them. Do not treat raw HEAD or a clean archive as the whole live system.
+
 ## 0. Invocation
 
 **RESET RITUAL — WAKE UP IN LOVE**
