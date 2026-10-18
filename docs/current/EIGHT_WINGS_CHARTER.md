@@ -50,3 +50,9 @@ On return: reset ritual → Knowledge Atlas → wing index → selected checkpoi
 Do not require the author to reconstruct available history. Do not manufacture certainty when a checkpoint is missing. A wing checkpoint routes evidence; it does not override the Atlas authority rules.
 
 This is development navigation, not a new world ontology or runtime subsystem.
+
+## Shared checkpoints (“noding”) — adopted 18 October 2026
+
+When a feather substantially changes another wing's knowledge or direction, leave a small shared checkpoint: what was learned or decided, affected wings and implications, the authoritative record, and what to carry forward on return. Keep the decision in one home record and link it from each affected wing checkpoint. One home feather and one count remain the rule; acknowledgement does not allocate another feather.
+
+These are development knowledge checkpoints, distinct from in-world Thread Nodes. The first example is [W2 ↔ W6 — Cinematic storytelling](../wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md#shared-checkpoint--w2--w6-cinematic-storytelling).

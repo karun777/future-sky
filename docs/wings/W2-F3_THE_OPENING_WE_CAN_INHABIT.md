@@ -161,3 +161,17 @@ The connected MacBook is offline as checked 18 October. The earlier live runtime
 **One candidate after review:** make fresh character creation hand off coherently to the existing awakening scene, with matching welcome text and an isolated delivery check. Do not implement until this is chosen; preserve existing characters and all six source options.
 
 No production code, world data, Red Book, service or World Engine architecture changed. The passage remains a review draft even if this documentary checkpoint is merged.
+
+## Shared checkpoint — W2 ↔ W6: Cinematic storytelling
+
+**Adopted:** Karun, 18 October 2026. **Home feather:** W2-F3; linked wing W6 Expression. This section owns the shared decision; both wing checkpoints link here.
+
+Cinematic stills and occasional short videos have a substantial storytelling role. Concrete visual footholds should help players inhabit the world while leaving room for imagination. Compose prose, imagery and choices together. Stills can establish presence; motion is useful where the movement itself carries the story. Prose carries sensation, uncertainty and attention. These are creative guides, not mandatory media quotas.
+
+Render the pod's physical setting concretely while leaving its purpose, the Character's identity and the world beyond the glass unresolved. Begin with one first-person cinematic still inside Transit Pod 3417: cold blue light, condensation/frosted viewport, red status light and red button, a brochure partly protruding from its dispenser. No visible face or defined body; no clear outside vista, revealed mystery, HUD statistics or new lore.
+
+**Review state:** Karun approved the walkthrough's direction and requested stronger cinematic support. W2-F3 remains in REVIEW while prose and the first still are assessed together. Generating a concept image does not install an asset, approve a final visual canon or complete another wing's feather. Completed counts remain 16.
+
+**Carry forward:** Worlds maintains spatial coherence and what is discoverable. Expression maintains visual treatment, framing, prose/media balance and continuity across later images. The first image is a review concept generated in conversation; a selected production asset will need its own versioned repository placement and delivery check. Live-host documentation sync remains pending.
+
+**Generation brief:** cinematic photorealistic science-fiction still, landscape, seated/reclining first-person eye height inside a compact habitable transit pod; tactile, slightly worn materials, cold blue practical lighting and soft red indicator; condensation obscures the viewport; integrated hatch controls and partly dispensed paper brochure; restrained, intimate, mysterious and humane rather than horror. No visible person, no exterior reveal, no added objects or signage beyond pod number and brochure heading. Review-only, no media installation.

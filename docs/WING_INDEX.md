@@ -44,6 +44,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Verified disk graph: 43 Manzo rooms, 100 directed exits, no absent targets, all rooms reachable from pod and Lounge; matches main's exit graph. In-process room data and a gated live walkthrough are not verified.
 - Open: four one-way connections, a 10-room reset baseline, duplicate room files, and wider-era geography; no repairs performed.
 - Sealed: [W2-F2 — The Local Atlas](wings/W2-F2_THE_LOCAL_ATLAS.md) accounts for all 43 rooms and 100 exact exits, with a group overview, example routes and four one-way markers. Live source hash rechecked unchanged before authoring.
+- Shared checkpoint: [W2 ↔ W6 — Cinematic storytelling](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md#shared-checkpoint--w2--w6-cinematic-storytelling) records substantial use of stills and occasional short videos alongside prose and imagination. First pod still is a review concept; no duplicate feather count.
 - Current review: [W2-F3 — The Opening We Can Inhabit](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md) traces existing arrival through the first choice and stages one listening passage. Source seams: creation welcome/location mismatch, initial scene bootstrap and one-choice completion. Prose awaits Karun's review; no production change or live playthrough.
 - Return: Worlds has 2 completed feathers; W2-F3 allocated in REVIEW, next unallocated W2-F4. Larger World Engine expansion is on hold under the adopted experience direction. Source checkpoint 48ff5b8; refresh live state before implementation.
 
@@ -72,6 +73,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W5 has 2 completed feathers; W5-F3 unallocated. [W1-F3](wings/W1-F3_THE_EIGHT_TIMELINES.md) links this wing for cross-era causality, without allocating a W5 feather. Failed clock persistence advances memory before suppressing publication; later save may include it. Recovery/replay policy remains open. No live time change.
 
 ### W6 — Expression
+- Shared checkpoint: [W2 ↔ W6 — Cinematic storytelling](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md#shared-checkpoint--w2--w6-cinematic-storytelling), owned by W2-F3. Compose images, prose and choices together; render physical presence while preserving mystery. First pod still under review; no W6-F3 allocation or completed-count change.
 - Trajectory: coherent sensory language → consistent scenes → responsive atmosphere.
 - Sealed: [W6-F1 — How the World Reaches Us](wings/W6-F1_HOW_THE_WORLD_REACHES_US.md). 43 room descriptions/images/ambient sets, 15 private narratives, image/HUD/scene render paths, routing and optional audio inventoried.
 - Sampled first-party delivery: Dance Floor, Lager, Tiny Book and Compass images returned HTTP 200 and exact local bytes; FEED7 returned HTML 200. Discord rendering and audio not verified.
