@@ -30,7 +30,7 @@ This paragraph is a synthesis of Karun's account, not additional canon about a m
 
 ### Adopted canon
 
-Towards the end of his life, Efiishent designed and manufactured a cube in which to preserve his brain. He left instructions for revival once a colony had been established on Triton. His awakening is part of the imaginative future-scenario exploration Karun is undertaking personally.
+Towards the end of his ordinary earthly human life during the Omincron period, Efiishent designed and manufactured a cube in which to preserve his brain. He left instructions for revival once a colony had been established on Triton. His awakening is part of the imaginative future-scenario exploration Karun is undertaking personally.
 
 In Manzo, naturally born and laboratory-manufactured humans are individual souls continuing the unfolding of their samskaras. Ordinarily they do not have access to memories of past lives.
 
@@ -207,7 +207,7 @@ This is enough geography to anchor work. It is not a mandate to expand the city,
 
 This is the first account to render, not a universal list of actions every player must copy.
 
-He comes from Omincron through Earthdance to meet an ambassador of alien sadvipran friends. There is a gift to obtain, and Vitriol's agents are trying to intercept it.
+He comes from Omincron through a portal he stepped through at Earthdance 2024 in the Omincron era. He is to meet a representative of the allied alien sadvipran embassy. In his particular encounter, the ambassador, the princess and the Dark Rat Queen are the same person. There is a gift to obtain, and Vitriol's agents are trying to intercept it.
 
 He wakes without knowing much and without necessarily caring to remember. The gig tomorrow gives him a reason to orient. Fairly early he discovers there is someone to meet after his set.
 
@@ -229,17 +229,40 @@ For Karun, the gift's true relevance or meaning requires its receipt from her **
 
 The [primary account](AUTHORIAL_NOTES_20261018.md) preserves the author's wording and the source's unresolved “get from Omincron” phrase. The return direction is not silently repaired here.
 
-## 6. Other passages through the same living situation
+## 6. One quest, many particular passages
 
-The Puzzler can undertake the quest after Efiishent. The world contains traces of the earlier passage. Others can also converge during the same period and be present at one moment.
+**Any player can undertake the quest to meet a representative of an allied faction at Neptune Lounge and make a trade. A romantic connection is possible, not required.**
 
-The event is shared. Its perception is situated.
+That is the common quest. Efiishent's performance, connection with the princess and private exchange are his particular passage through it. They do not make every participant a performer or make romance the price of completing diplomacy.
 
-One participant may know what they offered. Another may remember a public moment. A witness may attribute success to the wrong person, or remain uncertain. Those views need not agree for the world to retain what occurred.
+| Layer | What it describes |
+| --- | --- |
+| Common quest | Meet an allied-faction representative and make a trade within the available opportunity. |
+| Particular instance | The people, appointments, motives, access conditions, offers and consequences of this encounter. |
+| Participant perspective | What each person perceives, remembers, believes and can establish. |
+| Persistent footprint | What this occurrence leaves in the world, with privacy governing access and disclosure. |
 
-There is no requirement that another participant reproduce Efiishent's intimate encounter. His meeting with the Queen is particular to him. The recurring social life includes other princes and princesses visiting nightly, attracted to Earth people and exchanging gifts. Those people are not disposable substitutions for one woman.
+These are authoring distinctions using the existing Scenario, Character and Role vocabulary.
 
-Other routes are an authorised field of exploration, not yet authored solutions. My earlier example of “help the artist instead of performing” was an invention and has no approved equivalence.
+Karun used the Puzzler to illustrate another participant undertaking this same mission. The Puzzler's particular version, and the Dark Rat Queen's own particular version, will be authored later. Neither is just a copy of Efiishent's experience with a changed name. We have not assigned their counterpart, gift, romantic involvement or route.
+
+Different participants can attempt the quest at different times or converge in the same period. They may be present at one event with different purposes and different knowledge. The event can be shared without making their outcomes or interpretations identical.
+
+The recurring princes and princesses belong to the Lounge's social life. They may be representatives, partners, traders or people with purposes of their own as authored. A royal title alone does not establish diplomatic credentials, allegiance or willingness to exchange.
+
+Efiishent's princess is specifically the sadvipran embassy representative and the Dark Rat Queen. His secret identity connection remains protected. That particular encounter is not automatically made available to every participant.
+
+### Footprints with privacy paramount
+
+Every quest leaves a footprint. That does **not** mean every completion is publicly announced, every identity can be inferred, or private encounters become a searchable public record.
+
+World truth, evidence and permission to learn it are distinct. The occurrence can persist while its participants, private conversation, intimacy, gift contents and identifying details remain protected.
+
+A footprint may be accessible only to its participants or reveal limited, non-identifying detail to others. Even the existence of an appointment or exchange can be sensitive; it is not automatically public. Specific discoverable traces should be authored with their access conditions and what they actually reveal.
+
+Deep curiosity can uncover permitted traces. It does not grant a blanket right to another participant's private history. A later participant's version of the quest can be informed by the past without consuming someone else's intimacy as content.
+
+**Authoring proposal:** for each trace, record its source occurrence, who may discover it, what it reveals, and what remains private. This is a small content obligation, not a new surveillance or public quest-feed system.
 
 In a future version, another human may inhabit a role currently driven by script. The Character / Role / Driver distinctions already support thinking about this. A handover must preserve identity, knowledge, commitments and the difference between a human decision and scripted continuity. The live game does not yet implement general human/NPC role transfer.
 
@@ -247,11 +270,11 @@ In a future version, another human may inhabit a role currently driven by script
 
 A dependency map helps us ask what makes the story possible. It should not confuse an account of one successful passage with a script the system forces every participant to perform.
 
-### The strongest specified gate
+### The strongest specified gate in Efiishent's instance
 
 **If Efiishent plays poorly, the ambassador does not remain for the following set.**
 
-Playing well keeps that possibility alive. It does not compel a meeting, attraction, recognition, privacy or an exchange. We have not designed a quality score.
+This gate belongs to Efiishent's authored instance, not to every version of the diplomatic quest. Playing well keeps that possibility alive. It does not compel a meeting, attraction, recognition, privacy or an exchange. We have not designed a quality score.
 
 ### The time window
 
@@ -279,9 +302,9 @@ The exact reset policy is not fixed. Its eventual rules must respect the author'
 
 ### Executable authoring rehearsal
 
-A small [offline rehearsal](../../tools/authoring/chapter_one_rehearsal.py) and [19 boundary cases](../../tools/authoring/test_chapter_one_rehearsal.py) exercise these distinctions with synthetic ticks and fictional fixtures.
+A small [offline rehearsal](../../tools/authoring/chapter_one_rehearsal.py) and [23 boundary cases](../../tools/authoring/test_chapter_one_rehearsal.py) exercise these distinctions with synthetic ticks and fictional fixtures.
 
-They test good performance without guaranteed attendance; expired opportunities; privacy and willingness; one occurrence with different observations; facts surviving disputed credit; non-duplicating gift custody; and traces preserved after a sample cycle and reload.
+They test the common meeting/trade opportunity without a romance requirement, then Efiishent's good performance without guaranteed attendance; expired opportunities; privacy and willingness; one occurrence with different observations; facts surviving disputed credit; non-duplicating gift custody; and traces preserved after a sample cycle and reload.
 
 The sample cycle-retention and half-open interval are **explicit rehearsal policies**, not decisions about the live chapter. Quality and willingness are supplied facts, not inferred scores. No production service imports this code.
 

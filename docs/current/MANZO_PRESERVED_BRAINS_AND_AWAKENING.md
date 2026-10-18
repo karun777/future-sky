@@ -10,7 +10,7 @@
 
 ## Efiishent's preservation and return
 
-Towards the end of his life, Efiishent placed his brain in stasis. It is preserved in a cube that he designed and manufactured himself.
+Towards the end of his ordinary earthly human life during the Omincron period, Efiishent placed his brain in stasis. It is preserved in a cube that he designed and manufactured himself.
 
 He left instructions to be brought to life once a colony was established on Triton. His awakening there is the imaginative process now being developed, and an invitation to others to consider its ramifications.
 
@@ -65,7 +65,7 @@ Manufactured birth is the norm, natural birth is less common, and preserved-brai
 
 - Delayed memory emergence is now explained by reintegration. Exact stages, individual variation and the consequences of the unavailable/unknown instruction manual remain open.
 - The relationship between the brain-preservation cube and the previously authored CMYK Cube / Cube Loop, pod geometry and wooden neck cube is not established. Shared shape is not proof of identical object identity.
-- The precise relationship between this preservation/revival history, the Earthdance passage and the Chapter 1 / Timeline 1 narrative remains to be articulated.
+- Efiishent stepped through a portal at Earthdance 2024 in the Omincron era. This is his specified passage from Omincron. Its detailed relationship to the later end-of-earthly-life preservation and Triton revival history remains to be articulated; do not change the stated date or force an ordinary linear chronology.
 - Body selection, parallelism difficulty and recovery of faculties are not yet numeric rules, gameplay gates or implemented systems.
 - Population arithmetic is corrected above. Dates of preservation, duration of stasis, manufacturing procedure and revival institution remain unspecified.
 

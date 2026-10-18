@@ -18,7 +18,7 @@ class Result(str, Enum):
 
 
 def following_set(*, now, opens, closes, played_well, ambassador_present):
-    """A good performance is necessary, not sufficient, for this opportunity."""
+    """Efiishent instance: a good set is necessary, not sufficient, here."""
     if opens is None or closes is None:
         return Result.UNRESOLVED
     if closes <= opens:
@@ -30,9 +30,26 @@ def following_set(*, now, opens, closes, played_well, ambassador_present):
     return Result.POSSIBLE
 
 
+def allied_trade_opportunity(*, window_open, representative_present,
+                             mutually_willing, exchange_available):
+    """Common quest: meeting/trade availability, without a romance requirement.
+
+    These are supplied authoring facts. POSSIBLE is never a completed trade.
+    The performance gate and private-room encounter belong to Efiishent's
+    particular instance and are not inherited by every allied encounter.
+    """
+    conditions = (window_open, representative_present,
+                  mutually_willing, exchange_available)
+    if any(value is False for value in conditions):
+        return Result.CLOSED
+    if any(value is None for value in conditions):
+        return Result.UNRESOLVED
+    return Result.POSSIBLE
+
+
 def private_exchange(*, opportunity, private_place, mutual_recognition,
                      giver_has_item, counterpart_willing):
-    """Only possible: this function never causes an exchange or romance."""
+    """Efiishent private encounter; never a universal trade/romance gate."""
     if opportunity == Result.CLOSED:
         return Result.CLOSED
     conditions = (private_place, mutual_recognition, giver_has_item,
