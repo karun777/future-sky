@@ -1,7 +1,7 @@
 # W6-F3 — The Display Behind Your Eyes
 
 Home wing: **W6 Expression**. Allocated by Karun on 18 October 2026, 18:46 AWST.
-Status: **REVIEW — bounded implementation tested in isolation**, 18 October 2026. Internal voice and ambient boundaries discussed. Not deployed; live Discord verification remains open. No completed-count increment.
+Status: **REVIEW — bounded implementation tested in isolation**, 18 October 2026. Internal voice and ambient boundaries discussed. Deployed 18 October at 19:44 AWST; live player verification remains open. No completed-count increment.
 
 ## Purpose and scope
 
@@ -83,3 +83,7 @@ Scope limits:
 - A successful state save followed by failed network delivery can consume a once-only presentation. No distributed exactly-once claim is made.
 
 W6-F3 remains REVIEW pending live delivery/playtest. W6 completed count **2**, total sealed **18**, next unallocated **W6-F4**. W4-F6 unallocated.
+
+## Deployment — 18 October, 19:44 AWST
+
+[Deployment record](../handover/W6_F3_DEPLOYMENT_20261018.md): six code files installed from `cbab82763e7453d63d0ba54792b7ab04c4809935`; all 112 tests passed again; all 44 cogs loaded, Discord readiness and Recovery heartbeat verified. Character-file hash unchanged across deployment/restart. REVIEW pending player command delivery; no seal/count change.
