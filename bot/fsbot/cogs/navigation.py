@@ -38,6 +38,7 @@ from discord.ext import commands
 
 from fsbot.cogs.router import ensure_player_run_channel
 from fsbot.events import create_event
+from fsbot.pod_opening import pod_bearings, GUIDANCE
 
 
 # ============================================================
@@ -367,6 +368,9 @@ class NavigationCog(commands.Cog):
 
         title = self._room_title(room_id)
         desc = room.get("description", "") if isinstance(room.get("description"), str) else ""
+        bearings = pod_bearings(ch)
+        if bearings:
+            desc = bearings + "\n\n" + GUIDANCE
 
         # Return Echo (contract-aligned status flag)
         status = self._status_get(ch)
