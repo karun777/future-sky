@@ -1,0 +1,78 @@
+[
+  {
+    "id": "pod_listen",
+    "scene": "pod",
+    "verb": "listen",
+    "targets": [
+      "surroundings",
+      "pod"
+    ],
+    "sense": "hearing",
+    "observation": "A low, repeated thump comes from beyond the wall.",
+    "thought": "Machinery. Probably."
+  },
+  {
+    "id": "pod_berth",
+    "scene": "pod",
+    "verb": "touch",
+    "targets": [
+      "berth",
+      "bed"
+    ],
+    "sense": "touch",
+    "observation": "The woven cover yields against the padding beneath it."
+  },
+  {
+    "id": "pod_hands",
+    "scene": "pod",
+    "verb": "examine",
+    "targets": [
+      "hands",
+      "my hands"
+    ],
+    "sense": "vision",
+    "observation": "You turn your hands over. They follow your intention, but you do not recognise them.",
+    "discoveries": [
+      "unfamiliar_hands"
+    ]
+  },
+  {
+    "id": "demo_panel",
+    "scene": "workshop_demo",
+    "verb": "touch",
+    "targets": [
+      "panel"
+    ],
+    "sense": "touch",
+    "observation": "The panel is warm. A faint vibration reaches your fingertips.",
+    "variants": [
+      {
+        "requires": [
+          "maintenance_training"
+        ],
+        "observation": "The panel is warm. A faint vibration reaches your fingertips.",
+        "thought": "That rhythm is familiar from your maintenance training."
+      }
+    ]
+  },
+  {
+    "id": "demo_taste",
+    "scene": "body_demo",
+    "verb": "taste",
+    "targets": [
+      "mouth"
+    ],
+    "sense": "taste",
+    "observation": "There is an unfamiliar taste in your mouth. Swallowing does not clear it."
+  },
+  {
+    "id": "demo_smell",
+    "scene": "garden_demo",
+    "verb": "smell",
+    "targets": [
+      "air"
+    ],
+    "sense": "smell",
+    "observation": "A damp, earthy smell hangs in the air."
+  }
+]
