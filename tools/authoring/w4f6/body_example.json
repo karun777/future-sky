@@ -1,0 +1,47 @@
+{
+  "initial": {
+    "posture": "seated",
+    "discomfort": "dull_ache"
+  },
+  "actions": [
+    {
+      "verb": "stand",
+      "requires": {
+        "posture": "seated"
+      },
+      "sets": {
+        "posture": "standing",
+        "discomfort": "sharp_ache"
+      },
+      "text": "You stand. A sharper ache catches at your hip."
+    },
+    {
+      "verb": "shift weight",
+      "requires": {
+        "posture": "standing",
+        "discomfort": "sharp_ache"
+      },
+      "sets": {
+        "discomfort": "eased_ache"
+      },
+      "text": "The ache eases when you favour the other leg."
+    },
+    {
+      "verb": "touch hip",
+      "requires": {},
+      "sets": {},
+      "text": "You find a tender spot. There is no obvious explanation."
+    },
+    {
+      "verb": "sit",
+      "requires": {
+        "posture": "standing"
+      },
+      "sets": {
+        "posture": "seated",
+        "discomfort": "dull_ache"
+      },
+      "text": "You sit. The discomfort settles to a dull ache."
+    }
+  ]
+}

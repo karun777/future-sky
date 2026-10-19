@@ -19,3 +19,6 @@ The resolver demonstrates authored observation, contextual variation and propose
 Unsupported means missing authoring, not evidence that the target cannot be sensed. Production refusals need authored context and useful guidance.
 
 Authoring review: can Karun add a new target, change wording, and add one conditional response without editing Python? Is that content clearer than a list of bespoke command handlers?
+
+## Bodily action rehearsal
+Run python3 body_rehearsal.py. Edit body_example.json to change the fictional posture/discomfort transitions and wording. This is a separate throwaway state-transition rehearsal, not integration with the sensory resolver or production character store. It asserts no diagnosis, healing, injury mechanism or pain threshold. Repeated/unsupported actions return missing-authoring guidance, not a physical impossibility claim. Four checks cover action sequence, out-of-order attempts, nonmutation/isolation and overlapping conditions.
