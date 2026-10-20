@@ -25,6 +25,7 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 from datetime import datetime
 from typing import Dict, Any, Optional
 
@@ -804,7 +805,8 @@ class CoreCog(commands.Cog):
             await ctx.send("🧬 You don’t have a character yet. Use `!create_character ...`.")
             return
 
-        c = s.characters[user_id]
+        original = s.characters[user_id]
+        c = deepcopy(original)
         bag = c.get("bag") if isinstance(c.get("bag"), dict) else {}
         c["bag"] = bag
         equipped = self._ensure_equipped_map(c)
@@ -879,7 +881,9 @@ class CoreCog(commands.Cog):
             s.characters[user_id] = c
             s.save_characters()
         except Exception:
-            pass
+            s.characters[user_id] = original
+            await ctx.send("Your equipment change could not be saved. Nothing was changed; please try again.")
+            return
 
         nm = self._item_name(item_id)
         if hands >= 2:
@@ -904,7 +908,8 @@ class CoreCog(commands.Cog):
             await ctx.send("🧬 You don’t have a character yet. Use `!create_character ...`.")
             return
 
-        c = s.characters[user_id]
+        original = s.characters[user_id]
+        c = deepcopy(original)
         bag = c.get("bag") if isinstance(c.get("bag"), dict) else {}
         c["bag"] = bag
         equipped = self._ensure_equipped_map(c)
@@ -941,7 +946,9 @@ class CoreCog(commands.Cog):
             s.characters[user_id] = c
             s.save_characters()
         except Exception:
-            pass
+            s.characters[user_id] = original
+            await ctx.send("Your equipment change could not be saved. Nothing was changed; please try again.")
+            return
 
         await ctx.send(f"🎒 Unequipped **{self._item_name(item_id)}** from `{slot}`.")
 

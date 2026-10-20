@@ -90,6 +90,8 @@ ROUTE_GAMEPLAY_COMMANDS: Set[str] = {
     "pod_delivery",
     "feed7",
     "wardrobe",
+    "wear",
+    "remove",
     "uniform",
     "fit",
     "search",

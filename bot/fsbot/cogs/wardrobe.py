@@ -9,6 +9,7 @@ from discord.ext import commands
 
 from fsbot.pod_wardrobe import WardrobeError, current_fit, select_uniform
 from fsbot.first_impression import first_impression
+from fsbot.dressing import resolve_clothing, clothing_slots, normal
 from fsbot.token_exchange import ExchangeError, discover_token, exchange_token
 from fsbot.cogs.router import get_run_channel_by_guild_if_any
 
@@ -75,7 +76,7 @@ class WardrobeCog(commands.Cog):
         return self.bot.storage.characters.get(str(ctx.author.id))
 
     @commands.command(name="wardrobe")
-    async def wardrobe(self, ctx: commands.Context):
+    async def wardrobe(self, ctx: commands.Context, *, action: str = ""):
         character = self._character(ctx)
         if not isinstance(character, dict):
             await ctx.send("🧬 You need a character before opening the wardrobe.")
@@ -85,26 +86,50 @@ class WardrobeCog(commands.Cog):
             return
         catalogue = load_catalogue()
         selected = (character.get("extra") or {}).get("arrival", {}).get("pod_uniform_selected")
+        if action:
+            query = action.strip()
+            if not query.casefold().startswith("inspect "):
+                await ctx.send("Use !wardrobe or !wardrobe inspect <outfit>.")
+                return
+            query = normal(query[8:])
+            options = [o for o in catalogue.get("uniforms", []) if query in
+                       {normal(o["name"]), normal(o["id"]), normal(o["id"].removeprefix("pod_"))}]
+            if len(options) != 1:
+                await ctx.send("That outfit is not listed. Use !wardrobe to browse.")
+                return
+            option = options[0]
+            await ctx.send(embed=discord.Embed(title=option["name"], description=option["description"],
+                                             color=0x555555))
+            return
+        guidance = ("Your first outfit has already been selected. You can change into clothes you carry "
+                    "with !wear <clothing name>, or remove them with !remove <clothing name>."
+                    if selected else
+                    "Choose your first outfit with !uniform utility, !uniform formal, "
+                    "!uniform technical or !uniform freeform.")
         embed = discord.Embed(
             title="POD // WARDROBE",
-            description="A concealed compartment opens. Four uniforms hang within. Each fits you perfectly.\n\n"
-                        "Choose with `!uniform utility`, `!uniform formal`, `!uniform technical` or `!uniform freeform`.",
+            description="The clothing compartment opens.\n\n" + guidance +
+                        "\n\nExamine an option with !wardrobe inspect <outfit>. Check what you wear with !fit.",
             color=0x555555,
         )
         for option in catalogue.get("uniforms", []):
             embed.add_field(name=option["name"], value=option["description"], inline=False)
         if selected:
-            embed.set_footer(text="Your first selection is recorded. Change your outfit with normal equipment commands.")
+            embed.set_footer(text="The listed outfits are the existing first-selection catalogue; browsing grants nothing.")
         await ctx.send(embed=embed)
 
     @commands.command(name="uniform")
-    async def uniform(self, ctx: commands.Context, choice: str = ""):
+    async def uniform(self, ctx: commands.Context, *, choice: str = ""):
         character = self._character(ctx)
         if not isinstance(character, dict):
             await ctx.send("🧬 You need a character first.")
             return
         if character.get("current_room") != "pod_room":
             await ctx.send("You can only make your first uniform selection inside the pod.")
+            return
+        if (character.get("extra") or {}).get("arrival", {}).get("pod_uniform_selected"):
+            await ctx.send("Your first outfit is already selected. Use !inventory, then !wear <clothing name> "
+                           "or !remove <clothing name>. Check your appearance with !fit.")
             return
         choice = choice.strip().lower()
         if not choice:
@@ -135,6 +160,40 @@ class WardrobeCog(commands.Cog):
         embed.add_field(name="Current fit", value=fit["label"])
         embed.add_field(name="Next", value="Try `!fit`, `!inventory` or `!sheet`.", inline=False)
         await ctx.send(embed=embed)
+
+    @commands.command(name="wear")
+    async def wear(self, ctx: commands.Context, *, garment: str = ""):
+        character = self._character(ctx)
+        if not isinstance(character, dict):
+            await ctx.send("You need a character first.")
+            return
+        try:
+            key, slot = resolve_clothing(character, self.bot.storage.items_db, garment)
+        except (ValueError, TypeError) as exc:
+            await ctx.send(str(exc))
+            return
+        core = self.bot.get_cog("CoreCog")
+        if core is None:
+            await ctx.send("Equipment is unavailable. Please try again later.")
+            return
+        await core.equip_cmd.callback(core, ctx, key, slot)
+
+    @commands.command(name="remove")
+    async def remove(self, ctx: commands.Context, *, garment: str = ""):
+        character = self._character(ctx)
+        if not isinstance(character, dict):
+            await ctx.send("You need a character first.")
+            return
+        try:
+            key, slot = resolve_clothing(character, self.bot.storage.items_db, garment, worn=True)
+        except (ValueError, TypeError) as exc:
+            await ctx.send(str(exc))
+            return
+        core = self.bot.get_cog("CoreCog")
+        if core is None:
+            await ctx.send("Equipment is unavailable. Please try again later.")
+            return
+        await core.unequip_cmd.callback(core, ctx, slot)
 
     @commands.command(name="counterkeeper")
     async def counterkeeper(self, ctx: commands.Context):
@@ -223,7 +282,7 @@ class WardrobeCog(commands.Cog):
             return
         fit = current_fit(character, self.bot.storage.items_db)
         embed = discord.Embed(title=f"{character.get('name', 'Wanderer')} // CURRENT FIT", color=0x555555)
-        embed.add_field(name="Attire", value=fit["label"], inline=False)
+        embed.add_field(name="Attire", value=fit["label"] if fit["chest_item_id"] else "No chest garment equipped.", inline=False)
         equipped = character.get("equipped") or {}
         other = []
         for slot, item_id in equipped.items():
@@ -232,7 +291,7 @@ class WardrobeCog(commands.Cog):
             item = self.bot.storage.items_db.get(item_id, {})
             other.append(f"**{slot.replace('_', ' ').title()}** — {item.get('name', item_id)}")
         embed.add_field(name="Other equipment", value="\n".join(other) if other else "None", inline=False)
-        embed.set_footer(text="Your appearance follows what you currently have equipped.")
+        embed.set_footer(text="Change clothes with !wear <name> or !remove <name>. Check !inventory for carried clothes.")
         await ctx.send(embed=embed)
 
 

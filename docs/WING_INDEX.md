@@ -1,7 +1,7 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W6 Expression / W6-F4 — A Pod We Can Inhabit**, SEALED 20 October 2026 following actual Discord checks and Karun’s visual-consistency approval. Aesthetic evolution remains open. W4-F6 also SEALED as an offline experiment. No next feather allocated; larger World Engine expansion remains on hold.
+Current home: **W4 Play / W4-F7 — Getting Dressed**, REVIEW, allocated 20 October 2026. [Implementation record](wings/W4-F7_GETTING_DRESSED.md). W6-F4 and W4-F6 remain sealed; twenty-one completed. No live deployment.
 **21 sealed wing feathers: W4 has five, W6 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
@@ -27,7 +27,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
-| W4 Play | 5 | [W4-F6](wings/W4-F6_ATTENDING_TO_THE_WORLD.md) | W4-F3 review; next unallocated W4-F7 |
+| W4 Play | 5 | [W4-F6](wings/W4-F6_ATTENDING_TO_THE_WORLD.md) | [W4-F7 — review](wings/W4-F7_GETTING_DRESSED.md); W4-F3 review; next unallocated W4-F8 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 4 | [W6-F4](wings/W6-F4_A_POD_WE_CAN_INHABIT.md) | next unallocated W6-F5 |
 | W7 Engine | 2 | [W7-F2](wings/W7-F2_RECOVERY_CAPSULE.md) | W7-F3 |
@@ -57,6 +57,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Open: ordinary resident atrophy and runtime delivery remain unproven. W1 has 2 completed feathers. [W1-F3 / historical Feather 57 — The Eight Timelines: A Constellation of Possibilities](wings/W1-F3_THE_EIGHT_TIMELINES.md) is allocated and parked (18 October 2026). Source review records seven-line legacy material and October A–G research; the proposed eight-part structure is unresolved. Next unallocated W1-F4. Preparation does not increment the completed count.
 
 ### W2 — Worlds
+- 20 October dressing checkpoint: [W4-F7](wings/W4-F7_GETTING_DRESSED.md) owns the browse/inspect/wear/remove loop; existing contents and identity distinctions retained. REVIEW, no live install or duplicate count.
 - 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Unique player pods remain deferred. On 18 October Karun authorised a temporary relocation of the other pod occupant to the Lounge during W6-F4 deployment; no instancing or occupancy filtering introduced. See [deployment evidence](handover/W6_F4_MEDIA_DEPLOYMENT_20261018.md).
 - Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
@@ -75,6 +76,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Return: Worlds has 2 completed feathers; W2-F3 allocated in REVIEW, next unallocated W2-F4. Larger World Engine expansion is on hold under the adopted experience direction. Source checkpoint 48ff5b8; refresh live state before implementation.
 
 ### W3 — Beings
+- 20 October dressing checkpoint: [W4-F7](wings/W4-F7_GETTING_DRESSED.md) owns the browse/inspect/wear/remove loop; existing contents and identity distinctions retained. REVIEW, no live install or duplicate count.
 - 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Shared HUD node: [W6-F3](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) owns implant presentation; embodiment, proficiency and interpretation connect here without allocating a W3 feather.
 - Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
@@ -90,6 +92,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W3 completed count is 2; W3-F3 remains unallocated. Preserve identity/role/driver distinctions before deeper character authoring or controller changes.
 
 ### W4 — Play
+- 20 October dressing checkpoint: [W4-F7](wings/W4-F7_GETTING_DRESSED.md) owns the browse/inspect/wear/remove loop; existing contents and identity distinctions retained. REVIEW, no live install or duplicate count.
 - 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Shared HUD node: [W6-F3](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) owns the display feather following the first live opening walkthrough. Internal voice/ambient boundaries are recorded; the tested first pass is deployed and remains in REVIEW pending player verification. W4-F6 remains unallocated.
 - Clarified 18 October 17:05: the common quest is meeting an allied-faction representative and trading, available to any player with romance optional. Efiishent's ambassador/princess/Queen is one person; Puzzler and Queen instances await authoring. Footprints persist with privacy paramount. [Connected account](handover/AWAKENING_RECONSTRUCTION_20261018.md#6-one-quest-many-particular-passages).
@@ -117,6 +120,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W5 has 2 completed feathers; W5-F3 unallocated. [W1-F3](wings/W1-F3_THE_EIGHT_TIMELINES.md) links this wing for cross-era causality, without allocating a W5 feather. Failed clock persistence advances memory before suppressing publication; later save may include it. Recovery/replay policy remains open. No live time change.
 
 ### W6 — Expression
+- 20 October dressing checkpoint: [W4-F7](wings/W4-F7_GETTING_DRESSED.md) owns the browse/inspect/wear/remove loop; existing contents and identity distinctions retained. REVIEW, no live install or duplicate count.
 - 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Current visual feather: [W6-F4 — A Pod We Can Inhabit](wings/W6-F4_A_POD_WE_CAN_INHABIT.md), five-still binding implementation in REVIEW; wardrobe remains text-only. Deployed; player image check pending, no count increment. W6-F5 next unallocated.
 - Shared implementation node: [W4-F4 — Whose Hands Are These?](wings/W4-F4_WHOSE_HANDS_ARE_THESE.md) connects pod fixtures (W2), bodily recognition and attire (W3), and discoverable presentation (W6). W4 owns the feather; no duplicate count. Existing outfit choices remain; richer work garments and cinematic media remain open.
@@ -130,6 +134,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Current: [W6-F3 — The Display Behind Your Eyes](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) is SEALED after its bounded implementation and live checks: consistent truthful HUD states, once-only display notice and brochure crash, shared typing/activity input and idle-choice quiet. First live HUD checks passed. Follow-up adds spaced commands and discovery-based explicit HUD, removes automatic meters; 119 isolated tests pass. Follow-up deployed at 20:19 AWST; Karun confirmed quiet look, discovery-based HUD and spaced controls at 20:21 AWST. Implant/subtle-perception direction is recorded; larger progression remains deferred. W6 completed count is 3; next unallocated W6-F4. W4-F6 remains unallocated.
 
 ### W7 — Engine
+- 20 October dressing checkpoint: [W4-F7](wings/W4-F7_GETTING_DRESSED.md) owns the browse/inspect/wear/remove loop; existing contents and identity distinctions retained. REVIEW, no live install or duplicate count.
 - 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
 - Trajectory: verified operational truth → reliable reproduction → bounded extension.
@@ -141,6 +146,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W7 has 2 completed feathers; W7-F3 unallocated. Sequential same-host capture is not an atomic world snapshot or full disaster recovery. Scope exclusions and capsule path are recorded in W7-F2.
 
 ### W8 — Stewardship
+- 20 October dressing checkpoint: [W4-F7](wings/W4-F7_GETTING_DRESSED.md) owns the browse/inspect/wear/remove loop; existing contents and identity distinctions retained. REVIEW, no live install or duplicate count.
 - 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Trajectory: navigable checkpoints → reliable switching → collaborative continuity.
 - Reached: [W8-F1](wings/W8-F1_GIVE_THE_DRAGON_A_MEMORY.md) establishes this register and links it from Atlas/reset. [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) brings the documentation home to Neptune Lounge with a verified return route.

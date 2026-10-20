@@ -14,6 +14,10 @@ During discovery, read the [Knowledge Atlas](KNOWLEDGE_ATLAS.md), then the [Wing
 
 The Feather 20 pointers below are historical checkpoints, not a ceiling on later committed work. Consult the [content-first phase closure](current/PHASE_CLOSURE_EPISTEMIC_FOUNDATIONS_2026-10-15.md) and verify current branch, source and live state. Wing counts preserve historical global feather IDs and count only completed, verified wing feathers.
 
+## Active return — W4-F7, 20 October 2026
+
+Home is W4-F7 Getting Dressed, REVIEW. Read Wing Index and complete feather record. Isolated implementation only; no runtime deployment. Twenty-one completed; W4-F8 unallocated. Earlier return checkpoints below are history.
+
 ## Current return — 20 October 2026, illustrated-pod seal
 
 W6-F4 is SEALED after Discord delivery checks and Karun’s visual-consistency approval. W6 four, W4 five, total twenty-one. See Wing Index and W6-F4 seal/aesthetic notes. No new feather allocated; earlier pending W6-F4 references below are history.

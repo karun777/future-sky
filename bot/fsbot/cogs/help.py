@@ -13,6 +13,11 @@ CATALOG = {
 
     "hud": {"tier": 0, "category": "core", "desc": "Review discovered signals/notices. `!hud on`, `!hud off`, `!hud state normal`."},
 
+    "wardrobe": {"tier": 0, "category": "items", "desc": "Browse pod outfits; !wardrobe inspect formal examines one."},
+    "wear": {"tier": 0, "category": "items", "desc": "Wear carried clothing by name: !wear Travel Coat."},
+    "remove": {"tier": 0, "category": "items", "desc": "Remove worn clothing by name: !remove Travel Coat."},
+    "fit": {"tier": 0, "category": "items", "desc": "Review your current outfit."},
+
     # Combat (core-visible)
     "combat": {"tier": 0, "category": "combat", "desc": "Opt in/out of combat. `!combat on|off|status`."},
     "draw": {"tier": 0, "category": "combat", "desc": "Draw a weapon (flavour). `!draw` or `!draw <name>`."},
@@ -31,7 +36,7 @@ CATALOG = {
 }
 
 ALWAYS_LIST = {
-    "look", "go", "character_sheet", "inventory", "hud",
+    "look", "go", "character_sheet", "inventory", "hud", "wardrobe", "wear", "remove", "fit",
     "combat", "draw", "status", "attack",
     "say", "emote",
 }

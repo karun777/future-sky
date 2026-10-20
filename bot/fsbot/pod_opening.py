@@ -77,7 +77,7 @@ TARGETS = {
     "wardrobe": ("The clothing compartment", "A recessed grip opens the clothing compartment. "
                  "There are outfits to examine before you enter the Lounge. "
                  "What you wear is not proof of a job, a faction or a remembered identity.",
-                 "Use `!wardrobe` for the existing outfit choices. Review what you wear with `!fit`."),
+                 "Use `!wardrobe` to browse and inspect outfit options. Review what you wear with `!fit`; change owned clothes with `!wear <name>` or `!remove <name>`."),
     "berth": ("The berth", "A plain woven cover lies across the berth. Its padded edge has supported your weight. Below it is a panel seam "
               "you can follow with your fingertips.",
               "Try the existing `!search panel` action, or turn to `!inspect panels`."),
