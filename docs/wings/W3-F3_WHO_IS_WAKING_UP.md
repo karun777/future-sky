@@ -91,3 +91,33 @@ W8: source statuses/conflicts visible; counts unchanged.
 ## Verification and next review
 Read Red Book class section/matrix, full uploaded class PDF text, handbook identity/background/class overview/Dreamer chapter/era/skill prose and current creation source. Conversation search returned the dated lineage above. No new tests necessary for this documentary recovery; no live data touched.
 Next review: agree these distinctions as the foundation and choose where name, appearance, class and ancestral origin are selected or discovered in the arrival map. Do not invent an ancestry roster or class balance table before that review.
+
+## Arrival decisions and intimacy direction — 20 October 2026, 17:34–17:49 AWST
+
+### Agreed class direction
+Karun accepted an explicit starting class inclination that unfolds through play. Player choice need not mean immediate character memory or understanding. Final roster, path-change rules and detailed mechanics remain open. No production creation flow changed.
+
+### Author direction: sex, gender, orientation and romance
+Karun adds biological sex, gender and possibly sexual orientation to creation considerations. Romance should become sophisticated, nuanced and developed as an intrinsic human driver, embracing future human diversity. Leisure Suit Larry is an inspiration for some aspects, without turning the project into a dating app or pornography. Human intimacy is part of the intended world.
+
+Assistant proposals discussed: distinguish current bodily characteristics, gender/pronouns, presentation, sexual versus romantic orientation, relationship preferences, private author knowledge and voluntary disclosure. These are working design proposals, not an adopted mandatory questionnaire or completed privacy system.
+Agency, differentiated affection/desire/trust/commitment, continuity and optional participation were proposed for relationship design. No numerical romance meter, attraction algorithm, intimacy mechanic or romance-specific feather was authorised. Common allied trade remains possible without romance per earlier explicit author direction.
+
+### Consolidated arrival map — working proposal, not a shipped form
+| Element | Player-level authorship | Character-level unfolding | Unresolved |
+| --- | --- | --- | --- |
+| Class inclination | Explicit starting choice, agreed | Discover and develop its expression | Final roster, presentation and path changes |
+| Ancestral origin | Human-scale origin option, future direction | Familiarity/history and eventual abilities | Origin roster and balance; lineage versus current manufactured body |
+| Body / sex characteristics | Proposed body authorship | Movement, sensation and appearance recognition | Timing, variation and remembered-body relationship |
+| Gender / pronouns | Proposed optional self-description | Self-understanding and chosen social introduction | Interface/defaults/disclosure; do not infer from anatomy |
+| Orientation / relationship preferences | Possible optional authoring | Particular attraction, boundaries and relationships | No fixed questionnaire, label requirements or matching system agreed |
+| Name | Existing pre-arrival name field | Proposed remembered/fragmentary/chosen-name possibilities | Karun has not yet selected a name-recognition policy |
+| Background | Authored foundations with gaps | Memory/familiarity can emerge separately | Amount authored upfront and how facts become knowable |
+| Clothes / work / faction | Existing dressing; future chapter-dependent options | Preparation and social interpretation | Employment/faction authoring remains deferred |
+
+All these choices concern fictional characters. Do not infer the human participant's identity or preferences from their character, or require personal disclosure.
+Visible presentation, private profile and permitted knowledge must remain distinct. Recognition, attraction or consent must not be inferred from outfit, ancestry, gender or class.
+
+## Updated return — 20 October 2026, 17:49 AWST
+W3-F3 remains REVIEW; total twenty-two completed. Source recovery and consolidated arrival map are ready for author review. Only class-inclination direction is explicitly agreed among the placement proposals above. No new creation UI, relationship system, stat change or deployment.
+Next bounded task: settle a minimal first-arrival authoring flow, separating required setup from optional details and later discovery. Do not start a full romance/class/ancestry implementation or another feather automatically.

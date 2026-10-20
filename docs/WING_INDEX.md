@@ -187,3 +187,7 @@ Service active at PID 829575, all 44 extensions loaded, Discord login and Recove
 ## W3-F3 return — 20 October 2026, 17:24 AWST
 
 Karun retains class development as trajectory, Red Book foundations and cosmopolitan human ancestral-origin options with reasonable stat/ability differentiation. Recovered PDF, handbook, conversation lineage and creation code mapped in W3-F3; competing rosters and progression restrictions remain explicit review questions. Ancestry/current body/background/class/job/faction are kept distinct. W1/W2/W4/W5/W6/W7/W8 shared implications linked from that record. REVIEW, no class rebalance, origin roster, runtime schema or deployment. W3 two completed; total twenty-two.
+
+## W3-F3 arrival update — 20 October 2026, 17:49 AWST
+
+Agreed explicit starting class inclination, unfolding in play. Karun’s body/sex/gender/possible orientation and nuanced future-human romance direction recorded in W3-F3, with proposed optional fields/disclosure and open placement decisions separated from adopted rules. Consolidated arrival map ready for review; no mandatory questionnaire or romance engine. W3-F3 REVIEW, counts unchanged.
