@@ -14,6 +14,10 @@ During discovery, read the [Knowledge Atlas](KNOWLEDGE_ATLAS.md), then the [Wing
 
 The Feather 20 pointers below are historical checkpoints, not a ceiling on later committed work. Consult the [content-first phase closure](current/PHASE_CLOSURE_EPISTEMIC_FOUNDATIONS_2026-10-15.md) and verify current branch, source and live state. Wing counts preserve historical global feather IDs and count only completed, verified wing feathers.
 
+## Current return — W3-F3, 20 October 2026
+
+Home W3-F3 Who Is Waking Up? is REVIEW: class/ancestry source recovery and proposed arrival distinctions. Read Wing Index and full feather record. Twenty-two sealed; W3 two. No new runtime work or completed-count increment.
+
 ## Latest return — W4-F7 sealed, 20 October 2026, 17:03 AWST
 
 W4-F7 is SEALED following actual Discord dressing-loop checks. W4 six completed; total twenty-two. Read Wing Index and final seal checkpoint; earlier REVIEW statements below are history. No next feather allocated. Conditional wardrobe/chapter/employment/faction authoring remains deferred.

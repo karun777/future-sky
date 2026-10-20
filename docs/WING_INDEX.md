@@ -1,7 +1,7 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W4 Play / W4-F7 — Getting Dressed**, SEALED 20 October 2026 after actual Discord browse/inspect/wear/remove/re-wear checks. No next feather allocated. Chapter/employment/faction-conditioned wardrobe remains deferred.
+Current home: **W3 Beings / W3-F3 — Who Is Waking Up?**, REVIEW. [Class/ancestry recovery and arrival foundation](wings/W3-F3_WHO_IS_WAKING_UP.md). W4-F7 is sealed. Twenty-two completed; no new runtime work.
 **22 sealed wing feathers: W4 has six, W6 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
@@ -26,7 +26,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | --- | --- | --- | --- |
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
-| W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
+| W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
 | W4 Play | 6 | [W4-F7](wings/W4-F7_GETTING_DRESSED.md) | W4-F3 review; next unallocated W4-F8 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 4 | [W6-F4](wings/W6-F4_A_POD_WE_CAN_INHABIT.md) | next unallocated W6-F5 |
@@ -183,3 +183,7 @@ Service active at PID 829575, all 44 extensions loaded, Discord login and Recove
 ## Dressing loop sealed — 20 October 2026, 17:03 AWST
 
 [W4-F7 seal](wings/W4-F7_GETTING_DRESSED.md#seal-checkpoint--20-october-2026-1703-awst) records real player output and its limits. W4 six completed; total twenty-two. Earlier REVIEW/pending-start/pending-playcheck statements are dated history. Chapter-linked wardrobe dependency retained; no new feather or runtime change.
+
+## W3-F3 return — 20 October 2026, 17:24 AWST
+
+Karun retains class development as trajectory, Red Book foundations and cosmopolitan human ancestral-origin options with reasonable stat/ability differentiation. Recovered PDF, handbook, conversation lineage and creation code mapped in W3-F3; competing rosters and progression restrictions remain explicit review questions. Ancestry/current body/background/class/job/faction are kept distinct. W1/W2/W4/W5/W6/W7/W8 shared implications linked from that record. REVIEW, no class rebalance, origin roster, runtime schema or deployment. W3 two completed; total twenty-two.
