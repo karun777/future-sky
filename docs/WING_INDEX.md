@@ -171,3 +171,7 @@ Karun sealed W4-F6 as the bounded offline authoring experiment; production integ
 ## Illustrated-pod seal — 20 October 2026
 
 [W6-F4 seal](wings/W6-F4_A_POD_WE_CAN_INHABIT.md#seal-checkpoint--20-october-2026) records Discord delivery and author-confirmed consistent images. W6 four completed; total twenty-one. Efiishent’s psychedelic/mystical/future-tech aesthetic direction is preserved for later evolution with functional simplicity retained. Panel alias and read-display copy seams remain open. Earlier pending/review/count statements are historical. No new feather or deployment.
+
+## W4-F7 installation status — 20 October 2026
+
+Six source files installed; 61 data files unchanged during installation. Bot service stopped after clean SIGTERM exit and requires administrator start; startup/Discord verification pending. See W4-F7 deployment checkpoint. REVIEW; counts unchanged. Chapter-conditioned wardrobe/employment/faction dependency recorded for later authoring.

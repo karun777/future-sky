@@ -1,7 +1,7 @@
 # W4-F7 — Getting Dressed
 
 Home: **W4 Play**
-Status: **REVIEW — implementation and isolated verification; not deployed**
+Status: **REVIEW — source installed; service stopped, administrator start required**
 Allocated by Karun: 20 October 2026, 14:30 AWST.
 Counts unchanged: W4 five completed; total twenty-one. Next unallocated W4-F8.
 
@@ -50,3 +50,13 @@ Review implementation and command walkthrough before selecting live deployment. 
 ## Verification checkpoint — 20 October 2026
 
 Full isolated source suite: **140 tests passed**, including ten W4-F7 cases. git diff --check passed. Fictional records and temporary JSON only; no live commands or data edits. Branch ready for review; deployment and actual Discord checks pending. No completion increment.
+
+## Chapter dependency — Karun, 20 October 2026, 14:47
+Wardrobe choices should eventually link to unfolding chapter events, employment options and larger factional forces. Record now; author this later, outside W4-F7. Clothing, employment, faction affiliation and actual authority remain distinct. Shared W2/W3/W4 dependency; provisional catalogue retained.
+
+## Deployment attempt — 20 October 2026, approximately 14:49 AWST
+Author explicitly authorised deployment. Source 5451ff7; six files installed (dressing.py, core.py, wardrobe.py, router.py, help.py, pod_opening.py).
+All five existing targets matched fetched baseline before replacement; six sources compile and installed hashes match. All 61 live data files compared equal immediately before/after installation. Private backup: /opt/futuresky/backups/w4f7-deploy-20261020-144852.
+Restart failed operationally: SIGTERM to PID 813169 was treated as clean exit, leaving service inactive with MainPID=0 under Restart=on-failure. Earlier expectation of automatic restart was incorrect. No new Discord readiness or command-load evidence exists yet.
+Noninteractive systemctl start was denied: interactive authentication required. Karun was given Mac terminal command ssh -t efiishent@neptunelounge 'sudo systemctl start futuresky-bot'. Do not ask for or expose credentials.
+Next: once administrator starts service, verify active PID, extension loads, Discord readiness, Recovery heartbeat, installed hashes and actual dressing commands. No seal/count increment. Do not mistake installed files for a successful running deployment.
