@@ -175,3 +175,7 @@ Karun sealed W4-F6 as the bounded offline authoring experiment; production integ
 ## W4-F7 installation status — 20 October 2026
 
 Six source files installed; 61 data files unchanged during installation. Bot service stopped after clean SIGTERM exit and requires administrator start; startup/Discord verification pending. See W4-F7 deployment checkpoint. REVIEW; counts unchanged. Chapter-conditioned wardrobe/employment/faction dependency recorded for later authoring.
+
+## W4-F7 startup recovery — 20 October 2026, 16:59 AWST
+
+Service active at PID 829575, all 44 extensions loaded, Discord login and Recovery heartbeat confirmed; six installed source hashes match. Prior stopped-service note superseded. W4-F7 remains REVIEW pending player dressing checks; counts unchanged.

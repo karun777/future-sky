@@ -1,7 +1,7 @@
 # W4-F7 — Getting Dressed
 
 Home: **W4 Play**
-Status: **REVIEW — source installed; service stopped, administrator start required**
+Status: **REVIEW — deployed, startup verified; Discord dressing playcheck pending**
 Allocated by Karun: 20 October 2026, 14:30 AWST.
 Counts unchanged: W4 five completed; total twenty-one. Next unallocated W4-F8.
 
@@ -60,3 +60,7 @@ All five existing targets matched fetched baseline before replacement; six sourc
 Restart failed operationally: SIGTERM to PID 813169 was treated as clean exit, leaving service inactive with MainPID=0 under Restart=on-failure. Earlier expectation of automatic restart was incorrect. No new Discord readiness or command-load evidence exists yet.
 Noninteractive systemctl start was denied: interactive authentication required. Karun was given Mac terminal command ssh -t efiishent@neptunelounge 'sudo systemctl start futuresky-bot'. Do not ask for or expose credentials.
 Next: once administrator starts service, verify active PID, extension loads, Discord readiness, Recovery heartbeat, installed hashes and actual dressing commands. No seal/count increment. Do not mistake installed files for a successful running deployment.
+
+## Startup recovery verified — 20 October 2026, 16:59 AWST
+
+Service was already active on reconnection, MainPID 829575. This session did not start it; initiating actor/method not established. Noninteractive sudo still requires a password. Process journal confirms 44 extensions loaded, successful Discord login and Recovery heartbeat OK. All six installed source hashes match the deployment manifest. Earlier inactive/admin-start checkpoint is historical. Actual Discord dressing walkthrough remains pending; no seal or count increment.
