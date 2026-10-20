@@ -213,3 +213,5 @@ Karun selected the five-stage image/prose threshold into embodiment. W6-F5 alloc
 W6-F5 concept return: five stage-specific previews generated with prose, exact prompt directions and generation identifiers recorded. Author visual review pending; embodiment chamber considered too ornate/literal by assistant. No approved assets, deployment or count change.
 
 W6-F5 binding return: five approved concepts and prose wired into existing command-based preview transitions; six new checks, 156 source tests pass. Versioned WebP/manifest retained, original art unchanged. No broader UI migration. Player image walkthrough pending; counts unchanged.
+
+W6-F5 deployed checkpoint, 20 October 20:40: d7043cc installed; 156 isolated tests, five public images exact HTTP/hash, 45 cog loads, Discord readiness and Recovery heartbeat verified. PID 831925. Illustrated DM player check pending; REVIEW and counts unchanged.

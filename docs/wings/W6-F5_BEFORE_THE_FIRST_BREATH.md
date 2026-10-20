@@ -114,3 +114,11 @@ Implementation:
 
 Verification: **156 isolated tests pass**, including six new stage-binding/media tests. Full five-stage transition, quiet same-stage edits, readable review labels, preview no-mutation, cancellation/help, valid WebP and exact asset bytes/hashes verified.
 Actual Discord image delivery and experience require a subsequent player preview check. Counts unchanged; W6-F5 REVIEW. W3-F3 remains REVIEW.
+
+## Deployment — 20 October 2026, approximately 20:40 AWST
+
+Source d7043cc installed selectively: arrival.py, new arrival_media.py, five versioned WebP files and manifest. Private backup: /opt/futuresky/backups/w6f5-media-20261020-204041. Existing code matched reviewed source before replacement; all installed hashes verified. All 61 data files unchanged during installation. Character-file hash unchanged after restart: True.
+
+Supervised forced restart via SIGKILL of paused PID 830880 and systemd Restart=on-failure, not graceful shutdown. New PID 831925 active/running. All 45 extensions loaded; Discord login and Recovery heartbeat confirmed. All five public image URLs HTTP 200 with exact source hashes. Existing temporary drafts expired with restart as documented. No character recreation/reset or media changes to ordinary pod inspection.
+
+W6-F5 remains REVIEW pending actual illustrated DM preview. Start !begin preview, then class, name/date, body/embodiment, review, awaken, cancel. Prose/images should advance at stage boundaries. No new buttons/forms or broader UI exploration. W3-F3 remains REVIEW; total twenty-two sealed.
