@@ -125,3 +125,7 @@ Next bounded task: settle a minimal first-arrival authoring flow, separating req
 ## First player-facing draft — 20 October 2026, 17:54 AWST
 
 [Complete walkthrough](W3-F3_FIRST_ARRIVAL_WALKTHROUGH.md) proposes pre-awakening class/history/body authorship, optional relationship detail, a review step and a contextual sensory awakening. Only starting inclination is already agreed; placement/name policy and prose remain review proposals. Existing gig/unknown hands are particular-context examples, not forced on all characters. No implementation; W3-F3 REVIEW.
+
+## Rehearsal consolidated — 20 October 2026, 18:18 AWST
+
+[Character example and design review](W3-F3_REHEARSAL_REVIEW.md) captures user-supplied fictional background/appearance and the distinction between recognising a body and familiarity with embodiment. Intimate profile specifics remain in chat. User lost the purpose of successive questions; short endpoint/summary/skip guidance is a proposed correction. W3-F3 REVIEW; no live profile/character change. Review foundation for closure next, no automatic new feather.
