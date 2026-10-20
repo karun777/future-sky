@@ -4,6 +4,7 @@ import discord
 from discord.ext import commands
 from fsbot.cogs.core import CLASS_IDS, build_arrival_character
 from fsbot.pod_opening import prepare_observation
+from fsbot.arrival_media import pending_stage, stage_embed, STAGES
 
 START_CLASSES = [c for c in CLASS_IDS if c != "unwritten"]
 PROMPT = ("**Before you awaken**\nChoose a starting inclination with "
@@ -39,15 +40,19 @@ class ArrivalCog(commands.Cog):
             return
         if command == "preview" and not value:
             self.drafts[uid] = {"preview": True}
-            await ctx.send("**PREVIEW — nothing will be saved.**\n" + PROMPT)
+            await ctx.send("**PREVIEW — nothing will be saved.**",
+                           embed=stage_embed("inclination", preview=True))
             return
         if existing and not self.drafts.get(uid, {}).get("preview"):
             await ctx.send("You already have a character. Use !begin preview for a disposable rehearsal; "
                            "your existing character will not be replaced.")
             return
-        if not command:
-            self.drafts.setdefault(uid, {"preview": False})
+        if command == "help" and not value:
             await ctx.send(PROMPT)
+            return
+        if not command:
+            draft = self.drafts.setdefault(uid, {"preview": False})
+            await ctx.send(embed=stage_embed(pending_stage(draft), preview=draft["preview"]))
             return
         if uid not in self.drafts:
             await ctx.send("Start with !begin, or !begin preview for a disposable rehearsal.")
@@ -89,9 +94,14 @@ class ArrivalCog(commands.Cog):
                 except ValueError:
                     await ctx.send("Use YYYY-MM-DD for your fictional character's date.")
                     return
+            previous_stage = pending_stage(draft)
             draft[fields[command]] = value
             draft.pop("reviewed", None)
-            await ctx.send("Updated. Use !begin review when ready, or edit another detail.")
+            next_stage = pending_stage(draft)
+            if next_stage != previous_stage:
+                await ctx.send(embed=stage_embed(next_stage, preview=draft["preview"]))
+            else:
+                await ctx.send("Updated. " + STAGES[next_stage][2])
             return
         required = {"class_id", "name", "birthdate", "body_recognition", "embodiment_familiarity"}
         if command in {"review", "awaken"} and not value:
@@ -100,11 +110,13 @@ class ArrivalCog(commands.Cog):
                 await ctx.send("Still needed: " + ", ".join(missing) + ". Use !begin for instructions.")
                 return
             if command == "review":
-                embed = discord.Embed(title="Your beginning" + (" — PREVIEW" if draft["preview"] else ""))
+                embed = stage_embed("gathering", preview=draft["preview"])
+                embed.title = "Your beginning" + (" — PREVIEW" if draft["preview"] else "")
+                embed.clear_fields()
                 for label, key in [("Name", "name"), ("Starting inclination", "class_id"),
                                    ("Character date", "birthdate"), ("Recognising your body", "body_recognition"),
                                    ("Being embodied", "embodiment_familiarity"), ("Background", "origin_note")]:
-                    embed.add_field(name=label, value=draft.get(key) or "Left open.", inline=False)
+                    embed.add_field(name=label, value=(draft.get(key, "").replace("_", " ").title() if key == "class_id" else draft.get(key)) or "Left open.", inline=False)
                 embed.set_footer(text="Edit any field, or !begin awaken to continue. !begin cancel discards this draft.")
                 draft["reviewed"] = True
                 await ctx.send(embed=embed)
@@ -142,7 +154,10 @@ class ArrivalCog(commands.Cog):
             title, description, guidance = view
             if draft["preview"]:
                 guidance = guidance.replace("!inspect ", "!begin inspect ")
-            await ctx.send(embed=discord.Embed(title=title, description=description))
+            embed = stage_embed("awakening", preview=draft["preview"])
+            embed.title = title + (" — PREVIEW" if draft["preview"] else "")
+            embed.description += "\n\n" + description
+            await ctx.send(embed=embed)
             await ctx.send(("**PREVIEW ONLY — no character changed.**\n" if draft["preview"] else "") +
                            guidance + "\n" +
                            ("Use !begin cancel to finish this rehearsal." if draft["preview"] else

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "files": {
+    "history.webp": {
+      "sha256": "37e33a17cb2696f0e50162edaef80523db8cce219e0297b8c0bea4b59f58faaf",
+      "bytes": 235568
+    },
+    "inclination.webp": {
+      "sha256": "1f505b8a6163041ae6cd22dfde8c73419c7ff84986f45c1e68684c72b9abb62b",
+      "bytes": 243646
+    },
+    "embodiment.webp": {
+      "sha256": "db9ab7235c43c791fa7b9161dba498e4e747af99af965b655254b206b570abc8",
+      "bytes": 232672
+    },
+    "gathering.webp": {
+      "sha256": "4f009c6e835d40167c53cf9cfd11e9d48d87d948eead171ad1efba565f9b0595",
+      "bytes": 236292
+    },
+    "awakening.webp": {
+      "sha256": "54f734f10529c89ddb436915948afb616f995f823e95a115b456ba41390833a7",
+      "bytes": 116596
+    }
+  },
+  "origin": "Five built-in W6-F5 review concepts approved by Karun, 20 October 2026; WebP delivery encodings; originals unchanged."
+}

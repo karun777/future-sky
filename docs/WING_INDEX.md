@@ -211,3 +211,5 @@ W3-F3 preview check complete, 20 October 20:02: actual DM setup → review → c
 Karun selected the five-stage image/prose threshold into embodiment. W6-F5 allocated; W3-F3 stays REVIEW with its actual DM preview evidence and untested fresh/server handoff paths retained. W1/W2/W3/W4/W5/W7/W8 linked in home record. No new mechanics, universal metaphysical claim or UI migration. Counts unchanged.
 
 W6-F5 concept return: five stage-specific previews generated with prose, exact prompt directions and generation identifiers recorded. Author visual review pending; embodiment chamber considered too ornate/literal by assistant. No approved assets, deployment or count change.
+
+W6-F5 binding return: five approved concepts and prose wired into existing command-based preview transitions; six new checks, 156 source tests pass. Versioned WebP/manifest retained, original art unchanged. No broader UI migration. Player image walkthrough pending; counts unchanged.

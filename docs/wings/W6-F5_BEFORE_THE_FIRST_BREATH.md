@@ -97,3 +97,20 @@ Assistant visual assessment:
 
 Images may arrive out of narrative order in the conversation; use stage titles above as the intended sequence. Author has not yet approved these outputs. All prose remains candidate copy.
 Next action: review visual direction and revise the weakest concept, rather than install a full set automatically. Broader Discord component/UI exploration stays deferred. W3-F3 remains REVIEW, with its previous implementation and live preview evidence retained.
+
+
+## Illustrated preview binding — 20 October 2026, evening
+Karun approved the overall five-concept direction and explicitly requested pairing the images/prose with the existing Discord preview. Retain the embodiment concept as approved direction; do not substitute the assistant's earlier simplification preference for author approval.
+
+Implementation:
+- arrival_media.py owns five stage titles, prose, image URLs and clear next actions. No draft, identity or world-state authority.
+- Start: inclination; class choice leads to history; completing name/date leads to embodiment; body/embodiment choices lead to gathering; explicit reviewed awakening leads to awakening still and existing opening.
+- Same-stage field edits give short guidance without repeating the image; review can deliberately revisit the gathering image.
+- !begin help retains the complete command list; no buttons, forms or Components V2 migration.
+- Preview and real creation use identical presentation, with preview labels/protection retained.
+- Review renders a readable class label rather than the stored ID.
+- Five original generated PNG concepts remain unchanged. Versioned WebP delivery encodings are under assets/images/arrival/before_first_breath/v1 with SHA-256/byte manifest. Original generation IDs and exact prompts are recorded above. No semantic edits to artwork.
+- These images are symbolic threshold art, not five new physical rooms or a universal claim about reincarnation. Generated chamber props are not additions to the live pod.
+
+Verification: **156 isolated tests pass**, including six new stage-binding/media tests. Full five-stage transition, quiet same-stage edits, readable review labels, preview no-mutation, cancellation/help, valid WebP and exact asset bytes/hashes verified.
+Actual Discord image delivery and experience require a subsequent player preview check. Counts unchanged; W6-F5 REVIEW. W3-F3 remains REVIEW.
