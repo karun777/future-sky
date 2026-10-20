@@ -1,9 +1,9 @@
 # W4-F6 — Attending to the World
 
 Home: **W4 Play**
-Status: **REVIEW — reconciled 20 October 2026; not sealed**
+Status: **SEALED — author-approved offline authoring experiment, 20 October 2026**
 Allocated: Karun, 19 October 2026, 10:57 AWST
-Completed counts: **W4 four; total nineteen**, unchanged.
+Completed counts at seal: **W4 five; total twenty**.
 
 ## The contribution to review
 
@@ -150,3 +150,12 @@ This reconciliation updates documentation and navigation only. No service restar
 **Review decision:** is this a useful bounded authoring experiment to retain and close as W4-F6, with production integration explicitly deferred? Completion requires that review decision; it has not been inferred from passing tests. Counts remain unchanged.
 
 Next action is review of this complete record. Do not automatically start another implementation.
+
+## Seal checkpoint — 20 October 2026, 11:25 AWST
+
+Karun approved retaining and closing W4-F6 as a bounded offline authoring experiment, with production integration deferred. The preceding review sections retain their dated findings and limitations; this checkpoint governs current status.
+Evidence: 11 prototype checks and 23 separate existing chapter-one checks passed on 20 October. These are separate suites, not integrated gameplay certification.
+W4-F6 is SEALED. W4 completed five; total twenty. No production deployment, character/world change or new feather allocation.
+Return to W6-F4 only after the requested brief assessment of the remote-work stint. W6-F4 remains REVIEW; its pending illustrated-pod player checks are unchanged.
+
+Remote-work assessment: Karun described the stint as a failure. Verified connectivity and commands succeeded, but collaboration failed to maintain continuity: current Git history was fetched late, early work was committed on the old live checkout, branch publication was delayed, feather/navigation records diverged, and reviewable output was not supplied promptly. Later source review, isolated worktree, reconciliation and push recovered a useful bounded result. No evidence establishes network location or Desktop Commander as the cause. Keep operational connection success separate from working-method failure; a future remote trial should verify current source, upstream publication, feather checkpoint and a visible deliverable early.

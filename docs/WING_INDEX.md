@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W4 Play / W4-F6 — Attending to the World**, REVIEW ([complete record](wings/W4-F6_ATTENDING_TO_THE_WORLD.md)), reconciled 20 October 2026. Two offline authoring rehearsals; 11 prototype and 23 separate chapter checks pass. No integration or count increment. Previous home **W6 Expression / W6-F4 — A Pod We Can Inhabit** remains in REVIEW: five versioned cinematic stills bound to pod views/inspection; text-only open wardrobe and conditional contents preserved. Deployed at 21:06 AWST after 130 passing tests; Discord image playcheck pending. W6-F3 is sealed following live checks. W4-F4/F5 remain deployed; recovery gameplay remains untested live. W2-F3/W4-F3 remain in REVIEW; W1-F3 / historical Feather 57 remains parked. Larger World Engine expansion remains on hold.
-**19 sealed wing feathers: W4 has four, W6 has three; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
+Current home: **W6 Expression / W6-F4 — A Pod We Can Inhabit**, REVIEW, return queued after the requested remote-work assessment. [W4-F6](wings/W4-F6_ATTENDING_TO_THE_WORLD.md) is SEALED as an offline authoring experiment by Karun on 20 October 2026; production integration deferred. Illustrated-pod player checks remain outstanding. Larger World Engine expansion remains on hold.
+**20 sealed wing feathers: W4 has five, W6 has three; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
@@ -27,7 +27,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
-| W4 Play | 4 | [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) | [W4-F6 — review](wings/W4-F6_ATTENDING_TO_THE_WORLD.md); W4-F3 review; next unallocated W4-F7 |
+| W4 Play | 5 | [W4-F6](wings/W4-F6_ATTENDING_TO_THE_WORLD.md) | W4-F3 review; next unallocated W4-F7 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 3 | [W6-F3](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) | [W6-F4 — visual review](wings/W6-F4_A_POD_WE_CAN_INHABIT.md); next unallocated W6-F5 |
 | W7 Engine | 2 | [W7-F2](wings/W7-F2_RECOVERY_CAPSULE.md) | W7-F3 |
@@ -157,3 +157,7 @@ Leave: outcome and evidence, source revision/date, settled/open questions, affec
 ## Current return — 20 October 2026
 
 W4-F6 is REVIEW. Its complete record consolidates author direction, source review, two offline prototypes, verification and limitations. Review for closure is next; no new implementation is allocated. W6-F4 remains open. W4 four completed; total nineteen. Earlier W4-F6-unallocated and W6-home statements above are dated history. Branch play/w4-f6-sensory-authoring is local; no merge/deployment is implied.
+
+## Seal and return — 20 October 2026, 11:25 AWST
+
+Karun sealed W4-F6 as the bounded offline authoring experiment; production integration deferred. W4 five completed, total twenty. This supersedes earlier REVIEW/count statements for W4-F6. Requested remote-work assessment precedes resuming W6-F4, which remains REVIEW. No new feather, deployment or live state change.

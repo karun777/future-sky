@@ -14,6 +14,10 @@ During discovery, read the [Knowledge Atlas](KNOWLEDGE_ATLAS.md), then the [Wing
 
 The Feather 20 pointers below are historical checkpoints, not a ceiling on later committed work. Consult the [content-first phase closure](current/PHASE_CLOSURE_EPISTEMIC_FOUNDATIONS_2026-10-15.md) and verify current branch, source and live state. Wing counts preserve historical global feather IDs and count only completed, verified wing feathers.
 
+## Current sealed return — 20 October 2026, 11:25 AWST
+
+W4-F6 is author-approved SEALED as an offline experiment; W4 five completed, total twenty. See its seal checkpoint and Wing Index. Remote-work assessment requested before returning to W6-F4 (still REVIEW). Earlier W4-F6 REVIEW statements below are historical. No runtime integration or deployment is implied.
+
 ## Current development return — 20 October 2026
 
 On branch play/w4-f6-sensory-authoring, read the [reconciled W4-F6 record](wings/W4-F6_ATTENDING_TO_THE_WORLD.md) after the Wing Index. Home W4-F6 is REVIEW; two isolated authoring rehearsals, no live integration; 19 sealed. The 18 October handoff below remains the live deployment return trail. Branch/local availability and installed code are separate facts.
