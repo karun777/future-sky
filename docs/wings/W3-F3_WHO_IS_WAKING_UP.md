@@ -121,3 +121,7 @@ Visible presentation, private profile and permitted knowledge must remain distin
 ## Updated return — 20 October 2026, 17:49 AWST
 W3-F3 remains REVIEW; total twenty-two completed. Source recovery and consolidated arrival map are ready for author review. Only class-inclination direction is explicitly agreed among the placement proposals above. No new creation UI, relationship system, stat change or deployment.
 Next bounded task: settle a minimal first-arrival authoring flow, separating required setup from optional details and later discovery. Do not start a full romance/class/ancestry implementation or another feather automatically.
+
+## First player-facing draft — 20 October 2026, 17:54 AWST
+
+[Complete walkthrough](W3-F3_FIRST_ARRIVAL_WALKTHROUGH.md) proposes pre-awakening class/history/body authorship, optional relationship detail, a review step and a contextual sensory awakening. Only starting inclination is already agreed; placement/name policy and prose remain review proposals. Existing gig/unknown hands are particular-context examples, not forced on all characters. No implementation; W3-F3 REVIEW.

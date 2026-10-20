@@ -191,3 +191,5 @@ Karun retains class development as trajectory, Red Book foundations and cosmopol
 ## W3-F3 arrival update — 20 October 2026, 17:49 AWST
 
 Agreed explicit starting class inclination, unfolding in play. Karun’s body/sex/gender/possible orientation and nuanced future-human romance direction recorded in W3-F3, with proposed optional fields/disclosure and open placement decisions separated from adopted rules. Consolidated arrival map ready for review; no mandatory questionnaire or romance engine. W3-F3 REVIEW, counts unchanged.
+
+W3-F3 player-facing draft: [First Arrival walkthrough](wings/W3-F3_FIRST_ARRIVAL_WALKTHROUGH.md). Review proposed authoring-to-awakening transition; no UI/runtime changes or completion increment.
