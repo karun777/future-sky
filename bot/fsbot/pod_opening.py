@@ -140,8 +140,18 @@ def prepare_observation(character, target=None):
     discoveries = state.setdefault("discoveries", [])
     if not isinstance(discoveries, list):
         raise ValueError("The pod cannot read your discovery record.")
+    familiar = arrival.get("body_recognition") == "familiar"
+    unfamiliar_embodiment = arrival.get("embodiment_familiarity") == "unfamiliar"
     if target is None:
+        if arrival.get("origin") == "guided_creation_v1":
+            intro = ("A low thump beyond the wall.\n\n"
+                     "Something supports your weight. You draw a breath.\n"
+                     "Your fingers move against woven fabric.\n\nLight begins to resolve.")
+            return updated, ("POD // RETURNING TO YOURSELF", intro, GUIDANCE)
         return updated, ("POD // WHOSE HANDS ARE THESE?", INTRO, GUIDANCE)
+    if target == "booking" and arrival.get("performance_booking", True) is False:
+        return character, ("No booking", "No performance booking has been established for this arrival.",
+                           "Try `!inspect display` or `!inspect wardrobe`.")
     if target == "booking" and not any(k in discoveries for k in ("panels", "display")):
         return character, ("A notice?", "You have not located a booking notice yet.",
                            "Look around with `!inspect pod` and `!inspect panels`.")
@@ -149,6 +159,20 @@ def prepare_observation(character, target=None):
     if first:
         discoveries.append(target)
     title, text, guidance = TARGETS[target]
+    if arrival.get("performance_booking", True) is False:
+        if target == "panels":
+            text = "A wardrobe and lower storage drawer have recessed grips. Beside them, a small display flickers with FEED7."
+            guidance = "Try `!inspect display` or `!wardrobe`."
+        elif target == "display":
+            text = "FEED7 flickers on the small physical display."
+            guidance = "View the signal with `!feed7`, or turn to `!inspect wardrobe`."
+    if target == "hands" and familiar:
+        title = "Your hands"
+        text = "You turn them over, open them, close them. Yours."
+        if unfamiliar_embodiment:
+            text += " The weight of your arms and the touch of air on skin hold your attention. It has been a while."
+    if target == "body" and unfamiliar_embodiment:
+        text = "Breathing, weight and the support beneath you make themselves felt. Being embodied again is unfamiliar."
     hud = extra.get("hud") or {}
     hud_visible = hud.get("enabled", True) and hud.get("state") != "dark_mode"
     if target == "hands" and "hud_presence" not in discoveries and hud_visible:

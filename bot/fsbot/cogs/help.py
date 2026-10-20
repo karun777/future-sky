@@ -5,6 +5,7 @@ from discord.ext import commands
 
 
 CATALOG = {
+    "begin": {"tier": 0, "category": "core", "desc": "Private setup by DM; !begin preview rehearses without replacing an existing character."},
     # Core (always visible)
     "look": {"tier": 0, "category": "core", "desc": "Describe your current location."},
     "go": {"tier": 0, "category": "core", "desc": "Move to a direction. Example: `!go north`."},
@@ -36,7 +37,7 @@ CATALOG = {
 }
 
 ALWAYS_LIST = {
-    "look", "go", "character_sheet", "inventory", "hud", "wardrobe", "wear", "remove", "fit",
+    "begin", "look", "go", "character_sheet", "inventory", "hud", "wardrobe", "wear", "remove", "fit",
     "combat", "draw", "status", "attack",
     "say", "emote",
 }
@@ -77,6 +78,7 @@ class HelpCog(commands.Cog):
             await ctx.send(
                 "🧭 **Future Sky — Help**\n\n"
                 "Start here:\n"
+                "- DM the bot with `!begin` for guided creation\n"
                 "- `!look`\n"
                 "- `!go <direction>` (e.g. `!go north`)\n\n"
                 "Once you have a character, your responses will route to your run channel.\n"

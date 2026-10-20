@@ -18,5 +18,7 @@ def pod_image(character, target):
     discoveries = (opening_state(character) or {}).get("discoveries") or []
     if target == "display" and "booking" in discoveries:
         return None  # UNREAD is baked into this still; retain truthful text after reading.
+    if target in {"display", "panels"} and character.get("extra", {}).get("arrival", {}).get("performance_booking", True) is False:
+        return None  # This first guided arrival has no performance notification artwork.
     name = BINDINGS.get(target)
     return BASE_URL + name if name else None

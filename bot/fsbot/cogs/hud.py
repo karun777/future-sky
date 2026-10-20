@@ -36,9 +36,10 @@ def render_panel(character, *, explicit=False):
     discovered = (opening_state(character) or {}).get("discoveries", [])
     if "display" in discovered:
         embed.add_field(name="FEED7", value="A signal you found in the pod. Open it with `!feed7`.", inline=False)
-    if "booking" in discovered:
+    has_booking = (character.get("extra", {}).get("arrival", {}).get("performance_booking", True) is not False)
+    if has_booking and "booking" in discovered:
         embed.add_field(name="Remembered booking", value="A gig tomorrow night. Format still unclear. Revisit the notice in the pod with `!inspect booking`.", inline=False)
-    elif any(target in discovered for target in ("panels", "display")):
+    elif has_booking and any(target in discovered for target in ("panels", "display")):
         embed.add_field(name="Unread notice", value="You found a performance notification in the pod. Read it there with `!inspect booking`.", inline=False)
     if not embed.fields:
         embed.description += " No signals or notices have been discovered yet."

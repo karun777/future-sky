@@ -195,3 +195,7 @@ Agreed explicit starting class inclination, unfolding in play. Karun’s body/se
 W3-F3 player-facing draft: [First Arrival walkthrough](wings/W3-F3_FIRST_ARRIVAL_WALKTHROUGH.md). Review proposed authoring-to-awakening transition; no UI/runtime changes or completion increment.
 
 W3-F3 rehearsal return, 20 October 18:18: [complete example and findings](wings/W3-F3_REHEARSAL_REVIEW.md). Familiar body versus unfamiliar embodiment recovered; dream accounts versus shared facts distinguished. Questionnaire lost its purpose; summary and clear endpoint recommended. REVIEW; twenty-two sealed; no live data changes.
+
+## W3-F3 first playable return — 20 October 2026
+
+[Guided creation-to-awakening pass](wings/W3-F3_FIRST_PLAYABLE_ARRIVAL.md) is implemented on beings/w3-f3-first-playable-arrival, with 150 isolated tests passing. DM setup and protected existing-player preview; no actual Discord delivery or deployment yet. W3-F3 REVIEW; twenty-two sealed. Existing pod instancing and later class/ancestry/relationship work remain deferred.

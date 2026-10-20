@@ -324,6 +324,88 @@ def _ensure_contract_pools_and_astro_fields(
         pass
 
 
+def build_arrival_character(user_id, name, birthdate, class_id, origin_note, items_db):
+    """Construct a new record using existing v0 class/stat/mana/starter rules; no persistence."""
+    # Compute base stats + hp
+    stats = base_stats_for_class(class_id)
+    max_hp = hp_from_stats(stats)
+    stats["max_hp"] = max_hp
+    stats["hp"] = max_hp
+
+    # Astrology placements (pure calculation, noon UTC assumption)
+    astro_payload: Optional[Dict[str, Any]] = None
+    if ASTRO_OK:
+        try:
+            astro_payload = compute_planet_signs(birthdate)
+        except Exception:
+            astro_payload = None
+
+    # Mana pools (v0) derived from stats + mild astrology element bumps
+    mana = compute_mana_pools_v0(stats, astro_payload)
+
+    # Starter kit (v0) — item IDs (aligns with items.json contracts)
+    starter_bag: Dict[str, int] = {}
+    starter_ids = [
+        "itm_rusty_knife",
+        "itm_leather_jacket",
+        # Add later when defined in items.json:
+        # "itm_triton_lager",
+    ]
+    for iid in starter_ids:
+        if iid in items_db:
+            starter_bag[iid] = starter_bag.get(iid, 0) + 1
+
+    # Room
+    start_room = "pod_room"
+
+    # Astro (top-level) — spine expects this key
+    astro_top = astro_payload if astro_payload else {
+        "version": "astrology_signs_v0",
+        "error": "astrology module unavailable",
+    }
+
+    # Canonical character record (align to JSON_CONTRACTS)
+    return {
+        "id": user_id,
+        "name": name,
+        "birthdate": birthdate,
+        "birth_time": None,
+        "tz_offset_minutes": None,
+        "current_room": start_room,
+        "stats": stats,
+        "astro": astro_top,
+        "pools": {
+            "earth":  {"current": int(mana.get("earth", {}).get("current", 0)),  "max": int(mana.get("earth", {}).get("max", 0))},
+            "water":  {"current": int(mana.get("water", {}).get("current", 0)),  "max": int(mana.get("water", {}).get("max", 0))},
+            "fire":   {"current": int(mana.get("fire", {}).get("current", 0)),   "max": int(mana.get("fire", {}).get("max", 0))},
+            "air":    {"current": int(mana.get("air", {}).get("current", 0)),    "max": int(mana.get("air", {}).get("max", 0))},
+            "ether":  {"current": int(mana.get("ether", {}).get("current", 0)),  "max": int(mana.get("ether", {}).get("max", 0))},
+            "spirit": {"current": 0, "max": 0},
+        },
+        "bag": starter_bag,
+        "equipped": default_equipped_slots_v0(),
+        "flags": {
+            "unlocked_commands": [],
+            "in_combat": False,
+        },
+        "run_channel_id": None,
+        "run_seeded_channel_id": None,
+        "extra": {
+            "profile": {
+                "class_id": class_id,
+                "origin_note": origin_note.strip() if origin_note else "",
+            },
+            "thread_nodes": {
+                "active_thread_node": None,
+                "events_completed": [],
+            },
+            "status": default_extra_status_v0(),
+            "astrology": astro_top,  # legacy mirror only
+        },
+    }
+
+
+
 class CoreCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -541,6 +623,10 @@ class CoreCog(commands.Cog):
         s = self.bot.storage
         user_id = str(ctx.author.id)
 
+        if user_id in s.characters:
+            await ctx.send("You already have a character. Creation will not replace it.")
+            return
+
         class_id = class_id.strip().lower()
         if class_id not in CLASS_IDS:
             await ctx.send(
@@ -556,85 +642,10 @@ class CoreCog(commands.Cog):
             await ctx.send("Invalid birthdate. Use format `YYYY-MM-DD`.")
             return
 
-        # Compute base stats + hp
-        stats = base_stats_for_class(class_id)
-        max_hp = hp_from_stats(stats)
-        stats["max_hp"] = max_hp
-        stats["hp"] = max_hp
+        s.characters[user_id] = build_arrival_character(
+            user_id, name, birthdate, class_id, origin_note, getattr(s, "items_db", {}))
 
-        # Astrology placements (pure calculation, noon UTC assumption)
-        astro_payload: Optional[Dict[str, Any]] = None
-        if ASTRO_OK:
-            try:
-                astro_payload = compute_planet_signs(birthdate)
-            except Exception:
-                astro_payload = None
-
-        # Mana pools (v0) derived from stats + mild astrology element bumps
-        mana = compute_mana_pools_v0(stats, astro_payload)
-
-        # Starter kit (v0) — item IDs (aligns with items.json contracts)
-        starter_bag: Dict[str, int] = {}
-        starter_ids = [
-            "itm_rusty_knife",
-            "itm_leather_jacket",
-            # Add later when defined in items.json:
-            # "itm_triton_lager",
-        ]
-        for iid in starter_ids:
-            if iid in getattr(s, "items_db", {}):
-                starter_bag[iid] = starter_bag.get(iid, 0) + 1
-
-        # Room
-        start_room = "pod_room"
-
-        # Astro (top-level) — spine expects this key
-        astro_top = astro_payload if astro_payload else {
-            "version": "astrology_signs_v0",
-            "error": "astrology module unavailable",
-        }
-
-        # Canonical character record (align to JSON_CONTRACTS)
-        s.characters[user_id] = {
-            "id": user_id,
-            "name": name,
-            "birthdate": birthdate,
-            "birth_time": None,
-            "tz_offset_minutes": None,
-            "current_room": start_room,
-            "stats": stats,
-            "astro": astro_top,
-            "pools": {
-                "earth":  {"current": int(mana.get("earth", {}).get("current", 0)),  "max": int(mana.get("earth", {}).get("max", 0))},
-                "water":  {"current": int(mana.get("water", {}).get("current", 0)),  "max": int(mana.get("water", {}).get("max", 0))},
-                "fire":   {"current": int(mana.get("fire", {}).get("current", 0)),   "max": int(mana.get("fire", {}).get("max", 0))},
-                "air":    {"current": int(mana.get("air", {}).get("current", 0)),    "max": int(mana.get("air", {}).get("max", 0))},
-                "ether":  {"current": int(mana.get("ether", {}).get("current", 0)),  "max": int(mana.get("ether", {}).get("max", 0))},
-                "spirit": {"current": 0, "max": 0},
-            },
-            "bag": starter_bag,
-            "equipped": default_equipped_slots_v0(),
-            "flags": {
-                "unlocked_commands": [],
-                "in_combat": False,
-            },
-            "run_channel_id": None,
-            "run_seeded_channel_id": None,
-            "extra": {
-                "profile": {
-                    "class_id": class_id,
-                    "origin_note": origin_note.strip() if origin_note else "",
-                },
-                "thread_nodes": {
-                    "active_thread_node": None,
-                    "events_completed": [],
-                },
-                "status": default_extra_status_v0(),
-                "astrology": astro_top,  # legacy mirror only
-            },
-        }
-
-        _ensure_contract_pools_and_astro_fields(self.bot, user_id, mana_snapshot=mana)
+        _ensure_contract_pools_and_astro_fields(self.bot, user_id, mana_snapshot=s.characters[user_id]["pools"])
 
         # Optional bridge stores (non-authoritative)
         try:

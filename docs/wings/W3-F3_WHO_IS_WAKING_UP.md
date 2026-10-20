@@ -129,3 +129,7 @@ Next bounded task: settle a minimal first-arrival authoring flow, separating req
 ## Rehearsal consolidated — 20 October 2026, 18:18 AWST
 
 [Character example and design review](W3-F3_REHEARSAL_REVIEW.md) captures user-supplied fictional background/appearance and the distinction between recognising a body and familiarity with embodiment. Intimate profile specifics remain in chat. User lost the purpose of successive questions; short endpoint/summary/skip guidance is a proposed correction. W3-F3 REVIEW; no live profile/character change. Review foundation for closure next, no automatic new feather.
+
+## First playable passage — authorised 20 October 2026, 18:23 AWST
+
+[Implementation and command walkthrough](W3-F3_FIRST_PLAYABLE_ARRIVAL.md) records private guided setup, review, generic awakening, familiar-body reception and protected preview. 150 isolated tests pass, including ten new cases. Command-based first pass; full ancestry/appearance/gender/relationship creation remains deferred. W3-F3 REVIEW; no live deployment or count increment.
