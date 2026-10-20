@@ -1,7 +1,7 @@
 # W6-F4 — A Pod We Can Inhabit
 
 Home wing: **W6 Expression**. Allocated by Karun, 18 October 2026, 20:23 AWST.
-Status: **REVIEW — five-image binding implementation being verified**, no completion increment. Earlier concept-only statements are dated history; deployment evidence will govern installed state.
+Status: **SEALED — first illustrated-pod binding pass, player-verified 20 October 2026**. Earlier review statements below are dated checkpoints; the seal at the end governs current status.
 
 ## Purpose
 
@@ -97,3 +97,23 @@ Public asset delivery and Discord image rendering remain deployment/player check
 ## Session close — 18 October, approximately 21:37 AWST
 
 Karun reports “looking good” after deployment and supplies the read-display response with no image, confirming the UNREAD safeguard. Explicit close-up checks remain the next bounded action; this feather stays REVIEW and is not counted sealed. [Full handoff](../handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md) records state, source differences, decisions and the next-run entry point. No runtime changes for close-out.
+
+## Seal checkpoint — 20 October 2026
+
+Karun supplied actual Discord responses: look delivered P01, inspect panels P02, inspect light P05, inspect viewport P06. Wardrobe was text-only and display was text-only after booking discovery. At 14:24 AWST he explicitly confirmed the images are consistent and accepted them as a good starting point to build upon; the subsequent exchange accepted closing this binding pass.
+
+Earlier same-day technical check: all five installed asset hashes matched the manifest; all five public URLs returned HTTP 200 and exact local bytes. Deployment/full-suite evidence remains the dated 18 October record; no new full-suite run or live reset is claimed.
+
+W6-F4 is SEALED for this first binding pass, not a claim of final art direction or finished pod mechanics. W6 completed four; total twenty-one (W4 five; other wings two each).
+
+### Author direction for later evolution
+This is Efiishent's pod. Karun wants it a little more psychedelic and closer to the broader Neptune Lounge aesthetic: quirky elegance, mysticism and future tech, retaining underlying functional simplicity. The current images are an accepted starting point.
+Assistant ideas about iridescence, suggestive geometry and ritual-like fittings are possibilities, not individually adopted props or mandatory art specifications. No new images generated or installed by this seal. Do not automatically apply Efiishent's personal aesthetic to all other characters' pods; unique pod implementation remains deferred.
+
+### Known seams retained
+- Singular panel resolves to berth/hidden seam; plural panels resolves to side wall. Actual playtest exposed this confusing distinction.
+- Read display suppresses stale UNREAD artwork correctly but still invites reading a notice already read; copy remains to improve.
+- Returning wardrobe guidance, conditional outfit contents and character-specific pod privacy remain open.
+These do not invalidate the bounded image-binding result and are not marked fixed.
+
+Return: first media binding complete; preserve existing images/version and inspectability when evolving aesthetics. No next feather allocated by this seal.

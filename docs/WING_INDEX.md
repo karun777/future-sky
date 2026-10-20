@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W6 Expression / W6-F4 — A Pod We Can Inhabit**, REVIEW, return queued after the requested remote-work assessment. [W4-F6](wings/W4-F6_ATTENDING_TO_THE_WORLD.md) is SEALED as an offline authoring experiment by Karun on 20 October 2026; production integration deferred. Illustrated-pod player checks remain outstanding. Larger World Engine expansion remains on hold.
-**20 sealed wing feathers: W4 has five, W6 has three; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
+Current home: **W6 Expression / W6-F4 — A Pod We Can Inhabit**, SEALED 20 October 2026 following actual Discord checks and Karun’s visual-consistency approval. Aesthetic evolution remains open. W4-F6 also SEALED as an offline experiment. No next feather allocated; larger World Engine expansion remains on hold.
+**21 sealed wing feathers: W4 has five, W6 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
@@ -29,7 +29,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
 | W4 Play | 5 | [W4-F6](wings/W4-F6_ATTENDING_TO_THE_WORLD.md) | W4-F3 review; next unallocated W4-F7 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
-| W6 Expression | 3 | [W6-F3](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) | [W6-F4 — visual review](wings/W6-F4_A_POD_WE_CAN_INHABIT.md); next unallocated W6-F5 |
+| W6 Expression | 4 | [W6-F4](wings/W6-F4_A_POD_WE_CAN_INHABIT.md) | next unallocated W6-F5 |
 | W7 Engine | 2 | [W7-F2](wings/W7-F2_RECOVERY_CAPSULE.md) | W7-F3 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
@@ -161,3 +161,7 @@ W4-F6 is REVIEW. Its complete record consolidates author direction, source revie
 ## Seal and return — 20 October 2026, 11:25 AWST
 
 Karun sealed W4-F6 as the bounded offline authoring experiment; production integration deferred. W4 five completed, total twenty. This supersedes earlier REVIEW/count statements for W4-F6. Requested remote-work assessment precedes resuming W6-F4, which remains REVIEW. No new feather, deployment or live state change.
+
+## Illustrated-pod seal — 20 October 2026
+
+[W6-F4 seal](wings/W6-F4_A_POD_WE_CAN_INHABIT.md#seal-checkpoint--20-october-2026) records Discord delivery and author-confirmed consistent images. W6 four completed; total twenty-one. Efiishent’s psychedelic/mystical/future-tech aesthetic direction is preserved for later evolution with functional simplicity retained. Panel alias and read-display copy seams remain open. Earlier pending/review/count statements are historical. No new feather or deployment.
