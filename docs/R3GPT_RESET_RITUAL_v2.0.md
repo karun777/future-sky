@@ -14,6 +14,10 @@ During discovery, read the [Knowledge Atlas](KNOWLEDGE_ATLAS.md), then the [Wing
 
 The Feather 20 pointers below are historical checkpoints, not a ceiling on later committed work. Consult the [content-first phase closure](current/PHASE_CLOSURE_EPISTEMIC_FOUNDATIONS_2026-10-15.md) and verify current branch, source and live state. Wing counts preserve historical global feather IDs and count only completed, verified wing feathers.
 
+## Current return — W6-F5, 20 October 2026, 20:21 AWST
+
+Home W6-F5 Before the First Breath is ACTIVE: five-stage review image/prose sequence, broader interactive Discord UI work deferred. W3-F3 remains REVIEW. Twenty-two sealed. Read Wing Index and full W6-F5 record before continuing.
+
 ## Current return — W3-F3, 20 October 2026
 
 Home W3-F3 Who Is Waking Up? is REVIEW: class/ancestry source recovery and proposed arrival distinctions. Read Wing Index and full feather record. Twenty-two sealed; W3 two. No new runtime work or completed-count increment.

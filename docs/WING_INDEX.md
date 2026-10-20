@@ -1,7 +1,7 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W3 Beings / W3-F3 — Who Is Waking Up?**, REVIEW. [Class/ancestry recovery and arrival foundation](wings/W3-F3_WHO_IS_WAKING_UP.md). W4-F7 is sealed. Twenty-two completed; no new runtime work.
+Current home: **W6 Expression / W6-F5 — Before the First Breath**, ACTIVE. [Five-stage illustrated threshold](wings/W6-F5_BEFORE_THE_FIRST_BREATH.md). W3-F3 remains REVIEW with source/implementation/preview return preserved. Twenty-two sealed; broader Discord storybook UI work deferred.
 **22 sealed wing feathers: W4 has six, W6 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
@@ -29,7 +29,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
 | W4 Play | 6 | [W4-F7](wings/W4-F7_GETTING_DRESSED.md) | W4-F3 review; next unallocated W4-F8 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
-| W6 Expression | 4 | [W6-F4](wings/W6-F4_A_POD_WE_CAN_INHABIT.md) | next unallocated W6-F5 |
+| W6 Expression | 4 | [W6-F4](wings/W6-F4_A_POD_WE_CAN_INHABIT.md) | [W6-F5 — active](wings/W6-F5_BEFORE_THE_FIRST_BREATH.md); next unallocated W6-F6 |
 | W7 Engine | 2 | [W7-F2](wings/W7-F2_RECOVERY_CAPSULE.md) | W7-F3 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
@@ -205,3 +205,7 @@ W3-F3 rehearsal return, 20 October 18:18: [complete example and findings](wings/
 Private guided creation/preview deployed from 108bac2. Service active PID 830880; 45 extensions, Discord login and Recovery heartbeat verified; seven source hashes match; 61 data files unchanged during install. Actual DM preview playcheck next. W3-F3 remains REVIEW; total twenty-two. Earlier undeployed notes are historical.
 
 W3-F3 preview check complete, 20 October 20:02: actual DM setup → review → contextual awakening/inspection → cancel supplied. Fresh creation and server handoff remain untested live. REVIEW; twenty-two sealed. No runtime changes.
+
+## W6-F5 switch — 20 October 2026, 20:21 AWST
+
+Karun selected the five-stage image/prose threshold into embodiment. W6-F5 allocated; W3-F3 stays REVIEW with its actual DM preview evidence and untested fresh/server handoff paths retained. W1/W2/W3/W4/W5/W7/W8 linked in home record. No new mechanics, universal metaphysical claim or UI migration. Counts unchanged.
