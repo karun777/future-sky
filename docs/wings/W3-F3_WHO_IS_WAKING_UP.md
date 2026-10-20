@@ -137,3 +137,7 @@ Next bounded task: settle a minimal first-arrival authoring flow, separating req
 ## Playable pass deployed — 20 October 2026, 19:21 AWST
 
 See [deployment checkpoint](W3-F3_FIRST_PLAYABLE_ARRIVAL.md#deployment-checkpoint--20-october-2026-approximately-1921-awst). Seven source files installed from 108bac2 with private backup; data unchanged during install; PID 830880, 45 extensions, Discord login and Recovery heartbeat verified. DM preview still needs player check. W3-F3 REVIEW; no count increment.
+
+## Preview verified — 20 October 2026, 20:02 AWST
+
+Actual DM setup/review/awakening/hands/body/cancel output supplied by Karun; see playable-arrival record for evidence and limits. Cancellation acknowledged; fresh-character/server-handoff live paths untested. Dense guidance and explanatory prose remain presentation seams. W3-F3 ready for bounded closure review, not automatically sealed.

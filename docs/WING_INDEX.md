@@ -203,3 +203,5 @@ W3-F3 rehearsal return, 20 October 18:18: [complete example and findings](wings/
 ## W3-F3 deployed return — 20 October 2026, 19:21 AWST
 
 Private guided creation/preview deployed from 108bac2. Service active PID 830880; 45 extensions, Discord login and Recovery heartbeat verified; seven source hashes match; 61 data files unchanged during install. Actual DM preview playcheck next. W3-F3 remains REVIEW; total twenty-two. Earlier undeployed notes are historical.
+
+W3-F3 preview check complete, 20 October 20:02: actual DM setup → review → contextual awakening/inspection → cancel supplied. Fresh creation and server handoff remain untested live. REVIEW; twenty-two sealed. No runtime changes.

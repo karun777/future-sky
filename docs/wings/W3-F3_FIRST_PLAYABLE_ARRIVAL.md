@@ -1,6 +1,6 @@
 # W3-F3 — First Playable Arrival
 
-Status: REVIEW — deployed 20 October 2026; actual Discord preview playcheck pending.
+Status: REVIEW — deployed and existing-player DM preview verified 20 October 2026.
 20 October 2026. Branch: beings/w3-f3-first-playable-arrival.
 Part of the authorised W3-F3 continuation; not another allocated feather. Counts remain twenty-two.
 
@@ -94,3 +94,18 @@ Karun explicitly authorised deployment. Source 108bac2. Seven compiled source fi
 Old PID 829575 was paused during install and exited by SIGKILL to trigger systemd Restart=on-failure (10 seconds). This is a supervised forced restart, not graceful shutdown. New service PID 830880 active/running; 45 extensions loaded including arrival, Discord login and Recovery heartbeat confirmed. No error/traceback matches in inspected startup output. Existing live overlays outside targets retained.
 
 Actual Discord DM preview remains pending. Use !begin preview for existing accounts; never reset/recreate Efiishent for this playcheck. W3-F3 REVIEW, counts unchanged. Roll back code selectively from backup if needed; do not restore old gameplay data wholesale. Earlier not-deployed statements describe their dated checkpoint.
+
+
+## Actual Discord preview check — 20 October 2026, 19:41–20:02 AWST
+Karun supplied actual output confirming:
+- Server invocation directs the player to DM without starting setup there.
+- DM !begin preview displays PREVIEW and explicitly states nothing is saved.
+- Class, fictional name/date, familiar-body and unfamiliar-embodiment selections and background are accepted; review card matches those inputs.
+- !begin awaken presents the guided sensory opening and preview-only notice.
+- !begin inspect hands recognises the hands and expresses unfamiliar embodiment, with a separate existing HUD-presence notice.
+- !begin inspect body presents the contextual response.
+- !begin cancel returns “Draft discarded. Your saved character is unchanged.”
+
+This verifies the preview path and its presented cancellation result in Discord. No new after-playcheck live-record hash comparison was performed; actual no-write behaviour has isolated byte-comparison tests. Fresh creation, its first durable save and the DM-to-server run-channel handoff remain isolated/source coverage, not live player-tested.
+Usability seams: initial instructions are dense, confirmations generic, class ID in review is technical, and body response explains the state more than evoking sensation. Retain these for later presentation work. No wording change or deployment for this checkpoint.
+W3-F3 remains REVIEW; no seal or completed-count increment inferred from this playcheck alone.
