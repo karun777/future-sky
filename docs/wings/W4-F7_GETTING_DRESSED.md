@@ -1,9 +1,9 @@
 # W4-F7 — Getting Dressed
 
 Home: **W4 Play**
-Status: **REVIEW — deployed, startup verified; Discord dressing playcheck pending**
+Status: **SEALED — deployed and player-verified, 20 October 2026, 17:03 AWST**
 Allocated by Karun: 20 October 2026, 14:30 AWST.
-Counts unchanged: W4 five completed; total twenty-one. Next unallocated W4-F8.
+Counts at seal: W4 six completed; total twenty-two. Next unallocated W4-F8.
 
 ## Outcome and boundary
 Make the existing browse → inspect → choose → wear → remove/change → check-appearance loop usable for fresh and returning characters. Keep existing catalogue, first-selection rules, possessions, identities and equipment requirements.
@@ -64,3 +64,17 @@ Next: once administrator starts service, verify active PID, extension loads, Dis
 ## Startup recovery verified — 20 October 2026, 16:59 AWST
 
 Service was already active on reconnection, MainPID 829575. This session did not start it; initiating actor/method not established. Noninteractive sudo still requires a password. Process journal confirms 44 extensions loaded, successful Discord login and Recovery heartbeat OK. All six installed source hashes match the deployment manifest. Earlier inactive/admin-start checkpoint is historical. Actual Discord dressing walkthrough remains pending; no seal or count increment.
+
+## Seal checkpoint — 20 October 2026, 17:03 AWST
+Karun supplied actual Discord walkthrough evidence:
+- Returning !wardrobe guidance and !wardrobe inspect formal worked, with text-only catalogue inspection.
+- Initial !fit showed Leather Jacket worn; bag held Freeform Attire x1 and Leather Jacket x1.
+- !wear Freeform Attire equipped it and returned the worn jacket, yielding Leather Jacket x2 in bag.
+- !remove Freeform Attire returned exactly one Freeform Attire to bag; !fit reported no chest garment.
+- Inventory after removal retained compass x1, jacket x2, spare knife x1 and equipped main-hand knife.
+- Re-wearing Freeform Attire succeeded and !fit reflected it. No final post-rewear inventory was supplied; do not overstate that observation.
+
+Combined evidence: 140 isolated tests, installed source hashes, 44 loaded extensions/Discord startup, and actual player walkthrough. Failed-save behaviour and fresh selection have automated/source evidence, not a new live failure injection or fresh-character trial.
+W4-F7 SEALED for the bounded dressing loop. W4 six completed; total twenty-two. No new state edits, restart or implementation for this seal.
+Retain limitations: existing first-selection catalogue, exact-name resolution, equipment-style confirmation/slot language and chest-slot outfit model. Chapter events/employment/faction-conditioned contents remain later authoring work. Clothing grants no affiliation or authority.
+Return: next unallocated W4-F8. No new feather automatically allocated. Preserve contextual wardrobe dependency across W2/W3/W4 and W6 guidance.

@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W4 Play / W4-F7 — Getting Dressed**, REVIEW, allocated 20 October 2026. [Implementation record](wings/W4-F7_GETTING_DRESSED.md). W6-F4 and W4-F6 remain sealed; twenty-one completed. No live deployment.
-**21 sealed wing feathers: W4 has five, W6 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
+Current home: **W4 Play / W4-F7 — Getting Dressed**, SEALED 20 October 2026 after actual Discord browse/inspect/wear/remove/re-wear checks. No next feather allocated. Chapter/employment/faction-conditioned wardrobe remains deferred.
+**22 sealed wing feathers: W4 has six, W6 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
@@ -27,7 +27,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
-| W4 Play | 5 | [W4-F6](wings/W4-F6_ATTENDING_TO_THE_WORLD.md) | [W4-F7 — review](wings/W4-F7_GETTING_DRESSED.md); W4-F3 review; next unallocated W4-F8 |
+| W4 Play | 6 | [W4-F7](wings/W4-F7_GETTING_DRESSED.md) | W4-F3 review; next unallocated W4-F8 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 4 | [W6-F4](wings/W6-F4_A_POD_WE_CAN_INHABIT.md) | next unallocated W6-F5 |
 | W7 Engine | 2 | [W7-F2](wings/W7-F2_RECOVERY_CAPSULE.md) | W7-F3 |
@@ -179,3 +179,7 @@ Six source files installed; 61 data files unchanged during installation. Bot ser
 ## W4-F7 startup recovery — 20 October 2026, 16:59 AWST
 
 Service active at PID 829575, all 44 extensions loaded, Discord login and Recovery heartbeat confirmed; six installed source hashes match. Prior stopped-service note superseded. W4-F7 remains REVIEW pending player dressing checks; counts unchanged.
+
+## Dressing loop sealed — 20 October 2026, 17:03 AWST
+
+[W4-F7 seal](wings/W4-F7_GETTING_DRESSED.md#seal-checkpoint--20-october-2026-1703-awst) records real player output and its limits. W4 six completed; total twenty-two. Earlier REVIEW/pending-start/pending-playcheck statements are dated history. Chapter-linked wardrobe dependency retained; no new feather or runtime change.
