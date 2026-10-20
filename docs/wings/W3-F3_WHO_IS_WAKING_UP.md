@@ -133,3 +133,7 @@ Next bounded task: settle a minimal first-arrival authoring flow, separating req
 ## First playable passage — authorised 20 October 2026, 18:23 AWST
 
 [Implementation and command walkthrough](W3-F3_FIRST_PLAYABLE_ARRIVAL.md) records private guided setup, review, generic awakening, familiar-body reception and protected preview. 150 isolated tests pass, including ten new cases. Command-based first pass; full ancestry/appearance/gender/relationship creation remains deferred. W3-F3 REVIEW; no live deployment or count increment.
+
+## Playable pass deployed — 20 October 2026, 19:21 AWST
+
+See [deployment checkpoint](W3-F3_FIRST_PLAYABLE_ARRIVAL.md#deployment-checkpoint--20-october-2026-approximately-1921-awst). Seven source files installed from 108bac2 with private backup; data unchanged during install; PID 830880, 45 extensions, Discord login and Recovery heartbeat verified. DM preview still needs player check. W3-F3 REVIEW; no count increment.

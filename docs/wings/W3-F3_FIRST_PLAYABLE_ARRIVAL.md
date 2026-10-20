@@ -1,6 +1,6 @@
 # W3-F3 — First Playable Arrival
 
-Status: REVIEW — implemented and isolated-tested, not deployed.
+Status: REVIEW — deployed 20 October 2026; actual Discord preview playcheck pending.
 20 October 2026. Branch: beings/w3-f3-first-playable-arrival.
 Part of the authorised W3-F3 continuation; not another allocated feather. Counts remain twenty-two.
 
@@ -86,3 +86,11 @@ No new live bot instance, restart, production write, DM delivery or player playt
 ## Return
 W3-F3 remains REVIEW. Next: review the actual command-based passage, then choose deployment and a safe existing-player preview playcheck if accepted.
 Deployment would touch CoreCog, ArrivalCog, opening/HUD/media selection, Help and extension registration; preserve existing live overlays and verify new extension count/readiness. No deployment authorised merely by this document.
+
+## Deployment checkpoint — 20 October 2026, approximately 19:21 AWST
+
+Karun explicitly authorised deployment. Source 108bac2. Seven compiled source files installed selectively after all six existing targets matched pre-change source 25fbf35. Private backup: /opt/futuresky/backups/w3f3-arrival-20261020-192103. All seven installed hashes match; all 61 data files unchanged immediately before/after installation. Character-file hash unchanged after restart: True.
+
+Old PID 829575 was paused during install and exited by SIGKILL to trigger systemd Restart=on-failure (10 seconds). This is a supervised forced restart, not graceful shutdown. New service PID 830880 active/running; 45 extensions loaded including arrival, Discord login and Recovery heartbeat confirmed. No error/traceback matches in inspected startup output. Existing live overlays outside targets retained.
+
+Actual Discord DM preview remains pending. Use !begin preview for existing accounts; never reset/recreate Efiishent for this playcheck. W3-F3 REVIEW, counts unchanged. Roll back code selectively from backup if needed; do not restore old gameplay data wholesale. Earlier not-deployed statements describe their dated checkpoint.

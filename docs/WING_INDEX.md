@@ -199,3 +199,7 @@ W3-F3 rehearsal return, 20 October 18:18: [complete example and findings](wings/
 ## W3-F3 first playable return — 20 October 2026
 
 [Guided creation-to-awakening pass](wings/W3-F3_FIRST_PLAYABLE_ARRIVAL.md) is implemented on beings/w3-f3-first-playable-arrival, with 150 isolated tests passing. DM setup and protected existing-player preview; no actual Discord delivery or deployment yet. W3-F3 REVIEW; twenty-two sealed. Existing pod instancing and later class/ancestry/relationship work remain deferred.
+
+## W3-F3 deployed return — 20 October 2026, 19:21 AWST
+
+Private guided creation/preview deployed from 108bac2. Service active PID 830880; 45 extensions, Discord login and Recovery heartbeat verified; seven source hashes match; 61 data files unchanged during install. Actual DM preview playcheck next. W3-F3 remains REVIEW; total twenty-two. Earlier undeployed notes are historical.
