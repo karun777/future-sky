@@ -1,7 +1,7 @@
 # W6-F5 — Before the First Breath
 
 Home: **W6 Expression**
-Status: ACTIVE — allocated by Karun 20 October 2026, 20:21 AWST.
+Status: REVIEW — storyboard and five preview concepts produced; allocated by Karun 20 October 2026, 20:21 AWST.
 Counts unchanged: W6 four completed; total twenty-two. Next unallocated W6-F6.
 
 ## Bounded outcome
@@ -76,3 +76,24 @@ W8: one home feather, unchanged counts, retained W3-F3 return.
 
 ## Return
 Next review is visual/prose coherence across five stages. Broader button/modal/layout investigation is parked, not silently included. W3-F3 remains REVIEW; no automatic seal.
+
+
+## First image/prose review — 20 October 2026
+Status: **REVIEW — five generated concepts and storyboard ready for author assessment.** No completion increment.
+Built-in image generation produced five separate review concepts, displayed inline in conversation:
+- Inclination: exec-f44dfa65-37e0-4289-9da9-989fce5580b4.png
+- History: exec-6096da17-1279-4def-b6b4-3402ab199129.png
+- Embodiment: exec-9c9eab0a-7bf7-4525-90bf-057f0bf2afcb.png
+- Gathering: exec-b0c6dc68-c417-4695-ad75-af0e4890a21c.png
+- Awakening: exec-dc4a40d7-1598-401b-948b-5589e15d057a.png
+These identifiers preserve generation lineage, not production asset paths. Preview concepts are not yet installed in the repo asset tree or bound to the bot.
+
+Assistant visual assessment:
+- Inclination: luminous branching currents with a clear central gathering point; suitable starting direction, though scenic detail is richer than the minimal brief.
+- History: dreamlike layered architecture and celestial traces; treat as symbolic possibility, never proof of actual locations or a universal character history.
+- Embodiment: tactile cloth and warm metal are useful, but the ornate chamber, vessels and hanging objects over-specify a place and dilute functional restraint. Candidate for simplification before selection; no props adopted.
+- Gathering: translucent fragments and light around an open centre convey integration; avoid treating reflected landscapes as player memories automatically.
+- Awakening: close fabric, seam and blue/warm light provide a restrained material foothold. This is a concept crop, not verified architectural continuity with existing pod images.
+
+Images may arrive out of narrative order in the conversation; use stage titles above as the intended sequence. Author has not yet approved these outputs. All prose remains candidate copy.
+Next action: review visual direction and revise the weakest concept, rather than install a full set automatically. Broader Discord component/UI exploration stays deferred. W3-F3 remains REVIEW, with its previous implementation and live preview evidence retained.
