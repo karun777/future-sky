@@ -14,6 +14,10 @@ During discovery, read the [Knowledge Atlas](KNOWLEDGE_ATLAS.md), then the [Wing
 
 The Feather 20 pointers below are historical checkpoints, not a ceiling on later committed work. Consult the [content-first phase closure](current/PHASE_CLOSURE_EPISTEMIC_FOUNDATIONS_2026-10-15.md) and verify current branch, source and live state. Wing counts preserve historical global feather IDs and count only completed, verified wing feathers.
 
+## Current development return — 20 October 2026
+
+On branch play/w4-f6-sensory-authoring, read the [reconciled W4-F6 record](wings/W4-F6_ATTENDING_TO_THE_WORLD.md) after the Wing Index. Home W4-F6 is REVIEW; two isolated authoring rehearsals, no live integration; 19 sealed. The 18 October handoff below remains the live deployment return trail. Branch/local availability and installed code are separate facts.
+
 ## Latest session handoff — 18 October 2026, evening
 
 After the Wing Index, read [the session close-out](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md). Current home W6-F4 remains REVIEW; 19 sealed. Refresh connectivity and live evidence first. Deployed code is selectively overlaid on an older checkout HEAD, with four preserved source differences; the handoff identifies them. Do not treat raw HEAD or a clean archive as the whole live system.

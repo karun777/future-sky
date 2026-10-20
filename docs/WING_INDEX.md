@@ -1,7 +1,7 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W6 Expression / W6-F4 — A Pod We Can Inhabit**, in REVIEW: five versioned cinematic stills bound to pod views/inspection; text-only open wardrobe and conditional contents preserved. Deployed at 21:06 AWST after 130 passing tests; Discord image playcheck pending. W6-F3 is sealed following live checks. W4-F4/F5 remain deployed; recovery gameplay remains untested live. W2-F3/W4-F3 remain in REVIEW; W1-F3 / historical Feather 57 remains parked. Larger World Engine expansion remains on hold.
+Current home: **W4 Play / W4-F6 — Attending to the World**, REVIEW ([complete record](wings/W4-F6_ATTENDING_TO_THE_WORLD.md)), reconciled 20 October 2026. Two offline authoring rehearsals; 11 prototype and 23 separate chapter checks pass. No integration or count increment. Previous home **W6 Expression / W6-F4 — A Pod We Can Inhabit** remains in REVIEW: five versioned cinematic stills bound to pod views/inspection; text-only open wardrobe and conditional contents preserved. Deployed at 21:06 AWST after 130 passing tests; Discord image playcheck pending. W6-F3 is sealed following live checks. W4-F4/F5 remain deployed; recovery gameplay remains untested live. W2-F3/W4-F3 remain in REVIEW; W1-F3 / historical Feather 57 remains parked. Larger World Engine expansion remains on hold.
 **19 sealed wing feathers: W4 has four, W6 has three; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
@@ -27,7 +27,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | W3-F3 |
-| W4 Play | 4 | [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) | [W4-F3 — review](wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md); next unallocated W4-F6 |
+| W4 Play | 4 | [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) | [W4-F6 — review](wings/W4-F6_ATTENDING_TO_THE_WORLD.md); W4-F3 review; next unallocated W4-F7 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 3 | [W6-F3](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) | [W6-F4 — visual review](wings/W6-F4_A_POD_WE_CAN_INHABIT.md); next unallocated W6-F5 |
 | W7 Engine | 2 | [W7-F2](wings/W7-F2_RECOVERY_CAPSULE.md) | W7-F3 |
@@ -44,6 +44,7 @@ Counts exclude historical global feathers; do not renumber them. Sealed means th
 Initial checkpoints below are deliberately lightweight. They describe known stopping places, not eight active work queues. Their initial evidence date is 17 October 2026; W1's parked return and W2's opening review were updated on 18 October. Refresh dated runtime evidence before treating it as current.
 
 ### W1 — Mythos
+- 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
 - Author-declared canon, 18 October: [Preserved brains, manufactured bodies and awakening](current/MANZO_PRESERVED_BRAINS_AND_AWAKENING.md). Efiishent's self-made preservation cube, Triton revival instructions, retained faculties and body/parallelism relationship. Corrected population: 10% natural / 89% manufactured / 1% old brain. Memory emerges gradually during reintegration, usually seven days, qualified by an instruction manual none is known to possess; manual implications remain open. No new feather count.
 - Shared mission checkpoint: [W4-F3 — Two Days at Neptune Lounge](wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md) owns the conditional mission/knowledge map; [pod preparation](wings/W2-F3_POD_PREPARATION_AND_WORK_GARMENTS.md) preserves character creation, five work-garment options, casual gear and job/faction distinctions. Linked work does not allocate another feather.
@@ -56,6 +57,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Open: ordinary resident atrophy and runtime delivery remain unproven. W1 has 2 completed feathers. [W1-F3 / historical Feather 57 — The Eight Timelines: A Constellation of Possibilities](wings/W1-F3_THE_EIGHT_TIMELINES.md) is allocated and parked (18 October 2026). Source review records seven-line legacy material and October A–G research; the proposed eight-part structure is unresolved. Next unallocated W1-F4. Preparation does not increment the completed count.
 
 ### W2 — Worlds
+- 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Unique player pods remain deferred. On 18 October Karun authorised a temporary relocation of the other pod occupant to the Lounge during W6-F4 deployment; no instancing or occupancy filtering introduced. See [deployment evidence](handover/W6_F4_MEDIA_DEPLOYMENT_20261018.md).
 - Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
 - Shared implementation node: [W4-F4 — Whose Hands Are These?](wings/W4-F4_WHOSE_HANDS_ARE_THESE.md) connects pod fixtures (W2), bodily recognition and attire (W3), and discoverable presentation (W6). W4 owns the feather; no duplicate count. Existing outfit choices remain; richer work garments and cinematic media remain open.
@@ -73,6 +75,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Return: Worlds has 2 completed feathers; W2-F3 allocated in REVIEW, next unallocated W2-F4. Larger World Engine expansion is on hold under the adopted experience direction. Source checkpoint 48ff5b8; refresh live state before implementation.
 
 ### W3 — Beings
+- 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Shared HUD node: [W6-F3](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) owns implant presentation; embodiment, proficiency and interpretation connect here without allocating a W3 feather.
 - Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
 - Shared implementation node: [W4-F4 — Whose Hands Are These?](wings/W4-F4_WHOSE_HANDS_ARE_THESE.md) connects pod fixtures (W2), bodily recognition and attire (W3), and discoverable presentation (W6). W4 owns the feather; no duplicate count. Existing outfit choices remain; richer work garments and cinematic media remain open.
@@ -87,6 +90,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W3 completed count is 2; W3-F3 remains unallocated. Preserve identity/role/driver distinctions before deeper character authoring or controller changes.
 
 ### W4 — Play
+- 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Shared HUD node: [W6-F3](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) owns the display feather following the first live opening walkthrough. Internal voice/ambient boundaries are recorded; the tested first pass is deployed and remains in REVIEW pending player verification. W4-F6 remains unallocated.
 - Clarified 18 October 17:05: the common quest is meeting an allied-faction representative and trading, available to any player with romance optional. Efiishent's ambassador/princess/Queen is one person; Puzzler and Queen instances await authoring. Footprints persist with privacy paramount. [Connected account](handover/AWAKENING_RECONSTRUCTION_20261018.md#6-one-quest-many-particular-passages).
 - Author-declared canon, 18 October: [Preserved brains, manufactured bodies and awakening](current/MANZO_PRESERVED_BRAINS_AND_AWAKENING.md). Efiishent's self-made preservation cube, Triton revival instructions, retained faculties and body/parallelism relationship. Corrected population: 10% natural / 89% manufactured / 1% old brain. Memory emerges gradually during reintegration, usually seven days, qualified by an instruction manual none is known to possess; manual implications remain open. No new feather count.
@@ -102,6 +106,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Return: W4 completed count is 4; W4-F3 remains in REVIEW; next unallocated W4-F6. Next bounded candidate: playtest the deployed opening as Efiishent. No reset performed; inspect current state before any renewal. Performance criteria and ambassador stay/leave remain open in W4-F3.
 
 ### W5 — Time
+- 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
 - Shared mission checkpoint: [W4-F3 — Two Days at Neptune Lounge](wings/W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md) owns the conditional mission/knowledge map; [pod preparation](wings/W2-F3_POD_PREPARATION_AND_WORK_GARMENTS.md) preserves character creation, five work-garment options, casual gear and job/faction distinctions. Linked work does not allocate another feather.
 - Trajectory: implemented canonical time → observable cycles → plural temporal experience.
@@ -112,6 +117,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W5 has 2 completed feathers; W5-F3 unallocated. [W1-F3](wings/W1-F3_THE_EIGHT_TIMELINES.md) links this wing for cross-era causality, without allocating a W5 feather. Failed clock persistence advances memory before suppressing publication; later save may include it. Recovery/replay policy remains open. No live time change.
 
 ### W6 — Expression
+- 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Current visual feather: [W6-F4 — A Pod We Can Inhabit](wings/W6-F4_A_POD_WE_CAN_INHABIT.md), five-still binding implementation in REVIEW; wardrobe remains text-only. Deployed; player image check pending, no count increment. W6-F5 next unallocated.
 - Shared implementation node: [W4-F4 — Whose Hands Are These?](wings/W4-F4_WHOSE_HANDS_ARE_THESE.md) connects pod fixtures (W2), bodily recognition and attire (W3), and discoverable presentation (W6). W4 owns the feather; no duplicate count. Existing outfit choices remain; richer work garments and cinematic media remain open.
 - Shared attention checkpoint: [W2 / W3 / W4 / W6 — Pod inspection and recognition](wings/W2-F3_POD_INSPECTION_AND_RECOGNITION.md). Hands-first and early FEED7 recovered; all visible features inventoried; wardrobe mirror and prop responses proposed. W2-F3 remains in REVIEW; no linked feather allocated.
@@ -124,6 +130,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Current: [W6-F3 — The Display Behind Your Eyes](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) is SEALED after its bounded implementation and live checks: consistent truthful HUD states, once-only display notice and brochure crash, shared typing/activity input and idle-choice quiet. First live HUD checks passed. Follow-up adds spaced commands and discovery-based explicit HUD, removes automatic meters; 119 isolated tests pass. Follow-up deployed at 20:19 AWST; Karun confirmed quiet look, discovery-based HUD and spaced controls at 20:21 AWST. Implant/subtle-perception direction is recorded; larger progression remains deferred. W6 completed count is 3; next unallocated W6-F4. W4-F6 remains unallocated.
 
 ### W7 — Engine
+- 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Shared recovery node: [W4-F5](wings/W4-F5_THE_BODY_RETURNS_THE_WORLD_REMEMBERS.md) owns body continuity, private pod delivery and the seven-day persisted-world-time deadline. Brain-death consequences remain unresolved; no duplicate feather count or live reset.
 - Trajectory: verified operational truth → reliable reproduction → bounded extension.
 - Sealed: [W7-F1 — What Is Actually Running?](wings/W7-F1_WHAT_IS_ACTUALLY_RUNNING.md). Bot active at 937c007/PID 799778; tracked bot source matches inspected main reference despite older HEAD. Live data and documented overlays must be preserved.
@@ -134,6 +141,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W7 has 2 completed feathers; W7-F3 unallocated. Sequential same-host capture is not an atomic world snapshot or full disaster recovery. Scope exclusions and capsule path are recorded in W7-F2.
 
 ### W8 — Stewardship
+- 20 October shared return: [W4-F6 reconciliation](wings/W4-F6_ATTENDING_TO_THE_WORLD.md#shared-wing-checkpoints) records this wing’s implications; one home feather, no duplicate allocation/count.
 - Trajectory: navigable checkpoints → reliable switching → collaborative continuity.
 - Reached: [W8-F1](wings/W8-F1_GIVE_THE_DRAGON_A_MEMORY.md) establishes this register and links it from Atlas/reset. [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) brings the documentation home to Neptune Lounge with a verified return route.
 - Settled: eight wing identities, independent counts, preserved historical numbering, one home wing per feather, and a return checkpoint before switching.
@@ -145,3 +153,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 Approved direction is [immersive player experience, world-building and the opening sequence](current/IMMERSIVE_PLAYER_EXPERIENCE_20261018.md), preserving existing architecture and putting larger World Engine expansion on hold. W4-F5 is the current sealed implementation; W4-F3 remains in review; W2-F3 remains parked in review; the parked Mythos return remains connected. Karun reviewed and sealed W1-F1 on 17 October 2026, selecting orientation through space, memory or relationships. The wider Chapter One world-state design is not automatically authorised by that checkpoint.
 
 Leave: outcome and evidence, source revision/date, settled/open questions, affected wings, and the next bounded candidate. Resume by reading those sources and verifying changed facts. Update the home checkpoint and count when sealing; update linked checkpoints only where their evidence changed.
+
+## Current return — 20 October 2026
+
+W4-F6 is REVIEW. Its complete record consolidates author direction, source review, two offline prototypes, verification and limitations. Review for closure is next; no new implementation is allocated. W6-F4 remains open. W4 four completed; total nineteen. Earlier W4-F6-unallocated and W6-home statements above are dated history. Branch play/w4-f6-sensory-authoring is local; no merge/deployment is implied.
