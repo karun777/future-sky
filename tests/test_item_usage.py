@@ -22,7 +22,8 @@ class ItemUseTests(unittest.TestCase):
         self.ch["pools"]["hp"]["current"] = 10
         self.items["Triton Lager"]["use_action"]["full_health_text"] = "A refreshing drink."
         updated, message, consumed = use_item(self.ch, self.items, "Triton Lager")
-        self.assertEqual(message, "A refreshing drink.")
+        self.assertIn("A refreshing drink.", message)
+        self.assertIn("no alcohol", message)
         self.assertEqual(updated["pools"]["hp"]["current"], 10)
         self.assertEqual(updated["bag"]["Triton Lager"], 1)
         self.assertTrue(consumed)

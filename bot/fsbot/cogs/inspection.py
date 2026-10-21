@@ -4,6 +4,7 @@ from discord.ext import commands
 from fsbot.item_inspection import inspect_item
 from fsbot.lounge_arrival import counterkeeper_view
 from fsbot.lounge_media import lounge_image
+from fsbot.performance_tab import claim_tab, balance as tab_balance
 from fsbot.pod_media import pod_image
 from fsbot.pod_opening import (GUIDANCE, opening_state, scene_target, prepare_observation, pod_bearings)
 
@@ -91,7 +92,17 @@ class InspectionCog(commands.Cog):
             return
         local_view = counterkeeper_view(character, item)
         if local_view:
+            try:
+                character, revelation = claim_tab(storage, str(ctx.author.id))
+                credit = tab_balance(character)
+            except ValueError as exc:
+                await ctx.send(str(exc))
+                return
             title, text, guidance = local_view
+            if revelation:
+                text += "\n\n" + revelation
+            if (character.get("extra") or {}).get("performance_bar_tab_v1") is not None:
+                guidance += f" Performance tab: **{credit} bar credits**."
             embed = discord.Embed(title=title, description=text, color=discord.Color.dark_teal())
             embed.add_field(name="Your attention", value=guidance, inline=False)
             image_url = lounge_image(character, "counterkeeper")

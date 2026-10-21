@@ -14,7 +14,7 @@ class IntoxicationCog(commands.Cog):
             await ctx.send("Create a character first.")
             return
         level, feeling = status(character)
-        await ctx.send(f"Intoxication: {level}/6. {feeling}")
+        await ctx.send(f"Microvita intensity: {level}/6. {feeling}")
 
 
 async def setup(bot):

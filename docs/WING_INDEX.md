@@ -231,3 +231,7 @@ Karun accepted Into the Lounge: existing pod/corridor/stairwell route into an op
 ## W4-F8 artwork installed — 21 October 2026, 23:40 AWST
 
 [Art deployment](wings/W4-F8_INTO_THE_LOUNGE.md#artwork-deployment--21-october-2026-2340-awst): approved hallway, stairwell, domefront and first counterkeeper portrait bound without rewriting live room data. Main-floor art retained. 166 tests pass; four public WebPs return HTTP 200 and exact hashes; PID 843841, 45 extensions, Discord/heartbeat verified. Player route to main floor and recalled prior exchange evidenced; new art client check pending. Counterkeeper alien-skin/implant refinements and performance bar credit remain return work. REVIEW, twenty-two sealed.
+
+## W4-F8 performance-tab build — 21 October 2026
+
+[Home implementation/return](wings/W4-F8_INTO_THE_LOUNGE.md#performance-tab-and-lager-alignment--21-october-2026): agreed one-time 25 bar-credit grant on counterkeeper/menu approach, persisted and spent before cash. Eligibility uses discovered established booking; generic non-performance arrivals excluded. [Triton Lager lore](current/items/TRITON_LAGER.md) adopted from Karun: chilled blue non-alcoholic psychedelic microvita infusion; excess wormhole risk, mechanics deferred. 174 tests pass; this tab/lore build is NOT deployed. Earlier arrival/media deployment remains active. Domefront/portrait confirmed in Discord; hallway/stairwell image client checks pending. REVIEW; twenty-two sealed; outfit consequences remain open.

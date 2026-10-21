@@ -1,6 +1,7 @@
 """Neptune Lounge bartender commands."""
 from discord.ext import commands
 from fsbot.bar_shop import BarError, bar_menu, buy_from_bar
+from fsbot.performance_tab import claim_tab
 
 class BarShopCog(commands.Cog):
     def __init__(self, bot):
@@ -15,7 +16,11 @@ class BarShopCog(commands.Cog):
             return
         try:
             message = bar_menu(character, storage.items_db)
-        except BarError as exc:
+            character, revelation = claim_tab(storage, str(ctx.author.id))
+            message = bar_menu(character, storage.items_db)
+            if revelation:
+                message = revelation + "\n\n" + message
+        except (BarError, ValueError) as exc:
             message = str(exc)
         await ctx.send(message)
 

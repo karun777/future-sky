@@ -1,4 +1,6 @@
 """Pure, visibility-aware item inspection."""
+from fsbot.triton_lager import describe_lager
+
 def inspect_item(query, character, room, items):
     needle = (query or "").strip().casefold()
     if not needle:
@@ -23,6 +25,7 @@ def inspect_item(query, character, room, items):
     if len(candidates) != 1:
         raise ValueError("You cannot see that item here." if not candidates else "That item name is ambiguous.")
     item_id, item = candidates[0]
+    item = describe_lager(item_id, item)
     known = dict(item.get("attributes", {})) if isinstance(item.get("attributes"), dict) else {}
     discoveries = character.get("item_discoveries") or {}
     unlocked = discoveries.get(item_id, []) if isinstance(discoveries, dict) else []

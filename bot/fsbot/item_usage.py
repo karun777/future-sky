@@ -1,5 +1,6 @@
 """Pure, inventory-owned item use with explicit catalogue mechanics."""
 from copy import deepcopy
+from fsbot.triton_lager import NAME as LAGER, SERVING
 
 
 class ItemUseError(ValueError):
@@ -58,4 +59,6 @@ def use_item(character, items, query):
         message = f"You use {name} and recover {recovered} HP."
     else:
         message = str(action.get("full_health_text") or f"You enjoy {name}.")
+    if key == LAGER and consumed:
+        message += " " + SERVING
     return updated, message, consumed

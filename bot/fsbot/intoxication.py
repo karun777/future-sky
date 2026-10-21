@@ -1,4 +1,5 @@
-"""Intoxication accumulates with drinking and fades in real elapsed time.
+"""Legacy intoxication namespace now presents psychedelic microvita effects.
+Intensity still accumulates and fades in real elapsed time.
 
 No combat or movement penalties in this feather; descriptive effects only.
 """
@@ -27,12 +28,12 @@ def description(level):
     if level == 1:
         return "A pleasant warmth settles behind your eyes."
     if level == 2:
-        return "The neon seems softer, and your confidence grows."
+        return "The neon acquires intricate depth; the music feels unusually vivid."
     if level == 3:
         return "The floor has acquired a gentle, suspicious sway."
     if level <= 5:
-        return "Your words are a little tangled. The dome seems very far away."
-    return "The stars are dancing. Staying upright feels like a negotiation."
+        return "Patterns gather in the light. The music seems to have texture."
+    return "The stars are dancing in elaborate patterns. Sensation is intensely layered."
 
 
 def drink(character, now=None):

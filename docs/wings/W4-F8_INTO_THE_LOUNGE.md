@@ -128,3 +128,31 @@ Source ec2df64 selectively installed: navigation.py, inspection.py, lounge_media
 First public URL check exposed restrictive new asset permissions. Corrected only new public asset directories/files to 0755/0644; all four image URLs then returned HTTP 200, image/webp and exact manifest hashes.
 
 Verified systemd on-failure restart: old PID 839215, new PID 843841 active/running, 45 extensions loaded, Discord login and seven-subscriber heartbeat including Recovery passed. 166 isolated tests pass. Actual Discord image display remains for the player's next look/inspection; no claim of client verification yet. Previous deferred-install statements are historical. W4-F8 REVIEW, counts unchanged.
+
+## Performance tab and lager alignment — 21 October 2026
+
+Status: implemented and verified on the development branch; **not deployed**. Existing live arrival/media build remains unchanged. Karun agreed 25 restricted bar credits, one-time reveal through the counterkeeper, credit-first spending and restart persistence, then explicitly requested implementation.
+
+### Player behaviour
+
+Inspect the counterkeeper or open !bar in Neptune Lounge. An established performance arrival with the booking notice discovered receives one allowance, regardless of token ownership or prior exchange. The counterkeeper says:
+
+> The counterkeeper checks something below the counter. “Twenty-five on the tab. For the set. Apparently.” A pause. “Try to leave something for afterwards.”
+
+Subsequent inspections/menu views show the remaining balance without another grant. Purchases spend bar credit first and ordinary credits only for a shortfall. Exhausted accounts do not refill. The zero-balance menu no longer invites an unaffordable purchase. A direct !buy does not silently grant the allowance; approach through inspection or !bar first.
+
+### Eligibility and storage
+
+Efiishent's inspected legacy record has the established performance opening and discovered booking but no class field. Qualification therefore uses existing opening/discovery state and respects performance_booking=False for generic arrivals, not an invented migration or arbitrary class assignment. Dreamer-Technician scenario templating is retained direction, not a new class-wide booking grant. No clothing or token gate. No claim in a Cube or another room.
+
+performance_tab.py owns extra.performance_bar_tab_v1 = {granted: true, balance: 0..25}; version one represents this single established performance allowance, not an invented recurring gig identity. The zero-balance record retains granted=true. Corrupt tab state is rejected rather than replenished. Synchronous callback save/rollback completes before success is sent, preserving retry and preventing local callback interleaving from double-granting. Existing character storage remains persistence authority. No bulk character edits.
+
+### Lager
+
+[Author-declared Triton Lager lore](../current/items/TRITON_LAGER.md): chilled blue, non-alcoholic, refreshing/exhilarating and infused with psychedelic Neptunian microvita; excess carries high wormhole risk. triton_lager.py supplies a non-mutating item-description overlay and serving prose. Item visibility and existing healing catalogue data are retained. Existing intensity accumulation/cap/decay mechanics remain; prose is psychedelic rather than drunken, and !sober displays Microvita intensity. Rumour claims remain subjective; no diagnosis or alcohol assertion is introduced. Wormhole thresholds/rolls/destinations, new effects and outfit consequences are deferred.
+
+### Verification and return
+
+**174 isolated tests pass**, including eight new performance-tab tests: counterkeeper grant/reload/no duplicate; menu grant without token and five purchases through exhaustion; mixed bar/cash payment; failed grant rollback/retry; failed purchase rollback/retry; discovery/location/generic-arrival exclusions; malformed-tab rejection; and lore overlay preserving catalogue and visibility. Existing item-use fixture now checks that the full-health message retains its text and adds the non-alcoholic serving description. Earlier non-mutating counterkeeper tests remain valid for arrivals without a qualifying booking.
+
+Source diff check passes. No live source, catalogue, character, service or clock writes during implementation. Ready for selective deployment and then an actual !inspect counterkeeper → !bar → !buy Triton Lager player check. W4-F8 remains REVIEW; counts unchanged. Domefront and counterkeeper image delivery were subsequently confirmed in supplied Discord transcripts; hallway/stairwell image rendering remains unchecked in-client.
