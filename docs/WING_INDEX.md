@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W4 Play / W4-F8 — Into the Lounge**, REVIEW. [First pod-to-Lounge passage](wings/W4-F8_INTO_THE_LOUNGE.md) deployed 21 October; actual Discord walk pending. W6-F5 parked in REVIEW with illustrated delivery evidenced and prose/pacing retained for return. W3-F3 remains REVIEW. Twenty-two sealed.
-**22 sealed wing feathers: W4 has six, W6 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
+Current home: **W4 Play / W4-F8 — Into the Lounge**, SEALED 22 October 2026. [Passage, art and performance-tab evidence](wings/W4-F8_INTO_THE_LOUNGE.md#seal-checkpoint--22-october-2026). W6-F5 and W3-F3 remain REVIEW. Twenty-three sealed; next unallocated W4-F9.
+**23 sealed wing feathers: W4 has seven, W6 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
@@ -27,7 +27,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
-| W4 Play | 6 | [W4-F7](wings/W4-F7_GETTING_DRESSED.md) | W4-F3 review; [W4-F8 — review](wings/W4-F8_INTO_THE_LOUNGE.md); next unallocated W4-F9 |
+| W4 Play | 7 | [W4-F8](wings/W4-F8_INTO_THE_LOUNGE.md) | W4-F3 review; next unallocated W4-F9 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 4 | [W6-F4](wings/W6-F4_A_POD_WE_CAN_INHABIT.md) | [W6-F5 — review](wings/W6-F5_BEFORE_THE_FIRST_BREATH.md); next unallocated W6-F6 |
 | W7 Engine | 2 | [W7-F2](wings/W7-F2_RECOVERY_CAPSULE.md) | W7-F3 |
@@ -239,3 +239,7 @@ Karun accepted Into the Lounge: existing pod/corridor/stairwell route into an op
 ## W4-F8 performance tab deployed — 22 October 2026, 00:05 AWST
 
 [Deployment record](wings/W4-F8_INTO_THE_LOUNGE.md#performance-tab-deployment--22-october-2026-0005-awst): source 5211d25, nine code files hash verified; 174 tests pass; 61 data files unchanged during install and character hash unchanged after startup. PID 844485 active, 45 extensions, Discord and seven-subscriber heartbeat confirmed. One-time 25 bar-credit allowance and lager lore now deployed; actual player grant/spend check pending. REVIEW; twenty-two sealed. Wormhole/outfit work remains deferred. Earlier NOT-deployed statements are historical.
+
+## W4-F8 sealed — 22 October 2026
+
+Karun approved closure. [Seal and retained limits](wings/W4-F8_INTO_THE_LOUNGE.md#seal-checkpoint--22-october-2026): live route, recalled token exchange, domefront/portrait display and tab reveal → purchase → unchanged recheck verified. 174 isolated tests retain restart/failure and media coverage. W4 seven sealed, total twenty-three. Hallway/stairwell client image checks, outfit consequences, alien/implant refinements and wormhole mechanics remain follow-ups; W3-F3/W6-F5/W4-F3 review remains unchanged. Next unallocated W4-F9; candidate is discovering tomorrow's performance format/equipment/collaborators, requiring source recovery before new authoring. No runtime or data changes.

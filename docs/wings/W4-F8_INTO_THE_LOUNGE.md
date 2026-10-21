@@ -1,7 +1,7 @@
 # W4-F8 — Into the Lounge
 
 Home: **W4 Play**  
-Status: **REVIEW — deployed 21 October 2026; actual Discord walkthrough pending.**
+Status: **SEALED — bounded passage and performance tab approved 22 October 2026.**
 Allocated by Karun: 21 October 2026, Australia/Perth.  
 Source baseline: `6a5fa58`, expression/w6-f5-before-first-breath.  
 Working branch: `play/w4-f8-into-the-lounge`.  
@@ -166,3 +166,15 @@ Karun explicitly requested deployment. Source 5211d25 selectively installed: bar
 Forced exit of paused PID 843841 triggered verified on-failure restart. New PID 844485 active/running; 45 extensions loaded; Discord login and all seven heartbeat subscribers including Recovery passed with errors=0. Temporary creation drafts expire on restart as previously documented.
 
 W4-F8 remains REVIEW pending player tab grant/purchase checks. Start !inspect counterkeeper or !bar in Neptune Lounge; expect one cryptic 25-bar-credit reveal. Then !buy Triton Lager should leave 20 bar credits and preserve ordinary credits when the prior cash balance is zero. Wormhole mechanics and outfit consequences remain deferred. Earlier undeployed statements above describe their dated checkpoints. Counts unchanged.
+
+## Seal checkpoint — 22 October 2026
+
+Karun accepted the recommended bounded closure after supplied Discord playchecks. W4-F8 is SEALED: pod → hallway → stairwell → domefront → main-floor passage; contextual counterkeeper inspection recalling a prior token exchange; approved arrival artwork installed; one-time 25-bar-credit performance allowance and bar-credit-first purchase; lager presentation aligned with author-declared lore.
+
+Player evidence: 00:07 !inspect counterkeeper revealed 25 bar credits while preserving prior exchange; 00:08 !buy Triton Lager charged five bar credits and zero cash, leaving 20 bar credits and cash zero; 00:09 !bar retained 20 with no repeat reveal/grant. Domefront and counterkeeper portrait display confirmed in Discord. Earlier pod-to-main-floor transcript verifies route and attention guidance. A fresh token exchange was not repeated in this live check.
+
+174 isolated tests cover reload persistence, no repeat grants, mixed payment, exhaustion, failed-save rollback/retry, participant isolation and media bindings. Actual production restart after a granted tab was not performed as a playcheck; restart persistence remains isolated-test evidence. Latest deployment record b4a0c06; source 5211d25. No code, service or world-state changes for this seal.
+
+Explicit follow-ups: hallway/stairwell in-client image checks; outfit effect on performance/ambassador connection; counterkeeper alien skin/implant refinement; wormhole mechanics and further microvita effects; larger Discord UI and prose/pacing work. These do not expand the sealed deliverable. W3-F3, W6-F5 and W4-F3 retain their own review boundaries.
+
+Counts: W4 seven sealed, total twenty-three; W6 four and each other wing two. Next unallocated W4-F9. One next candidate, not yet allocated: discover what tomorrow night's performance involves—format, equipment and possible collaborators—by recovering existing sources before authoring missing facts. Do not invent a set format or collaborators.
