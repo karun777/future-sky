@@ -120,3 +120,11 @@ Versioned delivery WebPs and manifest live at assets/images/world/manzo/triton_c
 lounge_media.py owns a presentation-only mapping. Navigation selects the approved art for the three room IDs without changing shared room JSON; pod and all other rooms retain existing bindings. Counterkeeper inspection uses the portrait for all three token states, with no token shown in the artwork. No inventory/discovery authority is added.
 
 166 isolated tests pass, including asset-byte checks, real room/portrait render callbacks, non-mutation, main-floor preservation and cube/location boundaries. The previous pod-media assertion expecting the old Lounge image now checks the expressly approved override and retained room music. Source prepared for selective installation; deployment evidence follows separately. W4-F8 remains REVIEW; no count increment.
+
+## Artwork deployment — 21 October 2026, 23:40 AWST
+
+Source ec2df64 selectively installed: navigation.py, inspection.py, lounge_media.py, four WebPs and manifest. Existing source matched d04b03b. Private rollback backup /opt/futuresky/backups/w4f8-art-20261021-234026; eight installed file hashes match. All 61 data files unchanged while paused for install, character hash unchanged after startup. No room JSON or main-floor art replacement.
+
+First public URL check exposed restrictive new asset permissions. Corrected only new public asset directories/files to 0755/0644; all four image URLs then returned HTTP 200, image/webp and exact manifest hashes.
+
+Verified systemd on-failure restart: old PID 839215, new PID 843841 active/running, 45 extensions loaded, Discord login and seven-subscriber heartbeat including Recovery passed. 166 isolated tests pass. Actual Discord image display remains for the player's next look/inspection; no claim of client verification yet. Previous deferred-install statements are historical. W4-F8 REVIEW, counts unchanged.

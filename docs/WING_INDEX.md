@@ -227,3 +227,7 @@ Karun accepted Into the Lounge: existing pod/corridor/stairwell route into an op
 ## W4-F8 deployed — 21 October 2026, 18:14 AWST
 
 [Deployment evidence](wings/W4-F8_INTO_THE_LOUNGE.md#deployment--21-october-2026-1814-awst): four source files installed, backed up and hash verified; 61 data files unchanged during installation, character hash unchanged after startup. 161 isolated tests pass; PID 839215 active, 45 extensions, Discord login and seven-subscriber heartbeat confirmed. REVIEW pending actual player walk; twenty-two sealed. New outfit/bar-credit/template notes remain pending. Earlier undeployed statements are historical.
+
+## W4-F8 artwork installed — 21 October 2026, 23:40 AWST
+
+[Art deployment](wings/W4-F8_INTO_THE_LOUNGE.md#artwork-deployment--21-october-2026-2340-awst): approved hallway, stairwell, domefront and first counterkeeper portrait bound without rewriting live room data. Main-floor art retained. 166 tests pass; four public WebPs return HTTP 200 and exact hashes; PID 843841, 45 extensions, Discord/heartbeat verified. Player route to main floor and recalled prior exchange evidenced; new art client check pending. Counterkeeper alien-skin/implant refinements and performance bar credit remain return work. REVIEW, twenty-two sealed.
