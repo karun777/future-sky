@@ -1,7 +1,7 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W4 Play / W4-F8 — Into the Lounge**, REVIEW. [First pod-to-Lounge passage](wings/W4-F8_INTO_THE_LOUNGE.md) implemented and verified offline; not deployed. W6-F5 parked in REVIEW with illustrated delivery evidenced and prose/pacing retained for return. W3-F3 remains REVIEW. Twenty-two sealed.
+Current home: **W4 Play / W4-F8 — Into the Lounge**, REVIEW. [First pod-to-Lounge passage](wings/W4-F8_INTO_THE_LOUNGE.md) deployed 21 October; actual Discord walk pending. W6-F5 parked in REVIEW with illustrated delivery evidenced and prose/pacing retained for return. W3-F3 remains REVIEW. Twenty-two sealed.
 **22 sealed wing feathers: W4 has six, W6 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
@@ -223,3 +223,7 @@ Karun accepted Into the Lounge: existing pod/corridor/stairwell route into an op
 ## W4-F8 next-run notes — 21 October 2026
 
 [Author additions and return](wings/W4-F8_INTO_THE_LOUNGE.md#author-notes-and-next-run-return--21-october-2026): Dreamer-Technician scenario template within chapters; Freeform Attire versus performing in uniform; cryptic, more generous performance-linked bar credit. Uniform effect on ambassador connection and credit details remain open. 7af026e tested but not deployed; Karun allows its deployment if convenient, without requiring these additions first. No live changes or completed-count increment. Resume from this return rather than treating proposed credit/clothing consequences as implemented.
+
+## W4-F8 deployed — 21 October 2026, 18:14 AWST
+
+[Deployment evidence](wings/W4-F8_INTO_THE_LOUNGE.md#deployment--21-october-2026-1814-awst): four source files installed, backed up and hash verified; 61 data files unchanged during installation, character hash unchanged after startup. 161 isolated tests pass; PID 839215 active, 45 extensions, Discord login and seven-subscriber heartbeat confirmed. REVIEW pending actual player walk; twenty-two sealed. New outfit/bar-credit/template notes remain pending. Earlier undeployed statements are historical.

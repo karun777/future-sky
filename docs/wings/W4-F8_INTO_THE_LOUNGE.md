@@ -1,7 +1,7 @@
 # W4-F8 — Into the Lounge
 
 Home: **W4 Play**  
-Status: **REVIEW — implemented and verified offline; not deployed or played in Discord.**  
+Status: **REVIEW — deployed 21 October 2026; actual Discord walkthrough pending.**
 Allocated by Karun: 21 October 2026, Australia/Perth.  
 Source baseline: `6a5fa58`, expression/w6-f5-before-first-breath.  
 Working branch: `play/w4-f8-into-the-lounge`.  
@@ -94,3 +94,13 @@ Karun likes the direction and supplied these additions after implementation comm
 Karun permits deployment of the already-tested build if convenient and asks for these notes to be retained for the next run. Decision this session: leave 7af026e ready, undeployed; no runtime or live-state changes. Deployment permission for that bounded build is retained, subject to a fresh operational preflight. These additions need not be completed before deploying the existing build.
 
 **Next-run starting point:** read these notes, inspect the existing bar/tab and performance-arrival state, then shape the cryptic performance bar credit without inventing its amount or the uniform outcome. Keep the current first passage and its 161-test evidence separate from these pending additions. W4-F8 remains REVIEW, counts unchanged.
+
+## Deployment — 21 October 2026, 18:14 AWST
+
+Karun explicitly requested deployment. Implementation 7af026e with notes checkpoint 603e2a6 installed selectively: navigation.py, inspection.py, router.py and new lounge_arrival.py. Existing three source files matched baseline 6a5fa58 exactly before replacement. 161 isolated tests passed again immediately before installation.
+
+Private backup and hash manifest: /opt/futuresky/backups/w4f8-20261021-181414. Process 831925 paused for installation; all 61 data-file hashes unchanged during install. Four installed source hashes verified, including after restart; character-file hash remains unchanged after startup. No room/item/character reset or replacement.
+
+Forced exit of paused process triggered verified systemd Restart=on-failure. New PID 839215 active/running; all 45 extensions loaded, Discord login confirmed, initial heartbeat passed all seven subscribers including Recovery with errors=0. Temporary creation drafts expire on restart as previously documented.
+
+Status: REVIEW — deployed, actual Discord walk pending. User's Dreamer-Technician template, clothing and cryptic performance bar-credit additions remain notes for the next run, not part of this install. Counts unchanged. Start with !look in the player's server run channel; inspect location before issuing movement. This passage is outside disposable !begin preview.
