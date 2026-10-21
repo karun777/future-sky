@@ -235,3 +235,7 @@ Karun accepted Into the Lounge: existing pod/corridor/stairwell route into an op
 ## W4-F8 performance-tab build — 21 October 2026
 
 [Home implementation/return](wings/W4-F8_INTO_THE_LOUNGE.md#performance-tab-and-lager-alignment--21-october-2026): agreed one-time 25 bar-credit grant on counterkeeper/menu approach, persisted and spent before cash. Eligibility uses discovered established booking; generic non-performance arrivals excluded. [Triton Lager lore](current/items/TRITON_LAGER.md) adopted from Karun: chilled blue non-alcoholic psychedelic microvita infusion; excess wormhole risk, mechanics deferred. 174 tests pass; this tab/lore build is NOT deployed. Earlier arrival/media deployment remains active. Domefront/portrait confirmed in Discord; hallway/stairwell image client checks pending. REVIEW; twenty-two sealed; outfit consequences remain open.
+
+## W4-F8 performance tab deployed — 22 October 2026, 00:05 AWST
+
+[Deployment record](wings/W4-F8_INTO_THE_LOUNGE.md#performance-tab-deployment--22-october-2026-0005-awst): source 5211d25, nine code files hash verified; 174 tests pass; 61 data files unchanged during install and character hash unchanged after startup. PID 844485 active, 45 extensions, Discord and seven-subscriber heartbeat confirmed. One-time 25 bar-credit allowance and lager lore now deployed; actual player grant/spend check pending. REVIEW; twenty-two sealed. Wormhole/outfit work remains deferred. Earlier NOT-deployed statements are historical.

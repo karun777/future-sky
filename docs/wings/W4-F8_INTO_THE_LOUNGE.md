@@ -156,3 +156,13 @@ performance_tab.py owns extra.performance_bar_tab_v1 = {granted: true, balance: 
 **174 isolated tests pass**, including eight new performance-tab tests: counterkeeper grant/reload/no duplicate; menu grant without token and five purchases through exhaustion; mixed bar/cash payment; failed grant rollback/retry; failed purchase rollback/retry; discovery/location/generic-arrival exclusions; malformed-tab rejection; and lore overlay preserving catalogue and visibility. Existing item-use fixture now checks that the full-health message retains its text and adds the non-alcoholic serving description. Earlier non-mutating counterkeeper tests remain valid for arrivals without a qualifying booking.
 
 Source diff check passes. No live source, catalogue, character, service or clock writes during implementation. Ready for selective deployment and then an actual !inspect counterkeeper → !bar → !buy Triton Lager player check. W4-F8 remains REVIEW; counts unchanged. Domefront and counterkeeper image delivery were subsequently confirmed in supplied Discord transcripts; hallway/stairwell image rendering remains unchecked in-client.
+
+## Performance-tab deployment — 22 October 2026, 00:05 AWST
+
+Karun explicitly requested deployment. Source 5211d25 selectively installed: bar_shop.py, cogs/bar_shop.py, cogs/inspection.py, cogs/intoxication.py, intoxication.py, item_inspection.py, item_usage.py and new performance_tab.py/triton_lager.py. All pre-existing target files matched the reviewed 2ddb28c baseline; nine installed source hashes verified after restart.
+
+174 isolated tests rerun and passed immediately before install. Private rollback backup: /opt/futuresky/backups/w4f8-tab-20261022-000530. All 61 data-file hashes unchanged during paused installation; character-file hash unchanged after restart. No bulk grant or live catalogue rewrite: eligible credit is saved only when the player next approaches the counterkeeper or menu.
+
+Forced exit of paused PID 843841 triggered verified on-failure restart. New PID 844485 active/running; 45 extensions loaded; Discord login and all seven heartbeat subscribers including Recovery passed with errors=0. Temporary creation drafts expire on restart as previously documented.
+
+W4-F8 remains REVIEW pending player tab grant/purchase checks. Start !inspect counterkeeper or !bar in Neptune Lounge; expect one cryptic 25-bar-credit reveal. Then !buy Triton Lager should leave 20 bar credits and preserve ordinary credits when the prior cash balance is zero. Wormhole mechanics and outfit consequences remain deferred. Earlier undeployed statements above describe their dated checkpoints. Counts unchanged.
