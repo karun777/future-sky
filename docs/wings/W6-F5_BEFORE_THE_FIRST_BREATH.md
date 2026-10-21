@@ -122,3 +122,7 @@ Source d7043cc installed selectively: arrival.py, new arrival_media.py, five ver
 Supervised forced restart via SIGKILL of paused PID 830880 and systemd Restart=on-failure, not graceful shutdown. New PID 831925 active/running. All 45 extensions loaded; Discord login and Recovery heartbeat confirmed. All five public image URLs HTTP 200 with exact source hashes. Existing temporary drafts expired with restart as documented. No character recreation/reset or media changes to ordinary pod inspection.
 
 W6-F5 remains REVIEW pending actual illustrated DM preview. Start !begin preview, then class, name/date, body/embodiment, review, awaken, cancel. Prose/images should advance at stage boundaries. No new buttons/forms or broader UI exploration. W3-F3 remains REVIEW; total twenty-two sealed.
+
+## Player feedback and parked return — 21 October 2026
+
+Supplied Discord transcript verifies all five stage images/prose through review and awakening. Karun likes the images; the run felt good as a mostly functional check. Prose and timing need work and immersion was not closely evaluated. He chose to return later and authorised W4-F8 — Into the Lounge. Keep REVIEW, counts unchanged. Final cancellation of this illustrated draft is not evidenced here; earlier W3-F3 cancellation remains separately verified. No final prose approval or new runtime change. See [W4-F8 return](W4-F8_INTO_THE_LOUNGE.md).

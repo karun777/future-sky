@@ -2,6 +2,7 @@
 import discord
 from discord.ext import commands
 from fsbot.item_inspection import inspect_item
+from fsbot.lounge_arrival import counterkeeper_view
 from fsbot.pod_media import pod_image
 from fsbot.pod_opening import (GUIDANCE, opening_state, scene_target, prepare_observation, pod_bearings)
 
@@ -86,6 +87,13 @@ class InspectionCog(commands.Cog):
         character = storage.characters.get(str(ctx.author.id))
         if not isinstance(character, dict):
             await ctx.send("Create a character first.")
+            return
+        local_view = counterkeeper_view(character, item)
+        if local_view:
+            title, text, guidance = local_view
+            embed = discord.Embed(title=title, description=text, color=discord.Color.dark_teal())
+            embed.add_field(name="Your attention", value=guidance, inline=False)
+            await ctx.send(embed=embed)
             return
         target = scene_target(item)
         if (target and character.get("current_room") == "pod_room"

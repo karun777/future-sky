@@ -40,6 +40,7 @@ from fsbot.cogs.router import ensure_player_run_channel
 from fsbot.events import create_event
 from fsbot.pod_opening import pod_bearings, GUIDANCE
 from fsbot.pod_media import pod_image
+from fsbot.lounge_arrival import arrival_attention
 
 
 # ============================================================
@@ -420,6 +421,9 @@ class NavigationCog(commands.Cog):
             title,
             content,
         )
+        attention = arrival_attention(ch, room)
+        if attention:
+            embed.add_field(name=attention[0], value=attention[1], inline=False)
         # --------------------------------------------------
         # TELEMETRY
         # --------------------------------------------------
