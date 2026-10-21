@@ -104,12 +104,14 @@ class PodMediaTests(unittest.IsolatedAsyncioTestCase):
         await self.inspect("panels")
         self.assertEqual(self.storage.characters, before)
 
-    async def test_non_pod_look_retains_existing_room_image(self):
+    async def test_lounge_uses_approved_override_and_retains_music(self):
         self.char()["current_room"] = "neptune_lounge"
         self.storage.rooms["neptune_lounge"]["image"] = "https://example.test/lounge.png"
         self.bot.state.play_music = AsyncMock()
         await self.look()
-        self.assertEqual(self.ctx.messages[0]["embed"].image.url, "https://example.test/lounge.png")
+        from fsbot.lounge_media import lounge_image
+        self.assertEqual(self.ctx.messages[0]["embed"].image.url, lounge_image(self.char()))
+        self.assertEqual(self.storage.rooms["neptune_lounge"]["image"], "https://example.test/lounge.png")
         self.bot.state.play_music.assert_awaited_once()
 
 

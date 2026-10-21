@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 from fsbot.item_inspection import inspect_item
 from fsbot.lounge_arrival import counterkeeper_view
+from fsbot.lounge_media import lounge_image
 from fsbot.pod_media import pod_image
 from fsbot.pod_opening import (GUIDANCE, opening_state, scene_target, prepare_observation, pod_bearings)
 
@@ -93,6 +94,9 @@ class InspectionCog(commands.Cog):
             title, text, guidance = local_view
             embed = discord.Embed(title=title, description=text, color=discord.Color.dark_teal())
             embed.add_field(name="Your attention", value=guidance, inline=False)
+            image_url = lounge_image(character, "counterkeeper")
+            if image_url:
+                embed.set_image(url=image_url)
             await ctx.send(embed=embed)
             return
         target = scene_target(item)

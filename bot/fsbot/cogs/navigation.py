@@ -41,6 +41,7 @@ from fsbot.events import create_event
 from fsbot.pod_opening import pod_bearings, GUIDANCE
 from fsbot.pod_media import pod_image
 from fsbot.lounge_arrival import arrival_attention
+from fsbot.lounge_media import lounge_image
 
 
 # ============================================================
@@ -431,7 +432,7 @@ class NavigationCog(commands.Cog):
         hud_cog = self.bot.get_cog("HudCog")
         hud_panel = hud_cog.panel(user_id) if hud_cog else None
 
-        image_url = pod_image(ch, "room") or room.get("image")
+        image_url = pod_image(ch, "room") or lounge_image(ch) or room.get("image")
         if isinstance(image_url, str) and image_url:
             embed.set_image(url=image_url)
 

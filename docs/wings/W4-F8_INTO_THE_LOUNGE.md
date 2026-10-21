@@ -104,3 +104,19 @@ Private backup and hash manifest: /opt/futuresky/backups/w4f8-20261021-181414. P
 Forced exit of paused process triggered verified systemd Restart=on-failure. New PID 839215 active/running; all 45 extensions loaded, Discord login confirmed, initial heartbeat passed all seven subscribers including Recovery with errors=0. Temporary creation drafts expire on restart as previously documented.
 
 Status: REVIEW — deployed, actual Discord walk pending. User's Dreamer-Technician template, clothing and cryptic performance bar-credit additions remain notes for the next run, not part of this install. Counts unchanged. Start with !look in the player's server run channel; inspect location before issuing movement. This passage is outside disposable !begin preview.
+
+## Live passage and approved image bindings — 21 October 2026
+
+Karun supplied Discord output showing pod → hallway → stairwell → domefront → main floor. Hallway/stairwell attention guidance and known gig reminder arrived correctly. Counterkeeper inspection recalled an already-completed token exchange; this playcheck did not perform a new exchange. Bar menu showed Triton Lager at 5 credits and balance 0; performance bar credit remains unimplemented. Existing main-floor image is liked and must remain.
+
+Four built-in image-generation concepts were reviewed and accepted for initial use, with installation explicitly requested:
+- Hallway: curved pod doors, personal alcoves, plants, woven floor, warm metal and Lounge light at the bend.
+- Stairwell: continuity with hallway, stairs linking quiet hostel and warmer Lounge, side doorway and practical rails.
+- Domefront: lived-in social lounge, bar/counter, music and vast Neptune through reinforced glass. Anonymous pictured patrons are illustrative, not actual presence or named character identities.
+- Counterkeeper: human-but-alien, fae, asexual author direction; first portrait accepted as a start. Alien skin variation and visible integrated implants are future refinements. Asexuality is not inferred from appearance. No new royal identity assigned.
+
+Versioned delivery WebPs and manifest live at assets/images/world/manzo/triton_central/neptune_lounge/arrival_route/v1. Manifest records each original generated PNG identifier/hash, original dimensions, delivery hash/bytes and encoding (quality 90 WebP, no crop or semantic edit). Original PNGs remain in generated-image storage; supplied generation prompts and approvals are in this conversation. No generated prop or extra moon establishes new world canon.
+
+lounge_media.py owns a presentation-only mapping. Navigation selects the approved art for the three room IDs without changing shared room JSON; pod and all other rooms retain existing bindings. Counterkeeper inspection uses the portrait for all three token states, with no token shown in the artwork. No inventory/discovery authority is added.
+
+166 isolated tests pass, including asset-byte checks, real room/portrait render callbacks, non-mutation, main-floor preservation and cube/location boundaries. The previous pod-media assertion expecting the old Lounge image now checks the expressly approved override and retained room music. Source prepared for selective installation; deployment evidence follows separately. W4-F8 remains REVIEW; no count increment.

@@ -1,0 +1,46 @@
+{
+  "hallway.webp": {
+    "generation": "exec-81b183eb-2622-4395-889e-54f4dda7497e.png",
+    "source_sha256": "6e9ecce8f320a1929c84dcb264d29998215275ab38154808ae444ab40e73ca2e",
+    "sha256": "a9d46fc3b797db13316b1176ef2948ed27588a15aad3d616d370999aa7cd55db",
+    "bytes": 276036,
+    "dimensions": [
+      1774,
+      887
+    ],
+    "encoding": "WebP quality 90; original dimensions; no semantic edits"
+  },
+  "stairwell.webp": {
+    "generation": "exec-0ca06d7d-c124-42e0-b5f3-b04a904dded6.png",
+    "source_sha256": "8f87645ba1dac47390535481abf0a74b3e083fceb6550fb6ad5479bcfd732adf",
+    "sha256": "fb050a18c98943f64ce8514660c7a5db7ada49d342b4330992e8e9ea8c453f27",
+    "bytes": 307436,
+    "dimensions": [
+      1672,
+      941
+    ],
+    "encoding": "WebP quality 90; original dimensions; no semantic edits"
+  },
+  "domefront.webp": {
+    "generation": "exec-d1ce0786-3c20-4276-9f70-cb36f561f9fb.png",
+    "source_sha256": "4064cf691c92001260a4976660f7177d98d501902c9f5a3b82088da729e60d6f",
+    "sha256": "742c11e9d1a4d00199f3310a321efd0e895eb209a750d85c990ef49fd58780a7",
+    "bytes": 404122,
+    "dimensions": [
+      1774,
+      887
+    ],
+    "encoding": "WebP quality 90; original dimensions; no semantic edits"
+  },
+  "counterkeeper.webp": {
+    "generation": "exec-464cff0f-0fc2-406b-8ee0-880869177697.png",
+    "source_sha256": "52940ae43b47496375279e570124b5f103316ac16a7bbd4aac6e7c1b9e14a760",
+    "sha256": "7b227f42ceb307091ef390313a7b8dc887ae16a0f27b9f315ac3505defe37b4d",
+    "bytes": 271338,
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "encoding": "WebP quality 90; original dimensions; no semantic edits"
+  }
+}
