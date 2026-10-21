@@ -80,3 +80,17 @@ Keep W6-F5 in REVIEW. Image delivery/functionality is evidenced; immersive pacin
 ## Return
 
 Review this first passage before installation. Next check is a controlled live walk from the existing pod to the counterkeeper, preserving Efiishent's actual state and accepting either a prior exchange or no token rather than resetting him to force the scene. Full gig preparation and the allied-representative quest remain W4-F3 authoring work; they are not silently implemented here.
+
+## Author notes and next-run return — 21 October 2026
+
+Karun likes the direction and supplied these additions after implementation commit 7af026e. They are recorded direction, not implemented behaviour:
+
+- Scenarios are interactions within chapters. This scenario pathway will serve as a template for Dreamer-Technician players; Efiishent's particular history and relationship remain distinct. The existing generic token exchange is not automatically made class-exclusive by this note.
+- Freeform Attire is the intended performance outfit. With another outfit, the player must return to change or perform in uniform. Performing is required for vibing with the princess/ambassador in this pathway. Whether uniform performance prevents that connection or can still succeed remains explicitly unanswered; do not impose either outcome. No Lounge-entry clothing gate was requested.
+- The counterkeeper supplies a more generous bar credit associated with the performance, cryptically hinting at arrangements the player does not yet understand. Exact amount, eligibility, timing, one-time grant and spending rules await the next bounded implementation. Do not conflate restricted bar credit with ordinary credits or claim the grant is already present.
+- Assistant sample dialogue (“There's something on your tab” / “For the set. Apparently.”) is candidate copy, not fixed canon.
+- Karun mentioned another thought he could not recall. Leave it unresolved rather than inventing it.
+
+Karun permits deployment of the already-tested build if convenient and asks for these notes to be retained for the next run. Decision this session: leave 7af026e ready, undeployed; no runtime or live-state changes. Deployment permission for that bounded build is retained, subject to a fresh operational preflight. These additions need not be completed before deploying the existing build.
+
+**Next-run starting point:** read these notes, inspect the existing bar/tab and performance-arrival state, then shape the cryptic performance bar credit without inventing its amount or the uniform outcome. Keep the current first passage and its 161-test evidence separate from these pending additions. W4-F8 remains REVIEW, counts unchanged.

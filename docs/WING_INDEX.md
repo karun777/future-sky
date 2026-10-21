@@ -219,3 +219,7 @@ W6-F5 deployed checkpoint, 20 October 20:40: d7043cc installed; 156 isolated tes
 ## W4-F8 switch — 21 October 2026
 
 Karun accepted Into the Lounge: existing pod/corridor/stairwell route into an optional counterkeeper interaction. [Home record](wings/W4-F8_INTO_THE_LOUNGE.md) preserves W6-F5 feedback and shared-wing checkpoints. 161 isolated tests pass, including real movement-to-exchange callbacks on temporary fictional records. REVIEW, not deployed; W4 six sealed, total twenty-two; next unallocated W4-F9. W6-F5 images liked and functional delivery confirmed, prose/timing and immersive evaluation deferred. No live data or service changes.
+
+## W4-F8 next-run notes — 21 October 2026
+
+[Author additions and return](wings/W4-F8_INTO_THE_LOUNGE.md#author-notes-and-next-run-return--21-october-2026): Dreamer-Technician scenario template within chapters; Freeform Attire versus performing in uniform; cryptic, more generous performance-linked bar credit. Uniform effect on ambassador connection and credit details remain open. 7af026e tested but not deployed; Karun allows its deployment if convenient, without requiring these additions first. No live changes or completed-count increment. Resume from this return rather than treating proposed credit/clothing consequences as implemented.
