@@ -317,6 +317,7 @@ EXTENSIONS = [
     "fsbot.cogs.item_transfer",
     "fsbot.cogs.inspection",
     "fsbot.cogs.arrival",
+    "fsbot.cogs.terrace",
     "fsbot.cogs.gifting",
     "fsbot.cogs.item_usage",
     "fsbot.cogs.bar_shop",

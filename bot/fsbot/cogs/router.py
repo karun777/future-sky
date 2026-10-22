@@ -81,6 +81,7 @@ ROUTE_GAMEPLAY_COMMANDS: Set[str] = {
     # Core / onboarding
     "create_character",
     "awaken",
+    "terrace",
     "hud",
     "hud_on",
     "hud_off",

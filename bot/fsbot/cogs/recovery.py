@@ -73,12 +73,13 @@ class RecoveryCog(commands.Cog):
         try:
             if action == "collect":
                 self.service.collect(uid)
-                await ctx.send("Your pod delivery is in your bag. Repeating collection adds nothing twice.")
+                await ctx.send("Your pod delivery is back in your possession. Repeating collection adds nothing twice.")
             elif action:
                 await ctx.send("Use `!pod_delivery` or `!pod_delivery collect`.")
             else:
                 pod = self.bot.storage.characters[uid].get("extra", {}).get("pod_delivery", {})
-                count = sum(pod.get("items", {}).values())
+                from fsbot.terrace_delivery import secured_inventory_lines
+                count = sum(pod.get("items", {}).values()) + len(secured_inventory_lines(self.bot.storage.characters[uid]))
                 await ctx.send(f"Your private pod delivery holds {count} item(s). Collect in the pod after reanimation: `!pod_delivery collect`.")
         except Exception:
             await ctx.send("Delivery could not be collected. Be in the pod after reanimation; retry if saving failed.")

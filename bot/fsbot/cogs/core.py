@@ -773,6 +773,13 @@ class CoreCog(commands.Cog):
         embed = discord.Embed(title=f"{c.get('name', 'Traveler')} — Inventory")
         embed.add_field(name="Equipped", value=fmt_equipped(equipped_pretty), inline=False)
         embed.add_field(name="Bag", value=fmt_bag(bag_pretty), inline=False)
+        from fsbot.terrace_delivery import inventory_lines, TerraceError
+        try:
+            delivery = inventory_lines(c)
+        except TerraceError:
+            delivery = ["Delivery record unavailable."]
+        if delivery:
+            embed.add_field(name="Personal delivery", value="\n".join(delivery), inline=False)
         await ctx.send(embed=embed)
 
     @commands.command(name="inventory_debug", aliases=["invdebug"])

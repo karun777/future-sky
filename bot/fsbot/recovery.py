@@ -71,7 +71,8 @@ def begin(character, now, items, *, cause, brain_intact=True):
     status["sneaking"] = False
     status["pending_return_echo"] = False
     updated.pop("pending_return_echo", None)
-    return updated
+    from fsbot.terrace_delivery import secure_delivery
+    return secure_delivery(updated)
 
 
 def complete(character, now):
@@ -138,4 +139,6 @@ class RecoveryService:
         for item, qty in pod.get("items", {}).items():
             updated.setdefault("bag", {})[item] = updated.get("bag", {}).get(item, 0) + qty
         pod["items"] = {}
+        from fsbot.terrace_delivery import release_delivery
+        updated = release_delivery(updated)
         return self.commit(uid, updated)

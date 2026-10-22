@@ -42,6 +42,7 @@ from fsbot.pod_opening import pod_bearings, GUIDANCE
 from fsbot.pod_media import pod_image
 from fsbot.lounge_arrival import arrival_attention
 from fsbot.lounge_media import lounge_image
+from fsbot.terrace_delivery import guidance as terrace_guidance, TerraceError
 
 
 # ============================================================
@@ -425,6 +426,12 @@ class NavigationCog(commands.Cog):
         attention = arrival_attention(ch, room)
         if attention:
             embed.add_field(name=attention[0], value=attention[1], inline=False)
+        try:
+            terrace_hint = terrace_guidance(ch)
+        except TerraceError:
+            terrace_hint = None
+        if terrace_hint:
+            embed.add_field(name=terrace_hint[0], value=terrace_hint[1], inline=False)
         # --------------------------------------------------
         # TELEMETRY
         # --------------------------------------------------

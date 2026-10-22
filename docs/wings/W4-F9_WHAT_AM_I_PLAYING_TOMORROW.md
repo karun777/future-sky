@@ -171,3 +171,11 @@ The explicit attend → notice sky pair, synthetic terrace ID, personal fixture 
 The transcript runs through look → attention → arrival → address → pickup → wrapping → key/box → tunes → USB pickup, then leaves/returns and proves the delivery does not repeat. Each session is discarded on exit; saved reload during its lifetime is verified, not production restart recovery.
 
 No production tests rerun for this isolated authoring-only change; the previously verified 174-test runtime build is untouched. No deployment, service restart or live room/item/character/clock changes performed. W4-F9 remains ACTIVE for review, twenty-three sealed. Next bounded return: read/try the rehearsal, assess sequence and pacing, then select the first runtime integration boundary without presuming the causal loop is solved.
+
+## Discord integration prepared — 22 October 2026
+
+[First playable terrace implementation and boundaries](W4-F9_FIRST_PLAYABLE_TERRACE.md), with [real callback transcript](W4-F9_DISCORD_CALLBACK_REHEARSAL.md). Runtime implementation now prepared on this branch: content-owned terrace/exit registration, private run-channel !terrace command, standard inspection/inventory bridges and existing recovery/pod-collection compatibility. 190 runtime tests pass, including sixteen new callback/persistence/recovery cases. Earlier eighteen authoring tests remain separate evidence.
+
+No live deployment yet. All seven pre-existing target files matched source baseline during dated preparation checks. Delivery holdings are explicitly scene-owned with stable identities and shown in !inventory; generic trading/storage/copy is not enabled for them. Future send/disappearance remains unresolved and unimplemented. New terrace is text-only; habitat technology/viewers/art not invented. Explicit attention actions provide first-pass pacing without a timer or smoking requirement.
+
+Next bounded action: review the runtime passage and selectively deploy with backup and refreshed live-source checks, then verify 46 cogs, Discord readiness, heartbeat and actual player passage. W4-F9 ACTIVE for review; twenty-three sealed. No live data or service changes during preparation.

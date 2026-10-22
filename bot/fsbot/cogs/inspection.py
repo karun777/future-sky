@@ -90,6 +90,9 @@ class InspectionCog(commands.Cog):
         if not isinstance(character, dict):
             await ctx.send("Create a character first.")
             return
+        terrace = getattr(self.bot, "get_cog", lambda name: None)("TerraceCog")
+        if terrace and await terrace.inspect_target(ctx, item):
+            return
         local_view = counterkeeper_view(character, item)
         if local_view:
             try:

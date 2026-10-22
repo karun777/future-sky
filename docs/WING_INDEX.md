@@ -266,3 +266,7 @@ Karun authorised What Am I Playing Tomorrow and supplied an outdoor smoking/look
 ## W4-F9 isolated terrace rehearsal — 22 October 2026
 
 [Home record and limits](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md#isolated-terrace-delivery-rehearsal--22-october-2026), [demo transcript](wings/W4-F9_TERRACE_REHEARSAL_TRANSCRIPT.md) and [interactive run instructions](../tools/authoring/w4f9/README.md). 18 authoring tests pass through terrace attention, once-only arrival, separate package/box/key/tunes actions, reload/re-entry and save-failure retries on fictional temporary storage. Provisional lineage reserved; future send/invalidation not implemented. No production cog, data or service changes. ACTIVE; twenty-three sealed.
+
+## W4-F9 runtime integration ready — 22 October 2026
+
+[Prepared first playable terrace](wings/W4-F9_FIRST_PLAYABLE_TERRACE.md) adds one registered room/exit, TerraceCog and command, standard inspection/inventory integration and recovery compatibility. 190 runtime tests pass; [callback rehearsal](wings/W4-F9_DISCORD_CALLBACK_REHEARSAL.md) uses fictional temporary JSON. No live deployment; new content not yet playable in Discord. Future Cube send/vanishing and later Queen/rat/sabotage work remain open. ACTIVE for review, twenty-three sealed.
