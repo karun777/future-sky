@@ -157,3 +157,17 @@ Document checks only; no runtime implementation, deployment or live-state change
 ## Rat messenger clarification — 22 October 2026
 
 The tip leads to an **actual rat**, which carries a message to the Dark Rat Queen and arranges a meeting. The rat is an intermediary, not the Queen in another form. The subsequent meeting carries the Queen's rapport/fee/music passage. [Conditions and encounter sequence](W4-F9_MUSIC_CUSTODY_AND_CONDITIONS.md#rat-intermediary-clarification--22-october-2026) updated in place to remove the earlier ambiguity. Messenger personality, communication and meeting details intentionally deferred by Karun. No existing enemy rat is assigned the messenger role. No runtime changes.
+
+## Isolated terrace-delivery rehearsal — 22 October 2026
+
+Karun authorised an isolated rehearsal from appreciating the view to finding tunes, with fictional records, separate actions, save/reload and duplicate prevention. [Implementation and run instructions](../../tools/authoring/w4f9/README.md); [complete demo transcript](W4-F9_TERRACE_REHEARSAL_TRANSCRIPT.md).
+
+Implemented only under tools/authoring/w4f9, never loaded by the bot. A pure transition selects conditional scenes; a controller loads/saves an internally-created temporary fictional JSON file before presenting success. Package, antique box and USB have separate experimental instance IDs and holders. Opening each layer and collecting the USB are separate actions; no new contents or sender knowledge before discovery. The neck key is a fixture-supplied capability, not a new live catalogue definition.
+
+18 executed tests pass: eligible performance/known booking vs ordinary fixtures; terrace/attention gates; no arrival from look or movement alone; optional address reading; departure and return before pickup; opening carried material elsewhere; locked-box/key constraints; name recognition variants; no premature contents; per-fixture isolation; repeat/re-entry idempotence; reload with controller recreation; failed-save retry at every mutating action; pure transitions and temporary marker; provisional future metadata without spoilers or send/deletion powers. Test invocation and exact limits are in the README.
+
+The explicit attend → notice sky pair, synthetic terrace ID, personal fixture deliveries and temporary custody shapes are review choices, not adopted timers, extra mandatory clicks, world geometry or multiplayer policy. The USB's unresolved/provisional lineage is retained internally; no disappearance trigger, future sender disclosure, sabotage effect or copying rule is implemented. No simulation of the Queen encounter is substituted for the actual rat messenger.
+
+The transcript runs through look → attention → arrival → address → pickup → wrapping → key/box → tunes → USB pickup, then leaves/returns and proves the delivery does not repeat. Each session is discarded on exit; saved reload during its lifetime is verified, not production restart recovery.
+
+No production tests rerun for this isolated authoring-only change; the previously verified 174-test runtime build is untouched. No deployment, service restart or live room/item/character/clock changes performed. W4-F9 remains ACTIVE for review, twenty-three sealed. Next bounded return: read/try the rehearsal, assess sequence and pacing, then select the first runtime integration boundary without presuming the causal loop is solved.

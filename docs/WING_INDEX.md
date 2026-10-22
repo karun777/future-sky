@@ -262,3 +262,7 @@ Karun authorised What Am I Playing Tomorrow and supplied an outdoor smoking/look
 ## W4-F9 rat intermediary return — 22 October 2026
 
 [Clarified sequence](wings/W4-F9_MUSIC_CUSTODY_AND_CONDITIONS.md#rat-intermediary-clarification--22-october-2026): tip → actual rat → message carried to Queen → meeting arranged → Queen encounter/rapport/fee/music. Messenger is distinct from Queen; her princess identity remains the authored twist. Personality, communication and meeting logistics deferred; no existing enemy rat selected. Documentary correction only, ACTIVE, twenty-three sealed.
+
+## W4-F9 isolated terrace rehearsal — 22 October 2026
+
+[Home record and limits](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md#isolated-terrace-delivery-rehearsal--22-october-2026), [demo transcript](wings/W4-F9_TERRACE_REHEARSAL_TRANSCRIPT.md) and [interactive run instructions](../tools/authoring/w4f9/README.md). 18 authoring tests pass through terrace attention, once-only arrival, separate package/box/key/tunes actions, reload/re-entry and save-failure retries on fictional temporary storage. Provisional lineage reserved; future send/invalidation not implemented. No production cog, data or service changes. ACTIVE; twenty-three sealed.
