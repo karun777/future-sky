@@ -113,3 +113,5 @@ Actual Discord movement/terrace delivery remains for the player's check. Start w
 ### 22 October 2026 — Shorter box reveal
 
 Author approved combining capsule opening, neck-key unlock and USB reveal into one action. `!terrace open capsule` now saves the complete reveal, shows the antique-box image and prompts `!terrace take tunes`. Internal instance IDs, provisional provenance and recovery safeguards remain. Old intermediate stages can use the same opening action; no player-specific migration or reset. Legacy detailed commands remain accepted. Current playcheck pacing supersedes the earlier granular command sequence. Full runtime suite: 200 tests passed. W4-F9 remains ACTIVE/REVIEW.
+
+Deployment verified: source `5ba8587`; backup `/opt/futuresky/backups/w4f9-box-20261022-133310/deployment.json`; four selected files installed, 61 data files unchanged during installation. Service PID 857618 reconnected to Discord; seven heartbeat subscribers completed with zero errors. Public box.webp returned HTTP 200 image/webp with matching SHA-256. No player record reset or migration.
