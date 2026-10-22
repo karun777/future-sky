@@ -183,3 +183,13 @@ Next bounded action: review the runtime passage and selectively deploy with back
 ## First playable terrace deployed — 22 October 2026, 12:38 AWST
 
 [Deployment evidence](W4-F9_FIRST_PLAYABLE_TERRACE.md#deployment--22-october-2026-1238-awst): source f11ec66, nine files installed with backup/hash checks; 190 runtime tests pass; all 61 data files unchanged during installation and character file unchanged after restart. PID 856490 active, 46 extensions including TerraceCog, Discord login and seven-subscriber heartbeat verified. No player relocation or forced encounter. Next: actual Discord !look and terrace passage. W4-F9 ACTIVE/REVIEW, twenty-three sealed. Deferred causal/Queen/sabotage work unchanged.
+
+## Stardock Overlook artwork deployed — 22 October 2026, 12:44 AWST
+
+Karun approved generated concept exec-e40e4939-7004-4852-b538-48e733bfc22d.png and explicitly requested installation. Image: long reinforced windowline, working stardock, layered ship/city reflections and Neptune; connected to the Lounge's warm metal/woven/plant material language. Expressive environment art, not adopted ship specifications or exact city map.
+
+Source ccca8c8 adds an isolated Stardock room-image override in lounge_media.py; no room JSON replacement. Delivery asset/manifest under assets/images/world/manzo/triton_central/neptune_lounge/stardock_overlook/v1. Original PNG generation identifier/hash, dimensions and WebP hash/encoding retained in manifest; quality-90 WebP, no crop or semantic edit. Original generated PNG preserved separately.
+
+192 runtime tests pass, including two new asset/render/non-mutation checks. Installed module, image and manifest hash verified. Private backup /opt/futuresky/backups/w4f9-stardock-20261022-124343; all 61 data hashes unchanged during paused install, character file unchanged after restart. Public image URL HTTP 200, image/webp and exact delivery hash.
+
+Systemd on-failure restart from PID 856490 to 856636; active/running, all 46 extensions loaded, Discord login and heartbeat passed. Actual Stardock art display remains to be checked with !look in Discord. Terrace remains text-only; delivery itself not played live yet. ACTIVE/REVIEW, counts unchanged.
