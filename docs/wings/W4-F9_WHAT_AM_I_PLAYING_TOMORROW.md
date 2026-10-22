@@ -215,3 +215,8 @@ Source 340cf3a updates arrival prose and capsule terminology; legacy package com
 199 runtime tests pass, including five new asset/binding/recollection/alias/failed-save-image cases. Installation: terrace_delivery.py, cogs/terrace.py, new terrace_media.py, arrival WebP and manifest. Existing source matched baseline b3a293f. Private backup /opt/futuresky/backups/w4f9-capsule-20261022-131211. Five installed hashes verified; 61 data files unchanged while paused, character file unchanged after restart. Public art HTTP 200 image/webp with exact hash.
 
 On-failure restart from PID 856841 to 857237 confirmed active/running, 46 extensions, Discord login and all seven heartbeat subscribers including Recovery passed. Player already supplied attend and sky output before this refinement; its live landing is recorded and was not reset. Use !terrace arrival to inspect the updated illustrated recollection, then !inspect capsule to continue. Actual capsule-image client check and pickup/opening remain pending. Future causal rules unchanged; W4-F9 active, twenty-three sealed.
+
+
+### 22 October 2026 — Shorter box reveal
+
+Author approved combining capsule opening, neck-key unlock and USB reveal into one action. `!terrace open capsule` now saves the complete reveal, shows the antique-box image and prompts `!terrace take tunes`. Internal instance IDs, provisional provenance and recovery safeguards remain. Old intermediate stages can use the same opening action; no player-specific migration or reset. Legacy detailed commands remain accepted. Current playcheck pacing supersedes the earlier granular command sequence. Full runtime suite: 200 tests passed. W4-F9 remains ACTIVE/REVIEW.

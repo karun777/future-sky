@@ -30,7 +30,7 @@ ACTIONS = {
     "open package": "open package", "inspect box": "inspect box",
     "unlock box": "unlock box", "open box": "open box",
     "inspect usb": "inspect usb", "take usb": "take usb", "inventory": "inventory",
-    "arrival": "recall arrival",
+    "arrival": "recall arrival", "take tunes": "take usb",
     "inspect capsule": "inspect package", "take capsule": "take package",
     "open capsule": "open package",
 }
@@ -111,9 +111,9 @@ def guidance(character):
         0: "Watch the sky: `!terrace sky`.",
         1: "Try `!inspect capsule` or `!terrace take capsule`.",
         2: "Open it with `!terrace open capsule`.",
-        3: "Try `!inspect box` or `!terrace unlock box`.",
-        4: "Open the box: `!terrace open box`.",
-        5: "Try `!inspect usb` or `!terrace take usb`.",
+        3: "Open it with `!terrace open capsule`.",
+        4: "Open it with `!terrace open capsule`.",
+        5: "Take it with `!terrace take tunes`.",
         6: "Review what you carry with `!inventory` or `!inspect tunes`.",
     }
     if state is None and not eligible(character):
@@ -221,7 +221,7 @@ def prepare(character, uid, request=""):
         text = ARRIVAL_TEXT
     elif action == "inspect package":
         _remember(state, "package.address_read")
-        title = "The package"
+        title = "The capsule"
         # Reading the address does not assign autobiographical recognition.
         import discord
         addressee = discord.utils.escape_markdown(state["objects"]["package"]["addressee"])
@@ -237,16 +237,32 @@ def prepare(character, uid, request=""):
     else:
         _require(carrying, "Pick up the package first: `!terrace take capsule`.")
         if action == "open package":
-            if n < STAGES.index("unwrapped"):
-                state["stage"] = "unwrapped"
-                state["objects"]["box"] = {
+            if n < STAGES.index("open"):
+                _require(opening_state(character) is not None,
+                         "No matching neck key is established for this arrival.")
+                state["objects"].setdefault("box", {
                     "instance_id": f"{uid}:terrace:box:v1",
                     "holder": state["objects"]["package"]["instance_id"],
+                })
+                state["objects"]["usb"] = {
+                    "instance_id": f"{uid}:terrace:usb:v1",
+                    "holder": state["objects"]["box"]["instance_id"],
+                    "lineage": f"{uid}:terrace:delivery:v1",
+                    "temporal_validity": "provisional",
+                    "content_integrity": "unexamined", "future_condition": "unresolved",
                 }
-                _remember(state, "package.opened")
-                text = "The capsule opens easily. Inside is an antique locked box."
+                state["stage"] = "open"
+                for event in ("package.opened", "box.unlocked", "box.opened", "usb.label_read"):
+                    _remember(state, event)
+                title = "The antique box"
+                text = ("The capsule opens easily. Inside rests an antique locked box. "
+                        "Your fingers find the key at your neck. It fits. "
+                        "Inside: a USB marked **tunes**.")
             else:
-                text = "The capsule is already open. The antique box remains inside."
+                title = "The antique box"
+                text = "The antique box is open." + (
+                    " Inside rests the USB marked **tunes**." if n == STAGES.index("open")
+                    else " You already carry the USB marked **tunes**.")
         else:
             _require(n >= STAGES.index("unwrapped"), "Open the capsule first.")
             if action == "inspect box":

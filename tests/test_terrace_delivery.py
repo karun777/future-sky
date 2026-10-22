@@ -20,7 +20,7 @@ from fsbot.recovery import begin, complete, DURATION, RecoveryService
 from fsbot.item_transfer import transfer, TransferError
 
 PASSAGE = ("attend", "sky", "inspect package", "take package", "open package",
-           "inspect box", "unlock box", "open box", "inspect usb", "take usb")
+           "inspect box", "inspect usb", "take tunes")
 
 
 class TerraceDeliveryTests(unittest.IsolatedAsyncioTestCase):
@@ -91,8 +91,7 @@ class TerraceDeliveryTests(unittest.IsolatedAsyncioTestCase):
         await self.inspect("box")
         self.assertIn("key at your neck", self.ctx.text())
         await self.inspect("usb")
-        self.assertIn("locked", self.ctx.text())
-        self.assertNotIn("label reads **tunes**", self.ctx.text())
+        self.assertIn("label reads **tunes**", self.ctx.text())
         await self.sequence(("unlock box", "open box"))
         await self.inspect("tunes")
         self.assertIn("unexamined", str(state_of(self.char())))
@@ -100,7 +99,7 @@ class TerraceDeliveryTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_each_failed_save_rolls_back_then_retries_once(self):
         self.performer()
-        for action in PASSAGE:
+        for action in (a for a in PASSAGE if a != "inspect usb"):
             with self.subTest(action=action):
                 before = self.path.read_bytes()
                 memory = deepcopy(self.storage.characters)
@@ -168,11 +167,11 @@ class TerraceDeliveryTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_pickup_need_not_read_address_but_lock_needs_neck_key(self):
         self.performer()
-        await self.sequence(("attend", "sky", "take package", "open package"))
+        await self.sequence(("attend", "sky", "take package"))
         self.assertNotIn("package.address_read", state_of(self.char())["discoveries"])
         self.char()["extra"].pop("arrival")
         before = deepcopy(self.char())
-        self.assertIn("No matching neck key", await self.action("unlock box"))
+        self.assertIn("No matching neck key", await self.action("open capsule"))
         self.assertEqual(self.char(), before)
 
     async def test_no_spoilers_in_address_or_inventory(self):

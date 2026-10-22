@@ -108,3 +108,8 @@ Private rollback backup: /opt/futuresky/backups/w4f9-terrace-20261022-123759. Pa
 Forced exit of paused PID 844485 triggered systemd on-failure restart. New PID 856490 active/running. All 46 extensions loaded, including fsbot.cogs.terrace (whose cog_load validates/registers the route); Discord login confirmed and initial heartbeat passed all seven subscribers including Recovery with errors=0. Temporary guided-creation drafts expire on restart as previously documented.
 
 Actual Discord movement/terrace delivery remains for the player's check. Start with !look in the server run channel and follow from actual location. No live scene action was executed on the player's behalf. Later Cube send/vanishing, rat/Queen meeting and sabotage remain open. Counts unchanged; W4-F9 remains active in review. Earlier undeployed notes above are dated history.
+
+
+### 22 October 2026 — Shorter box reveal
+
+Author approved combining capsule opening, neck-key unlock and USB reveal into one action. `!terrace open capsule` now saves the complete reveal, shows the antique-box image and prompts `!terrace take tunes`. Internal instance IDs, provisional provenance and recovery safeguards remain. Old intermediate stages can use the same opening action; no player-specific migration or reset. Legacy detailed commands remain accepted. Current playcheck pacing supersedes the earlier granular command sequence. Full runtime suite: 200 tests passed. W4-F9 remains ACTIVE/REVIEW.

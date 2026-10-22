@@ -5,7 +5,7 @@ from pathlib import Path
 import unittest
 import test_terrace_delivery as terrace_fixture
 from fsbot.terrace_delivery import KEY, state_of
-from fsbot.terrace_media import ASSET_ROOT, ARRIVAL_URL
+from fsbot.terrace_media import ASSET_ROOT, ARRIVAL_URL, BOX_URL
 
 class ArrivalMediaTests(unittest.IsolatedAsyncioTestCase):
     setUp = terrace_fixture.TerraceDeliveryTests.setUp
@@ -63,8 +63,35 @@ class ArrivalMediaTests(unittest.IsolatedAsyncioTestCase):
         await self.action("open capsule")
         self.assertIn("antique locked box", self.ctx.text())
         self.assertEqual(state_of(self.char())["objects"]["package"]["instance_id"], package_id)
-        self.assertNotIn("usb", state_of(self.char())["objects"])
-        self.assertEqual(state_of(self.char())["stage"], "unwrapped")
+        self.assertIn("usb", state_of(self.char())["objects"])
+        self.assertEqual(self.ctx.messages[-1]["embed"].image.url, BOX_URL)
+        self.assertEqual(state_of(self.char())["stage"], "open")
+
+    async def test_combined_reveal_is_atomic_and_legacy_open_capsule_can_continue(self):
+        self.performer()
+        await self.sequence(("attend", "sky", "take capsule"))
+        before = self.path.read_bytes()
+        self.storage.fail_next = True
+        await self.action("open capsule")
+        self.assertEqual(self.path.read_bytes(), before)
+        self.assertNotIn("embed", self.ctx.messages[-1])
+        await self.action("open capsule")
+        self.assertEqual(self.ctx.messages[-1]["embed"].image.url, BOX_URL)
+        state = state_of(self.char())
+        self.assertEqual(state["objects"]["usb"]["temporal_validity"], "provisional")
+        # Previously deployed intermediate state uses the same generic transition.
+        state["stage"] = "unwrapped"
+        state["objects"].pop("usb")
+        state["discoveries"] = [d for d in state["discoveries"] if not d.startswith(("box.", "usb."))]
+        self.storage.save_characters()
+        await self.action("open capsule")
+        self.assertEqual(state_of(self.char())["stage"], "open")
+        await self.action("take tunes")
+        identity = state_of(self.char())["objects"]["usb"]["instance_id"]
+        before = self.path.read_bytes()
+        await self.sequence(("open capsule", "take tunes"))
+        self.assertEqual(self.path.read_bytes(), before)
+        self.assertEqual(state_of(self.char())["objects"]["usb"]["instance_id"], identity)
 
     async def test_unsaved_arrival_cannot_show_its_image(self):
         self.performer()
