@@ -282,3 +282,7 @@ Karun authorised What Am I Playing Tomorrow and supplied an outdoor smoking/look
 ## W4-F9 Open Terrace artwork installed — 22 October 2026, 12:52 AWST
 
 [Image deployment](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md#open-terrace-image-deployed--22-october-2026-1252-awst): approved terrace/viewers/Neptune image, source 4d9e8d3, room-image override preserving delivery state. 194 tests pass; public WebP exact HTTP/hash, 61 data files unchanged during install and character unchanged after restart. PID 856841 active, 46 cogs, Discord/heartbeat confirmed. Player reached terrace before art install; image and delivery playchecks pending. ACTIVE, twenty-three sealed.
+
+## W4-F9 capsule arrival refinement deployed — 22 October 2026, 13:12 AWST
+
+[Adopted correction/deployment](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md#precise-capsule-arrival-adopted-and-installed--22-october-2026-1312-awst): seated near rail, straight precise non-threatening arrival, small capsule. Source 340cf3a, selected final art; 199 tests pass. First arrival art plus read-only !terrace arrival, no state reset or repeated delivery; saved package aliases/IDs compatible. Five files hash verified, public art exact HTTP/hash, 61 data files unchanged during install and character unchanged after restart. PID 857237, 46 cogs, Discord/heartbeat verified. Player attend/sky evidenced; image/client and remaining actions pending. ACTIVE; twenty-three sealed.
