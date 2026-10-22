@@ -77,6 +77,39 @@ class LoungeMediaTests(unittest.IsolatedAsyncioTestCase):
         self.assertIsNone(lounge_image({"current_room": "lounge_stardock_overlook", "in_cube": True}))
         self.assertIsNone(lounge_image(self.char(), "counterkeeper"))
 
+    def test_terrace_asset_matches_manifest(self):
+        from fsbot.lounge_media import TERRACE_ASSET_ROOT
+        root = Path(__file__).resolve().parents[1] / TERRACE_ASSET_ROOT
+        record = json.loads((root / "manifest.json").read_text())
+        data = (root / record["file"]).read_bytes()
+        self.assertEqual(hashlib.sha256(data).hexdigest(), record["sha256"])
+        self.assertEqual(len(data), record["bytes"])
+        self.assertEqual(data[8:12], b"WEBP")
+
+    async def test_terrace_art_preserves_scene_state_and_shows_guidance(self):
+        from fsbot.lounge_media import TERRACE_URL
+        from fsbot.terrace_delivery import register_room, ROOM, prepare
+        from fsbot.pod_opening import prepare_observation
+        self.rooms()
+        register_room(self.storage.rooms)
+        ch, _ = prepare_observation(self.char())
+        ch["current_room"] = ROOM
+        ch["extra"]["arrival"]["opening"]["discoveries"] = ["booking"]
+        for action in ("", "attend", "sky"):
+            if action:
+                ch, _ = prepare(ch, self.uid, action)
+            self.storage.characters[self.uid] = ch
+            self.storage.save_characters()
+            before = self.path.read_bytes()
+            rooms = deepcopy(self.storage.rooms)
+            await self.look()
+            self.assertEqual(self.ctx.messages[0]["embed"].image.url, TERRACE_URL)
+            self.assertIn("!terrace", self.ctx.text())
+            self.assertEqual(self.path.read_bytes(), before)
+            self.assertEqual(self.storage.rooms, rooms)
+        self.assertIsNone(lounge_image({"current_room": ROOM, "in_cube": True}))
+        self.assertIsNone(lounge_image(ch, "counterkeeper"))
+
     async def test_main_floor_preserves_existing_art(self):
         self.rooms()
         self.char()["current_room"] = "lounge_main_floor"
