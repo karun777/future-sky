@@ -278,3 +278,7 @@ Karun authorised What Am I Playing Tomorrow and supplied an outdoor smoking/look
 ## W4-F9 Stardock image installed — 22 October 2026, 12:44 AWST
 
 [Image deployment](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md#stardock-overlook-artwork-deployed--22-october-2026-1244-awst): approved window-gallery/stardock art delivered via room-image override, source ccca8c8. 192 tests pass; public WebP exact HTTP/hash verified; 61 data files unchanged during install, character unchanged after restart. PID 856636, 46 extensions, Discord/heartbeat confirmed. Player !look image check and terrace delivery playcheck pending. ACTIVE, twenty-three sealed.
+
+## W4-F9 Open Terrace artwork installed — 22 October 2026, 12:52 AWST
+
+[Image deployment](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md#open-terrace-image-deployed--22-october-2026-1252-awst): approved terrace/viewers/Neptune image, source 4d9e8d3, room-image override preserving delivery state. 194 tests pass; public WebP exact HTTP/hash, 61 data files unchanged during install and character unchanged after restart. PID 856841 active, 46 cogs, Discord/heartbeat confirmed. Player reached terrace before art install; image and delivery playchecks pending. ACTIVE, twenty-three sealed.

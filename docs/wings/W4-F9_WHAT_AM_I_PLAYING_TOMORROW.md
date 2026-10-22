@@ -193,3 +193,13 @@ Source ccca8c8 adds an isolated Stardock room-image override in lounge_media.py;
 192 runtime tests pass, including two new asset/render/non-mutation checks. Installed module, image and manifest hash verified. Private backup /opt/futuresky/backups/w4f9-stardock-20261022-124343; all 61 data hashes unchanged during paused install, character file unchanged after restart. Public image URL HTTP 200, image/webp and exact delivery hash.
 
 Systemd on-failure restart from PID 856490 to 856636; active/running, all 46 extensions loaded, Discord login and heartbeat passed. Actual Stardock art display remains to be checked with !look in Discord. Terrace remains text-only; delivery itself not played live yet. ACTIVE/REVIEW, counts unchanged.
+
+## Open Terrace image deployed — 22 October 2026, 12:52 AWST
+
+Karun approved generated concept exec-224369fb-d649-4de1-9920-c2c543005280.png and explicitly requested deployment. Open-sky terrace with warm Lounge entrance, rail, seating, scenic viewers and Neptune/city/stardock vantage. It contains no package, shooting-star arrival, USB or sender disclosure. Viewers are visual setting; no fee/operation or new atmosphere technology is implied. Exact city/ship/moon details remain expressive imagery.
+
+Source 4d9e8d3: room-image override in lounge_media.py plus versioned WebP/manifest at assets/images/world/manzo/triton_central/neptune_lounge/open_terrace/v1. Original generation identifier/hash, dimensions and encoding recorded; quality-90 WebP without crop/semantic edits. No scene, inventory or room-data changes.
+
+194 runtime tests pass, including new asset-byte and actual navigation-render checks before/after attendance and delivery; image rendering preserves scene state and guidance. Private backup /opt/futuresky/backups/w4f9-terrace-art-20261022-125121. Installed module/image/manifest exact hashes verified; all 61 data files unchanged during paused installation, character hash unchanged after restart. Public image URL HTTP 200, image/webp and exact hash.
+
+On-failure restart from PID 856636 to 856841 verified: active/running, 46 extensions, Discord login and seven-subscriber heartbeat including Recovery passed. Player supplied arrival onto terrace and initial guidance before this art install; terrace image client display and delivery actions remain for live playcheck. Earlier text-only statements are historical. W4-F9 active/review; counts unchanged.
