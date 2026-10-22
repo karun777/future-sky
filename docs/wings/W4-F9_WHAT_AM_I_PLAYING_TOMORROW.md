@@ -220,3 +220,8 @@ On-failure restart from PID 856841 to 857237 confirmed active/running, 46 extens
 ### 22 October 2026 — Shorter box reveal
 
 Author approved combining capsule opening, neck-key unlock and USB reveal into one action. `!terrace open capsule` now saves the complete reveal, shows the antique-box image and prompts `!terrace take tunes`. Internal instance IDs, provisional provenance and recovery safeguards remain. Old intermediate stages can use the same opening action; no player-specific migration or reset. Legacy detailed commands remain accepted. Current playcheck pacing supersedes the earlier granular command sequence. Full runtime suite: 200 tests passed. W4-F9 remains ACTIVE/REVIEW.
+
+
+### 22 October 2026 — Parked after live completion
+
+Author supplied successful `!terrace take tunes` at 13:38 AWST, then asked to move on and refine later. Functional draft parked; prose, pacing and command friction remain review work. Not sealed. Current home moves to W4-F10, A Rat with Connections.

@@ -43,6 +43,7 @@ from fsbot.pod_media import pod_image
 from fsbot.lounge_arrival import arrival_attention
 from fsbot.lounge_media import lounge_image
 from fsbot.terrace_delivery import guidance as terrace_guidance, TerraceError
+from fsbot.rat_messenger import guidance as messenger_guidance
 
 
 # ============================================================
@@ -432,6 +433,12 @@ class NavigationCog(commands.Cog):
             terrace_hint = None
         if terrace_hint:
             embed.add_field(name=terrace_hint[0], value=terrace_hint[1], inline=False)
+        try:
+            messenger_hint = messenger_guidance(ch)
+        except (ValueError, TypeError, KeyError, AttributeError):
+            messenger_hint = None
+        if messenger_hint:
+            embed.add_field(name=messenger_hint[0], value=messenger_hint[1], inline=False)
         # --------------------------------------------------
         # TELEMETRY
         # --------------------------------------------------

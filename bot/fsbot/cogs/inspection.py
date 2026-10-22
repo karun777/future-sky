@@ -4,6 +4,7 @@ from discord.ext import commands
 from fsbot.item_inspection import inspect_item
 from fsbot.lounge_arrival import counterkeeper_view
 from fsbot.lounge_media import lounge_image
+from fsbot.rat_messenger import tip as messenger_tip, guidance as messenger_guidance
 from fsbot.performance_tab import claim_tab, balance as tab_balance
 from fsbot.pod_media import pod_image
 from fsbot.pod_opening import (GUIDANCE, opening_state, scene_target, prepare_observation, pod_bearings)
@@ -90,6 +91,9 @@ class InspectionCog(commands.Cog):
         if not isinstance(character, dict):
             await ctx.send("Create a character first.")
             return
+        messenger = getattr(self.bot, "get_cog", lambda name: None)("RatMessengerCog")
+        if messenger and await messenger.inspect_target(ctx, item):
+            return
         terrace = getattr(self.bot, "get_cog", lambda name: None)("TerraceCog")
         if terrace and await terrace.inspect_target(ctx, item):
             return
@@ -98,10 +102,25 @@ class InspectionCog(commands.Cog):
             try:
                 character, revelation = claim_tab(storage, str(ctx.author.id))
                 credit = tab_balance(character)
+                updated, music_tip = messenger_tip(character)
+                if updated != character:
+                    storage.characters[str(ctx.author.id)] = updated
+                    try:
+                        storage.save_characters()
+                    except Exception:
+                        storage.characters[str(ctx.author.id)] = character
+                        await ctx.send("The counterkeeper’s tip could not be remembered. Please try again.")
+                        return
+                    character = updated
             except ValueError as exc:
                 await ctx.send(str(exc))
                 return
             title, text, guidance = local_view
+            if music_tip:
+                text += "\n\n" + music_tip
+            hint = messenger_guidance(character)
+            if hint:
+                guidance = hint[1]
             if revelation:
                 text += "\n\n" + revelation
             if (character.get("extra") or {}).get("performance_bar_tab_v1") is not None:

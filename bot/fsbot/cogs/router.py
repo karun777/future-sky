@@ -82,6 +82,7 @@ ROUTE_GAMEPLAY_COMMANDS: Set[str] = {
     "create_character",
     "awaken",
     "terrace",
+    "rat",
     "hud",
     "hud_on",
     "hud_off",
