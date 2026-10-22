@@ -153,3 +153,7 @@ Read [Music, custody and conditions](W4-F9_MUSIC_CUSTODY_AND_CONDITIONS.md) befo
 The map distinguishes delivery occurrence, custody, content integrity, temporal validity and character knowledge. Conditions include authored requirements and labelled implementation proposals; no invented fee, deadline, rapport score, causal-resolution policy or copy rule. Current ScenarioService is memory-only and CubesCog has no backward-send action; existing count-based item transfers do not establish instance/lineage handling. Byte differences for live CubesCog are line endings only, verified by normalised-text comparison.
 
 Document checks only; no runtime implementation, deployment or live-state change. Next review focuses on what is available for performance after the send and whether the dependent thing is USB/data/both. W4-F9 active, twenty-three sealed, next unallocated W4-F10.
+
+## Rat messenger clarification — 22 October 2026
+
+The tip leads to an **actual rat**, which carries a message to the Dark Rat Queen and arranges a meeting. The rat is an intermediary, not the Queen in another form. The subsequent meeting carries the Queen's rapport/fee/music passage. [Conditions and encounter sequence](W4-F9_MUSIC_CUSTODY_AND_CONDITIONS.md#rat-intermediary-clarification--22-october-2026) updated in place to remove the earlier ambiguity. Messenger personality, communication and meeting details intentionally deferred by Karun. No existing enemy rat is assigned the messenger role. No runtime changes.

@@ -258,3 +258,7 @@ Karun authorised What Am I Playing Tomorrow and supplied an outdoor smoking/look
 ## W4-F9 connected loop return — 22 October 2026
 
 [Conditions/custody map](wings/W4-F9_MUSIC_CUSTODY_AND_CONDITIONS.md) preserves new author decisions: Queen tip and rat encounter, rapport/fee/tunes, practice, sabotage by Vitriol/agent, cross-lifetime recognition, and Cube send of Queen-received material as final act before performing. Later failure must support earlier tunes vanishing, but trigger/medium/copy/custody details remain open. Read with [home record](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md#connected-authoring-return--22-october-2026); it supersedes initial candidate-self-sender wording. ScenarioService memory-only, Cube send unimplemented, count-based inventory lacks lineage. No runtime or live state changes; ACTIVE, twenty-three sealed.
+
+## W4-F9 rat intermediary return — 22 October 2026
+
+[Clarified sequence](wings/W4-F9_MUSIC_CUSTODY_AND_CONDITIONS.md#rat-intermediary-clarification--22-october-2026): tip → actual rat → message carried to Queen → meeting arranged → Queen encounter/rapport/fee/music. Messenger is distinct from Queen; her princess identity remains the authored twist. Personality, communication and meeting logistics deferred; no existing enemy rat selected. Documentary correction only, ACTIVE, twenty-three sealed.

@@ -12,7 +12,7 @@ The following are Karun's direction, not assistant extrapolation:
 
 1. Encounters need conditions. Code must allow the tunes to vanish from inventory if Efiishent fails to do what he needs next; the exact failure boundary is not yet conceptualised.
 2. A tip, from an undecided source, says the Dark Rat Queen knows the princess's musical taste.
-3. He finds her through a rat encounter, establishes rapport, pays her fee and receives the tunes. He practises, performs and recognises that Queen and princess are the same person.
+3. The tip leads to an encounter with an actual rat. The rat carries a message to the Dark Rat Queen and arranges a meeting. At the later Queen meeting he establishes rapport, pays her fee and receives the tunes. He practises, performs and recognises that Queen and princess are the same person. The messenger rat is a distinct being, not the Queen in rat form.
 4. Vitriol tries to steal, swap or corrupt the USB data before the performance. A direct encounter follows with Vitriol or an important agent. Exact attempts and antagonist identity remain open.
 5. The relationship's recognition has the “Piña Colada Song” quality across several lifetimes. This is a thematic analogy, not a request to use the actual song or implement a prescribed romance. How much either person remembers is open.
 6. **He must send what he receives from the Dark Rat Queen back to himself.** It is a Cube power. This is the last thing he does before actually playing, after evading the sabotage attempt(s).
@@ -27,8 +27,10 @@ The terrace receipt occurs earlier in Efiishent's experience than the Queen meet
 ```mermaid
 flowchart TD
     A["Terrace: receive package and tunes"] --> B["Tip: Queen knows the music"]
-    B --> C["Rat encounter and rapport"]
-    C --> D["Fee paid; music received"]
+    B --> C["Encounter an actual rat"]
+    C --> R["Rat carries message; arranges meeting"]
+    R --> Q["Meet Queen; establish rapport"]
+    Q --> D["Fee paid; music received"]
     D --> E["Practise and face sabotage"]
     E --> F["Evade sabotage; prepare to play"]
     F --> G["Cube: send Queen's material back"]
@@ -47,7 +49,9 @@ Practice and sabotage sit in the pre-performance passage; their exact ordering/i
 | Delivery arrival | Warm addressed package; wrapping burns away; antique locked box | Record occurrence once, separately from pickup; show no sender | Address recognition and availability if he leaves |
 | Box opening | Neck key opens the antique box; tunes USB inside | Separate pickup, wrapper-open and key-use interactions | Inventory representation/key custody; scope across other players |
 | Tip | Someone points him to the Queen's knowledge | Character learns the lead only when actually told | Who, where, cost/conditions, precise timing |
-| Queen encounter | Find her through rat encounter; establish rapport; pay fee; receive music | Track encounter, rapport, payment and receipt independently | Rat form/encounter detail, rapport actions, fee and currency |
+| Rat encounter | Tip leads to an actual rat, distinct from the Queen | Record finding the messenger separately from access to the Queen | Rat personality, communication, encounter place and how contact succeeds |
+| Message and arrangement | Rat carries a message to the Queen and arranges a meeting | Record message entrusted, delivery and meeting arrangement separately; the player learns only what is communicated | Message content, acknowledgement, meeting place/time and changes/cancellation |
+| Queen meeting | Meet her, establish rapport, pay fee, receive music | Meeting arranged is not meeting attended; record rapport, payment and receipt independently | Rapport actions, fee and currency |
 | Practice | He practises before playing | Record actual preparation, not possession alone | What music/equipment he practises with; criterion and timing |
 | Sabotage | Attempt(s) to steal, swap or corrupt; direct antagonist encounter before playing | Record attempts and their actual outcomes; preserve prior state on failed saves | Antagonist, tactics, evasion/recovery choices and what counts as resolved |
 | Cube send | Send Queen-received material to earlier self, after evading sabotage, immediately before playing | Verify material/provenance and chosen destination; persist once before reporting success | Medium/copy, Cube access/action, payload validation, packaging and exact temporal address |
@@ -145,10 +149,21 @@ This mapping answers which cogs can contribute. It does not claim the new encoun
 | Player does not send | Support disappearing tunes, but no chosen trigger or deadline yet |
 | Player sends after evading sabotage | Final preparation action before performance; material availability still to settle |
 | Restart mid-sequence | No loss of actual encounter/payment/custody/knowledge or duplicate scene |
-| Witness sees rat and princess separately | No automatic private identity/relationship disclosure |
+| Rat takes a message | Do not assert it is delivered, a meeting attended or a fee paid merely because it was entrusted |
+| Meeting arranged | No music, rapport or Queen/princess identity knowledge granted automatically |
+| Rat encounter and Queen encounter | Distinct beings and occurrences; rat is not a disguised Queen |
+| Witness sees messenger rat and princess separately | No inferred identity equivalence; rat remains the intermediary |
 
 ## Next bounded return
 
 This map is ready for author review. The first useful decision is **which music remains available to perform after the Queen-received material is sent**. Closely related: physical USB versus music data as the dependent thing. The failure boundary can be settled once these are clear.
 
 Do not implement a full timeline engine, irreversible invalidation or automatic inventory deletion from this map. A later isolated rehearsal can use explicitly synthetic choices to verify branching/custody before any runtime change. W4-F9 remains active; no room, item, character, service or world-clock changes.
+
+## Rat intermediary clarification — 22 October 2026
+
+Karun explicitly distinguishes an actual rat from the Dark Rat Queen. The tip leads to that rat; it carries a message to her and arranges a meeting. Details can be fleshed out later. This supersedes any earlier ambiguity about a rat-form Queen encounter, including the earlier review-case wording. The Queen/princess identity connection remains unchanged.
+
+For eventual coding, preserve separate facts: messenger encountered, message entrusted, message delivered, meeting arranged, arrangement learned and meeting attended. These are proposed tracking distinctions, not six mandatory clicks or an adopted database schema. Do not show off-screen delivery as character knowledge before an acknowledgement or other authored evidence. No rapport score, rat speech method, messenger fee, appointment deadline or live enemy-rat identity selected. Existing sewer cyber-rat enemies are not silently made this messenger.
+
+This documentary update leaves personality, dialogue, location, acknowledgement and meeting logistics open. It does not implement rat behaviour or grant music.
