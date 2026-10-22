@@ -254,3 +254,7 @@ Karun approved closure. [Seal and retained limits](wings/W4-F8_INTO_THE_LOUNGE.m
 ## W4-F9 allocation — 22 October 2026
 
 Karun authorised What Am I Playing Tomorrow and supplied an outdoor smoking/lookout scene: full Neptune/city view, possible scenic viewers, apparent shooting star delivering an addressed package, antique box opened by neck key, USB marked tunes. [Home draft](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md) retains possible later-self/spy-work/portal-send loop as open authoring. Existing overlooks inspected are enclosed; distinct terrace connection proposed, name recognition unresolved. ACTIVE, twenty-three sealed; next unallocated W4-F10. No runtime or data changes.
+
+## W4-F9 connected loop return — 22 October 2026
+
+[Conditions/custody map](wings/W4-F9_MUSIC_CUSTODY_AND_CONDITIONS.md) preserves new author decisions: Queen tip and rat encounter, rapport/fee/tunes, practice, sabotage by Vitriol/agent, cross-lifetime recognition, and Cube send of Queen-received material as final act before performing. Later failure must support earlier tunes vanishing, but trigger/medium/copy/custody details remain open. Read with [home record](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md#connected-authoring-return--22-october-2026); it supersedes initial candidate-self-sender wording. ScenarioService memory-only, Cube send unimplemented, count-based inventory lacks lineage. No runtime or live state changes; ACTIVE, twenty-three sealed.

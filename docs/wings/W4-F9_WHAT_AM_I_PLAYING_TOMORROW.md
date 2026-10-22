@@ -1,7 +1,7 @@
 # W4-F9 — What Am I Playing Tomorrow?
 
 Home: **W4 Play**  
-Status: **ACTIVE — author direction recovered; scene and interaction draft for review.**  
+Status: **ACTIVE — initial scene draft and connected music/custody map ready for review.**
 Allocated by Karun: 22 October 2026, Australia/Perth.  
 Branch: play/w4-f9-what-am-i-playing-tomorrow  
 Source baseline: bc2fc26, W4-F8 sealed.  
@@ -143,3 +143,13 @@ W8: W4-F8 remains sealed; one active feather, unchanged completed count.
 Checked the existing route/room descriptions, neck-key prose and live key catalogue, and traced the performance uncertainty to W4-F3. The draft introduces no live room, character, item, service or clock changes. No code tests claimed for this documentary step.
 
 **Next bounded action:** agree the lookout's placement and the intended name-recognition beat, then build the terrace/package-to-USB passage. Keep the later spy/send loop available for authoring instead of quietly resolving it during this scene.
+
+## Connected authoring return — 22 October 2026
+
+Read [Music, custody and conditions](W4-F9_MUSIC_CUSTODY_AND_CONDITIONS.md) before implementing. This records the subsequent Queen tip/rat encounter/rapport/fee/music/practice/performance passage, sabotage by Vitriol or an important agent, recognition across lifetimes, and possible disappearance of dependent tunes.
+
+**Superseding clarification:** the later Cube send is now explicit direction. He must send what he receives from the Dark Rat Queen back to the terrace moment as his final act before playing, after evading sabotage. Earlier statements above calling the self-sender merely a candidate describe the initial checkpoint. What physical material/data is sent, what remains to play, what triggers vanishing and the detailed Cube power remain unresolved.
+
+The map distinguishes delivery occurrence, custody, content integrity, temporal validity and character knowledge. Conditions include authored requirements and labelled implementation proposals; no invented fee, deadline, rapport score, causal-resolution policy or copy rule. Current ScenarioService is memory-only and CubesCog has no backward-send action; existing count-based item transfers do not establish instance/lineage handling. Byte differences for live CubesCog are line endings only, verified by normalised-text comparison.
+
+Document checks only; no runtime implementation, deployment or live-state change. Next review focuses on what is available for performance after the send and whether the dependent thing is USB/data/both. W4-F9 active, twenty-three sealed, next unallocated W4-F10.
