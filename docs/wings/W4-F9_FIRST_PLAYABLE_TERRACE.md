@@ -1,6 +1,6 @@
 # W4-F9 — First playable terrace passage
 
-Status: **REVIEW — runtime integration built and tested; not deployed.**
+Status: **REVIEW — deployed 22 October 2026; actual Discord walkthrough pending.**
 Prepared 22 October 2026, Australia/Perth.
 Home: [W4-F9](W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md).
 Source baseline: 70ef9bf. One active feather, twenty-three sealed.
@@ -98,3 +98,13 @@ The source is ready for selective installation with backup and fresh hash checks
 The new extension will make 46 loaded cogs if all existing 45 continue to load. Verify new cog registration, Discord login and heartbeat after restart. Then playcheck from the actual character location; no teleport/reset needed to force it.
 
 W4-F9 remains ACTIVE/REVIEW. Later Cube-send/material disappearance, Queen/rat messenger, fee/practice/sabotage, artwork/scenic viewers, precise pacing and causal rules remain the linked authoring work.
+
+## Deployment — 22 October 2026, 12:38 AWST
+
+Karun explicitly requested deployment. Source f11ec66 installed selectively: seven modified source files and two new terrace modules. All existing target files matched reviewed baseline 70ef9bf; nine installed hashes verified again after startup. 190 runtime tests rerun and passed immediately before install.
+
+Private rollback backup: /opt/futuresky/backups/w4f9-terrace-20261022-123759. Paused installation left all 61 data-file hashes unchanged. Character-file hash remains unchanged after startup. No character migration, relocation, reset or inventory grant; no whole-room JSON replacement. The new cog registers room content in memory when it loads, as described above.
+
+Forced exit of paused PID 844485 triggered systemd on-failure restart. New PID 856490 active/running. All 46 extensions loaded, including fsbot.cogs.terrace (whose cog_load validates/registers the route); Discord login confirmed and initial heartbeat passed all seven subscribers including Recovery with errors=0. Temporary guided-creation drafts expire on restart as previously documented.
+
+Actual Discord movement/terrace delivery remains for the player's check. Start with !look in the server run channel and follow from actual location. No live scene action was executed on the player's behalf. Later Cube send/vanishing, rat/Queen meeting and sabotage remain open. Counts unchanged; W4-F9 remains active in review. Earlier undeployed notes above are dated history.

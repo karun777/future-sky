@@ -179,3 +179,7 @@ No production tests rerun for this isolated authoring-only change; the previousl
 No live deployment yet. All seven pre-existing target files matched source baseline during dated preparation checks. Delivery holdings are explicitly scene-owned with stable identities and shown in !inventory; generic trading/storage/copy is not enabled for them. Future send/disappearance remains unresolved and unimplemented. New terrace is text-only; habitat technology/viewers/art not invented. Explicit attention actions provide first-pass pacing without a timer or smoking requirement.
 
 Next bounded action: review the runtime passage and selectively deploy with backup and refreshed live-source checks, then verify 46 cogs, Discord readiness, heartbeat and actual player passage. W4-F9 ACTIVE for review; twenty-three sealed. No live data or service changes during preparation.
+
+## First playable terrace deployed — 22 October 2026, 12:38 AWST
+
+[Deployment evidence](W4-F9_FIRST_PLAYABLE_TERRACE.md#deployment--22-october-2026-1238-awst): source f11ec66, nine files installed with backup/hash checks; 190 runtime tests pass; all 61 data files unchanged during installation and character file unchanged after restart. PID 856490 active, 46 extensions including TerraceCog, Discord login and seven-subscriber heartbeat verified. No player relocation or forced encounter. Next: actual Discord !look and terrace passage. W4-F9 ACTIVE/REVIEW, twenty-three sealed. Deferred causal/Queen/sabotage work unchanged.

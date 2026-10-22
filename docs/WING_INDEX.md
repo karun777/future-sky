@@ -270,3 +270,7 @@ Karun authorised What Am I Playing Tomorrow and supplied an outdoor smoking/look
 ## W4-F9 runtime integration ready — 22 October 2026
 
 [Prepared first playable terrace](wings/W4-F9_FIRST_PLAYABLE_TERRACE.md) adds one registered room/exit, TerraceCog and command, standard inspection/inventory integration and recovery compatibility. 190 runtime tests pass; [callback rehearsal](wings/W4-F9_DISCORD_CALLBACK_REHEARSAL.md) uses fictional temporary JSON. No live deployment; new content not yet playable in Discord. Future Cube send/vanishing and later Queen/rat/sabotage work remain open. ACTIVE for review, twenty-three sealed.
+
+## W4-F9 deployed return — 22 October 2026, 12:38 AWST
+
+[First playable terrace deployment](wings/W4-F9_FIRST_PLAYABLE_TERRACE.md#deployment--22-october-2026-1238-awst): source f11ec66 installed, 190 tests pass, nine hashes verified, 61 data files unchanged during install and character unchanged after startup. PID 856490 active; 46 extensions including new TerraceCog, Discord and seven-subscriber heartbeat verified. Player walkthrough pending, no forced scene/reset. ACTIVE/REVIEW; twenty-three sealed. Earlier not-deployed statements are historical.
