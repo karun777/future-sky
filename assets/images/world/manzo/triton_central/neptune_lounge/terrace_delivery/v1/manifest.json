@@ -1,0 +1,18 @@
+{
+  "file": "arrival.webp",
+  "generation": "exec-1140a863-af07-4778-906f-8687adc7b71a.png",
+  "source_sha256": "f7adb539a890be594e9bc003eaf631285a054323f902b3db3dc73ae26b134f77",
+  "sha256": "9b0a53c4503ab1e45f08df0cdd68f873a8b03ac169549398dfb76590a0048549",
+  "bytes": 318348,
+  "dimensions": [
+    1916,
+    821
+  ],
+  "encoding": "WebP quality 90; no crop or semantic edits",
+  "references": [
+    "exec-224369fb-d649-4de1-9920-c2c543005280.png",
+    "exec-43b86ca6-b0b4-4460-bee7-567f31c722fc.png",
+    "exec-5dd9a9bb-c6fd-4c5f-b241-2f509d34f055.png"
+  ],
+  "author_direction": "Seated close to rail; unobstructed sky; straight precise benign arrival; small capsule, not gift wrap."
+}

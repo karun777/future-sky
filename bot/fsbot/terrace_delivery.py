@@ -19,7 +19,7 @@ ROOM_DEFINITION = {
     "ambient_events": [], "content_owner": "w4f9_terrace_v1",
 }
 TARGETS = {
-    "package": "inspect package", "parcel": "inspect package",
+    "package": "inspect package", "parcel": "inspect package", "capsule": "inspect package",
     "box": "inspect box", "antique box": "inspect box",
     "usb": "inspect usb", "tunes": "inspect usb",
 }
@@ -30,7 +30,18 @@ ACTIONS = {
     "open package": "open package", "inspect box": "inspect box",
     "unlock box": "unlock box", "open box": "open box",
     "inspect usb": "inspect usb", "take usb": "take usb", "inventory": "inventory",
+    "arrival": "recall arrival",
+    "inspect capsule": "inspect package", "take capsule": "take package",
+    "open capsule": "open package",
 }
+
+
+ARRIVAL_TEXT = (
+    "A shooting star? A fine light approaches on a straight course through the gaps "
+    "between the docked ships. You watch it draw closer against Neptune. "
+    "It gently streaks down and settles precisely beside your feet: a small capsule. "
+    "The last fine tendrils of its protective film burn away."
+)
 
 
 class TerraceError(ValueError):
@@ -80,8 +91,8 @@ def inventory_lines(character):
     state = state_of(character)
     if not state or state.get("secured_in_pod") or rank(state) < STAGES.index("collected"):
         return []
-    lines = ["Warm addressed package" if rank(state) < STAGES.index("unwrapped")
-             else "Opened package containing the antique box"]
+    lines = ["Warm addressed capsule" if rank(state) < STAGES.index("unwrapped")
+             else "Opened capsule containing the antique box"]
     if state["stage"] == "usb_collected":
         lines.append("USB marked tunes")
     return lines
@@ -98,8 +109,8 @@ def guidance(character):
     options = {
         -1: "Linger with the view: `!terrace attend`.",
         0: "Watch the sky: `!terrace sky`.",
-        1: "Try `!inspect package` or `!terrace take package`.",
-        2: "Open it with `!terrace open package`.",
+        1: "Try `!inspect capsule` or `!terrace take capsule`.",
+        2: "Open it with `!terrace open capsule`.",
         3: "Try `!inspect box` or `!terrace unlock box`.",
         4: "Open the box: `!terrace open box`.",
         5: "Try `!inspect usb` or `!terrace take usb`.",
@@ -166,6 +177,10 @@ def prepare(character, uid, request=""):
             text = "The view and the Lounge continue around you." if on_terrace else "You still carry your delivery."
         hint = guidance(character)
         return character, (title, text, hint[1] if hint else "Use `!terrace inventory` to review this delivery.")
+    if action == "recall arrival":
+        _require(n >= STAGES.index("landed"), "No arrival has been witnessed yet.")
+        return character, ("The arrival — remembered", "You recall the capsule's arrival.\n\n" + ARRIVAL_TEXT,
+                           "Use \x60!terrace\x60 to continue from your current progress.")
     if action == "inventory":
         lines = inventory_lines(character)
         return character, ("Your delivery", "\n".join(lines) or "You carry no terrace delivery.",
@@ -203,26 +218,24 @@ def prepare(character, uid, request=""):
         }
         _remember(state, "package.landed")
         title = "Something in the sky"
-        text = ("A shooting star? It slips between docked ships, disappears against Neptune, "
-                "then appears closer. Coming here. Before you can respond, it gently streaks down. "
-                "A soft impact at your feet. The last bright tendrils of wrapping burn away.")
+        text = ARRIVAL_TEXT
     elif action == "inspect package":
         _remember(state, "package.address_read")
         title = "The package"
         # Reading the address does not assign autobiographical recognition.
         import discord
         addressee = discord.utils.escape_markdown(state["objects"]["package"]["addressee"])
-        text = f"The label reads **{addressee}**. The wrapping gives no explanation."
+        text = f"The label reads **{addressee}**. The capsule gives no explanation."
     elif action == "take package":
         if n < STAGES.index("collected"):
             state["stage"] = "collected"
             state["objects"]["package"]["holder"] = str(uid)
             _remember(state, "package.collected")
-            text = "You lift the package. Warm, but comfortable to hold."
+            text = "You lift the small capsule. Warm, but comfortable to hold."
         else:
             text = "You already carry the package."
     else:
-        _require(carrying, "Pick up the package first: `!terrace take package`.")
+        _require(carrying, "Pick up the package first: `!terrace take capsule`.")
         if action == "open package":
             if n < STAGES.index("unwrapped"):
                 state["stage"] = "unwrapped"
@@ -231,11 +244,11 @@ def prepare(character, uid, request=""):
                     "holder": state["objects"]["package"]["instance_id"],
                 }
                 _remember(state, "package.opened")
-                text = "The wrapping gives easily. Inside is an antique locked box."
+                text = "The capsule opens easily. Inside is an antique locked box."
             else:
-                text = "The wrapping is already open. The antique box remains inside."
+                text = "The capsule is already open. The antique box remains inside."
         else:
-            _require(n >= STAGES.index("unwrapped"), "Open the wrapping first.")
+            _require(n >= STAGES.index("unwrapped"), "Open the capsule first.")
             if action == "inspect box":
                 title = "The antique box"
                 _remember(state, "box.inspected")

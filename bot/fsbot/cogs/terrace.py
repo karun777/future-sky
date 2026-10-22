@@ -1,6 +1,7 @@
 """Discord bridge for the private terrace-delivery passage."""
 import discord
 from discord.ext import commands
+from fsbot.terrace_media import arrival_image
 from fsbot.terrace_delivery import (
     TerraceError, prepare, register_room, state_of, ROOM, TARGETS,
 )
@@ -36,6 +37,9 @@ class TerraceCog(commands.Cog):
                 return
         embed = discord.Embed(title=title, description=text, color=discord.Color.dark_teal())
         embed.add_field(name="Your attention", value=hint, inline=False)
+        image = arrival_image(original, updated, request)
+        if image:
+            embed.set_image(url=image)
         await ctx.send(embed=embed, allowed_mentions=discord.AllowedMentions.none())
 
     async def inspect_target(self, ctx, query):
