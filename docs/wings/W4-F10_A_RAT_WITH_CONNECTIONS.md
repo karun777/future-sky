@@ -1,6 +1,6 @@
 # W4-F10 — A Rat with Connections
 
-Status: ACTIVE / first playable draft, 22 October 2026. Follows W4-F9, parked for prose/pacing refinement after the author confirmed collecting tunes at 13:38 AWST. Neither feather is newly sealed; sealed total remains 23.
+Status: SEALED — functional first pass, author closed 23 October 2026 after live playcheck. W4-F9 remains parked for prose/pacing refinement. Sealed total: 24 (W4: eight).
 
 ## Agreed scope
 
@@ -21,3 +21,16 @@ Optional `!inspect rat` or `!rat` describes the messenger; neither is required. 
 ## Deployment
 
 22 October 2026, 13:53 AWST: source b3490c6 installed selectively (six code files); backup `/opt/futuresky/backups/w4f10-rat-20261022-135340/deployment.json`. Preflight matched all four replaced files against preceding source 95616f4. Both data roots unchanged during installation (122 file paths). No character resets, room edits or enemy spawns. Bot PID 857909 reconnected to Discord. Runtime checks and 206 tests passed; author live playcheck remains open.
+
+
+## Author close-out — 23 October 2026
+
+Live Discord playcheck: counterkeeper inspection displayed the tip with the performance tab still at 20 bar credits. At the Stardock Overlook the messenger cue appeared; `!rat message` completed and displayed the meeting acceptance. Karun explicitly asked to tie off this feather.
+
+### Required future pass: audience is not immediate
+
+The rat must not return immediately. After sending the message, the player must come back after **at least two hours** and must also have completed an **interim requirement** before the rat reappears. Both conditions are required; elapsed time alone is insufficient, and completing the interim requirement does not waive the minimum wait. The Dark Rat Queen is difficult to obtain an audience with.
+
+The interim requirement has not been specified. The meaning of two hours (world time, real time or another narrative-time basis), clock/progression mechanics and return-check details remain unresolved. Do not infer a real-time timer or convert using the current era multiplier. Future implementation should persist a pending request and evaluate both conditions when the player returns, with no immediate acceptance or meeting arrangement before the rat returns.
+
+This author direction supersedes the immediate-return pacing in the first playable choice above. The deployed first pass still returns the rat immediately and records the meeting as arranged; this close-out is documentation only, not a claim that delayed return is implemented. No live player state or clocks changed.

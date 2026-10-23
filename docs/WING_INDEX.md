@@ -1,8 +1,8 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W4 Play / W4-F10 — A Rat with Connections**, ACTIVE. [Messenger encounter](wings/W4-F10_A_RAT_WITH_CONNECTIONS.md). W4-F9 functional draft parked for prose/pacing refinement; W4-F8 sealed. Twenty-three sealed overall. Next unallocated W4-F11.
-**23 sealed wing feathers: W4 has seven, W6 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
+Current home: **W4 Play / W4-F10 — A Rat with Connections**, SEALED first pass, 23 October 2026. [Close-out and required delayed-return revision](wings/W4-F10_A_RAT_WITH_CONNECTIONS.md). W4-F9 functional draft parked for prose/pacing refinement. Twenty-four sealed overall. Next unallocated W4-F11 (proposed: Meeting the Dark Rat Queen).
+**24 sealed wing feathers: W4 has eight, W6 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
@@ -27,7 +27,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
-| W4 Play | 7 | [W4-F8](wings/W4-F8_INTO_THE_LOUNGE.md) | W4-F3 review; [W4-F9 — active](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md); [W4-F10 — active](wings/W4-F10_A_RAT_WITH_CONNECTIONS.md); next unallocated W4-F11 |
+| W4 Play | 8 | [W4-F10](wings/W4-F10_A_RAT_WITH_CONNECTIONS.md) | W4-F3 review; [W4-F9 — parked draft](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md); next unallocated W4-F11 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 4 | [W6-F4](wings/W6-F4_A_POD_WE_CAN_INHABIT.md) | [W6-F5 — review](wings/W6-F5_BEFORE_THE_FIRST_BREATH.md); next unallocated W6-F6 |
 | W7 Engine | 2 | [W7-F2](wings/W7-F2_RECOVERY_CAPSULE.md) | W7-F3 |
@@ -286,3 +286,8 @@ Karun authorised What Am I Playing Tomorrow and supplied an outdoor smoking/look
 ## W4-F9 capsule arrival refinement deployed — 22 October 2026, 13:12 AWST
 
 [Adopted correction/deployment](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md#precise-capsule-arrival-adopted-and-installed--22-october-2026-1312-awst): seated near rail, straight precise non-threatening arrival, small capsule. Source 340cf3a, selected final art; 199 tests pass. First arrival art plus read-only !terrace arrival, no state reset or repeated delivery; saved package aliases/IDs compatible. Five files hash verified, public art exact HTTP/hash, 61 data files unchanged during install and character unchanged after restart. PID 857237, 46 cogs, Discord/heartbeat verified. Player attend/sky evidenced; image/client and remaining actions pending. ACTIVE; twenty-three sealed.
+
+
+## W4-F10 close-out — 23 October 2026
+
+Author sealed the live-tested first pass. Required future revision: player returns to the messenger only after at least two hours AND completion of an unspecified interim requirement. Time basis/mechanics remain open; current immediate-return implementation remains live. See the feather home for the distinction. Sealed count 24, W4 eight; W4-F9 remains parked, not sealed.
