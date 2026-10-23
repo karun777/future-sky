@@ -15,6 +15,8 @@ def lounge_image(character, target="room"):
     if character.get("in_cube"):
         return None
     room = character.get("current_room")
+    if target == "room" and room == "lounge_conference_wing":
+        return "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/conference_wing/v1/conference.webp"
     if target == "room" and room == "lounge_smoking_terrace":
         return TERRACE_URL
     if target == "room" and room == "lounge_stardock_overlook":
