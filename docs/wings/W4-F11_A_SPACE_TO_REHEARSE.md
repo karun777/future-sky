@@ -45,3 +45,12 @@ Define a scenario progression rule that makes the appointment legible, lets unat
 ## Source check
 
 Inspected live rooms: no dedicated rehearsal room exists; Main Square, Sector 42 and Transit Pod Bay provide existing foundations. FEED7 currently only sends the public transmission link in CoreCog.feed7. No booking service is implemented there. This document is a concrete authoring checkpoint, not a runtime-completion claim.
+
+
+## First playable implementation — 28 October 2026
+
+Approved timings: start minute 30, end minute 90, direct travel 20 each way. Early start waits to minute 30; late start retains only the remainder; at/after minute 90 the slot is missed and can be rebooked. Direct complete return is minute 110. No automatic mapping to the rat request timestamp.
+
+Commands: !feed7 retains its existing link and adds the relevant local listing; !rehearsal book; !rehearsal go; !rehearsal start; !rehearsal return. !rehearsal wait N explicitly advances 1–1440 minutes. !rehearsal routine is an explicit habitual-response rehearsal, not an idle trigger or learned habit engine. Status/reading do not advance time. Generic !go movement is not billed by this bounded clock; use the rehearsal travel actions for the timed playcheck. No shared room capacity/reservation system is claimed. Rebooking is per-character, first-pass availability.
+
+Scene state lives in extra.rehearsal_v1. Save precedes success, movement fact follows saved movement. Room registration is additive and collision guarded. Travel validates every route connection before moving. Existing USB, Queen approval, global clock and messenger state are untouched. No images or researched O’Connor-specific details added. Full suite 211 tests passed. Automatic inactivity trigger, richer conscious choices, world/cohort clock integration and delayed-rat gate remain open.

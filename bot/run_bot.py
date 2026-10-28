@@ -319,6 +319,7 @@ EXTENSIONS = [
     "fsbot.cogs.arrival",
     "fsbot.cogs.terrace",
     "fsbot.cogs.rat_messenger",
+    "fsbot.cogs.rehearsal",
     "fsbot.cogs.gifting",
     "fsbot.cogs.item_usage",
     "fsbot.cogs.bar_shop",

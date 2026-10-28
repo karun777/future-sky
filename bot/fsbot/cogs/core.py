@@ -976,6 +976,14 @@ class CoreCog(commands.Cog):
 
     @commands.command(name="feed7")
     async def feed7(self, ctx):
+        from fsbot.rehearsal import listing
+        ch = self.bot.storage.characters.get(str(ctx.author.id))
+        try:
+            local = listing(ch) if isinstance(ch, dict) else None
+        except (ValueError, TypeError, KeyError, AttributeError):
+            local = None
+        if local:
+            await ctx.send(local, allowed_mentions=discord.AllowedMentions.none())
         await ctx.send(
             "📡 **FEED7 TRANSMISSION AVAILABLE**\n\n"
             "A display flickers quietly nearby.\n"

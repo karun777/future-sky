@@ -439,6 +439,13 @@ class NavigationCog(commands.Cog):
             messenger_hint = None
         if messenger_hint:
             embed.add_field(name=messenger_hint[0], value=messenger_hint[1], inline=False)
+        from fsbot.rehearsal import guidance as rehearsal_guidance
+        try:
+            rehearsal_hint = rehearsal_guidance(ch)
+        except (ValueError, TypeError, KeyError, AttributeError):
+            rehearsal_hint = None
+        if rehearsal_hint:
+            embed.add_field(name=rehearsal_hint[0], value=rehearsal_hint[1], inline=False)
         # --------------------------------------------------
         # TELEMETRY
         # --------------------------------------------------

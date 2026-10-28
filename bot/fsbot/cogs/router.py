@@ -83,6 +83,7 @@ ROUTE_GAMEPLAY_COMMANDS: Set[str] = {
     "awaken",
     "terrace",
     "rat",
+    "rehearsal",
     "hud",
     "hud_on",
     "hud_off",
