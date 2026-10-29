@@ -175,3 +175,22 @@ registered callback. Nginx and bot active; new bot PID 917022. Discord logged in
 at 18:40:39; IdleHome and Recovery heartbeat subscribers successful at 18:40:41.
 The installer reported player data preserved. Real owner OAuth sign-in and
 character rendering remain awaiting author verification. No seal; W4 paused.
+
+## Author browser playcheck — 29 October 2026, 18:45–18:46 AWST
+Author supplied two authenticated website screenshots and the corresponding
+Discord play transcript. Website shows efiishent at Hostel Hallway (18:45:42),
+then Hostel Stairwell (18:46:43) following Discord !go down. Both views have the
+matching approved room artwork. Website shows four credits, Freeform Attire and
+Rusty Knife equipped, with the carried-items list stable across the movement.
+This verifies successful real owner sign-in, character rendering and Discord
+movement reflected in the refreshed web view. It does not prove background live
+updates, website actions, logout/re-login, other-user login or mobile visual QA.
+
+Presentation follow-ups: room imagery dominates the desktop viewport and pushes
+text below the fold; fit scene, narrative and action area together in the next pass.
+Discord still repeats the previously recorded stale rehearsal sentence about
+being back at the dock windows in both hallway and stairwell. Keep this on the
+presentation-fix list; no new chapter development. Recommended next bounded work:
+shared room narrative and visible exits, then checked ordinary web movement.
+W6-F6 remains ACTIVE, UNSEALED; Chapter 1 remains paused. No runtime changes
+made while recording this playcheck.

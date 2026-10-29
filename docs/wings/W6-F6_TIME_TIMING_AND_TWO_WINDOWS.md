@@ -9,7 +9,8 @@ Efiishent through Discord website login, and requested explicit technical oversi
 See [the architecture and deployment record](W6-F6_WEB_PORTAL_ARCHITECTURE.md).
 An optional aiohttp/Authlib read-only pilot is implemented in source; 267 tests pass.
 Read-only portal deployed at 18:40 AWST after private credential setup. Public
-routes and Discord reconnection verified; real owner login awaits author check.
+routes and Discord reconnection verified. Author screenshots at 18:45–18:46 verify
+real owner login and Discord hallway-to-stairwell movement reflected on the website.
 See the architecture record for deployment evidence and remaining limits.
 No new seal; W4 remains paused.
 
