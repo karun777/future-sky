@@ -51,3 +51,7 @@ Pending arrival notices persist before sending; failed delivery retains them. A 
 Live playcheck: from a supported non-home location issue !idlehome on 60 in the player’s run channel. Stop typing/issuing commands; after the threshold, one walking step occurs per roughly one-minute heartbeat until home or interruption. A short journey can take several real minutes. Check arrival with !look after the notice, then !idlehome off if desired. Settings/status queries themselves are conscious input and restart the idle wait.
 
 This is opt-in authored home automation, not custom script authoring, learned routines or a full autonomous character system. Human-to-script transitions are first-pass behaviour here. Feather remains ACTIVE, not sealed, pending author playcheck/review. W4 remains paused; no commitment to return after only this Engine feather overrides the author’s current focus.
+
+## Deployment — 29 October 2026, 16:27 AWST
+
+Source 1d519c3; seven code files installed selectively after baseline checks against f4b614a. Backup /opt/futuresky/backups/w7f4-idle-home-20261029-162733/deployment.json. Both data roots unchanged during install (122 file paths), no character enrolled or moved. New PID 915486 loaded IdleHomeCog and connected to Discord. Opt-in live author playcheck remains pending.
