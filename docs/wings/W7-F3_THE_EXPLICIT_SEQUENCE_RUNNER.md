@@ -40,3 +40,7 @@ There is no new delay or time charge. Existing commands apply their current cons
 ## Verification
 
 226 full-suite tests pass. Ten new tests use real discord.py command invocation and contexts on fictional temporary character JSON: six actions through payment, failed direction, failed work after movement, global and call-once checks, aliases/preflight rejection, failed movement save and recovery gate, active/new choices, simultaneous input lock, insufficient-funds stop and per-step cooldown. Existing tests also verify work/payment rollback. No live gameplay commands issued on the author’s behalf. Author playcheck remains pending.
+
+## Deployment — 29 October 2026, 15:52 AWST
+
+Source 1c07bab, seven code files selectively installed after baseline comparison with 676e0e9. Backup /opt/futuresky/backups/w7f3-sequence-20261029-155200/deployment.json. Both data roots unchanged during installation, 122 file paths; no live gameplay/reset. PID 915093 loaded SequenceCog, logged into Discord and completed seven heartbeat subscribers with zero errors. Author live playcheck pending; not sealed.
