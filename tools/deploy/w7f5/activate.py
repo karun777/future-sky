@@ -68,7 +68,7 @@ def wait_ready(since, *, walking):
             pid = command("systemctl", "show", SERVICE, "--property=MainPID", "--value").strip()
             logs = command("journalctl", "-u", SERVICE, "--since", since,
                            "--no-pager", "-o", "cat", "_PID=" + pid)
-            if (pid != "0" and "Logged in as" in logs
+            if (pid != "0" and "logged in as" in logs.casefold()
                     and status("http://127.0.0.1:8787/play/") == 200
                     and status("http://127.0.0.1:8787/play/api/me") == 401
                     and (not walking or status("http://127.0.0.1:8787/play/api/walk", post=True) == 401)):
@@ -83,7 +83,7 @@ def restore(backup, manifest):
     command("systemctl", "stop", SERVICE)
     for relative in manifest["files"]:
         shutil.copy2(backup / relative, LIVE / relative)
-    since = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+    since = time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
     command("systemctl", "start", SERVICE)
     return wait_ready(since, walking=False)
 
@@ -120,7 +120,7 @@ def activate(manifest):
             os.replace(temporary, target)
         if before != data_hashes():
             raise RuntimeError("Player data changed while service was stopped")
-        since = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+        since = time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
         command("systemctl", "start", SERVICE)
         print("Waiting for Discord reconnection and walking portal...", flush=True)
         pid = wait_ready(since, walking=True)
@@ -140,7 +140,7 @@ def activate(manifest):
             if installed:
                 pid = restore(backup, manifest)
             else:
-                since = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+                since = time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
                 command("systemctl", "start", SERVICE)
                 pid = wait_ready(since, walking=False)
             (backup / "result.json").write_text(json.dumps({"status": "rolled_back", "pid": pid}))

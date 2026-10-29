@@ -82,3 +82,44 @@ class DeploymentTests(unittest.TestCase):
         self.assertEqual((self.live / self.files[0]).read_text(), "concurrent-change")
         self.assertEqual((self.live / self.files[1]).read_text(), "old")
         self.check_data()
+
+
+class ReadinessTests(unittest.TestCase):
+    def test_actual_lowercase_login_and_both_portal_modes(self):
+        for walking in (False, True):
+            def command(*args):
+                if args[0] == "systemctl":
+                    return "917782\n"
+                self.assertIn("_PID=917782", args)
+                return "INFO:futuresky:✅ Future Sky v3.6.2 logged in as Future Sky#1526\n"
+            def status(url, **kwargs):
+                return 200 if url.endswith("/play/") else 401
+            with patch.object(deploy, "command", side_effect=command), \
+                 patch.object(deploy, "status", side_effect=status) as http, \
+                 patch.object(deploy.time, "sleep") as sleep:
+                self.assertEqual(deploy.wait_ready("2026-10-29 11:41:00 UTC", walking=walking), "917782")
+                self.assertEqual(http.call_count, 3 if walking else 2)
+                sleep.assert_not_called()
+
+    def test_gateway_connection_alone_is_not_login_readiness(self):
+        with patch.object(deploy, "command", side_effect=lambda *a:
+                          "123" if a[0] == "systemctl" else "Shard connected to Gateway"), \
+             patch.object(deploy, "status", return_value=200), \
+             patch.object(deploy.time, "sleep"):
+            with self.assertRaisesRegex(RuntimeError, "timed out"):
+                deploy.wait_ready("2026-10-29 11:41:00 UTC", walking=False)
+
+    def test_missing_walk_endpoint_fails_despite_login(self):
+        with patch.object(deploy, "command", side_effect=lambda *a:
+                          "123" if a[0] == "systemctl" else "logged in as Future Sky#1526"), \
+             patch.object(deploy, "status", side_effect=lambda url, **kw:
+                          200 if url.endswith("/play/") else 404 if url.endswith("walk") else 401), \
+             patch.object(deploy.time, "sleep"):
+            with self.assertRaisesRegex(RuntimeError, "timed out"):
+                deploy.wait_ready("2026-10-29 11:41:00 UTC", walking=True)
+
+    def test_journal_failure_fails_closed(self):
+        with patch.object(deploy, "command", side_effect=RuntimeError("journal unavailable")), \
+             patch.object(deploy.time, "sleep"):
+            with self.assertRaisesRegex(RuntimeError, "timed out"):
+                deploy.wait_ready("2026-10-29 11:41:00 UTC", walking=False)
