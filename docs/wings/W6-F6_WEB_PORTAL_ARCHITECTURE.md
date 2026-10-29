@@ -136,3 +136,13 @@ Sources:
 - https://docs.discord.com/developers/topics/oauth2
 - https://docs.aiohttp.org/en/stable/web_quickstart.html
 - https://docs.authlib.org/en/stable/oauth2/client/http/index.html
+
+## Callback confirmed and secret-entry helper
+Discord application API subsequently confirmed the exact callback is registered.
+Run tools/deploy/web_portal/configure.py in an interactive SSH terminal to enter
+the OAuth secret using a hidden getpass prompt. It derives the unique existing
+Efiishent account key and stages mode-0600 configuration at
+~/.config/future-sky/web-portal.env, outside Git, with FS_WEB_ENABLED=0.
+This staging file is not automatically loaded by the bot. Deployment must transfer
+its keys into the protected runtime environment and enable the portal only then.
+The helper neither changes live .env nor restarts any service.
