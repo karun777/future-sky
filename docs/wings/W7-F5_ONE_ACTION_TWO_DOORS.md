@@ -1,9 +1,21 @@
 # W7-F5 — One Action, Two Doors
 
-Status: REVIEW — deployed and live two-way author playcheck verified 29 October 2026 at 20:00 AWST. Ready for author seal; not yet sealed.
+Status: SEALED — author closed 29 October 2026 after live two-way walking and idle-home playchecks.
 Home: W7 Engine. Shared checkpoints: W4 Play, W5 Time, W6 Expression, W8 Stewardship.
 Source baseline: d58d3da; branch engine/w7-f5-one-action-two-doors.
-W7 remains four sealed; total remains 28. W7-F6 is next unallocated.
+W7 now has five sealed feathers; total is 29. W7-F6 is next unallocated.
+
+## Seal checkpoint — 29 October 2026
+
+Karun explicitly authorised closure: "seal and show me". This feather delivers ordinary walking through the authenticated website and Discord using one character and shared movement authority. Both directions were verified live; idle-home return was also observed in both interfaces. The bounded outcome is complete.
+
+Evidence: 299 automated tests passed; six deployed file hashes verified; Discord login and heartbeat health confirmed; public portal available and anonymous character access/movement denied. Author screenshots/transcripts establish web movement at 19:54, idle-home completion by 19:57 and deliberate Discord movement reflected on the website at 20:00 AWST. Source implementation 83cc17d; installer fix a771c88; final playcheck record b9d5596. Successful backup: /opt/futuresky/backups/w7f5-walking-20261029-114753.
+
+The first deployment falsely failed its log-string check and restored the old code; the case-sensitivity bug was corrected, regression-tested and verified against actual service logs before the successful retry. Preserve that operational lesson alongside the success evidence.
+
+Retained boundary: existing single-account pilot, ordinary walking only, manual website Refresh, basic room/character/inventory view. Discord remains supported for conversation, encounters and other commands. Web Markdown formatting and stale Discord rehearsal guidance remain presentation debt. Full map, quest notes, avatar and broader actions/access remain deferred. Chapter 1 / W4 stays paused.
+
+W7 owns one completed feather; W4/W5/W6/W8 carry linked checkpoints without duplicate counts. W7 five, total 29. No runtime edits, service restart, player-state change or main merge accompanies this seal. No next feather is allocated. Return through the current Wing Index and this seal; earlier REVIEW/count/deployment-pending statements below are dated history, superseded here.
 
 ## Outcome and acceptance
 
