@@ -8,8 +8,9 @@ Karun accepted the game-window layout as a start, prioritised connecting existin
 Efiishent through Discord website login, and requested explicit technical oversight.
 See [the architecture and deployment record](W6-F6_WEB_PORTAL_ARCHITECTURE.md).
 An optional aiohttp/Authlib read-only pilot is implemented in source; 267 tests pass.
-It is NOT deployed: Discord redirect registration and private OAuth client secret
-configuration are outstanding. Existing runtime, website and player state unchanged.
+Read-only portal deployed at 18:40 AWST after private credential setup. Public
+routes and Discord reconnection verified; real owner login awaits author check.
+See the architecture record for deployment evidence and remaining limits.
 No new seal; W4 remains paused.
 
 ## Author review and corrected direction — 29 October 2026

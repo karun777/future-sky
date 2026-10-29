@@ -165,3 +165,13 @@ Discord readiness and anonymous API denial, then reloads Nginx and checks HTTPS.
 On failure it restores saved source/config and the previous service environment.
 The script never restores or overwrites player data. Sessions require fresh login.
 This step is prepared, not yet executed; real browser OAuth verification remains.
+
+## LIVE activation — 29 October 2026, 18:40 AWST
+Author ran the prepared sudo activation successfully. Backup:
+/opt/futuresky/backups/web-portal-20261029-184031.
+Independent checks confirmed /play/ and both static assets HTTP 200, anonymous
+/api/me HTTP 401, and login HTTP 302 to discord.com with identify only and the
+registered callback. Nginx and bot active; new bot PID 917022. Discord logged in
+at 18:40:39; IdleHome and Recovery heartbeat subscribers successful at 18:40:41.
+The installer reported player data preserved. Real owner OAuth sign-in and
+character rendering remain awaiting author verification. No seal; W4 paused.
