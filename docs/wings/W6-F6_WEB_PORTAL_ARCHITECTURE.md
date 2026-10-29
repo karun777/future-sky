@@ -146,3 +146,22 @@ Efiishent account key and stages mode-0600 configuration at
 This staging file is not automatically loaded by the bot. Deployment must transfer
 its keys into the protected runtime environment and enable the portal only then.
 The helper neither changes live .env nor restarts any service.
+
+## Activation prepared after private credential entry
+User completed configure.py; private staging file present at mode 0600.
+Cloned the existing runtime environment to /opt/futuresky/.venv-web-pilot-20261029
+and installed pinned web dependencies there. pip check and all 267 tests passed
+in this staged environment. Original /opt/futuresky/.venv remains unchanged.
+Three additional installer transaction tests pass for success, Nginx validation
+failure rollback and public health-check failure rollback using temporary fixtures.
+Deployment manifest pins source files, existing live entrypoint and Nginx config.
+activate.py --check passes; no live files/configuration have been changed.
+
+The remote account needs interactive sudo for privileged activation. The author
+will run activate.py with sudo over SSH. It installs only the specified files,
+uses a systemd drop-in for the staged Python environment and protected env file,
+validates Nginx, checks data hashes while the bot is stopped, starts the bot, checks
+Discord readiness and anonymous API denial, then reloads Nginx and checks HTTPS.
+On failure it restores saved source/config and the previous service environment.
+The script never restores or overwrites player data. Sessions require fresh login.
+This step is prepared, not yet executed; real browser OAuth verification remains.

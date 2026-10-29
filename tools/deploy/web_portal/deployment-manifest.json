@@ -1,0 +1,25 @@
+{
+  "source_commit": "6fcf63b2f92d5cfdd8c5e449ed40bd9222cb522a",
+  "source_files": {
+    "bot/run_bot.py": "5bdc77778545861ef9e2d35e91a7bd1b161257339197e4135f8b40b3db2d658a",
+    "bot/fsbot/cogs/web_portal.py": "ec62345a46bf43d122606beed22d798d81261f84d9cb118bfaadc5ebc4627df1",
+    "bot/fsbot/web_character_view.py": "2976835228c5b8aad13b0a10af147a0596b8acdabbcc4d074e3acd93586512d6",
+    "bot/fsbot/web_portal.py": "809dd9387761680fd1cd19a6028b811f6afa367fcd1fa285bd6f386d340d838c",
+    "bot/fsbot/web_static/index.html": "6056292e2c1b24af322ba12f0990f848246b6b07064fd481f24f17a2d6f4942a",
+    "bot/fsbot/web_static/game.css": "30339d393eb149d7cb74e4b8d301e049f6cba6885604a73f527b4aa51b40443a",
+    "bot/fsbot/web_static/game.js": "cef7c073003f47874a2ef25e8f0929ea5e4c6d3715ba05d9d6bc292001201bea",
+    "bot/requirements-web.txt": "6047dac227eca5b472ce6de2d2d3b8071c06b455dada40bc4b4b7565c78c6eec",
+    "tools/deploy/web_portal/nginx-location.conf": "8f8b2a2640b74955099ddb6ab879e6ed6ec7c854cfb5c1aef344ed56ac17342e"
+  },
+  "live_files": {
+    "bot/run_bot.py": "0b13b9fc92dbd6bd83eed3c550d9ac18fe840340ef623a5c9ce6d644d7729340",
+    "bot/fsbot/cogs/web_portal.py": null,
+    "bot/fsbot/web_character_view.py": null,
+    "bot/fsbot/web_portal.py": null,
+    "bot/fsbot/web_static/index.html": null,
+    "bot/fsbot/web_static/game.css": null,
+    "bot/fsbot/web_static/game.js": null,
+    "bot/requirements-web.txt": null
+  },
+  "nginx_sha256": "9fd87f18e1d39979153e594642068012021a94cd00b8a69f3438c75da9306b5a"
+}
