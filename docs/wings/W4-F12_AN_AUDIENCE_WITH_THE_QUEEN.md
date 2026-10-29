@@ -1,6 +1,6 @@
 # W4-F12 — An Audience with the Dark Rat Queen
 
-Status: ACTIVE — functional first pass, 29 October 2026. Chapter completion is the priority; dialogue, price and aesthetics are provisional. W4-F11 is a live-playchecked functional draft parked for refinement, not sealed. Sealed count remains 24.
+Status: SEALED — functional first pass, author closed 29 October 2026 after live payment and music receipt. Dialogue, fee and aesthetics remain provisional. W4-F11 remains parked, not sealed. Sealed total 25; W4 nine.
 
 ## First playable path
 
@@ -25,3 +25,10 @@ extra.queen_audience_v1 stages met/rapport/received, approval unresolved, fee/re
 216 full-suite tests passed. Added gate, pending return, legacy compatibility, payment/provenance, insufficient-funds and each-step save-failure/retry coverage. Existing messenger tests now assert the newly required pending departure instead of immediate acceptance. Current callback tests do not constitute a live author playcheck.
 
 Deployment: 29 October 2026 14:52 AWST, source 9624987, six selected code files installed after baseline checks against eb18262; 122 data paths unchanged during install. Backup /opt/futuresky/backups/w4f12-queen-20261029-145235/deployment.json. New PID 914581. No player reset; live playcheck pending.
+
+
+## Author close-out — 29 October 2026
+
+Author supplied live Discord evidence: at 15:33, !rehearsal wait 10 completed the minimum wait; !queen and !queen talk presented the encounter and offer. Payment initially failed for insufficient ordinary credits without consuming the bar tab or granting music. At 15:44, !queen pay succeeded: one credit paid and tracks received. Author explicitly requested closure and selected the explicit command runner as the next feather.
+
+Verified live path ends with receipt. The Queen’s later approval, sabotage, backward delivery, performance and final exchange are not completed by this seal. Preserve “it turns out it turns in” as unresolved author context. Future narrative, playability and aesthetic refinement remains deferred under the chapter-completion priority.
