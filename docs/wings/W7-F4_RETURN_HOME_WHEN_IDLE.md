@@ -1,6 +1,6 @@
 # W7-F4 — Return Home When Idle
 
-Status: ACTIVE — first playable implementation, 29 October 2026. W4 chapter feathering remains paused at the author’s request. Implementation/testing complete; deployment recorded below.
+Status: SEALED — functional first pass, author closed 29 October 2026 following live return-home and arrival notification. W4 remains paused. Sealed total 27; W7 four.
 
 ## Author direction
 
@@ -55,3 +55,22 @@ This is opt-in authored home automation, not custom script authoring, learned ro
 ## Deployment — 29 October 2026, 16:27 AWST
 
 Source 1d519c3; seven code files installed selectively after baseline checks against f4b614a. Backup /opt/futuresky/backups/w7f4-idle-home-20261029-162733/deployment.json. Both data roots unchanged during install (122 file paths), no character enrolled or moved. New PID 915486 loaded IdleHomeCog and connected to Discord. Opt-in live author playcheck remains pending.
+
+
+## Live playcheck and author seal — 29 October 2026
+
+At 16:32 author enabled !idlehome on 60. Journal inspection confirmed first automatic Overlook → Main Floor step at 16:33:52. !look at 16:34:20 was fresh conscious input and re-armed the idle threshold. Walking resumed to balcony at 16:35:53 and hostel hallway at 16:36:53. Author checked the hallway at 16:37, re-arming again. The arrival notification subsequently announced home; !look at 16:43 confirmed Pod Room. No additional typing interruption was established before the first look; the delay was the step-per-heartbeat design, not a player mistake.
+
+Author explicitly authorised notes and seal, with no additional notes. Automated baseline 240 tests; complete idle journey, input/re-arm behaviour and saved final room verified live. No runtime changes in this documentary close-out.
+
+## Refinement notes retained at seal
+
+- Distinguish inactivity threshold from journey duration. One-minute idle does not mean arrival one minute later; heartbeat cadence adds a step per minute.
+- Make beginning/progress/interruption legible without a flood of room embeds. Hidden progress made working behaviour look stalled and prompted checks that restarted the threshold.
+- Reconsider whether observational checks should interrupt a routine; current all-command semantics remain live, not silently changed.
+- Remove/localise stale Elemental Sound guidance (“back at the dock windows”) appearing in unrelated rooms, including the pod. This belongs to rehearsal/presentation debt.
+- Preserve opt-in, real-time threshold, supported route boundary, restart/delivery qualifications and other implementation limits above.
+
+## Direction after seal
+
+Author requests focus on time/timing and pleasing presentation, including the limits of Discord, a richer HTML web game, membership/permissions and interoperability. Basic Discord play should remain viable. Explore a bounded next Expression feather before committing to a CMS/LMS migration or rebuilding Chapter 1. W4 stays paused. W6-F6 is a proposed next feather, not yet allocated or implemented; see its proposal.
