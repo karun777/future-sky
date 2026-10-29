@@ -211,11 +211,27 @@ def create_app(bot, config, *, oauth=None, clock=time.monotonic):
         view["location"]["description"] = description
         view["walking"] = {"exits": exits, "notice": refusal or ""}
         view["capabilities"] = {"read_only": False, "actions": ["walk"]}
-        token = secrets.token_urlsafe(32)
-        value["walk_offer"] = {"token": token, "room": room_id,
-                               "revision": nav.walk_revision(uid),
-                               "exits": exits, "expires": clock() + 120}
-        view["walking"]["token"] = token
+        revision = nav.walk_revision(uid)
+        offer = value.get("walk_offer")
+        if not (offer and offer["expires"] > clock() + 10
+                and offer["room"] == room_id and offer["revision"] == revision
+                and offer["exits"] == exits):
+            offer = {"token": secrets.token_urlsafe(32), "room": room_id,
+                     "revision": revision, "exits": exits, "expires": clock() + 120}
+            value["walk_offer"] = offer
+        view["walking"]["token"] = offer["token"]
+        # Curated current status only, not raw idle records, private source
+        # message IDs, history or a claim about the cause of every room change.
+        from fsbot.idle_home import record as idle_record
+        try:
+            idle = idle_record(ch)
+        except (ValueError, TypeError, AttributeError):
+            idle = None
+        view["idle_home"] = {
+            "enabled": bool(idle and idle["enabled"]),
+            "status": idle.get("status") if idle and idle.get("status") in {"armed", "walking", "home", "blocked", "disabled"} else None,
+            "at_home": bool(idle and not ch.get("in_cube") and room_id == idle["home"]),
+        }
 
     async def me(request):
         value = session(request)

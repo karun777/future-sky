@@ -1,14 +1,14 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W6 Expression / W6-F7 — A Window We Can Inhabit**, ACTIVE, authorised 29 October 2026. [Scope and return](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md). W7-F5 remains sealed; W6-F8 and W7-F6 remain unallocated. Chapter 1 / W4 stays paused.
+Current home/checkpoint: **W6 Expression / W6-F7 — A Window We Can Inhabit**, ACTIVE, implementation verified (313 Python tests and 11 JavaScript behaviour checks), deployment staged; privileged activation and live visual/sync playcheck pending. [Scope and return](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md). W7-F5 remains sealed; W6-F8 and W7-F6 remain unallocated. Chapter 1 / W4 stays paused.
 **29 sealed wing feathers: W4 has nine, W6 and W7 have five each; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
 ## Fresh-session handover — 29 October 2026
 
-For the current return, read [W7-F5](wings/W7-F5_ONE_ACTION_TWO_DOORS.md), then the [W6-F6 seal](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md#seal-checkpoint--29-october-2026). The [game-window handover](handover/FUTURE_SKY_GAME_WINDOW_HANDOVER_20261029.md) is the historical pre-implementation starting point. The external study is an experiment, not the selected game interface or hosting architecture. W4 stays paused; the current register above includes the subsequent W6-F6 and W7-F5 seals.
+For the current return, read [W6-F7](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md), then [W7-F5](wings/W7-F5_ONE_ACTION_TWO_DOORS.md), then the [W6-F6 seal](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md#seal-checkpoint--29-october-2026). The [game-window handover](handover/FUTURE_SKY_GAME_WINDOW_HANDOVER_20261029.md) is the historical pre-implementation starting point. The external study is an experiment, not the selected game interface or hosting architecture. W4 stays paused; the current register above includes the subsequent W6-F6 and W7-F5 seals.
 
 ## Reconnected return — 18 October 2026
 

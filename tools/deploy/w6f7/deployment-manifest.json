@@ -1,0 +1,21 @@
+{
+  "baseline": "784f4e2",
+  "files": {
+    "bot/fsbot/web_portal.py": {
+      "source": "286711a83f6deddc56e2fb6be86b3328abd39d8407cf1b09d55e7890f8d9c66f",
+      "live": "fdbccaf5c8aeea0a89118fab36a2759ad434f8c3abf34bd899cdaf3664de3add"
+    },
+    "bot/fsbot/web_static/index.html": {
+      "source": "96e7c144688be67e42fdf25434d6b6ef605f0f93319382cc2a21d2e0851f5e0d",
+      "live": "e836fd559e067e2d0e5548e18a71d3eba90646f25caf618b2d498fe7d3335ec3"
+    },
+    "bot/fsbot/web_static/game.js": {
+      "source": "d14957c9d8ca10af3e9aed09a84bd684564c415ebd5731bcc088e8f16697a691",
+      "live": "1b1b1d9da7397ea5fdc69de8bc44a80a2fad369b30591b29c562f73be12756d8"
+    },
+    "bot/fsbot/web_static/game.css": {
+      "source": "669316bf8216e5be54691c7e5279b1054282a69b7ac76254fa23e0d84d7193d0",
+      "live": "8853f281ddfd11fa3ad7f7720aff97e33ddd6322a4f7399ea1c556e3b671330e"
+    }
+  }
+}

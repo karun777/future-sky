@@ -5,34 +5,41 @@
 <link rel="stylesheet" href="/play/static/game.css">
 <script src="/play/static/game.js" defer></script>
 </head><body>
-<header><a href="/" class="brand">FUTURE SKY</a><span id="connection" role="status">Connecting…</span></header>
+<header class="masthead"><a href="/" class="brand">FUTURE SKY</a>
+<div class="connection"><span id="connection" role="status">Connecting…</span><span id="last-sync"></span></div></header>
 <main>
 <section id="signed-out" hidden>
-<h1>Return to your character.</h1><p>Your Discord account is your connection to Future Sky.</p>
+<p class="eyebrow">A WINDOW INTO THE WORLD</p><h1>Return to your character.</h1>
+<p>Your Discord account connects you to the same character here.</p>
 <a class="button" href="/play/auth/discord">Sign in with Discord</a>
-<p class="quiet">The first pilot opens your existing character. It does not create a new one.</p>
+<p class="quiet">This pilot opens your existing character.</p>
 </section>
+<p id="message" class="notice" role="status" hidden></p>
 <section id="game" hidden>
-<div class="toolbar"><span>One character · two doors</span><div><button id="refresh">Refresh</button><button id="logout">Sign out</button></div></div>
-<div class="layout"><section class="room">
-<div class="room-heading"><p class="eyebrow">YOUR CURRENT LOCATION</p><h1 id="room-title"></h1></div>
-<img id="room-image" alt="" hidden>
-<p id="no-image" class="quiet" hidden>There is no approved image for this view yet.</p>
-<div class="narrative"><p id="room-description"></p>
-<p id="walk-notice" class="quiet"></p>
+<div class="toolbar"><span>One character · two doors</span><div><button id="refresh" type="button">Refresh now</button><button id="logout" type="button">Sign out</button></div></div>
+<div class="layout">
+<section class="room" aria-labelledby="room-title">
+<div class="room-heading"><p class="eyebrow">YOU ARE HERE</p><h1 id="room-title"></h1></div>
+<figure class="scene"><img id="room-image" alt="" hidden><figcaption id="no-image" class="quiet" hidden>No illustration is available for this view.</figcaption></figure>
+<div id="room-description" class="narrative"></div>
+<div class="actions"><p class="eyebrow">WAYS THROUGH</p>
+<p id="walk-notice" class="quiet" hidden></p>
 <nav id="exits" aria-label="Room exits"></nav>
-<p id="walk-feedback" role="status"></p>
-<p class="quiet">Keep playing in Discord. Refresh here to see saved changes. Choosing an exit counts as activity; viewing the room does not interrupt idle return.</p></div>
-</section><aside>
-<div class="portrait" aria-label="Character portrait not yet selected">◇</div>
-<h2 id="character-name"></h2><p class="quiet">Character portrait not yet selected</p>
-<p>Credits: <span id="credits"></span></p>
-<h3>Wearing &amp; equipped</h3><ul id="equipped"></ul>
-<h3>Carrying</h3><ul id="inventory"></ul>
-</aside></div>
-<div class="command"><label for="command">Command line</label><input id="command" disabled placeholder="Actions remain available in Discord"></div>
+<p id="walk-feedback" role="status" hidden></p>
+</div>
+<div class="room-foot"><p>Updates while this window is open. Watching does not interrupt idle return.</p>
+<p>References such as <code>!inspect hands</code> are commands to use in Discord.</p></div>
 </section>
-<p id="message" role="status"></p>
-<noscript>JavaScript is required to display the authenticated character view.</noscript>
+<aside aria-label="Your character">
+<div class="identity"><span class="portrait" aria-hidden="true">◇</span><div><p class="eyebrow">YOUR CHARACTER</p><h2 id="character-name"></h2></div></div>
+<p class="credits"><span>Credits</span><strong id="credits"></strong></p>
+<details open><summary>Wearing &amp; equipped</summary><ul id="equipped"></ul></details>
+<details open><summary>Carrying</summary><ul id="inventory"></ul></details>
+<details id="recent-panel"><summary>Recent changes <span id="recent-count"></span></summary>
+<ol id="recent"></ol><p class="quiet">Observed in this tab; a brief record, not a complete history.</p></details>
+</aside>
+</div>
+</section>
+<noscript>JavaScript is required to display your character.</noscript>
 </main><footer>future-sky.net · Neptune Lounge</footer>
 </body></html>

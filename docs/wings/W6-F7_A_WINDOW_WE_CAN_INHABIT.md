@@ -1,6 +1,6 @@
 # W6-F7 — A Window We Can Inhabit
 
-Status: ACTIVE — authorised 29 October 2026.
+Status: ACTIVE — implementation verified and deployment staged 29 October 2026; privileged activation and live visual/sync playcheck pending.
 Home: W6 Expression. Baseline: sealed W7-F5, 784f4e2.
 Branch: expression/w6-f7-window-we-can-inhabit.
 W6 five sealed; project 29. W6-F8 next unallocated. Chapter 1 / W4 stays paused.
@@ -37,3 +37,34 @@ Keep the window open: walk through Discord, walk through the website, allow idle
 ## Return
 
 Allocated from the sealed W7-F5 source in an isolated worktree. Live server unchanged at allocation. Inspect current source and deployment hashes before overlaying. The existing web server reads its static assets per request; a reversible static-only overlay can avoid a restart, but backend changes require the established privileged service restart. No permission workaround is authorised by that observation.
+
+
+## Implementation checkpoint
+
+The room now uses a tighter desktop layout with a bounded-height image, readable prose, nearby exits and feedback. A compact character sidebar keeps equipment and carrying lists in collapsible sections. The inactive command-line placeholder is replaced by honest guidance that command references belong in Discord. Basic narrow-screen styling remains, without claiming a fully tested phone experience.
+
+The browser reads /play/api/me every four seconds while visible, with an immediate read on tab return/online and a focus refresh if overdue. Requests time out after ten seconds including response body consumption. Failed reads mark the view stale and disable exits; retries back off to a maximum of thirty seconds. A twelve-second freshness guard also disables movement if updates stall. Hidden/offline tabs stop scheduled polling. Current state refreshes after every attempted web move. Movement requests are never automatically retried, including after an uncertain response. An expired/unauthorised session clears the visible private view and stops polling.
+
+Unchanged room prose, image and exit DOM nodes are preserved across polling to avoid visual churn and loss of focus. A short Recent changes list contains at most four observations in this tab. It is explicitly not a complete event history. Location changes are described neutrally; an idle completion message appears only when the server reports enabled idle-home, home status and the current location matching home. This is current-state evidence, not invented movement attribution.
+
+Backend GETs reuse the same unconsumed walking offer while room/revision/exits remain unchanged and more than ten seconds of its original 120-second lifetime remain. Reads do not extend that deadline. Changed state or a consumed/expiring offer produces a new token. POST identity, CSRF, origin, single-use and shared movement validation remain intact. The curated idle projection excludes source message/channel references, raw history and pending private notice text; malformed idle metadata does not break observation. No character writes or idle touches occur on GET.
+
+Prose supports paragraphs, bold, emphasis and inline code using DOM text nodes. Raw HTML and Markdown links are not executed or rendered as links. This is a small presentation grammar, not a complete Markdown implementation. Full narrative/discovery parity and stale Elemental Sound copy remain outside this feather.
+
+## Verification and limits
+
+313 Python tests pass under the live runtime interpreter against isolated source/fictional state: the previous 299 plus six new passive-view/token/idle tests and eight tests for the adapted installer/readiness checks. Eleven Node tests execute the actual shipped JavaScript with a minimal DOM and controlled clock. They verify polling without commands, unchanged DOM preservation, external/idle location updates, hidden-tab return, offline/reconnect, read failure/backoff, safe formatting, duplicate-click prevention, uncertain-action non-retry, expired-session clearing, stale-clock refusal and request timeout. JavaScript syntax check also passes.
+
+These are behavioural tests, not rendered-browser layout tests. No Chromium executable is installed in the local test environment; no automated browser rendering or phone playcheck is claimed. Author visual review and the live Discord/web/idle-home acceptance loop remain pending after activation.
+
+## Deployment handoff
+
+The reversible installer tools/deploy/w6f7/activate.py overlays four existing files: web_portal.py plus index.html, game.css and game.js. Source manifest baselines match the current live W7-F5 bytes at 784f4e2. Read-only preflight passed. No new dependency, nginx/OAuth change, navigation edit, player-data replacement or Chapter 1 content change is included.
+
+The installer retains the corrected case-insensitive login check and explicit UTC journal times from W7-F5. It creates a dated code backup, stops the bot, rechecks hashes, compares both player-data trees across the overlay, restarts and checks Discord/public portal/anonymous access. Failure restores prior code without rolling back player data. Existing remote sudo restriction requires the author terminal; deployment is an access handoff, not another scope approval.
+
+```sh
+ssh -t -p 777 efiishent@future-sky.net 'sudo python3 /home/efiishent/future-sky-worktrees/w6-f7/tools/deploy/w6f7/activate.py'
+```
+
+After restart sign in again. Leave the website open, move in Discord and watch the location update without Refresh; use a web exit and verify Discord, then check an idle-home return. Check prose/layout and visibility/reconnection feedback. W6-F7 remains unsealed; W6 five and total 29. Chapter 1 stays paused until refinement acceptance and the author's decision to resume it.
