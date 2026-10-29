@@ -1,6 +1,6 @@
 # W7-F5 — One Action, Two Doors
 
-Status: ACTIVE — implementation verified and deployment staged 29 October 2026; privileged activation and live author playcheck pending.
+Status: REVIEW — deployed 29 October 2026 at 19:47 AWST; live two-way author playcheck pending. Not sealed.
 Home: W7 Engine. Shared checkpoints: W4 Play, W5 Time, W6 Expression, W8 Stewardship.
 Source baseline: d58d3da; branch engine/w7-f5-one-action-two-doors.
 W7 remains four sealed; total remains 28. W7-F6 is next unallocated.
@@ -84,3 +84,12 @@ The author ran activation at 19:41 AWST. Backup: /opt/futuresky/backups/w7f5-wal
 Read-only recovery verification: service active/running at PID 917782; Discord logged in at 19:41:54 AWST; heartbeat subscribers succeeded. Every affected live file SHA-256 matches the old baseline. Local and public /play/ return 200, /play/api/me returns anonymous 401, and /play/api/walk returns 404 as expected for the restored read-only version. The installer had passed its stopped-data comparison before the original startup attempt; rollback copies only code, never data. No game-state reset was performed.
 
 Fix: case-insensitive login matching and explicitly UTC-qualified journal timestamps. Four new readiness tests exercise the real lowercase log format, require current-PID filtering and endpoint checks, and reject gateway-only connection, absent walking endpoint and unavailable journal. Full suite now 299 passed. The corrected wait_ready was also called read-only against the actual restored service/logs and immediately returned PID 917782. Deployment preflight passed again. The six-file gameplay candidate/manifest is unchanged. Privileged retry is ready; not yet deployed or sealed.
+
+
+## Successful activation — 29 October 2026, 19:47 AWST
+
+Author ran the corrected installer successfully. Backup: /opt/futuresky/backups/w7f5-walking-20261029-114753 (UTC timestamp). Installer reported Discord reconnection, anonymous movement denial and player-data preservation during overlay.
+
+Independent read-only verification: all six installed files match the candidate manifest; service active/running at PID 917975; current-PID journal confirms Discord login and successful heartbeat subscriber completion (8/8, zero errors). Public /play/ returns 200; anonymous /play/api/me and POST /play/api/walk each return 401. Gameplay source is 83cc17d with installer correction a771c88. No main merge is implied.
+
+Status moves to REVIEW, not SEALED. Actual owner login and website walk → Discord location check → Discord return → website refresh remain to be confirmed by the author. Tests remain 299 passed; no additional player action was executed during verification. Chapter 1 remains paused; sealed counts remain 28 total and W7 four.
