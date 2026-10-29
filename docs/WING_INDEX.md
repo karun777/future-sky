@@ -1,7 +1,7 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W7 Engine / W7-F4 — Return Home When Idle**, SEALED first pass. [Close-out and refinements](wings/W7-F4_RETURN_HOME_WHEN_IDLE.md). Proposed next: [W6-F6 — Time, Timing and Two Windows](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS_PROPOSAL.md), not allocated. W4 remains paused. Twenty-seven sealed overall.
+Current home: **W6 Expression / W6-F6 — Time, Timing and Two Windows**, ACTIVE private presentation study. [Review and implementation boundary](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md). W7-F4 sealed; W4 remains paused. Twenty-seven sealed overall. Next unallocated W6-F7.
 **27 sealed wing feathers: W4 has nine, W6 has four, W7 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
@@ -29,7 +29,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
 | W4 Play | 9 | [W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F13 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
-| W6 Expression | 4 | [W6-F4](wings/W6-F4_A_POD_WE_CAN_INHABIT.md) | [W6-F5 — review](wings/W6-F5_BEFORE_THE_FIRST_BREATH.md); next unallocated W6-F6 |
+| W6 Expression | 4 | [W6-F4](wings/W6-F4_A_POD_WE_CAN_INHABIT.md) | W6-F5 review; [W6-F6 — active](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md); next unallocated W6-F7 |
 | W7 Engine | 4 | [W7-F4](wings/W7-F4_RETURN_HOME_WHEN_IDLE.md) | next unallocated W7-F5 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
@@ -311,3 +311,8 @@ Author paused W4 chapter feathering while strengthening W7. W7-F4 provides opt-i
 ## W7-F4 seal and interface proposal — 29 October 2026
 
 Author sealed the fully live-playchecked idle-home first pass. Timing/progress, observational interruption and stale rehearsal cues retained as refinement notes. Total 27, W7 four. Proposed W6-F6 studies paced Discord and web presentation over one shared game authority; not allocated. W4 remains paused.
+
+
+## W6-F6 activation — 29 October 2026
+
+Author approved a bounded comparative web/Discord presentation study. Private fictional-state prototype published with existing art, routine/choice/interruption, optional audio and independent presentation pacing. No live game, account or time-policy change. W4 stays paused; total remains 27.

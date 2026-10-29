@@ -38,3 +38,6 @@ These support feasibility, not a claim that any integration is built. Third-part
 ## Decision at review
 
 Choose a first presentation surface and scene. Keep initial effort to a concrete comparative prototype and an action/identity boundary sketch; avoid a platform migration or full rewrite. W5 retains time semantics; W7 retains simulation/action/script authority; W6 owns player-facing expression.
+
+
+29 October: author approved proceeding. Active feather home: [W6-F6 implementation and review](W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md). This earlier proposal remains historical scope context.
