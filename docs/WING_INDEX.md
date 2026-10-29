@@ -1,7 +1,7 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W7 Engine / W7-F5 — One Action, Two Doors**, REVIEW: deployed 29 October 2026 at 19:47 AWST, six live hashes and Discord/portal health independently verified; 299 tests passed. Live two-way author playcheck pending. [Scope and return](wings/W7-F5_ONE_ACTION_TWO_DOORS.md). W6-F6 remains sealed; W6-F7 and W7-F6 remain unallocated. Chapter 1 / W4 stays paused.
+Current home/checkpoint: **W7 Engine / W7-F5 — One Action, Two Doors**, REVIEW: deployed 29 October 2026 at 19:47 AWST, six live hashes and Discord/portal health independently verified; 299 tests passed. Author verified website movement and matching Discord/web location at 19:54–19:55; Discord movement followed by website refresh remains pending. [Scope and return](wings/W7-F5_ONE_ACTION_TWO_DOORS.md). W6-F6 remains sealed; W6-F7 and W7-F6 remain unallocated. Chapter 1 / W4 stays paused.
 **28 sealed wing feathers: W4 has nine, W6 has five, W7 has four; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.

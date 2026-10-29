@@ -93,3 +93,10 @@ Author ran the corrected installer successfully. Backup: /opt/futuresky/backups/
 Independent read-only verification: all six installed files match the candidate manifest; service active/running at PID 917975; current-PID journal confirms Discord login and successful heartbeat subscriber completion (8/8, zero errors). Public /play/ returns 200; anonymous /play/api/me and POST /play/api/walk each return 401. Gameplay source is 83cc17d with installer correction a771c88. No main merge is implied.
 
 Status moves to REVIEW, not SEALED. Actual owner login and website walk → Discord location check → Discord return → website refresh remain to be confirmed by the author. Tests remain 299 passed; no additional player action was executed during verification. Chapter 1 remains paused; sealed counts remain 28 total and W7 four.
+
+
+## Author playcheck — 29 October 2026, 19:54–19:55 AWST
+
+Author supplied the Discord movement notice: "You walk west using the game window. Now at Hostel Hallway — Pod Doors & Quiet Lives." Their subsequent !look returned Hostel Hallway, its description/art and south/east/down exits. The website screenshot at 19:55:15 shows the same room, matching description/art, Go south/east/down buttons, Efiishent, four credits and the previously displayed equipment/bag contents. This verifies real authenticated web movement, Discord delivery, Discord observation of the resulting state and successful web rendering.
+
+The reverse leg (Discord movement followed by website refresh) is not shown in this evidence and remains pending. W7-F5 remains REVIEW, not sealed; counts unchanged. The known stale Elemental Sound "back at the dock windows" cue remains visible in Discord and is retained as presentation debt outside this feather.
