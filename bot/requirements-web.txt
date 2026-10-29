@@ -1,0 +1,6 @@
+# Optional web pilot dependencies; install only after staged dependency review.
+# Existing runtime aiohttp stays at 3.14.1; discord.py stays at 2.7.1.
+Authlib==1.9.1
+httpx2==2.16.0
+cryptography==50.0.2
+joserfc==1.7.7

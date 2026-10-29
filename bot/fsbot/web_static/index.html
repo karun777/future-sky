@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Future Sky — Game window</title>
+<link rel="stylesheet" href="/play/static/game.css">
+<script src="/play/static/game.js" defer></script>
+</head><body>
+<header><a href="/" class="brand">FUTURE SKY</a><span id="connection" role="status">Connecting…</span></header>
+<main>
+<section id="signed-out" hidden>
+<h1>Return to your character.</h1><p>Your Discord account is your connection to Future Sky.</p>
+<a class="button" href="/play/auth/discord">Sign in with Discord</a>
+<p class="quiet">The first pilot opens your existing character. It does not create a new one.</p>
+</section>
+<section id="game" hidden>
+<div class="toolbar"><span>Live character view · read only</span><div><button id="refresh">Refresh</button><button id="logout">Sign out</button></div></div>
+<div class="layout"><section class="room">
+<div class="room-heading"><p class="eyebrow">YOUR CURRENT LOCATION</p><h1 id="room-title"></h1></div>
+<img id="room-image" alt="" hidden>
+<p id="no-image" class="quiet" hidden>There is no approved image for this view yet.</p>
+<div class="narrative"><p>Your character’s location and belongings are connected here. Room narrative and actions are the next integration step.</p>
+<p class="quiet">You can keep playing in Discord. Refresh here to see saved changes. Observing this page does not interrupt an enabled idle-return routine.</p></div>
+</section><aside>
+<div class="portrait" aria-label="Character portrait not yet selected">◇</div>
+<h2 id="character-name"></h2><p class="quiet">Character portrait not yet selected</p>
+<p>Credits: <span id="credits"></span></p>
+<h3>Wearing &amp; equipped</h3><ul id="equipped"></ul>
+<h3>Carrying</h3><ul id="inventory"></ul>
+</aside></div>
+<div class="command"><label for="command">Command line</label><input id="command" disabled placeholder="Actions remain available in Discord"></div>
+</section>
+<p id="message" role="status"></p>
+<noscript>JavaScript is required to display the authenticated character view.</noscript>
+</main><footer>future-sky.net · Neptune Lounge</footer>
+</body></html>

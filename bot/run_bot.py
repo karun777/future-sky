@@ -373,6 +373,11 @@ EXTENSIONS = [
 ]
 
 
+# Optional read-only web portal; shares this runtime and its state.
+if os.environ.get("FS_WEB_ENABLED") == "1":
+    EXTENSIONS.append("fsbot.cogs.web_portal")
+
+
 async def _event_probe(event: dict) -> None:
     source = event.get("source") if isinstance(event.get("source"), dict) else {}
     scope = event.get("scope") if isinstance(event.get("scope"), dict) else {}

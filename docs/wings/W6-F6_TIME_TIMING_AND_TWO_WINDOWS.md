@@ -2,6 +2,16 @@
 
 Status: ACTIVE, UNSEALED — author correction received 29 October 2026. The separate private study is retained as an experiment; the next direction is a game window on our existing website/server. W4 remains paused. No new seal; 27 overall. W6-F5 remains in review.
 
+## Live-account implementation preparation — 29 October 2026
+
+Karun accepted the game-window layout as a start, prioritised connecting existing
+Efiishent through Discord website login, and requested explicit technical oversight.
+See [the architecture and deployment record](W6-F6_WEB_PORTAL_ARCHITECTURE.md).
+An optional aiohttp/Authlib read-only pilot is implemented in source; 267 tests pass.
+It is NOT deployed: Discord redirect registration and private OAuth client secret
+configuration are outstanding. Existing runtime, website and player state unchanged.
+No new seal; W4 remains paused.
+
 ## Author review and corrected direction — 29 October 2026
 
 Karun found the study interesting and impressive as a quick experiment, but it looked like a website rather than an invitation to play. He explicitly wants to build on our existing website and neptunelounge server, considering open source options, rather than create a separate hosted product.
