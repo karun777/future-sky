@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from fsbot.queen_audience import prepare
+from fsbot.sequence import result as sequence_result
 
 class QueenAudienceCog(commands.Cog):
     def __init__(self,bot):
@@ -8,6 +9,7 @@ class QueenAudienceCog(commands.Cog):
 
     @commands.command(name="queen")
     async def queen(self,ctx,*,action=""):
+        sequence_result(ctx, "failed")
         uid=str(ctx.author.id)
         storage=self.bot.storage
         original=storage.characters.get(uid)
@@ -29,6 +31,7 @@ class QueenAudienceCog(commands.Cog):
                 return
         await ctx.send(embed=discord.Embed(title=title,description=text,color=discord.Color.dark_teal()),
                        allowed_mentions=discord.AllowedMentions.none())
+        sequence_result(ctx, "success" if updated["extra"]["queen_audience_v1"]["stage"] == "received" else "choice")
 
 async def setup(bot):
     await bot.add_cog(QueenAudienceCog(bot))

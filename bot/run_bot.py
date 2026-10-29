@@ -310,6 +310,7 @@ bot.send_to_realm_feed = send_to_realm_feed  # type: ignore[attr-defined]
 EXTENSIONS = [
     # Routing must exist before anything emits output
     "fsbot.cogs.router",
+    "fsbot.cogs.sequence",
 
     # Core gameplay layer
     "fsbot.cogs.core",

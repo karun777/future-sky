@@ -38,6 +38,7 @@ from discord.ext import commands
 
 from fsbot.cogs.router import ensure_player_run_channel
 from fsbot.events import create_event
+from fsbot.sequence import result as sequence_result
 from fsbot.pod_opening import pod_bearings, GUIDANCE
 from fsbot.pod_media import pod_image
 from fsbot.lounge_arrival import arrival_attention
@@ -474,6 +475,7 @@ class NavigationCog(commands.Cog):
 
     @commands.command(aliases=["move"])
     async def go(self, ctx: commands.Context, direction: str):
+        sequence_result(ctx, "failed")
         s = self.bot.storage
         user_id = str(ctx.author.id)
         self.bot.state.ensure_player_records(user_id)
@@ -514,8 +516,14 @@ class NavigationCog(commands.Cog):
             )
 
         # Move
+        previous_room = ch.get("current_room")
         ch["current_room"] = new_room
-        s.save_characters()  # movement is always a write
+        try:
+            s.save_characters()  # movement is always a write
+        except Exception:
+            ch["current_room"] = previous_room
+            raise
+        sequence_result(ctx, "success")
 
         # Event Model: fact is persisted before it is announced.
         await _publish_character_entered_room(
@@ -550,9 +558,11 @@ class NavigationCog(commands.Cog):
 
         # If an on-enter thread node entangled the player, present it (and skip room render)
         if await _present_entanglement_if_any(self.bot, ctx, user_id):
+            sequence_result(ctx, "choice")
             return
 
         await self.look(ctx)
+        sequence_result(ctx, "success")
 
     # --------------------------------------------------
     # DPC utilities

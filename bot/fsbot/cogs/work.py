@@ -1,6 +1,7 @@
 """Neptune Lounge paid work."""
 from discord.ext import commands
 from fsbot.bar_work import WorkError, work_bar
+from fsbot.sequence import result as sequence_result
 
 
 class WorkCog(commands.Cog):
@@ -9,6 +10,7 @@ class WorkCog(commands.Cog):
 
     @commands.command(name="work")
     async def work(self, ctx, *, job: str = ""):
+        sequence_result(ctx, "failed")
         if job.strip().casefold() != "bar":
             await ctx.send("Try !work bar.")
             return
@@ -31,6 +33,7 @@ class WorkCog(commands.Cog):
             await ctx.send("Your shift could not be saved. No credits were paid.")
             return
         await ctx.send(message)
+        sequence_result(ctx, "success")
 
 
 async def setup(bot):
