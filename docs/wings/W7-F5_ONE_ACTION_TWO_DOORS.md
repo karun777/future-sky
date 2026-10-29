@@ -1,6 +1,6 @@
 # W7-F5 — One Action, Two Doors
 
-Status: REVIEW — deployed 29 October 2026 at 19:47 AWST; live two-way author playcheck pending. Not sealed.
+Status: REVIEW — deployed and live two-way author playcheck verified 29 October 2026 at 20:00 AWST. Ready for author seal; not yet sealed.
 Home: W7 Engine. Shared checkpoints: W4 Play, W5 Time, W6 Expression, W8 Stewardship.
 Source baseline: d58d3da; branch engine/w7-f5-one-action-two-doors.
 W7 remains four sealed; total remains 28. W7-F6 is next unallocated.
@@ -107,3 +107,12 @@ The reverse leg (Discord movement followed by website refresh) is not shown in t
 Author supplied the automatic arrival notice: "While your attention wandered, you made your way home to Pod Room — Wakefulness Module." Their subsequent Discord !look at 19:57 shows the pod; the website screenshot (connected 19:57:44, captured 19:58:26) shows the same Pod Room, approved pod image, pod bearings/booking guidance, four credits and previously displayed equipment/bag contents. This establishes live idle-home completion after website walking and agreement of both renderers on its resulting state. It is not evidence of a deliberate Discord !go return; that specific remaining acceptance check is still pending. No idle settings were changed by this verification.
 
 Presentation notes: web currently shows Markdown asterisks/backticks literally in pod guidance because text is safely rendered as plain text. Full Markdown rendering remains deferred. The known stale Elemental Sound cue persists in Discord. Neither issue was silently expanded into this movement feather. Status remains REVIEW; sealed counts unchanged.
+
+
+## Two-way playcheck complete — 29 October 2026, 20:00 AWST
+
+Author supplied Discord !go west at 20:00, with Hostel Hallway — Pod Doors & Quiet Lives as the resulting room. The refreshed website screenshot (connected 20:00:17, captured 20:00:20) shows that same hallway, matching artwork/description and south/east/down exit buttons, with four credits and the previously displayed equipment/bag contents. This confirms deliberate Discord movement reflected in the website after the earlier web movement reflected in Discord.
+
+The bounded acceptance check is complete: authenticated website walking and ordinary Discord walking operate on the same character, and live idle-home completion also appears in both interfaces. Automated verification remains 299 passing tests; deployment and its corrected readiness check are recorded above. W7-F5 is ready for author seal, remaining REVIEW until closure. Counts remain 28 total, W7 four. No runtime change, new feather allocation or Chapter 1 authoring was performed in this evidence update.
+
+Retained limits: one-account pilot, manual Refresh, ordinary walking only; web encounter controls and full narrative/discovery parity remain deferred. Plain-text Markdown markers and stale Elemental Sound guidance remain recorded presentation debt. No additional playcheck is needed for this feather's agreed two-way walking acceptance.
