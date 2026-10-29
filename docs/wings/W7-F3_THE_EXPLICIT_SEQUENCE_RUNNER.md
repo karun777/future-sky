@@ -1,6 +1,6 @@
 # W7-F3 — The Explicit Sequence Runner
 
-Status: ACTIVE / implemented first pass, 29 October 2026. Author selected under-the-hood work to accelerate Chapter 1 playchecks. Implementation and offline verification complete; deployment recorded below.
+Status: SEALED — author reviewed and closed 29 October 2026 after successful live execution and stop-on-failure playchecks. Significant Engine milestone. Sealed total 26; W7 three.
 
 ## Proposed first-pass interface
 
@@ -44,3 +44,20 @@ There is no new delay or time charge. Existing commands apply their current cons
 ## Deployment — 29 October 2026, 15:52 AWST
 
 Source 1c07bab, seven code files selectively installed after baseline comparison with 676e0e9. Backup /opt/futuresky/backups/w7f3-sequence-20261029-155200/deployment.json. Both data roots unchanged during installation, 122 file paths; no live gameplay/reset. PID 915093 loaded SequenceCog, logged into Discord and completed seven heartbeat subscribers with zero errors. Author live playcheck pending; not sealed.
+
+
+## Live playcheck and author seal — 29 October 2026
+
+At 15:54 the author ran `!sequence go north; go outside; go inside; go south`. All four actions executed in order, returned the character to Stardock Overlook and reported 4/4 complete. At 15:55 `!sequence go nowhere; go north` reported the invalid direction and stopped at 0/2; the later movement was not executed. Automated suite at implementation: 226 passing tests.
+
+Author explicitly called W7-F3 a significant milestone from which many things will flow, then authorised sealing after review. This seal covers the explicit supported runner, not a general scripting language or automatic character control.
+
+## Closing notes and larger direction
+
+Timing and presentation of information need a later pass, particularly for sequential commands. The successful live sequence emitted full room descriptions for each intermediate movement. The author wants to explore player-created custom scripts and generic scripts triggered by varied conditions.
+
+These are future directions, not capabilities granted by this seal. Possible presentation patterns (intermediate updates, interruptions, final scene) remain proposals. A stale rehearsal cue saying the character is back at the dock windows appeared in other rooms; record this as W4-F11 presentation debt, not a sequence failure.
+
+Next allocated feather: W7-F4 — Return Home When Idle. Author example: after sufficient player inactivity, %home brings a Chapter 1 character back to their pod; later the same reference resolves that character’s future home. Threshold, timing and automatic execution semantics need design and verification before deployment.
+
+Chapter continuity: W4-F12 is sealed; W4-F9/F11 remain parked drafts. Return to W4-F13 sabotage after the bounded idle-home Engine work. No new live state or runtime change in this close-out.
