@@ -31,6 +31,8 @@
 from __future__ import annotations
 
 import random
+import asyncio
+import logging
 from typing import Optional, Set, List, Dict, Any, Tuple
 
 import discord
@@ -228,6 +230,8 @@ def is_dpc(ctx: commands.Context) -> bool:
 class NavigationCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.walking = set()
+        self.walk_revisions = {}
 
     # --------------------------------------------------
     # Contract helpers + legacy migration
@@ -473,101 +477,165 @@ class NavigationCog(commands.Cog):
     # Movement (sneak suppression + thread node trigger)
     # --------------------------------------------------
 
+    def walk_revision(self, uid):
+        return self.walk_revisions.get(str(uid), 0)
+
+    def walking_refusal(self, uid, *, web_pilot=False):
+        ch = self.bot.storage.characters.get(uid)
+        if not isinstance(ch, dict):
+            return "Character unavailable."
+        from fsbot.recovery import recovering
+        if recovering(ch):
+            return "Your body is in recovery. Continue in Discord when it is ready."
+        if ch.get("in_cube"):
+            return "You’re inside a Cube. Use Discord to return."
+        # Encounter controls are outside this web pilot. Preserve Discord's
+        # existing walkable-thread behaviour instead of redefining it here.
+        if web_pilot:
+            from fsbot.sequence import requires_choice
+            if requires_choice(ch):
+                return "A choice or encounter needs your attention in Discord."
+        runner = self.bot.get_cog("SequenceCog")
+        owner = runner.running.get(uid) if runner else None
+        if owner is not None and owner is not asyncio.current_task():
+            return "Your sequence is running. Wait for it to finish."
+        return None
+
+    async def walk(self, uid, direction, *, expected_room=None,
+                   expected_revision=None, web_pilot=False,
+                   departure=None, arrival=None, automatic_guard=None,
+                   committed=None):
+        """One shared walking authority. Adapters supply delivery, never state."""
+        uid = str(uid)
+        def refused(text):
+            return {"ok": False, "message": text}
+        if uid in self.walking:
+            return refused("Another movement is finishing. Refresh and try again.")
+        self.walking.add(uid)
+        try:
+            refusal = self.walking_refusal(uid, web_pilot=web_pilot)
+            if refusal:
+                return refused(refusal)
+            storage = self.bot.storage
+            ch = storage.characters[uid]
+            cur = ch.get("current_room")
+            revision = self.walk_revision(uid)
+            if ((expected_room is not None and expected_room != cur) or
+                    (expected_revision is not None and expected_revision != revision)):
+                return refused("Your location changed. Refresh before choosing an exit.")
+            room = storage.rooms.get(cur, {})
+            exits = room.get("exits", {}) if isinstance(room, dict) else {}
+            direction = direction.strip().lower() if isinstance(direction, str) else ""
+            destination = exits.get(direction) if isinstance(exits, dict) else None
+            if not isinstance(destination, str) or destination not in storage.rooms:
+                return refused("You can’t go that way.")
+            sneaking = bool(self._status_get(ch).get("sneaking", ch.get("sneaking", False)))
+            name = ch.get("name", "Traveller")
+            if departure and not sneaking:
+                await departure(cur, f"🚪 **{name}** leaves **{direction}**.")
+            # Every caller rechecks after delivery yields. Never retain a stale
+            # character object: idle input and other commands may replace it.
+            refusal = self.walking_refusal(uid, web_pilot=web_pilot)
+            if refusal:
+                return refused(refusal)
+            ch = storage.characters[uid]
+            latest_room = storage.rooms.get(cur, {})
+            latest_exits = latest_room.get("exits", {}) if isinstance(latest_room, dict) else {}
+            if (ch.get("current_room") != cur or self.walk_revision(uid) != revision
+                    or not isinstance(latest_exits, dict)
+                    or latest_exits.get(direction) != destination
+                    or destination not in storage.rooms):
+                return refused("The way or your location changed. Refresh and try again.")
+            if automatic_guard is not None and not automatic_guard():
+                return refused("Automatic movement was interrupted.")
+            # No await between final validation, mutation and durable save.
+            ch["current_room"] = destination
+            try:
+                storage.save_characters()
+            except Exception:
+                ch["current_room"] = cur
+                raise
+            self.walk_revisions[uid] = revision + 1
+            if committed:
+                committed()
+            await _publish_character_entered_room(
+                self.bot, user_id=uid, from_room_id=cur,
+                to_room_id=destination, movement_type="walk",
+                direction=direction, sneaking=sneaking)
+            try:
+                if arrival and not sneaking:
+                    await arrival(destination, f"🚪 **{name}** arrives.")
+                if hasattr(self.bot, "send_to_realm_feed"):
+                    await self.bot.send_to_realm_feed(
+                        f"🚶 {name} moves from **{self._room_title(cur)}** "
+                        f"to **{self._room_title(destination)}**.")
+            except Exception:
+                logging.getLogger("futuresky.navigation").exception(
+                    "Movement saved; optional delivery failed")
+            return {"ok": True, "message": f"You walk {direction}.",
+                    "from_room": cur, "to_room": destination}
+        finally:
+            self.walking.discard(uid)
+
+    async def web_walk(self, uid, direction, *, expected_room, expected_revision):
+        # Verified identity is supplied by the HTTP session, not request JSON.
+        idle = self.bot.get_cog("IdleHomeCog")
+        if idle:
+            idle.observe(uid)
+            if uid in idle.suspended:
+                return {"ok": False, "message": "Your activity could not be saved. Try again."}
+        from fsbot.cogs.router import send_to_player_run_channel_if_any
+        async def broadcast(room_id, text):
+            for other_uid, _ in self._room_members(room_id):
+                if str(other_uid) == uid:
+                    continue
+                for guild in self.bot.guilds:
+                    if await send_to_player_run_channel_if_any(
+                            self.bot, guild, str(other_uid), text,
+                            allowed_mentions=discord.AllowedMentions.none()):
+                        break
+        result = await self.walk(
+            uid, direction, expected_room=expected_room,
+            expected_revision=expected_revision, web_pilot=True,
+            departure=broadcast, arrival=broadcast)
+        if result["ok"]:
+            # Owner feedback in the existing run channel. No fabricated Discord
+            # message, Context, new channel or command invocation.
+            for guild in self.bot.guilds:
+                if await send_to_player_run_channel_if_any(
+                        self.bot, guild, uid,
+                        f"🚶 You walk {direction} using the game window. "
+                        f"Now at **{self._room_title(result['to_room'])}**. "
+                        "Use !look to attend to the room.",
+                        allowed_mentions=discord.AllowedMentions.none()):
+                    break
+        return result
+
     @commands.command(aliases=["move"])
     async def go(self, ctx: commands.Context, direction: str):
         sequence_result(ctx, "failed")
-        s = self.bot.storage
-        user_id = str(ctx.author.id)
-        self.bot.state.ensure_player_records(user_id)
-
-        ch = s.characters[user_id]
-        changed = self._migrate_legacy_flags(ch)
-
-        char_name = ch.get("name", ctx.author.display_name)
-
-        if ch.get("in_cube"):
-            if changed:
-                s.save_characters()
-            await ctx.send("You’re inside a Cube. Use `!cube_exit` to return to Triton Central.")
-            return
-
-        cur = self.bot.state.resolve_room_for_user(user_id)
-        cur_room = s.rooms.get(cur, {})
-        exits = cur_room.get("exits", {}) if isinstance(cur_room, dict) else {}
-
-        direction = (direction or "").strip().lower()
-        if not isinstance(exits, dict) or direction not in exits:
-            if changed:
-                s.save_characters()
-            await ctx.send("You can’t go that way.")
-            return
-
-        new_room = exits[direction]
-
-        sneaking = bool(self._status_get(ch).get("sneaking", False))
-
-        # Departure echo (only if not sneaking)
-        if not sneaking:
-            await self._broadcast_room(
-                ctx,
-                cur,
-                f"🚪 **{char_name}** leaves **{direction}**.",
-                exclude={user_id},
-            )
-
-        # Automatic actions must revalidate after awaited departure broadcasts.
+        uid = str(ctx.author.id)
+        self.bot.state.ensure_player_records(uid)
+        # Retain Discord's established room rescue and legacy migration.
+        self.bot.state.resolve_room_for_user(uid)
+        if self._migrate_legacy_flags(self.bot.storage.characters[uid]):
+            self.bot.storage.save_characters()
+        async def broadcast(room_id, text):
+            await self._broadcast_room(ctx, room_id, text, exclude={uid})
+        automatic_guard = None
         if getattr(ctx, "_automatic_action", False):
             idle = self.bot.get_cog("IdleHomeCog")
-            if (idle is None or not idle.allow_step(ctx)
-                    or s.characters[user_id].get("current_room") != cur):
-                return
-            ch = s.characters[user_id]
-        # Move
-        previous_room = ch.get("current_room")
-        ch["current_room"] = new_room
-        try:
-            s.save_characters()  # movement is always a write
-        except Exception:
-            ch["current_room"] = previous_room
-            raise
-        sequence_result(ctx, "success")
-
-        # Event Model: fact is persisted before it is announced.
-        await _publish_character_entered_room(
-            self.bot,
-            user_id=user_id,
-            from_room_id=cur,
-            to_room_id=new_room,
-            movement_type="walk",
-            direction=direction,
-            sneaking=sneaking,
-        )
-
-        # Arrival echo (only if not sneaking)
-        if not sneaking:
-            await self._broadcast_room(
-                ctx,
-                new_room,
-                f"🚪 **{char_name}** arrives.",
-                exclude={user_id},
-            )
-
-        # Realm feed (global)
-        if hasattr(self.bot, "send_to_realm_feed"):
-            try:
-                old_room_title = self._room_title(cur)
-                new_room_title = self._room_title(new_room)
-                await self.bot.send_to_realm_feed(
-                    f"🚶 {char_name} moves from **{old_room_title}** to **{new_room_title}**."
-                )
-            except Exception:
-                pass
-
-        # If an on-enter thread node entangled the player, present it (and skip room render)
-        if await _present_entanglement_if_any(self.bot, ctx, user_id):
+            automatic_guard = lambda: idle is not None and idle.allow_step(ctx)
+        result = await self.walk(
+            uid, direction, departure=broadcast, arrival=broadcast,
+            automatic_guard=automatic_guard,
+            committed=lambda: sequence_result(ctx, "success"))
+        if not result["ok"]:
+            await ctx.send(result["message"])
+            return
+        if await _present_entanglement_if_any(self.bot, ctx, uid):
             sequence_result(ctx, "choice")
             return
-
         await self.look(ctx)
         sequence_result(ctx, "success")
 

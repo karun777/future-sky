@@ -3,8 +3,11 @@
   const el = id => document.getElementById(id);
   let csrf = null;
   let busy = false;
+  let walkToken = null;
   function signedOut() {
     csrf = null;
+    walkToken = null;
+    el("exits").replaceChildren();
     el("game").hidden = true;
     el("signed-out").hidden = false;
     el("character-name").textContent = "";
@@ -35,6 +38,17 @@
       }
       const data = await response.json();
       csrf = data.session.csrf;
+      walkToken = data.walking?.token || null;
+      el("room-description").textContent = data.location.description || "";
+      el("walk-notice").textContent = data.walking?.notice || "";
+      el("exits").replaceChildren(...(data.walking?.exits || []).map(direction => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = "Go " + direction;
+        button.addEventListener("click", () => walk(direction));
+        return button;
+      }));
+
       el("signed-out").hidden = true;
       el("game").hidden = false;
       el("character-name").textContent = data.character.name || "Traveller";
@@ -56,6 +70,38 @@
       el("connection").textContent = "Not refreshed";
       el("message").textContent = error.message || "Could not refresh.";
     } finally { busy = false; el("refresh").disabled = false; }
+  }
+  async function walk(direction) {
+    if (busy || !walkToken) return;
+    busy = true;
+    const token = walkToken;
+    walkToken = null;
+    el("refresh").disabled = true;
+    el("logout").disabled = true;
+    el("exits").querySelectorAll("button").forEach(button => { button.disabled = true; });
+    el("walk-feedback").textContent = "Walking…";
+    let feedback = "";
+    try {
+      const response = await fetch("/play/api/walk", {
+        method: "POST", credentials: "same-origin",
+        headers: {"Content-Type": "application/json", "X-CSRF-Token": csrf || ""},
+        body: JSON.stringify({direction, token})
+      });
+      if (response.status === 401) { signedOut(); return; }
+      if (response.headers.get("Content-Type")?.includes("application/json")) {
+        feedback = (await response.json()).message;
+      } else {
+        feedback = await response.text();
+      }
+    } catch (_) {
+      feedback = "Connection interrupted. Refresh to check your location before moving again.";
+    } finally {
+      busy = false;
+      el("refresh").disabled = false;
+      el("logout").disabled = false;
+    }
+    await refresh();
+    el("walk-feedback").textContent = feedback;
   }
   el("room-image").addEventListener("error", () => {
     el("room-image").hidden = true;

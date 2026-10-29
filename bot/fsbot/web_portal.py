@@ -1,4 +1,4 @@
-"""Opt-in, read-only web pilot; runs on the existing bot event loop.
+"""Opt-in, authenticated walking web pilot; runs on the existing bot event loop.
 
 No player selection parameter, state-file access, command invocation or public bind.
 Authlib owns OAuth2 protocol handling. This module owns short-lived opaque sessions.
@@ -6,6 +6,7 @@ Authlib owns OAuth2 protocol handling. This module owns short-lived opaque sessi
 import asyncio
 from dataclasses import dataclass, field
 import hmac
+import logging
 from pathlib import Path
 import secrets
 import time
@@ -168,18 +169,96 @@ def create_app(bot, config, *, oauth=None, clock=time.monotonic):
         cookie(response, SESSION_COOKIE, token, SESSION_SECONDS)
         return response
 
-    async def me(request):
-        value = session(request)
+    def current_view(value):
         if not bot.is_ready():
             raise web.HTTPServiceUnavailable(text="Game connection is recovering.")
         try:
-            # Synchronous projection: no await splits access to bot-owned state.
             view = character_view(bot.storage, value["uid"],
                                   allowed_discord_ids=config.allowed_ids)
         except CharacterAccessDenied:
             raise web.HTTPForbidden(text="Character unavailable.")
         view["session"] = {"csrf": value["csrf"]}
+        return view
+
+    def navigation():
+        return bot.get_cog("NavigationCog") if hasattr(bot, "get_cog") else None
+
+    def add_walking(view, value):
+        nav = navigation()
+        if nav is None:
+            return
+        uid = value["uid"]
+        room_id = view["location"]["id"]
+        room = bot.storage.rooms.get(room_id, {})
+        ch = bot.storage.characters[uid]
+        refusal = nav.walking_refusal(uid, web_pilot=True)
+        from fsbot.pod_opening import pod_bearings, GUIDANCE
+        description = ""
+        exits = []
+        if room_id and isinstance(room, dict):
+            description = room.get("description", "")
+            if not isinstance(description, str):
+                description = ""
+            bearings = pod_bearings(ch)
+            if bearings:
+                description = bearings + "\n\n" + GUIDANCE
+            raw = room.get("exits", {})
+            if not refusal and isinstance(raw, dict):
+                exits = [direction for direction, target in raw.items()
+                         if isinstance(direction, str) and len(direction) <= 40
+                         and isinstance(target, str) and target in bot.storage.rooms]
+        # Only current visible direction names, never a raw room/map export.
+        view["location"]["description"] = description
+        view["walking"] = {"exits": exits, "notice": refusal or ""}
+        view["capabilities"] = {"read_only": False, "actions": ["walk"]}
+        token = secrets.token_urlsafe(32)
+        value["walk_offer"] = {"token": token, "room": room_id,
+                               "revision": nav.walk_revision(uid),
+                               "exits": exits, "expires": clock() + 120}
+        view["walking"]["token"] = token
+
+    async def me(request):
+        value = session(request)
+        view = current_view(value)
+        add_walking(view, value)
         return web.json_response(view)
+
+    async def walk(request):
+        value = session(request)
+        supplied = request.headers.get("X-CSRF-Token", "")
+        if (request.headers.get("Origin") != ORIGIN or not supplied
+                or not hmac.compare_digest(value["csrf"].encode(), supplied.encode())):
+            raise web.HTTPForbidden(text="Invalid movement request.")
+        current_view(value)  # Recheck allowlist, existing owner and readiness.
+        try:
+            body = await request.json()
+        except (ValueError, UnicodeDecodeError):
+            raise web.HTTPBadRequest(text="Invalid movement request.") from None
+        if (not isinstance(body, dict) or set(body) != {"direction", "token"}
+                or not isinstance(body["direction"], str)
+                or not isinstance(body["token"], str)):
+            raise web.HTTPBadRequest(text="Choose one current exit.")
+        offer = value.get("walk_offer")
+        if (offer is None or offer["expires"] <= clock()
+                or not hmac.compare_digest(offer["token"].encode(), body["token"].encode())):
+            raise web.HTTPConflict(text="That view expired or was already used. Refresh.")
+        if body["direction"] not in offer["exits"]:
+            raise web.HTTPBadRequest(text="Choose one current exit.")
+        # Consume synchronously before any action await. Replays cannot move twice.
+        value.pop("walk_offer", None)
+        nav = navigation()
+        if nav is None:
+            raise web.HTTPServiceUnavailable(text="Movement unavailable.")
+        try:
+            result = await nav.web_walk(
+                value["uid"], body["direction"], expected_room=offer["room"],
+                expected_revision=offer["revision"])
+        except Exception:
+            logging.getLogger("futuresky.web").exception("Walking request failed")
+            raise web.HTTPServiceUnavailable(
+                text="Movement could not complete. Refresh to check your location.") from None
+        # Do not mint another movement offer here; a fresh GET is deliberate.
+        return web.json_response(result, status=200 if result["ok"] else 409)
 
     async def logout(request):
         value = session(request)
@@ -200,5 +279,6 @@ def create_app(bot, config, *, oauth=None, clock=time.monotonic):
         web.get("/play/auth/callback", callback),
         web.get("/play/api/me", me),
         web.post("/play/logout", logout),
+        web.post("/play/api/walk", walk),
     ])
     return app

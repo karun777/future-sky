@@ -25,6 +25,10 @@ class SequenceCog(commands.Cog):
             await ctx.send(str(exc))
             return
         uid = str(ctx.author.id)
+        nav = self.bot.get_cog("NavigationCog")
+        if nav and uid in nav.walking:
+            await ctx.send("A movement is finishing. Try your sequence again shortly.")
+            return
         if uid in self.running:
             await ctx.send("Your sequence is already running.")
             return

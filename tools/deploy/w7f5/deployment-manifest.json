@@ -1,0 +1,29 @@
+{
+  "baseline": "d58d3da",
+  "files": {
+    "bot/fsbot/cogs/navigation.py": {
+      "source": "ec52b66d5143749d4cc5147ce07da3dc3307184c42257737ff78790db0ee1147",
+      "live": "4defe938ea323030599f4d66fe748a44eeff3dfc90172b3e84ab4a5125a54384"
+    },
+    "bot/fsbot/cogs/sequence.py": {
+      "source": "41463b4e6cbfd0d72d069246346e4f37bb34010672d8afce52be1323daef4582",
+      "live": "8545dee7ed594d4515f90c270db28ffda4b4319ea8027f91bafe12c335338788"
+    },
+    "bot/fsbot/web_portal.py": {
+      "source": "fdbccaf5c8aeea0a89118fab36a2759ad434f8c3abf34bd899cdaf3664de3add",
+      "live": "809dd9387761680fd1cd19a6028b811f6afa367fcd1fa285bd6f386d340d838c"
+    },
+    "bot/fsbot/web_static/index.html": {
+      "source": "e836fd559e067e2d0e5548e18a71d3eba90646f25caf618b2d498fe7d3335ec3",
+      "live": "6056292e2c1b24af322ba12f0990f848246b6b07064fd481f24f17a2d6f4942a"
+    },
+    "bot/fsbot/web_static/game.js": {
+      "source": "1b1b1d9da7397ea5fdc69de8bc44a80a2fad369b30591b29c562f73be12756d8",
+      "live": "cef7c073003f47874a2ef25e8f0929ea5e4c6d3715ba05d9d6bc292001201bea"
+    },
+    "bot/fsbot/web_static/game.css": {
+      "source": "8853f281ddfd11fa3ad7f7720aff97e33ddd6322a4f7399ea1c556e3b671330e",
+      "live": "30339d393eb149d7cb74e4b8d301e049f6cba6885604a73f527b4aa51b40443a"
+    }
+  }
+}

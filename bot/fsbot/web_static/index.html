@@ -13,13 +13,16 @@
 <p class="quiet">The first pilot opens your existing character. It does not create a new one.</p>
 </section>
 <section id="game" hidden>
-<div class="toolbar"><span>Live character view · read only</span><div><button id="refresh">Refresh</button><button id="logout">Sign out</button></div></div>
+<div class="toolbar"><span>One character · two doors</span><div><button id="refresh">Refresh</button><button id="logout">Sign out</button></div></div>
 <div class="layout"><section class="room">
 <div class="room-heading"><p class="eyebrow">YOUR CURRENT LOCATION</p><h1 id="room-title"></h1></div>
 <img id="room-image" alt="" hidden>
 <p id="no-image" class="quiet" hidden>There is no approved image for this view yet.</p>
-<div class="narrative"><p>Your character’s location and belongings are connected here. Room narrative and actions are the next integration step.</p>
-<p class="quiet">You can keep playing in Discord. Refresh here to see saved changes. Observing this page does not interrupt an enabled idle-return routine.</p></div>
+<div class="narrative"><p id="room-description"></p>
+<p id="walk-notice" class="quiet"></p>
+<nav id="exits" aria-label="Room exits"></nav>
+<p id="walk-feedback" role="status"></p>
+<p class="quiet">Keep playing in Discord. Refresh here to see saved changes. Choosing an exit counts as activity; viewing the room does not interrupt idle return.</p></div>
 </section><aside>
 <div class="portrait" aria-label="Character portrait not yet selected">◇</div>
 <h2 id="character-name"></h2><p class="quiet">Character portrait not yet selected</p>
