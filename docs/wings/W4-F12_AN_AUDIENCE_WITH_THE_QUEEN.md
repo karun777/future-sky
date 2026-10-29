@@ -23,3 +23,5 @@ extra.queen_audience_v1 stages met/rapport/received, approval unresolved, fee/re
 ## Verification
 
 216 full-suite tests passed. Added gate, pending return, legacy compatibility, payment/provenance, insufficient-funds and each-step save-failure/retry coverage. Existing messenger tests now assert the newly required pending departure instead of immediate acceptance. Current callback tests do not constitute a live author playcheck.
+
+Deployment: 29 October 2026 14:52 AWST, source 9624987, six selected code files installed after baseline checks against eb18262; 122 data paths unchanged during install. Backup /opt/futuresky/backups/w4f12-queen-20261029-145235/deployment.json. New PID 914581. No player reset; live playcheck pending.
