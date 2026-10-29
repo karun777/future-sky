@@ -16,8 +16,10 @@ def state_of(ch):
     if value is None:
         return None
     if (not isinstance(value, dict) or value.get("version") != 1
-            or value.get("stage") not in {"tip", "arranged"}):
+            or value.get("stage") not in {"tip", "pending", "arranged"}):
         raise ValueError("Your messenger record is unavailable. Nothing was changed.")
+    if value["stage"] == "pending" and (type(value.get("requested_at_minute")) is not int or value["requested_at_minute"] < 0):
+        raise ValueError("Your message record is unavailable.")
     if value["stage"] == "arranged" and value.get("meeting") != {
             "contact": "dark_rat_queen", "room": APPROACH, "status": "arranged"}:
         raise ValueError("Your meeting record is unavailable. Nothing was changed.")
@@ -50,9 +52,13 @@ def guidance(ch):
             return "Tomorrow’s music", "Ask the counterkeeper: `!inspect counterkeeper`."
         return None
     room = ch.get("current_room")
+    if state["stage"] == "pending":
+        if room == APPROACH:
+            return "The messenger", "The rat is away. Prepare at Elemental Sound via `!feed7`, then return after at least two hours. Check with `!rat message`."
+        return None
     if state["stage"] == "arranged":
         if room == APPROACH:
-            return "The arrangement", "The Dark Rat Queen has agreed to meet you here. Her arrival is the next part of this story."
+            return "The arrangement", "Your audience is at these windows. After rehearsal and the minimum wait, use `!queen`."
         return None
     if room == "neptune_lounge":
         return "The dock windows", "Head onto the main floor with `!go inside`, then `!go south` to the Stardock Overlook."
@@ -73,6 +79,13 @@ def prepare(ch, request=""):
     action = " ".join(request.casefold().split())
     if action not in {"", "look", "inspect", "message"}:
         raise ValueError("Use `!rat message` to request a meeting.")
+    if state["stage"] == "pending":
+        from fsbot.queen_audience import gate
+        gate(ch)
+        updated = deepcopy(ch)
+        updated["extra"][KEY].update(stage="arranged", meeting={
+            "contact":"dark_rat_queen", "room":APPROACH,"status":"arranged"})
+        return updated, ("The messenger returns", "The rat pushes a folded scrap towards you. **I’ll meet you here.**", "Use `!queen`.")
     if state["stage"] == "arranged":
         return ch, ("A meeting arranged",
                     "The rat has carried your message. The Dark Rat Queen has agreed to meet you here.",
@@ -80,11 +93,9 @@ def prepare(ch, request=""):
     if action != "message":
         return ch, ("By the dock windows", RAT, "Send your request with `!rat message`.")
     updated = deepcopy(ch)
-    updated["extra"][KEY] = {"version": 1, "stage": "arranged",
-                            "meeting": {"contact": "dark_rat_queen", "room": APPROACH, "status": "arranged"}}
+    from fsbot.queen_audience import elapsed
+    updated["extra"][KEY] = {"version":1,"stage":"pending", "requested_at_minute":elapsed(ch)}
     return updated, ("A rat with connections",
-        "You crouch beside the conduit and ask whether it can take a message to the Dark Rat Queen. "
-        "You would like to meet her about tomorrow’s music.\n\n"
-        "The rat studies you, then slips behind a pipe. When it returns, it pushes a folded scrap towards you.\n\n"
-        "In a small, firm hand: **I’ll meet you here.**",
-        "The meeting is arranged. Her arrival is the next part of this story.")
+        "You ask the rat to carry a request to meet the Dark Rat Queen about tomorrow’s music. "
+        "It studies you, then slips behind a pipe. It does not return. You have time to prepare.",
+        "Find rehearsal space on `!feed7`. Return after rehearsal and at least two hours; check with `!rat message`.")

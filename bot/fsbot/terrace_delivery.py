@@ -95,6 +95,8 @@ def inventory_lines(character):
              else "Opened capsule containing the antique box"]
     if state["stage"] == "usb_collected":
         lines.append("USB marked tunes")
+        if ((character.get("extra") or {}).get("queen_audience_v1") or {}).get("stage") == "received":
+            lines.append("Queen’s music — received")
     return lines
 
 

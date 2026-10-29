@@ -55,9 +55,9 @@ class MessengerTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(self.char()["current_room"], APPROACH)
         self.assertIn("warm conduit", self.ctx.text())
         await self.send()
-        self.assertIn("I’ll meet you here", self.ctx.text())
+        self.assertIn("does not return", self.ctx.text())
         self.reload()
-        self.assertEqual(self.char()["extra"][KEY]["meeting"]["status"], "arranged")
+        self.assertEqual(self.char()["extra"][KEY]["stage"], "pending")
         before = self.path.read_bytes()
         await self.send()
         self.assertEqual(self.path.read_bytes(), before)
@@ -91,7 +91,7 @@ class MessengerTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(self.path.read_bytes(), before)
         self.assertEqual(self.char()["extra"][KEY]["stage"], "tip")
         await self.send()
-        self.assertEqual(self.char()["extra"][KEY]["stage"], "arranged")
+        self.assertEqual(self.char()["extra"][KEY]["stage"], "pending")
 
     async def test_location_tip_and_body_gates(self):
         await self.ready()
