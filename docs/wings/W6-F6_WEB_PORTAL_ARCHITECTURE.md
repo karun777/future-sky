@@ -1,5 +1,13 @@
 # W6-F6 — Website identity and live character pilot
-29 October 2026. ACTIVE, UNSEALED. Chapter 1 / W4 remains paused.
+29 October 2026. SEALED as W6-F6 — Two Windows, One Character. Chapter 1 / W4 remains paused.
+
+## Current operational summary at seal
+The read-only portal is LIVE on https://future-sky.net/play/, deployed at 18:40 AWST. Author screenshots at 18:45–18:46 verified real owner login and Discord movement reflected in the website. Existing Efiishent is preserved; there are no web actions. Runtime Python is /opt/futuresky/.venv-web-pilot-20261029 via systemd drop-in; the prior environment remains available for rollback. Source is on expression/w6-f6-two-windows, not claimed merged to main. Full-suite evidence is 267 passing tests plus three separately run deployment transaction tests.
+
+The [home feather seal](W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md#seal-checkpoint--29-october-2026) owns outcome, limits, shared checkpoints and the unallocated next candidate. Total 28 sealed; W6 five. This seal changes documents only, not runtime or player state.
+
+## Historical preparation and deployment chronology
+The sections below preserve the sequence of preparation, activation and playcheck. Earlier not-deployed, outstanding-credentials or unverified-owner-login statements describe their dated stages, not current status.
 
 ## Author direction
 Karun accepted the game-window sketch as a starting point and prioritised connecting

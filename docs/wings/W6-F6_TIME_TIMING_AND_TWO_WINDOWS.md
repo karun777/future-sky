@@ -1,6 +1,40 @@
-# W6-F6 — Time, Timing and Two Windows
+# W6-F6 — Two Windows, One Character
 
-Status: ACTIVE, UNSEALED — author correction received 29 October 2026. The separate private study is retained as an experiment; the next direction is a game window on our existing website/server. W4 remains paused. No new seal; 27 overall. W6-F5 remains in review.
+Status: SEALED — author closed this feather on 29 October 2026 following the process report and successful live owner playcheck. Home: W6 Expression. W6 has five sealed feathers; overall total 28. W6-F5 remains REVIEW. Chapter 1 / W4 remains paused.
+
+Original allocated title: **Time, Timing and Two Windows**. The existing filename and feather ID are retained to preserve links and lineage. The timing study remains historical evidence; the seal concerns the bounded outcome below, not a completed game client or general timing system.
+
+## Seal checkpoint — 29 October 2026
+
+**Outcome:** authenticated observation of one existing character through the website and Discord, using the same authoritative game state on neptunelounge. Live portal: https://future-sky.net/play/.
+
+**Boundary:** Discord OAuth identifies the existing Efiishent; an allowlisted read-only web view displays character name, ordinary credits, current location, approved room artwork and ordinary carried/equipped inventory. Refresh reflects Discord movement. Discord remains supported. No character duplication, data reset, new chapter content or website actions.
+
+**Evidence:** implementation 7cf10d4; private setup 6fcf63b; reversible activation 370a909; deployment record 00bdabd; author playcheck 5317615. Source branch expression/w6-f6-two-windows; no merge to main is claimed. Deployment at 18:40 AWST; backup /opt/futuresky/backups/web-portal-20261029-184031. Public page/assets HTTP 200, unauthenticated character API HTTP 401, Discord redirect and bot reconnection independently checked. Author screenshots at 18:45–18:46 show signed-in Efiishent moving from Hostel Hallway to Hostel Stairwell after Discord !go down, with matching artwork and stable inventory.
+
+**Verification:** full 267-test suite passed in the staged runtime environment; three additional installer transaction tests passed separately. Real owner sign-in and desktop rendering were verified by the author's live screenshots. Automated browser visual QA was blocked by unavailable Chromium downloads. Mobile QA, other-account login and live logout/re-login were not established. Do not describe these separate runs as one 270-test full-suite run.
+
+**Retained limits:** manual refresh; single-account pilot; read-only website; narrative, visible exits, map, quest notes, special inventories, portrait and fuller character information are future integration. Image sizing pushes text below the desktop viewport. The stale rehearsal message about dock windows remains a known presentation defect. Sessions expire on restart; no changed world-clock, downtime catch-up or Discord idle-interruption policy.
+
+**Dependencies and operations:** existing Nginx/HTTPS, Python game authority, discord.py and aiohttp; Authlib/HTTPX2 for OAuth. Runtime uses /opt/futuresky/.venv-web-pilot-20261029 through a systemd drop-in. Credentials are private and outside Git. [Architecture and deployment details](W6-F6_WEB_PORTAL_ARCHITECTURE.md) remain the operational record.
+
+**Process reconciliation:** the original presentation study expanded through author-approved corrections into a live account connection. The scope changes were authorised, but the feather boundary and register lagged implementation. This close-out explicitly consolidates that lineage under one W6 feather, with shared checkpoints rather than duplicate Engine/Stewardship counts. The external study is not promoted or newly approved by this seal.
+
+## Shared checkpoints and return
+
+- **W2 Worlds:** existing approved room art can be presented over live location; later maps/exits must respect discovery and room-state rules.
+- **W3 Beings:** verified Discord identity maps to the existing character; this adds no new character, ancestry or class canon.
+- **W4 Play:** Discord play remains authoritative and supported. Website actions are absent; Chapter 1 remains paused. Carry the stale rehearsal cue forward as a presentation fix.
+- **W5 Time:** observing the web view does not count as a Discord command or interrupt idle-home. This is not a new simulation-time policy; future actions need explicit activity semantics.
+- **W6 Expression:** authenticated room imagery and character/inventory presentation are proven. Next presentation pass should fit scene, narrative and actions together and adapt existing player-facing text.
+- **W7 Engine:** one in-memory game authority, authenticated session ownership and selective deployment are established. Before web actions, preserve checks and persistence and arbitrate competing web/Discord/sequence/idle-home input.
+- **W8 Stewardship:** explicit boundary, current summary, author playcheck and deploy/source distinction must accompany future scope changes. Historical records below are superseded where they conflict with this seal.
+
+**Next bounded candidate, NOT allocated:** W7-F5 — One Action, Two Doors: shared checked action execution, initially ordinary movement, with cross-client arbitration and actual web-to-Discord verification. W7-F5 and W6-F7 remain unallocated; no automatic wing switch or new implementation is authorised by this close-out. Resume via the reset ritual, Knowledge Atlas, wing index, this seal and current operational checks.
+
+## Historical development record
+
+The following dated sections retain the earlier study and implementation history. Earlier ACTIVE/UNSEALED, not-deployed and unselected-technology statements are historical and do not override the seal or current architecture summary above.
 
 ## Live-account implementation preparation — 29 October 2026
 
