@@ -1,6 +1,14 @@
 # W6-F6 — Time, Timing and Two Windows
 
-Status: ACTIVE — private interactive presentation study, 29 October 2026. Author approved proceeding from the proposal. W4 remains paused. No new seal; 27 overall. W6-F5 remains in review.
+Status: ACTIVE, UNSEALED — author correction received 29 October 2026. The separate private study is retained as an experiment; the next direction is a game window on our existing website/server. W4 remains paused. No new seal; 27 overall. W6-F5 remains in review.
+
+## Author review and corrected direction — 29 October 2026
+
+Karun found the study interesting and impressive as a quick experiment, but it looked like a website rather than an invitation to play. He explicitly wants to build on our existing website and neptunelounge server, considering open source options, rather than create a separate hosted product.
+
+The desired game window includes avatar, character information, inventory, map, quest notes, current room image and accompanying text. Retain basic Discord play over the same authoritative game state. No CMS/LMS/framework has been chosen. Inspect the existing hosting and accounts before selecting components or integration. The study has not been accepted as the game interface or sealed.
+
+Read [the fresh-session handover](../handover/FUTURE_SKY_GAME_WINDOW_HANDOVER_20261029.md) before continuing. The historical study details below describe what was built, not the approved deployment architecture.
 
 ## Review the study
 

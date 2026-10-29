@@ -1,10 +1,14 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home: **W6 Expression / W6-F6 — Time, Timing and Two Windows**, ACTIVE private presentation study. [Review and implementation boundary](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md). W7-F4 sealed; W4 remains paused. Twenty-seven sealed overall. Next unallocated W6-F7.
+Current home: **W6 Expression / W6-F6 — Time, Timing and Two Windows**, ACTIVE, unsealed; author correction redirects the study toward a game window on the existing website/server. [Review and implementation boundary](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md). W7-F4 sealed; W4 remains paused. Twenty-seven sealed overall. Next unallocated W6-F7.
 **27 sealed wing feathers: W4 has nine, W6 has four, W7 has four; each other wing has two. The 16-feather chassis first pass is complete.** W2-F3 and W4-F3 are in review and are not counted complete; W4-F4/F5 deployed; earlier review work remains unactivated.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
+
+## Fresh-session handover — 29 October 2026
+
+Read [the game-window handover](handover/FUTURE_SKY_GAME_WINDOW_HANDOVER_20261029.md) first. The external study is an experiment, not the selected game interface or hosting architecture. W4 stays paused; no new seal or allocation.
 
 ## Reconnected return — 18 October 2026
 
