@@ -311,6 +311,7 @@ EXTENSIONS = [
     # Routing must exist before anything emits output
     "fsbot.cogs.router",
     "fsbot.cogs.sequence",
+    "fsbot.cogs.idle_home",
 
     # Core gameplay layer
     "fsbot.cogs.core",

@@ -157,6 +157,8 @@ class ActivityCog(commands.Cog):
 
     @commands.Cog.listener()
     async def on_command(self, ctx: commands.Context):
+        if getattr(ctx, "_automatic_action", False) or getattr(ctx, "_sequence_child", False):
+            return
         # Bump activity when a command is recognized in the user's run channel
         user_id = str(ctx.author.id)
         try:

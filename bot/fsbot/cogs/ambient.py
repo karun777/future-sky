@@ -273,6 +273,8 @@ class AmbientCog(commands.Cog):
 
     @commands.Cog.listener()
     async def on_command(self, ctx: commands.Context):
+        if getattr(ctx, "_automatic_action", False) or getattr(ctx, "_sequence_child", False):
+            return
         self.note_activity(str(ctx.author.id))
 
     def _get_guild(self) -> Optional[discord.Guild]:
@@ -447,6 +449,9 @@ class AmbientCog(commands.Cog):
         """
         if recovering(char):
             return True
+        # IdleHomeCog replaces legacy ambient teleportation when loaded.
+        if getattr(self.bot, "get_cog", lambda name: None)("IdleHomeCog") is not None:
+            return False
         if not self._rest_enabled():
             return False
 

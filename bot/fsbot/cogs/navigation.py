@@ -515,6 +515,13 @@ class NavigationCog(commands.Cog):
                 exclude={user_id},
             )
 
+        # Automatic actions must revalidate after awaited departure broadcasts.
+        if getattr(ctx, "_automatic_action", False):
+            idle = self.bot.get_cog("IdleHomeCog")
+            if (idle is None or not idle.allow_step(ctx)
+                    or s.characters[user_id].get("current_room") != cur):
+                return
+            ch = s.characters[user_id]
         # Move
         previous_room = ch.get("current_room")
         ch["current_room"] = new_room

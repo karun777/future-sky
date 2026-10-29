@@ -86,6 +86,7 @@ ROUTE_GAMEPLAY_COMMANDS: Set[str] = {
     "rehearsal",
     "queen",
     "sequence",
+    "idlehome",
     "hud",
     "hud_on",
     "hud_off",
