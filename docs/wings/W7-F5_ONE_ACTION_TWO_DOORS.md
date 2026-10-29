@@ -100,3 +100,10 @@ Status moves to REVIEW, not SEALED. Actual owner login and website walk → Disc
 Author supplied the Discord movement notice: "You walk west using the game window. Now at Hostel Hallway — Pod Doors & Quiet Lives." Their subsequent !look returned Hostel Hallway, its description/art and south/east/down exits. The website screenshot at 19:55:15 shows the same room, matching description/art, Go south/east/down buttons, Efiishent, four credits and the previously displayed equipment/bag contents. This verifies real authenticated web movement, Discord delivery, Discord observation of the resulting state and successful web rendering.
 
 The reverse leg (Discord movement followed by website refresh) is not shown in this evidence and remains pending. W7-F5 remains REVIEW, not sealed; counts unchanged. The known stale Elemental Sound "back at the dock windows" cue remains visible in Discord and is retained as presentation debt outside this feather.
+
+
+## Idle-home integration playcheck — 29 October 2026, 19:57–19:58 AWST
+
+Author supplied the automatic arrival notice: "While your attention wandered, you made your way home to Pod Room — Wakefulness Module." Their subsequent Discord !look at 19:57 shows the pod; the website screenshot (connected 19:57:44, captured 19:58:26) shows the same Pod Room, approved pod image, pod bearings/booking guidance, four credits and previously displayed equipment/bag contents. This establishes live idle-home completion after website walking and agreement of both renderers on its resulting state. It is not evidence of a deliberate Discord !go return; that specific remaining acceptance check is still pending. No idle settings were changed by this verification.
+
+Presentation notes: web currently shows Markdown asterisks/backticks literally in pod guidance because text is safely rendered as plain text. Full Markdown rendering remains deferred. The known stale Elemental Sound cue persists in Discord. Neither issue was silently expanded into this movement feather. Status remains REVIEW; sealed counts unchanged.
