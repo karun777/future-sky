@@ -1,7 +1,7 @@
 """One checked walking action per heartbeat; human input takes priority."""
 import time
 import logging
-from copy import copy
+from copy import copy, deepcopy
 import discord
 from discord.ext import commands
 from fsbot.idle_home import KEY, record, configure, touch, due, blocked, next_step, note
@@ -134,7 +134,14 @@ class IdleHomeCog(commands.Cog):
                 return
             try:direction=next_step(self.bot.storage.rooms,ch.get("current_room"),home)
             except ValueError:
-                self.commit(uid,note(ch,"blocked","Your usual way home is unavailable. You stay where you are."))
+                # Delivery clears pending_notice, but must not rearm the warning.
+                # Persist the episode key so a restart also remains quiet.
+                episode = [s["generation"], ch.get("current_room"), home]
+                if s.get("status") != "blocked" or s.get("route_block_notice") != episode:
+                    updated = deepcopy(note(ch, "blocked",
+                        "Your usual way home is unavailable. You stay where you are."))
+                    updated["extra"][KEY]["route_block_notice"] = episode
+                    self.commit(uid, updated)
                 return
             generation=s["generation"]
             message=await self.source_message(uid,ch)

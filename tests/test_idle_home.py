@@ -218,3 +218,63 @@ class IdleHomeTests(unittest.IsolatedAsyncioTestCase):
         for field in ["_automatic_action","_sequence_child"]:
             ctx=SimpleNamespace(author=self.ctx.author,**{field:True})
             await ambient.on_command(ctx)
+
+    async def test_blocked_route_warns_once_across_ticks_and_restart(self):
+        cog=await self.start()
+        self.char()["current_room"]="dock_gate"
+        self.clock[0]=1060
+        self.registry_bot._connection._guilds[1]=SimpleNamespace(id=1)
+        with patch("fsbot.cogs.idle_home.send_to_player_run_channel_if_any",new=AsyncMock(return_value=True)) as send:
+            await cog.tick(self.uid)
+            for _ in range(5):
+                await cog.tick(self.uid)
+            self.assertEqual(send.await_count,1)
+            self.assertEqual(len(record(self.char())["history"]),1)
+            import json
+            self.storage.characters[self.uid]=json.loads(self.path.read_text())[self.uid]
+            restarted=IdleHomeCog(self.registry_bot);restarted.now=lambda:1060
+            await restarted.tick(self.uid)
+            self.assertEqual(send.await_count,1)
+            self.assertNotIn("pending_notice",record(self.char()))
+
+    async def test_blocked_route_keeps_pending_notice_until_delivery(self):
+        cog=await self.start()
+        self.char()["current_room"]="dock_gate"
+        self.clock[0]=1060
+        for _ in range(5):await cog.tick(self.uid)
+        self.assertIn("pending_notice",record(self.char()))
+        self.assertEqual(len(record(self.char())["history"]),1)
+        self.registry_bot._connection._guilds[1]=SimpleNamespace(id=1)
+        with patch("fsbot.cogs.idle_home.send_to_player_run_channel_if_any",new=AsyncMock(return_value=True)) as send:
+            for _ in range(3):await cog.tick(self.uid)
+            self.assertEqual(send.await_count,1)
+
+    async def test_new_idle_episode_can_warn_again_and_route_is_rechecked(self):
+        cog=await self.start()
+        self.char()["current_room"]="dock_gate"
+        self.clock[0]=1060
+        self.registry_bot._connection._guilds[1]=SimpleNamespace(id=1)
+        with patch("fsbot.cogs.idle_home.send_to_player_run_channel_if_any",new=AsyncMock(return_value=True)) as send:
+            await cog.tick(self.uid)
+            await cog.tick(self.uid)
+            cog.observe(self.uid)
+            self.clock[0]=1120
+            await cog.tick(self.uid)
+            await cog.tick(self.uid)
+            self.assertEqual(send.await_count,2)
+        # No activity or generation change: recovering route must still be used.
+        with patch("fsbot.cogs.idle_home.next_step",return_value="west") as route:
+            with patch.object(cog,"source_message",new=AsyncMock(return_value=None)) as source:
+                await cog.tick(self.uid)
+                route.assert_called_once()
+                source.assert_awaited_once()
+
+    async def test_different_blocked_room_can_warn_again(self):
+        cog=await self.start()
+        self.char()["current_room"]="dock_gate"
+        self.clock[0]=1060
+        await cog.tick(self.uid)
+        first=record(self.char())["route_block_notice"]
+        self.char()["current_room"]="security_checkpoint"
+        await cog.tick(self.uid)
+        self.assertNotEqual(record(self.char())["route_block_notice"],first)

@@ -78,3 +78,17 @@ The author also supplied repeated Discord notices: “Your usual way home is una
 A separate existing notification defect explains repetition: tick delivers and clears pending_notice, then retries the unsupported route; note sees the same blocked status but a missing pending_notice, queues the same notice and appends another blocked history entry. The cycle repeats on heartbeats. Passive web GETs do not cause this state transition. Follow-up should suppress repeat notices for an unchanged blocked episode while retaining route rechecks, and explicitly decide any route expansion separately. No idle policy, player data or live code was modified during this inspection.
 
 W6-F7 remains unsealed pending author closure; counts remain W6 five and project 29. Chapter 1 remains paused.
+
+## Author-requested idle notice repair — 30 October 2026
+
+Author requested the repeating warning be fixed because it keeps beeping. This is a bounded repair attached to this acceptance checkpoint, with W5 idle-policy and W7 runtime impact; no new feather or sealed count is claimed.
+
+The idle cog now persists a route-block notification episode identified by activity generation, current room and home. Delivering a notice does not clear that episode marker. Repeated heartbeats still evaluate routes but do not requeue the same warning or grow blocked history. New activity, changed room/home or a later blocked episode can produce a fresh warning. Pending notices remain available for delivery retries. The existing supported-route policy is unchanged. The repair adds one small metadata field through normal character saves, with no data migration or manual player-data edit.
+
+All 317 Python tests pass, including four added regressions for repeated ticks and persisted restart, unavailable delivery, new activity and continued route checks, and changed blocked room. The one-file installer tools/deploy/w6f7_idle_notice/activate.py reuses the established backup/hash-check/restart/health-check/rollback workflow. Read-only preflight passes against the live idle cog. Source prepared; privileged activation still pending. No claim of live silence yet. One pending old notice may still be delivered during transition.
+
+```sh
+ssh -t -p 777 efiishent@future-sky.net 'sudo python3 /home/efiishent/future-sky-worktrees/w6-f7/tools/deploy/w6f7_idle_notice/activate.py'
+```
+
+After activation, sign in to the web window again. If idle return was temporarily switched off using !idlehome off, re-enable only when desired (the tested pilot setting was !idlehome on 60). Confirm the blocked warning does not recur over multiple heartbeats without new activity. Chapter 1 stays paused; W6-F7 remains unsealed.
