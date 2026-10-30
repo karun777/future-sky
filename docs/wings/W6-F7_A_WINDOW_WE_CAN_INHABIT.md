@@ -1,6 +1,6 @@
 # W6-F7 — A Window We Can Inhabit
 
-Status: ACTIVE — implementation verified and deployment staged 29 October 2026; privileged activation and live visual/sync playcheck pending.
+Status: ACTIVE — live deployment and author interface/sync feedback verified 30 October 2026; unsealed. Existing idle-home notification defect recorded below.
 Home: W6 Expression. Baseline: sealed W7-F5, 784f4e2.
 Branch: expression/w6-f7-window-we-can-inhabit.
 W6 five sealed; project 29. W6-F8 next unallocated. Chapter 1 / W4 stays paused.
@@ -68,3 +68,13 @@ ssh -t -p 777 efiishent@future-sky.net 'sudo python3 /home/efiishent/future-sky-
 ```
 
 After restart sign in again. Leave the website open, move in Discord and watch the location update without Refresh; use a web exit and verify Discord, then check an idle-home return. Check prose/layout and visibility/reconnection feedback. W6-F7 remains unsealed; W6 five and total 29. Chapter 1 stays paused until refinement acceptance and the author's decision to resume it.
+
+## Live feedback — 30 October 2026 (Perth)
+
+Author reports: “sync is good, nothing jumps, controls are clear”; interface looks pretty good and offers a basis for further refinement. Read-only server inspection confirms all four deployed runtime files match the W6-F7 source; futuresky-bot.service is active. Installer output and backup path were not supplied, so those are not asserted here. This feedback does not separately establish every offline/reconnection or idle-completion acceptance case.
+
+The author also supplied repeated Discord notices: “Your usual way home is unavailable. You stay where you are.” Inspection finds the pilot at dock_gate, home pod_room, idle return enabled at 60 seconds, status blocked. dock_gate is outside idle_home.PUBLIC_ROOMS, so automatic routing refuses this start room. This is a supported-route boundary, not evidence that ordinary walking is broken.
+
+A separate existing notification defect explains repetition: tick delivers and clears pending_notice, then retries the unsupported route; note sees the same blocked status but a missing pending_notice, queues the same notice and appends another blocked history entry. The cycle repeats on heartbeats. Passive web GETs do not cause this state transition. Follow-up should suppress repeat notices for an unchanged blocked episode while retaining route rechecks, and explicitly decide any route expansion separately. No idle policy, player data or live code was modified during this inspection.
+
+W6-F7 remains unsealed pending author closure; counts remain W6 five and project 29. Chapter 1 remains paused.
