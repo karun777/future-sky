@@ -451,6 +451,10 @@ async def on_command_error(ctx: commands.Context, error: Exception):
     except Exception:
         pass
 
+    # Recovery already explained this deliberate refusal to the player.
+    if isinstance(error, commands.CheckFailure) and getattr(ctx, "_recovery_denial_sent", False):
+        return
+
     if isinstance(error, CommandNotFound):
         return
 

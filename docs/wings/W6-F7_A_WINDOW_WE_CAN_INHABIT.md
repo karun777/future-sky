@@ -92,3 +92,13 @@ ssh -t -p 777 efiishent@future-sky.net 'sudo python3 /home/efiishent/future-sky-
 ```
 
 After activation, sign in to the web window again. If idle return was temporarily switched off using !idlehome off, re-enable only when desired (the tested pilot setting was !idlehome on 60). Confirm the blocked warning does not recur over multiple heartbeats without new activity. Chapter 1 stays paused; W6-F7 remains unsealed.
+
+## Recovery playcheck and narrow feedback repair — 30 October 2026
+
+Author supplied combat/death/recovery transcript at 09:12–09:23 Perth. Recovery decreased from 7.000 to 6.583 in-world days, confirming timer progression in that interval. No reset, acceleration or possessions edit requested or performed. Transcript includes changing enemy instance labels (customs_eye_1#1 to customs_eye_1_1#1) and stale Elemental Sound text. Combat identity/turn behaviour needs a separate investigation; no combat patch or diagnosis of extra turns is claimed here.
+
+Read-only live inspection now confirms the idle-notice patch matches source. The transcript's single blocked-route notice alone does not demonstrate recurrence after the patch. Its timing relative to activation is not asserted.
+
+The confirmed recovery defect is duplicate feedback: RecoveryCog.bot_check sends its deliberate denial and returns False, then the entrypoint handles discord.py CheckFailure as a generic unexpected error. Journal output confirms that CheckFailure for look. The patch marks a successfully delivered recovery denial on the request context; the error handler suppresses only CheckFailure with that marker. Unexpected exceptions and unhandled check failures retain their normal reporting. The marker resets on each recovery check. Failed notice delivery is not marked as handled.
+
+319 Python tests pass, including two added tests executing the actual error handler without importing the network-starting entrypoint, checking one response, retained unexpected-error reporting, reset of the marker, safe-refresh failure and failed delivery. Two-file deployment staged under tools/deploy/w6f7_recovery_notice; existing backup/hash/rollback process reused. Source fix only until privileged activation. W6-F7 unsealed; Chapter 1 paused; counts unchanged.

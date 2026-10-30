@@ -1,0 +1,13 @@
+{
+  "baseline": "24838f1",
+  "files": {
+    "bot/fsbot/cogs/recovery.py": {
+      "source": "a8711a96143883a630a188aef67ca7985f4482d400e449fe77c53deb980bf7f6",
+      "live": "9fc95a0ad0b90869796c625e3699416bc1263e9a76d8097fd77325d9d5fafe58"
+    },
+    "bot/run_bot.py": {
+      "source": "10bce0852aad5bdfc30821868744b61da05db2bbffefce42c65393f4c60c2fc6",
+      "live": "5bdc77778545861ef9e2d35e91a7bd1b161257339197e4135f8b40b3db2d658a"
+    }
+  }
+}

@@ -318,6 +318,44 @@ class RecoveryTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(await bot.can_run(ctx))
         await bot.close()
 
+    async def test_recovery_denial_is_not_reported_as_generic_error(self):
+        # Execute the real handler without importing the network-starting entrypoint.
+        import ast
+        from unittest.mock import Mock
+        tree=ast.parse((Path(__file__).resolve().parents[1]/"bot/run_bot.py").read_text())
+        handler=next(n for n in tree.body if isinstance(n,ast.AsyncFunctionDef) and n.name=="on_command_error")
+        handler.decorator_list=[]
+        namespace={"commands":commands,"CommandNotFound":commands.CommandNotFound,
+            "MissingRequiredArgument":commands.MissingRequiredArgument,"BadArgument":commands.BadArgument,"log":Mock()}
+        exec(compile(ast.Module(body=[handler],type_ignores=[]),"run_bot-handler","exec"),namespace)
+        self.start()
+        self.ctx.command.qualified_name="look"
+        self.assertFalse(await self.cog.bot_check(self.ctx))
+        await namespace["on_command_error"](self.ctx,commands.CheckFailure("recovery"))
+        self.assertEqual(len(self.ctx.messages),1)
+        self.assertIn("body is in recovery",self.ctx.messages[0])
+        # A real unexpected fault must still reach the normal error handler.
+        await namespace["on_command_error"](self.ctx,RuntimeError("unexpected"))
+        self.assertIn("Something went wrong",self.ctx.messages[-1])
+        # Neither unrelated check failures nor a later allowed check inherit suppression.
+        self.ctx.command.qualified_name="recovery"
+        self.assertTrue(await self.cog.bot_check(self.ctx))
+        self.assertFalse(self.ctx._recovery_denial_sent)
+        await namespace["on_command_error"](self.ctx,commands.CheckFailure("other guard"))
+        self.assertIn("Something went wrong",self.ctx.messages[-1])
+
+    async def test_recovery_check_failure_marks_only_successfully_sent_notice(self):
+        from unittest.mock import patch
+        self.start()
+        self.ctx.command.qualified_name="look"
+        with patch.object(self.cog.service,"refresh",side_effect=OSError("fixture")):
+            self.assertFalse(await self.cog.bot_check(self.ctx))
+            self.assertTrue(self.ctx._recovery_denial_sent)
+            self.assertEqual(self.ctx.messages,["Recovery could not be checked safely. Please try again."])
+        self.ctx.send=AsyncMock(side_effect=RuntimeError("delivery failed"))
+        with self.assertRaises(RuntimeError):await self.cog.bot_check(self.ctx)
+        self.assertFalse(self.ctx._recovery_denial_sent)
+
 
 if __name__ == "__main__":
     unittest.main()

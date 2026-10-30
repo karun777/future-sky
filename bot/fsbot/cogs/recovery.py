@@ -24,6 +24,7 @@ class RecoveryCog(commands.Cog):
                     logging.getLogger("futuresky.recovery").exception("Recovery completion failed; retained for retry")
 
     async def bot_check(self, ctx):
+        ctx._recovery_denial_sent = False
         uid = str(ctx.author.id)
         character = self.bot.storage.characters.get(uid)
         if not isinstance(character, dict) or not recovering(character):
@@ -32,6 +33,7 @@ class RecoveryCog(commands.Cog):
             self.service.refresh(uid)
         except Exception:
             await ctx.send("Recovery could not be checked safely. Please try again.")
+            ctx._recovery_denial_sent = True
             return False
         if not recovering(self.bot.storage.characters[uid]):
             return True
@@ -39,6 +41,7 @@ class RecoveryCog(commands.Cog):
         if name in {"recovery", "pod_delivery", "help", "commands", "command", "time", "feed7"}:
             return True
         await ctx.send("Your body is in recovery. Use `!recovery` for its status; bodily actions must wait.")
+        ctx._recovery_denial_sent = True
         return False
 
     @commands.command(name="recovery")
