@@ -1,7 +1,7 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W6 Expression / W6-F8 — Staying in the World**, ACTIVE continuation/design framing. [Scope and return](wings/W6-F8_STAYING_IN_THE_WORLD.md). **W6-F7 is sealed as the interface foundation**, not completion of the inhabitable-window ambition. [Seal](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#seal--4-november-2026). Next unallocated W6-F9; W7-F6 remains unallocated. Chapter 1 / W4 stays paused.
+Current home/checkpoint: **W6 Expression / W6-F8 — Staying in the World**, ACTIVE: three web-first pod interface treatments published for comparison; inspection rehearsal only, no live character writes. [Scope and return](wings/W6-F8_STAYING_IN_THE_WORLD.md). **W6-F7 is sealed as the interface foundation**, not completion of the inhabitable-window ambition. [Seal](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#seal--4-november-2026). Next unallocated W6-F9; W7-F6 remains unallocated. Chapter 1 / W4 stays paused.
 **30 sealed wing feathers: W4 has nine, W6 six, W7 five; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.

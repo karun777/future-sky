@@ -34,3 +34,11 @@ A player should be able to orient themselves, choose an available interaction, r
 ## Return
 
 Read W6-F7 seal and this brief, inspect current web projection and existing interaction services, then develop the first inhabitable scene with Karun. Known defects carried forward: combat enemy-ID consistency, stale rehearsal copy and thin recovery experience. No implementation or deployment in this allocation. Repository documentation remains on expression/w6-f7-window-we-can-inhabit until an isolated W6-F8 implementation worktree is created.
+
+## Web-first experiment — 4 November 2026
+
+Karun chooses to push web gameplay further, with Discord primarily for chat and as a supported fallback. Avoid compulsory switching between apps. Visual references: original DOS Bard's Tale and Sierra/King's Quest, detailed static artwork within nostalgic frames and deliberate typography. Simulation depth remains the priority. The user authorised trying the three proposed treatments.
+
+An isolated, public rehearsal is now available at https://future-sky.net/assets/experiments/w6-f8/index.html on the existing server. Source: tools/authoring/w6f8. The same pod inspection fixture, artwork, journal and command input is shared by three layouts; changing style preserves tab state. It does not connect to the authenticated player or advance Chapter 1. No Discord embed installed: WidgetBot remains an option to evaluate for permissions and login before adoption.
+
+Browser checks confirmed rendering and the panels → display → booking observation loop, typed chain inspection and belongings. Source/public bytes match for all four delivered files. Mobile testing and integration with authoritative inspection/discovery services remain future work. User should compare reading comfort, controls, scene/text balance and sense of place before selecting or combining treatments. W6-F8 remains active, total 30; next unallocated W6-F9.
