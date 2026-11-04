@@ -1,10 +1,14 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W6 Expression / W6-F7 — A Window We Can Inhabit**, ACTIVE, implementation verified (313 Python tests and 11 JavaScript behaviour checks), deployment staged; privileged activation and live visual/sync playcheck pending. [Scope and return](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md). W7-F5 remains sealed; W6-F8 and W7-F6 remain unallocated. Chapter 1 / W4 stays paused.
-**29 sealed wing feathers: W4 has nine, W6 and W7 have five each; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
+Current home/checkpoint: **W6 Expression / W6-F8 — Staying in the World**, ACTIVE continuation/design framing. [Scope and return](wings/W6-F8_STAYING_IN_THE_WORLD.md). **W6-F7 is sealed as the interface foundation**, not completion of the inhabitable-window ambition. [Seal](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#seal--4-november-2026). Next unallocated W6-F9; W7-F6 remains unallocated. Chapter 1 / W4 stays paused.
+**30 sealed wing feathers: W4 has nine, W6 six, W7 five; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
+
+## Fresh-session return — 4 November 2026
+
+Read [W6-F7 seal](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#seal--4-november-2026), then [W6-F8 continuation](wings/W6-F8_STAYING_IN_THE_WORLD.md). The author wants to keep improving the window: foundation accepted, inhabitability unfinished. Both recent bug fixes are verified deployed. Continue design and interaction work; Chapter 1 stays paused.
 
 ## Fresh-session handover — 29 October 2026
 
@@ -33,7 +37,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
 | W4 Play | 9 | [W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F13 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
-| W6 Expression | 5 | [W6-F6](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md) | W6-F5 review; [W6-F7 — active](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md); next unallocated W6-F8 |
+| W6 Expression | 6 | [W6-F7](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md) | W6-F5 review; [W6-F8 — active](wings/W6-F8_STAYING_IN_THE_WORLD.md); next unallocated W6-F9 |
 | W7 Engine | 5 | [W7-F5](wings/W7-F5_ONE_ACTION_TWO_DOORS.md) | next unallocated W7-F6 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
@@ -62,6 +66,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Open: ordinary resident atrophy and runtime delivery remain unproven. W1 has 2 completed feathers. [W1-F3 / historical Feather 57 — The Eight Timelines: A Constellation of Possibilities](wings/W1-F3_THE_EIGHT_TIMELINES.md) is allocated and parked (18 October 2026). Source review records seven-line legacy material and October A–G research; the proposed eight-part structure is unresolved. Next unallocated W1-F4. Preparation does not increment the completed count.
 
 ### W2 — Worlds
+- 4 November: [W6-F7 seal](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#seal--4-november-2026) closes the live interface foundation; [W6-F8 shared checkpoints](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-checkpoints) carry continuing interaction and inhabitability work. One W6 count; Chapter 1 paused.
 - 29 October W6-F6 seal: Live location and existing approved artwork are shared across clients; map/discovery presentation remains future work. [Authoritative home checkpoint](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md#shared-checkpoints-and-return).
 - 22 October shared return: [W4-F9 lookout and delivery](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md#shared-wing-return) preserves outdoor-space, name/key, visual and temporal implications. Authoring draft only; no duplicate allocation or live change.
 - 20 October dressing checkpoint: [W4-F7](wings/W4-F7_GETTING_DRESSED.md) owns the browse/inspect/wear/remove loop; existing contents and identity distinctions retained. REVIEW, no live install or duplicate count.
@@ -83,6 +88,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Return: Worlds has 2 completed feathers; W2-F3 allocated in REVIEW, next unallocated W2-F4. Larger World Engine expansion is on hold under the adopted experience direction. Source checkpoint 48ff5b8; refresh live state before implementation.
 
 ### W3 — Beings
+- 4 November: [W6-F7 seal](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#seal--4-november-2026) closes the live interface foundation; [W6-F8 shared checkpoints](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-checkpoints) carry continuing interaction and inhabitability work. One W6 count; Chapter 1 paused.
 - 29 October W6-F6 seal: Discord identity maps to existing Efiishent; no new character or character canon. [Authoritative home checkpoint](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md#shared-checkpoints-and-return).
 - 22 October shared return: [W4-F9 lookout and delivery](wings/W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md#shared-wing-return) preserves outdoor-space, name/key, visual and temporal implications. Authoring draft only; no duplicate allocation or live change.
 - 20 October dressing checkpoint: [W4-F7](wings/W4-F7_GETTING_DRESSED.md) owns the browse/inspect/wear/remove loop; existing contents and identity distinctions retained. REVIEW, no live install or duplicate count.
@@ -101,6 +107,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W3 completed count is 2; W3-F3 remains unallocated. Preserve identity/role/driver distinctions before deeper character authoring or controller changes.
 
 ### W4 — Play
+- 4 November: [W6-F7 seal](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#seal--4-november-2026) closes the live interface foundation; [W6-F8 shared checkpoints](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-checkpoints) carry continuing interaction and inhabitability work. One W6 count; Chapter 1 paused.
 - 29 October: [W6-F7](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#shared-checkpoints) is ACTIVE: readable game window and passive shared-state updates; Chapter 1 paused, counts unchanged.
 - 29 October: [W7-F5 — One Action, Two Doors](wings/W7-F5_ONE_ACTION_TWO_DOORS.md#shared-checkpoints) is SEALED: shared ordinary walking from web and Discord verified live, including idle-home integration. One home count in W7 (now five); total 29. Chapter 1 stays paused.
 - 29 October W6-F6 seal: Discord remains supported; web actions absent and Chapter 1 paused. Retain stale rehearsal-location copy as presentation debt. [Authoritative home checkpoint](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md#shared-checkpoints-and-return).
@@ -121,6 +128,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Return: W4 completed count is 4; W4-F3 remains in REVIEW; next unallocated W4-F6. Next bounded candidate: playtest the deployed opening as Efiishent. No reset performed; inspect current state before any renewal. Performance criteria and ambassador stay/leave remain open in W4-F3.
 
 ### W5 — Time
+- 4 November: [W6-F7 seal](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#seal--4-november-2026) closes the live interface foundation; [W6-F8 shared checkpoints](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-checkpoints) carry continuing interaction and inhabitability work. One W6 count; Chapter 1 paused.
 - 29 October: [W6-F7](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#shared-checkpoints) is ACTIVE: readable game window and passive shared-state updates; Chapter 1 paused, counts unchanged.
 - 29 October: [W7-F5 — One Action, Two Doors](wings/W7-F5_ONE_ACTION_TWO_DOORS.md#shared-checkpoints) is SEALED: shared ordinary walking from web and Discord verified live, including idle-home integration. One home count in W7 (now five); total 29. Chapter 1 stays paused.
 - 29 October W6-F6 seal: Web observation does not interrupt idle-home; no new world-clock policy. Future shared actions need explicit activity semantics. [Authoritative home checkpoint](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md#shared-checkpoints-and-return).
@@ -154,6 +162,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Current: [W6-F3 — The Display Behind Your Eyes](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) is SEALED after its bounded implementation and live checks: consistent truthful HUD states, once-only display notice and brochure crash, shared typing/activity input and idle-choice quiet. First live HUD checks passed. Follow-up adds spaced commands and discovery-based explicit HUD, removes automatic meters; 119 isolated tests pass. Follow-up deployed at 20:19 AWST; Karun confirmed quiet look, discovery-based HUD and spaced controls at 20:21 AWST. Implant/subtle-perception direction is recorded; larger progression remains deferred. W6 completed count is 3; next unallocated W6-F4. W4-F6 remains unallocated.
 
 ### W7 — Engine
+- 4 November: [W6-F7 seal](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#seal--4-november-2026) closes the live interface foundation; [W6-F8 shared checkpoints](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-checkpoints) carry continuing interaction and inhabitability work. One W6 count; Chapter 1 paused.
 - 29 October: [W6-F7](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#shared-checkpoints) is ACTIVE: readable game window and passive shared-state updates; Chapter 1 paused, counts unchanged.
 - 29 October: [W7-F5 — One Action, Two Doors](wings/W7-F5_ONE_ACTION_TWO_DOORS.md#shared-checkpoints) is SEALED: shared ordinary walking from web and Discord verified live, including idle-home integration. One home count in W7 (now five); total 29. Chapter 1 stays paused.
 - 29 October W6-F6 seal: Live authenticated read-only adapter shares bot-owned state; future actions require shared checks and cross-client arbitration. W7-F5 proposed only, unallocated; no duplicate count. [Authoritative home checkpoint](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md#shared-checkpoints-and-return).
@@ -170,6 +179,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W7 has 2 completed feathers; W7-F3 unallocated. Sequential same-host capture is not an atomic world snapshot or full disaster recovery. Scope exclusions and capsule path are recorded in W7-F2.
 
 ### W8 — Stewardship
+- 4 November: [W6-F7 seal](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#seal--4-november-2026) closes the live interface foundation; [W6-F8 shared checkpoints](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-checkpoints) carry continuing interaction and inhabitability work. One W6 count; Chapter 1 paused.
 - 29 October: [W6-F7](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#shared-checkpoints) is ACTIVE: readable game window and passive shared-state updates; Chapter 1 paused, counts unchanged.
 - 29 October: [W7-F5 — One Action, Two Doors](wings/W7-F5_ONE_ACTION_TWO_DOORS.md#shared-checkpoints) is SEALED: shared ordinary walking from web and Discord verified live, including idle-home integration. One home count in W7 (now five); total 29. Chapter 1 stays paused.
 - 29 October W6-F6 seal: Scope and evidence reconciled under one home feather; update explicit boundaries and linked checkpoints when work expands. No duplicate count. [Authoritative home checkpoint](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md#shared-checkpoints-and-return).

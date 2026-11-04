@@ -1,9 +1,9 @@
 # W6-F7 — A Window We Can Inhabit
 
-Status: ACTIVE — live deployment and author interface/sync feedback verified 30 October 2026; unsealed. Existing idle-home notification defect recorded below.
+Status: SEALED — author approved closure 4 November 2026, explicitly as a foundation rather than completion of the inhabitable-window ambition.
 Home: W6 Expression. Baseline: sealed W7-F5, 784f4e2.
 Branch: expression/w6-f7-window-we-can-inhabit.
-W6 five sealed; project 29. W6-F8 next unallocated. Chapter 1 / W4 stays paused.
+W6 six sealed; project 30. Continue in W6-F8; next unallocated W6-F9. Chapter 1 / W4 stays paused.
 
 ## Outcome
 
@@ -102,3 +102,13 @@ Read-only live inspection now confirms the idle-notice patch matches source. The
 The confirmed recovery defect is duplicate feedback: RecoveryCog.bot_check sends its deliberate denial and returns False, then the entrypoint handles discord.py CheckFailure as a generic unexpected error. Journal output confirms that CheckFailure for look. The patch marks a successfully delivered recovery denial on the request context; the error handler suppresses only CheckFailure with that marker. Unexpected exceptions and unhandled check failures retain their normal reporting. The marker resets on each recovery check. Failed notice delivery is not marked as handled.
 
 319 Python tests pass, including two added tests executing the actual error handler without importing the network-starting entrypoint, checking one response, retained unexpected-error reporting, reset of the marker, safe-refresh failure and failed delivery. Two-file deployment staged under tools/deploy/w6f7_recovery_notice; existing backup/hash/rollback process reused. Source fix only until privileged activation. W6-F7 unsealed; Chapter 1 paused; counts unchanged.
+
+## Seal — 4 November 2026
+
+Karun authorises sealing W6-F7 while continuing work on the window: “it's not really all that inhabitable as it is.” The seal accepts the bounded foundation: room art/prose and movement, compact character/inventory presentation, passive shared-state updates and clear controls. It does not declare the desired inhabitable game interface finished. Earlier ACTIVE/pending statements above are dated history superseded by this checkpoint.
+
+Author acceptance: “sync is good, nothing jumps, controls are clear.” On 4 November read-only verification found all seven relevant deployed files equal source 0914578, including idle notice and recovery refusal repairs. The service was active (PID 923239); all eight heartbeat subscribers reported successful checks. Public /play/ returned 200 and anonymous /play/api/me returned 401. GitHub branch matched 0914578. Existing verification comprises 319 Python tests and eleven JavaScript behaviour tests; these were not rerun for this documentation seal. No new phone, rendered-browser, offline/reconnect or post-repair player check is invented.
+
+Retained work: combat enemy-ID consistency; stale Elemental Sound rehearsal copy; recovery experience and status visibility; deeper interaction in the web window; map, character portrait and notes. Live hash verification confirms installation of the fixes, not a new authored walkthrough of every case. Chapter 1 remains paused and Discord remains supported.
+
+One W6 feather counted: W6 six, project 30. No main merge or runtime/data change accompanies this seal. Continue in [W6-F8 — Staying in the World](W6-F8_STAYING_IN_THE_WORLD.md), a working title for the next interface pass.
