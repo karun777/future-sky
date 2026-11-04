@@ -17,36 +17,15 @@ class InspectionCog(commands.Cog):
     async def _pod_view(self, ctx, target=None):
         storage = self.bot.storage
         uid = str(ctx.author.id)
-        original = storage.characters.get(uid)
-        if not isinstance(original, dict):
-            await ctx.send("Create a character first.")
-            return False
-        if original.get("in_cube") or original.get("current_room") != "pod_room":
-            await ctx.send("This awakening begins in the pod.")
-            return False
+        from fsbot.pod_inspection import inspect_pod
         try:
-            updated, view = prepare_observation(original, target)
-        except (ValueError, TypeError, AttributeError) as exc:
+            result = inspect_pod(storage, uid, target)
+        except (ValueError, TypeError, AttributeError, RuntimeError) as exc:
             await ctx.send(str(exc))
             return False
-        if updated != original:
-            storage.characters[uid] = updated
-            try:
-                storage.save_characters()
-            except Exception:
-                storage.characters[uid] = original
-                await ctx.send("The pod could not remember that discovery. Please try again.")
-                return False
-        title, text, guidance = view
-        if target == "garment":
-            item_id = (original.get("equipped") or {}).get("chest")
-            definition = storage.items_db.get(item_id, {})
-            if definition:
-                title = definition.get("name", "Your clothing")
-                text = ("You are wearing **" + title + "**. A thin chain rests beneath the collar. "
-                        "Clothes alone do not establish a job, a faction or a remembered identity.")
+        title, text, guidance = result["title"], result["text"], result["guidance"]
         embed = discord.Embed(title=title, description=text, color=discord.Color.dark_teal())
-        image_url = pod_image(updated, target)
+        image_url = result["image"]
         if image_url:
             embed.set_image(url=image_url)
         embed.add_field(name="Your attention", value=guidance, inline=False)

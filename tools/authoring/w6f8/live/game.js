@@ -2,7 +2,7 @@
 (() => {
   const el = id => document.getElementById(id);
   const POLL = 4000, STALE = 12000, TIMEOUT = 10000;
-  let csrf = null, walkToken = null, view = null;
+  let csrf = null, walkToken = null, inspectToken = null, view = null;
   let reading = null, moving = false, stopped = false, stale = true;
   let timer = null, failures = 0, lastSuccess = 0, exitKey = null;
   const changes = [];
@@ -11,6 +11,9 @@
   function controls() {
     const blocked = stale || moving || document.hidden || !walkToken;
     el("exits").querySelectorAll("button").forEach(b => { b.disabled = blocked; });
+    el("inspect-targets").querySelectorAll("button").forEach(b => {
+      b.disabled = stale || moving || document.hidden || !inspectToken;
+    });
     el("refresh").disabled = moving || !!reading;
     el("logout").disabled = moving;
   }
@@ -22,7 +25,9 @@
     controls();
   }
   function signedOut(message = "") {
-    stopped = true; stale = true; csrf = null; walkToken = null; view = null;
+    stopped = true; stale = true; csrf = null; walkToken = null; inspectToken = null; view = null;
+    clearObservation();
+    el("inspect-targets").replaceChildren();
     clearTimeout(timer);
     el("game").hidden = true; el("signed-out").hidden = false;
     ["character-name", "credits", "room-title", "room-description", "last-sync"].forEach(id => text(id, ""));
@@ -73,11 +78,25 @@
     const previous = view;
     const title = data.location.title || "Location withheld";
     if (previous && previous.location.id !== data.location.id) {
+      clearObservation();
       const home = data.idle_home?.enabled && data.idle_home?.at_home && data.idle_home?.status === "home";
       const message = home ? "Your idle return is complete. Now at " + title + "." : "Location updated: " + title + ".";
       remember(message);
       notice("walk-feedback", message);
     }
+    const inspected = data.inspection || {};
+    inspectToken = inspected.token || null;
+    const targets = inspected.targets || [];
+    if (!previous || JSON.stringify(previous.inspection?.targets || []) !== JSON.stringify(targets)) {
+      el("inspect-targets").replaceChildren(...targets.map(target => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = ({panels:"Storage panels",display:"Display",booking:"Booking notice"})[target] || target;
+        button.addEventListener("click", () => inspect(target));
+        return button;
+      }));
+    }
+    notice("inspect-notice", inspected.notice || (targets.length ? "" : "Inspection is not connected here yet."));
     csrf = data.session.csrf;
     walkToken = data.walking?.token || null;
     el("signed-out").hidden = true; el("game").hidden = false;
@@ -197,7 +216,70 @@
       notice("walk-feedback", message);
     }
   }
+  function clearObservation() {
+    const dialog = el("inspection-panel");
+    if (dialog.open) dialog.close();
+    text("inspection-title", "");
+    el("inspection-text").replaceChildren();
+    el("inspection-guidance").replaceChildren();
+    el("inspection-image").removeAttribute("src");
+    el("inspection-image").hidden = true;
+  }
+  function showObservation(observation) {
+    clearObservation();
+    text("inspection-title", observation.title || "Your attention");
+    for (const [id, source] of [["inspection-text", observation.text || ""],
+                                ["inspection-guidance", observation.guidance || ""]]) {
+      el(id).replaceChildren(...source.split(/\n\s*\n/).filter(Boolean).map(part => {
+        const p = document.createElement("p"); inline(p, part); return p;
+      }));
+    }
+    const url = observation.image;
+    if (typeof url === "string" && url.startsWith("https://future-sky.net/assets/")) {
+      el("inspection-image").src = url;
+      el("inspection-image").alt = observation.title || "Observed detail";
+      el("inspection-image").hidden = false;
+    }
+    el("inspection-panel").showModal();
+  }
+  async function inspect(target) {
+    if (moving || stale || !inspectToken || document.hidden || stopped) return;
+    if (Date.now() - lastSuccess > STALE) {
+      markStale("Checking the current room before you inspect…"); refresh(); return;
+    }
+    const selectedRoom = view.location.id;
+    if (reading) await reading;
+    if (moving || stale || stopped || !inspectToken) return;
+    if (view.location.id !== selectedRoom || !(view.inspection?.targets || []).includes(target)) {
+      notice("walk-feedback", "Your situation changed. Choose a current detail."); return;
+    }
+    moving = true; clearTimeout(timer);
+    const token = inspectToken; inspectToken = null; walkToken = null; controls();
+    notice("walk-feedback", "Attending…");
+    let observation = null, message = "";
+    try {
+      const {response, body} = await request("/play/api/inspect", {
+        method: "POST", headers: {"Content-Type":"application/json", "X-CSRF-Token":csrf || ""},
+        body: JSON.stringify({target, token})
+      });
+      if (response.status === 401 || response.status === 403) { signedOut("Sign in again to continue."); return; }
+      if (response.ok && body.ok && body.observation) observation = body.observation;
+      else message = typeof body === "string" ? body : body.message || "Refresh before inspecting again.";
+    } catch (_) {
+      message = "The inspection response was interrupted. Checking your character; the action will not be repeated.";
+      markStale("Connection interrupted. Checking saved discoveries.");
+    } finally { moving = false; stale = true; controls(); }
+    if (!stopped) {
+      await refresh();
+      if (!stopped && !stale && observation && view.location.id === selectedRoom) {
+        showObservation(observation);
+        message = "Observation saved. Discord uses the same discoveries.";
+      } else if (observation && !stopped) message = "Observation saved; return to a current view before reading it again.";
+      if (!stopped) notice("walk-feedback", message);
+    }
+  }
   el("refresh").addEventListener("click", refresh);
+  el("inspection-image").addEventListener("error", () => { el("inspection-image").hidden = true; });
   el("room-image").addEventListener("error", () => {
     el("room-image").hidden = true; el("no-image").hidden = false;
   });

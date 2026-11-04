@@ -1,0 +1,40 @@
+{
+  "feather": "W7-F6",
+  "files": {
+    "bot/fsbot/web_portal.py": {
+      "target": "bot/fsbot/web_portal.py",
+      "source": "46d25c0ecf69d90a3395473a1a096553bbc8ef7e45c427762aaee6a7bfe44646",
+      "live": "286711a83f6deddc56e2fb6be86b3328abd39d8407cf1b09d55e7890f8d9c66f"
+    },
+    "bot/fsbot/cogs/inspection.py": {
+      "target": "bot/fsbot/cogs/inspection.py",
+      "source": "0b7997c4a650b07151ce856506333eaefc909714b4cbdd9a166b1d4ed1ae4c52",
+      "live": "bfaecfdbe1818e6a7ad7e6a7547a8a354fb034c0607810d4082f9043d17c49ea"
+    },
+    "bot/fsbot/pod_inspection.py": {
+      "target": "bot/fsbot/pod_inspection.py",
+      "source": "533bd8f5a587138001dd8eeb8b53fab2ce25037a4b3d5f8ce41ebcbb1bdca815",
+      "live": null
+    },
+    "tools/authoring/w6f8/live/index.html": {
+      "target": "assets/experiments/w6-f8/live/index.html",
+      "source": "3f89abb8b545b725c114cc58ce6f86a08ea720810bf3050225e5a4225b3d6f61",
+      "live": "57344b7aa14c6c75d52c95aa227d18759078977006ede429ced0b9d5a6d70715"
+    },
+    "tools/authoring/w6f8/live/frame.css": {
+      "target": "assets/experiments/w6-f8/live/frame.css",
+      "source": "f22234b9fe1bf1722d2d193955101334d5876fa663daf5feaab166fd30f5072b",
+      "live": "4fd42fdb5c69f16bbf6d640dfefdbd010fc66d36aca4e0492cd8e7bd1cbbe6df"
+    },
+    "tools/authoring/w6f8/live/frame.js": {
+      "target": "assets/experiments/w6-f8/live/frame.js",
+      "source": "837abf1d1e3e02a341a546e8206b97099bd6eb3c4cdc8fd54053efe9e0d68ca9",
+      "live": "837abf1d1e3e02a341a546e8206b97099bd6eb3c4cdc8fd54053efe9e0d68ca9"
+    },
+    "tools/authoring/w6f8/live/game.js": {
+      "target": "assets/experiments/w6-f8/live/game.js",
+      "source": "c7825efcc33aec68827d5ccc772ee2d1d67cc5c4b9683d7985125ebda72005ff",
+      "live": "d14957c9d8ca10af3e9aed09a84bd684564c415ebd5731bcc088e8f16697a691"
+    }
+  }
+}

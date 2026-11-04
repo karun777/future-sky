@@ -6,6 +6,8 @@ Authlib owns OAuth2 protocol handling. This module owns short-lived opaque sessi
 import asyncio
 from dataclasses import dataclass, field
 import hmac
+import hashlib
+import json
 import logging
 from pathlib import Path
 import secrets
@@ -233,10 +235,98 @@ def create_app(bot, config, *, oauth=None, clock=time.monotonic):
             "at_home": bool(idle and not ch.get("in_cube") and room_id == idle["home"]),
         }
 
+    def inspection_stamp(uid):
+        ch = bot.storage.characters[uid]
+        nav = navigation()
+        revision = nav.walk_revision(uid) if nav else None
+        # Private comparison only; no raw state or fingerprint reaches the client.
+        return hashlib.sha256(json.dumps(
+            [ch, revision], sort_keys=True, default=str).encode()).hexdigest()
+
+    def inspection_refusal(uid):
+        nav = navigation()
+        if nav is None:
+            return "Inspection is unavailable while the game connection recovers."
+        refusal = nav.walking_refusal(uid, web_pilot=True)
+        if refusal:
+            return refusal
+        if uid in getattr(nav, "walking", set()):
+            return "Another movement is finishing. Wait, then inspect."
+        ch = bot.storage.characters[uid]
+        from fsbot.pod_opening import opening_state
+        if ch.get("current_room") != "pod_room":
+            return "This first inspection pilot is available in the pod."
+        if not opening_state(ch):
+            return "Begin finding your bearings with !awaken in Discord."
+        return None
+
+    def add_inspection(view, value):
+        from fsbot.pod_inspection import web_targets
+        uid = value["uid"]
+        refusal = inspection_refusal(uid)
+        targets = [] if refusal else web_targets(bot.storage.characters[uid])
+        stamp = inspection_stamp(uid)
+        offer = value.get("inspect_offer")
+        if not (offer and offer["expires"] > clock() + 10
+                and offer["stamp"] == stamp and offer["targets"] == targets):
+            offer = {"token": secrets.token_urlsafe(32), "stamp": stamp,
+                     "targets": targets, "expires": clock() + 120}
+            value["inspect_offer"] = offer
+        view["inspection"] = {"targets": targets, "notice": refusal or "",
+                              "token": offer["token"]}
+
+    async def inspect(request):
+        value = session(request)
+        supplied = request.headers.get("X-CSRF-Token", "")
+        if (request.headers.get("Origin") != ORIGIN or not supplied
+                or not hmac.compare_digest(value["csrf"].encode(), supplied.encode())):
+            raise web.HTTPForbidden(text="Invalid inspection request.")
+        current_view(value)
+        try:
+            body = await request.json()
+        except (ValueError, UnicodeDecodeError):
+            raise web.HTTPBadRequest(text="Invalid inspection request.") from None
+        if (not isinstance(body, dict) or set(body) != {"target", "token"}
+                or not isinstance(body["target"], str) or not isinstance(body["token"], str)
+                or len(body["target"]) > 40 or len(body["token"]) > 128):
+            raise web.HTTPBadRequest(text="Choose one visible detail.")
+        offer = value.get("inspect_offer")
+        if (not offer or offer["expires"] <= clock()
+                or not hmac.compare_digest(offer["token"].encode(), body["token"].encode())):
+            raise web.HTTPConflict(text="That inspection expired or was already used. Refresh.")
+        if body["target"] not in offer["targets"]:
+            raise web.HTTPBadRequest(text="Choose one visible detail.")
+        value.pop("inspect_offer", None)
+        uid = value["uid"]
+        refusal = inspection_refusal(uid)
+        if refusal:
+            raise web.HTTPConflict(text=refusal)
+        if offer["stamp"] != inspection_stamp(uid):
+            raise web.HTTPConflict(text="Your situation changed. Refresh before inspecting.")
+        # Explicit attention interrupts idle return. No await between final
+        # validation, activity recording and the durable shared observation.
+        idle = bot.get_cog("IdleHomeCog")
+        if idle:
+            idle.observe(uid)
+            if uid in idle.suspended:
+                raise web.HTTPServiceUnavailable(text="Your activity could not be saved.")
+        from fsbot.pod_inspection import inspect_pod
+        try:
+            observation = inspect_pod(bot.storage, uid, body["target"])
+        except (ValueError, TypeError, AttributeError):
+            raise web.HTTPConflict(text="That detail is unavailable. Refresh.") from None
+        except Exception:
+            logging.getLogger("futuresky.web").exception("Inspection save failed")
+            raise web.HTTPServiceUnavailable(text="Inspection could not be saved. Refresh before trying again.") from None
+        # Same saved knowledge is visible to Discord without unsolicited chatter.
+        value.pop("walk_offer", None)
+        return web.json_response({"ok": True, "observation": observation})
+
     async def me(request):
         value = session(request)
         view = current_view(value)
         add_walking(view, value)
+        add_inspection(view, value)
         return web.json_response(view)
 
     async def walk(request):
@@ -296,5 +386,6 @@ def create_app(bot, config, *, oauth=None, clock=time.monotonic):
         web.get("/play/api/me", me),
         web.post("/play/logout", logout),
         web.post("/play/api/walk", walk),
+        web.post("/play/api/inspect", inspect),
     ])
     return app
