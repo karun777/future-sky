@@ -1,6 +1,6 @@
 # W6-F8 — Staying in the World
 
-Status: ACTIVE — continuation and design framing, allocated 4 November 2026. Working title; detailed implementation scope still to be shaped with Karun.
+Status: SEALED — 4 November 2026. Fixed-screen presentation and parallel live pilot delivered and accepted. See seal below for verification boundaries; earlier checkpoints remain historical.
 Home: W6 Expression. Baseline: sealed W6-F7; source 0914578 before documentation seal.
 W6 six sealed; project 30. Next unallocated W6-F9. Chapter 1 / W4 remains paused.
 
@@ -66,3 +66,29 @@ Connected now: room image/prose, movement, inventory/equipment, character name/c
 Karun asks whether the interface can subtly evolve as immersion deepens. Proposed rule: stable navigation and spatial anchors, evolving perception/content. Previously unfamiliar places can acquire remembered meanings; discovered faculties and implant upgrades may reveal new information or actions. Internal voice remains distinct from implant output. Drive any change from explicit server-owned knowledge/ability state, not time spent staring at the browser, a separate frontend progression counter or involuntary visual effects. Never withhold essential controls, condition, connection state or accessibility. Preserve reduced motion/readability and allow a stable presentation. These remain proposals for author review; no progression policy or canon was changed in this deployment.
 
 W6-F8 remains ACTIVE, total30 sealed; Chapter1/W4 paused. Next checkpoint is Karun's real-character test, then shared inspection integration if the frame holds up.
+
+## Seal — 4 November 2026
+
+Karun explicitly authorised sealing this as a substantial step forward and requested a recommendation for the next feather. Sealed outcome: the accepted fixed-screen interaction direction, working isolated rehearsal, and parallel live frame connected to existing authenticated viewing and walking. This is a presentation/pilot milestone, not completion of web gameplay or an assertion of an authenticated player acceptance test.
+
+Evidence: rehearsal implementation 0d63a51; live pilot implementation 08a05f9; 13 passing automated checks, syntax and public-byte verification, signed-out browser gate and viewport checks. User feedback accepted the frame as feeling substantially better and showing a viable path. Authenticated live movement/Discord walkthrough remains pending and must be recorded explicitly when performed. Mobile playability is unverified. No player data reset, backend deployment, service restart or Chapter 1 resumption occurred.
+
+Delivered at https://future-sky.net/assets/experiments/w6-f8/index.html (isolated rehearsal) and https://future-sky.net/assets/experiments/w6-f8/live/index.html (real-character pilot). Original https://future-sky.net/play/ remains available. Source branch expression/w6-f8-staying-in-the-world; seal documentation is not a main-branch merge.
+
+W6 now has seven sealed feathers; project total 31. Next unallocated W6-F9. W7-F6 remains unallocated pending acceptance of the proposal below. Chapter 1 / W4 stays paused, Discord supported.
+
+## Proposed next feather — W7-F6: Attend to the World
+
+Proposal only, not yet allocated or started. Home W7 Engine because the core work is bringing existing authoritative inspection/discovery through both clients. W6 supplies the accepted frame; W2/W4 own existing room knowledge and consequences. No duplicate feather count.
+
+Outcome: a player can inspect a visible pod detail in the live window, see its authored close-up/prose, register the same legitimate discovery as Discord, and return without losing context. Begin with panels → display → booking and a repeat observation. Reuse existing inspection rules; do not implement a second browser progression system.
+
+First checkpoint: complete the pending live-frame movement/Discord walkthrough. Then inspect current Discord action handling and extract/reuse a shared service as needed. Verify identity, current location, body/recovery restrictions and discovery prerequisites server-side; explicit inspection is an action, passive refresh remains a read. Handle duplicate clicks and interrupted responses without repeating consequences. Show only available targets and preserve reading/focus across background updates.
+
+Acceptance: one pod inspection sequence works through the web and Discord against the same saved character knowledge; first/repeat prose agrees with existing rules; revisiting in the other client recognises prior discovery; denied actions and stale room choices are clear; no discovery from merely watching. Record actual live evidence before calling the integration verified. Client synchronization need not spam Discord with every observation: define the useful feedback at implementation review.
+
+Outside this feather: combat interface/rules, crafting, vehicles, broad map/journal rollout, new story content, interface-progression mechanics and embedded Discord chat. Chapter 1 stays paused; connecting existing mechanics is not permission for a fresh Chapter 1 authoring pass. Follow shared inspection with meaningful discovered journal entries if justified by the tested loop, rather than expanding this proposal pre-emptively.
+
+## Shared-wing return after seal
+
+W6: stable scene, prominent present prose, in-frame overlays; essential navigation stays predictable as perception develops. W7: retain existing session/action protections and one authoritative character; pinned pilot transport must not drift. W2/W4: expose only discovered/available knowledge and preserve authored first/repeat observations. W5: passive viewing must not alter idle policy; reading overlays do not pause the simulation. W8: 31 sealed, live player walkthrough outstanding, next proposal unallocated.
