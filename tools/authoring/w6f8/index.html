@@ -1,14 +1,32 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Future Sky — Three ways to inhabit</title><link rel="stylesheet" href="window.css"><script src="content.js" defer></script><script src="window.js" defer></script></head>
-<body data-skin="cabinet">
-<header class="study"><div><strong>FUTURE SKY</strong><span>W6-F8 / interface rehearsal</span></div><nav aria-label="Choose interface"><button data-skin="cabinet" aria-pressed="true">01 Adventure cabinet</button><button data-skin="terminal" aria-pressed="false">02 Neptune terminal</button><button data-skin="storybook" aria-pressed="false">03 Illustrated storybook</button></nav><button id="reset">Start again</button></header>
-<p class="rehearsal">An isolated pod rehearsal · discoveries stay in this tab · no live character changes</p>
-<main class="console">
-<header class="worldbar"><span class="sigil" aria-hidden="true">✧</span><div><span class="kicker">TRITON CENTRAL / NEPTUNE LOUNGE</span><h1>Wakefulness Module</h1></div><span class="place">POD 01<br><small>YOU ARE HERE</small></span></header>
-<section class="stage" aria-label="Your surroundings"><img id="scene" alt="The interior of the pod"><div class="scene-tag"><span id="image-label">The cubicle</span><button id="back">↶ Room view</button></div></section>
-<aside class="self"><span class="kicker">THE TRAVELLER</span><div class="portrait" aria-hidden="true">◈</div><h2>Returning to yourself</h2><p class="body-state">Conscious. Breathing.<br>Still finding your bearings.</p><div class="rail-tabs" role="group" aria-label="Side panel"><button id="journal-tab" aria-pressed="true">Journal</button><button id="belongings-tab" aria-pressed="false">Belongings</button></div><section id="journal"><h3>Things you noticed</h3><p id="journal-empty">An unfamiliar room. Begin with what catches your attention.</p><ul id="discoveries"></ul></section><section id="belongings" hidden><h3>On your person</h3><p id="possessions">Your garment rests against your skin. You have yet to look more closely.</p><p class="small">Only observations from this rehearsal appear here.</p></section><p class="rail-note">Beyond the wall:<br><em>thump. thump. thump.</em></p></aside>
-<section class="story" aria-label="Narrative"><div class="story-top"><span class="kicker" id="mode">ATTEND</span><button id="history-toggle" aria-expanded="false">Earlier observations</button></div><h2 id="detail-title" tabindex="-1">The cubicle</h2><div id="prose"></div><div id="history" hidden></div><p id="feedback" role="status"></p></section>
-<section class="controls"><div class="action-heading"><span class="kicker">WHAT CATCHES YOUR ATTENTION?</span><span class="small">Choose a detail or type below</span></div><nav id="targets" aria-label="Inspect a detail"></nav><form id="command-form"><label for="command">YOUR INTENTION <span aria-hidden="true">›</span></label><input id="command" autocomplete="off" spellcheck="false" placeholder="inspect viewport" aria-describedby="command-help"><button type="submit">Attend ↵</button></form><p id="command-help" class="small">Try “look”, “inspect hands”, “inspect pod”, “journal” or “inventory”.</p></section>
-<footer class="worldfoot"><span id="count">0 observations</span><span id="theme-note">An adventure cabinet / warm metal, ink & light</span><span>✧ FUTURE SKY</span></footer>
-</main><footer class="outside">Same scene. Same observations. Three ways of being here.<br>This study explores inspection; movement, combat and chat are not connected.</footer>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Future Sky — Stay in the world</title><link rel="stylesheet" href="window.css?v=2"><script src="content.js?v=2" defer></script><script src="window.js?v=2" defer></script></head>
+<body>
+<main id="game">
+<header class="topbar"><span class="brand">✧ FUTURE SKY</span><span class="rehearsal">W6-F8 · REHEARSAL · NOT YOUR LIVE CHARACTER</span><div><button id="fullscreen" title="Toggle fullscreen">⛶ Fullscreen</button><button id="reset">Restart</button></div></header>
+<section class="world" aria-label="Current scene">
+<img id="scene" alt="The interior of the pod"><div class="vignette"></div>
+<div class="location"><span class="eyebrow">TRITON CENTRAL / NEPTUNE LOUNGE</span><h1 id="location-name">Wakefulness Module</h1></div>
+<div class="instrument" id="implant"><span class="dot"></span> SENSORY LINK <span class="reading">LOCAL / STABLE</span></div>
+<button id="room-return" class="room-return" hidden>↶ Return to room view</button>
+<div class="scene-foot"><span id="image-label">POD 01</span><span id="ambient">Beyond the wall. A low thump.</span></div>
+</section>
+<section class="present" aria-label="Present moment">
+<div class="present-top"><span class="eyebrow" id="mode">TAKE IN YOUR SURROUNDINGS</span><button data-panel="history" class="quiet">Earlier messages ↗</button></div>
+<div class="passage-scroll"><h2 id="detail-title">The cubicle</h2><div id="prose"></div></div>
+<div class="response"><span class="response-label">YOUR RESPONSE</span><nav id="targets" aria-label="Available responses"></nav></div>
+<p id="feedback" role="status"></p>
+</section>
+<nav class="dock" aria-label="Game controls">
+<button data-panel="movement"><span aria-hidden="true">↔</span>Move</button>
+<button data-panel="actions"><span aria-hidden="true">⌖</span>Actions</button>
+<button data-panel="inventory"><span aria-hidden="true">▣</span>Inventory</button>
+<button data-panel="character"><span aria-hidden="true">♙</span>Character</button>
+<button data-panel="journal"><span aria-hidden="true">≡</span>Journal</button>
+<button data-panel="map"><span aria-hidden="true">◇</span>Map</button>
+<button data-panel="hud"><span aria-hidden="true">⌁</span>HUD</button>
+<button data-panel="voice"><span aria-hidden="true">◌</span>Inner voice</button>
+<button data-panel="studio" class="studio"><span aria-hidden="true">✧</span>Try a mode</button>
+</nav>
+</main>
+<dialog id="overlay" aria-labelledby="overlay-title"><div class="modal-frame"><header class="modal-header"><div><span id="overlay-kicker" class="eyebrow">FUTURE SKY</span><h2 id="overlay-title"></h2></div><button id="close-overlay" aria-label="Close and return to the scene">Return × <kbd>Esc</kbd></button></header><div id="overlay-body"></div><footer class="modal-footer" id="overlay-footer">Rehearsal only · your live character is unaffected</footer></div></dialog>
 </body></html>

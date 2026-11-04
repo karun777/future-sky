@@ -1,0 +1,303 @@
+{
+  "views": {
+    "hands": {
+      "first": [
+        "Your hands",
+        "They answer each movement. You turn them over slowly. Familiar control; unfamiliar hands. Looking closer does not give you a name.\n\nAt the edge of your vision, small markings remain when you turn your head. They are not on the wall. Something is displaying information within your sight.",
+        "Examine the markings with `!inspect hud`, or follow `!inspect body`."
+      ],
+      "again": [
+        "Your hands",
+        "They answer each movement. You turn them over slowly. Familiar control; unfamiliar hands. Looking closer does not give you a name.",
+        "Try `!inspect body`, `!inspect garment` or `!inspect pod`."
+      ],
+      "image": null
+    },
+    "body": {
+      "first": [
+        "Breath and body",
+        "You notice your breathing and the support beneath you. A faint vibration runs through you; you cannot tell whether it begins in the pod.",
+        "Something cold touches your chest. Try `!inspect garment` or `!inspect chain`."
+      ],
+      "again": [
+        "Breath and body",
+        "You notice your breathing and the support beneath you. A faint vibration runs through you; you cannot tell whether it begins in the pod.",
+        "Something cold touches your chest. Try `!inspect garment` or `!inspect chain`."
+      ],
+      "image": null
+    },
+    "garment": {
+      "first": [
+        "The transit garment",
+        "The garment rests against your skin. A thin chain disappears beneath its collar. It tells you little about who you are.",
+        "Follow the chain with `!inspect chain`, or survey the cubicle with `!inspect pod`."
+      ],
+      "again": [
+        "The transit garment",
+        "The garment rests against your skin. A thin chain disappears beneath its collar. It tells you little about who you are.",
+        "Follow the chain with `!inspect chain`, or survey the cubicle with `!inspect pod`."
+      ],
+      "image": null
+    },
+    "chain": {
+      "first": [
+        "The object at your chest",
+        "A small metal key hangs from the chain. A worn loop of cord binds a little wooden cube to it. Circle, heart, crossed mark; the other symbols feel directional. You do not remember acquiring either object.",
+        "The key and cube rest against your chest. Try `!inspect pod`."
+      ],
+      "again": [
+        "The object at your chest",
+        "A small metal key hangs from the chain. A worn loop of cord binds a little wooden cube to it. Circle, heart, crossed mark; the other symbols feel directional. You do not remember acquiring either object.",
+        "The key and cube rest against your chest. Try `!inspect pod`."
+      ],
+      "image": null
+    },
+    "pod": {
+      "first": [
+        "The cubicle",
+        "A berth, a frosted viewport and a hatch within reach. A red light burns beside a button. A welcome brochure protrudes from a dispenser. Storage panels occupy the side wall; their recessed grips invite a closer look.",
+        "Try `!inspect panels`, `!inspect viewport`, `!inspect brochure` or `!inspect berth`."
+      ],
+      "again": [
+        "The cubicle",
+        "A berth, a frosted viewport and a hatch within reach. A red light burns beside a button. A welcome brochure protrudes from a dispenser. Storage panels occupy the side wall; their recessed grips invite a closer look.",
+        "Try `!inspect panels`, `!inspect viewport`, `!inspect brochure` or `!inspect berth`."
+      ],
+      "image": "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/pod/v1/p01.png"
+    },
+    "hatch": {
+      "first": [
+        "The hatch",
+        "A solid panel separates the cubicle from the corridor. The light and button sit beside its frame.",
+        "Use `!look` to see the existing route out, or examine `!inspect button`."
+      ],
+      "again": [
+        "The hatch",
+        "A solid panel separates the cubicle from the corridor. The light and button sit beside its frame.",
+        "Use `!look` to see the existing route out, or examine `!inspect button`."
+      ],
+      "image": null
+    },
+    "viewport": {
+      "first": [
+        "The viewport",
+        "Droplets merge and run down the glass. Blue light comes through, but the outside does not resolve. Your movement returns as an incomplete reflection.",
+        "You can examine the fittings with `!inspect light` or turn to `!inspect panels`."
+      ],
+      "again": [
+        "The viewport",
+        "Droplets merge and run down the glass. Blue light comes through, but the outside does not resolve. Your movement returns as an incomplete reflection.",
+        "You can examine the fittings with `!inspect light` or turn to `!inspect panels`."
+      ],
+      "image": "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/pod/v1/p06.png"
+    },
+    "reflection": {
+      "first": [
+        "Looking for your face",
+        "You lean towards the viewport. Moisture and blue light break up your reflection. It follows your movements, but gives you no clear face.",
+        "You have not found a clear mirror here. Try `!inspect panels` to look around."
+      ],
+      "again": [
+        "Looking for your face",
+        "You lean towards the viewport. Moisture and blue light break up your reflection. It follows your movements, but gives you no clear face.",
+        "You have not found a clear mirror here. Try `!inspect panels` to look around."
+      ],
+      "image": "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/pod/v1/p06.png"
+    },
+    "light": {
+      "first": [
+        "The status light",
+        "A small steady red light. It is separate from the button below it. You cannot infer a hatch lock merely from its colour.",
+        "Try `!inspect button` or `!inspect pod`."
+      ],
+      "again": [
+        "The status light",
+        "A small steady red light. It is separate from the button below it. You cannot infer a hatch lock merely from its colour.",
+        "Try `!inspect button` or `!inspect pod`."
+      ],
+      "image": "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/pod/v1/p05.png"
+    },
+    "button": {
+      "first": [
+        "The red button",
+        "A physical button beside the hatch. You examine its edge without pressing it. Its purpose is not labelled here.",
+        "This inspection does not operate it. Try `!inspect brochure` or `!inspect panels`."
+      ],
+      "again": [
+        "The red button",
+        "A physical button beside the hatch. You examine its edge without pressing it. Its purpose is not labelled here.",
+        "This inspection does not operate it. Try `!inspect brochure` or `!inspect panels`."
+      ],
+      "image": "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/pod/v1/p05.png"
+    },
+    "brochure": {
+      "first": [
+        "Welcome to Triton Central",
+        "The brochure unfolds.\n\n**WELCOME TO TRITON CENTRAL**\nPlease enjoy your stay.\nPlease remain calm.\nPlease disregard any contradictory onboarding information.\n\nA metallic crash sounds outside. The brochure does not acknowledge it.",
+        "Try `!inspect panels` or return to `!inspect pod`."
+      ],
+      "again": [
+        "Welcome to Triton Central",
+        "The brochure unfolds.\n\n**WELCOME TO TRITON CENTRAL**\nPlease enjoy your stay.\nPlease remain calm.\nPlease disregard any contradictory onboarding information.\n\nThe brochure offers the same reassurance as before.",
+        "Try `!inspect panels` or return to `!inspect pod`."
+      ],
+      "image": "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/pod/v1/p05.png"
+    },
+    "panels": {
+      "first": [
+        "The side wall",
+        "A closed wardrobe and lower storage drawer have recessed grips. Beside them, a small display flickers. A signal tile reads **FEED7**. Below it is a separate notification: **Performance booking**.",
+        "Try `!inspect display`, `!inspect wardrobe` or open the compartment with `!wardrobe`."
+      ],
+      "again": [
+        "The side wall",
+        "A closed wardrobe and lower storage drawer have recessed grips. Beside them, a small display flickers. A signal tile reads **FEED7**. Below it is a separate notification: **Performance booking**.",
+        "Try `!inspect display`, `!inspect wardrobe` or open the compartment with `!wardrobe`."
+      ],
+      "image": "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/pod/v1/p02.png"
+    },
+    "display": {
+      "first": [
+        "Signal and notification",
+        "FEED7 flickers in one part of the display. A separate local booking notice waits beneath it. The notification is addressed to you.",
+        "View the signal with `!feed7`. Read the notice with `!inspect booking`."
+      ],
+      "again": [
+        "Signal and notification",
+        "FEED7 flickers in one part of the display. A separate local booking notice waits beneath it. The notification is addressed to you.",
+        "View the signal with `!feed7`. Read the notice with `!inspect booking`."
+      ],
+      "image": "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/pod/v1/p03.png"
+    },
+    "berth": {
+      "first": [
+        "The berth",
+        "A plain woven cover lies across the berth. Its padded edge has supported your weight. Below it is a panel seam you can follow with your fingertips.",
+        "Try the existing `!search panel` action, or turn to `!inspect panels`."
+      ],
+      "again": [
+        "The berth",
+        "A plain woven cover lies across the berth. Its padded edge has supported your weight. Below it is a panel seam you can follow with your fingertips.",
+        "Try the existing `!search panel` action, or turn to `!inspect panels`."
+      ],
+      "image": null
+    },
+    "booking": {
+      "first": [
+        "Tomorrow night",
+        "**PERFORMANCE BOOKING \u2014 TOMORROW NIGHT**\n\nYou have a gig.\n\nA DJ set? An instrument? Someone to play alongside? The notice gives you no set format, instrument or collaborator. You do not yet know what to prepare.",
+        "The booking is remembered. `!look` returns to your bearings; `!wardrobe` offers somewhere practical to begin."
+      ],
+      "again": [
+        "Tomorrow night",
+        "**PERFORMANCE BOOKING \u2014 TOMORROW NIGHT**\n\nYou have a gig.\n\nA DJ set? An instrument? Someone to play alongside? The notice gives you no set format, instrument or collaborator. You do not yet know what to prepare.",
+        "The booking is remembered. `!look` returns to your bearings; `!wardrobe` offers somewhere practical to begin."
+      ],
+      "image": null
+    },
+    "surfaces": {
+      "first": [
+        "The pod's surfaces",
+        "Warm-grey panels meet at softened seams. Scuffs gather at edges and grips. The floor has a close, practical weave; the ceiling and walls keep their fittings recessed. Ordinary wear suggests use without identifying any previous occupant.",
+        "Try `!inspect hatch`, `!inspect panels` or `!inspect berth`."
+      ],
+      "again": [
+        "The pod's surfaces",
+        "Warm-grey panels meet at softened seams. Scuffs gather at edges and grips. The floor has a close, practical weave; the ceiling and walls keep their fittings recessed. Ordinary wear suggests use without identifying any previous occupant.",
+        "Try `!inspect hatch`, `!inspect panels` or `!inspect berth`."
+      ],
+      "image": null
+    },
+    "lighting": {
+      "first": [
+        "The interior light",
+        "A warm strip above the side display picks out the cabinet edges. Cold blue light filters through the wet viewport. The small red status light is separate.",
+        "Try `!inspect light`, `!inspect display` or `!inspect viewport`."
+      ],
+      "again": [
+        "The interior light",
+        "A warm strip above the side display picks out the cabinet edges. Cold blue light filters through the wet viewport. The small red status light is separate.",
+        "Try `!inspect light`, `!inspect display` or `!inspect viewport`."
+      ],
+      "image": null
+    }
+  },
+  "aliases": {
+    "telemetry": "hud",
+    "goggles": "hud",
+    "implant": "hud",
+    "internal display": "hud",
+    "hand": "hands",
+    "my hands": "hands",
+    "fingers": "hands",
+    "palms": "hands",
+    "breath": "body",
+    "breathing": "body",
+    "my body": "body",
+    "clothes": "garment",
+    "clothing": "garment",
+    "transit garment": "garment",
+    "neck": "chain",
+    "chest": "chain",
+    "key": "chain",
+    "cube": "chain",
+    "room": "pod",
+    "cubicle": "pod",
+    "door": "hatch",
+    "wall": "surfaces",
+    "walls": "surfaces",
+    "floor": "surfaces",
+    "ceiling": "surfaces",
+    "seams": "surfaces",
+    "scuffs": "surfaces",
+    "carpet": "surfaces",
+    "hinges": "hatch",
+    "frame": "hatch",
+    "seals": "hatch",
+    "screws": "hatch",
+    "handle": "panels",
+    "handles": "panels",
+    "drawer": "panels",
+    "drawers": "panels",
+    "cabinet": "panels",
+    "cabinets": "panels",
+    "lower storage": "panels",
+    "blanket": "berth",
+    "cover": "berth",
+    "bedding": "berth",
+    "fabric": "berth",
+    "warm light": "lighting",
+    "strip light": "lighting",
+    "cabinet light": "lighting",
+    "brochure picture": "brochure_art",
+    "brochure illustration": "brochure_art",
+    "printed landscape": "brochure_art",
+    "grips": "panels",
+    "dispenser": "brochure",
+    "window": "viewport",
+    "glass": "viewport",
+    "condensation": "viewport",
+    "mirror": "reflection",
+    "face": "reflection",
+    "my face": "reflection",
+    "red light": "light",
+    "status light": "light",
+    "red button": "button",
+    "leaflet": "brochure",
+    "welcome brochure": "brochure",
+    "storage": "panels",
+    "compartment": "panels",
+    "side wall": "panels",
+    "screen": "display",
+    "feed7": "display",
+    "feed": "display",
+    "bed": "berth",
+    "panel": "berth",
+    "loose panel": "berth",
+    "notice": "booking",
+    "notification": "booking",
+    "gig": "booking",
+    "performance booking": "booking"
+  },
+  "roomImage": "https://future-sky.net/assets/images/world/manzo/triton_central/neptune_lounge/pod/v1/p01.png"
+}
