@@ -145,3 +145,40 @@ test('room change and auth expiry clear an open private observation',async()=>{
  assert.equal(h.elements['inspection-panel'].open,false);
  assert.equal(h.elements['inspection-text'].textContent,'');
 });
+
+test('overlay chains only currently offered targets and uses the fresh token',async()=>{
+ const h=await setup();
+ h.handler=async(url,options)=>{
+  if(url!='/play/api/inspect')return;
+  const target=JSON.parse(options.body).target;
+  h.data.inspection={token:'fresh-'+target,targets:['panels','display','booking']};
+  return response(200,{ok:true,observation:{title:target,text:'Observed',guidance:'!wardrobe',image:null}});
+ };
+ await h.elements['inspect-targets'].children[0].emit('click');
+ assert.equal(h.elements['inspection-actions'].textContent,'Inspect display');
+ await h.elements['inspection-actions'].children[0].emit('click');
+ assert.equal(h.elements['inspection-title'].textContent,'display');
+ assert.equal(h.elements['inspection-actions'].textContent,'Read booking');
+ const posts=h.calls.filter(c=>c.url==='/play/api/inspect');
+ assert.equal(JSON.parse(posts[1].options.body).token,'fresh-panels');
+ await h.elements['inspection-actions'].children[0].emit('click');
+ assert.equal(h.elements['inspection-title'].textContent,'booking');
+ assert.equal(h.elements['inspection-actions'].children.length,0);
+});
+test('overlay actions react to offline, revoked offers and location changes',async()=>{
+ const h=await setup();
+ h.data.inspection.targets=['panels','display'];
+ h.handler=async(url)=>url==='/play/api/inspect'?response(200,{ok:true,observation:{title:'Panels',text:'Observed'}}):null;
+ await h.elements['inspect-targets'].children[0].emit('click');
+ const button=h.elements['inspection-actions'].children[0];
+ h.navigator.onLine=false;await h.win.emit('offline');
+ assert.equal(button.disabled,true);
+ assert.match(h.elements['inspection-status'].textContent,/offline/);
+ await button.emit('click');
+ assert.equal(h.calls.filter(c=>c.url==='/play/api/inspect').length,1);
+ h.navigator.onLine=true;h.data.inspection.targets=['panels'];
+ await h.win.emit('online');await drain();
+ assert.equal(h.elements['inspection-actions'].children.length,0);
+ h.data=data('b');await h.tick(4000);
+ assert.equal(h.elements['inspection-panel'].open,false);
+});

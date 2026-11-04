@@ -6,12 +6,18 @@
   let reading = null, moving = false, stopped = false, stale = true;
   let timer = null, failures = 0, lastSuccess = 0, exitKey = null;
   const changes = [];
+  let observationTarget = null, observationActionsKey = null;
   function text(id, value) { if (el(id).textContent !== value) el(id).textContent = value; }
-  function notice(id, value) { text(id, value); el(id).hidden = !value; }
+  function notice(id, value) {
+    text(id, value); el(id).hidden = !value;
+    if (id === "walk-feedback" || id === "message") {
+      text("inspection-status", value); el("inspection-status").hidden = !value;
+    }
+  }
   function controls() {
     const blocked = stale || moving || document.hidden || !walkToken;
     el("exits").querySelectorAll("button").forEach(b => { b.disabled = blocked; });
-    el("inspect-targets").querySelectorAll("button").forEach(b => {
+    [...el("inspect-targets").querySelectorAll("button"), ...el("inspection-actions").querySelectorAll("button")].forEach(b => {
       b.disabled = stale || moving || document.hidden || !inspectToken;
     });
     el("refresh").disabled = moving || !!reading;
@@ -129,7 +135,7 @@
       exitKey = key;
     }
     notice("walk-notice", data.walking?.notice || (exits.length ? "" : "No walking exits available in this view."));
-    view = data; stale = false; lastSuccess = Date.now(); failures = 0;
+    view = data; renderObservationActions(); stale = false; lastSuccess = Date.now(); failures = 0;
     connection("Up to date");
     text("last-sync", "Checked " + new Date(lastSuccess).toLocaleTimeString());
     notice("message", "");
@@ -216,17 +222,36 @@
       notice("walk-feedback", message);
     }
   }
+  function renderObservationActions() {
+    const next = ({panels:["display"], display:["booking"], booking:[]})[observationTarget] || [];
+    const targets = next.filter(target => (view?.inspection?.targets || []).includes(target));
+    const key = JSON.stringify(targets);
+    if (key === observationActionsKey) return;
+    observationActionsKey = key;
+    el("inspection-actions").replaceChildren(...targets.map(target => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = ({display:"Inspect display", booking:"Read booking"})[target];
+      button.addEventListener("click", () => inspect(target));
+      return button;
+    }));
+  }
   function clearObservation() {
     const dialog = el("inspection-panel");
     if (dialog.open) dialog.close();
+    observationTarget = null; observationActionsKey = null;
+    el("inspection-actions").replaceChildren();
+    text("inspection-status", ""); el("inspection-status").hidden = true;
     text("inspection-title", "");
     el("inspection-text").replaceChildren();
     el("inspection-guidance").replaceChildren();
     el("inspection-image").removeAttribute("src");
     el("inspection-image").hidden = true;
   }
-  function showObservation(observation) {
+  function showObservation(observation, target) {
     clearObservation();
+    observationTarget = target;
+    renderObservationActions(); controls();
     text("inspection-title", observation.title || "Your attention");
     for (const [id, source] of [["inspection-text", observation.text || ""],
                                 ["inspection-guidance", observation.guidance || ""]]) {
@@ -272,7 +297,7 @@
     if (!stopped) {
       await refresh();
       if (!stopped && !stale && observation && view.location.id === selectedRoom) {
-        showObservation(observation);
+        showObservation(observation, target);
         message = "Observation saved. Discord uses the same discoveries.";
       } else if (observation && !stopped) message = "Observation saved; return to a current view before reading it again.";
       if (!stopped) notice("walk-feedback", message);

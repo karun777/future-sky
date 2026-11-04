@@ -47,3 +47,11 @@ W6 retains the accepted frame; new observations use authored text and art. W2/W4
 Karun ran activation directly on neptunelounge. Backup: /opt/futuresky/backups/w7f6-inspection-20261104-095424. Operator output reports Discord reconnected, anonymous inspection denied and player data preserved. Independent post-activation verification: all seven runtime/assets match the deployment manifest, service active/running PID967373, original /play/ and live pilot HTTP200, anonymous /play/api/me and POST /play/api/inspect HTTP401. Source implementation 5ba3d1ecd6336ed62465ccfcb746456b97978e0c.
 
 This supersedes earlier pending-activation statements. No authenticated character action was performed by the assistant. Player acceptance and cross-client inspection walkthrough remain pending; W7-F6 is not sealed, total remains31. Chapter1 stays paused.
+
+## Inspection refinements — 4 November 2026
+
+Karun's 18:00–18:01 screenshots show panels, display and booking observations in the live window, followed by matching booking/display responses in Discord. This is repeat-observation evidence; it does not establish a fresh discovery transition. W7-F6 remains active and Chapter 1 paused.
+
+The room passage now has a larger share of the fixed viewport, with inspection and movement sharing a wrapping control shelf. Observation overlays offer Inspect display after panels and Read booking after display, intersected with the current server offer. Actions use the existing serialized, single-use-token transport. Offline/error status is visible inside the modal; revoked offers disappear. Wardrobe and FEED7 are still Discord guidance, not misleading web buttons.
+
+Validation: all 16 JavaScript behavior tests passed, including new chained-action/fresh-token and offline/revoked-offer tests. No backend, dependency, player data or discovery rule changes. Fresh-character live acceptance remains outstanding.

@@ -22,3 +22,17 @@ dialog{padding:0;border:4px double var(--edge);color:var(--ink);background:#111c
 #inspection-image{display:block;max-width:100%;max-height:38dvh;margin:0 auto 22px;object-fit:contain}
 #inspection-text{font-size:clamp(23px,2.2vw,32px);line-height:1.5}
 @media(max-height:600px){.inspection-response button{padding:5px;font-size:11px}.inspection-response{gap:6px}}
+
+/* W7-F6: protect the passage; controls share a compact shelf. */
+#game{grid-template-rows:minmax(0,1fr) clamp(270px,40dvh,400px) 74px}
+.room-controls{display:flex;flex-wrap:wrap;gap:8px 24px;flex-shrink:0;border-top:1px solid #5b60424a;padding-top:5px;max-height:120px;overflow:auto}
+.room-controls .inspection-response,.room-controls .response{border:0;padding:0;min-width:0}
+.room-controls .inspection-response{flex:1 1 360px}
+.room-controls .response{flex:0 1 auto}
+.passage-scroll{scrollbar-gutter:stable}
+#inspection-actions{display:flex;gap:10px;flex-wrap:wrap}
+#inspection-actions:not(:empty){margin-bottom:10px}
+#inspection-status{color:var(--gold);line-height:1.4;margin:0 0 8px}
+#inspection-panel footer{flex-shrink:0}
+@media(max-width:700px){#game{grid-template-rows:minmax(0,1fr) minmax(260px,49dvh) 64px}.room-controls{gap:4px}.room-controls .inspection-response{flex-basis:100%}}
+@media(max-height:600px){#game{grid-template-rows:minmax(0,1fr) minmax(150px,54dvh) 52px}.room-controls{max-height:68px}.room-controls button{padding:5px;font-size:11px}.present{gap:4px}.present-top{gap:8px}}
