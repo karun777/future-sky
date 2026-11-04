@@ -52,3 +52,17 @@ The public rehearsal now implements that direction. Previous treatments are pres
 Verification: desktop cloud browser at 1363×936 reported document dimensions exactly equal to viewport (no outer overflow). Visually checked fixed scene/prose/dock; panels → display → booking takeover; movement pod → hallway; map; Escape; implant off with controls retained; combat guard round and withdrawal. Corrected withdrawal to end the demonstration without falsely reducing opponent HP to zero, then rechecked. Source/public byte equality and JavaScript syntax checked. No mobile or live-player integration test claimed.
 
 Boundary unchanged: isolated public assets only; no live API calls, authenticated character changes, Discord messages, service restart or Chapter 1 progression. W6-F8 ACTIVE, not sealed. Next: Karun evaluates the frame and attention transitions; then choose one real shared action for integration. The v2 brief supersedes the initial proposed layout above. Source branch expression/w6-f8-staying-in-the-world, worktree /home/efiishent/future-sky-worktrees/w6-f8.
+
+## Live frame pilot — 4 November 2026
+
+Karun accepted the fixed-screen direction and authorised a live deployment for tests. Deployed a parallel live frame at https://future-sky.net/assets/experiments/w6-f8/live/index.html. It uses the existing authenticated /play API and unchanged pinned walking/connection code; no backend or service change. Original /play remains available, and the parent rehearsal remains isolated. Movement in the live pilot affects the actual character and retains Discord notifications. Source/deployment/test details: tools/authoring/w6f8/live/README.md.
+
+Connected now: room image/prose, movement, inventory/equipment, character name/credits, recent observed changes, closer-reading overlay. Not connected: inspection, map/quest knowledge, implant/internal voice, combat modes. Live page excludes demonstration mechanics and marks unavailable map/journal controls. Sign-in callback still lands at /play; reopen pilot after signing in. No auth widening.
+
+13 automated checks passed (11 existing transport behaviors against the pilot HTML, 2 frame privacy/overlay checks), syntax checked, all four public files byte-matched. Browser verified signed-out gate and viewport fit at1363x936; anonymous API401, original portal200. No authenticated browser session available: Karun's live movement/Discord sync walkthrough is still pending. No mobile assurance or live gameplay pass implied.
+
+## Evolving interface — design direction, not newly authored canon
+
+Karun asks whether the interface can subtly evolve as immersion deepens. Proposed rule: stable navigation and spatial anchors, evolving perception/content. Previously unfamiliar places can acquire remembered meanings; discovered faculties and implant upgrades may reveal new information or actions. Internal voice remains distinct from implant output. Drive any change from explicit server-owned knowledge/ability state, not time spent staring at the browser, a separate frontend progression counter or involuntary visual effects. Never withhold essential controls, condition, connection state or accessibility. Preserve reduced motion/readability and allow a stable presentation. These remain proposals for author review; no progression policy or canon was changed in this deployment.
+
+W6-F8 remains ACTIVE, total30 sealed; Chapter1/W4 paused. Next checkpoint is Karun's real-character test, then shared inspection integration if the frame holds up.
