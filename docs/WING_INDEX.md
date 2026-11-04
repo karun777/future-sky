@@ -1,14 +1,14 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W7 Engine / W7-F6 — Attend to the World**, ACTIVE: shared pod inspection implemented and tested; deployment package ready, activation and authenticated walkthrough pending. [Scope and return](wings/W7-F6_ATTEND_TO_THE_WORLD.md). W6-F8 sealed. Next unallocated W7-F7 and W6-F9. Chapter 1 / W4 stays paused; Discord supported.
+Current home/checkpoint: **W7 Engine / W7-F6 — Attend to the World**, ACTIVE: shared pod inspection deployed and operational checks passed; authenticated player walkthrough pending. [Scope and return](wings/W7-F6_ATTEND_TO_THE_WORLD.md). W6-F8 sealed. Next unallocated W7-F7 and W6-F9. Chapter 1 / W4 stays paused; Discord supported.
 **31 sealed wing feathers: W4 has nine, W6 seven, W7 five; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
 ## Fresh-session return — 4 November 2026
 
-Read [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md) for code, checks and activation. W6-F8 is sealed; W7-F6 is active, not deployed or sealed. Complete the pending authenticated movement/inspection checks after operator activation. Chapter 1 stays paused.
+Read [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md) for code, checks and activation. W6-F8 is sealed; W7-F6 is active and deployed, not sealed. Complete the pending authenticated movement/inspection checks. Chapter 1 stays paused.
 
 ## Fresh-session handover — 29 October 2026
 

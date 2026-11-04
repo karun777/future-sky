@@ -1,6 +1,6 @@
 # W7-F6 — Attend to the World
 
-Status: ACTIVE — implementation and deployment package ready; live activation and authenticated walkthrough pending.
+Status: ACTIVE — deployed 4 November 2026; authenticated player walkthrough pending.
 Allocated 4 November 2026 on Karun's instruction “let's attend to the world”.
 Home: W7 Engine. Baseline W6-F8 seal 4c7383f. Branch engine/w7-f6-attend-to-the-world.
 31 sealed feathers remain; W7 five sealed. Next unallocated W7-F7, W6-F9. Chapter 1 / W4 stays paused.
@@ -41,3 +41,9 @@ After activation: check original movement/Discord synchronization, return to pod
 ## Shared checkpoints
 
 W6 retains the accepted frame; new observations use authored text and art. W2/W4 knowledge and first/repeat consequences remain authoritative. W5 passive refresh is quiet, explicit inspection records attention. W8 counts unchanged; live acceptance outstanding. Interface evolution remains a future expression of server-owned discoveries, not browser-local progression.
+
+## Deployment confirmed — 4 November 2026, 17:54 AWST
+
+Karun ran activation directly on neptunelounge. Backup: /opt/futuresky/backups/w7f6-inspection-20261104-095424. Operator output reports Discord reconnected, anonymous inspection denied and player data preserved. Independent post-activation verification: all seven runtime/assets match the deployment manifest, service active/running PID967373, original /play/ and live pilot HTTP200, anonymous /play/api/me and POST /play/api/inspect HTTP401. Source implementation 5ba3d1ecd6336ed62465ccfcb746456b97978e0c.
+
+This supersedes earlier pending-activation statements. No authenticated character action was performed by the assistant. Player acceptance and cross-client inspection walkthrough remain pending; W7-F6 is not sealed, total remains31. Chapter1 stays paused.
