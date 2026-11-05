@@ -1,0 +1,45 @@
+{
+  "feather": "W7-F7",
+  "files": {
+    "bot/fsbot/web_portal.py": {
+      "target": "bot/fsbot/web_portal.py",
+      "source": "239a5cecfccb3a66731caad22129ace2187188378c8daed962d4284fa12caeb9",
+      "live": "46d25c0ecf69d90a3395473a1a096553bbc8ef7e45c427762aaee6a7bfe44646"
+    },
+    "bot/fsbot/web_wardrobe.py": {
+      "target": "bot/fsbot/web_wardrobe.py",
+      "source": "f110ed62ec08b9faa739a94af909cb25f4d6f44fb5ab8266fe54d95de36627ec",
+      "live": null
+    },
+    "bot/fsbot/pod_inspection.py": {
+      "target": "bot/fsbot/pod_inspection.py",
+      "source": "ce1bdab1f56121209b75614fd5856c582f50ff7cc0992c7a64e71010694c267a",
+      "live": "533bd8f5a587138001dd8eeb8b53fab2ce25037a4b3d5f8ce41ebcbb1bdca815"
+    },
+    "bot/fsbot/cogs/core.py": {
+      "target": "bot/fsbot/cogs/core.py",
+      "source": "a5d24b25c35722e6389f059ebd5c3f49c6855b64e65afca341faf6b137d8e077",
+      "live": "cee627ed7f5d7e092e15925c56242abdb8138428e8d94b41df141389c10ff0fe"
+    },
+    "bot/fsbot/cogs/wardrobe.py": {
+      "target": "bot/fsbot/cogs/wardrobe.py",
+      "source": "4e5d1ca761f609d663d2652c061fd8aba1829237240675cb70a82a5133a5ac95",
+      "live": "d0656230b2f13f8b1a4dba8638c321a7281c4e354f21baffba9327a7dfd49fb8"
+    },
+    "tools/authoring/w6f8/live/index.html": {
+      "target": "assets/experiments/w6-f8/live/index.html",
+      "source": "b4d46ae343c08d52d0c784448a4ad8e14c38fb18ee69d3f8bb7f25258fa1c5cf",
+      "live": "ecb7795f677a9ce4dc2a7f23320b72a6857ac98f7ab2b4cd3019d96cc5e8a3dc"
+    },
+    "tools/authoring/w6f8/live/frame.css": {
+      "target": "assets/experiments/w6-f8/live/frame.css",
+      "source": "ca08dbde2e7526780e6c904cb5c1b807e737250c3ce1a2c0de37b8cd68513579",
+      "live": "e226b6afd8c180bba25dac28fa6a85989cb2c7b243a94ae02506d283564c9805"
+    },
+    "tools/authoring/w6f8/live/game.js": {
+      "target": "assets/experiments/w6-f8/live/game.js",
+      "source": "749ad53e41b955a2d048d529516758f62c711c3f1be833ba10afbb8957b87f96",
+      "live": "1e2f6edbb50bd24c06147d2ad4384757880cc6cfb5a328fc1f65cadaf36833d7"
+    }
+  }
+}

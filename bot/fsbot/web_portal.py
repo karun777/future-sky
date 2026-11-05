@@ -322,11 +322,91 @@ def create_app(bot, config, *, oauth=None, clock=time.monotonic):
         value.pop("walk_offer", None)
         return web.json_response({"ok": True, "observation": observation})
 
+    def wardrobe_projection(uid):
+        from fsbot.web_wardrobe import wardrobe_view
+        from fsbot.cogs.wardrobe import load_catalogue
+        refusal = inspection_refusal(uid)
+        if refusal or bot.get_cog("CoreCog") is None:
+            return {"available": False, "options": [], "actions": [],
+                    "notice": refusal or "Equipment is unavailable."}
+        return wardrobe_view(bot.storage.characters[uid], bot.storage.items_db, load_catalogue())
+
+    def add_wardrobe(view, value):
+        uid = value["uid"]
+        projection = wardrobe_projection(uid)
+        stamp = inspection_stamp(uid)
+        offer = value.get("wardrobe_offer")
+        actions = projection.pop("actions")
+        if not (offer and offer["expires"] > clock() + 10
+                and offer["stamp"] == stamp and offer["actions"] == actions):
+            offer = {"token": secrets.token_urlsafe(32), "stamp": stamp,
+                     "actions": actions, "expires": clock() + 120}
+            value["wardrobe_offer"] = offer
+        view["wardrobe"] = {**projection, "token": offer["token"]}
+
+    async def wardrobe_action(request):
+        value = session(request)
+        supplied = request.headers.get("X-CSRF-Token", "")
+        if (request.headers.get("Origin") != ORIGIN or not supplied
+                or not hmac.compare_digest(value["csrf"].encode(), supplied.encode())):
+            raise web.HTTPForbidden(text="Invalid wardrobe request.")
+        current_view(value)
+        try:
+            body = await request.json()
+        except (ValueError, UnicodeDecodeError):
+            raise web.HTTPBadRequest(text="Invalid wardrobe request.") from None
+        if (not isinstance(body, dict) or set(body) != {"action", "token"}
+                or not isinstance(body["action"], str) or not isinstance(body["token"], str)
+                or len(body["action"]) > 160 or len(body["token"]) > 128):
+            raise web.HTTPBadRequest(text="Choose one available garment action.")
+        offer = value.get("wardrobe_offer")
+        if (not offer or offer["expires"] <= clock()
+                or not hmac.compare_digest(offer["token"].encode(), body["token"].encode())):
+            raise web.HTTPConflict(text="That wardrobe choice expired. Refresh.")
+        if body["action"] not in offer["actions"]:
+            raise web.HTTPBadRequest(text="That garment action is unavailable.")
+        value.pop("wardrobe_offer", None)
+        uid = value["uid"]
+        refusal = inspection_refusal(uid)
+        if refusal:
+            raise web.HTTPConflict(text=refusal)
+        if offer["stamp"] != inspection_stamp(uid):
+            raise web.HTTPConflict(text="Your situation changed. Review the wardrobe again.")
+        if body["action"] not in wardrobe_projection(uid)["actions"]:
+            raise web.HTTPConflict(text="That garment is no longer available.")
+        idle = bot.get_cog("IdleHomeCog")
+        if idle:
+            idle.observe(uid)
+            if uid in idle.suspended:
+                raise web.HTTPServiceUnavailable(text="Your activity could not be saved.")
+        # No await between final validation and shared durable mutation.
+        from fsbot.web_wardrobe import select_outfit
+        from fsbot.cogs.wardrobe import load_catalogue
+        from fsbot.dressing import resolve_clothing
+        action, key = body["action"].split(":", 1)
+        try:
+            if action == "select":
+                fit = select_outfit(bot.storage, uid, key, load_catalogue())
+                message = "You step into " + fit["label"] + ". Your choice is recorded."
+            else:
+                core = bot.get_cog("CoreCog")
+                item, slot = resolve_clothing(bot.storage.characters[uid], bot.storage.items_db, key)
+                message = core.equip_item(uid, item, slot)
+        except ValueError as exc:
+            raise web.HTTPConflict(text=str(exc)) from None
+        except Exception:
+            logging.getLogger("futuresky.web").exception("Wardrobe action failed")
+            raise web.HTTPServiceUnavailable(text="The wardrobe could not save that action.") from None
+        value.pop("walk_offer", None)
+        value.pop("inspect_offer", None)
+        return web.json_response({"ok": True, "message": message})
+
     async def me(request):
         value = session(request)
         view = current_view(value)
         add_walking(view, value)
         add_inspection(view, value)
+        add_wardrobe(view, value)
         return web.json_response(view)
 
     async def walk(request):
@@ -387,5 +467,6 @@ def create_app(bot, config, *, oauth=None, clock=time.monotonic):
         web.post("/play/logout", logout),
         web.post("/play/api/walk", walk),
         web.post("/play/api/inspect", inspect),
+        web.post("/play/api/wardrobe", wardrobe_action),
     ])
     return app

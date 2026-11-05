@@ -182,3 +182,53 @@ test('overlay actions react to offline, revoked offers and location changes',asy
  h.data=data('b');await h.tick(4000);
  assert.equal(h.elements['inspection-panel'].open,false);
 });
+
+async function wardrobeSetup() {
+ const h=await setup();
+ h.data.inspection.targets=['panels','wardrobe'];
+ h.data.wardrobe={available:true,token:'clothes-1',first_selection:false,fit:'Uniform',
+  options:[{id:'carried:coat',name:'Coat',description:'<b>Literal</b>',action:'wear:coat',label:'Wear'}]};
+ h.handler=async(url)=>url==='/play/api/inspect'?response(200,{ok:true,observation:{title:'Wardrobe',text:'Compartment'}}):null;
+ await h.tick(4000);
+ await h.elements['inspect-targets'].children[1].emit('click');
+ assert.equal(h.elements['inspection-actions'].textContent,'Open wardrobe');
+ await h.elements['inspection-actions'].children[0].emit('click');
+ assert.equal(h.elements['wardrobe-panel'].open,true);
+ await h.elements['wardrobe-choices'].children[0].emit('click');
+ return h;
+}
+test('wardrobe examines safely then double click wears exactly once and refreshes fit',async()=>{
+ const h=await wardrobeSetup();
+ assert.equal(h.elements['garment-description'].textContent,'<b>Literal</b>');
+ assert.equal(h.calls.filter(c=>c.url==='/play/api/wardrobe').length,0);
+ h.handler=async(url)=>{if(url==='/play/api/wardrobe'){
+  h.data.wardrobe={...h.data.wardrobe,token:'clothes-2',fit:'Coat',options:[]};
+  return response(200,{ok:true,message:'Equipped Coat'});
+ }};
+ await Promise.all([h.elements['wardrobe-wear'].emit('click'),h.elements['wardrobe-wear'].emit('click')]);
+ assert.equal(h.calls.filter(c=>c.url==='/play/api/wardrobe').length,1);
+ assert.equal(h.elements['wardrobe-fit'].textContent,'Wearing: Coat');
+ assert.equal(h.elements['wardrobe-wear'].hidden,true);
+ assert.equal(h.elements['wardrobe-status'].textContent,'Equipped Coat');
+});
+test('wardrobe lost response never retries and auth expiry clears private detail',async()=>{
+ const h=await wardrobeSetup();
+ h.handler=async(url)=>{if(url==='/play/api/wardrobe')throw Error('lost');};
+ await h.elements['wardrobe-wear'].emit('click');await h.tick(12000);
+ assert.equal(h.calls.filter(c=>c.url==='/play/api/wardrobe').length,1);
+ assert.match(h.elements['wardrobe-status'].textContent,/will not be repeated/);
+ h.handler=async()=>response(401,'expired');await h.tick(4000);
+ assert.equal(h.elements['wardrobe-panel'].open,false);
+ assert.equal(h.elements['garment-description'].textContent,'');
+});
+test('wardrobe stale or withdrawn option cannot be worn',async()=>{
+ const h=await wardrobeSetup();
+ h.navigator.onLine=false;await h.win.emit('offline');
+ await h.elements['wardrobe-wear'].emit('click');
+ assert.equal(h.calls.filter(c=>c.url==='/play/api/wardrobe').length,0);
+ h.navigator.onLine=true;h.data.wardrobe.options=[];
+ await h.win.emit('online');await drain();
+ assert.equal(h.elements['wardrobe-wear'].hidden,true);
+ h.data=data('b');await h.tick(4000);
+ assert.equal(h.elements['wardrobe-panel'].open,false);
+});

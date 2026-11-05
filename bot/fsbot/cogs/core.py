@@ -816,12 +816,19 @@ class CoreCog(commands.Cog):
           !equip itm_leather_jacket chest
           !equip itm_rusty_knife main_hand
         """
+        try:
+            message = self.equip_item(str(ctx.author.id), item_id, slot)
+        except ValueError as exc:
+            message = str(exc)
+        await ctx.send(message)
+
+    def equip_item(self, user_id: str, item_id: str, slot: Optional[str] = None):
+        """Synchronous shared equipment operation; caller supplies authenticated identity."""
         s = self.bot.storage
-        user_id = str(ctx.author.id)
+        user_id = str(user_id)
 
         if user_id not in s.characters:
-            await ctx.send("🧬 You don’t have a character yet. Use `!create_character ...`.")
-            return
+            raise ValueError("🧬 You don’t have a character yet. Use `!create_character ...`.")
 
         original = s.characters[user_id]
         c = deepcopy(original)
@@ -831,33 +838,27 @@ class CoreCog(commands.Cog):
 
         item_id = (item_id or "").strip()
         if not item_id:
-            await ctx.send("Usage: `!equip <item_id> [slot]`")
-            return
+            raise ValueError("Usage: `!equip <item_id> [slot]`")
 
         item_def = self._get_item_def(item_id)
         if not item_def:
-            await ctx.send(f"⚠️ Unknown item_id: `{item_id}`")
-            return
+            raise ValueError(f"⚠️ Unknown item_id: `{item_id}`")
 
         if not self._is_equipment(item_def):
-            await ctx.send(f"🚫 `{self._item_name(item_id)}` is not equipable.")
-            return
+            raise ValueError(f"🚫 `{self._item_name(item_id)}` is not equipable.")
 
         qty = self._bag_get_qty(bag, item_id)
         if qty <= 0:
-            await ctx.send(f"🚫 You don’t have `{self._item_name(item_id)}` in your bag.")
-            return
+            raise ValueError(f"🚫 You don’t have `{self._item_name(item_id)}` in your bag.")
 
         req_err = self._enforce_stat_requirements(c, item_def)
         if req_err:
-            await ctx.send(f"🚫 Cannot equip `{self._item_name(item_id)}` — {req_err}")
-            return
+            raise ValueError(f"🚫 Cannot equip `{self._item_name(item_id)}` — {req_err}")
 
         target_slot = self._resolve_target_slot(item_def, equipped, slot)
         if not target_slot:
             allowed = sorted(self._allowed_slots(item_def))
-            await ctx.send(f"🚫 No valid slot. Allowed slots: {', '.join(f'`{x}`' for x in allowed) or '—'}")
-            return
+            raise ValueError(f"🚫 No valid slot. Allowed slots: {', '.join(f'`{x}`' for x in allowed) or '—'}")
 
         # If replacing something already in that slot, unequip it first (put back into bag)
         replaced = equipped.get(target_slot)
@@ -875,8 +876,7 @@ class CoreCog(commands.Cog):
         hands = self._hands_required(item_def)
         if hands >= 2:
             if target_slot != "main_hand":
-                await ctx.send("🚫 Two-handed weapons must be equipped to `main_hand`.")
-                return
+                raise ValueError("🚫 Two-handed weapons must be equipped to `main_hand`.")
 
             off = equipped.get("off_hand")
             if isinstance(off, str) and off.strip():
@@ -900,14 +900,13 @@ class CoreCog(commands.Cog):
             s.save_characters()
         except Exception:
             s.characters[user_id] = original
-            await ctx.send("Your equipment change could not be saved. Nothing was changed; please try again.")
-            return
+            raise ValueError("Your equipment change could not be saved. Nothing was changed; please try again.")
 
         nm = self._item_name(item_id)
         if hands >= 2:
-            await ctx.send(f"🗡️ Equipped **{nm}** (two-handed) to `main_hand` + `off_hand`.")
+            return (f"🗡️ Equipped **{nm}** (two-handed) to `main_hand` + `off_hand`.")
         else:
-            await ctx.send(f"🧤 Equipped **{nm}** to `{target_slot}`.")
+            return (f"🧤 Equipped **{nm}** to `{target_slot}`.")
 
     @commands.command(name="unequip")
     async def unequip_cmd(self, ctx: commands.Context, slot: str):

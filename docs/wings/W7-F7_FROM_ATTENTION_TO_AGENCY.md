@@ -1,0 +1,52 @@
+# W7-F7 — From Attention to Agency
+
+Status: ACTIVE — implemented and tested; prepared for operator activation.
+Allocated 5 November 2026 on Karun's instruction “let's go W7-F7”.
+Home: W7 Engine. Branch engine/w7-f7-from-attention-to-agency.
+Baseline: W7-F6 seal 4ac7462216682ed9c8f08f6fa402eabf46e2bd3e.
+32 sealed feathers remain; W7 six. Next unallocated W7-F8, W6-F9. Chapter 1 / W4 stays paused; Discord supported.
+
+## Bounded outcome
+
+In the existing fixed-screen pilot: inspect storage panels, inspect wardrobe, open wardrobe, examine an outfit, choose a first outfit or wear carried clothing, then see shared equipment in the web window and Discord.
+
+The pod's four existing catalogue outfits are not a replenishing shop. First selection is once only; subsequent changes require carried clothing. Browsing and examining option descriptions are passive and grant no items. Opening the wardrobe observation uses existing durable discovery/attention semantics. No new clothing, canon, map, combat, FEED7 implementation, character reset, account expansion or Chapter 1 advancement.
+
+## Implementation
+
+- pod_inspection.web_targets adds wardrobe after panels/display discovery.
+- web_wardrobe.select_outfit is the durable first-selection operation used by both WardrobeCog.uniform and HTTP; existing select_uniform rules remain authoritative.
+- CoreCog.equip_item extracts the existing synchronous equip/persist operation. Discord equip_cmd remains its presentation adapter; !wear still resolves owned clothing then invokes equip. HTTP resolves the same carried clothing and calls equip_item. Slots, stat checks, two-hand behavior, bag conservation and save-failure rollback remain in the established operation.
+- GET /play/api/me adds a private wardrobe projection only after wardrobe discovery and while the player can act in the pod. It includes catalogue/carried option descriptions, current fit and permitted action offers; it does not record attention or alter knowledge.
+- POST /play/api/wardrobe accepts only action and one-use token. Session ownership/allowlist, exact Origin/CSRF, expiry, offered action, full-character/navigation fingerprint and current action restrictions are checked. Recovery, combat, choices, sequences, in-flight walking and room changes block it. No await separates final validation and shared mutation. Explicit changes touch IdleHome; suspended persistence blocks them.
+- The frontend exposes Inspect wardrobe and Open wardrobe within observations, then a fixed-frame wardrobe dialog with examine-first garment controls and an explicit Choose and wear / Wear action. It serializes commands, refreshes saved state after responses, never retries mutations automatically, and clears private wardrobe details on location change or sign-out. Offline/error status remains visible inside the modal.
+- Existing /play frontend stays unchanged. Pilot URL remains https://future-sky.net/assets/experiments/w6-f8/live/index.html.
+
+## Verification — 5 November 2026
+
+345 Python tests pass: prior suite, seven HTTP/shared-wardrobe cases and three additional deployment checks. 19 frontend behavior cases pass: existing inspection/transport tests plus wardrobe double-click, safe description text, fit refresh, lost-response no-retry, withdrawn actions, offline gating and session/private-detail clearing. git diff whitespace checks pass.
+
+The HTTP tests use fictional players and fake OAuth. Deployment tests use temporary files and stubbed services; their “activated” output does not mean production was activated. No production wardrobe choice was made by the assistant. Browser visual verification and authenticated live walkthrough remain pending. The W7-F6 fresh-character discovery check is carried forward, not silently marked passed.
+
+## Deployment
+
+Worktree: /home/efiishent/future-sky-worktrees/w7-f7.
+Read-only preflight passed: python3 tools/deploy/w7f7/activate.py --check.
+Manifest selects five backend files and three static pilot assets; exact existing live hashes required. No dependencies, config, catalogue or player-data overlay.
+
+On neptunelounge:
+```bash
+sudo python3 /home/efiishent/future-sky-worktrees/w7-f7/tools/deploy/w7f7/activate.py
+```
+
+Activation briefly stops the bot, validates baseline again, backs up selected code, overlays source, verifies data hashes unchanged while stopped, starts the bot, and checks Discord reconnection plus anonymous wardrobe denial and public asset hashes. Failure restores code only, removing the new module if absent before. Never restore old player data.
+
+## Acceptance and return
+
+Sign in again after restart. In the pod, inspect panels → wardrobe → Open wardrobe. Examine a carried garment, use Wear, check current fit and inventory, then compare !fit / !inventory in Discord. Try another carried garment to reverse the change if desired. Do not reset an existing first selection just to test it. A fresh eligible character's Choose and wear path remains an explicit live acceptance case; isolated tests cover it meanwhile.
+
+If acceptance reveals layout or guidance issues, refine this feather before sealing. No seal or next feather activation is implied by implementation.
+
+## Shared-wing checkpoints
+
+W2: existing pod and authored wardrobe detail, no new room. W3: attire remains distinct from identity/class/job. W4: established clothing consequences retained; Chapter 1 paused. W5: passive browsing does not postpone idle-home; explicit inspection/change records attention. W6: existing fixed frame and reduced typography preserved, functional wardrobe overlay added. W8: one home/count, deployment/rollback limits and untested live paths explicit. W1: no new lore.

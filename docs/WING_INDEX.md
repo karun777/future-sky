@@ -1,14 +1,14 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W7 Engine / W7-F6 — Attend to the World**, SEALED 5 November 2026: shared pod inspection deployed, player-reviewed and refined; fresh-character first discovery remains a follow-up. [Scope and return](wings/W7-F6_ATTEND_TO_THE_WORLD.md). W6-F8 sealed. Next unallocated W7-F7 and W6-F9. Chapter 1 / W4 stays paused; Discord supported.
+Current home/checkpoint: **W7 Engine / W7-F7 — From Attention to Agency**, ACTIVE: shared wardrobe implementation tested, operator activation and player acceptance pending. [Scope and return](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md). W7-F6 sealed. Next unallocated W7-F8 and W6-F9. Chapter 1 / W4 stays paused; Discord supported.
 **32 sealed wing feathers: W4 has nine, W6 seven, W7 six; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
 ## Fresh-session return — 5 November 2026
 
-Read [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md) for code, checks and activation. W6-F8 and W7-F6 are sealed. Read the W7-F6 seal for player evidence, typography deployment and retained fresh-discovery/visual-check limits. W7-F7 — From Attention to Agency is proposed, not allocated. Chapter 1 stays paused.
+Read [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md) for code, checks and activation. W6-F8 and W7-F6 are sealed. Read the W7-F6 seal for player evidence, typography deployment and retained fresh-discovery/visual-check limits. Read [W7-F7](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md) next: implementation and deployment preflight complete; activation and player acceptance pending. Chapter 1 stays paused.
 
 ## Fresh-session handover — 29 October 2026
 
@@ -38,7 +38,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W4 Play | 9 | [W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F13 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 7 | [W6-F8](wings/W6-F8_STAYING_IN_THE_WORLD.md) | W6-F5 review; next unallocated W6-F9 |
-| W7 Engine | 6 | [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md) | Next unallocated W7-F7; wardrobe integration proposed |
+| W7 Engine | 6 | [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md) | [W7-F7 — active](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md); next unallocated W7-F8 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
 [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md) is reviewed and sealed. Karun selected finding one's way through space, memory or relationships as the creative doorway; specific mechanisms remain open.
@@ -372,3 +372,7 @@ Author closed One Action, Two Doors following verified web walking, Discord walk
 ## W7-F6 sealed — 5 November 2026
 
 [Seal and return](wings/W7-F6_ATTEND_TO_THE_WORLD.md#seal--5-november-2026): shared inspection, chained web actions and readable room layout accepted; smaller inspection type deployed. Fresh-character discovery and final typography visual recheck retained. W7 six sealed, total32; W7-F7 proposed only. Chapter1 paused, Discord supported.
+
+## W7-F7 allocated and prepared — 5 November 2026
+
+[From Attention to Agency](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md) connects wardrobe inspection, first selection and owned clothing changes to the existing shared equipment rules. 345 Python and 19 frontend behavior tests pass; deployment preflight passed. Operator activation and live visual/player acceptance pending; test activation output is fictional. Total32 sealed unchanged. Chapter1 paused.

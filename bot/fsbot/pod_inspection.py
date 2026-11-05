@@ -50,7 +50,7 @@ def web_targets(character):
         return []
     targets = ["panels"]
     if "panels" in discoveries or "display" in discoveries:
-        targets.append("display")
+        targets.extend(["display", "wardrobe"])
         if character.get("extra", {}).get("arrival", {}).get("performance_booking", True) is not False:
             targets.append("booking")
     return targets

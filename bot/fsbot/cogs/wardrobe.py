@@ -137,20 +137,11 @@ class WardrobeCog(commands.Cog):
             return
         try:
             catalogue = load_catalogue()
-            updated = select_uniform(character, "pod_" + choice, catalogue, self.bot.storage.items_db)
+            from fsbot.web_wardrobe import select_outfit
+            fit = select_outfit(self.bot.storage, str(ctx.author.id), "pod_" + choice, catalogue)
         except (WardrobeError, OSError, ValueError) as exc:
             await ctx.send(f"⚠️ {exc}")
             return
-        user_id = str(ctx.author.id)
-        self.bot.storage.characters[user_id] = updated
-        try:
-            self.bot.storage.save_characters()
-        except Exception:
-            # Revert in-memory change when durable write fails.
-            self.bot.storage.characters[user_id] = character
-            await ctx.send("⚠️ The wardrobe could not save your selection. Please try again.")
-            return
-        fit = current_fit(updated, self.bot.storage.items_db)
         embed = discord.Embed(
             title="POD // ATTIRE CONFIRMED",
             description=f"You step into **{fit['label']}**. The fabric settles against your skin as though it remembers you.\n\n"

@@ -7,10 +7,12 @@
   let timer = null, failures = 0, lastSuccess = 0, exitKey = null;
   const changes = [];
   let observationTarget = null, observationActionsKey = null;
+  let wardrobeToken = null, wardrobeKey = null, selectedGarment = null;
   function text(id, value) { if (el(id).textContent !== value) el(id).textContent = value; }
   function notice(id, value) {
     text(id, value); el(id).hidden = !value;
-    if (id === "walk-feedback" || id === "message") {
+    if (id === "walk-feedback" || (id === "message" && value)) {
+      text("wardrobe-status", value); el("wardrobe-status").hidden = !value;
       text("inspection-status", value); el("inspection-status").hidden = !value;
     }
   }
@@ -20,6 +22,8 @@
     [...el("inspect-targets").querySelectorAll("button"), ...el("inspection-actions").querySelectorAll("button")].forEach(b => {
       b.disabled = stale || moving || document.hidden || !inspectToken;
     });
+    el("wardrobe-choices").querySelectorAll("button").forEach(b => { b.disabled = stale || moving || document.hidden; });
+    el("wardrobe-wear").disabled = stale || moving || document.hidden || !wardrobeToken || !selectedGarment?.action;
     el("refresh").disabled = moving || !!reading;
     el("logout").disabled = moving;
   }
@@ -32,7 +36,7 @@
   }
   function signedOut(message = "") {
     stopped = true; stale = true; csrf = null; walkToken = null; inspectToken = null; view = null;
-    clearObservation();
+    clearObservation(); clearWardrobe();
     el("inspect-targets").replaceChildren();
     clearTimeout(timer);
     el("game").hidden = true; el("signed-out").hidden = false;
@@ -84,7 +88,7 @@
     const previous = view;
     const title = data.location.title || "Location withheld";
     if (previous && previous.location.id !== data.location.id) {
-      clearObservation();
+      clearObservation(); clearWardrobe();
       const home = data.idle_home?.enabled && data.idle_home?.at_home && data.idle_home?.status === "home";
       const message = home ? "Your idle return is complete. Now at " + title + "." : "Location updated: " + title + ".";
       remember(message);
@@ -97,7 +101,7 @@
       el("inspect-targets").replaceChildren(...targets.map(target => {
         const button = document.createElement("button");
         button.type = "button";
-        button.textContent = ({panels:"Storage panels",display:"Display",booking:"Booking notice"})[target] || target;
+        button.textContent = ({panels:"Storage panels",display:"Display",booking:"Booking notice",wardrobe:"Wardrobe"})[target] || target;
         button.addEventListener("click", () => inspect(target));
         return button;
       }));
@@ -135,7 +139,7 @@
       exitKey = key;
     }
     notice("walk-notice", data.walking?.notice || (exits.length ? "" : "No walking exits available in this view."));
-    view = data; renderObservationActions(); stale = false; lastSuccess = Date.now(); failures = 0;
+    view = data; renderWardrobe(); renderObservationActions(); stale = false; lastSuccess = Date.now(); failures = 0;
     connection("Up to date");
     text("last-sync", "Checked " + new Date(lastSuccess).toLocaleTimeString());
     notice("message", "");
@@ -223,18 +227,96 @@
     }
   }
   function renderObservationActions() {
-    const next = ({panels:["display"], display:["booking"], booking:[]})[observationTarget] || [];
+    const next = ({panels:["display","wardrobe"], display:["booking","wardrobe"], booking:["wardrobe"], wardrobe:[]})[observationTarget] || [];
     const targets = next.filter(target => (view?.inspection?.targets || []).includes(target));
-    const key = JSON.stringify(targets);
+    const openWardrobe = observationTarget === "wardrobe" && view?.wardrobe?.available;
+    const key = JSON.stringify([targets, openWardrobe]);
     if (key === observationActionsKey) return;
     observationActionsKey = key;
     el("inspection-actions").replaceChildren(...targets.map(target => {
       const button = document.createElement("button");
       button.type = "button";
-      button.textContent = ({display:"Inspect display", booking:"Read booking"})[target];
+      button.textContent = ({display:"Inspect display", booking:"Read booking", wardrobe:"Inspect wardrobe"})[target];
       button.addEventListener("click", () => inspect(target));
       return button;
     }));
+    if (openWardrobe) {
+      const button = document.createElement("button");
+      button.type = "button"; button.textContent = "Open wardrobe";
+      button.addEventListener("click", () => {
+        if (stale || moving || document.hidden || !view?.wardrobe?.available) return;
+        el("inspection-panel").close();
+        el("wardrobe-panel").showModal();
+      });
+      el("inspection-actions").append(button);
+    }
+  }
+  function clearWardrobe() {
+    if (el("wardrobe-panel").open) el("wardrobe-panel").close();
+    wardrobeToken = null; wardrobeKey = null; selectedGarment = null;
+    el("wardrobe-choices").replaceChildren();
+    ["wardrobe-fit","garment-name","garment-description","wardrobe-status"].forEach(id => text(id,""));
+    el("wardrobe-wear").hidden = true;
+  }
+  function chooseGarment(option) {
+    selectedGarment = option;
+    text("garment-name", option.name);
+    text("garment-description", option.description);
+    text("wardrobe-wear", option.label || "Wear");
+    el("wardrobe-wear").hidden = !option.action;
+    controls();
+  }
+  function renderWardrobe() {
+    const wardrobe = view?.wardrobe;
+    if (!wardrobe?.available) { clearWardrobe(); return; }
+    wardrobeToken = wardrobe.token || null;
+    const key = JSON.stringify([wardrobe.options, wardrobe.fit, wardrobe.first_selection]);
+    if (key === wardrobeKey) return;
+    wardrobeKey = key;
+    text("wardrobe-fit", "Wearing: " + (wardrobe.fit || "No chest garment"));
+    text("wardrobe-rule", wardrobe.first_selection ?
+      "Choose your first outfit once, or wear a garment you already carry." :
+      "Your first outfit is already chosen. You can wear clothes you carry; the catalogue grants nothing.");
+    el("wardrobe-choices").replaceChildren(...(wardrobe.options || []).map(option => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = option.name + (option.id.startsWith("carried:") ? " · carried" : " · catalogue");
+      b.addEventListener("click", () => chooseGarment(option));
+      return b;
+    }));
+    const current = (wardrobe.options || []).find(o => o.id === selectedGarment?.id);
+    if (current) chooseGarment(current);
+    else { selectedGarment = null; text("garment-name", "Examine an outfit");
+      text("garment-description", "Choose a garment to read its details before putting it on.");
+      el("wardrobe-wear").hidden = true; }
+  }
+  async function wearGarment() {
+    if (moving || stale || stopped || document.hidden || !wardrobeToken || !selectedGarment?.action) return;
+    if (Date.now() - lastSuccess > STALE) {
+      markStale("Checking your wardrobe before changing…"); refresh(); return;
+    }
+    const selectedRoom = view.location.id, action = selectedGarment.action;
+    if (reading) await reading;
+    if (moving || stale || stopped || document.hidden || !wardrobeToken) return;
+    if (view.location.id !== selectedRoom || !(view.wardrobe?.options || []).some(o => o.action === action)) {
+      notice("walk-feedback", "Your wardrobe changed. Examine your current options."); return;
+    }
+    moving = true; clearTimeout(timer);
+    const token = wardrobeToken; wardrobeToken = null; walkToken = null; inspectToken = null; controls();
+    notice("walk-feedback", "Changing clothes…");
+    let message = "";
+    try {
+      const {response, body} = await request("/play/api/wardrobe", {
+        method:"POST", headers:{"Content-Type":"application/json","X-CSRF-Token":csrf || ""},
+        body:JSON.stringify({action,token})
+      });
+      if (response.status === 401 || response.status === 403) { signedOut("Sign in again to continue."); return; }
+      message = typeof body === "string" ? body : body.message || "Check your current fit.";
+    } catch (_) {
+      message = "The wardrobe response was interrupted. Checking your fit; the action will not be repeated.";
+      markStale("Checking your saved equipment.");
+    } finally { moving = false; stale = true; controls(); }
+    if (!stopped) { await refresh(); if (!stopped) notice("walk-feedback", message); }
   }
   function clearObservation() {
     const dialog = el("inspection-panel");
@@ -303,6 +385,7 @@
       if (!stopped) notice("walk-feedback", message);
     }
   }
+  el("wardrobe-wear").addEventListener("click", wearGarment);
   el("refresh").addEventListener("click", refresh);
   el("inspection-image").addEventListener("error", () => { el("inspection-image").hidden = true; });
   el("room-image").addEventListener("error", () => {

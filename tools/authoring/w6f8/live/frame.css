@@ -36,3 +36,7 @@ dialog{padding:0;border:4px double var(--edge);color:var(--ink);background:#111c
 #inspection-panel footer{flex-shrink:0}
 @media(max-width:700px){#game{grid-template-rows:minmax(0,1fr) minmax(260px,49dvh) 64px}.room-controls{gap:4px}.room-controls .inspection-response{flex-basis:100%}}
 @media(max-height:600px){#game{grid-template-rows:minmax(0,1fr) minmax(150px,54dvh) 52px}.room-controls{max-height:68px}.room-controls button{padding:5px;font-size:11px}.present{gap:4px}.present-top{gap:8px}}
+
+#wardrobe-choices{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+#wardrobe-status{line-height:1.5;color:var(--gold)}
+#wardrobe-panel footer{flex-shrink:0}

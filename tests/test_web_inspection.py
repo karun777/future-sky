@@ -100,7 +100,7 @@ class WebInspectionTests(unittest.IsolatedAsyncioTestCase):
         del ch["extra"]["arrival"]
         self.assertEqual((await self.offer())["inspection"]["targets"],[])
         ch["extra"]["arrival"]={"opening":{"id":OPENING,"discoveries":["panels"]},"performance_booking":False}
-        self.assertEqual((await self.offer())["inspection"]["targets"],["panels","display"])
+        self.assertEqual((await self.offer())["inspection"]["targets"],["panels","display","wardrobe"])
         result=inspect_pod(self.bot.storage,"123","display")
         self.assertNotIn("booking",result["text"].lower())
         self.assertIsNone(result["image"])
