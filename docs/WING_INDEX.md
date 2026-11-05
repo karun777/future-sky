@@ -1,18 +1,18 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W7 Engine / W7-F7 — From Attention to Agency**, ACTIVE: typed commands and main-panel focus deployed; player acceptance pending. [Scope and return](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md). W7-F6 sealed. W6-F9 is allocated for HUD design; next unallocated W7-F8 and W6-F10. Chapter 1 / W4 stays paused; Discord supported.
-**32 sealed wing feathers: W4 has nine, W6 seven, W7 six; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
+Current home/checkpoint: **W7 Engine / W7-F7 — From Attention to Agency, SEALED 5 November 2026**. [Seal and return](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md#seal--5-november-2026). Player HUD clothing change and Discord fit comparison passed. W6-F9 is the allocated next HUD design return; next unallocated W7-F8 and W6-F10. Chapter 1 / W4 stays paused; Discord supported.
+**33 sealed wing feathers: W4 has nine, W6 seven, W7 seven; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
-## Refinement return — 5 November 2026, 15:58 AWST
+## Seal return — 5 November 2026
 
-W7-F7 refinements deployed; recovery possessions found secured in private pod delivery. Player collection and web wear/Discord fit comparison remain before sealing. [W6-F9 — Learning to See](wings/W6-F9_LEARNING_TO_SEE.md) records the accepted Future Sky HUD direction and design boundaries, including independent internal voice. It is allocated for design, not sealed or a live upgrade system. Chapter 1 remains paused.
+W7-F7 sealed on Karun's instruction after screenshots confirmed delivery collection in Discord, Freeform Attire equipped through the HUD, and matching Discord !fit. Delivery collection remains Discord-only; fresh-character live checks and presentation polish are carried forward explicitly. [W6-F9 — Learning to See](wings/W6-F9_LEARNING_TO_SEE.md) records the accepted Future Sky HUD direction and design boundaries, including independent internal voice. It is allocated for design, not sealed or a live upgrade system. Chapter 1 remains paused.
 
 ## Fresh-session return — 5 November 2026
 
-Read [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md) for code, checks and activation. W6-F8 and W7-F6 are sealed. Read the W7-F6 seal for player evidence, typography deployment and retained fresh-discovery/visual-check limits. Read [W7-F7](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md) next: typed commands and main-panel focus deployed; player acceptance pending. Chapter 1 stays paused.
+Read [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md) for code, checks and activation. W6-F8 and W7-F6 are sealed. Read the W7-F6 seal for player evidence, typography deployment and retained fresh-discovery/visual-check limits. Read [W7-F7](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md) for its seal: typed commands and main-panel focus deployed; carried-clothing live acceptance passed. Then read W6-F9 for HUD design and the retained limitations. Chapter 1 stays paused.
 
 ## Fresh-session handover — 29 October 2026
 
@@ -42,7 +42,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W4 Play | 9 | [W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F13 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 7 | [W6-F8](wings/W6-F8_STAYING_IN_THE_WORLD.md) | W6-F5 review; [W6-F9 — design](wings/W6-F9_LEARNING_TO_SEE.md); next unallocated W6-F10 |
-| W7 Engine | 6 | [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md) | [W7-F7 — active](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md); next unallocated W7-F8 |
+| W7 Engine | 7 | [W7-F7](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md) | Pod-delivery web adapter follow-up; next unallocated W7-F8 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
 [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md) is reviewed and sealed. Karun selected finding one's way through space, memory or relationships as the creative doorway; specific mechanisms remain open.

@@ -1,6 +1,6 @@
 # W6-F9 — Learning to See: The Future Sky HUD
 
-Status: ALLOCATED / DESIGN — 5 November 2026, on Karun's acceptance of the next-step proposal. W7-F7 remains the active implementation until its bounded acceptance is complete. No seal/count increment. Next unallocated W6-F10.
+Status: ALLOCATED / DESIGN — 5 November 2026, on Karun's acceptance of the next-step proposal. W7-F7 sealed on 5 November after player screenshots confirmed HUD equipment change and matching Discord fit. This is the next design return. No seal/count increment. Next unallocated W6-F10.
 
 ## Purpose
 
@@ -39,3 +39,7 @@ No general combat, hacking, vehicles, AI narrator, live media feed, progression 
 Review: visual continuity at laptop sizes; command and reference-panel accessibility; ordinary perception survives technological HUD off; discovered/undiscovered and stale information; internal voice retains independent provenance; Discord and web show the same authoritative state. No live character reset to demonstrate a fresh awakening.
 
 W6 owns presentation; W3 owns character faculties; W4 owns awakening/play consequences; W5 timing and attention; W7 producers/persistence; W8 acceptance and scope. No duplicate feather counts.
+
+## Return from W7-F7 seal — 5 November 2026
+
+Carry presentation polish into this design pass: render equipment confirmations without raw Markdown, improve wardrobe imagery beyond the contextual room fallback, make internally scrolling detail content evident, and avoid duplicated bearings or technical offer language. Keep the stable command box and type-to-act contract. Pod-delivery collection through the web needs a separately scoped W7 adapter; do not claim it exists. The inherited fresh-character discovery and first-selection live checks remain outstanding. Chapter 1 remains paused.

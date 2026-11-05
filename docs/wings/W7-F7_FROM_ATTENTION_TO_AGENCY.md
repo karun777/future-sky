@@ -1,10 +1,10 @@
 # W7-F7 — From Attention to Agency
 
-Status: ACTIVE — typed commands and main-panel focus revision deployed; player acceptance remains open.
+Status: SEALED — 5 November 2026. Player equipment-sync acceptance passed; sealed on Karun's instruction.
 Allocated 5 November 2026 on Karun's instruction “let's go W7-F7”.
 Home: W7 Engine. Branch engine/w7-f7-from-attention-to-agency.
 Baseline: W7-F6 seal 4ac7462216682ed9c8f08f6fa402eabf46e2bd3e.
-32 sealed feathers remain; W7 six. Next unallocated W7-F8, W6-F9. Chapter 1 / W4 stays paused; Discord supported.
+33 sealed feathers; W7 seven. W6-F9 allocated for HUD design; next unallocated W7-F8 and W6-F10. Chapter 1 / W4 stays paused; Discord supported.
 
 ## Bounded outcome
 
@@ -85,3 +85,19 @@ Read-only authoritative character inspection found Efiishent in pod_room, combat
 Verification: 15 frontend behavior tests passed, including grouped observation history and stable focus/bearings; full 347 Python tests passed; deployment preflight and whitespace checks passed. Three changed static assets deployed without service restart; all three public hashes verified. Service remained active. Backup: /home/efiishent/future-sky-static-backups/w7f7-refinement-20261105-075813. Backend and player data untouched. No new browser visual pass claimed.
 
 Acceptance still required: player retrieves existing delivery in Discord, then uses wear Freeform Attire (or a carried jacket) in the web command box and compares !fit in Discord. Do not seal on isolated tests alone. W7-F7 remains ACTIVE; total sealed remains32. W6-F9 Learning to See is allocated for design, documented separately; next unallocated W6-F10 and W7-F8. Chapter 1 remains paused.
+
+## Seal — 5 November 2026
+
+Karun authorised sealing: “ok let's seal w7f7. some good progress.”
+
+Player screenshots at 16:08 AWST establish the live acceptance sequence: Discord acknowledged !pod_delivery collect; the HUD wardrobe showed Nothing equipped and Freeform Attire carried; wear Freeform Attire in the HUD returned an equip confirmation and Wearing: Freeform Attire; subsequent Discord !fit reported Freeform Attire. The carried-clothing mutation and cross-client equipment comparison pass. These are player-supplied observations, not an assistant-run live mutation.
+
+Delivered: shared wardrobe/equipment rules, persistent typed commands (type to act; click to view), main-panel attention, reference overlays, quiet bearings and obvious exits, contextual imagery, and grouped per-tab command/result history. The latest implementation checkpoint is c24f3d04fe45864630c72b380c378722a44ae2cb. Previously recorded verification remains 347 Python and 15 frontend tests; this documentation-only seal does not claim a new test run or deployment.
+
+Explicit carry-forward:
+- Pod-delivery collection still requires Discord. A web adapter is a separate W7 follow-up, not delivered here.
+- Fresh-character first outfit selection and the inherited W7-F6 first-discovery live check remain untested live; isolated test coverage is not substituted for player evidence.
+- W6-F9 presentation backlog: raw Markdown in equipment confirmations; contextual room fallback needs appropriate wardrobe artwork; the lower Examine an outfit area needs clearer scroll affordance/layout; avoid repeated location labels and technical wardrobe-offer language.
+- Shared durable activity history remains separately scoped; current history is per-tab.
+
+W7-F7 is sealed at its bounded delivered scope. Total 33 sealed feathers, W7 seven. W6-F9 — Learning to See: The Future Sky HUD is the allocated next design return; read W6-F3 before implementation. Next unallocated W7-F8 and W6-F10. Chapter 1 / W4 remains paused; Discord supported. No code, service, player state or chapter activation change accompanies this seal.
