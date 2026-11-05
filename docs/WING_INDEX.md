@@ -1,7 +1,7 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W7 Engine / W7-F7 — From Attention to Agency**, ACTIVE: shared wardrobe implementation tested, operator activation and player acceptance pending. [Scope and return](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md). W7-F6 sealed. Next unallocated W7-F8 and W6-F9. Chapter 1 / W4 stays paused; Discord supported.
+Current home/checkpoint: **W7 Engine / W7-F7 — From Attention to Agency**, ACTIVE: typed-command revision tested; initial wardrobe build deployed, command revision activation and player acceptance pending. [Scope and return](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md). W7-F6 sealed. Next unallocated W7-F8 and W6-F9. Chapter 1 / W4 stays paused; Discord supported.
 **32 sealed wing feathers: W4 has nine, W6 seven, W7 six; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
@@ -376,3 +376,7 @@ Author closed One Action, Two Doors following verified web walking, Discord walk
 ## W7-F7 allocated and prepared — 5 November 2026
 
 [From Attention to Agency](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md) connects wardrobe inspection, first selection and owned clothing changes to the existing shared equipment rules. 345 Python and 19 frontend behavior tests pass; deployment preflight passed. Operator activation and live visual/player acceptance pending; test activation output is fictional. Total32 sealed unchanged. Chapter1 paused.
+
+## W7-F7 command-interface revision — 5 November 2026
+
+[Current interaction contract](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md#revised-interaction-contract--5-november-2026): type to act, click to view. Persistent COMMANDS field and /play frame alignment prepared; 347 Python and 12 command-interface tests pass. Initial wardrobe build verified live; revised build awaits operator activation. No seal; Chapter1 paused.

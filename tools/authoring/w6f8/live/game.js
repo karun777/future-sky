@@ -6,12 +6,15 @@
   let reading = null, moving = false, stopped = false, stale = true;
   let timer = null, failures = 0, lastSuccess = 0, exitKey = null;
   const changes = [];
+  const commandHistory = [];
+  let commandBusy = false;
   let observationTarget = null, observationActionsKey = null;
   let wardrobeToken = null, wardrobeKey = null, selectedGarment = null;
   function text(id, value) { if (el(id).textContent !== value) el(id).textContent = value; }
   function notice(id, value) {
     text(id, value); el(id).hidden = !value;
     if (id === "walk-feedback" || (id === "message" && value)) {
+      if (value) text("command-response", value);
       text("wardrobe-status", value); el("wardrobe-status").hidden = !value;
       text("inspection-status", value); el("inspection-status").hidden = !value;
     }
@@ -44,6 +47,8 @@
     ["exits", "inventory", "equipped", "recent"].forEach(id => el(id).replaceChildren());
     el("room-image").removeAttribute("src");
     changes.length = 0; exitKey = null;
+    commandHistory.length = 0; el("command-history").replaceChildren();
+    el("command-input").value = ""; text("command-response", "");
     notice("walk-feedback", ""); text("recent-count", "");
     connection("Signed out"); notice("message", message); controls();
   }
@@ -98,13 +103,8 @@
     inspectToken = inspected.token || null;
     const targets = inspected.targets || [];
     if (!previous || JSON.stringify(previous.inspection?.targets || []) !== JSON.stringify(targets)) {
-      el("inspect-targets").replaceChildren(...targets.map(target => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.textContent = ({panels:"Storage panels",display:"Display",booking:"Booking notice",wardrobe:"Wardrobe"})[target] || target;
-        button.addEventListener("click", () => inspect(target));
-        return button;
-      }));
+      text("inspect-targets", targets.length ? targets.map(t => "inspect " + t).join(" · ") : "");
+
     }
     notice("inspect-notice", inspected.notice || (targets.length ? "" : "Inspection is not connected here yet."));
     csrf = data.session.csrf;
@@ -130,12 +130,7 @@
     const exits = data.walking?.exits || [];
     const key = JSON.stringify([data.location.id, exits]);
     if (key !== exitKey) {
-      el("exits").replaceChildren(...exits.map(direction => {
-        const button = document.createElement("button");
-        button.type = "button"; button.textContent = "Go " + direction;
-        button.addEventListener("click", () => walk(direction));
-        return button;
-      }));
+      text("exits", exits.length ? exits.map(d => "go " + d).join(" · ") : "");
       exitKey = key;
     }
     notice("walk-notice", data.walking?.notice || (exits.length ? "" : "No walking exits available in this view."));
@@ -227,29 +222,10 @@
     }
   }
   function renderObservationActions() {
-    const next = ({panels:["display","wardrobe"], display:["booking","wardrobe"], booking:["wardrobe"], wardrobe:[]})[observationTarget] || [];
-    const targets = next.filter(target => (view?.inspection?.targets || []).includes(target));
-    const openWardrobe = observationTarget === "wardrobe" && view?.wardrobe?.available;
-    const key = JSON.stringify([targets, openWardrobe]);
-    if (key === observationActionsKey) return;
-    observationActionsKey = key;
-    el("inspection-actions").replaceChildren(...targets.map(target => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.textContent = ({display:"Inspect display", booking:"Read booking", wardrobe:"Inspect wardrobe"})[target];
-      button.addEventListener("click", () => inspect(target));
-      return button;
-    }));
-    if (openWardrobe) {
-      const button = document.createElement("button");
-      button.type = "button"; button.textContent = "Open wardrobe";
-      button.addEventListener("click", () => {
-        if (stale || moving || document.hidden || !view?.wardrobe?.available) return;
-        el("inspection-panel").close();
-        el("wardrobe-panel").showModal();
-      });
-      el("inspection-actions").append(button);
-    }
+    const next = ({panels:["display","wardrobe"], display:["booking","wardrobe"], booking:["wardrobe"]})[observationTarget] || [];
+    const targets = next.filter(t => (view?.inspection?.targets || []).includes(t));
+    text("inspection-actions", observationTarget === "wardrobe" ?
+      "Type wardrobe to open the clothing panel." : targets.map(t => "inspect " + t).join(" · "));
   }
   function clearWardrobe() {
     if (el("wardrobe-panel").open) el("wardrobe-panel").close();
@@ -262,8 +238,8 @@
     selectedGarment = option;
     text("garment-name", option.name);
     text("garment-description", option.description);
-    text("wardrobe-wear", option.label || "Wear");
-    el("wardrobe-wear").hidden = !option.action;
+    text("wardrobe-wear", option.action ? (option.action.startsWith("select:") ? "Type uniform " + option.action.slice(11) : "Type wear " + option.name) : "Catalogue only — your first outfit is already selected.");
+    el("wardrobe-wear").hidden = false;
     controls();
   }
   function renderWardrobe() {
@@ -347,7 +323,7 @@
       el("inspection-image").alt = observation.title || "Observed detail";
       el("inspection-image").hidden = false;
     }
-    el("inspection-panel").showModal();
+    openPanel("inspection-panel");
   }
   async function inspect(target) {
     if (moving || stale || !inspectToken || document.hidden || stopped) return;
@@ -385,7 +361,95 @@
       if (!stopped) notice("walk-feedback", message);
     }
   }
-  el("wardrobe-wear").addEventListener("click", wearGarment);
+
+  function openPanel(id) {
+    document.querySelectorAll("dialog").forEach(d => { if (d.open) d.close(); });
+    el(id).show();
+  }
+  function commandReply(message) {
+    text("command-response", message);
+    commandHistory.unshift(message);
+    commandHistory.splice(30);
+    el("command-history").replaceChildren(...commandHistory.map(value => {
+      const row = document.createElement("li"); row.textContent = value; return row;
+    }));
+  }
+  async function issueCommand(event) {
+    event.preventDefault();
+    if (commandBusy || moving || stopped || document.hidden) return;
+    const input = el("command-input");
+    const raw = input.value.trim();
+    if (!raw) return;
+    if (raw.length > 200) { commandReply("Keep each command under 200 characters."); return; }
+    const command = raw.replace(/^!/, "").trim().replace(/\s+/g, " ");
+    const lower = command.toLowerCase();
+    const [verb, ...parts] = lower.split(" ");
+    const argument = parts.join(" ");
+    commandBusy = true; input.disabled = true;
+    try {
+      if (stale || Date.now() - lastSuccess > STALE) await refresh();
+      if (stopped || stale || document.hidden) { commandReply("Connection paused. Try again when this window is up to date."); return; }
+      commandReply("> " + raw);
+      if (lower === "help" || lower === "commands") {
+        openPanel("actions"); commandReply("Commands are listed in the Commands panel."); return;
+      }
+      if (lower === "look") {
+        document.querySelectorAll("dialog").forEach(d => { if (d.open) d.close(); });
+        await refresh();
+        if (!stopped) commandReply(view?.location?.description || "No room description available.");
+        return;
+      }
+      if (["inventory","character","sheet","fit"].includes(lower)) {
+        openPanel(lower === "inventory" || lower === "fit" ? "inventory-panel" : "character-panel");
+        commandReply(lower === "fit" ? "Wearing: " + (view.wardrobe?.fit || el("equipped").textContent) : "Panel opened.");
+        return;
+      }
+      if (verb === "go" && argument) {
+        if (!(view.walking?.exits || []).includes(argument)) { commandReply("Available exits: " + (view.walking?.exits || []).join(", ")); return; }
+        await walk(argument);
+      } else if (verb === "inspect" && argument) {
+        const target = ({"storage panels":"panels","booking notice":"booking"})[argument] || argument;
+        if (!(view.inspection?.targets || []).includes(target)) {
+          commandReply("That inspection is not available here in the web window. Available: " + (view.inspection?.targets || []).join(", ")); return;
+        }
+        await inspect(target);
+      } else if (verb === "wardrobe") {
+        if (!view.wardrobe?.available) {
+          commandReply("Inspect the wardrobe first: inspect wardrobe. Available details: " + (view.inspection?.targets || []).join(", ")); return;
+        }
+        if (argument && !argument.startsWith("inspect ")) { commandReply("Use wardrobe or wardrobe inspect <outfit>."); return; }
+        if (argument) {
+          const query = argument.slice(8);
+          const options = view.wardrobe.options || [];
+          const option = options.find(o => o.name.toLowerCase() === query || o.id.split(":").slice(1).join(":") === query);
+          if (!option) { commandReply("That outfit is not listed. Type wardrobe to browse."); return; }
+          chooseGarment(option);
+        }
+        openPanel("wardrobe-panel");
+        commandReply(argument ? selectedGarment.description : "Wardrobe opened. Examine an outfit before choosing what to wear."); return;
+      } else if ((verb === "wear" || verb === "uniform") && argument) {
+        const options = view.wardrobe?.options || [];
+        const option = options.find(o => verb === "uniform" ?
+          o.action === "select:pod_" + argument.replace(/^pod_/, "") :
+          o.action?.startsWith("wear:") && (o.name.toLowerCase() === argument || o.action.slice(5) === argument));
+        if (!option) {
+          commandReply(verb === "wear" ? "You cannot wear that from the current wardrobe offer. Type wardrobe to see carried clothing." :
+            "That first outfit choice is unavailable. First selection is once only; use wear for carried clothes."); return;
+        }
+        chooseGarment(option);
+        await wearGarment();
+      } else {
+        commandReply("That command is not connected to the web window yet. Type help for supported commands. Discord remains available."); return;
+      }
+      if (!stopped) commandReply(el("walk-feedback").textContent || "Done.");
+    } catch (_) {
+      if (!stopped) commandReply("The command could not be completed. Refresh before trying again; it was not automatically repeated.");
+    } finally {
+      commandBusy = false; input.disabled = stopped;
+      if (!stopped && !document.hidden) input.focus();
+    }
+  }
+  el("command-form").addEventListener("submit", issueCommand);
   el("refresh").addEventListener("click", refresh);
   el("inspection-image").addEventListener("error", () => { el("inspection-image").hidden = true; });
   el("room-image").addEventListener("error", () => {

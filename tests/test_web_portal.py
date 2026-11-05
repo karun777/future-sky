@@ -183,3 +183,22 @@ class WebPortalTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(params["response_type"], ["code"])
         self.assertEqual(params["state"], [state])
         self.assertNotIn("fictional-secret", url)
+
+
+class GameFrameReturnTests(unittest.IsolatedAsyncioTestCase):
+    asyncSetUp = WebPortalTests.asyncSetUp
+    asyncTearDown = WebPortalTests.asyncTearDown
+    start = WebPortalTests.start
+    complete = WebPortalTests.complete
+    # Dedicated checks only; inherited security coverage runs in WebPortalTests.
+    async def test_login_returns_to_fixed_game_frame(self):
+        nonce = await self.start()
+        response = await self.complete(nonce)
+        self.assertEqual(response.headers["Location"], "/assets/experiments/w6-f8/live/index.html")
+
+    async def test_play_serves_commands_frame_with_absolute_assets(self):
+        response = await self.client.get("/play/")
+        self.assertEqual(response.status, 200)
+        html = await response.text()
+        self.assertIn('id="command-input"', html)
+        self.assertIn('src="/assets/experiments/w6-f8/live/game.js"', html)

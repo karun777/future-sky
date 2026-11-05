@@ -3,25 +3,21 @@
   const byId = id => document.getElementById(id);
   const dialogs = [...document.querySelectorAll("dialog")];
   function closeAll() { dialogs.forEach(d => { if (d.open) d.close(); }); }
+  document.addEventListener("keydown", event => { if (event.key === "Escape") closeAll(); });
   document.querySelectorAll("[data-open]").forEach(button => {
     button.addEventListener("click", () => {
       if (byId("game").hidden) return;
       closeAll();
-      byId(button.dataset.open).showModal();
+      byId(button.dataset.open).show();
     });
   });
   document.querySelectorAll("[data-close]").forEach(button =>
     button.addEventListener("click", closeAll));
-  byId("movement").addEventListener("click", () => {
-    const available = byId("exits").querySelector("button:not(:disabled)");
-    if (available) available.focus();
-    else byId("refresh").focus();
-  });
   byId("read-closely").addEventListener("click", () => {
     if (byId("game").hidden) return;
     byId("passage-title").textContent = byId("room-title").textContent;
     byId("passage-copy").replaceChildren(...[...byId("room-description").children].map(n => n.cloneNode(true)));
-    closeAll(); byId("passage").showModal();
+    closeAll(); byId("passage").show();
   });
   // Clear snapshots and close private panels whenever the transport signs out.
   new MutationObserver(() => {

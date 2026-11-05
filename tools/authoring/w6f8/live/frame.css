@@ -40,3 +40,21 @@ dialog{padding:0;border:4px double var(--edge);color:var(--ink);background:#111c
 #wardrobe-choices{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
 #wardrobe-status{line-height:1.5;color:var(--gold)}
 #wardrobe-panel footer{flex-shrink:0}
+
+/* The command console stays reachable while viewing any panel. */
+#game{grid-template-rows:minmax(0,1fr) clamp(200px,30dvh,320px) 110px 74px}
+.command-console{position:relative;z-index:20;background:#101914;border-top:3px double var(--edge);padding:10px clamp(14px,4vw,64px);min-height:0}
+#command-form{display:flex;gap:14px;align-items:center}
+#command-form label{font:12px monospace;letter-spacing:2px;color:var(--gold)}
+#command-input{flex:1;min-width:0;background:#060e0a;border:1px solid var(--gold);padding:10px 12px;color:var(--ink);font:16px monospace}
+#command-input:focus{outline:2px solid var(--gold);outline-offset:2px}
+.enter-hint{font:11px monospace;color:var(--muted)}
+#command-response{font:12px/1.4 monospace;margin:6px 0 0;max-height:2.8em;overflow:auto;white-space:pre-wrap}
+#inspect-targets,#exits,#inspection-actions{font:12px/1.6 monospace;color:var(--muted)}
+dialog{position:fixed;z-index:10;top:56px;bottom:auto;margin:0 auto;height:calc(100dvh - 250px);max-height:calc(100dvh - 250px);box-shadow:0 10px 70px #000e}
+dialog.passage{height:calc(100dvh - 250px)}
+#command-history{white-space:pre-wrap}
+@media(max-width:700px){#game{grid-template-rows:minmax(0,1fr) minmax(180px,36dvh) 110px 64px}.enter-hint{display:none}#command-form{gap:8px}#command-form label{font-size:10px}dialog{top:50px}}
+@media(max-height:600px){#game{grid-template-rows:minmax(0,1fr) minmax(100px,32dvh) 86px 52px}dialog{top:46px;height:calc(100dvh - 200px);max-height:calc(100dvh - 200px)}.command-console{padding-top:5px}}
+
+@media(max-height:600px){#command-response{max-height:1.4em}}

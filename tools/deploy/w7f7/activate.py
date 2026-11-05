@@ -128,7 +128,7 @@ def activate(manifest):
             "data_preserved_during_overlay":True,"authenticated_playcheck":"pending"},indent=2))
         print("W7-F7 activated: https://future-sky.net/assets/experiments/w6-f8/live/index.html")
         print("Discord reconnected. Anonymous wardrobe changes denied. Player data preserved.")
-        print("Sign in again; inspect wardrobe, examine and wear a carried garment; compare !fit in Discord.")
+        print("Sign in again at /play/. Type help in COMMANDS; use inspect wardrobe, wardrobe and wear <carried garment>. Compare !fit in Discord.")
     except BaseException:
         print("Activation failed; restoring code only, never player data.",flush=True)
         try:
@@ -143,7 +143,7 @@ def activate(manifest):
 def main():
     manifest=preflight()
     if "--check" in sys.argv:
-        print("W7-F7 preflight passed. Five backend files and three pilot assets; no data/config overlay.")
+        print("W7-F7 preflight passed. Five backend files and four pilot assets; no data/config overlay.")
         return
     if os.geteuid()!=0:
         raise SystemExit("Activation requires sudo; --check is read-only.")

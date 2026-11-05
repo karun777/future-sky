@@ -1,6 +1,6 @@
 # W7-F7 — From Attention to Agency
 
-Status: ACTIVE — implemented and tested; prepared for operator activation.
+Status: ACTIVE — initial wardrobe build deployed; typed-command revision tested and ready for operator activation.
 Allocated 5 November 2026 on Karun's instruction “let's go W7-F7”.
 Home: W7 Engine. Branch engine/w7-f7-from-attention-to-agency.
 Baseline: W7-F6 seal 4ac7462216682ed9c8f08f6fa402eabf46e2bd3e.
@@ -50,3 +50,16 @@ If acceptance reveals layout or guidance issues, refine this feather before seal
 ## Shared-wing checkpoints
 
 W2: existing pod and authored wardrobe detail, no new room. W3: attire remains distinct from identity/class/job. W4: established clothing consequences retained; Chapter 1 paused. W5: passive browsing does not postpone idle-home; explicit inspection/change records attention. W6: existing fixed frame and reduced typography preserved, functional wardrobe overlay added. W8: one home/count, deployment/rollback limits and untested live paths explicit. W1: no new lore.
+
+
+## Revised interaction contract — 5 November 2026
+
+Karun rejected clicking to issue commands. Adopted: type to act; click to view panels and already supplied detail. A clearly labelled persistent COMMANDS field accepts Enter, with optional ! prefix. No movement, discovery, first-selection or wear button remains in the current game frame. Outfit clicks only display existing option descriptions. Nonmodal panels keep the command field available; Escape/Return close panels. Recent output is retained in a bounded per-tab command history, cleared on sign-out.
+
+Supported commands: help/commands, look, go <offered exit>, inspect <offered detail>, wardrobe, wardrobe inspect <outfit>, uniform utility|formal|technical|freeform, wear <carried clothing>, fit, inventory, character/sheet. Unsupported commands explicitly report the web limitation. This is a bounded adapter to existing authenticated APIs, not arbitrary Discord-command dispatch or a shell. Existing stale/token/persistence checks remain authoritative.
+
+The initial 5c95bf2 wardrobe build was independently confirmed deployed: all eight live file hashes matched. The screenshot of the older interface was /play/ after sign-in, not a proven rollback. This revision serves the current frame at /play/ with absolute asset URLs and returns OAuth login to the same fixed pilot frame. Both entry URLs show the command interface after activation.
+
+Current verification: 347 Python tests pass, including callback destination and /play frame asset-path checks. The previous click-action UI suite is replaced by 12 command-interface tests covering optional prefix/case, offered commands only, double Enter, lost-response no-retry, offline/hidden behavior, passive panel browsing, wardrobe wear/first selection, auth cleanup and room changes. No new browser visual pass is claimed; fixed-frame layout and keyboard/panel flow require live player acceptance.
+
+Deployment manifest has been rebased against the verified deployed initial W7-F7 build and now includes five backend files and four pilot assets. Use the same activation command for this revision. It briefly restarts the bot; no player-data/config/catalogue overlay. The initial build's activation instructions and button-oriented acceptance description above are historical; validate this command revision using the syntax in this section. Chapter 1 remains paused; W7-F7 remains active, count32 unchanged.

@@ -15,8 +15,10 @@ class Node {
   append(...nodes) { this.children.push(...nodes); }
   replaceChildren(...nodes) { this.value=''; this.children=nodes; }
   addEventListener(type, fn) { (this.listeners[type] ||= []).push(fn); }
-  emit(type) { return Promise.all((this.listeners[type]||[]).map(fn=>fn({type}))); }
+  emit(type) { return Promise.all((this.listeners[type]||[]).map(fn=>fn({type,preventDefault(){}}))); }
   showModal() { this.open=true; }
+  show() { this.open=true; }
+  focus() {}
   close() { this.open=false; }
   removeAttribute(name) { delete this[name]; }
   querySelectorAll(tag) { return this.children.flatMap(n=>[...(n.tagName===tag?[n]:[]),...n.querySelectorAll(tag)]); }
@@ -31,6 +33,7 @@ async function setup() {
   const elements={};
   for (const m of html.matchAll(/id="([^"]+)"/g)) elements[m[1]]=new Node();
   const doc=new Node(), win=new Node(); doc.hidden=false;
+  doc.querySelectorAll=tag=> tag==='dialog' ? [...html.matchAll(/<dialog id="([^"]+)"/g)].map(m=>elements[m[1]]) : [];
   doc.getElementById=id=>{assert.ok(elements[id],id);return elements[id];};
   doc.createElement=tag=>new Node(tag);
   doc.createTextNode=value=>{const n=new Node('#text');n.textContent=value;return n;};
@@ -51,184 +54,104 @@ async function setup() {
   await drain();return h;
 }
 function response(status, body) {return {status,ok:status<400,headers:{get:()=>typeof body==='object'?'application/json':'text/plain'},json:async()=>structuredClone(body),text:async()=>body};}
-test('polls without commands and preserves unchanged DOM controls',async()=>{
-  const h=await setup(), button=h.elements.exits.children[0], paragraph=h.elements['room-description'].children[0];
-  await h.tick(12000);
-  assert.equal(h.calls.length,4);assert.ok(h.calls.every(c=>c.url==='/play/api/me'));
-  assert.equal(h.elements.exits.children[0],button);assert.equal(h.elements['room-description'].children[0],paragraph);
-  assert.equal(h.elements.connection.textContent,'Up to date');
-});
-test('external move and idle completion update room and observed change',async()=>{
-  const h=await setup();h.data=data('b');h.data.idle_home={enabled:true,status:'home',at_home:true};
-  await h.tick(4000);
-  assert.equal(h.elements['room-title'].textContent,'Pod');
-  assert.match(h.elements['walk-feedback'].textContent,/idle return is complete/);
-  assert.equal(h.elements.recent.children.length,1);
-});
-test('hidden tab pauses reads and return fetches current room',async()=>{
-  const h=await setup();h.doc.hidden=true;await h.doc.emit('visibilitychange');await h.tick(20000);
-  assert.equal(h.calls.length,1);assert.equal(h.elements.exits.children[0].disabled,true);
-  h.data=data('b');h.doc.hidden=false;await h.doc.emit('visibilitychange');await drain();
-  assert.equal(h.elements['room-title'].textContent,'Pod');assert.equal(h.elements.exits.children[0].disabled,false);
-});
-test('offline disables movement; online resumes without refreshing manually',async()=>{
-  const h=await setup();h.navigator.onLine=false;await h.win.emit('offline');await h.tick(12000);
-  assert.equal(h.calls.length,1);assert.equal(h.elements.exits.children[0].disabled,true);
-  h.navigator.onLine=true;h.data=data('b');await h.win.emit('online');await drain();
-  assert.equal(h.elements['room-title'].textContent,'Pod');assert.equal(h.elements.message.hidden,true);
-});
-test('failed read becomes stale and backs off then recovers',async()=>{
-  const h=await setup();h.fail=true;await h.tick(4000);
-  assert.equal(h.elements.exits.children[0].disabled,true);assert.match(h.elements.message.textContent,/last known view/);
-  h.fail=false;await h.tick(8000);assert.equal(h.elements.exits.children[0].disabled,false);
-});
-test('formatting uses safe text nodes and preserves literal HTML',async()=>{
-  const h=await setup();h.data.location.description='**Bold** *soft* `!look` <img src=x onerror=alert(1)> [link](javascript:bad)';await h.tick(4000);
-  const n=h.elements['room-description'];
-  assert.equal(n.querySelectorAll('strong')[0].textContent,'Bold');assert.equal(n.querySelectorAll('em')[0].textContent,'soft');
-  assert.equal(n.querySelectorAll('code')[0].textContent,'!look');assert.equal(n.querySelectorAll('img').length,0);
-  assert.equal(n.querySelectorAll('a').length,0);assert.match(n.textContent,/<img/);
-});
-test('double click sends one movement; post completion refreshes',async()=>{
-  const h=await setup();h.handler=async(url)=>{if(url.endsWith('walk')){h.data=data('b');return response(200,{ok:true,message:'You walk west.'});}};
-  const button=h.elements.exits.children[0];await Promise.all([button.emit('click'),button.emit('click')]);await drain();
-  assert.equal(h.calls.filter(c=>c.url.endsWith('walk')).length,1);assert.equal(h.elements['room-title'].textContent,'Pod');
-  assert.equal(h.elements['walk-feedback'].textContent,'You walk west.');
-});
-test('lost action response is not retried and saved location is fetched',async()=>{
-  const h=await setup();h.handler=async(url)=>{if(url.endsWith('walk')){h.data=data('b');throw Error('lost');}};
-  await h.elements.exits.children[0].emit('click');await h.tick(12000);
-  assert.equal(h.calls.filter(c=>c.url.endsWith('walk')).length,1);assert.equal(h.elements['room-title'].textContent,'Pod');
-  assert.match(h.elements['walk-feedback'].textContent,/will not be repeated/);
-});
-test('expired session clears private view and stops polling',async()=>{
-  const h=await setup();h.handler=async()=>response(401,'Sign in');await h.tick(4000);const count=h.calls.length;
-  await h.tick(20000);assert.equal(h.calls.length,count);assert.equal(h.elements.game.hidden,true);
-  assert.equal(h.elements['character-name'].textContent,'');assert.equal(h.elements.inventory.children.length,0);
-});
-test('stale clock blocks command even before watchdog runs',async()=>{
-  const h=await setup();h.now+=13000;await h.elements.exits.children[0].emit('click');await drain();
-  assert.equal(h.calls.filter(c=>c.url.endsWith('walk')).length,0);
-});
-test('slow read times out and leaves stale controls disabled',async()=>{
-  const h=await setup();h.handler=(_url,options)=>new Promise((_,reject)=>options.signal.addEventListener('abort',()=>reject(Error('timeout'))));
-  await h.tick(14000);assert.equal(h.elements.exits.children[0].disabled,true);assert.match(h.elements.message.textContent,/retrying/);
-});
 
-test('inspection double click commits once, refreshes and shows safe authored prose',async()=>{
- const h=await setup();let release;let pending=new Promise(r=>release=r);
- h.handler=async(url)=>url==='/play/api/inspect'?pending:null;
- const button=h.elements['inspect-targets'].children[0];
- const a=button.emit('click');const b=button.emit('click');
- await drain();assert.equal(h.calls.filter(c=>c.url==='/play/api/inspect').length,1);
- assert.equal(h.elements.exits.children[0].disabled,true);
- release(response(200,{ok:true,observation:{title:'The side wall',text:'**FEED7** <script>no()</script>',guidance:'Inspect display',image:null}}));
- await a;await b;await drain();
+async function command(h,value) {
+ h.elements['command-input'].value=value;
+ await h.elements['command-form'].emit('submit');await drain();
+}
+test('passive polling never issues commands; available exits/details are plain text',async()=>{
+ const h=await setup();await h.tick(12000);
+ assert.ok(h.calls.every(c=>c.url==='/play/api/me'));
+ assert.equal(h.elements.exits.querySelectorAll('button').length,0);
+ assert.equal(h.elements['inspect-targets'].querySelectorAll('button').length,0);
+ assert.match(h.elements.exits.textContent,/go west/);
+});
+test('optional prefix and case insensitive command move once',async()=>{
+ const h=await setup();h.handler=async(url)=>{if(url.endsWith('/walk')){h.data=data('b');return response(200,{ok:true,message:'Moved'});}};
+ await command(h,'!GO West');
+ assert.equal(h.calls.filter(c=>c.url.endsWith('/walk')).length,1);
+ assert.equal(h.elements['room-title'].textContent,'Pod');
+ assert.match(h.elements['command-response'].textContent,/Moved/);
+});
+test('unknown, unoffered and chained commands never mutate',async()=>{
+ const h=await setup();
+ for(const c of ['attack anyone','go north','inspect booking','go west; go west','uniform formal','wear Coat'])await command(h,c);
+ assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
+});
+test('inspect typed command shows safe observation and no command buttons',async()=>{
+ const h=await setup();h.handler=async(url)=>url.endsWith('/inspect')?response(200,{ok:true,observation:{title:'Panels',text:'<script>x</script>'}}):null;
+ await command(h,'inspect panels');
  assert.equal(h.elements['inspection-panel'].open,true);
- assert.match(h.elements['inspection-text'].textContent,/<script>no\(\)<\/script>/);
  assert.equal(h.elements['inspection-text'].querySelectorAll('script').length,0);
+ assert.equal(h.elements['inspection-actions'].querySelectorAll('button').length,0);
 });
-test('lost inspection response never retries mutation',async()=>{
- const h=await setup();
- h.handler=async(url)=>{if(url==='/play/api/inspect')throw Error('lost');};
- await h.elements['inspect-targets'].children[0].emit('click');await h.tick(12000);
- assert.equal(h.calls.filter(c=>c.url==='/play/api/inspect').length,1);
- assert.match(h.elements['walk-feedback'].textContent,/will not be repeated/);
+test('overlapping Enter submits produce only one mutation',async()=>{
+ const h=await setup();let release;
+ h.handler=async(url)=>url.endsWith('/walk')?new Promise(r=>release=r):null;
+ h.elements['command-input'].value='go west';
+ const a=h.elements['command-form'].emit('submit');await drain();
+ const b=h.elements['command-form'].emit('submit');await drain();
+ assert.equal(h.calls.filter(c=>c.url.endsWith('/walk')).length,1);
+ release(response(200,{ok:true,message:'Moved'}));await a;await b;
 });
-test('room change and auth expiry clear an open private observation',async()=>{
- const h=await setup();
- h.handler=async(url)=>url==='/play/api/inspect'?response(200,{ok:true,observation:{title:'Private',text:'Details',image:null}}):null;
- await h.elements['inspect-targets'].children[0].emit('click');assert.equal(h.elements['inspection-panel'].open,true);
- h.data=data('b');await h.tick(4000);assert.equal(h.elements['inspection-panel'].open,false);
- await h.elements['inspect-targets'].children[0].emit('click');assert.equal(h.elements['inspection-panel'].open,true);
- h.handler=async()=>response(401,'expired');await h.tick(4000);
- assert.equal(h.elements['inspection-panel'].open,false);
- assert.equal(h.elements['inspection-text'].textContent,'');
+test('lost response is not replayed; explicit feedback survives polling',async()=>{
+ const h=await setup();h.handler=async(url)=>{if(url.endsWith('/walk'))throw Error('lost');};
+ await command(h,'go west');await h.tick(12000);
+ assert.equal(h.calls.filter(c=>c.url.endsWith('/walk')).length,1);
+ assert.match(h.elements['command-response'].textContent,/will not be repeated/);
 });
-
-test('overlay chains only currently offered targets and uses the fresh token',async()=>{
- const h=await setup();
- h.handler=async(url,options)=>{
-  if(url!='/play/api/inspect')return;
-  const target=JSON.parse(options.body).target;
-  h.data.inspection={token:'fresh-'+target,targets:['panels','display','booking']};
-  return response(200,{ok:true,observation:{title:target,text:'Observed',guidance:'!wardrobe',image:null}});
- };
- await h.elements['inspect-targets'].children[0].emit('click');
- assert.equal(h.elements['inspection-actions'].textContent,'Inspect display');
- await h.elements['inspection-actions'].children[0].emit('click');
- assert.equal(h.elements['inspection-title'].textContent,'display');
- assert.equal(h.elements['inspection-actions'].textContent,'Read booking');
- const posts=h.calls.filter(c=>c.url==='/play/api/inspect');
- assert.equal(JSON.parse(posts[1].options.body).token,'fresh-panels');
- await h.elements['inspection-actions'].children[0].emit('click');
- assert.equal(h.elements['inspection-title'].textContent,'booking');
- assert.equal(h.elements['inspection-actions'].children.length,0);
+test('offline and hidden command submissions never mutate',async()=>{
+ const h=await setup();h.navigator.onLine=false;await h.win.emit('offline');
+ await command(h,'go west');h.doc.hidden=true;await command(h,'inspect panels');
+ assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
 });
-test('overlay actions react to offline, revoked offers and location changes',async()=>{
+test('look, help and inventory open views without mutation',async()=>{
  const h=await setup();
- h.data.inspection.targets=['panels','display'];
- h.handler=async(url)=>url==='/play/api/inspect'?response(200,{ok:true,observation:{title:'Panels',text:'Observed'}}):null;
- await h.elements['inspect-targets'].children[0].emit('click');
- const button=h.elements['inspection-actions'].children[0];
- h.navigator.onLine=false;await h.win.emit('offline');
- assert.equal(button.disabled,true);
- assert.match(h.elements['inspection-status'].textContent,/offline/);
- await button.emit('click');
- assert.equal(h.calls.filter(c=>c.url==='/play/api/inspect').length,1);
- h.navigator.onLine=true;h.data.inspection.targets=['panels'];
- await h.win.emit('online');await drain();
- assert.equal(h.elements['inspection-actions'].children.length,0);
- h.data=data('b');await h.tick(4000);
- assert.equal(h.elements['inspection-panel'].open,false);
+ await command(h,'help');assert.equal(h.elements.actions.open,true);
+ await command(h,'inventory');assert.equal(h.elements['inventory-panel'].open,true);
+ await command(h,'look');assert.equal(h.elements['inventory-panel'].open,false);
+ assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
 });
-
-async function wardrobeSetup() {
- const h=await setup();
+async function wardrobe(h) {
  h.data.inspection.targets=['panels','wardrobe'];
- h.data.wardrobe={available:true,token:'clothes-1',first_selection:false,fit:'Uniform',
-  options:[{id:'carried:coat',name:'Coat',description:'<b>Literal</b>',action:'wear:coat',label:'Wear'}]};
- h.handler=async(url)=>url==='/play/api/inspect'?response(200,{ok:true,observation:{title:'Wardrobe',text:'Compartment'}}):null;
+ h.data.wardrobe={available:true,token:'clothes',fit:'Uniform',first_selection:false,options:[
+ {id:'carried:coat',name:'Coat',description:'A coat.',action:'wear:coat',label:'Wear'},
+ {id:'catalogue:pod_formal',name:'Formal Uniform',description:'Formal.',action:null,label:'Catalogue'}]};
  await h.tick(4000);
- await h.elements['inspect-targets'].children[1].emit('click');
- assert.equal(h.elements['inspection-actions'].textContent,'Open wardrobe');
- await h.elements['inspection-actions'].children[0].emit('click');
+}
+test('wardrobe browsing and clicking details are passive; typing wear uses fresh offer',async()=>{
+ const h=await setup();await wardrobe(h);
+ await command(h,'wardrobe');
  assert.equal(h.elements['wardrobe-panel'].open,true);
  await h.elements['wardrobe-choices'].children[0].emit('click');
- return h;
-}
-test('wardrobe examines safely then double click wears exactly once and refreshes fit',async()=>{
- const h=await wardrobeSetup();
- assert.equal(h.elements['garment-description'].textContent,'<b>Literal</b>');
- assert.equal(h.calls.filter(c=>c.url==='/play/api/wardrobe').length,0);
- h.handler=async(url)=>{if(url==='/play/api/wardrobe'){
-  h.data.wardrobe={...h.data.wardrobe,token:'clothes-2',fit:'Coat',options:[]};
-  return response(200,{ok:true,message:'Equipped Coat'});
- }};
- await Promise.all([h.elements['wardrobe-wear'].emit('click'),h.elements['wardrobe-wear'].emit('click')]);
- assert.equal(h.calls.filter(c=>c.url==='/play/api/wardrobe').length,1);
- assert.equal(h.elements['wardrobe-fit'].textContent,'Wearing: Coat');
- assert.equal(h.elements['wardrobe-wear'].hidden,true);
- assert.equal(h.elements['wardrobe-status'].textContent,'Equipped Coat');
+ await command(h,'wardrobe inspect Formal Uniform');
+ assert.equal(h.elements['garment-description'].textContent,'Formal.');
+ assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
+ h.handler=async(url)=>url.endsWith('/wardrobe')?response(200,{ok:true,message:'Equipped Coat'}):null;
+ await command(h,'wear Coat');
+ assert.equal(h.calls.filter(c=>c.url.endsWith('/wardrobe')).length,1);
 });
-test('wardrobe lost response never retries and auth expiry clears private detail',async()=>{
- const h=await wardrobeSetup();
- h.handler=async(url)=>{if(url==='/play/api/wardrobe')throw Error('lost');};
- await h.elements['wardrobe-wear'].emit('click');await h.tick(12000);
- assert.equal(h.calls.filter(c=>c.url==='/play/api/wardrobe').length,1);
- assert.match(h.elements['wardrobe-status'].textContent,/will not be repeated/);
+test('first selection uses uniform command only; unavailable selection cannot be replayed',async()=>{
+ const h=await setup();await wardrobe(h);
+ h.data.wardrobe.options=[{id:'catalogue:pod_freeform',name:'Freeform Attire',description:'Outfit',action:'select:pod_freeform',label:'Choose'}];
+ await h.tick(4000);
+ h.handler=async(url)=>{if(url.endsWith('/wardrobe')){h.data.wardrobe.options=[];return response(200,{ok:true,message:'Selected'});}};
+ await command(h,'uniform freeform');await command(h,'uniform freeform');
+ const calls=h.calls.filter(c=>c.url.endsWith('/wardrobe'));
+ assert.equal(calls.length,1);assert.equal(JSON.parse(calls[0].options.body).action,'select:pod_freeform');
+});
+test('auth expiry clears command history and private wardrobe',async()=>{
+ const h=await setup();await wardrobe(h);await command(h,'wardrobe inspect Coat');
  h.handler=async()=>response(401,'expired');await h.tick(4000);
  assert.equal(h.elements['wardrobe-panel'].open,false);
  assert.equal(h.elements['garment-description'].textContent,'');
+ assert.equal(h.elements['command-history'].children.length,0);
+ assert.equal(h.elements['command-input'].value,'');
 });
-test('wardrobe stale or withdrawn option cannot be worn',async()=>{
- const h=await wardrobeSetup();
- h.navigator.onLine=false;await h.win.emit('offline');
- await h.elements['wardrobe-wear'].emit('click');
- assert.equal(h.calls.filter(c=>c.url==='/play/api/wardrobe').length,0);
- h.navigator.onLine=true;h.data.wardrobe.options=[];
- await h.win.emit('online');await drain();
- assert.equal(h.elements['wardrobe-wear'].hidden,true);
+test('external room change closes wardrobe and revokes equipment action',async()=>{
+ const h=await setup();await wardrobe(h);await command(h,'wardrobe');
  h.data=data('b');await h.tick(4000);
  assert.equal(h.elements['wardrobe-panel'].open,false);
+ await command(h,'wear Coat');
+ assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
 });

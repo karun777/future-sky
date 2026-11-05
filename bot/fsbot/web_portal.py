@@ -117,8 +117,14 @@ def create_app(bot, config, *, oauth=None, clock=time.monotonic):
         return response
 
     async def index(request):
-        return web.Response(text=(STATIC / "index.html").read_text(),
-                            content_type="text/html")
+        root = Path(__file__).resolve().parents[2]
+        frame = root / "assets/experiments/w6-f8/live/index.html"
+        if not frame.is_file():
+            frame = root / "tools/authoring/w6f8/live/index.html"
+        html = frame.read_text().replace('href="./frame.css"', 'href="/assets/experiments/w6-f8/live/frame.css"')
+        html = html.replace('src="./frame.js"', 'src="/assets/experiments/w6-f8/live/frame.js"')
+        html = html.replace('src="./game.js"', 'src="/assets/experiments/w6-f8/live/game.js"')
+        return web.Response(text=html, content_type="text/html")
 
     async def asset(request):
         name = request.match_info["name"]
@@ -166,7 +172,7 @@ def create_app(bot, config, *, oauth=None, clock=time.monotonic):
         token = secrets.token_urlsafe(32)
         sessions[token] = {"uid": uid, "csrf": secrets.token_urlsafe(32),
                            "expires": clock() + SESSION_SECONDS}
-        response = web.Response(status=302, headers={"Location": "/play/"})
+        response = web.Response(status=302, headers={"Location": "/assets/experiments/w6-f8/live/index.html"})
         cookie(response, LOGIN_COOKIE, "", 0)
         cookie(response, SESSION_COOKIE, token, SESSION_SECONDS)
         return response
