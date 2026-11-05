@@ -1,0 +1,40 @@
+{
+  "feather": "W7-F8",
+  "files": {
+    "bot/fsbot/hud_view.py": {
+      "target": "bot/fsbot/hud_view.py",
+      "source": "2dc0228153ce15e06458d2737461ba72d80525220d72f3b154f86232239995df",
+      "live": null
+    },
+    "bot/fsbot/cogs/hud.py": {
+      "target": "bot/fsbot/cogs/hud.py",
+      "source": "894f1033e893ff4f35f6249490ee54de001fe711ae21b43fd9a3b84822aa556c",
+      "live": "69a740338419dd8c28010f53f2d87479f25f124a38f060728698352f4ff063fb"
+    },
+    "bot/fsbot/web_character_view.py": {
+      "target": "bot/fsbot/web_character_view.py",
+      "source": "fd96c9ba2fee9b48c43062b228d7860b3313ee372c04d374aab853bced7d663c",
+      "live": "2976835228c5b8aad13b0a10af147a0596b8acdabbcc4d074e3acd93586512d6"
+    },
+    "tools/authoring/w6f8/live/index.html": {
+      "target": "assets/experiments/w6-f8/live/index.html",
+      "source": "22731888f1128159700a3f3e8ffd42194ea06a262d3e35fe3c4674ea2c9a4b30",
+      "live": "7c21d1db72612b99f7ba1bdf31454917be3fb39cdb0de5b71f1bc21d15b12fbc"
+    },
+    "tools/authoring/w6f8/live/frame.css": {
+      "target": "assets/experiments/w6-f8/live/frame.css",
+      "source": "8c7256325ae170d437d33555a3dd7874aff85f4294bd61586cbbe0a59fc1705e",
+      "live": "893a50edb30d6edc545e15848911028b1f348d7fc1ecefaaa61578cb301dd62b"
+    },
+    "tools/authoring/w6f8/live/frame.js": {
+      "target": "assets/experiments/w6-f8/live/frame.js",
+      "source": "250355bdaee7ec67a2bee83f3ce797a44ee2e9092821bcc304f4887bb5a97570",
+      "live": "d32e528d57e0c4d0f55e120f3fee1e73b82faa5b503cd1a4d73a42d1bb373936"
+    },
+    "tools/authoring/w6f8/live/game.js": {
+      "target": "assets/experiments/w6-f8/live/game.js",
+      "source": "9967f30614c606c12f54a07c65e14f26eb5a276542a31c53d2fe8c712855c620",
+      "live": "6ebdf24a33bb0551ff1aa09bf424228daecf86cdb8ac1f6d554e5f04c4474115"
+    }
+  }
+}

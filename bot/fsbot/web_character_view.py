@@ -9,6 +9,8 @@ from urllib.parse import urlsplit
 
 from fsbot.lounge_media import lounge_image
 from fsbot.pod_media import pod_image
+from fsbot.hud_view import discovered_entries, display_view
+from fsbot.utils import STAT_KEYS
 
 
 class CharacterAccessDenied(Exception):
@@ -73,6 +75,19 @@ def character_view(storage, verified_discord_id, *, allowed_discord_ids):
     if not c.get("in_cube"):
         image = _image(pod_image(c, "room") or lounge_image(c)
                        or room.get("image"))
+    stats = _object(c.get("stats"))
+    pools = _object(c.get("pools"))
+    profile = _object(_object(c.get("extra")).get("profile"))
+    sheet = {
+        "birthdate": _text(c.get("birthdate")),
+        "class_id": _text(profile.get("class_id")),
+        "stats": {key: stats[key] for key in [*STAT_KEYS, "hp", "max_hp"]
+                  if type(stats.get(key)) is int},
+        "pools": {element: {key: pool[key] for key in ("current", "max")
+                            if type(pool.get(key)) is int}
+                  for element in ("earth", "water", "fire", "air", "ether")
+                  if (pool := _object(pools.get(element)))},
+    }
     # Neither the full room record nor extra/flags contain only player knowledge.
     # Narrative, map, quest notes and telemetry need their existing renderers
     # adapted separately; do not return raw internal state as a shortcut.
@@ -84,5 +99,8 @@ def character_view(storage, verified_discord_id, *, allowed_discord_ids):
                      "title": None if c.get("in_cube") else _text(room.get("title")),
                      "image": image},
         "inventory": {"bag": bag, "equipped": equipped},
+        "journal": {"entries": discovered_entries(c)},
+        "sheet": sheet,
+        "display": display_view(c),
         "capabilities": {"read_only": True, "actions": []},
     }

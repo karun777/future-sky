@@ -2,7 +2,7 @@
 (() => {
   const byId = id => document.getElementById(id);
   const dialogs = [...document.querySelectorAll("dialog")];
-  function closeAll() { dialogs.forEach(d => { if (d.open) d.close(); }); }
+  function closeAll() { dialogs.forEach(d => { if (d.open) d.close(); }); if (!byId("game").hidden) byId("command-input").focus(); }
   document.addEventListener("keydown", event => { if (event.key === "Escape") closeAll(); });
   document.querySelectorAll("[data-open]").forEach(button => {
     button.addEventListener("click", () => {

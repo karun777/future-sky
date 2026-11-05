@@ -25,7 +25,7 @@ class Node {
 }
 const drain = async () => { for(let i=0;i<40;i++) await Promise.resolve(); };
 function data(room='a') {
-  return {session:{csrf:'csrf'}, character:{name:'Pilot',credits:4},
+  return {journal:{entries:[]},session:{csrf:'csrf'}, character:{name:'Pilot',credits:4},
     location:{id:room,title:room==='a'?'Hallway':'Pod',description:'A quiet room.\n\n**A gig** and `!inspect hands`.',image:null},
     inspection:{token:'inspect-'+room,targets:['panels'],notice:''},walking:{token:'token-'+room,exits:['west'],notice:''},inventory:{bag:[],equipped:{}},idle_home:{enabled:false}};
 }
@@ -161,7 +161,7 @@ test('focus survives polling and reference views; look returns to the room',asyn
  const h=await setup();h.handler=async(url)=>url.endsWith('/inspect')?response(200,{ok:true,observation:{title:'Panels',text:'Details'}}):null;
  await command(h,'inspect panels');await h.tick(12000);
  assert.equal(h.elements['inspection-panel'].hidden,false);
- assert.equal(h.elements['room-scene'].hidden,true);
+ assert.equal(h.elements['room-scene'].hidden,false);
  await command(h,'inventory');assert.equal(h.elements['inspection-panel'].hidden,false);
  await command(h,'look');assert.equal(h.elements['inspection-panel'].hidden,true);
  assert.equal(h.elements['room-scene'].hidden,false);
@@ -187,4 +187,43 @@ test('history groups command and observation; refresh does not replace the resul
  assert.match(h.elements['command-response'].textContent,/Attending to Panels/);
  assert.equal(h.elements.exits.textContent,'west');
  assert.equal(h.elements['current-location'].textContent,'Hallway');
+});
+
+test('journal follows saved discoveries without mutation, survives display off, and clears on expiry',async()=>{
+ const h=await setup();await command(h,'quests');
+ assert.equal(h.elements['quest-panel'].open,true);
+ assert.match(h.elements['quest-entries'].textContent,/No notices/);
+ h.data.journal={entries:[{id:'booking',title:'Remembered booking',text:'A gig tomorrow night.'}]};
+ h.data.display={enabled:false,state:'normal'};await h.tick(4000);
+ assert.match(h.elements['quest-entries'].textContent,/A gig tomorrow night/);
+ assert.match(h.elements['display-state'].textContent,/off/);
+ assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
+ h.handler=async()=>response(401,'expired');await h.tick(4000);
+ assert.equal(h.elements['quest-entries'].textContent,'');
+ assert.equal(h.elements['display-state'].textContent,'');
+});
+test('shared illustration keeps inspected detail across polling and references, then restores room',async()=>{
+ const h=await setup();h.data.location.image='https://future-sky.net/assets/room.png';await h.tick(4000);
+ h.handler=async(url)=>url.endsWith('/inspect')?response(200,{ok:true,observation:{title:'Detail',text:'Observed',image:'https://future-sky.net/assets/detail.png'}}):null;
+ await command(h,'inspect panels');assert.equal(h.elements['room-image'].src,'https://future-sky.net/assets/detail.png');
+ await command(h,'quests');await h.tick(4000);
+ assert.equal(h.elements['room-image'].src,'https://future-sky.net/assets/detail.png');
+ await command(h,'look');assert.equal(h.elements['room-image'].src,'https://future-sky.net/assets/room.png');
+});
+test('reconnection refreshes saved journal and equipment without retrying commands',async()=>{
+ const h=await setup();h.fail=true;await h.tick(4000);
+ h.data.journal={entries:[{id:'notice',title:'Unread notice',text:'A notification.'}]};
+ h.data.inventory.equipped={chest:{id:'coat',name:'Coat'}};
+ h.fail=false;await h.win.emit('online');await drain();
+ assert.match(h.elements['quest-entries'].textContent,/A notification/);
+ assert.match(h.elements.equipped.textContent,/Coat/);
+ assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
+});
+test('sheet values render as text and private fields clear on sign-out',async()=>{
+ const h=await setup();h.data.sheet={class_id:'<script>bad</script>',stats:{hp:8,max_hp:12,strength:10},pools:{fire:{current:2,max:4}}};
+ await h.tick(4000);await command(h,'sheet');
+ assert.match(h.elements['character-details'].textContent,/HP: 8 \/ 12/);
+ assert.equal(h.elements['character-details'].querySelectorAll('script').length,0);
+ h.handler=async()=>response(401,'expired');await h.tick(4000);
+ assert.equal(h.elements['character-details'].textContent,'');
 });

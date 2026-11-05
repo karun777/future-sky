@@ -15,9 +15,44 @@
     document.querySelectorAll("dialog").forEach(d => { if (d.open) d.close(); });
     focusScene = id;
     ["inspection-panel", "wardrobe-panel"].forEach(name => { el(name).hidden = name !== id; });
-    el("room-scene").hidden = !!id;
+    el("room-scene").hidden = false;
     el("room-present").hidden = !!id;
+    updateScene();
     document.querySelectorAll(".focus-location").forEach(n => { n.textContent = view?.location?.title || ""; });
+  }
+  function updateScene() {
+    const source = focusScene === "inspection-panel" ? el("inspection-image") :
+      focusScene === "wardrobe-panel" ? el("wardrobe-image") : null;
+    const url = source && !source.hidden ? source.src : view?.location?.image;
+    const valid = typeof url === "string" && url.startsWith("https://future-sky.net/assets/");
+    const img = el("room-image");
+    img.hidden = !valid; el("no-image").hidden = valid;
+    if (valid) {
+      if (img.src !== url) img.src = url;
+      img.alt = source && !source.hidden ? source.alt : view?.location?.title || "Current room";
+    } else img.removeAttribute("src");
+  }
+  function renderJournal(data) {
+    const rows = data.journal?.entries || [];
+    const entries = rows.map(entry => {
+      const section = document.createElement("section");
+      const h = document.createElement("h3"); h.textContent = entry.title;
+      const p = document.createElement("p"); p.textContent = entry.text;
+      section.append(h, p);
+      const hint = document.createElement("p"); hint.className = "quiet";
+      hint.textContent = entry.id === "feed7" ? "Open the signal with !feed7 in Discord." :
+        (data.location.id === "pod_room" && (data.inspection?.targets || []).includes("booking") ?
+        "Type inspect booking to revisit the notice." : "Return to the pod to read the notice.");
+      section.append(hint); return section;
+    });
+    if (!entries.length) {
+      const p = document.createElement("p");
+      p.textContent = data.journal ? "No notices or bookings discovered yet." : "Your records are unavailable. Refresh to reconnect."; entries.push(p);
+    }
+    el("quest-entries").replaceChildren(...entries);
+    const display = data.display;
+    text("display-state", !display ? "" : "Implant · " + (!display.enabled ? "off" :
+      display.state === "signal_degraded" ? "signal degraded" : display.state === "dark_mode" ? "dimmed" : "on"));
   }
   function outfitMatches(query) {
     return (view?.wardrobe?.available ? view.wardrobe.options || [] : []).filter(o =>
@@ -36,6 +71,7 @@
   }
   function text(id, value) { if (el(id).textContent !== value) el(id).textContent = value; }
   function notice(id, value) {
+    if (id === "walk-feedback") value = value.replaceAll("**", "").replaceAll(String.fromCharCode(96), "");
     text(id, value); el(id).hidden = !value;
     if (id === "walk-feedback") {
       if (value) text("command-response", value);
@@ -67,8 +103,8 @@
     el("inspect-targets").replaceChildren();
     clearTimeout(timer);
     el("game").hidden = true; el("signed-out").hidden = false;
-    ["character-name", "credits", "room-title", "room-description", "last-sync", "current-location"].forEach(id => text(id, ""));
-    ["exits", "inventory", "equipped", "recent"].forEach(id => el(id).replaceChildren());
+    ["character-name", "credits", "room-title", "room-description", "last-sync", "current-location", "display-state"].forEach(id => text(id, ""));
+    ["exits", "inventory", "equipped", "recent", "quest-entries", "character-details"].forEach(id => el(id).replaceChildren());
     el("room-image").removeAttribute("src");
     changes.length = 0; exitKey = null;
     commandHistory.length = 0; el("command-history").replaceChildren();
@@ -137,16 +173,24 @@
     el("signed-out").hidden = true; el("game").hidden = false;
     text("character-name", data.character.name || "Traveller");
     text("credits", String(data.character.credits ?? "—"));
+    if (!previous || JSON.stringify(previous.sheet) !== JSON.stringify(data.sheet)) {
+      const sheet = data.sheet || {}, rows = [];
+      if (sheet.birthdate) rows.push("Birthdate: " + sheet.birthdate);
+      if (sheet.class_id) rows.push("Class: " + sheet.class_id);
+      const stats = sheet.stats || {};
+      if (stats.hp !== undefined || stats.max_hp !== undefined)
+        rows.push("HP: " + (stats.hp ?? "—") + " / " + (stats.max_hp ?? "—"));
+      for (const [key, value] of Object.entries(stats))
+        if (!["hp", "max_hp"].includes(key)) rows.push(key[0].toUpperCase() + key.slice(1) + ": " + value);
+      for (const [element, pool] of Object.entries(sheet.pools || {}))
+        rows.push(element[0].toUpperCase() + element.slice(1) + ": " + (pool.current ?? "—") + " / " + (pool.max ?? "—"));
+      el("character-details").replaceChildren(...rows.map(value => {
+        const p = document.createElement("p"); p.textContent = value; return p;
+      }));
+    }
     text("room-title", title); text("current-location", title);
     const description = data.location.description || "";
     if (!previous || description !== previous.location.description) prose(description);
-    const img = el("room-image"), url = data.location.image;
-    const valid = typeof url === "string" && url.startsWith("https://future-sky.net/assets/");
-    if (!previous || url !== previous.location.image) {
-      img.hidden = !valid; el("no-image").hidden = valid;
-      if (valid) { img.src = url; img.alt = title; }
-      else img.removeAttribute("src");
-    }
     if (!previous || JSON.stringify(previous.inventory) !== JSON.stringify(data.inventory)) {
       list("inventory", data.inventory.bag.map(item => item.name + " × " + item.quantity));
       list("equipped", Object.entries(data.inventory.equipped).filter(([, item]) => item)
@@ -162,7 +206,8 @@
     text("inventory-guidance", !data.inventory.bag.length && !Object.values(data.inventory.equipped).some(Boolean) ?
       "Nothing is carried or equipped. If you have returned from recovery, check !pod_delivery in Discord for belongings stored in your pod." :
       "In the pod, type wear <name> to put on clothing you carry.");
-    view = data; renderWardrobe(); renderObservationActions(); stale = false; lastSuccess = Date.now(); failures = 0;
+    view = data; renderWardrobe(); renderObservationActions(); updateScene();
+    if (!previous || JSON.stringify([previous.journal, previous.display, previous.location.id, previous.inspection?.targets]) !== JSON.stringify([data.journal, data.display, data.location.id, data.inspection?.targets])) renderJournal(data); stale = false; lastSuccess = Date.now(); failures = 0;
     connection("Up to date");
     text("last-sync", "Checked " + new Date(lastSuccess).toLocaleTimeString());
     notice("message", "");
@@ -436,6 +481,9 @@
         await refresh();
         if (!stopped) commandReply("Attending to " + (view?.location?.title || "the room") + ".");
         return;
+      }
+      if (["quests","quest log","journal"].includes(lower)) {
+        openPanel("quest-panel"); commandReply("Quest Log opened."); return;
       }
       if (["inventory","character","sheet","fit"].includes(lower)) {
         openPanel(lower === "inventory" || lower === "fit" ? "inventory-panel" : "character-panel");

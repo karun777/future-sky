@@ -2,17 +2,9 @@
 from copy import deepcopy
 import discord
 from discord.ext import commands
-from fsbot.pod_opening import opening_state
+from fsbot.hud_view import DEFAULT_HUD, STATES, hud_preferences, discovered_entries
 
-DEFAULT_HUD = {"enabled": True, "state": "normal"}
-STATES = {"normal", "signal_degraded", "dark_mode"}
 USAGE = "Use `!hud`, `!hud on`, `!hud off`, or `!hud state normal|signal degraded|dark mode`."
-
-
-def hud_preferences(character):
-    extra = character.get("extra")
-    value = extra.get("hud") if isinstance(extra, dict) else None
-    return value if isinstance(value, dict) else DEFAULT_HUD
 
 
 def display_state(value):
@@ -33,14 +25,13 @@ def render_panel(character, *, explicit=False):
     if state == "signal_degraded":
         return discord.Embed(title="◉ SIGNAL DEGRADED", description="Information is unavailable. Use `!hud state normal` to restore the display.", color=0x555555)
     embed = discord.Embed(title="◉ YOUR DISPLAY", description="The interface rests at the edge of your vision.", color=0x555555)
-    discovered = (opening_state(character) or {}).get("discoveries", [])
-    if "display" in discovered:
-        embed.add_field(name="FEED7", value="A signal you found in the pod. Open it with `!feed7`.", inline=False)
-    has_booking = (character.get("extra", {}).get("arrival", {}).get("performance_booking", True) is not False)
-    if has_booking and "booking" in discovered:
-        embed.add_field(name="Remembered booking", value="A gig tomorrow night. Format still unclear. Revisit the notice in the pod with `!inspect booking`.", inline=False)
-    elif has_booking and any(target in discovered for target in ("panels", "display")):
-        embed.add_field(name="Unread notice", value="You found a performance notification in the pod. Read it there with `!inspect booking`.", inline=False)
+    hints = {
+        "feed7": " Open it with `!feed7`.",
+        "booking": " Revisit the notice in the pod with `!inspect booking`.",
+        "notice": " Read it there with `!inspect booking`.",
+    }
+    for entry in discovered_entries(character):
+        embed.add_field(name=entry["title"], value=entry["text"] + hints[entry["id"]], inline=False)
     if not embed.fields:
         embed.description += " No signals or notices have been discovered yet."
     embed.set_footer(text="!hud on · !hud off · !hud state normal")

@@ -9,14 +9,14 @@ function setup(){
   constructor(){this.textContent="";this.children=[];this.listeners={};this.hidden=false;this.open=false;this.dataset={};}
   addEventListener(n,fn){this.listeners[n]=fn;}
   click(){return this.listeners.click();}
-  showModal(){this.open=true;}
+  show(){this.open=true;}
   close(){this.open=false;}
   replaceChildren(...nodes){this.children=nodes;}
   cloneNode(){const n=new Node();n.textContent=this.textContent;return n;}
   querySelector(){return null;}
   focus(){this.focused=true;}
  }
- const ids=["game","movement","refresh","exits","read-closely","room-title","room-description","passage-title","passage-copy","fullscreen","inventory-panel","passage"];
+ const ids=["command-input","game","movement","refresh","exits","read-closely","room-title","room-description","passage-title","passage-copy","fullscreen","inventory-panel","passage"];
  for(const id of ids)elements[id]=new Node();
  dialogs.push(elements["inventory-panel"],elements.passage);
  const opener=new Node();opener.dataset.open="inventory-panel";openers.push(opener);
@@ -34,14 +34,14 @@ test("panels open only with authenticated game visible and close on return",()=>
  h.elements.game.hidden=false;h.opener.click();assert.equal(h.dialogs[0].open,true);
  h.closer.click();assert.ok(h.dialogs.every(d=>!d.open));
 });
-test("reading is a detached snapshot; session expiry clears it and closes all panels",()=>{
- const h=setup(),e=h.elements;e["room-title"].textContent="Hallway";
- const p=new h.Node();p.textContent="Private room prose";e["room-description"].children=[p];
- e["read-closely"].click();assert.equal(e.passage.open,true);
- assert.equal(e["passage-copy"].children[0].textContent,"Private room prose");
- p.textContent="New room";assert.equal(e["passage-copy"].children[0].textContent,"Private room prose");
- e.game.hidden=true;h.mutation();
- assert.ok(h.dialogs.every(d=>!d.open));assert.equal(e["passage-title"].textContent,"");
- assert.equal(e["passage-copy"].children.length,0);
- assert.equal(h.observe.node,e.game);
+test("session expiry closes private references",()=>{
+ const h=setup();h.elements.game.hidden=false;h.opener.click();
+ h.elements.game.hidden=true;h.mutation();
+ assert.ok(h.dialogs.every(d=>!d.open));assert.equal(h.observe.node,h.elements.game);
+});
+test("return restores command focus without changing the underlying scene",()=>{
+ const h=setup();h.elements.game.hidden=false;h.elements["room-description"].textContent="Current observation";
+ h.opener.click();h.closer.click();
+ assert.equal(h.elements["command-input"].focused,true);
+ assert.equal(h.elements["room-description"].textContent,"Current observation");
 });

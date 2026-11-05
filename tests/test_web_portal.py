@@ -201,4 +201,4 @@ class GameFrameReturnTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(response.status, 200)
         html = await response.text()
         self.assertIn('id="command-input"', html)
-        self.assertIn('src="/assets/experiments/w6-f8/live/game.js"', html)
+        self.assertIn('src="/assets/experiments/w6-f8/live/game.js?v=w7f8"', html)
