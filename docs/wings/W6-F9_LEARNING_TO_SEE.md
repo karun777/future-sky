@@ -1,6 +1,6 @@
 # W6-F9 — Learning to See: The Future Sky HUD
 
-Status: ALLOCATED / DESIGN — 5 November 2026, on Karun's acceptance of the next-step proposal. W7-F7 sealed on 5 November after player screenshots confirmed HUD equipment change and matching Discord fit. This is the next design return. No seal/count increment. Next unallocated W6-F10.
+Status: ACTIVE / DESIGN REVIEW — 5 November 2026, on Karun's acceptance of the next-step proposal. W7-F7 sealed on 5 November after player screenshots confirmed HUD equipment change and matching Discord fit. This is the next design return. No seal/count increment. Next unallocated W6-F10.
 
 ## Purpose
 
@@ -43,3 +43,23 @@ W6 owns presentation; W3 owns character faculties; W4 owns awakening/play conseq
 ## Return from W7-F7 seal — 5 November 2026
 
 Carry presentation polish into this design pass: render equipment confirmations without raw Markdown, improve wardrobe imagery beyond the contextual room fallback, make internally scrolling detail content evident, and avoid duplicated bearings or technical offer language. Keep the stable command box and type-to-act contract. Pod-delivery collection through the web needs a separately scoped W7 adapter; do not claim it exists. The inherited fresh-character discovery and first-selection live checks remain outstanding. Chapter 1 remains paused.
+
+## First design rehearsal — 5 November 2026
+
+W6-F9 activated on Karun's instruction “let's go W6-F9”. Isolated branch expression/w6-f9-learning-to-see, based on W7-F7 seal 3955ef5. Source: tools/authoring/w6f9/. Rehearsal: https://future-sky.net/assets/experiments/w6-f9/index.html. Hosted on the existing Neptune Lounge server; no new hosting product or live-frame replacement.
+
+Built the agreed comparison as one stable frame with two command-selected fixtures: stage awakened and stage developed. listen presents the same illustrative sound. The developed fixture adds a hypothetical acoustic instrument and a separately labelled uncertain inner association. hud off hides the instrument but retains hearing and intuition; hud state signal degraded marks the reading unavailable without showing a prior sample as current. No measurements, numeric meters, timestamps or factual source identification are invented. These controls configure only this rehearsal; they do not unlock abilities or represent the live character.
+
+Existing p01/p02/p06 pod artwork and authored pod/panels/viewport descriptions are reused. Listening prose, instrument output and inner association are explicitly design-only proposals. The awakened fixture is a moment when sight and hearing are available, not an implementation or reordering of sensory-return stages. Reference overlays are nonmodal; Escape/Close returns focus to commands. The history captures command, result and the displayed perception channels in memory only. Actual movement, wardrobe, collection, live signals, real audio, saved progression and authentication are deliberately absent from this isolated comparison.
+
+### Verification and deployment
+- Public rehearsal index returned HTTP 200; three public file hashes checked against source.
+- Chrome visual review at the user's existing 1512 × 784 viewport: stable frame, visible commands/exits, ordinary and developed listening views. Reduced secondary-text spacing after observing the lower inner-voice note clipped in the first pass.
+- Browser interaction checks: listen; stage developed retains listening focus; hud off retains hearing and inner voice; degraded signal conceals the normal instrument reading; commands work with guide open; Escape closes guide; history retains meaningful results including the two extra channels; viewport inspection changes attention and image.
+- No browser console errors reported in the checked final comparison. No automated Python suite rerun for this isolated static study. Other viewport sizes and player acceptance remain pending.
+- Only /assets/experiments/w6-f9/ is published. No bot restart, backend, player-state, /play/ or W7-F7 asset change. Chapter 1 remains paused.
+
+### First live capability candidate
+Current source bot/fsbot/cogs/hud.py already derives discovered FEED7, unread notification and remembered booking from saved discoveries and respects enabled/dark/degraded settings. Recommend reusing that projection as the first real HUD capability after the visual agreement, with a shared presentation-neutral producer and authenticated web projection. Do not activate the hypothetical instrument/inner association as a substitute for authoritative data. FEED7 playback, shared event history and pod-delivery collection remain separately scoped.
+
+Status: ACTIVE / DESIGN REVIEW. Await Karun's judgement of the same-room comparison before connecting a live capability. 33 feathers sealed, W6 seven; no seal increment.

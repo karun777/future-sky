@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Learning to See · Future Sky HUD</title><link rel="stylesheet" href="hud.css"></head>
+<body>
+<main class="hud">
+<header><span class="brand">✧ FUTURE SKY <b>HUD</b></span><span class="study">W6-F9 · DESIGN REHEARSAL</span><a href="/play/">Live game ↗</a></header>
+<section class="scene" aria-label="Present scene">
+<img id="sceneImage" src="/assets/images/world/manzo/triton_central/neptune_lounge/pod/v1/p01.png" alt="Warm grey pod interior with a frosted viewport, hatch, red status light and recessed storage">
+<div class="scene-top"><span>NEPTUNE LOUNGE / POD ROOM</span><span id="stageLabel">01 · Newly awakened</span></div>
+<div class="scene-bottom"><span id="focusLabel">Wakefulness Module</span><span id="deviceLabel">Implant · quiet</span></div>
+</section>
+<section class="attention" aria-label="What you perceive" tabindex="0">
+<div class="passage"><span class="eyebrow" id="channelLabel">PERCEPTION / SIGHT</span><h1 id="title">The world comes into focus.</h1><p id="prose"></p><p class="hint" id="hint"></p></div>
+<aside class="layers" aria-label="Additional perception">
+<div class="signal" id="instrument" hidden><span class="eyebrow">INSTRUMENT / ILLUSTRATIVE</span><p id="instrumentText"></p><small id="instrumentOrigin"></small></div>
+<div class="inward" id="inward" hidden><span class="eyebrow">INNER VOICE / ILLUSTRATIVE</span><p>“The rhythm feels familiar. You cannot place where you have heard it.”</p><small>An association, not a confirmed memory.</small></div>
+<p class="quiet" id="quiet">You have a place to attend.<br>There is no need to understand everything yet.</p>
+</aside>
+</section>
+<section class="console"><div class="bearings"><span id="trail">Pod Room › surroundings</span><span>Obvious exits: <strong>west</strong></span></div>
+<form id="commandForm"><label for="command">COMMANDS</label><input id="command" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Try listen" aria-describedby="feedback"><span class="enter" aria-hidden="true">ENTER ↵</span></form>
+<p id="feedback" role="status">Design example only · no live character or saved discoveries.</p>
+</section>
+<nav aria-label="Reference panels"><button data-panel="guide">Command guide</button><button data-panel="history">Recent activity</button><button data-panel="notes">Design notes</button><span class="stage-hint">Compare: <code>stage developed</code> / <code>stage awakened</code></span></nav>
+</main>
+<dialog id="reference"><div class="dialog-head"><h2 id="panelTitle"></h2><button id="closePanel" aria-label="Close reference panel">Close ×</button></div><div id="panelContent"></div></dialog>
+<script src="hud.js"></script></body></html>
