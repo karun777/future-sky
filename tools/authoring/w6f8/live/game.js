@@ -10,6 +10,30 @@
   let commandBusy = false;
   let observationTarget = null, observationActionsKey = null;
   let wardrobeToken = null, wardrobeKey = null, selectedGarment = null;
+  let focusScene = null;
+  function showFocus(id) {
+    document.querySelectorAll("dialog").forEach(d => { if (d.open) d.close(); });
+    focusScene = id;
+    ["inspection-panel", "wardrobe-panel"].forEach(name => { el(name).hidden = name !== id; });
+    el("room-scene").hidden = !!id;
+    el("room-present").hidden = !!id;
+    document.querySelectorAll(".focus-location").forEach(n => { n.textContent = view?.location?.title || ""; });
+  }
+  function outfitMatches(query) {
+    return (view?.wardrobe?.available ? view.wardrobe.options || [] : []).filter(o =>
+      o.name.toLowerCase() === query || o.id.toLowerCase() === query ||
+      o.id.split(":").slice(1).join(":").toLowerCase() === query);
+  }
+  function examineOutfit(query) {
+    const matches = outfitMatches(query);
+    if (!matches.length) return false;
+    if (matches.length > 1) {
+      commandReply("Which outfit? Type inspect followed by " + matches.map(o => o.id).join(" or ") + ".");
+      return true;
+    }
+    chooseGarment(matches[0]); showFocus("wardrobe-panel");
+    commandReply("Examining " + matches[0].name + "."); return true;
+  }
   function text(id, value) { if (el(id).textContent !== value) el(id).textContent = value; }
   function notice(id, value) {
     text(id, value); el(id).hidden = !value;
@@ -225,10 +249,10 @@
     const next = ({panels:["display","wardrobe"], display:["booking","wardrobe"], booking:["wardrobe"]})[observationTarget] || [];
     const targets = next.filter(t => (view?.inspection?.targets || []).includes(t));
     text("inspection-actions", observationTarget === "wardrobe" ?
-      "Type wardrobe to open the clothing panel." : targets.map(t => "inspect " + t).join(" · "));
+      "Type wardrobe to browse outfits. Type look to return to the room." : targets.map(t => "inspect " + t).join(" · "));
   }
   function clearWardrobe() {
-    if (el("wardrobe-panel").open) el("wardrobe-panel").close();
+    if (focusScene === "wardrobe-panel") showFocus(null);
     wardrobeToken = null; wardrobeKey = null; selectedGarment = null;
     el("wardrobe-choices").replaceChildren();
     ["wardrobe-fit","garment-name","garment-description","wardrobe-status"].forEach(id => text(id,""));
@@ -254,16 +278,15 @@
       "Choose your first outfit once, or wear a garment you already carry." :
       "Your first outfit is already chosen. You can wear clothes you carry; the catalogue grants nothing.");
     el("wardrobe-choices").replaceChildren(...(wardrobe.options || []).map(option => {
-      const b = document.createElement("button");
-      b.type = "button";
+      const b = document.createElement("p");
       b.textContent = option.name + (option.id.startsWith("carried:") ? " · carried" : " · catalogue");
-      b.addEventListener("click", () => chooseGarment(option));
+
       return b;
     }));
     const current = (wardrobe.options || []).find(o => o.id === selectedGarment?.id);
     if (current) chooseGarment(current);
     else { selectedGarment = null; text("garment-name", "Examine an outfit");
-      text("garment-description", "Choose a garment to read its details before putting it on.");
+      text("garment-description", "Type inspect followed by an outfit name to examine it.");
       el("wardrobe-wear").hidden = true; }
   }
   async function wearGarment() {
@@ -295,8 +318,7 @@
     if (!stopped) { await refresh(); if (!stopped) notice("walk-feedback", message); }
   }
   function clearObservation() {
-    const dialog = el("inspection-panel");
-    if (dialog.open) dialog.close();
+    if (focusScene === "inspection-panel") showFocus(null);
     observationTarget = null; observationActionsKey = null;
     el("inspection-actions").replaceChildren();
     text("inspection-status", ""); el("inspection-status").hidden = true;
@@ -323,7 +345,7 @@
       el("inspection-image").alt = observation.title || "Observed detail";
       el("inspection-image").hidden = false;
     }
-    openPanel("inspection-panel");
+    showFocus("inspection-panel");
   }
   async function inspect(target) {
     if (moving || stale || !inspectToken || document.hidden || stopped) return;
@@ -356,7 +378,7 @@
       await refresh();
       if (!stopped && !stale && observation && view.location.id === selectedRoom) {
         showObservation(observation, target);
-        message = "Observation saved. Discord uses the same discoveries.";
+        message = "Attending to " + (observation.title || target) + ".";
       } else if (observation && !stopped) message = "Observation saved; return to a current view before reading it again.";
       if (!stopped) notice("walk-feedback", message);
     }
@@ -364,7 +386,8 @@
 
   function openPanel(id) {
     document.querySelectorAll("dialog").forEach(d => { if (d.open) d.close(); });
-    el(id).show();
+    if (id === "wardrobe-panel") showFocus(id);
+    else el(id).show();
   }
   function commandReply(message) {
     text("command-response", message);
@@ -395,8 +418,9 @@
       }
       if (lower === "look") {
         document.querySelectorAll("dialog").forEach(d => { if (d.open) d.close(); });
+        showFocus(null);
         await refresh();
-        if (!stopped) commandReply(view?.location?.description || "No room description available.");
+        if (!stopped) commandReply("Attending to " + (view?.location?.title || "the room") + ".");
         return;
       }
       if (["inventory","character","sheet","fit"].includes(lower)) {
@@ -409,6 +433,7 @@
         await walk(argument);
       } else if (verb === "inspect" && argument) {
         const target = ({"storage panels":"panels","booking notice":"booking"})[argument] || argument;
+        if (!(view.inspection?.targets || []).includes(target) && examineOutfit(argument)) return;
         if (!(view.inspection?.targets || []).includes(target)) {
           commandReply("That inspection is not available here in the web window. Available: " + (view.inspection?.targets || []).join(", ")); return;
         }
@@ -419,11 +444,8 @@
         }
         if (argument && !argument.startsWith("inspect ")) { commandReply("Use wardrobe or wardrobe inspect <outfit>."); return; }
         if (argument) {
-          const query = argument.slice(8);
-          const options = view.wardrobe.options || [];
-          const option = options.find(o => o.name.toLowerCase() === query || o.id.split(":").slice(1).join(":") === query);
-          if (!option) { commandReply("That outfit is not listed. Type wardrobe to browse."); return; }
-          chooseGarment(option);
+          if (!examineOutfit(argument.slice(8))) commandReply("That outfit is not listed. Type wardrobe to browse.");
+          return;
         }
         openPanel("wardrobe-panel");
         commandReply(argument ? selectedGarment.description : "Wardrobe opened. Examine an outfit before choosing what to wear."); return;

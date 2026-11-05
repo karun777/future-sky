@@ -58,3 +58,19 @@ dialog.passage{height:calc(100dvh - 250px)}
 @media(max-height:600px){#game{grid-template-rows:minmax(0,1fr) minmax(100px,32dvh) 86px 52px}dialog{top:46px;height:calc(100dvh - 200px);max-height:calc(100dvh - 200px)}.command-console{padding-top:5px}}
 
 @media(max-height:600px){#command-response{max-height:1.4em}}
+
+/* W7-F7: one main focus, with reference overlays above it. */
+[hidden] { display: none !important; }
+.focus-scene { grid-row: 1 / 3; min-height: 0; overflow: hidden; display: grid; grid-template-rows: auto minmax(0,1fr) auto; background: #101d17; }
+.focus-scene > header { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 4%; border-bottom:1px solid #625b3e; }
+.focus-scene h2 { margin:4px 0; font-size:clamp(24px,2.4vw,36px); }
+.focus-scene .panel-body { min-height:0; overflow:auto; padding:20px 4%; font-size:clamp(18px,1.5vw,24px); line-height:1.5; }
+.focus-scene .panel-body p { max-width:75ch; }
+.focus-scene > footer { padding:10px 4%; border-top:1px solid #625b3e; font:14px monospace; }
+.focus-scene #inspection-image { display:block; width:auto; max-width:100%; height:auto; max-height:30dvh; object-fit:contain; margin:0 auto 20px; }
+.focus-scene #inspection-guidance { font-size:16px; }
+.focus-scene #inspection-status, .focus-scene #wardrobe-status, #walk-feedback { display:none; }
+#wardrobe-choices { display:flex; flex-wrap:wrap; gap:8px 24px; font:16px monospace; }
+#wardrobe-choices p { margin:6px 0; }
+.focus-location { margin:0 0 8px; }
+@media(max-height:650px) { .focus-scene > header { padding:8px 3%; } .focus-scene .panel-body { padding:12px 3%; } }

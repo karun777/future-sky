@@ -81,7 +81,7 @@ test('unknown, unoffered and chained commands never mutate',async()=>{
 test('inspect typed command shows safe observation and no command buttons',async()=>{
  const h=await setup();h.handler=async(url)=>url.endsWith('/inspect')?response(200,{ok:true,observation:{title:'Panels',text:'<script>x</script>'}}):null;
  await command(h,'inspect panels');
- assert.equal(h.elements['inspection-panel'].open,true);
+ assert.equal(h.elements['inspection-panel'].hidden,false);
  assert.equal(h.elements['inspection-text'].querySelectorAll('script').length,0);
  assert.equal(h.elements['inspection-actions'].querySelectorAll('button').length,0);
 });
@@ -122,8 +122,8 @@ async function wardrobe(h) {
 test('wardrobe browsing and clicking details are passive; typing wear uses fresh offer',async()=>{
  const h=await setup();await wardrobe(h);
  await command(h,'wardrobe');
- assert.equal(h.elements['wardrobe-panel'].open,true);
- await h.elements['wardrobe-choices'].children[0].emit('click');
+ assert.equal(h.elements['wardrobe-panel'].hidden,false);
+ assert.equal(h.elements['wardrobe-choices'].querySelectorAll('button').length,0);
  await command(h,'wardrobe inspect Formal Uniform');
  assert.equal(h.elements['garment-description'].textContent,'Formal.');
  assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
@@ -143,7 +143,7 @@ test('first selection uses uniform command only; unavailable selection cannot be
 test('auth expiry clears command history and private wardrobe',async()=>{
  const h=await setup();await wardrobe(h);await command(h,'wardrobe inspect Coat');
  h.handler=async()=>response(401,'expired');await h.tick(4000);
- assert.equal(h.elements['wardrobe-panel'].open,false);
+ assert.equal(h.elements['wardrobe-panel'].hidden,true);
  assert.equal(h.elements['garment-description'].textContent,'');
  assert.equal(h.elements['command-history'].children.length,0);
  assert.equal(h.elements['command-input'].value,'');
@@ -151,7 +151,27 @@ test('auth expiry clears command history and private wardrobe',async()=>{
 test('external room change closes wardrobe and revokes equipment action',async()=>{
  const h=await setup();await wardrobe(h);await command(h,'wardrobe');
  h.data=data('b');await h.tick(4000);
- assert.equal(h.elements['wardrobe-panel'].open,false);
+ assert.equal(h.elements['wardrobe-panel'].hidden,true);
  await command(h,'wear Coat');
+ assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
+});
+
+
+test('focus survives polling and reference views; look returns to the room',async()=>{
+ const h=await setup();h.handler=async(url)=>url.endsWith('/inspect')?response(200,{ok:true,observation:{title:'Panels',text:'Details'}}):null;
+ await command(h,'inspect panels');await h.tick(12000);
+ assert.equal(h.elements['inspection-panel'].hidden,false);
+ assert.equal(h.elements['room-scene'].hidden,true);
+ await command(h,'inventory');assert.equal(h.elements['inspection-panel'].hidden,false);
+ await command(h,'look');assert.equal(h.elements['inspection-panel'].hidden,true);
+ assert.equal(h.elements['room-scene'].hidden,false);
+});
+test('plain inspect outfit resolves supplied names and asks about ambiguity',async()=>{
+ const h=await setup();await wardrobe(h);await command(h,'inspect Formal Uniform');
+ assert.equal(h.elements['garment-description'].textContent,'Formal.');
+ h.data.wardrobe.options.push({id:'carried:formal',name:'Formal Uniform',description:'Owned',action:'wear:formal'});
+ await h.tick(4000);await command(h,'inspect Formal Uniform');
+ assert.match(h.elements['command-response'].textContent,/Which outfit/);
+ await command(h,'inspect carried:formal');assert.equal(h.elements['garment-description'].textContent,'Owned');
  assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
 });

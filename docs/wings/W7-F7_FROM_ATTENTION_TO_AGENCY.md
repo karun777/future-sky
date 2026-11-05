@@ -1,6 +1,6 @@
 # W7-F7 — From Attention to Agency
 
-Status: ACTIVE — initial wardrobe build deployed; typed-command revision tested and ready for operator activation.
+Status: ACTIVE — typed commands and main-panel focus revision deployed; player acceptance remains open.
 Allocated 5 November 2026 on Karun's instruction “let's go W7-F7”.
 Home: W7 Engine. Branch engine/w7-f7-from-attention-to-agency.
 Baseline: W7-F6 seal 4ac7462216682ed9c8f08f6fa402eabf46e2bd3e.
@@ -63,3 +63,14 @@ The initial 5c95bf2 wardrobe build was independently confirmed deployed: all eig
 Current verification: 347 Python tests pass, including callback destination and /play frame asset-path checks. The previous click-action UI suite is replaced by 12 command-interface tests covering optional prefix/case, offered commands only, double Enter, lost-response no-retry, offline/hidden behavior, passive panel browsing, wardrobe wear/first selection, auth cleanup and room changes. No new browser visual pass is claimed; fixed-frame layout and keyboard/panel flow require live player acceptance.
 
 Deployment manifest has been rebased against the verified deployed initial W7-F7 build and now includes five backend files and four pilot assets. Use the same activation command for this revision. It briefly restarts the bot; no player-data/config/catalogue overlay. The initial build's activation instructions and button-oriented acceptance description above are historical; validate this command revision using the syntax in this section. Chapter 1 remains paused; W7-F7 remains active, count32 unchanged.
+
+
+## Main-panel focus — 5 November 2026, 14:27 AWST
+
+Karun requested that the main panel follow attention, reserving overlays for reference panels. Inspection and wardrobe now occupy the first two rows of the existing game frame; the command console and dock remain fixed. Room title is retained as context. Polling does not replace the chosen focus. Inventory/help/history overlays preserve it underneath; look restores the room, and authoritative room changes or session expiry clear private focus. The separate Read closely popup is removed. Outfit choices are plain text; inspect <outfit name> examines available catalogue/carried descriptions, with explicit disambiguation on duplicate names. Existing wardrobe inspect syntax remains accepted. No new mutation API or simulation behavior.
+
+The previous ca35f2c build was independently verified: all nine deployed hashes matched and futuresky-bot.service was active. This focus pass passed 14 command/transport tests and the full 347 Python tests. Fake deployment test output is not production evidence. No automated browser visual pass or authenticated wardrobe mutation is claimed.
+
+Four static assets were deployed without restarting the bot. All four public asset hashes verified against source; service remained active. Backup: /home/efiishent/future-sky-static-backups/w7f7-focus-20261105-062645. The deployment manifest describes this revision against the prior typed-command baseline; do not re-run activation against already-updated static files. No backend, configuration, catalogue or player data changed in this pass.
+
+Acceptance: refresh the live frame; type inspect panels, inspect wardrobe, wardrobe, inspect Utility Uniform, then look. Confirm main-panel continuity, persistent commands, reference-panel return and room changes from Discord. Equipment mutation plus matching !fit remains outstanding before sealing. The shared web/Discord activity feed is proposed separately; current history remains per-tab and incomplete. Chapter 1 stays paused; 32 sealed feathers, W7-F7 active.
