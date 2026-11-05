@@ -90,3 +90,16 @@ Static deployment backed up the three previous files to
 No service restart or player-data changes. The original activation manifest records
 the earlier deployment and is not a manifest for this follow-up static pass.
 W7-F8 remains ACTIVE and unsealed. Chapter 1 remains paused.
+
+### Commands beneath the reading column
+
+At the user's request, the command box and exits now sit immediately after the active
+text in the right-hand column. Reference navigation stays along the bottom. Long
+narrative/reference panels scroll above the reachable command box. The image remains
+unobstructed and gains vertical space from the smaller bottom bar.
+HTML/CSS only; transport and action semantics unchanged.
+
+Verified signed-in preview at desktop and 390 × 844: long Help content scrolls,
+command input remains within the viewport, no horizontal overflow on the narrow
+layout, Return and typed look work. Public HTML/CSS bytes verified after backup and
+static deployment. W7-F8 remains active; prior outstanding acceptance checks remain.
