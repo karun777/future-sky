@@ -1,6 +1,6 @@
 # W7-F6 — Attend to the World
 
-Status: ACTIVE — deployed 4 November 2026; authenticated player walkthrough pending.
+Status: SEALED — 5 November 2026, following deployed inspection, player feedback and final typography adjustment.
 Allocated 4 November 2026 on Karun's instruction “let's attend to the world”.
 Home: W7 Engine. Baseline W6-F8 seal 4c7383f. Branch engine/w7-f6-attend-to-the-world.
 31 sealed feathers remain; W7 five sealed. Next unallocated W7-F7, W6-F9. Chapter 1 / W4 stays paused.
@@ -57,3 +57,18 @@ The room passage now has a larger share of the fixed viewport, with inspection a
 Validation: all 16 JavaScript behavior tests passed, including new chained-action/fresh-token and offline/revoked-offer tests. No backend, dependency, player data or discovery rule changes. Fresh-character live acceptance remains outstanding.
 
 Frontend refinement deployment: 4 November 2026, 18:14 AWST, source 6010f83834c4c4877148568fcd08e5be613fbfd5. Three static assets updated after exact baseline validation; public asset hashes match source. Backup /home/efiishent/future-sky-static-backups/w7f6-refinements-20261104-101416. No service restart or player-data changes. Browser visual verification remains pending: local Chromium download failed. The operator should refresh the pilot and check room prose plus panels → display → booking at their normal viewport. The original activation manifest describes the earlier deployment and must not be rerun for these frontend changes.
+
+
+## Seal — 5 November 2026
+
+Karun authorised deployment of the typography adjustment and sealing W7-F6. Inspection body type is reduced from 23–32px to 18–24px (about 25% at desktop sizes), with 1.55 line height; headings and narrative takeover type are unchanged. The CSS-only deployment was backed up and its public bytes verified. No service restart, backend or player-data change.
+
+Acceptance: 4 November screenshots show matching web/Discord booking and display observations; the 18:19 screenshot confirms readable full room prose and compact controls. On 5 November Karun reports “the booking seems fine” and supplies the side-wall overlay with its Inspect display button; the requested remaining correction was text size. This seals the bounded shared-inspection implementation and accepted interface refinements, not all web gameplay.
+
+Evidence retained: 332 Python tests plus three deployment checks from implementation; 16 frontend behavior tests after action chaining. No new behavior test is needed for this CSS-only adjustment. Final reduced typography still awaits a player visual recheck; browser automation was unavailable. A live fresh-character first-discovery transition remains untested and is carried forward explicitly; no reset was performed to simulate it.
+
+Remaining work: hands/garment/pod invitations are not all available as web buttons; wardrobe and FEED7 guidance still use Discord. Candidate W7-F7 — From Attention to Agency would connect the existing wardrobe inspect/open/examine/wear loop, sharing equipment state across clients. It is proposed, not allocated by this seal. Chapter 1 / W4 remains paused; Discord supported.
+
+One home/count: W7 now six sealed, total32 (W4 nine, W6 seven, others two each). Next unallocated W7-F7 and W6-F9. This seal supersedes historical ACTIVE/pending-acceptance statements above.
+
+Typography backup: /home/efiishent/future-sky-static-backups/w7f6-typography-20261105-053855.
