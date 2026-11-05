@@ -65,3 +65,28 @@ Operator next step: run the activation command above on Neptune Lounge, then sig
 Karun ran the prepared activation command. Independent verification subsequently found all seven live files equal to the manifest source hashes, all four public assets equal to source, futuresky-bot.service active, /play/ returning 200 and anonymous /play/api/me returning 401. This supersedes the earlier pending-activation checkpoint.
 
 The browser loads the new live frame and correctly requests sign-in after the service restart. Authenticated Character/Inventory/Quest Log comparison and post-restart continuity remain pending the user's sign-in. No seal, count increment or Chapter 1 activation.
+
+### Live presentation refinement — 5 November 2026, 20:02 UTC
+
+User screenshots confirm live room walking, side-wall inspection, wardrobe examination,
+Character, Inventory and Quest Log in the accepted image-left/text-right layout.
+This frontend-only pass groups saved Character values into Profile, Attributes and
+Elemental pools, moves the checked timestamp beside connection status, and suppresses
+the development-only out-of-pod inspection pilot notice. Genuine restriction notices
+remain visible.
+
+Artwork audit: P03 contains an unread booking state and is deliberately withheld after
+booking discovery. No dedicated wardrobe still is bound. Existing truthful room
+fallbacks remain; no new artwork or lore was introduced.
+
+Validation: all 22 Node browser-behaviour tests pass. Signed-in production browser
+verified grouped Character values, unobstructed scene, polling and explicit Refresh
+while retaining the open panel; no browser console errors. Public HTML/CSS/JS match
+source hashes. Reconnection/no-replay remains covered by isolated tests; a deliberately
+interrupted live connection and fresh rendered Discord comparison remain outstanding.
+
+Static deployment backed up the three previous files to
+`/opt/futuresky/backups/w7f8-polish-20261105T200144` after exact HEAD/live comparison.
+No service restart or player-data changes. The original activation manifest records
+the earlier deployment and is not a manifest for this follow-up static pass.
+W7-F8 remains ACTIVE and unsealed. Chapter 1 remains paused.

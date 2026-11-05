@@ -167,26 +167,38 @@
       text("inspect-targets", targets.length ? targets.map(t => "inspect " + t).join(" · ") : "");
 
     }
-    notice("inspect-notice", inspected.notice || (targets.length ? "" : "Inspection is not connected here yet."));
+    const inspectionNotice = inspected.notice === "This first inspection pilot is available in the pod." ? "" : (inspected.notice || "");
+    notice("inspect-notice", inspectionNotice);
+    el("inspection-options").hidden = !targets.length && !inspectionNotice;
     csrf = data.session.csrf;
     walkToken = data.walking?.token || null;
     el("signed-out").hidden = true; el("game").hidden = false;
     text("character-name", data.character.name || "Traveller");
     text("credits", String(data.character.credits ?? "—"));
     if (!previous || JSON.stringify(previous.sheet) !== JSON.stringify(data.sheet)) {
-      const sheet = data.sheet || {}, rows = [];
-      if (sheet.birthdate) rows.push("Birthdate: " + sheet.birthdate);
-      if (sheet.class_id) rows.push("Class: " + sheet.class_id);
+      const sheet = data.sheet || {}, sections = [];
+      const group = (title, rows) => {
+        if (!rows.length) return;
+        const section = document.createElement("section");
+        const heading = document.createElement("h3"); heading.textContent = title;
+        const grid = document.createElement("div"); grid.className = "sheet-grid";
+        grid.replaceChildren(...rows.map(value => {
+          const p = document.createElement("p"); p.textContent = value; return p;
+        }));
+        section.append(heading, grid); sections.push(section);
+      };
+      const identity = [];
+      if (sheet.birthdate) identity.push("Birthdate: " + sheet.birthdate);
+      if (sheet.class_id) identity.push("Class: " + sheet.class_id);
       const stats = sheet.stats || {};
       if (stats.hp !== undefined || stats.max_hp !== undefined)
-        rows.push("HP: " + (stats.hp ?? "—") + " / " + (stats.max_hp ?? "—"));
-      for (const [key, value] of Object.entries(stats))
-        if (!["hp", "max_hp"].includes(key)) rows.push(key[0].toUpperCase() + key.slice(1) + ": " + value);
-      for (const [element, pool] of Object.entries(sheet.pools || {}))
-        rows.push(element[0].toUpperCase() + element.slice(1) + ": " + (pool.current ?? "—") + " / " + (pool.max ?? "—"));
-      el("character-details").replaceChildren(...rows.map(value => {
-        const p = document.createElement("p"); p.textContent = value; return p;
-      }));
+        identity.push("HP: " + (stats.hp ?? "—") + " / " + (stats.max_hp ?? "—"));
+      group("Profile", identity);
+      group("Attributes", Object.entries(stats).filter(([key]) => !["hp", "max_hp"].includes(key))
+        .map(([key, value]) => key[0].toUpperCase() + key.slice(1) + ": " + value));
+      group("Elemental pools", Object.entries(sheet.pools || {}).map(([element, pool]) =>
+        element[0].toUpperCase() + element.slice(1) + ": " + (pool.current ?? "—") + " / " + (pool.max ?? "—")));
+      el("character-details").replaceChildren(...sections);
     }
     text("room-title", title); text("current-location", title);
     const description = data.location.description || "";

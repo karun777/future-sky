@@ -28,7 +28,12 @@ a{color:var(--gold)}
 .eyebrow{font:10px/1.5 monospace;letter-spacing:1.5px;color:var(--gold)}
 .present-top{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:24px}
 .present-top button{display:none}
-#last-sync{font:10px monospace;color:var(--muted)}
+.connection-detail{display:flex;flex-direction:column;gap:3px}
+#last-sync{font:9px monospace;color:var(--muted)}
+#character-details h3{font-size:14px;color:var(--gold);margin:18px 0 8px}
+.sheet-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px}
+.sheet-grid p{margin:0;font-size:13px;line-height:1.5}
+#character-details section:first-child .sheet-grid{grid-template-columns:1fr}
 .passage-scroll{font:16px/1.65 Georgia,serif;overflow-wrap:anywhere}
 p{margin:0 0 16px}
 h1,h2{font-size:23px;line-height:1.25;font-weight:600;margin:8px 0 22px}
@@ -84,7 +89,7 @@ dialog li{margin-bottom:12px}
 @media(max-width:650px){
  #shell{grid-template-rows:44px minmax(0,1fr)}
  .topbar{gap:8px;padding:0 10px}.brand{font-size:9px}.header-location{font-size:11px}.top-controls{gap:3px}
- #fullscreen{display:none}#connection{font-size:9px}.topbar button{font-size:9px}
+ #fullscreen,#last-sync{display:none}#connection{font-size:9px}.topbar button{font-size:9px}
  #game{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(100px,min(35dvh,56.25vw)) minmax(0,1fr) auto}
  .world{grid-column:1;grid-row:1}
  .present,.focus-scene,dialog{grid-column:1;grid-row:2;padding:18px 20px;border-left:0;border-top:1px solid var(--edge)}
