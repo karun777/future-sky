@@ -64,7 +64,7 @@ test('passive polling never issues commands; available exits/details are plain t
  assert.ok(h.calls.every(c=>c.url==='/play/api/me'));
  assert.equal(h.elements.exits.querySelectorAll('button').length,0);
  assert.equal(h.elements['inspect-targets'].querySelectorAll('button').length,0);
- assert.match(h.elements.exits.textContent,/go west/);
+ assert.equal(h.elements.exits.textContent,"west");
 });
 test('optional prefix and case insensitive command move once',async()=>{
  const h=await setup();h.handler=async(url)=>{if(url.endsWith('/walk')){h.data=data('b');return response(200,{ok:true,message:'Moved'});}};
@@ -174,4 +174,17 @@ test('plain inspect outfit resolves supplied names and asks about ambiguity',asy
  assert.match(h.elements['command-response'].textContent,/Which outfit/);
  await command(h,'inspect carried:formal');assert.equal(h.elements['garment-description'].textContent,'Owned');
  assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
+});
+
+
+test('history groups command and observation; refresh does not replace the result',async()=>{
+ const h=await setup();h.handler=async(url)=>url.endsWith('/inspect')?response(200,{ok:true,observation:{title:'Panels',text:'A recessed handle.'}}):null;
+ await command(h,'inspect panels');
+ assert.equal(h.elements['command-history'].children.length,1);
+ assert.match(h.elements['command-history'].children[0].textContent,/inspect panels.*Panels/s);
+ assert.match(h.elements['command-history'].children[0].textContent,/A recessed handle/);
+ await h.win.emit('focus');await h.tick(4000);
+ assert.match(h.elements['command-response'].textContent,/Attending to Panels/);
+ assert.equal(h.elements.exits.textContent,'west');
+ assert.equal(h.elements['current-location'].textContent,'Hallway');
 });

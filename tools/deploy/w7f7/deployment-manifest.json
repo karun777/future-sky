@@ -28,24 +28,24 @@
     },
     "tools/authoring/w6f8/live/index.html": {
       "target": "assets/experiments/w6-f8/live/index.html",
-      "source": "cc8e73713bc52abd6dbd7fde85be3a88d592aa7e6a13a146c4988aeb4d4df90f",
-      "live": "f9bf82c2c79d7627f2fe1aee64e14e4b60a8a1022579626374fff05b939ebb7a"
+      "source": "7c21d1db72612b99f7ba1bdf31454917be3fb39cdb0de5b71f1bc21d15b12fbc",
+      "live": "cc8e73713bc52abd6dbd7fde85be3a88d592aa7e6a13a146c4988aeb4d4df90f"
     },
     "tools/authoring/w6f8/live/frame.css": {
       "target": "assets/experiments/w6-f8/live/frame.css",
-      "source": "97f2bd32ee2f6ff17deaf6d17c6848c263835764dd8abe76438868903b7f199d",
-      "live": "934ca00a78f3b80790eba4efc8412b75957756d0dc244e98ece263a54f3cb6b0"
+      "source": "893a50edb30d6edc545e15848911028b1f348d7fc1ecefaaa61578cb301dd62b",
+      "live": "97f2bd32ee2f6ff17deaf6d17c6848c263835764dd8abe76438868903b7f199d"
     },
     "tools/authoring/w6f8/live/game.js": {
       "target": "assets/experiments/w6-f8/live/game.js",
-      "source": "3afe46cb59348b1ef5bc5a3b744626efd1420171d524c1d698e2983132000c73",
-      "live": "16353dbc6850047110ce822306ae50d7b81052045906aa694847a43e820c29c8"
+      "source": "6ebdf24a33bb0551ff1aa09bf424228daecf86cdb8ac1f6d554e5f04c4474115",
+      "live": "3afe46cb59348b1ef5bc5a3b744626efd1420171d524c1d698e2983132000c73"
     },
     "tools/authoring/w6f8/live/frame.js": {
       "target": "assets/experiments/w6-f8/live/frame.js",
       "source": "d32e528d57e0c4d0f55e120f3fee1e73b82faa5b503cd1a4d73a42d1bb373936",
-      "live": "fd9c201354c9a7419146a8f55ba3562c5161120354631068ee9d137e6055032b"
+      "live": "d32e528d57e0c4d0f55e120f3fee1e73b82faa5b503cd1a4d73a42d1bb373936"
     }
   },
-  "revision": "main-panel-focus"
+  "revision": "quiet-bearings-and-continuity"
 }

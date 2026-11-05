@@ -1,10 +1,14 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W7 Engine / W7-F7 — From Attention to Agency**, ACTIVE: typed commands and main-panel focus deployed; player acceptance pending. [Scope and return](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md). W7-F6 sealed. Next unallocated W7-F8 and W6-F9. Chapter 1 / W4 stays paused; Discord supported.
+Current home/checkpoint: **W7 Engine / W7-F7 — From Attention to Agency**, ACTIVE: typed commands and main-panel focus deployed; player acceptance pending. [Scope and return](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md). W7-F6 sealed. W6-F9 is allocated for HUD design; next unallocated W7-F8 and W6-F10. Chapter 1 / W4 stays paused; Discord supported.
 **32 sealed wing feathers: W4 has nine, W6 seven, W7 six; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
+
+## Refinement return — 5 November 2026, 15:58 AWST
+
+W7-F7 refinements deployed; recovery possessions found secured in private pod delivery. Player collection and web wear/Discord fit comparison remain before sealing. [W6-F9 — Learning to See](wings/W6-F9_LEARNING_TO_SEE.md) records the accepted Future Sky HUD direction and design boundaries, including independent internal voice. It is allocated for design, not sealed or a live upgrade system. Chapter 1 remains paused.
 
 ## Fresh-session return — 5 November 2026
 
@@ -37,7 +41,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
 | W4 Play | 9 | [W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F13 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
-| W6 Expression | 7 | [W6-F8](wings/W6-F8_STAYING_IN_THE_WORLD.md) | W6-F5 review; next unallocated W6-F9 |
+| W6 Expression | 7 | [W6-F8](wings/W6-F8_STAYING_IN_THE_WORLD.md) | W6-F5 review; [W6-F9 — design](wings/W6-F9_LEARNING_TO_SEE.md); next unallocated W6-F10 |
 | W7 Engine | 6 | [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md) | [W7-F7 — active](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md); next unallocated W7-F8 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 

@@ -32,12 +32,12 @@
       return true;
     }
     chooseGarment(matches[0]); showFocus("wardrobe-panel");
-    commandReply("Examining " + matches[0].name + "."); return true;
+    commandReply(matches[0].name + "\n" + matches[0].description); text("command-response", "Examining " + matches[0].name + "."); return true;
   }
   function text(id, value) { if (el(id).textContent !== value) el(id).textContent = value; }
   function notice(id, value) {
     text(id, value); el(id).hidden = !value;
-    if (id === "walk-feedback" || (id === "message" && value)) {
+    if (id === "walk-feedback") {
       if (value) text("command-response", value);
       text("wardrobe-status", value); el("wardrobe-status").hidden = !value;
       text("inspection-status", value); el("inspection-status").hidden = !value;
@@ -67,7 +67,7 @@
     el("inspect-targets").replaceChildren();
     clearTimeout(timer);
     el("game").hidden = true; el("signed-out").hidden = false;
-    ["character-name", "credits", "room-title", "room-description", "last-sync"].forEach(id => text(id, ""));
+    ["character-name", "credits", "room-title", "room-description", "last-sync", "current-location"].forEach(id => text(id, ""));
     ["exits", "inventory", "equipped", "recent"].forEach(id => el(id).replaceChildren());
     el("room-image").removeAttribute("src");
     changes.length = 0; exitKey = null;
@@ -95,6 +95,7 @@
     parent.append(document.createTextNode(source.slice(cursor)));
   }
   function prose(source) {
+    source = source.split(/\n\s*\n/).filter(part => !part.startsWith("Follow what catches your attention:")).join("\n\n");
     el("room-description").replaceChildren(...source.split(/\n\s*\n/).filter(Boolean).map(part => {
       const p = document.createElement("p"); inline(p, part); return p;
     }));
@@ -136,7 +137,7 @@
     el("signed-out").hidden = true; el("game").hidden = false;
     text("character-name", data.character.name || "Traveller");
     text("credits", String(data.character.credits ?? "—"));
-    text("room-title", title);
+    text("room-title", title); text("current-location", title);
     const description = data.location.description || "";
     if (!previous || description !== previous.location.description) prose(description);
     const img = el("room-image"), url = data.location.image;
@@ -154,10 +155,13 @@
     const exits = data.walking?.exits || [];
     const key = JSON.stringify([data.location.id, exits]);
     if (key !== exitKey) {
-      text("exits", exits.length ? exits.map(d => "go " + d).join(" · ") : "");
+      text("exits", exits.length ? exits.join(" · ") : "none visible");
       exitKey = key;
     }
     notice("walk-notice", data.walking?.notice || (exits.length ? "" : "No walking exits available in this view."));
+    text("inventory-guidance", !data.inventory.bag.length && !Object.values(data.inventory.equipped).some(Boolean) ?
+      "Nothing is carried or equipped. If you have returned from recovery, check !pod_delivery in Discord for belongings stored in your pod." :
+      "In the pod, type wear <name> to put on clothing you carry.");
     view = data; renderWardrobe(); renderObservationActions(); stale = false; lastSuccess = Date.now(); failures = 0;
     connection("Up to date");
     text("last-sync", "Checked " + new Date(lastSuccess).toLocaleTimeString());
@@ -255,6 +259,7 @@
     if (focusScene === "wardrobe-panel") showFocus(null);
     wardrobeToken = null; wardrobeKey = null; selectedGarment = null;
     el("wardrobe-choices").replaceChildren();
+    el("wardrobe-image").removeAttribute("src"); el("wardrobe-image").hidden = true;
     ["wardrobe-fit","garment-name","garment-description","wardrobe-status"].forEach(id => text(id,""));
     el("wardrobe-wear").hidden = true;
   }
@@ -262,7 +267,7 @@
     selectedGarment = option;
     text("garment-name", option.name);
     text("garment-description", option.description);
-    text("wardrobe-wear", option.action ? (option.action.startsWith("select:") ? "Type uniform " + option.action.slice(11) : "Type wear " + option.name) : "Catalogue only — your first outfit is already selected.");
+    text("wardrobe-wear", option.action ? (option.action.startsWith("select:") ? "Type uniform " + option.action.slice(11) : "Type wear " + option.name) : "You have already received your first outfit. This description does not add another garment.");
     el("wardrobe-wear").hidden = false;
     controls();
   }
@@ -273,13 +278,17 @@
     const key = JSON.stringify([wardrobe.options, wardrobe.fit, wardrobe.first_selection]);
     if (key === wardrobeKey) return;
     wardrobeKey = key;
-    text("wardrobe-fit", "Wearing: " + (wardrobe.fit || "No chest garment"));
+    const equipped = Object.values(view.inventory?.equipped || {}).some(Boolean);
+    text("wardrobe-fit", equipped ? "Wearing: " + (wardrobe.fit || "See inventory") : "Nothing equipped.");
+    const roomImage = view.location.image;
+    el("wardrobe-image").hidden = !(typeof roomImage === "string" && roomImage.startsWith("https://future-sky.net/assets/"));
+    if (!el("wardrobe-image").hidden) { el("wardrobe-image").src = roomImage; el("wardrobe-image").alt = view.location.title + " — surrounding room"; }
     text("wardrobe-rule", wardrobe.first_selection ?
       "Choose your first outfit once, or wear a garment you already carry." :
-      "Your first outfit is already chosen. You can wear clothes you carry; the catalogue grants nothing.");
+      "Your first outfit has already been issued. You can examine the styles below, or wear clothing you carry.");
     el("wardrobe-choices").replaceChildren(...(wardrobe.options || []).map(option => {
       const b = document.createElement("p");
-      b.textContent = option.name + (option.id.startsWith("carried:") ? " · carried" : " · catalogue");
+      b.textContent = option.name + (option.id.startsWith("carried:") ? " · carried" : " · outfit reference");
 
       return b;
     }));
@@ -334,15 +343,15 @@
     renderObservationActions(); controls();
     text("inspection-title", observation.title || "Your attention");
     for (const [id, source] of [["inspection-text", observation.text || ""],
-                                ["inspection-guidance", observation.guidance || ""]]) {
+                                ["inspection-guidance", ""]]) {
       el(id).replaceChildren(...source.split(/\n\s*\n/).filter(Boolean).map(part => {
         const p = document.createElement("p"); inline(p, part); return p;
       }));
     }
-    const url = observation.image;
+    const url = observation.image || view?.location?.image;
     if (typeof url === "string" && url.startsWith("https://future-sky.net/assets/")) {
       el("inspection-image").src = url;
-      el("inspection-image").alt = observation.title || "Observed detail";
+      el("inspection-image").alt = observation.image ? observation.title || "Observed detail" : (view?.location?.title || "Room") + " — surrounding room";
       el("inspection-image").hidden = false;
     }
     showFocus("inspection-panel");
@@ -391,10 +400,15 @@
   }
   function commandReply(message) {
     text("command-response", message);
-    commandHistory.unshift(message);
-    commandHistory.splice(30);
-    el("command-history").replaceChildren(...commandHistory.map(value => {
-      const row = document.createElement("li"); row.textContent = value; return row;
+    if (message.startsWith("> ")) {
+      commandHistory.unshift({command: message.slice(2), result: ""});
+      commandHistory.splice(30);
+    } else if (commandHistory.length) commandHistory[0].result = message;
+    el("command-history").replaceChildren(...commandHistory.map(entry => {
+      const row = document.createElement("li");
+      const cmd = document.createElement("code"); cmd.textContent = "> " + entry.command;
+      const result = document.createElement("p"); result.textContent = entry.result;
+      row.append(cmd, result); return row;
     }));
   }
   async function issueCommand(event) {
@@ -463,7 +477,12 @@
       } else {
         commandReply("That command is not connected to the web window yet. Type help for supported commands. Discord remains available."); return;
       }
-      if (!stopped) commandReply(el("walk-feedback").textContent || "Done.");
+      if (!stopped) {
+        const feedback = el("walk-feedback").textContent || "Done.";
+        const detail = verb === "inspect" && focusScene === "inspection-panel" ?
+          el("inspection-title").textContent + "\n" + el("inspection-text").textContent : feedback;
+        commandReply(detail); text("command-response", feedback);
+      }
     } catch (_) {
       if (!stopped) commandReply("The command could not be completed. Refresh before trying again; it was not automatically repeated.");
     } finally {
