@@ -63,3 +63,22 @@ Existing p01/p02/p06 pod artwork and authored pod/panels/viewport descriptions a
 Current source bot/fsbot/cogs/hud.py already derives discovered FEED7, unread notification and remembered booking from saved discoveries and respects enabled/dark/degraded settings. Recommend reusing that projection as the first real HUD capability after the visual agreement, with a shared presentation-neutral producer and authenticated web projection. Do not activate the hypothetical instrument/inner association as a substitute for authoritative data. FEED7 playback, shared event history and pod-delivery collection remain separately scoped.
 
 Status: ACTIVE / DESIGN REVIEW. Await Karun's judgement of the same-room comparison before connecting a live capability. 33 feathers sealed, W6 seven; no seal increment.
+
+## Cinematic veil rehearsal — 5 November 2026
+
+Karun selected A, Cinematic veil, after three visual studies and approved stronger text on a shadowed backing panel. Follow-up bright-scene and Inventory-open studies accepted. This supersedes the first rehearsal's large prose and stacked image/narrative proportions.
+
+Implemented in tools/authoring/w6f9/: full-window existing pod illustration; compact semibold ivory narrative on a dark translucent, blurred, shadowed panel; quiet bearings; persistent command input; restored Character, Inventory and Quest Log references. Panels are nonmodal and internally scrollable; opening them preserves attention. On narrow screens the reference temporarily replaces the narrative overlay, while commands remain available. Escape/Close restores command focus. Character reference refreshes when comparison state changes while it is open.
+
+Reference contents are explicitly fictional fixtures, not live character/inventory/quest projections. Existing pod artwork remains; generated concept scenes are visual targets, not newly adopted room canon or production assets. Source uses textContent for dynamic text. No live API, equipment action, discovery, bot restart or /play/ modification.
+
+Verification:
+- Chrome review at native 1512x784, 1280x720, short 1366x600 and narrow 390x844; commands and reference controls remain accessible. Temporary viewport override reset afterwards.
+- Inventory, Character and Quest Log open; current attention survives switching/closing references.
+- Typed commands work with references open. Character updates without stealing command focus.
+- listen / stage developed / hud off preserves hearing and inner association while removing instrument output.
+- degraded signal explicitly shows no usable reading; no prior reading shown as current.
+- Escape closes reference; no browser console errors observed.
+- git diff --check clean. Public assets compared to source hashes.
+
+Published only the existing /assets/experiments/w6-f9/ rehearsal. Await player review of actual browser composition before live integration. W6-F9 remains ACTIVE / DESIGN REVIEW; Chapter 1 paused; no feather seal/count change.

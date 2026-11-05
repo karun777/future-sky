@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Learning to See · Future Sky HUD</title><link rel="stylesheet" href="hud.css"></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Learning to See · Future Sky HUD</title><link rel="stylesheet" href="hud.css?v=veil1"></head>
 <body>
 <main class="hud">
 <header><span class="brand">✧ FUTURE SKY <b>HUD</b></span><span class="study">W6-F9 · DESIGN REHEARSAL</span><a href="/play/">Live game ↗</a></header>
@@ -20,7 +20,7 @@
 <form id="commandForm"><label for="command">COMMANDS</label><input id="command" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Try listen" aria-describedby="feedback"><span class="enter" aria-hidden="true">ENTER ↵</span></form>
 <p id="feedback" role="status">Design example only · no live character or saved discoveries.</p>
 </section>
-<nav aria-label="Reference panels"><button data-panel="guide">Command guide</button><button data-panel="history">Recent activity</button><button data-panel="notes">Design notes</button><span class="stage-hint">Compare: <code>stage developed</code> / <code>stage awakened</code></span></nav>
+<nav aria-label="Reference panels"><button data-panel="character">Character</button><button data-panel="inventory">Inventory</button><button data-panel="quests">Quest Log</button><button data-panel="guide">Help</button><button data-panel="history">Recent activity</button><button data-panel="notes">Design notes</button><span class="stage-hint">Compare: <code>stage developed</code> / <code>stage awakened</code></span></nav>
 </main>
-<dialog id="reference"><div class="dialog-head"><h2 id="panelTitle"></h2><button id="closePanel" aria-label="Close reference panel">Close ×</button></div><div id="panelContent"></div></dialog>
-<script src="hud.js"></script></body></html>
+<dialog id="reference" aria-labelledby="panelTitle"><div class="dialog-head"><h2 id="panelTitle"></h2><button id="closePanel" aria-label="Close reference panel">Close ×</button></div><div id="panelContent"></div></dialog>
+<script src="hud.js?v=veil1"></script></body></html>
