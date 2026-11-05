@@ -95,3 +95,13 @@ Karun approved a refinement pass after supplying four screenshots of room, liste
 - Public HTML/CSS/JS hashes checked against source; diff whitespace check passed.
 - Versioned review link: /assets/experiments/w6-f9/index.html?v=veil2 (avoids stale cached HTML during comparison).
 Still an isolated rehearsal. No live character/quest projection, bot/backend or /play/ changes. Await player judgement; no seal/count change.
+
+### Unobstructed image and right reading column — 5 November 2026
+
+Karun superseded the overlay direction after using veil2: narrative obscured artwork he wanted to see. Explicit request: image left, taking most of the screen; main prose on the right where the Rehearsal panel had been; remove overlay.
+
+Implemented dedicated grid areas: illustration left (roughly 72% at laptop size), narrative right, shared command dock below. Artwork fits entirely within its area, aligned left, without cover cropping; aspect-ratio differences may leave dark margins. Narrative and additional perception scroll within the right column. Reference panels temporarily replace narrative in that same column; closing restores attention without shifting/covering the image. Narrow layout stacks an unobstructed image above the reading area.
+
+Checked 1512x784 and 1366x600, plus 390x844 narrow fallback: room image, Inventory/Quest Log replacement and close, developed listening with separately labelled instrument/inner voice, internally scrolling content and persistent commands. No console errors observed. Public files hash-verified. Review URL: /assets/experiments/w6-f9/index.html?v=side1.
+
+This is the current presentation direction, superseding Cinematic veil overlays. Rehearsal remains isolated; live /play/, players and bot unchanged. W6-F9 still open pending review.
