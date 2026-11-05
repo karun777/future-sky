@@ -82,3 +82,16 @@ Verification:
 - git diff --check clean. Public assets compared to source hashes.
 
 Published only the existing /assets/experiments/w6-f9/ rehearsal. Await player review of actual browser composition before live integration. W6-F9 remains ACTIVE / DESIGN REVIEW; Chapter 1 paused; no feather seal/count change.
+
+### Cinematic veil refinement — 5 November 2026
+
+Karun approved a refinement pass after supplying four screenshots of room, listening, viewport and panels.
+- Reduced body prose from bold to regular weight; retained stronger headings and high-contrast ivory text.
+- Softened narrative borders, shadow and translucency; reduced panel width and padding.
+- Combined desktop commands and icon-labelled references into one dock row with a small feedback line (about 70 CSS pixels recovered at 1512x784). Smaller widths retain stacked controls and horizontally scrollable references.
+- Consolidated location and exits into the top strip. Stage/device comparison labels and notes are now under Rehearsal; typed comparison commands still work. Rehearsal state refreshes while open without stealing typing focus.
+- Room/listening framing favours lower room features; viewport and panel views have individual focal positions. Existing artwork retained; cover cropping remains aspect-ratio dependent.
+- Verified Chrome at 1512x784, 1366x600 and 390x844: room, viewport, Inventory, Quest Log and Rehearsal; commands usable with reference open; Escape closes; listening and inner association retained with implant off. No console errors observed.
+- Public HTML/CSS/JS hashes checked against source; diff whitespace check passed.
+- Versioned review link: /assets/experiments/w6-f9/index.html?v=veil2 (avoids stale cached HTML during comparison).
+Still an isolated rehearsal. No live character/quest projection, bot/backend or /play/ changes. Await player judgement; no seal/count change.

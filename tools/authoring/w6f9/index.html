@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Learning to See · Future Sky HUD</title><link rel="stylesheet" href="hud.css?v=veil1"></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Learning to See · Future Sky HUD</title><link rel="stylesheet" href="hud.css?v=veil2"></head>
 <body>
 <main class="hud">
-<header><span class="brand">✧ FUTURE SKY <b>HUD</b></span><span class="study">W6-F9 · DESIGN REHEARSAL</span><a href="/play/">Live game ↗</a></header>
+<header><span class="brand">✧ FUTURE SKY <b>HUD</b></span><span class="location">Pod Room — Wakefulness Module</span><span class="exits">Exits: west</span><button data-panel="notes">Rehearsal</button><a href="/play/">Live game ↗</a></header>
 <section class="scene" aria-label="Present scene">
 <img id="sceneImage" src="/assets/images/world/manzo/triton_central/neptune_lounge/pod/v1/p01.png" alt="Warm grey pod interior with a frosted viewport, hatch, red status light and recessed storage">
 <div class="scene-top"><span>NEPTUNE LOUNGE / POD ROOM</span><span id="stageLabel">01 · Newly awakened</span></div>
@@ -16,11 +16,12 @@
 <p class="quiet" id="quiet">You have a place to attend.<br>There is no need to understand everything yet.</p>
 </aside>
 </section>
-<section class="console"><div class="bearings"><span id="trail">Pod Room › surroundings</span><span>Obvious exits: <strong>west</strong></span></div>
+<section class="console"><span id="trail" hidden></span>
 <form id="commandForm"><label for="command">COMMANDS</label><input id="command" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Try listen" aria-describedby="feedback"><span class="enter" aria-hidden="true">ENTER ↵</span></form>
-<p id="feedback" role="status">Design example only · no live character or saved discoveries.</p>
+<nav aria-label="Reference panels"><button data-panel="character"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M5 21v-3a7 7 0 0 1 14 0v3Z"/></svg>Character</button><button data-panel="inventory"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="7" width="14" height="14" rx="2"/><path d="M9 7V4h6v3M5 12h14M10 12v3h4v-3"/></svg>Inventory</button><button data-panel="quests"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v17H5zM9 2v4M15 2v4M9 10h6M9 14h6M9 18h4"/></svg>Quest Log</button><button data-panel="guide"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 4M12 17h.01"/></svg>Help</button><button data-panel="history"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2 7M3 5v6h6M12 7v5l3 2"/></svg>Recent activity</button></nav>
+<p id="feedback" role="status">Type a command to attend to the room.</p>
 </section>
-<nav aria-label="Reference panels"><button data-panel="character">Character</button><button data-panel="inventory">Inventory</button><button data-panel="quests">Quest Log</button><button data-panel="guide">Help</button><button data-panel="history">Recent activity</button><button data-panel="notes">Design notes</button><span class="stage-hint">Compare: <code>stage developed</code> / <code>stage awakened</code></span></nav>
+
 </main>
 <dialog id="reference" aria-labelledby="panelTitle"><div class="dialog-head"><h2 id="panelTitle"></h2><button id="closePanel" aria-label="Close reference panel">Close ×</button></div><div id="panelContent"></div></dialog>
-<script src="hud.js?v=veil1"></script></body></html>
+<script src="hud.js?v=veil2"></script></body></html>

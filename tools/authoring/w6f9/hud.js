@@ -9,7 +9,7 @@ viewport:{title:"Light through water.",channel:"PERCEPTION / SIGHT",prose:"Dropl
 panels:{title:"The side wall.",channel:"PERCEPTION / SIGHT",prose:"A closed wardrobe and lower storage drawer have recessed grips. Beside them, a small display flickers. A signal tile reads FEED7. Below it is a separate notification: Performance booking.",image:"p02.png",alt:"Pod side wall with storage panels and display",hint:"look · listen · inspect viewport",trail:"side wall"}
 };
 function render(){
- const v=views[state.focus];$("sceneImage").src=root+v.image;$("sceneImage").alt=v.alt;
+ const v=views[state.focus];document.querySelector(".scene").dataset.focus=state.focus;$("sceneImage").src=root+v.image;$("sceneImage").alt=v.alt;
  $("title").textContent=v.title;$("channelLabel").textContent=v.channel;$("prose").textContent=v.prose;$("hint").textContent=v.hint;
  $("trail").textContent="Pod Room › "+v.trail;$("focusLabel").textContent=state.focus==="room"?"Wakefulness Module":v.title;
  $("stageLabel").textContent=state.stage==="awakened"?"01 · Newly awakened":"02 · Developed perception";
@@ -34,10 +34,11 @@ function command(raw){
  else if(text==="hud on"||text==="hud off"){state.device=text.slice(4);reply=state.device==="off"?"The implant recedes. Your senses and inner voice remain.":"The implant is available again.";}
  else if(text==="hud state signal degraded"){state.device="degraded";reply="Instrument readings are unavailable. Ordinary perception remains.";}
  else if(text==="hud state normal"){state.device="on";reply="Instrument display restored.";}
+ else if(text==="rehearsal"){openPanel("notes");reply="Rehearsal notes opened."; }
  else if(text==="history"){openPanel("history");reply="Recent activity opened.";}
  else if(text==="go west"){reply="This rehearsal stays in the pod. Use the Live game link for actual movement.";}
  else{reply="This rehearsal understands look, listen, inspect viewport, inspect panels, stage awakened, stage developed and hud on/off. Type help for more.";}
- render();if($("reference").open && $("panelTitle").textContent==="Character")openPanel("character",false);$("feedback").textContent=reply;
+ render();if($("reference").open && ["Character","Rehearsal"].includes($("panelTitle").textContent))openPanel($("panelTitle").textContent==="Character"?"character":"notes",false);$("feedback").textContent=reply;
  state.history.push({command:raw.trim(),reply,focus:views[state.focus].title,prose:views[state.focus].prose,stage:state.stage,device:state.device,instrument:$("instrument").hidden?"":$("instrumentText").textContent,inward:$("inward").hidden?"":$("inward").querySelector("p").textContent});
  state.history=state.history.slice(-30);return reply;
 }
@@ -46,7 +47,7 @@ const guide=[
 ];
 function el(tag,text){const e=document.createElement(tag);e.textContent=text;return e;}
 function openPanel(name, focus=true){
- const panel=$("panelContent");panel.replaceChildren();$("panelTitle").textContent={guide:"Commands",history:"Recent activity",notes:"Learning to See",character:"Character",inventory:"Inventory",quests:"Quest Log"}[name];
+ const panel=$("panelContent");panel.replaceChildren();$("panelTitle").textContent={guide:"Commands",history:"Recent activity",notes:"Rehearsal",character:"Character",inventory:"Inventory",quests:"Quest Log"}[name];
  document.querySelectorAll("[data-panel]").forEach(b=>b.setAttribute("aria-expanded",String(b.dataset.panel===name)));
  if(["character","inventory","quests"].includes(name)){
  panel.append(el("small","REHEARSAL EXAMPLE · not your live character"));
@@ -60,6 +61,7 @@ function openPanel(name, focus=true){
  else if(name==="guide"){const dl=document.createElement("dl");guide.forEach(([a,b])=>{dl.append(el("dt",a),el("dd",b));});panel.append(dl);}
  else if(name==="history"){if(!state.history.length)panel.append(el("p","Your observations will appear here."));state.history.slice().reverse().forEach(h=>{panel.append(el("h3","> "+h.command),el("small",h.stage+" · implant "+h.device),el("p",h.reply),el("p",h.focus+" "+h.prose));if(h.instrument)panel.append(el("p","Instrument (illustrative): "+h.instrument));if(h.inward)panel.append(el("p","Inner voice (illustrative): "+h.inward));});}
  else{
+ const status=el("p",$("stageLabel").textContent+" · "+$("deviceLabel").textContent);status.className="review-state";panel.append(status);
  ["One room. A developing capacity to perceive it.","This is an isolated design rehearsal with fictional capability examples. It does not read or alter your character, advance time or unlock abilities. Reloading resets this example.",
  "The room, viewport and side-wall descriptions and images come from the existing pod material. The listening passage, acoustic analysis and inner association are illustrative proposals, not new canon.",
  "Try listen, then stage developed, then hud off. The instrument reading should disappear; hearing and the inward impression should remain. Try hud state signal degraded to see an explicitly unavailable reading.",

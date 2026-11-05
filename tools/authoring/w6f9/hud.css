@@ -15,3 +15,44 @@ dialog{position:fixed;inset:60px 24px auto auto;margin:0;width:min(365px,calc(10
 @media(max-width:900px){header{padding:0 16px;gap:12px}.study{font-size:9px}.attention{margin:16px;width:calc(100% - 32px);padding:16px 19px}body:has(dialog[open]) .attention{width:calc(100% - 390px)}dialog{right:16px;width:342px}.layers{flex-direction:column;gap:12px}.stage-hint{display:none}nav{padding:0 8px}nav button{padding:11px 10px}.console{padding-inline:16px}}
 @media(max-width:650px){.hud{grid-template-rows:42px 1fr auto auto}.study{display:none}.brand{margin-right:auto}.scene-top{left:12px;right:12px;top:52px;font-size:9px}.scene-bottom{right:12px;top:82px}.attention{max-height:calc(100dvh - 265px);margin:12px;width:calc(100% - 24px)}h1{font-size:18px}p{font-size:14px}.console{padding:9px 12px 5px}form{gap:10px}label{font-size:9px}.enter{display:none}#feedback{margin-left:0;font-size:10px}nav{overflow-x:auto;min-height:42px}nav button{font-size:12px;padding:12px 10px}.bearings{font-size:9px}dialog{inset:52px 12px auto;width:calc(100% - 24px);height:calc(100dvh - 220px)}body:has(dialog[open]) .attention{visibility:hidden}}
 @media(max-height:650px) and (min-width:651px){.attention{margin:16px 24px;padding:12px 18px;max-height:calc(100dvh - 190px)}h1{font-size:18px;margin:4px 0}p{font-size:14px}.scene-top{top:52px}.scene-bottom{top:85px}.hint{margin-top:7px}dialog{top:52px;height:calc(100dvh - 205px)}}
+
+/* Cinematic veil: compact frame and quieter reading hierarchy. */
+:root { --panel: rgba(9, 20, 16, .86); --line: #c2a76840; }
+.hud { grid-template-rows: 40px 1fr auto; }
+header { padding: 0 22px; gap: 20px; font-size: 10px; background: #08120dd9; }
+header .location { font: 13px Georgia, serif; color: var(--ink); }
+header .exits { margin-left: auto; color: var(--muted); white-space: nowrap; }
+header button { font: 10px ui-monospace, monospace; padding: 7px 9px; color: var(--muted); }
+header a { font-size: 10px; }
+.scene { inset: 40px 0 79px; }
+.scene img { object-position: 50% 72%; }
+.scene[data-focus="viewport"] img { object-position: 42% 45%; }
+.scene[data-focus="panels"] img { object-position: 65% 58%; }
+.scene:after { background: linear-gradient(#0002, transparent 20%, transparent 72%, #030a0733); }
+.scene-top, .scene-bottom { display: none; }
+.attention { margin: 0 26px 24px; width: min(660px, calc(100% - 52px)); padding: 16px 21px; border-color: #d0b47633; border-radius: 10px; background: linear-gradient(115deg, #091410e8, #0c1914d6); box-shadow: 0 10px 35px #0007, 0 0 22px #0003; backdrop-filter: blur(10px); max-height: calc(100dvh - 180px); }
+h1 { font-size: 19px; font-weight: 600; margin: 6px 0 8px; }
+.attention p { font-size: 15px; font-weight: 400; line-height: 1.55; }
+.eyebrow { font-size: 9px; letter-spacing: .12em; }
+.attention .hint { font-size: 10px; color: #c5c9b9; margin-top: 11px; }
+.layers { gap: 17px; }
+.layers p { font-size: 14px; }
+.layers small { font-size: 9px; }
+.console { display: grid; grid-template-columns: minmax(300px, 1fr) auto; column-gap: 20px; padding: 10px 22px 7px; background: #08130ee8; border-top-color: #c2a76855; }
+form { gap: 13px; }
+label { font-size: 10px; }
+input { font-size: 15px; padding: 9px 12px; border-color: #c9ae7680; border-radius: 6px; }
+input:focus-visible { outline: 1px solid #e6ce91; outline-offset: 2px; }
+.enter { display: none; }
+#feedback { grid-column: 1 / -1; margin: 5px 0 0 82px; font-size: 10px; min-height: 14px; font-weight: 400; }
+nav { grid-row: auto; padding: 0; gap: 0; background: none; min-height: 36px; }
+nav button { display: inline-flex; align-items: center; gap: 7px; padding: 9px 11px; font-size: 12px; border-radius: 3px; }
+.nav-icon { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.35; stroke-linecap: round; stroke-linejoin: round; color: var(--gold); flex: none; }
+dialog { top: 56px; right: 22px; height: calc(100dvh - 156px); border-color: #c2a76866; background: #091410eb; padding: 20px 23px; }
+body:has(dialog[open]) .attention { width: min(660px, calc(100% - 438px)); }
+.review-state { padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+@media (min-width:1600px) { .attention { width: 720px; padding: 18px 24px; } .attention p { font-size: 16px; } .attention .hint { font-size: 11px; } }
+@media (max-width:1100px) { .console { grid-template-columns: 1fr; padding: 9px 18px 5px; gap: 0; } nav { grid-row: 3; justify-content: center; } #feedback { grid-row: 2; margin-left: 80px; } .scene { bottom: 116px; } dialog { height: calc(100dvh - 190px); } }
+@media (max-width:900px) { header { gap: 12px; padding: 0 16px; } header .location { font-size: 12px; } .attention { margin: 0 18px 20px; } body:has(dialog[open]) .attention { width: calc(100% - 390px); } dialog { right: 16px; } .layers { flex-direction: column; } }
+@media (max-width:650px) { .hud { grid-template-rows: 40px 1fr auto; } header { gap: 8px; flex-wrap: wrap; } header .brand b, header a { display: none; } header .brand { margin-right: 0; } header .location { font-size: 10px; } header .exits { font-size: 9px; } header button { padding: 5px; font-size: 9px; } .attention { margin: 0 12px 16px; width: calc(100% - 24px); max-height: calc(100dvh - 215px); padding: 14px 17px; } .attention p { font-size: 14px; } h1 { font-size: 18px; } .console { padding-inline: 12px; } #feedback { margin-left: 0; } nav { justify-content: start; overflow-x: auto; } nav button { padding: 10px 9px; font-size: 11px; gap: 5px; } .nav-icon { width: 13px; height: 13px; } dialog { top: 51px; right: 12px; width: calc(100% - 24px); height: calc(100dvh - 190px); } }
+@media (max-height:650px) and (min-width:651px) { .attention { margin: 0 22px 16px; padding: 12px 18px; max-height: calc(100dvh - 150px); } .attention p { font-size: 14px; } dialog { top: 50px; } }
