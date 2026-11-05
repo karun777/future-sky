@@ -1,6 +1,6 @@
 # W6-F9 — Learning to See: The Future Sky HUD
 
-Status: ACTIVE / DESIGN REVIEW — 5 November 2026, on Karun's acceptance of the next-step proposal. W7-F7 sealed on 5 November after player screenshots confirmed HUD equipment change and matching Discord fit. This is the next design return. No seal/count increment. Next unallocated W6-F10.
+Status: SEALED — 5 November 2026. Accepted presentation design and isolated browser-tested rehearsal; live integration deferred. See the seal checkpoint below. Next unallocated W6-F10.
 
 ## Purpose
 
@@ -105,3 +105,27 @@ Implemented dedicated grid areas: illustration left (roughly 72% at laptop size)
 Checked 1512x784 and 1366x600, plus 390x844 narrow fallback: room image, Inventory/Quest Log replacement and close, developed listening with separately labelled instrument/inner voice, internally scrolling content and persistent commands. No console errors observed. Public files hash-verified. Review URL: /assets/experiments/w6-f9/index.html?v=side1.
 
 This is the current presentation direction, superseding Cinematic veil overlays. Rehearsal remains isolated; live /play/, players and bot unchanged. W6-F9 still open pending review.
+
+## Seal — 5 November 2026
+
+Karun accepted the image-left, narrative-right rehearsal ("that looks great ... we can work with this"), reviewed the bounded close-out, then authorised the Git entry.
+
+**SEALED for the accepted presentation design and isolated, browser-tested perception rehearsal.** Implementation checkpoint: bb5fa7a on expression/w6-f9-learning-to-see. Review: https://future-sky.net/assets/experiments/w6-f9/index.html?v=side1.
+
+Accepted frame: large unobstructed illustration on the left; smaller readable narrative in a dedicated right column; persistent commands below; Character, Inventory, Quest Log and other references temporarily occupy the right column and restore attention on closing. Type to act; click to view. This supersedes the cinematic text-overlay experiments.
+
+The rehearsal distinguishes ordinary perception, technological instrumentation and independent inner voice. Off/degraded instrument comparisons do not remove senses or intuition. Capability examples and character/inventory/quest content remain explicitly fictional fixtures.
+
+Evidence: published source hashes matched; browser checks documented above across laptop, short-window and narrow layouts; inspection and reference switching, keyboard access and independent perception checked; no console errors observed in those checks; author accepted final composition. No claim of a new runtime regression-suite run or live Discord/web integration test.
+
+Retained limits and follow-ups:
+- Live character, inventory, discovered quest/notice projections and cross-client agreement remain integration requirements. Broader live acceptance language earlier in this document is deferred, not silently counted as passed.
+- Artwork standardisation is accepted as follow-up direction; exact landscape ratio/dimensions and composition guide remain undecided. Keep artwork unobstructed and avoid losing important content.
+- Test longer real passages, discovery restrictions, equipment changes and authenticated recovery when integrated.
+- W7-F7 wardrobe artwork, raw-Markdown confirmation polish, fresh-character first-selection checks and pod-delivery web adapter remain outstanding.
+- No upgrade/progression system, general sensory-return simulation, shared persistent history or live quest engine was added.
+- Chapter 1 remains paused. No /play/ replacement, backend/player mutation, bot restart or main-branch merge is part of this seal.
+
+Counts: **34 sealed feathers total; W6 eight**. Other wings unchanged. Next unallocated W6-F10 and W7-F8; no next feather allocated by this seal.
+
+This seal supersedes earlier ACTIVE/REVIEW statuses and pending-author-acceptance statements for this bounded deliverable. Documentary close-out only.
