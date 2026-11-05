@@ -59,3 +59,9 @@ Browser checks used the authenticated static preview at /assets/experiments/w7-f
 Read-only deployment preflight passed. Production activation is NOT complete: sudo requires a password, and Desktop Commander returned "Command not allowed" for the noninteractive activation attempt. No service stop or production overlay occurred. The existing /play/ remains the sealed W7-F7 frame. The review preview uses the old API and explicitly reports new records unavailable until the backend upgrade; it is not proof of the new live projection.
 
 Operator next step: run the activation command above on Neptune Lounge, then sign in again. Complete the live Character/Inventory/Quest Log comparison and refresh/reconnection acceptance before asking to seal. No player record was modified to manufacture acceptance. W7-F8 remains active; 34 sealed unchanged.
+
+## Operator activation verified — 5 November 2026
+
+Karun ran the prepared activation command. Independent verification subsequently found all seven live files equal to the manifest source hashes, all four public assets equal to source, futuresky-bot.service active, /play/ returning 200 and anonymous /play/api/me returning 401. This supersedes the earlier pending-activation checkpoint.
+
+The browser loads the new live frame and correctly requests sign-in after the service restart. Authenticated Character/Inventory/Quest Log comparison and post-restart continuity remain pending the user's sign-in. No seal, count increment or Chapter 1 activation.
