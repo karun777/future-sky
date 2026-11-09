@@ -1,6 +1,6 @@
 # Future Sky authenticated HUD
 
-Current implementation: [W7-F8 — Bringing the HUD to Life](../../../../docs/wings/W7-F8_BRINGING_THE_HUD_TO_LIFE.md).
+Current implementation: [W7-F8 — Bringing the HUD to Life](../../../../docs/wings/W7-F8_BRINGING_THE_HUD_TO_LIFE.md#seal--9-november-2026), sealed 9 November 2026. See its seal for live acceptance and retained follow-ups.
 Entry: https://future-sky.net/play/ (OAuth returns to the same assets at /assets/experiments/w6-f8/live/index.html).
 
 The directory name is retained for compatibility. This is a live authenticated client, not the isolated W6-F9 design rehearsal. The accepted layout gives the illustration its own left area and a right reading/reference column. Narrow screens stack these regions.

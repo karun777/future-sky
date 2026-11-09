@@ -1,10 +1,14 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W7 Engine / W7-F8 — Bringing the HUD to Life, ACTIVE**. [Implementation and acceptance](wings/W7-F8_BRINGING_THE_HUD_TO_LIFE.md). Integrating the accepted W6-F9 image-left, narrative-right HUD with saved player state. Next unallocated W7-F9 and W6-F10. Chapter 1 / W4 stays paused; Discord supported.
-**34 sealed wing feathers: W4 has nine, W6 eight, W7 seven; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
+Current home/checkpoint: **W7 Engine / W7-F8 — Bringing the HUD to Life, SEALED 9 November 2026**. [Seal and retained limits](wings/W7-F8_BRINGING_THE_HUD_TO_LIFE.md#seal--9-november-2026). Accepted HUD presentation is integrated with saved player state and Discord parity; refresh, restart/sign-in and operator-reported internet recovery verified. Next unallocated W7-F9 and W6-F10. Chapter 1 / W4 stays paused; Discord supported.
+**35 sealed wing feathers: W4 has nine, W6 eight, W7 eight; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
+
+## Seal return — 9 November 2026
+
+[W7-F8 sealed](wings/W7-F8_BRINGING_THE_HUD_TO_LIFE.md#seal--9-november-2026) on Karun's instruction after live Discord parity, personal-delivery correction and recovery acceptance. Total 35, W7 eight. Fresh-character live checks, Discord-only collection/playback, artwork standards and durable activity remain explicit follow-ups. No next feather allocated; Chapter 1 paused. Documentary seal only.
 
 ## Seal return — 5 November 2026
 
@@ -41,8 +45,8 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
 | W4 Play | 9 | [W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F13 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
-| W6 Expression | 8 | [W6-F9](wings/W6-F9_LEARNING_TO_SEE.md#seal--5-november-2026) | W6-F5 review; live HUD integration and artwork standards deferred; next unallocated W6-F10 |
-| W7 Engine | 7 | [W7-F7](wings/W7-F7_FROM_ATTENTION_TO_AGENCY.md) | [W7-F8 — active](wings/W7-F8_BRINGING_THE_HUD_TO_LIFE.md); pod-delivery web adapter follow-up; next unallocated W7-F9 |
+| W6 Expression | 8 | [W6-F9](wings/W6-F9_LEARNING_TO_SEE.md#seal--5-november-2026) | W6-F5 review; live HUD integrated by W7-F8; artwork standards deferred; next unallocated W6-F10 |
+| W7 Engine | 8 | [W7-F8](wings/W7-F8_BRINGING_THE_HUD_TO_LIFE.md#seal--9-november-2026) | Pod-delivery collection web adapter and fresh-character live checks remain follow-ups; next unallocated W7-F9 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
 [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md) is reviewed and sealed. Karun selected finding one's way through space, memory or relationships as the creative doorway; specific mechanisms remain open.

@@ -1,9 +1,9 @@
 # W7-F8 — Bringing the HUD to Life
 
-Status: ACTIVE — 5 November 2026. Allocated on Karun's instruction.
+Status: SEALED — 9 November 2026, on Karun's instruction. Allocated 5 November 2026.
 Home: W7 Engine. Branch: engine/w7-f8-bringing-the-hud-to-life.
 Baseline: W6-F9 seal 5b18f2f; live W7-F7 file hashes independently matched before changes.
-34 sealed feathers; W7 seven. This feather is not sealed. Next unallocated W7-F9 and W6-F10. Chapter 1 / W4 remains paused.
+35 sealed feathers; W7 eight. This feather is sealed. Next unallocated W7-F9 and W6-F10. Chapter 1 / W4 remains paused.
 
 ## Bounded outcome
 
@@ -207,3 +207,38 @@ were not freshly exercised live in this review; artwork standardisation remains
 W6 follow-up. Chapter 1 remains paused. No new story progression is implied.
 Review complete does not itself seal the feather: W7-F8 remains ACTIVE pending
 seal instruction; no sealed-count increment or main-branch merge performed.
+
+## Seal — 9 November 2026
+
+Karun authorised closure: “ok let's seal”. W7-F8 is SEALED at its bounded
+existing-character live-HUD scope. This seal supersedes dated ACTIVE/pending
+checkpoints above; those remain the historical evidence trail.
+
+Delivered and live: accepted unobstructed image-left/text-right presentation,
+commands directly beneath the active reading panel, Character/Inventory/Quest Log
+from saved owner-only state, shared Discord discoveries, and personal delivery
+parity. Existing walking, inspection and wardrobe authority remain shared.
+The correction implementation is e613cf1; review and live evidence are recorded
+through 2a1b037. The 70 web backend and 23 frontend tests passed for the correction;
+earlier full-suite results remain dated evidence, not a new full-suite claim.
+
+Acceptance includes rendered Discord/web comparison, live delivery correction,
+Refresh retaining Inventory, restart/session-expiry/sign-in recovery, and Karun's
+confirmed internet-interruption/reconnection check. The latter is operator-reported;
+lost-mutation-response no-replay remains automated evidence only.
+
+Carry forward without reopening this delivered scope:
+- Fresh-character first discovery and first outfit still need a live walkthrough.
+- Pod-delivery collection and FEED7 playback remain Discord-only.
+- Artwork standardisation and dedicated wardrobe imagery remain W6 follow-ups.
+- Shared durable activity history and implant-setting actions remain separate work.
+
+Shared-wing return: W6's accepted presentation is now integrated into live play;
+W3's saved character/equipment distinctions and W4's existing knowledge/custody are
+preserved; W5's world continuity remains active while reading; W8 retains the exact
+deployment, rollback and acceptance record. One home feather/count in W7.
+
+35 sealed feathers: W7 eight, W6 eight, W4 nine, all other wings two each.
+Next unallocated IDs: W7-F9 and W6-F10; neither is allocated by this seal.
+Chapter 1 / W4 stays paused. No runtime change, player-state change, service restart
+or main-branch merge accompanies this documentary seal.
