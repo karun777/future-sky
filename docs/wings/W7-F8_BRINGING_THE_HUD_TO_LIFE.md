@@ -165,3 +165,23 @@ activation is pending. Sign in again afterwards. Then verify the rendered delive
 section against Discord and complete the interrupted live connection/recovery test.
 Automated no-replay/reconnection tests pass but do not replace that live check.
 W7-F8 remains ACTIVE/unsealed; Chapter 1 paused.
+
+### Delivery correction verified live — 9 November 2026, 15:26 Perth
+
+Operator activation completed. All three installed files match the correction
+manifest; public HTML and game.js match; futuresky-bot.service is active.
+After the restart the HUD requested sign-in. Following operator sign-in, the
+rendered Inventory contains the exact three Discord personal-delivery entries:
+opened capsule containing the antique box, USB marked tunes, Queen’s music — received.
+Equipped Freeform Attire and all four bag quantities still agree. Explicit Refresh
+preserves the open Inventory and its contents. Pod Room location and both Quest Log
+notices (FEED7 and remembered booking) returned correctly. Delivery omission closed.
+No movement, equipment change or story action was used for this verification.
+
+Restart/session-expiry/sign-in recovery is now observed live. A deliberately
+interrupted internet connection remains unverified: the available browser control
+has no offline/network-emulation capability. This is distinct from the passing
+automated stale-state and no-replay tests. Operator check: disconnect for at least
+15 seconds with HUD visible, confirm Updates paused and disabled command input,
+reconnect and confirm Up to date plus unchanged holdings/notices. Do not send a
+mutation merely to test the outage. W7-F8 remains ACTIVE/unsealed.
