@@ -1,11 +1,24 @@
 # W7-F9 — Waking Into the Window
 
-Status: ACTIVE — 9 November 2026, authorised by Karun.
+Status: PARKED / UNSEALED — 9 November 2026, at Karun's request.
 Home: W7 Engine. Branch: engine/w7-f9-waking-into-the-window.
 Baseline: W7-F8 seal 524411c. Working checkout remains physically at
 /home/efiishent/future-sky-worktrees/w7-f8; its branch is W7-F9.
-35 sealed feathers; W7 eight. Next unallocated W7-F10 and W6-F10.
+35 sealed feathers; W7 eight. W7-F10 is now allocated; next unallocated W7-F11 and W6-F10.
 Chapter 1 / W4 stays paused.
+
+## Current return checkpoint — adjacent creation/reset feather
+
+Source checkpoint: `96ac40f`; reviewed 9 November 2026.
+Karun has explicitly requested [W7-F10 — Beginning Again](W7-F10_BEGINNING_AGAIN.md)
+to review creation and establish a reversible reset using Efiishent. W7-F9 is
+parked until that separately reviewed work is ready. Prior prohibitions below
+against resetting merely to manufacture acceptance retain their intent: no reset
+has occurred, and live reset requires the concrete W7-F10 plan. A reset character
+on an existing account does not verify new-account onboarding.
+Existing-player handoff and activation are verified; fresh-character live
+acceptance remains pending. Historical ACTIVE/deployment-pending statements below
+describe their dated checkpoints, not the current status.
 
 ## Bounded outcome
 

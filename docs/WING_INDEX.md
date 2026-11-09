@@ -1,10 +1,20 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W7 Engine / W7-F9 — Waking Into the Window, ACTIVE 9 November 2026**. [Implementation and acceptance](wings/W7-F9_WAKING_INTO_THE_WINDOW.md). Existing Discord awakening-to-HUD handoff and fresh-arrival verification; pilot access unchanged. W7-F8 remains sealed. Next unallocated W7-F10 and W6-F10. Chapter 1 / W4 stays paused.
+Current home/checkpoint: **W7 Engine / W7-F10 — Beginning Again: Character Creation & Reset, DRAFT FOR REVIEW 9 November 2026**. [Complete feather document](wings/W7-F10_BEGINNING_AGAIN.md). Allocated on Karun's instruction as adjacent creation/reset work. [W7-F9](wings/W7-F9_WAKING_INTO_THE_WINDOW.md) is PARKED/unsealed; its existing-player live handoff is verified, fresh-character acceptance pending. W7-F8 remains sealed. Next unallocated W7-F11 and W6-F10. Chapter 1 / W4 stays paused.
 **35 sealed wing feathers: W4 has nine, W6 eight, W7 eight; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
+
+## Adjacent-feather return — 9 November 2026
+
+W7-F10 is allocated for review on branch `engine/w7-f10-beginning-again`,
+forked from W7-F9 checkpoint `96ac40f`. Physical checkout remains
+`/home/efiishent/future-sky-worktrees/w7-f8`. The complete review draft is committed
+with this register and W7-F9's parked checkpoint. No reset, code implementation,
+deployment or seal is implied. Resume W7-F9 after the approved creation/reset
+work provides trustworthy fresh-character evidence; new-account authentication
+remains a separate claim.
 
 ## Seal return — 9 November 2026
 
