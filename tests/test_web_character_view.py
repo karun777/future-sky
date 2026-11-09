@@ -71,6 +71,35 @@ class WebCharacterViewTests(unittest.TestCase):
         self.assertEqual(self.view()["capabilities"],
                          {"read_only": True, "actions": []})
 
+    def test_personal_delivery_matches_discord_without_mutation_or_internal_leaks(self):
+        from fsbot.terrace_delivery import KEY, inventory_lines
+        c = self.storage.characters["123"]
+        c["extra"][KEY] = {
+            "version": 1, "stage": "usb_collected", "owner": "123",
+            "objects": {kind: {"instance_id": f"123:terrace:{kind}:v1",
+                               "holder": "123", "addressee": "Pilot"}
+                        for kind in ("package", "box", "usb")},
+            "discoveries": [], "history": ["private history"],
+        }
+        c["extra"]["queen_audience_v1"] = {"stage": "received"}
+        before = deepcopy(self.storage.characters)
+        delivery = self.view()["inventory"]["personal_delivery"]
+        self.assertEqual(delivery, inventory_lines(c))
+        self.assertEqual(len(delivery), 3)
+        self.assertNotIn("private history", str(self.view()))
+        self.assertNotIn("instance_id", str(self.view()))
+        delivery.append("Changed")
+        self.assertEqual(before, self.storage.characters)
+        c["extra"][KEY]["secured_in_pod"] = True
+        self.assertEqual(self.view()["inventory"]["personal_delivery"], [])
+
+    def test_absent_or_invalid_delivery_is_safe(self):
+        from fsbot.terrace_delivery import KEY
+        self.assertEqual(self.view()["inventory"]["personal_delivery"], [])
+        self.storage.characters["123"]["extra"][KEY] = {"version": 99}
+        self.assertEqual(self.view()["inventory"]["personal_delivery"],
+                         ["Delivery record unavailable."])
+
 
 if __name__ == "__main__":
     unittest.main()

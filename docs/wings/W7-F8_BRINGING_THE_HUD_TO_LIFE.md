@@ -134,3 +134,34 @@ acceptance result, not a full pass. Address the delivery omission and verify it,
 then complete the deliberately interrupted live connection/recovery check.
 Fresh-character first discovery and first outfit live checks remain unverified.
 W7-F8 stays ACTIVE/unsealed; Chapter 1 remains paused; sealed count unchanged.
+
+### Personal delivery correction prepared — 9 November 2026
+
+The owner-only web projection now reuses the same inventory_lines reader as Discord,
+including its unavailable-record fallback. Inventory renders a Personal delivery
+section only when there are entries, using textContent. Polling updates the section;
+sign-out clears its contents. No delivery actions, new discoveries, or Chapter 1
+advancement are added. The empty-inventory hint accounts for personal holdings.
+
+Validation: 70 web backend tests and 23 frontend behaviour tests pass. New coverage
+checks Discord parity, no internal delivery fields exposed, no mutation, absent and
+malformed records, pod-secured holdings, safe text rendering, updates and sign-out.
+The script asset version assertion was updated for the new cache-busting URL.
+
+A selective three-file manifest and wrapper are prepared at
+`tools/deploy/w7f8/delivery/`. Read-only preflight passes against the exact current
+live baseline. The wrapper reuses the existing stopped-service backup, data-hash
+checks, code-only rollback and reconnect health checks. The original activation
+manifest is unchanged. No production files have been installed in this correction.
+
+Operator activation on Neptune Lounge:
+
+```sh
+sudo python3 /home/efiishent/future-sky-worktrees/w7-f8/tools/deploy/w7f8/delivery/activate.py
+```
+
+Administrator restart access is unavailable through the current connection; operator
+activation is pending. Sign in again afterwards. Then verify the rendered delivery
+section against Discord and complete the interrupted live connection/recovery test.
+Automated no-replay/reconnection tests pass but do not replace that live check.
+W7-F8 remains ACTIVE/unsealed; Chapter 1 paused.

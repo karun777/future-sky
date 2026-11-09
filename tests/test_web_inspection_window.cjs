@@ -227,3 +227,21 @@ test('sheet values render as text and private fields clear on sign-out',async()=
  h.handler=async()=>response(401,'expired');await h.tick(4000);
  assert.equal(h.elements['character-details'].textContent,'');
 });
+
+test('personal delivery appears safely, updates and clears on signout',async()=>{
+ const h=await setup();
+ assert.equal(h.elements['personal-delivery-section'].hidden,true);
+ h.data.inventory.personal_delivery=['Opened capsule containing the antique box','USB marked tunes','<img src=x>'];
+ await h.tick(4000);
+ assert.equal(h.elements['personal-delivery-section'].hidden,false);
+ assert.equal(h.elements['personal-delivery'].children.length,3);
+ assert.equal(h.elements['personal-delivery'].querySelectorAll('img').length,0);
+ assert.doesNotMatch(h.elements['inventory-guidance'].textContent,/Nothing is carried/);
+ h.data.inventory.personal_delivery=[];await h.tick(4000);
+ assert.equal(h.elements['personal-delivery-section'].hidden,true);
+ assert.equal(h.elements['personal-delivery'].children.length,0);
+ h.data.inventory.personal_delivery=['USB marked tunes'];await h.tick(4000);
+ h.handler=async()=>response(401,{});await h.tick(4000);
+ assert.equal(h.elements['personal-delivery'].children.length,0);
+ assert.equal(h.elements['personal-delivery-section'].hidden,true);
+});

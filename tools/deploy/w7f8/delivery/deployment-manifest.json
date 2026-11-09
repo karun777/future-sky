@@ -1,0 +1,20 @@
+{
+  "feather": "W7-F8 delivery correction",
+  "files": {
+    "bot/fsbot/web_character_view.py": {
+      "target": "bot/fsbot/web_character_view.py",
+      "source": "8116bf8cd10490cbfcd5c3ff8263457d1af51649dbc164b96dea30e5a814c758",
+      "live": "fd96c9ba2fee9b48c43062b228d7860b3313ee372c04d374aab853bced7d663c"
+    },
+    "tools/authoring/w6f8/live/index.html": {
+      "target": "assets/experiments/w6-f8/live/index.html",
+      "source": "c744375e8fdc2033ee7da9a22c25afafcac4c075de72d0c7a4204aa450297395",
+      "live": "7810adb564177ac1976a969f597f8a9cc07bc3dcd9bdac27aa60b21f3a8809c5"
+    },
+    "tools/authoring/w6f8/live/game.js": {
+      "target": "assets/experiments/w6-f8/live/game.js",
+      "source": "ba8e6f6e1301e043a3d38885c778c59906276435e690f5063ecf3463fabcb4c8",
+      "live": "e1212ee8e545de28f688375716616e9c718b5ea8953f111d5c7dfe51e22c7192"
+    }
+  }
+}

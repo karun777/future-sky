@@ -104,7 +104,8 @@
     clearTimeout(timer);
     el("game").hidden = true; el("signed-out").hidden = false;
     ["character-name", "credits", "room-title", "room-description", "last-sync", "current-location", "display-state"].forEach(id => text(id, ""));
-    ["exits", "inventory", "equipped", "recent", "quest-entries", "character-details"].forEach(id => el(id).replaceChildren());
+    ["exits", "inventory", "personal-delivery", "equipped", "recent", "quest-entries", "character-details"].forEach(id => el(id).replaceChildren());
+    el("personal-delivery-section").hidden = true;
     el("room-image").removeAttribute("src");
     changes.length = 0; exitKey = null;
     commandHistory.length = 0; el("command-history").replaceChildren();
@@ -204,6 +205,11 @@
     const description = data.location.description || "";
     if (!previous || description !== previous.location.description) prose(description);
     if (!previous || JSON.stringify(previous.inventory) !== JSON.stringify(data.inventory)) {
+      const delivery = data.inventory.personal_delivery || [];
+      el("personal-delivery-section").hidden = !delivery.length;
+      el("personal-delivery").replaceChildren(...delivery.map(value => {
+        const li = document.createElement("li"); li.textContent = value; return li;
+      }));
       list("inventory", data.inventory.bag.map(item => item.name + " × " + item.quantity));
       list("equipped", Object.entries(data.inventory.equipped).filter(([, item]) => item)
         .map(([slot, item]) => slot.replaceAll("_", " ") + ": " + item.name));
@@ -215,7 +221,7 @@
       exitKey = key;
     }
     notice("walk-notice", data.walking?.notice || (exits.length ? "" : "No walking exits available in this view."));
-    text("inventory-guidance", !data.inventory.bag.length && !Object.values(data.inventory.equipped).some(Boolean) ?
+    text("inventory-guidance", !data.inventory.bag.length && !Object.values(data.inventory.equipped).some(Boolean) && !(data.inventory.personal_delivery || []).length ?
       "Nothing is carried or equipped. If you have returned from recovery, check !pod_delivery in Discord for belongings stored in your pod." :
       "In the pod, type wear <name> to put on clothing you carry.");
     view = data; renderWardrobe(); renderObservationActions(); updateScene();

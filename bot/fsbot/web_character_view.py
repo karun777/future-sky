@@ -11,6 +11,7 @@ from fsbot.lounge_media import lounge_image
 from fsbot.pod_media import pod_image
 from fsbot.hud_view import discovered_entries, display_view
 from fsbot.utils import STAT_KEYS
+from fsbot.terrace_delivery import inventory_lines, TerraceError
 
 
 class CharacterAccessDenied(Exception):
@@ -69,6 +70,10 @@ def character_view(storage, verified_discord_id, *, allowed_discord_ids):
         for slot, key in _object(c.get("equipped")).items()
         if isinstance(slot, str)
     }
+    try:
+        delivery = inventory_lines(c)
+    except TerraceError:
+        delivery = ["Delivery record unavailable."]
     room_id = _text(c.get("current_room"))
     room = _object(storage.rooms.get(room_id))
     image = None
@@ -98,7 +103,7 @@ def character_view(storage, verified_discord_id, *, allowed_discord_ids):
         "location": {"id": None if c.get("in_cube") else room_id,
                      "title": None if c.get("in_cube") else _text(room.get("title")),
                      "image": image},
-        "inventory": {"bag": bag, "equipped": equipped},
+        "inventory": {"bag": bag, "equipped": equipped, "personal_delivery": delivery},
         "journal": {"entries": discovered_entries(c)},
         "sheet": sheet,
         "display": display_view(c),
