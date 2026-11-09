@@ -1,0 +1,35 @@
+{
+  "feather": "W7-F9",
+  "files": {
+    "bot/fsbot/web_handoff.py": {
+      "target": "bot/fsbot/web_handoff.py",
+      "source": "4cec100522e15afa66afaa03c0de4d4fba412adfd37f33b2323813a5c2487a5c",
+      "live": null
+    },
+    "bot/fsbot/cogs/arrival.py": {
+      "target": "bot/fsbot/cogs/arrival.py",
+      "source": "ea6a44b5c9db3d42f3d5220b1dd6a5f5ff7ca4053dfa59c66c96182b3e32c44d",
+      "live": "72095fe6a88a4f034df5c8fc1a33a4d43bca346338b19bd4709eaf38d48c53a7"
+    },
+    "bot/fsbot/cogs/inspection.py": {
+      "target": "bot/fsbot/cogs/inspection.py",
+      "source": "87998ae781747e3fd1ffff3b8071f01af7f766603066b0ba0fbe7bce87680259",
+      "live": "0b7997c4a650b07151ce856506333eaefc909714b4cbdd9a166b1d4ed1ae4c52"
+    },
+    "bot/fsbot/cogs/web_portal.py": {
+      "target": "bot/fsbot/cogs/web_portal.py",
+      "source": "33df4d0307709ce5291b3f68b71e7d43fc85b51c1c45d0cbf3a5f963ed92910f",
+      "live": "ec62345a46bf43d122606beed22d798d81261f84d9cb118bfaadc5ebc4627df1"
+    },
+    "tools/authoring/w6f8/live/index.html": {
+      "target": "assets/experiments/w6-f8/live/index.html",
+      "source": "c0275708fd5d478104c9fcb7deb63e26c177cb1afc866b52298bb6a7043358dd",
+      "live": "c744375e8fdc2033ee7da9a22c25afafcac4c075de72d0c7a4204aa450297395"
+    },
+    "tools/authoring/w6f8/live/game.js": {
+      "target": "assets/experiments/w6-f8/live/game.js",
+      "source": "7d3ccda9e4f742cbcab6b56deeb498e1df4d729be212a5a3e5c5e7ac8d9adec4",
+      "live": "ba8e6f6e1301e043a3d38885c778c59906276435e690f5063ecf3463fabcb4c8"
+    }
+  }
+}

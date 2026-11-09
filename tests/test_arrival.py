@@ -37,6 +37,38 @@ class ArrivalTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn("Yours.",self.ctx.text())
         self.assertNotIn("do not recognise",self.ctx.text())
         self.assertEqual(json.loads(self.path.read_text())[uid],self.storage.characters[uid])
+    def enable_window(self):
+        original = self.bot.get_cog
+        portal = SimpleNamespace(allowed_ids=frozenset({str(self.ctx.author.id)}))
+        self.bot.get_cog = lambda name: portal if name == "WebPortalCog" else original(name)
+
+    async def test_saved_arrival_offers_authorised_window_and_resume(self):
+        self.enable_window()
+        await self.fill(); await self.act("review"); await self.act("awaken")
+        self.assertIn("Open your game window", self.ctx.text())
+        self.assertIn("https://future-sky.net/play/", self.ctx.text())
+        self.ctx.messages.clear()
+        before = deepcopy(self.storage.characters)
+        await InspectionCog.awaken.callback(self.inspection, self.ctx)
+        self.assertIn("Open your game window", self.ctx.text())
+        self.assertEqual(before, self.storage.characters)
+
+    async def test_preview_and_failed_save_never_offer_live_window(self):
+        self.enable_window()
+        await self.fill(preview=True); await self.act("review"); await self.act("awaken")
+        self.assertNotIn("Open your game window", self.ctx.text())
+        await self.act("cancel"); self.ctx.messages.clear()
+        await self.fill(); await self.act("review")
+        self.storage.fail_next = True
+        await self.act("awaken")
+        self.assertNotIn("Open your game window", self.ctx.text())
+
+    async def test_unadmitted_player_can_create_without_window_promise(self):
+        self.bot.get_cog = lambda name: SimpleNamespace(allowed_ids=frozenset()) if name == "WebPortalCog" else None
+        await self.fill(); await self.act("review"); await self.act("awaken")
+        self.assertIn(str(self.ctx.author.id), self.storage.characters)
+        self.assertNotIn("Open your game window", self.ctx.text())
+
     async def test_existing_character_protected_by_both_entry_points(self):
         uid=str(self.ctx.author.id);self.storage.characters[uid]={"name":"Keep","bag":{"gift":1}}
         before=deepcopy(self.storage.characters)

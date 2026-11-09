@@ -245,3 +245,14 @@ test('personal delivery appears safely, updates and clears on signout',async()=>
  assert.equal(h.elements['personal-delivery'].children.length,0);
  assert.equal(h.elements['personal-delivery-section'].hidden,true);
 });
+
+test('command guide follows discovered details and clears on expiry',async()=>{
+ const h=await setup();
+ assert.match(h.elements['help-available'].textContent,/inspect panels/);
+ assert.doesNotMatch(h.elements['help-available'].textContent,/inspect booking/);
+ h.data.inspection.targets=['panels','display','wardrobe'];await h.tick(4000);
+ assert.match(h.elements['help-available'].textContent,/inspect display/);
+ assert.doesNotMatch(h.elements['help-available'].textContent,/inspect booking/);
+ h.handler=async()=>response(401,{});await h.tick(4000);
+ assert.equal(h.elements['help-available'].textContent,'');
+});

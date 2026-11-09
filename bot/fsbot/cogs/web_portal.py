@@ -5,8 +5,9 @@ from aiohttp import web
 from discord.ext import commands
 
 class WebPortalCog(commands.Cog):
-    def __init__(self, bot, app):
+    def __init__(self, bot, app, *, allowed_ids=frozenset()):
         self.bot = bot
+        self.allowed_ids = frozenset(allowed_ids)
         self.runner = web.AppRunner(app, access_log=None)
 
     async def cog_load(self):
@@ -31,4 +32,4 @@ async def setup(bot):
         client_secret=os.environ.get("FS_WEB_DISCORD_CLIENT_SECRET", ""),
         allowed_ids=frozenset(x.strip() for x in
             os.environ.get("FS_WEB_ALLOWED_DISCORD_IDS", "").split(",") if x.strip()))
-    await bot.add_cog(WebPortalCog(bot, create_app(bot, config)))
+    await bot.add_cog(WebPortalCog(bot, create_app(bot, config), allowed_ids=config.allowed_ids))

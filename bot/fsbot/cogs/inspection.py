@@ -1,6 +1,7 @@
 """Discord item cards and the explicitly entered pod-opening strand."""
 import discord
 from discord.ext import commands
+from fsbot.web_handoff import window_handoff
 from fsbot.item_inspection import inspect_item
 from fsbot.lounge_arrival import counterkeeper_view
 from fsbot.lounge_media import lounge_image
@@ -48,8 +49,14 @@ class InspectionCog(commands.Cog):
                 return
             if opening_state(character) and character.get("current_room") == "pod_room" and not character.get("in_cube"):
                 await self.present_pod_bearings(ctx)
+                handoff = window_handoff(self.bot, ctx.author.id)
+                if handoff:
+                    await ctx.send(handoff)
                 return
-        await self._pod_view(ctx)
+        if await self._pod_view(ctx):
+            handoff = window_handoff(self.bot, ctx.author.id)
+            if handoff:
+                await ctx.send(handoff)
 
     async def present_pod_bearings(self, ctx):
         character = self.bot.storage.characters.get(str(ctx.author.id))

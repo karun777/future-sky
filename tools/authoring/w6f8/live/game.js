@@ -103,7 +103,7 @@
     el("inspect-targets").replaceChildren();
     clearTimeout(timer);
     el("game").hidden = true; el("signed-out").hidden = false;
-    ["character-name", "credits", "room-title", "room-description", "last-sync", "current-location", "display-state"].forEach(id => text(id, ""));
+    ["character-name", "credits", "room-title", "room-description", "last-sync", "current-location", "display-state", "help-available"].forEach(id => text(id, ""));
     ["exits", "inventory", "personal-delivery", "equipped", "recent", "quest-entries", "character-details"].forEach(id => el(id).replaceChildren());
     el("personal-delivery-section").hidden = true;
     el("room-image").removeAttribute("src");
@@ -224,6 +224,12 @@
     text("inventory-guidance", !data.inventory.bag.length && !Object.values(data.inventory.equipped).some(Boolean) && !(data.inventory.personal_delivery || []).length ?
       "Nothing is carried or equipped. If you have returned from recovery, check !pod_delivery in Discord for belongings stored in your pod." :
       "In the pod, type wear <name> to put on clothing you carry.");
+    const availableCommands = (data.inspection?.targets || []).map(target => "inspect " + target);
+    for (const direction of exits) availableCommands.push("go " + direction);
+    if (data.wardrobe?.available) availableCommands.push("wardrobe");
+    text("help-available", availableCommands.length ?
+      "Available here: " + availableCommands.join(" · ") + ". Examine an outfit in wardrobe for its wear command." :
+      "Read the current room for guidance. Available actions appear as you discover them.");
     view = data; renderWardrobe(); renderObservationActions(); updateScene();
     if (!previous || JSON.stringify([previous.journal, previous.display, previous.location.id, previous.inspection?.targets]) !== JSON.stringify([data.journal, data.display, data.location.id, data.inspection?.targets])) renderJournal(data); stale = false; lastSuccess = Date.now(); failures = 0;
     connection("Up to date");

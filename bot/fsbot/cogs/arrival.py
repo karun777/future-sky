@@ -4,6 +4,7 @@ import discord
 from discord.ext import commands
 from fsbot.cogs.core import CLASS_IDS, build_arrival_character
 from fsbot.pod_opening import prepare_observation
+from fsbot.web_handoff import window_handoff
 from fsbot.arrival_media import pending_stage, stage_embed, STAGES
 
 START_CLASSES = [c for c in CLASS_IDS if c != "unwritten"]
@@ -163,6 +164,9 @@ class ArrivalCog(commands.Cog):
                            ("Use !begin cancel to finish this rehearsal." if draft["preview"] else
                             "You can continue here, or use !look in the server to enter your run-channel flow."))
             if not draft["preview"]:
+                handoff = window_handoff(self.bot, uid)
+                if handoff:
+                    await ctx.send(handoff)
                 self.drafts.pop(uid, None)
             return
         await ctx.send("Use !begin for setup instructions. Nothing was changed.")
