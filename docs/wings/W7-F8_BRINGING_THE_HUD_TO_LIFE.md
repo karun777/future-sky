@@ -103,3 +103,34 @@ Verified signed-in preview at desktop and 390 × 844: long Help content scrolls,
 command input remains within the viewport, no horizontal overflow on the narrow
 layout, Return and typed look work. Public HTML/CSS bytes verified after backup and
 static deployment. W7-F8 remains active; prior outstanding acceptance checks remain.
+
+### Rendered Discord comparison — 9 November 2026, Perth
+
+Fresh private-channel readouts (`!sheet`, `!inventory`, `!fit`, `!hud`, 14:50–14:51)
+were compared with the authenticated live HUD after sign-in (approximately 15:09).
+
+- Location agrees: Pod Room — Wakefulness Module.
+- Character agrees: efiishent, birthdate 1987-03-21, class unwritten, HP 10/10,
+  all six attributes 10 and all five elemental pools 0/0. Web credits 4 were
+  visible but not independently corroborated by these Discord readouts.
+- Equipment agrees: Freeform Attire in chest; Discord reports no other equipment.
+- Bag quantities agree: Rusty Knife ×2, Leather Jacket ×2, I Have No Compass ×1,
+  Triton Lager ×1.
+- Discovered notices agree: FEED7 and the remembered gig tomorrow night with
+  its format still unclear. Implant is on in both presentations.
+
+One confirmed acceptance gap remains: Discord Inventory includes Personal delivery
+(opened capsule containing the antique box, USB marked tunes, Queen’s music —
+received), while web Inventory has no corresponding section. Discord core.py adds
+this section using terrace_delivery.inventory_lines; web_character_view.py projects
+only bag and equipped under inventory. This is a projection/presentation omission,
+not evidence that the saved delivery possessions were lost. Restoring visibility of
+existing saved delivery records must not advance Chapter 1.
+
+Comparison used readout commands and panel navigation; no movement, outfit change or
+new story action was performed. The HUD was returned to the room view.
+This supersedes the earlier pending rendered Discord comparison, but is a partial
+acceptance result, not a full pass. Address the delivery omission and verify it,
+then complete the deliberately interrupted live connection/recovery check.
+Fresh-character first discovery and first outfit live checks remain unverified.
+W7-F8 stays ACTIVE/unsealed; Chapter 1 remains paused; sealed count unchanged.
