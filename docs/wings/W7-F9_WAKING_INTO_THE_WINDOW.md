@@ -65,3 +65,23 @@ allowlist without explicit authorisation identifying the new participant.
 Shared-wing return: W3 retains existing creation/identity rules, W4 keeps booking
 eligibility and chapter pause, W5 retains world continuity, W6 supplies the sealed
 layout, W8 records access and live-evidence limits. One W7 home/count.
+
+## Activation and existing-player live check — 9 November 2026, 16:03 Perth
+
+Operator activation verified: all six installed source hashes match the manifest,
+public HTML/game.js match, service active and anonymous /play/api/me returns 401.
+The already signed-in browser returned to Up to date after page reload. Help lists
+Efiishent's currently offered inspections, west exit and discovered wardrobe.
+
+In the private fs-efiishent channel, !awaken returned existing pod bearings followed
+by Open your game window linking to https://future-sky.net/play/, the same-account
+sign-in instruction and command guidance. This directly verifies the running
+existing-character handoff. No movement, equipment selection or reset was used.
+The HUD was left at its room view.
+
+Fresh-player live creation, first discovery and first clothing choice remain pending:
+the current character already completed those steps. The passing fictional HTTP
+rehearsal is separate evidence. Next requires a separate eligible Discord participant
+without a saved character, or an explicitly agreed deferment of that live walkthrough.
+Do not reset Efiishent or expand access merely to manufacture a passing check.
+W7-F9 remains ACTIVE/unsealed; Chapter 1 paused; total 35 sealed unchanged.
