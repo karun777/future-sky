@@ -185,3 +185,25 @@ automated stale-state and no-replay tests. Operator check: disconnect for at lea
 15 seconds with HUD visible, confirm Updates paused and disabled command input,
 reconnect and confirm Up to date plus unchanged holdings/notices. Do not send a
 mutation merely to test the outage. W7-F8 remains ACTIVE/unsealed.
+
+### Review complete — operator recovery confirmation, 9 November 2026
+
+Karun confirmed the requested internet-disconnection check worked: Updates paused
+and commands became unavailable during the interruption; reconnecting restored
+Up to date with unchanged Inventory. This is operator-reported live evidence,
+not a browser-automation observation. It closes the outstanding deliberate
+connection-interruption check above.
+
+W7-F8 review recommendation: ready to seal the existing-character live HUD scope.
+The accepted image-left/text-right layout, commands below the reading column,
+Character/Inventory/Quest Log, Discord record parity (including personal delivery),
+refresh, restart/sign-in and interrupted-connection recovery are verified.
+Latest correction validation: 70 web backend tests and 23 frontend behaviour tests
+passed. No-replay under a lost mutation response remains automated-test evidence;
+no live mutation was deliberately interrupted.
+
+Explicit limits carried forward: fresh-character first discovery and first outfit
+were not freshly exercised live in this review; artwork standardisation remains
+W6 follow-up. Chapter 1 remains paused. No new story progression is implied.
+Review complete does not itself seal the feather: W7-F8 remains ACTIVE pending
+seal instruction; no sealed-count increment or main-branch merge performed.
