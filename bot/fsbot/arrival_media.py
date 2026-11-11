@@ -32,6 +32,9 @@ def stage_embed(stage, *, preview=False):
     embed.set_image(url=BASE_URL + stage + ".webp")
     if guidance:
         embed.add_field(name="Your next step", value=guidance, inline=False)
+    if stage == "awakening" and not preview:
+        embed.set_footer(text="Your beginning is saved. Follow what catches your attention.")
+        return embed
     embed.set_footer(text=("Preview only; no saved character changes. " if preview else "") +
                           "Drafts are temporary. !begin cancel discards; !begin help explains.")
     return embed

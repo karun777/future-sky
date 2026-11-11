@@ -256,3 +256,22 @@ test('command guide follows discovered details and clears on expiry',async()=>{
  h.handler=async()=>response(401,{});await h.tick(4000);
  assert.equal(h.elements['help-available'].textContent,'');
 });
+
+test('fresh opening guidance survives rendering and follows offered body observations',async()=>{
+ const h=await setup();
+ h.data.location.description='You are in the pod.\n\nFollow what catches your attention: `!inspect hands`, `!inspect garment` or `!inspect pod`.';
+ h.data.inspection.targets=['hands','garment','pod','panels'];
+ await h.tick(4000);
+ assert.match(h.elements['room-description'].textContent,/Follow what catches your attention/);
+ assert.match(h.elements['room-description'].textContent,/inspect hands/);
+ h.handler=async(url)=>{
+  if(!url.endsWith('/inspect'))return null;
+  h.data.inspection.targets.push('hud','body');
+  return response(200,{ok:true,observation:{title:'Your hands',text:'Yours.',guidance:'Examine `!inspect hud`, or follow `!inspect body`.'}});
+ };
+ await command(h,'inspect hands');
+ assert.equal(h.elements['inspection-actions'].textContent,'inspect hud · inspect body');
+ assert.equal(h.calls.filter(c=>c.url.endsWith('/inspect')).length,1);
+ await h.tick(8000);
+ assert.equal(h.calls.filter(c=>c.url.endsWith('/inspect')).length,1);
+});

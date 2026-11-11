@@ -1,5 +1,6 @@
 """Shared durable pod observation; adapters provide identity and presentation."""
-from fsbot.pod_opening import prepare_observation, opening_state, scene_target
+import re
+from fsbot.pod_opening import prepare_observation, opening_state, scene_target, TARGETS
 from fsbot.pod_media import pod_image
 from fsbot.recovery import recovering
 
@@ -48,7 +49,19 @@ def web_targets(character):
     discoveries = state.get("discoveries")
     if not isinstance(discoveries, list):
         return []
-    targets = ["panels"]
+    targets = ["hands", "garment", "pod", "panels"]
+    # Reuse authored follow-on guidance and each character's recognition choices.
+    # prepare_observation works on a copy: rendering offers never discovers anything.
+    for discovered in discoveries:
+        if discovered not in TARGETS:
+            continue
+        _, (_, _, guidance) = prepare_observation(character, discovered)
+        for query in re.findall(r"`!inspect ([^`]+)`", guidance):
+            target = scene_target(query)
+            if target and target not in {"display", "wardrobe", "booking"} and target not in targets:
+                targets.append(target)
+    if "hud_presence" in discoveries and "hud" not in targets:
+        targets.append("hud")
     if "panels" in discoveries or "display" in discoveries:
         targets.extend(["display", "wardrobe"])
         if character.get("extra", {}).get("arrival", {}).get("performance_booking", True) is not False:

@@ -892,3 +892,11 @@ issues: the post-awakening embed still shows the temporary-draft footer, and the
 opening suggests panels instead of Discord's hands/garment/pod guidance. These remain
 unresolved; W7-F10 REVIEW/unsealed, W7-F9 PARKED. Receipt retained pending deliberate
 maintenance retirement; original archive retained.
+
+## Playcheck corrections prepared — 11 November 2026
+
+Saved awakening now confirms persistence; preview keeps its temporary-draft footer. Web opening guidance is restored. Hands, garment and pod are offered alongside panels; follow-on inspections reuse shared authored guidance and saved discoveries. Reads remain passive, with wardrobe/booking gates and stale-token checks intact.
+
+459 Python tests and 25 Node browser-script tests passed. Node tests exercise DOM behavior, not visual browser rendering. Exact three-file installation and rollback passed in temporary code with fictional data. Live baseline verification passed. Service remains active at PID 1028397; no live code/data/channel/receipt/service changes occurred.
+
+Deployment awaits privileged terminal installation; see tools/deploy/w7f10_playcheck/README.md. The historical reset contract remains unchanged and will intentionally refuse another reset/restore after this hotfix until a new runtime contract is reviewed. Do not repeat character reset to test the footer. W7-F10 REVIEW/unsealed, W7-F9 PARKED, 35 seals. Receipt and original archive retained.

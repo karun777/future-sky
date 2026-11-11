@@ -8,7 +8,7 @@
   const changes = [];
   const commandHistory = [];
   let commandBusy = false;
-  let observationTarget = null, observationActionsKey = null;
+  let observationTarget = null, observationActionsKey = null, observationGuidance = "";
   let wardrobeToken = null, wardrobeKey = null, selectedGarment = null;
   let focusScene = null;
   function showFocus(id) {
@@ -132,7 +132,7 @@
     parent.append(document.createTextNode(source.slice(cursor)));
   }
   function prose(source) {
-    source = source.split(/\n\s*\n/).filter(part => !part.startsWith("Follow what catches your attention:")).join("\n\n");
+    source = source.replace(/!inspect /g, "inspect ");
     el("room-description").replaceChildren(...source.split(/\n\s*\n/).filter(Boolean).map(part => {
       const p = document.createElement("p"); inline(p, part); return p;
     }));
@@ -319,7 +319,8 @@
     }
   }
   function renderObservationActions() {
-    const next = ({panels:["display","wardrobe"], display:["booking","wardrobe"], booking:["wardrobe"]})[observationTarget] || [];
+    const authored = Array.from(observationGuidance.matchAll(/`!inspect ([^`]+)`/g), match => match[1]);
+    const next = authored.length ? authored : ({panels:["display","wardrobe"], display:["booking","wardrobe"], booking:["wardrobe"]})[observationTarget] || [];
     const targets = next.filter(t => (view?.inspection?.targets || []).includes(t));
     text("inspection-actions", observationTarget === "wardrobe" ?
       "Type wardrobe to browse outfits. Type look to return to the room." : targets.map(t => "inspect " + t).join(" · "));
@@ -409,6 +410,7 @@
   function showObservation(observation, target) {
     clearObservation();
     observationTarget = target;
+    observationGuidance = observation.guidance || "";
     renderObservationActions(); controls();
     text("inspection-title", observation.title || "Your attention");
     for (const [id, source] of [["inspection-text", observation.text || ""],

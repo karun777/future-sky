@@ -59,3 +59,20 @@ class ArrivalMediaTests(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(data[8:12],b"WEBP")
             self.assertEqual(len(data),row["bytes"])
             self.assertEqual(hashlib.sha256(data).hexdigest(),row["sha256"])
+
+    async def test_saved_awakening_has_no_draft_cancel_footer(self):
+        await self.fill(preview=False)
+        await self.act("review")
+        await self.act("awaken")
+        embed = next(m["embed"] for m in reversed(self.ctx.messages) if "embed" in m)
+        self.assertIn("saved", embed.footer.text)
+        self.assertNotIn("cancel", embed.footer.text)
+        self.assertNotIn(str(self.ctx.author.id), self.arrival.drafts)
+
+    async def test_preview_awakening_remains_explicitly_temporary(self):
+        await self.fill(preview=True)
+        await self.act("review")
+        await self.act("awaken")
+        embed = next(m["embed"] for m in reversed(self.ctx.messages) if "embed" in m)
+        self.assertIn("Preview only", embed.footer.text)
+        self.assertIn("!begin cancel", embed.footer.text)

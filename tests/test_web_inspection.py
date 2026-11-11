@@ -34,7 +34,7 @@ class WebInspectionTests(unittest.IsolatedAsyncioTestCase):
     async def test_read_is_passive_and_sequence_is_shared_with_discord(self):
         before=deepcopy(self.bot.storage.characters)
         offer=await self.offer()
-        self.assertEqual(offer["inspection"]["targets"],["panels"])
+        self.assertEqual(offer["inspection"]["targets"],["hands","garment","pod","panels"])
         self.assertEqual(self.saved,[])
         self.assertEqual(before,self.bot.storage.characters)
         r=await self.inspect(offer)
@@ -100,7 +100,7 @@ class WebInspectionTests(unittest.IsolatedAsyncioTestCase):
         del ch["extra"]["arrival"]
         self.assertEqual((await self.offer())["inspection"]["targets"],[])
         ch["extra"]["arrival"]={"opening":{"id":OPENING,"discoveries":["panels"]},"performance_booking":False}
-        self.assertEqual((await self.offer())["inspection"]["targets"],["panels","display","wardrobe"])
+        self.assertEqual((await self.offer())["inspection"]["targets"],["hands","garment","pod","panels","display","wardrobe"])
         result=inspect_pod(self.bot.storage,"123","display")
         self.assertNotIn("booking",result["text"].lower())
         self.assertIsNone(result["image"])
