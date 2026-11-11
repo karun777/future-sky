@@ -699,3 +699,116 @@ copies before a concrete live approval. Resolve router deployment delivery effec
 separately; the Queen and other players' persistent records/grants remain protected.
 No production restart, deployment, reset, receipt or archive was made. W7-F10
 remains REVIEW/unsealed; W7-F9 parked; 35 seals unchanged.
+
+
+## Stopped-service adapter built and rehearsed — 11 November 2026
+
+Implemented [tools/character_reset_adapter.py](../../tools/character_reset_adapter.py)
+and [22 adapter tests](../../tests/test_character_reset_adapter.py). The original
+fictional transaction harness remains available. Runtime receipt validation is now
+a shared pure function used by both guided creation and the adapter.
+
+### Transaction contract
+
+The production CLI has fixed canonical paths: /opt/futuresky/data and the private
+operator directory /home/efiishent/.local/state/future-sky/character-reset. It
+requires a root operator terminal for process inspection and preservation of file
+ownership. It never stops, starts or restarts the service. Plan/apply/recover all
+require the bot to be inactive/dead with MainPID=0; writable data descriptors and
+detached bot processes are additional refusal checks. A nonblocking exclusive
+adapter lock prevents concurrent adapter instances. This is not a global lock on
+arbitrary external programs: the operator must maintain a single-writer window.
+
+Preflight rejects symlink/redirection, nonregular or hardlinked store files,
+missing stores, malformed identity/schema, additional personal cube claims,
+conflicting channel bindings and unsupported private receipt permissions. Current
+live lifecycle/router source must match the reviewed checkout before plan/apply.
+Plans pin that runtime contract; changed code or data invalidates the plan. Known
+service/dotenv world-reset-on-boot flags are checked. Restart configuration still
+requires operator review before resuming; no automatic restart is attempted.
+
+Plans capture exact bytes and metadata for characters, lockers, vault, cubes and
+the reset receipt. Reset changes only the selected account entries and inserts
+its verified saved-channel receipt. All other data files are hashed, including
+the nested character copy and world-clock files. Other entries inside shared
+stores are preserved structurally; JSON formatting may change for a modified
+store. Existing file owner/group/mode are retained; a new receipt is mode 0600.
+
+Before mutation, the selected records are archived and a durable journal is
+written. Each file replacement is atomic and fsynced, followed by directory fsync.
+The journal remains until complete after-state/protected-file verification and a
+private completion record succeed. Interrupted recovery restores exact before
+bytes/metadata, including absence of a newly created receipt, and can itself be
+interrupted and retried. Unexpected concurrent contents block recovery without
+blindly overwriting them. Never resume play with an unresolved journal.
+
+Restore archives the current replacement first, then reinstates only the chosen
+archive's selected entries/receipt. Current progress of other players is retained.
+Restore does not resurrect sessions/tasks or roll back time. Time-dependent old
+character fields must be reviewed against the current world before service resume.
+Archive checksum identifies content and detects damage; it is not authentication.
+These root-owned mode-0700 directories/mode-0600 files are the access boundary.
+
+The private journal/completion records contain full before/after shared-store
+snapshots to enable exact rollback, including other players' records. Keep them
+outside Git and retain only for the reviewed recovery period; never publish their
+contents. Selected-record archives alone are insufficient for interrupted-write
+rollback. No automatic retention deletion is implemented.
+
+### Rehearsal evidence
+
+Full command: PYTHONPATH=.:bot:tests /opt/futuresky/.venv-web-pilot-20261029/bin/python
+-m unittest discover -s tests -q. **439 tests passed**, including 22 adapter tests.
+New tests cover reset/restore, replacement archiving, unrelated new progress,
+interruptions after every one of five writes, reopened recovery, interrupted
+rollback, stale/crafted plans, changed runtime contracts, protected-file changes,
+external writers, archive/store-write failures, damaged archives/journals,
+ownership/cube/channel conflicts, existing receipts, path/ID/mode checks, exclusive
+locking and active-service refusal. These are injected failures, not physical
+power-loss or adversarial external-writer race proofs.
+
+A separate private-copy rehearsal used the current server data: 61 files, about
+347 MB. Source/copy hashes were compared before rehearsal. In a mode-0700 temporary
+directory, Efiishent was selected uniquely and its embedded account ID checked;
+reset, receipt creation, selected restoration and interruption after the fifth
+write followed by exact rollback all passed. Other player entries and prime-cube
+values were unchanged; protected files including nested characters and world clock
+were byte-identical. Temporary copied data and all rehearsal archives were deleted.
+Live hashes were unchanged afterward and the bot retained the same nonzero PID.
+This was a stable disk-copy observation, not an atomic running-process snapshot.
+It proves compatibility with captured disk state, not live cache invalidation.
+
+The actual read-only offline guard was also run against the active service and
+correctly refused it. No production CLI apply or recovery was invoked, no service
+was stopped, and no production archive or receipt exists from this work.
+
+### Operator sequence for the later approved execution
+
+1. Review lifecycle/router deployment and its effects on every saved mapping.
+   Queen access and the unavailable wanderer channels remain separate issues;
+   do not silently deploy changed delivery semantics as part of a reset.
+2. Reverify Efiishent's account/channel in Discord, approve the exact scope and
+   maintenance impact, and install the reviewed source through controlled deployment.
+3. In the privileged operator terminal, stop the service and exclude other writers.
+   Confirm no world reset will run on restart. Use the adapter module with the
+   repository root and bot on PYTHONPATH; do not run it from a different checkout.
+4. Run plan with the verified numeric --account and exact --expect-name. Inspect
+   its private manifest; the printed plan ID is its exact integrity fingerprint.
+5. Apply only that reviewed --plan-id. The adapter rechecks code/data and archives
+   before changing state. It leaves the service stopped. On interruption, run
+   recover before any other action; inspect unexpected-content refusals manually.
+6. Verify results, resume under the reviewed configuration, reauthenticate and
+   complete guided !begin. The receipt restores routing fields in the same save
+   as the replacement character. Compare Discord/HUD and verify fresh progression.
+7. Keep the receipt until the new binding and seeded marker are durably verified;
+   retire it deliberately during maintenance. Retain the original selected archive
+   for the agreed restore window. Receipt retirement is not part of this adapter.
+
+For a later restore: stop/exclude writers again, plan with --restore ARCHIVE_ID,
+--account and the replacement's exact --expect-name (or the known target label if
+no current character exists), inspect, then apply the new plan ID. The replacement
+is archived first. Review restored time-dependent state before resuming.
+
+**Next checkpoint:** review deployment compatibility and the concrete maintenance
+plan before live execution approval. Adapter built/rehearsed does not authorise a
+live reset. W7-F10 remains REVIEW/unsealed; W7-F9 parked; 35 seals unchanged.

@@ -6,6 +6,17 @@ Current home/checkpoint: **W7 Engine / W7-F10 — Beginning Again: Character Cre
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
+## Reset adapter rehearsal return — 11 November 2026
+
+[W7-F10 stopped-service adapter](wings/W7-F10_BEGINNING_AGAIN.md#stopped-service-adapter-built-and-rehearsed--11-november-2026)
+is implemented with private archives, five-file journalling including the channel
+receipt, stale-plan/runtime checks and exact interrupted rollback. **439 tests
+pass**, including 22 adapter tests. A temporary private copy of current server data
+also passed Efiishent reset/restore/interrupted recovery; other players and protected
+world/nested files were preserved. Temporary copies removed; live hashes and PID
+unchanged. No live reset, deployment, service stop or production archive/receipt.
+Next: review deployment compatibility and maintenance plan before live approval.
+
 ## Lifecycle implementation return — 11 November 2026
 
 [W7-F10 lifecycle checks](wings/W7-F10_BEGINNING_AGAIN.md#lifecycle-checks-resolved-in-source--11-november-2026):
