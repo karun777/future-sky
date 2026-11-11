@@ -6,6 +6,17 @@ Current home/checkpoint: **W7 Engine / W7-F10 — Beginning Again: Character Cre
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
+## Account integrity and reset preview — 11 November 2026
+
+[W7-F10 ownership clarification and reset preview](wings/W7-F10_BEGINNING_AGAIN.md#ownership-clarification-and-reset-preview--11-november-2026)
+records the Queen as another person's protected player character. DPC role verified;
+no effective View Channel permission on her saved channel. Preserve existing grants
+and park the access issue. Source router now distinguishes saved ownership from
+platform administrator access; 24 routing tests and 401 full-suite tests pass.
+Efiishent's preserve/archive/clear/rebuild preview and remaining live-adapter
+blockers are documented. No deployment, live reset or permission changes. Earlier
+checkpoints below remain historical; W7-F10 unsealed and W7-F9 parked.
+
 ## Players category staging return — 11 November 2026
 
 [W7-F10 wider channel audit](wings/W7-F10_BEGINNING_AGAIN.md#players-category-staging-and-wider-mapping-audit--11-november-2026):

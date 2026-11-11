@@ -2,7 +2,7 @@
 # FILE META — fsbot/cogs/router.py
 # Canonical name: Router (run-channel routing & delivery)
 #
-# Version: v3.6.5
+# Version: v3.6.6
 # Last edited: 2026-11-11 (Australia/Perth)
 # Amended:
 # - W7-F10: recipient ownership checks, safe adoption, private fallback
@@ -316,11 +316,19 @@ def _resolve_bot_member(guild: discord.Guild, bot: commands.Bot) -> Optional[dis
     return None
 
 
+def _platform_admin(guild, member):
+    """Discord authority, never inferred from a developer role label."""
+    return (getattr(guild, "owner_id", None) == member.id
+            or bool(getattr(getattr(member, "guild_permissions", None),
+                            "administrator", False)))
+
+
 def _owned_run_channel(bot, guild, channel, user_id):
     """Verify a private account channel; labels and character names are not identity.
 
-    Explicit extra human grants are ambiguous (e.g. an invited visitor), so they
-    require operator review. Administrators retain Discord's platform access.
+    Saved association and effective access are separate checks. Administrator
+    access alone never authorises discovery. Non-admin visitor grants still
+    require an explicit ownership policy; role names alone confer no exception.
     This does not change world-presence or event-broadcast audience rules.
     """
     try:
@@ -328,6 +336,7 @@ def _owned_run_channel(bot, guild, channel, user_id):
             return False
         if channel.guild.id != guild.id:
             return False
+        saved = str(bot.storage.characters.get(user_id, {}).get("run_channel_id")) == str(channel.id)
         category_id = _players_category_id()
         if category_id:
             if channel.category_id != category_id:
@@ -342,7 +351,9 @@ def _owned_run_channel(bot, guild, channel, user_id):
         if channel.overwrites_for(guild.default_role).view_channel is not False:
             return False
         if channel.overwrites_for(member).view_channel is not True:
-            return False
+            # Only an existing saved association can use platform admin access.
+            if not (saved and _platform_admin(guild, member)):
+                return False
         if not channel.permissions_for(member).view_channel:
             return False
         for target, overwrite in channel.overwrites.items():
@@ -353,7 +364,8 @@ def _owned_run_channel(bot, guild, channel, user_id):
                     return False
             elif isinstance(target, discord.Member):
                 if str(target.id) != user_id and not target.bot:
-                    return False
+                    if not (saved and _platform_admin(guild, target)):
+                        return False
             else:
                 return False
         for uid, character in bot.storage.characters.items():

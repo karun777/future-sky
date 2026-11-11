@@ -11,6 +11,7 @@ from fsbot.cogs.speech import SpeechCog
 class Member:
     def __init__(self, ident, bot=False):
         self.id, self.bot = ident, bot
+        self.guild_permissions = NS(administrator=False)
         self.send = AsyncMock()
 
 
@@ -37,7 +38,9 @@ class Channel:
         return self.overwrites.get(target, discord.PermissionOverwrite())
 
     def permissions_for(self, member):
-        return NS(view_channel=self.overwrites_for(member).view_channel is True)
+        return NS(view_channel=(member.guild_permissions.administrator
+                  or getattr(self.guild, "owner_id", None) == member.id
+                  or self.overwrites_for(member).view_channel is True))
 
 
 class RouterOwnershipTests(unittest.IsolatedAsyncioTestCase):
@@ -82,6 +85,55 @@ class RouterOwnershipTests(unittest.IsolatedAsyncioTestCase):
 
     async def ensure(self, uid="202", name="Same"):
         return await router.ensure_player_run_channel(self.bot,self.ctx,uid,name)
+
+    async def test_saved_channel_allows_admin_operator_grant(self):
+        ch = self.existing(self.b)
+        self.storage.characters["202"]["run_channel_id"] = str(ch.id)
+        self.a.guild_permissions.administrator = True
+        ch.overwrites[self.a] = discord.PermissionOverwrite(view_channel=True)
+        self.assertIs(ch, await self.ensure())
+        self.assertIs(ch, await router.get_run_channel_by_guild_if_any(self.bot,self.guild,"202"))
+
+    async def test_saved_channel_allows_guild_owner_operator_grant(self):
+        ch = self.existing(self.b)
+        self.storage.characters["202"]["run_channel_id"] = str(ch.id)
+        self.guild.owner_id = self.a.id
+        ch.overwrites[self.a] = discord.PermissionOverwrite(view_channel=True)
+        self.assertIs(ch, await self.ensure())
+
+    async def test_saved_admin_recipient_needs_no_individual_grant(self):
+        ch = self.existing(self.robot)
+        self.storage.characters["202"]["run_channel_id"] = str(ch.id)
+        self.b.guild_permissions.administrator = True
+        self.assertIs(ch, await self.ensure())
+
+    async def test_admin_access_alone_never_adopts_channel(self):
+        other = self.existing(self.a)
+        self.b.guild_permissions.administrator = True
+        result = await self.ensure()
+        self.assertIsNot(other, result)
+        self.assertEqual(2, len(self.category.channels))
+
+    async def test_developer_label_does_not_grant_access(self):
+        ch = self.existing(self.a)
+        self.guild.owner_id = self.a.id
+        self.b.roles = [NS(name="DPC")]
+        self.storage.characters["202"]["run_channel_id"] = str(ch.id)
+        self.assertIsNone(await self.ensure())
+        self.guild.create_text_channel.assert_not_awaited()
+
+    async def test_saved_nonadmin_visitor_still_refused(self):
+        ch = self.existing(self.b)
+        self.storage.characters["202"]["run_channel_id"] = str(ch.id)
+        ch.overwrites[self.a] = discord.PermissionOverwrite(view_channel=True)
+        self.assertIsNone(await self.ensure())
+
+    async def test_admin_cannot_override_conflicting_saved_claim(self):
+        ch = self.existing(self.b)
+        self.b.guild_permissions.administrator = True
+        for record in self.storage.characters.values():
+            record["run_channel_id"] = str(ch.id)
+        self.assertIsNone(await self.ensure())
 
     async def test_broadcast_creation_grants_recipient_not_speaker(self):
         ch = await self.ensure()

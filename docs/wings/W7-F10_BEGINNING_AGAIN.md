@@ -521,3 +521,86 @@ delivery effects. Next return: resolve the Queen's ownership intent, then prepar
 the reviewed router/category activation. Production activation needs the operator's
 privileged terminal; remote sudo execution is unavailable. No reset, seal or
 sealed-count change.
+
+
+## Ownership clarification and reset preview — 11 November 2026
+
+This checkpoint supersedes the earlier request to establish whether the Queen is
+an operator persona. Karun confirmed **The Dark Rat Queen is another person's
+player character**. Preserve that account, its character, channel, history and
+existing grants. Its access issue is parked separately from Efiishent's reset;
+no permission repair or reassignment is authorised here.
+
+A subsequent read-only Discord check matched the stored character/account ID and
+queried the member, guild roles, guild ownership and saved channel overwrites.
+The Queen has @everyone and DPC; neither grants Administrator. The account is not
+the guild owner and has no individual channel overwrite. Applying role and member
+overwrites yields View Channel=false. Send/history bits do not overcome missing
+visibility. The DPC role therefore confirms developer status, but does not supply
+access to the saved channel. This establishes current access, not the historical
+intent or cause. No messages or Discord mutations were made.
+
+### Router revision, source only
+
+Saved association and access are separate. A saved, uniquely claimed channel can
+retain an explicit guild-owner/Administrator operator grant. A saved recipient
+who is a guild owner/Administrator can use effective access without an individual
+allow. Actual platform permissions are used, never the DPC label. Discovery still
+requires explicit recipient access and conservative private-channel checks;
+administrator visibility alone cannot adopt a channel. Conflicting saved claims,
+public/non-admin-role visibility and unapproved non-admin visitor grants remain
+refused. The router never edits existing grants to make a check pass.
+
+This does not resolve the Queen's absent visibility or change live routing.
+A fleet deployment still requires review of delivery effects for her and the
+three unavailable wanderer channels; parking these issues is not acceptance of
+silently breaking their delivery. Category configuration stays staged only.
+
+24 fictional routing tests pass, including seven new administrator/owner/DPC,
+visitor and conflicting-claim cases. Full suite: **401 tests passed**. Activation
+messages in test output are from disposable deployment fixtures, not production.
+
+### Efiishent reset preview for review
+
+This is a concrete state-treatment preview based on the dated ownership audit,
+not an executable live plan or a request to approve execution now. Exact account
+and channel IDs, before-images and hashes belong in a private manifest produced
+by the future stopped-service adapter; none are embedded in this document.
+
+| Component | Proposed effect |
+| --- | --- |
+| Efiishent canonical character entry | Archive complete entry; remove only verified account key. Old stats, inventory/equipment, discoveries, booking/performance progression, recovery, delivery and character flags do not transfer. |
+| Selected locker and vault | Archive presence and values, including empty vault; remove selected entries so old holdings cannot be reclaimed. |
+| Selected personal cube | Archive/remove only after owner and personal-cube type validation; normal recreation contract remains a blocker. |
+| Efiishent prime cube | Preserve; special/shared cube is outside reset. |
+| Discord identity, roles, allowlist and credentials | Preserve account access. Guild-owner status remains; this is not an ordinary-user permissions test. |
+| Verified own run channel and seeded marker | Preserve channel, grants and history; retain mapping separately for controlled reattachment to the replacement without importing old progression. |
+| Queen and all other players | No persistent record, account, grant or channel changes. |
+| Shared world, clock and event history | Preserve; no rewind or deletion of historic messages. |
+| Nested legacy character copy | Preserve; resolve its readers/provenance before reset. |
+| Runtime actions, drafts and portal sessions | Controlled stop/restart clears stale process state; all portal users must sign in again and transient activity is interrupted. |
+| Replacement character | Create through reviewed !begin, with fresh chosen identity and builder-derived starting state; retain existing starter knife/jacket entitlement, no inherited outfit or earned booking knowledge. |
+
+Execution order once blockers are resolved: stop service and verify no other
+writers; capture private archive and exact manifest; rehearse restoration from
+that snapshot in isolation; apply the validated journalled selected-entry reset;
+verify unrelated records and shared state unchanged; resume only after complete
+success or complete rollback. Reauthenticate, create/review/awaken, reattach the
+verified own channel, compare Discord/HUD and check fresh rewards/discoveries.
+
+Restoration first archives any replacement character and personal holdings, then
+restores only the selected old entries. It must validate time-dependent state
+against the current world clock and never restore old sessions/tasks or rewind
+other players. An unresolved journal keeps play blocked until recovery completes.
+
+**Remaining execution blockers:** legacy creation persistence/booking consistency;
+personal-cube recreation; nested-file reader/provenance check; persistent channel
+reattachment across the no-character interval; production single-writer adapter
+and archive/restore validation; reviewed router deployment effects and maintenance
+window. The isolated harness is tested but is not a production reset tool.
+
+Next bounded implementation step: resolve those lifecycle boundaries and build
+the stopped-service preflight/adapter. Present its exact private target manifest
+and maintenance impact before requesting live-reset approval. W7-F10 remains
+REVIEW/unsealed, W7-F9 parked, 35 seals unchanged. No live reset, archive, restart,
+configuration activation or code deployment occurred in this checkpoint.
