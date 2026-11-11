@@ -604,3 +604,98 @@ the stopped-service preflight/adapter. Present its exact private target manifest
 and maintenance impact before requesting live-reset approval. W7-F10 remains
 REVIEW/unsealed, W7-F9 parked, 35 seals unchanged. No live reset, archive, restart,
 configuration activation or code deployment occurred in this checkpoint.
+
+
+## Lifecycle checks resolved in source — 11 November 2026
+
+Repository changes only; not deployed. This checkpoint narrows the remaining
+work to the production reset adapter and its operational acceptance.
+
+### One reviewed creation path
+
+Legacy !create_character / !create / !cc now redirect to DM !begin, including
+when called without arguments. Existing-character protection remains. They no
+longer create partial bridge stores, suppress failed saves, announce success or
+bypass the guided review/no-booking contract. Missing-character prompts in core
+now point to !begin. Existing historical characters are not migrated.
+
+Historical opening tests now construct explicit pre-guided fixtures rather than
+calling the disabled legacy command. They retain their earned/discoverable booking
+assertions; guided-arrival tests separately prove no unearned booking. This is an
+intentional entry-point restriction, not a change to historical story eligibility.
+
+### Personal-cube lifecycle
+
+Storage now provides get_cube, get_personal_cube and ensure_personal_cube.
+Personal lookup validates key/id, personal_cube_v0 type, player owner type and
+account ID. Ensuring requires a matching character, refuses conflicting ownership
+or another personal record claiming the account, preserves existing holdings,
+and durably creates a missing cube before returning its ID. Failed persistence
+removes the tentative in-memory insertion and permits retry.
+
+Recreation is lazy through the existing cube/rebirth callers. It uses the existing
+v0 marker shape: integrity 100/100, empty flags, fresh timestamps and no old stash.
+The new helper does not create a prime cube, change shared state or add character
+session fields. The established cube command may perform an additional save;
+that is idempotent after initial durable creation. Guided creation remains a
+single-character save, not a new multi-store transaction. Old locker/vault entries
+will be archived/removed by reset; no old holdings or bridge-store defaults are
+silently copied into guided creation.
+
+### Durable channel reattachment across reset
+
+A new read-only bridge accepts an operator-owned receipt at the canonical
+relative path data/storage/reset_run_bindings.json. No such live file was created.
+The future stopped-service adapter must write it privately and include it in its
+transaction/rollback manifest. Format: version=1 and bindings keyed by verified
+account ID; each binding contains only run_channel_id and run_seeded_channel_id.
+Unknown fields, malformed IDs/seed markers, duplicate receipt channel claims and
+another saved character claiming that channel block creation without losing the
+guided draft. Character names are irrelevant to this binding.
+
+Guided creation copies only these two routing fields immediately before its
+existing durable character save. Preview does not read/apply the receipt. A failed
+save removes the tentative character and retains the draft; the receipt remains
+available for retry/restart. Receipt retention is intentional until the operator
+verifies the replacement and retires it through the adapter. It contains no old
+inventory, story state, roles or class values. Router checks still validate actual
+Discord access/category and competing claims before delivering output.
+
+This is not user-supplied input or permission to attach arbitrary history. The
+adapter must validate account/channel ownership immediately before writing the
+receipt, prohibit new conflicting bindings and preserve/restore any prior receipt
+on rollback. Its file permissions and writer exclusion remain implementation
+requirements for the adapter, not claims already proven by the read-only bridge.
+
+### Nested character file: bounded provenance result
+
+The service WorkingDirectory is /opt/futuresky/bot; canonical config resolves
+characters to /opt/futuresky/data/characters/characters.json through bot/data.
+The nested file data/characters/data/characters/characters.json was last modified
+22 June 2026 at 15:21:53 UTC. No direct nested-path reader was found in checked
+runtime bot/tools, checkout tools, readable systemd units or cron.d scripts.
+The service account has no crontab; listed system timers showed no Future Sky
+maintenance job. These checks support treating it as a noncanonical historical
+copy. They do not prove who created it or exclude every external/dynamic reader.
+
+Resolution: preserve the nested file byte-for-byte and never use it as a reset
+source or target. Pin canonical resolved paths and hashes in preflight; record and
+verify the nested file remains unchanged. If an active external reader/writer is
+found during final maintenance checks, stop rather than expand reset scope.
+No deletion, migration or speculative synchronisation is required.
+
+### Evidence and remaining boundary
+
+**417 Python tests passed**, including new legacy redirect, cube durability,
+ownership, failed-save retry, reset receipt validation, binding failure and guided
+save/retry tests. Existing historical opening, fresh arrival, web, routing and
+reset-rehearsal coverage passes. Test activation messages refer to temporary
+fixtures, not the running service.
+
+Next: build the stopped-service adapter that captures current private records,
+creates/restores the routing receipt, journals selected state changes and enforces
+single-writer/path/schema/hash checks; exercise it on isolated captured-state
+copies before a concrete live approval. Resolve router deployment delivery effects
+separately; the Queen and other players' persistent records/grants remain protected.
+No production restart, deployment, reset, receipt or archive was made. W7-F10
+remains REVIEW/unsealed; W7-F9 parked; 35 seals unchanged.

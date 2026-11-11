@@ -20,6 +20,7 @@ from __future__ import annotations
 import os
 import json
 import shutil
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 from fsbot.config import (
@@ -290,6 +291,62 @@ class Storage:
 
     def save_cubes(self) -> None:
         save_json(CUBES_FILE, self.cubes)
+
+    def get_cube(self, cube_id: str):
+        value = self.cubes.get(str(cube_id))
+        return value if isinstance(value, dict) else None
+
+    def get_personal_cube(self, user_id: str):
+        uid = str(user_id)
+        if not uid.isascii() or not uid.isdecimal():
+            raise ValueError("Invalid account ID")
+        key = "cube_personal_" + uid
+        if key not in self.cubes:
+            return None
+        cube = self.cubes[key]
+        if (not isinstance(cube, dict) or cube.get("id") != key
+                or cube.get("cube_type") != "personal_cube_v0"
+                or not isinstance(cube.get("owner"), dict)
+                or cube["owner"].get("type") != "player"
+                or str(cube["owner"].get("user_id")) != uid):
+            raise ValueError("Personal cube ownership/schema mismatch")
+        return cube
+
+    def ensure_personal_cube(self, user_id: str):
+        """Lazy, durable recreation of the existing v0 personal-cube marker.
+
+        Requires a saved-character-shaped account record; never replaces an
+        existing cube or imports old stash/progression. Callers may save again
+        after adding recovery contents. Failed initial persistence rolls back.
+        """
+        uid = str(user_id)
+        cube = self.get_personal_cube(uid)
+        character = self.characters.get(uid)
+        if not isinstance(character, dict) or str(character.get("id")) != uid:
+            raise ValueError("Personal cube requires a matching character")
+        key = "cube_personal_" + uid
+        if cube is not None:
+            return key
+        # Other personal records claiming this account need review, not duplication.
+        if any(isinstance(value, dict)
+               and value.get("cube_type") == "personal_cube_v0"
+               and isinstance(value.get("owner"), dict)
+               and str(value["owner"].get("user_id")) == uid
+               for value in self.cubes.values()):
+            raise ValueError("Conflicting personal cube claim")
+        now = datetime.now(timezone.utc).isoformat()
+        self.cubes[key] = {
+            "id": key, "cube_type": "personal_cube_v0",
+            "owner": {"type": "player", "user_id": uid},
+            "integrity": {"current": 100, "max": 100},
+            "flags": {}, "meta": {"created_at": now, "updated_at": now},
+        }
+        try:
+            self.save_cubes()
+        except Exception:
+            self.cubes.pop(key, None)
+            raise
+        return key
 
     def save_items(self) -> None:
         save_json(ITEMS_FILE, self.items_db)

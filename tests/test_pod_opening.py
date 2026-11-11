@@ -89,12 +89,15 @@ class PodOpeningTests(unittest.IsolatedAsyncioTestCase):
         return json.loads(self.path.read_text())
 
     async def create(self):
-        with patch("fsbot.cogs.core.ensure_player_run_channel", new=AsyncMock(
-                return_value=SimpleNamespace(id=500, mention="#fictional-run"))), \
-             patch("fsbot.cogs.core.ASTRO_OK", False), \
-             patch.object(self.core, "_is_dpc", return_value=False):
-            await CoreCog.create_character.callback(
-                self.core, self.ctx, "Fictional Arrival", "2000-01-01", "dreamer_technician")
+        # Historical pre-guided character: missing arrival flag remains eligible.
+        # New guided creation/no-booking is covered in test_arrival/test_web_arrival.
+        from fsbot.cogs.core import build_arrival_character
+        uid = str(self.ctx.author.id)
+        with patch("fsbot.cogs.core.ASTRO_OK", False):
+            self.storage.characters[uid] = build_arrival_character(
+                uid, "Fictional Arrival", "2000-01-01", "dreamer_technician", "",
+                self.storage.items_db)
+        self.storage.save_characters()
         self.assertEqual(self.storage.characters[str(self.ctx.author.id)]["current_room"], "pod_room")
 
     async def awaken(self):
@@ -106,9 +109,8 @@ class PodOpeningTests(unittest.IsolatedAsyncioTestCase):
     def character(self):
         return self.storage.characters[str(self.ctx.author.id)]
 
-    async def test_fresh_creation_hands_discovery_feed_wardrobe_booking_reload(self):
+    async def test_historical_character_hands_discovery_feed_wardrobe_booking_reload(self):
         await self.create()
-        self.assertIn("!awaken", self.ctx.text())
         self.assertNotIn("stumble through", self.ctx.text())
         await self.awaken()
         self.assertIn("You do not recognise them", self.ctx.text())

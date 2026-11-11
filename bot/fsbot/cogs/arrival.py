@@ -5,6 +5,7 @@ from discord.ext import commands
 from fsbot.cogs.core import CLASS_IDS, build_arrival_character
 from fsbot.pod_opening import prepare_observation
 from fsbot.web_handoff import window_handoff
+from fsbot.reset_binding import apply_reset_binding
 from fsbot.arrival_media import pending_stage, stage_embed, STAGES
 
 START_CLASSES = [c for c in CLASS_IDS if c != "unwritten"]
@@ -142,6 +143,12 @@ class ArrivalCog(commands.Cog):
                 # No awaits between existence check, insertion and durable save.
                 if uid in self.bot.storage.characters:
                     await ctx.send("A character now exists; no replacement was made.")
+                    return
+                try:
+                    apply_reset_binding(character, self.bot.storage.characters)
+                except (OSError, ValueError, TypeError, KeyError):
+                    await ctx.send("Your saved channel association needs operator review. "
+                                   "Nothing was created; your draft is retained.")
                     return
                 self.bot.storage.characters[uid] = character
                 try:

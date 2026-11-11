@@ -57,6 +57,7 @@ ITEMS_FILE = "data/items/items.json"
 LOCKERS_FILE = "data/storage/lockers.json"
 EFIISHENT_VAULT = "data/storage/efiishent_vault.json"
 CUBES_FILE = "data/storage/cubes.json"
+RESET_RUN_BINDINGS_FILE = "data/storage/reset_run_bindings.json"
 
 # World clock / time
 WORLD_CLOCK_FILE = "data/time/world_clock.json"

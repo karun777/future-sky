@@ -69,6 +69,41 @@ class ArrivalTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn(str(self.ctx.author.id), self.storage.characters)
         self.assertNotIn("Open your game window", self.ctx.text())
 
+    async def test_bound_channel_saved_with_character_and_failed_save_retries(self):
+        await self.fill(); await self.act("review")
+        def bind(character, characters):
+            character.update(run_channel_id="500", run_seeded_channel_id=500)
+        self.storage.fail_next = True
+        uid = str(self.ctx.author.id)
+        with patch("fsbot.cogs.arrival.apply_reset_binding", side_effect=bind):
+            await self.act("awaken")
+            self.assertNotIn(uid, self.storage.characters)
+            await self.act("awaken")
+        saved = json.loads(self.path.read_text())[uid]
+        self.assertEqual("500", saved["run_channel_id"])
+        self.assertEqual(500, saved["run_seeded_channel_id"])
+        self.assertFalse(saved["extra"]["arrival"]["performance_booking"])
+
+    async def test_reset_binding_failure_retains_draft_and_saves_nothing(self):
+        await self.fill(); await self.act("review")
+        before = self.path.read_bytes()
+        with patch("fsbot.cogs.arrival.apply_reset_binding", side_effect=ValueError("conflict")):
+            await self.act("awaken")
+        self.assertEqual(before, self.path.read_bytes())
+        self.assertIn(str(self.ctx.author.id), self.arrival.drafts)
+        self.assertNotIn(str(self.ctx.author.id), self.storage.characters)
+
+    async def test_legacy_creation_redirects_without_mutation(self):
+        before = deepcopy(self.storage.characters)
+        disk = self.path.read_text()
+        await CoreCog.create_character.callback(self.core, self.ctx)
+        await CoreCog.create_character.callback(self.core, self.ctx,
+            "Ignored", "2000-01-01", "unwritten")
+        self.assertEqual(before, self.storage.characters)
+        self.assertEqual(disk, self.path.read_text())
+        self.assertIn("!begin", self.ctx.text())
+        self.assertNotIn("Welcome,", self.ctx.text())
+
     async def test_existing_character_protected_by_both_entry_points(self):
         uid=str(self.ctx.author.id);self.storage.characters[uid]={"name":"Keep","bag":{"gift":1}}
         before=deepcopy(self.storage.characters)

@@ -6,7 +6,7 @@
 # Last edited: 2026-02-03 (Australia/Perth)
 #
 # Purpose:
-# - Provides canonical v0 character creation command (!create_character / !create / !cc)
+# - Legacy creation aliases redirect to reviewed guided !begin creation
 # - Seeds initial stats, HP, starter inventory, and v0 mana pools
 # - Ensures cube records exist via Storage helpers (no cube schema logic here)
 # - Provides player-facing inventory and character sheet embeds
@@ -604,21 +604,20 @@ class CoreCog(commands.Cog):
             await ctx.send(ch)
 
     # -------------------------
-    # Character creation (CANON v0)
+    # Character creation compatibility entry
     # -------------------------
     @commands.command(name="create_character", aliases=["create", "cc"])
     async def create_character(
         self,
         ctx: commands.Context,
-        name: str,
-        birthdate: str,
-        class_id: str,
+        name: str = "",
+        birthdate: str = "",
+        class_id: str = "",
         *,
         origin_note: str = "",
     ):
         """
-        v0 canonical:
-        !create_character <name> <YYYY-MM-DD> <class_id> [origin_note...]
+        Compatibility entry: direct players to guided creation without writes.
         """
         s = self.bot.storage
         user_id = str(ctx.author.id)
@@ -627,92 +626,10 @@ class CoreCog(commands.Cog):
             await ctx.send("You already have a character. Creation will not replace it.")
             return
 
-        class_id = class_id.strip().lower()
-        if class_id not in CLASS_IDS:
-            await ctx.send(
-                "Invalid class_id.\n"
-                "Use one of:\n" + ", ".join(f"`{c}`" for c in CLASS_IDS)
-            )
-            return
-
-        # Validate birthdate
-        try:
-            _ = datetime.strptime(birthdate, "%Y-%m-%d").date()
-        except ValueError:
-            await ctx.send("Invalid birthdate. Use format `YYYY-MM-DD`.")
-            return
-
-        s.characters[user_id] = build_arrival_character(
-            user_id, name, birthdate, class_id, origin_note, getattr(s, "items_db", {}))
-
-        _ensure_contract_pools_and_astro_fields(self.bot, user_id, mana_snapshot=s.characters[user_id]["pools"])
-
-        # Optional bridge stores (non-authoritative)
-        try:
-            if user_id not in getattr(s, "lockers", {}):
-                s.lockers[user_id] = {"capacity": 20, "items": {}}
-        except Exception:
-            pass
-        try:
-            if user_id not in getattr(s, "efi_vault", {}):
-                s.efi_vault[user_id] = {}
-        except Exception:
-            pass
-
-        # ---- Cubes (contract v0) ----
-        try:
-            if hasattr(s, "ensure_personal_cube"):
-                s.ensure_personal_cube(user_id)
-
-            if hasattr(s, "ensure_efiishent_prime_cube"):
-                if self._is_dpc(ctx):
-                    s.ensure_efiishent_prime_cube(dpc_user_id=user_id)
-                else:
-                    s.ensure_efiishent_prime_cube()
-        except Exception:
-            pass
-
-        # Persist
-        try:
-            s.save_characters()
-        except Exception:
-            pass
-        try:
-            s.save_lockers()
-        except Exception:
-            pass
-        try:
-            s.save_efi_vault()
-        except Exception:
-            pass
-        try:
-            s.save_cubes()
-        except Exception:
-            pass
-
-        # Ensure run channel + persist its id
-        try:
-            ch = await ensure_player_run_channel(self.bot, ctx, user_id, name)
-            if ch:
-                s.characters[user_id]["run_channel_id"] = str(ch.id)
-                try:
-                    s.save_characters()
-                except Exception:
-                    pass
-                await ctx.send(f"✅ Your run channel is ready: {ch.mention}")
-        except Exception as e:
-            print(f"[RUN-CHANNEL] create failed for {user_id}: {type(e).__name__}: {e}")
-
         await ctx.send(
-            f"**Welcome, {name}.** Your character is in a transit pod at Neptune Lounge. "
-            "Begin finding your bearings with `!awaken`, or survey your surroundings with `!look`."
+            "Character creation now uses the guided review. "
+            "Send `!begin` to me in a direct message. Nothing has been created."
         )
-
-        if hasattr(self.bot, "send_to_realm_feed"):
-            try:
-                await self.bot.send_to_realm_feed(f"✨ {name} steps into Triton Central for the first time.")
-            except Exception:
-                pass
 
     # -------------------------
     # Inventory (presentation + reconciliation)
@@ -723,7 +640,7 @@ class CoreCog(commands.Cog):
         user_id = str(ctx.author.id)
 
         if user_id not in s.characters:
-            await ctx.send("🧬 You don’t have a character yet. Use `!create_character <name> <YYYY-MM-DD> <class_id>`.")
+            await ctx.send("🧬 You don’t have a character yet. DM me `!begin` to create one.")
             return
 
         c = s.characters[user_id]
@@ -828,7 +745,7 @@ class CoreCog(commands.Cog):
         user_id = str(user_id)
 
         if user_id not in s.characters:
-            raise ValueError("🧬 You don’t have a character yet. Use `!create_character ...`.")
+            raise ValueError("🧬 You don’t have a character yet. DM me `!begin` to create one.")
 
         original = s.characters[user_id]
         c = deepcopy(original)
@@ -922,7 +839,7 @@ class CoreCog(commands.Cog):
         user_id = str(ctx.author.id)
 
         if user_id not in s.characters:
-            await ctx.send("🧬 You don’t have a character yet. Use `!create_character ...`.")
+            await ctx.send("🧬 You don’t have a character yet. DM me `!begin` to create one.")
             return
 
         original = s.characters[user_id]
@@ -999,7 +916,7 @@ class CoreCog(commands.Cog):
         user_id = str(ctx.author.id)
 
         if user_id not in s.characters:
-            await ctx.send("🧬 You don’t have a character yet. Use `!create_character <name> <YYYY-MM-DD> <class_id>`.")
+            await ctx.send("🧬 You don’t have a character yet. DM me `!begin` to create one.")
             return
 
         c = s.characters[user_id]

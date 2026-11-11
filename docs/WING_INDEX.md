@@ -6,6 +6,16 @@ Current home/checkpoint: **W7 Engine / W7-F10 — Beginning Again: Character Cre
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
+## Lifecycle implementation return — 11 November 2026
+
+[W7-F10 lifecycle checks](wings/W7-F10_BEGINNING_AGAIN.md#lifecycle-checks-resolved-in-source--11-november-2026):
+legacy creation redirects to guided !begin; ownership-checked lazy personal-cube
+recreation and a strict private reset-channel receipt bridge are implemented in
+source. Nested character copy remains preserved/noncanonical after bounded reader
+checks. **417 tests pass.** No live receipt, archive, deployment or reset. Next:
+production stopped-service adapter with receipt rollback and operational preflight.
+Queen's separate access issue remains parked; no seal/status-count changes.
+
 ## Account integrity and reset preview — 11 November 2026
 
 [W7-F10 ownership clarification and reset preview](wings/W7-F10_BEGINNING_AGAIN.md#ownership-clarification-and-reset-preview--11-november-2026)
