@@ -6,6 +6,15 @@ Current home/checkpoint: **W7 Engine / W7-F10 — Beginning Again: Character Cre
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
+## Players category staging return — 11 November 2026
+
+[W7-F10 wider channel audit](wings/W7-F10_BEGINNING_AGAIN.md#players-category-staging-and-wider-mapping-audit--11-november-2026):
+existing Player Runs category verified and configuration staged privately, not
+activated. Efiishent's mapping is sound; the Queen's explicit channel access belongs
+to Efiishent rather than its recorded character account, and three wanderer channel
+lookups return 404. Resolve intended Queen ownership before permission changes or
+activation; preserve all history. No live reset or service/configuration change.
+
 ## Run-channel ownership return — 11 November 2026
 
 [W7-F10 private spaces and permeable world](wings/W7-F10_BEGINNING_AGAIN.md#private-play-spaces-and-permeable-world--11-november-2026)

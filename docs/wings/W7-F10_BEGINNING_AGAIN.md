@@ -479,3 +479,45 @@ router as a complete privacy audit.
 Next: supply the missing category in the eventual operator configuration step,
 resolve legacy creation and personal-store/nested-file boundaries, and finish the
 stopped-service reset adapter. W7-F10 stays unsealed; W7-F9 parked.
+
+## Players category staging and wider mapping audit — 11 November 2026
+
+On Karun's instruction to reconnect the Players category, read-only Discord
+inspection identified the existing category named **🌀 Player Runs**, using
+Efiishent's verified channel parent. Its numeric ID is staged outside Git at
+/home/efiishent/.config/future-sky/players-category.env (mode 0600).
+The active bot dotenv, systemd configuration, service and Discord permissions
+remain unchanged. Category staging is not activation.
+
+The wider audit examined all five saved run-channel mappings:
+
+| Character | Observation |
+| --- | --- |
+| Efiishent | Existing channel in Player Runs; explicit access belongs to the recorded account. |
+| The Dark Rat Queen | Existing channel in Player Runs; explicit human access belongs to Efiishent's account, not the account stored for this character. |
+| wanderer-9551 | Saved channel returns Discord 404. |
+| wanderer-3616 | Saved channel returns Discord 404. |
+| wanderer-0466 | Saved channel returns Discord 404. |
+
+No alternative explicit-owner channels were found for the Queen or the three
+wanderers. Efiishent has explicit grants on two category channels: its own and the
+Queen's. The current router's conflicting-saved-claim check prevents silently
+adopting the Queen's channel as Efiishent's reset destination.
+
+These observations do not establish whether the Queen's access is an old
+broadcast-creation bug or an intentional operator arrangement. Ask Karun whether
+the Queen is another person's player character or an operator-controlled persona,
+and establish intended ownership before changing any grants/mappings. Do not infer
+ownership from character name or grant another account the existing history.
+
+The three 404 results mean the bot cannot currently retrieve those saved channels;
+they do not alone prove deletion rather than loss of visibility. Preserve records
+until ownership/lifecycle is reviewed. No cleanup or recreation occurred.
+
+Activation of the ownership-aware router would refuse the Queen's present mapping
+and unresolved wanderer mappings. Therefore do not activate it as an apparently
+transparent category-only change without addressing or explicitly accepting those
+delivery effects. Next return: resolve the Queen's ownership intent, then prepare
+the reviewed router/category activation. Production activation needs the operator's
+privileged terminal; remote sudo execution is unavailable. No reset, seal or
+sealed-count change.
