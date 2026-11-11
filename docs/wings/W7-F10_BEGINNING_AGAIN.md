@@ -916,3 +916,22 @@ Player acceptance remains: refresh/sign in to the HUD, confirm hands/garment/pod
 guidance, and inspect hands to compare the familiar-body wording and next choices.
 Do not recreate/reset the character for footer validation. Existing Discord embeds
 retain their old text. Receipt/archive retained; W7-F10 REVIEW, W7-F9 PARKED.
+
+## Browser cache correction verified — 11 November 2026
+
+The player's screenshot showed successful hands observation but missing follow-on
+suggestions. Live DOM inspection found an empty navigation element, not clipping.
+A normal page reload still stripped opening guidance despite current server script
+bytes. index.html retained game.js?v=w7f9. Updating only that script reference to
+game.js?v=w7f10-4bb1d86f2037 forced the reviewed script to load. Browser verification
+then showed opening guidance and visible follow-on suggestions after inspect hands.
+Repeat hands inspection offers body/garment/pod, since hud_presence was already
+discovered; the first-time implant cue correctly does not repeat. No reset occurred.
+
+Source/live HTML matched before the edit; script hash matched the reviewed package.
+Only HTML was atomically published, with prior HTML retained privately on the server.
+No service restart or direct player-data edit was needed. The authorized repeat
+inspection can record normal activity, but does not add a new hands discovery.
+The previous package manifest remains historical and its HTML pin predates this
+cache correction; do not rerun its installer/rollback without review. Future static
+releases must version changed browser assets. W7-F10 remains REVIEW, pending seal.
