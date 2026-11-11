@@ -1,6 +1,6 @@
 # W7-F10 — Beginning Again: Character Creation & Reset
 
-Status: REVIEW — creation/state audit completed 11 November 2026; reset implementation pending.
+Status: REVIEW — isolated transaction rehearsal tested 11 November 2026; live adapter and execution pending.
 Home: W7 Engine. Adjacent to W7-F9 — Waking Into the Window.
 Allocated on Karun's instruction; scope remains a review draft.
 Branch: engine/w7-f10-beginning-again. Baseline: 96ac40f.
@@ -306,3 +306,80 @@ The next bounded step is implementing and testing archive/reset/restore in isola
 fixtures against this manifest, including those preflight blockers. Present the
 tested operator plan and target for live approval only after it is concrete.
 W7-F10 stays unsealed; W7-F9 stays parked; 35 sealed unchanged.
+
+## Isolated transaction rehearsal — 11 November 2026
+
+Implemented in [tools/character_reset_rehearsal.py](../../tools/character_reset_rehearsal.py),
+with [fictional tests](../../tests/test_character_reset_rehearsal.py).
+This is the first implementation checkpoint, not a production reset command.
+
+The harness creates its own private temporary directory from four supplied
+fictional dictionaries. It accepts no existing data-root path, has no live CLI,
+imports no bot runtime, and cannot attach to the service through its public API.
+Closing the harness removes its disposable archives. No real personal records
+were used as fixtures or committed to Git.
+
+### Implemented and tested
+
+- Account-key and embedded character-ID agreement; selected personal-cube owner
+  and type validation. Name is never the reset selector.
+- Selected-record archives preserve absent versus empty entries and include a
+  format version and SHA-256 integrity check. Archives are mode 0600 inside a
+  mode-0700 directory. Checksums detect damage; they are not signatures.
+- Plans are checked against the complete current four-store snapshot before
+  mutation. Recomputed plans reject altered unrelated entries, even with a
+  recomputed checksum. These are single-writer rehearsal guarantees.
+- Reset removes only the selected character, locker, vault and personal cube.
+  The prime cube and unrelated entries remain structurally identical.
+- Restore first archives the current replacement records, including presence/
+  absence, then reinstates the selected archived records. A subsequent restore
+  of that replacement is tested.
+- A durable journal is written before store changes. Each file uses temporary
+  write, file fsync, replacement and directory fsync. Journal removal follows
+  post-write verification.
+- Any unresolved journal blocks further planning/apply/archive operations.
+  Rollback validates every store against its before/after image before writing;
+  unexpected contents block recovery rather than overwriting another writer.
+- Rollback can resume from disk without the original in-memory plan and can
+  itself be interrupted and retried.
+
+### Evidence
+
+Command from the repository root:
+
+```sh
+PYTHONPATH=.:bot:tests /opt/futuresky/.venv-web-pilot-20261029/bin/python   -m unittest test_character_reset_rehearsal test_arrival test_web_arrival -q
+```
+
+**29 tests passed:** 15 reset-rehearsal tests plus the existing 14 arrival/web
+arrival tests. Failure cases include interruption after each of the four writes,
+archive failure, store-write failure, interrupted rollback, stale plans,
+tampered archives/journals, ownership mismatch, unexpected external changes,
+replacement preservation, and refusal of filesystem-path inputs.
+
+These are simulated exceptions and file-level recovery checks, not physical
+power-loss testing. They do not establish live-service exclusion, stale-session
+invalidation, source-version compatibility, or a fresh Efiishent walkthrough.
+No bot source was modified, no service restarted, and no live data or private
+live archive was created.
+
+### Remaining production boundary
+
+Do not turn this harness into a live tool merely by adding a path argument.
+A production adapter still needs exclusive maintenance/service-stop verification,
+persistent private archive placement and retention, source/schema/file metadata,
+reviewed target identity and channel mapping, and the concrete blocker resolutions
+from the audit. Rehearsal journals hold full fictional store before/after images;
+production journals would contain other players' private data and require explicit
+bounded retention and handling. Recovery must never replay a whole-store journal
+after normal play has resumed.
+
+The nested legacy file, channel ownership/reattachment, legacy creation contract,
+personal-cube recreation, time-sensitive restored records and actual DPC role
+remain unresolved live preflight items. The bounded repository search found the
+canonical path in config, recovery capsule and portal deployment helper; it did
+not establish provenance or external readers for the nested file.
+
+Next: resolve those lifecycle boundaries, then build the stopped-service adapter
+and its preflight checks. Present the exact Efiishent execution plan before a live
+reset. W7-F10 remains unsealed; W7-F9 parked; 35 sealed unchanged.
