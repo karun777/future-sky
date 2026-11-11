@@ -845,3 +845,32 @@ then operator-approved stop/install/archive/reset/restart and DM !begin acceptan
 The brief shared-service interruption and reauthentication are explicit. Queen's
 persistent account, grants and current routing behaviour stay unchanged.
 W7-F10 REVIEW/unsealed; W7-F9 PARKED; 35 seals unchanged.
+
+## Live reset and restart verified — 11 November 2026
+
+Karun explicitly approved maintenance and ran the privileged commands in the
+Neptune Lounge SSH terminal. The installer reported its code transaction verified;
+the reset adapter reported its transaction verified, a private before-archive
+created, and other players' persistent records/protected files unchanged.
+The private plan and archive remain on the server; their contents are not in Git.
+No character creation or receipt retirement has occurred at this checkpoint.
+
+After operator restart, direct read-only checks confirmed:
+- service active/running with new PID 1028397;
+- Discord login recorded for that process, with no traceback in its current logs;
+- five lifecycle files and pinned router/dependencies match the deployment manifest;
+- local and public /play/ return 200; anonymous local /play/api/me returns 401;
+- the selected character, locker, vault and personal cube records are absent;
+- the receipt is readable by the service account and passes the runtime validator,
+  preserving the independently verified channel ID and seeded marker.
+
+The other-player/protected-file preservation statement above is supported by the
+operator's successful transaction output; post-restart checks did not reopen the
+root-private before-archive. No Discord permissions or category configuration were
+changed. The broader strict-router change remains excluded.
+
+Next is player acceptance: Karun sends !begin in a DM to Future Sky, completes the
+guided draft and review, then awakens. Verify fresh progression, the same private
+channel without duplicate welcome/creation, and Discord/HUD agreement after login.
+Keep the reset receipt until the replacement binding is durably verified; retain
+the original archive. W7-F10 remains REVIEW/unsealed, W7-F9 PARKED, 35 seals.

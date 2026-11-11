@@ -8,6 +8,12 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 
 ## Reset adapter rehearsal return — 11 November 2026
 
+[W7-F10 live reset checkpoint](wings/W7-F10_BEGINNING_AGAIN.md#live-reset-and-restart-verified--11-november-2026):
+operator installed the lifecycle package and completed Efiishent's archived reset.
+Direct checks confirm service/Discord/portal healthy, selected records absent,
+and retained channel/seed receipt valid. Fresh DM !begin acceptance is next.
+W7-F10 remains REVIEW/unsealed; W7-F9 PARKED; 35 seals unchanged.
+
 [W7-F10 pinned-router deployment](wings/W7-F10_BEGINNING_AGAIN.md#pinned-router-deployment-prepared--11-november-2026):
 five-file lifecycle package prepared; current router/dependencies preserved by hash.
 456 tests passed, read-only live package check passed. No install/reset/restart.
