@@ -1,10 +1,20 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W7 Engine / W7-F10 — Beginning Again: Character Creation & Reset, DRAFT FOR REVIEW 9 November 2026**. [Complete feather document](wings/W7-F10_BEGINNING_AGAIN.md). Allocated on Karun's instruction as adjacent creation/reset work. [W7-F9](wings/W7-F9_WAKING_INTO_THE_WINDOW.md) is PARKED/unsealed; its existing-player live handoff is verified, fresh-character acceptance pending. W7-F8 remains sealed. Next unallocated W7-F11 and W6-F10. Chapter 1 / W4 stays paused.
+Current home/checkpoint: **W7 Engine / W7-F10 — Beginning Again: Character Creation & Reset, REVIEW 11 November 2026**. [Complete feather document](wings/W7-F10_BEGINNING_AGAIN.md). Allocated on Karun's instruction as adjacent creation/reset work. [W7-F9](wings/W7-F9_WAKING_INTO_THE_WINDOW.md) is PARKED/unsealed; its existing-player live handoff is verified, fresh-character acceptance pending. W7-F8 remains sealed. Next unallocated W7-F11 and W6-F10. Chapter 1 / W4 stays paused.
 **35 sealed wing feathers: W4 has nine, W6 eight, W7 eight; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
+
+## Creation/reset audit return — 11 November 2026
+
+[W7-F10 audit and targeted reset plan](wings/W7-F10_BEGINNING_AGAIN.md#creation-and-state-audit--11-november-2026)
+records the guided/legacy creation differences, separate personal stores,
+prime-cube preservation, channel-ownership and nested-record preflight blockers.
+Eight reviewed source files match live; 14 fictional arrival tests pass.
+No reset or archive/restore implementation yet; no live data changed.
+Next: isolated archive/reset/restore implementation and preflight tests.
+W7-F9 remains parked; sealed counts unchanged.
 
 ## Adjacent-feather return — 9 November 2026
 
