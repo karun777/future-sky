@@ -1,10 +1,36 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W7 Engine / W7-F10 — Beginning Again: Character Creation & Reset, REVIEW 11 November 2026**. [Complete feather document](wings/W7-F10_BEGINNING_AGAIN.md). Allocated on Karun's instruction as adjacent creation/reset work. [W7-F9](wings/W7-F9_WAKING_INTO_THE_WINDOW.md) is PARKED/unsealed; its existing-player live handoff is verified, fresh-character acceptance pending. W7-F8 remains sealed. Next unallocated W7-F11 and W6-F10. Chapter 1 / W4 stays paused.
+Current home/checkpoint: **W7 Engine / W7-F10 — Beginning Again: Character Creation & Reset, REVIEW 11 November 2026**. [Complete feather document](wings/W7-F10_BEGINNING_AGAIN.md). Live reset/recreation and saved-channel verification complete; restore runtime reconciled at `1028790`. [Current review summary](wings/W7-F10_BEGINNING_AGAIN.md#current-review-summary--11-november-2026). Final evidence review and seal pending. [W7-F9](wings/W7-F9_WAKING_INTO_THE_WINDOW.md) is PARKED/unsealed; its existing-player handoff is verified and fresh creation/opening evidence is available from W7-F10; first clothing selection, departure and return remain to be checked. W7-F8 remains sealed. Next unallocated W7-F11 and W6-F10. Chapter 1 / W4 stays paused.
 **35 sealed wing feathers: W4 has nine, W6 eight, W7 eight; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
+
+## Current creation/reset return — 11 November 2026
+
+W7-F10's authorised reset and guided recreation have completed. The replacement
+character's saved private-channel binding matches the retained proof/receipt;
+player-supplied Discord/HUD evidence shows fresh starting state. Opening guidance
+and cache corrections are deployed and browser-verified. The original private
+archive and receipt remain retained; no live restoration or receipt retirement
+has been performed.
+
+[Restore runtime reconciliation](wings/W7-F10_BEGINNING_AGAIN.md#step-1-restore-runtime-reconciled--11-november-2026)
+at `1028790`: 464 Python tests pass, including isolated old-archive restoration,
+replacement preservation and stale-plan/code-drift refusal. Read-only installed
+code verification passed with 140 hash entries. Other players' records/grants and
+the existing live router remain protected; the Queen's access issue stays parked.
+Future actual restoration still requires a fresh privileged maintenance preflight.
+
+Next: final evidence review for W7-F10 sealing, then return to the remaining
+W7-F9 fresh-character journey. W7-F10 REVIEW/unsealed, W7-F9 PARKED, Chapter 1
+paused; 35 seals unchanged. Summary/register refresh is documentary only.
+
+## Historical checkpoints
+
+The dated entries below preserve the sequence and evidence available at each
+checkpoint. Their pending-action or no-deployment statements are historical;
+the current summary above owns the return state.
 
 ## Reset adapter rehearsal return — 11 November 2026
 

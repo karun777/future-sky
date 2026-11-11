@@ -3,22 +3,27 @@
 Status: PARKED / UNSEALED — 9 November 2026, at Karun's request.
 Home: W7 Engine. Branch: engine/w7-f9-waking-into-the-window.
 Baseline: W7-F8 seal 524411c. Working checkout remains physically at
-/home/efiishent/future-sky-worktrees/w7-f8; its branch is W7-F9.
+/home/efiishent/future-sky-worktrees/w7-f8; the checkout is now on adjacent
+engine/w7-f10-beginning-again. The W7-F9 branch above records this feather's implementation lineage.
 35 sealed feathers; W7 eight. W7-F10 is now allocated; next unallocated W7-F11 and W6-F10.
 Chapter 1 / W4 stays paused.
 
 ## Current return checkpoint — adjacent creation/reset feather
 
-Source checkpoint: `96ac40f`; reviewed 9 November 2026.
-Karun has explicitly requested [W7-F10 — Beginning Again](W7-F10_BEGINNING_AGAIN.md)
-to review creation and establish a reversible reset using Efiishent. W7-F9 is
-parked until that separately reviewed work is ready. Prior prohibitions below
-against resetting merely to manufacture acceptance retain their intent: no reset
-has occurred, and live reset requires the concrete W7-F10 plan. A reset character
-on an existing account does not verify new-account onboarding.
-Existing-player handoff and activation are verified; fresh-character live
-acceptance remains pending. Historical ACTIVE/deployment-pending statements below
-describe their dated checkpoints, not the current status.
+Original source checkpoint: `96ac40f`. Return note refreshed 11 November 2026
+through adjacent W7-F10 evidence at `1028790`.
+
+[W7-F10 — Beginning Again](W7-F10_BEGINNING_AGAIN.md#current-review-summary--11-november-2026)
+has completed the separately authorised reset, guided recreation, fresh HUD state
+and saved-channel verification. Opening guidance is deployed and browser-verified;
+restoration is rehearsed under the reconciled runtime contract. W7-F10 remains
+REVIEW/unsealed, and this feather remains PARKED until its closure.
+
+On return, use that existing fresh-character evidence; do not reset again merely
+to manufacture acceptance. Complete first clothing selection, departure and return,
+and compare Discord/HUD behaviour. A reset character on an existing account does
+not verify new-account onboarding. Historical ACTIVE, deployment-pending and
+no-reset statements below describe their dated checkpoints, not current state.
 
 ## Bounded outcome
 

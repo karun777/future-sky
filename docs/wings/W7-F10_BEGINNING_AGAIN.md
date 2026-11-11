@@ -1,16 +1,50 @@
 # W7-F10 — Beginning Again: Character Creation & Reset
 
-Status: REVIEW — isolated transaction rehearsal tested 11 November 2026; live adapter and execution pending.
+Status: REVIEW / UNSEALED — live reset, recreation and saved-channel verification complete; restore runtime reconciled. Summary refreshed 11 November 2026.
 Home: W7 Engine. Adjacent to W7-F9 — Waking Into the Window.
-Allocated on Karun's instruction; scope remains a review draft.
+Allocated and implemented on Karun's instruction; final evidence review and seal remain pending.
 Branch: engine/w7-f10-beginning-again. Baseline: 96ac40f.
 Checkout: /home/efiishent/future-sky-worktrees/w7-f8 (folder name retained).
 Authority: [Wing Index](../WING_INDEX.md),
 [eight-wing charter](../current/EIGHT_WINGS_CHARTER.md) and
 [feathering protocol](../archive/process-history/R3GPT_FEATHERING.md).
-W7-F9 is parked and unsealed while this proposal is reviewed.
+W7-F9 is parked and unsealed pending closure of this adjacent creation/reset feather.
 No reset or deployment is authorised by this document alone.
 Chapter 1 / W4 remains paused. No sealed-count change.
+
+## Current review summary — 11 November 2026
+
+Evidence through [1028790](https://github.com/karun777/future-sky/commit/1028790033bd45ae74c04f01c71036b7de3bd983).
+This summary is the current checkpoint. The original scope and dated audit,
+preparation and execution entries below retain their historical evidence; their
+pending-action statements do not override this summary.
+
+| Outcome | Evidence and boundary |
+| --- | --- |
+| Targeted reset and archive | Karun approved and executed the privileged maintenance. Successful adapter output reported the private before-archive and unchanged other-player/protected records. Direct post-restart checks confirmed selected records cleared and the retained channel receipt valid. |
+| Fresh character creation | Karun's Discord playcheck completed guided creation, review and awakening for efiishent: Dreamer Technician, date 1976-03-04, familiar body, unfamiliar embodiment, background left open. |
+| Fresh state in the HUD | Supplied screenshots show the selected profile and starting stats, empty quest log, one Rusty Knife and one Leather Jacket, with nothing equipped. This is a reset character on an existing account, not a first-time account/OAuth test. |
+| Saved private channel | Read-only canonical-store checks matched the replacement account/name and both routing fields to the private pre-reset proof and retained receipt. No other stored character claimed that channel. This is durable binding evidence, not a Discord-wide channel-history audit. |
+| Opening presentation | The saved-awakening footer and HUD opening/follow-on guidance were corrected and deployed. The HTML cache version was then corrected; direct browser checks verified visible hands/garment/pod guidance and repeat-inspection choices. Existing Discord messages retain their old footer. |
+| Restoration availability | A reviewed current runtime manifest includes the two deployed Python corrections and preserves every other pin. Historical manifests remain unchanged. Old-archive restoration, replacement archival and other-player later-progress preservation pass in fictional stores; no live restore was performed. |
+| Verification | Latest suite: 464 Python tests passed. Prior playcheck: 25 Node DOM/scheduling tests passed; these are not visual browser tests. Read-only installed-code verification passed with 140 hash entries. |
+
+The original private archive and reset-channel receipt remain retained. No receipt
+retirement is included in this checkpoint. Any future real restoration requires a
+fresh reviewed plan, privileged offline checks and safe restart configuration.
+The last verified bot state was active/running, PID 1029171; reconciliation required
+no service restart or player-record edit.
+
+The Dark Rat Queen is another person's protected player character. Her account,
+grants and existing routing behaviour remain preserved; the separate access issue
+is parked. The stricter branch router was not deployed, and Players category
+configuration remains inactive. Shared history is not rewound by this procedure.
+
+**Return checkpoint:** final review for sealing W7-F10. After closure, return to
+W7-F9 for the remaining fresh-character journey: first clothing selection,
+departure and return, with Discord/HUD comparison. New-account onboarding remains
+a separate unverified claim. W7-F9 stays PARKED; Chapter 1 / W4 stays paused;
+35 sealed feathers, including eight in W7, remain unchanged.
 
 ## Intention
 
@@ -33,8 +67,8 @@ not evidence of first-time Discord/OAuth account onboarding.
 - Recovery capsules provide private bounded backups and disposable restore checks.
   They are not yet a targeted character archive/reset/restore transaction.
 
-These mechanisms remain distinct. No full character reset was found in the
-reviewed paths; the ownership audit must establish the complete affected state.
+These mechanisms were the pre-implementation foundation. The subsequent ownership
+audit and targeted reset adapter are recorded below; the mechanisms remain distinct.
 
 ## Bounded outcome
 
@@ -134,12 +168,13 @@ first clothing selection, departure and return. Track new-account authentication
 separately where it has not been observed. W7-F9 is not automatically sealed by
 completion of W7-F10.
 
-## Decisions for review
+## Original proposal decisions — historical
 
 Recommended baseline: operator-controlled reset; full fresh progression; same
 Discord identity and existing access; old character privately restorable; existing
 creation journey retained. Resolve any creation-rule changes during review before
-implementation. No live character data has been changed for this draft.
+implementation. At this original proposal checkpoint, no live character data had
+been changed. Later authorised execution is recorded below and in the current summary.
 
 ## Documentation review — 9 November 2026
 
@@ -958,5 +993,6 @@ Actual future restoration still requires fresh privileged maintenance preflight 
 a reviewed new plan; the isolated rehearsal does not claim a live restore occurred.
 
 See [current restore runtime](../../tools/deploy/w7f10/RESTORE_RUNTIME.md).
-Step 1 is complete. The earlier status summary/register still need reconciliation
-and final review before sealing. W7-F10 remains REVIEW; W7-F9 remains PARKED.
+Step 1 is complete. Summary/register reconciliation was the next documentary step
+at this checkpoint; it is now reflected in the current review summary. Final review
+and sealing remain pending. W7-F10 remains REVIEW; W7-F9 remains PARKED.
