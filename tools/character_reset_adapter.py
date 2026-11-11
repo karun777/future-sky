@@ -333,7 +333,7 @@ def validate_receipt(receipt, uid, characters):
     validate_reset_binding(receipt, {"id": uid}, characters)
 
 
-def offline_guard():
+def offline_guard(proc_root=Path("/proc")):
     result = subprocess.run(["systemctl", "show", "futuresky-bot.service",
                              "-p", "ActiveState", "-p", "SubState", "-p", "MainPID"],
                             check=True, capture_output=True, text=True)
@@ -342,7 +342,7 @@ def offline_guard():
         raise Refused("Service must be explicitly stopped and inactive/dead")
     # Detect detached bot processes and open writable descriptors under live data.
     # Maintenance must also exclude external writers; this is not a global lock.
-    for proc in Path("/proc").iterdir():
+    for proc in proc_root.iterdir():
         if not proc.name.isdecimal() or int(proc.name) == os.getpid():
             continue
         try:
@@ -364,6 +364,22 @@ def offline_guard():
             raise Refused("Cannot inspect processes for writers")
 
 
+
+def verify_runtime_files(source, live_root, manifest):
+    hashes = {}
+    for relative, entry in manifest["files"].items():
+        live, expected = live_root / relative, source / relative
+        if (not live.is_file() or live.read_bytes() != expected.read_bytes()
+                or hashlib.sha256(live.read_bytes()).hexdigest() != entry["source"]):
+            raise Refused("Reviewed runtime not installed: " + relative)
+        hashes[relative] = entry["source"]
+    for relative, expected in manifest["pins"].items():
+        live = live_root / relative
+        if not live.is_file() or hashlib.sha256(live.read_bytes()).hexdigest() != expected:
+            raise Refused("Preserved runtime changed: " + relative)
+        hashes[relative] = expected
+    return hashes
+
 def runtime_check():
     from dotenv import dotenv_values
     import shlex
@@ -375,15 +391,14 @@ def runtime_check():
                               check=True, capture_output=True, text=True).stdout
     if "FS_RESET_ROOMS_ON_BOOT=1" in shlex.split(settings):
         raise Refused("World reset on restart is enabled in service environment")
-    source = Path(__file__).resolve().parents[1] / "bot"
-    hashes = {}
-    for relative in ("fsbot/cogs/arrival.py", "fsbot/cogs/core.py", "fsbot/storage.py",
-                     "fsbot/config.py", "fsbot/reset_binding.py", "fsbot/cogs/router.py"):
-        live = Path("/opt/futuresky/bot") / relative
-        if not live.is_file() or live.read_bytes() != (source / relative).read_bytes():
-            raise Refused("Reviewed runtime not installed: " + relative)
-        hashes[relative] = hashlib.sha256(live.read_bytes()).hexdigest()
-    hashes["adapter"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+    repo = Path(__file__).resolve().parents[1]
+    source = repo / "bot"
+    manifest_path = repo / "tools/deploy/w7f10/deployment-manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    hashes = {"deployment_manifest": hashlib.sha256(manifest_path.read_bytes()).hexdigest()}
+    hashes.update(verify_runtime_files(source, Path("/opt/futuresky/bot"), manifest))
+    for relative in ("tools/character_reset_adapter.py", "tools/character_reset_rehearsal.py"):
+        hashes[relative] = hashlib.sha256((repo / relative).read_bytes()).hexdigest()
     return hashes
 
 

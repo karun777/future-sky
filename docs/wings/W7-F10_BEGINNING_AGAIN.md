@@ -812,3 +812,36 @@ is archived first. Review restored time-dependent state before resuming.
 **Next checkpoint:** review deployment compatibility and the concrete maintenance
 plan before live execution approval. Adapter built/rehearsed does not authorise a
 live reset. W7-F10 remains REVIEW/unsealed; W7-F9 parked; 35 seals unchanged.
+
+## Pinned-router deployment prepared — 11 November 2026
+
+Review found that the adapter's earlier runtime check required the stricter branch
+router. That would alter behaviour for Queen's saved mapping, contrary to the
+agreed parked grant issue. This checkpoint supersedes that deployment dependency.
+
+The new [operator runbook](../../tools/deploy/w7f10/README.md) and manifest deploy
+only five lifecycle files. The current live router v3.6.4 and remaining Python
+dependencies are hash-pinned and excluded from the overlay. Category configuration
+stays unset. The reset adapter accepts this reviewed installed package, includes
+its manifest and adapter/rehearsal code in the plan contract, and rejects drift.
+
+The installer never stops/starts services. It requires the offline guard, retains
+a private recoverable code transaction before the first write, preserves data,
+and provides code-only rollback. Rollback refuses changed data, including a
+completed reset; interrupted reset recovery must precede any code rollback.
+Completed selected-data restore remains a separately reviewed adapter transaction.
+
+**456 tests passed**, including 17 new deployment, positive stopped-service fixture
+and pinned-router compatibility tests. Five-write interruption/rollback, retry,
+drift, changed data/code, corrupt journal, failed backup and active-service refusal
+passed. A hash-matched live-router fixture routes fictional receipt-bound output
+to its saved channel with category unset, without creating channels, changing
+other mappings or reseeding. This is scoped compatibility, not broader router
+repair. The real read-only deployment hash check passed. Service remained active
+with PID 1016603; no live deployment, reset, grant/config change or messages.
+
+Next: review the concrete maintenance sequence, reverify Efiishent account/channel,
+then operator-approved stop/install/archive/reset/restart and DM !begin acceptance.
+The brief shared-service interruption and reauthentication are explicit. Queen's
+persistent account, grants and current routing behaviour stay unchanged.
+W7-F10 REVIEW/unsealed; W7-F9 PARKED; 35 seals unchanged.

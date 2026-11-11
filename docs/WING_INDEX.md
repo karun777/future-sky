@@ -8,6 +8,12 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 
 ## Reset adapter rehearsal return — 11 November 2026
 
+[W7-F10 pinned-router deployment](wings/W7-F10_BEGINNING_AGAIN.md#pinned-router-deployment-prepared--11-november-2026):
+five-file lifecycle package prepared; current router/dependencies preserved by hash.
+456 tests passed, read-only live package check passed. No install/reset/restart.
+Concrete operator maintenance and fresh-character acceptance remain pending.
+Queen account/grants/routing unchanged; W7-F10 REVIEW, W7-F9 PARKED, 35 seals.
+
 [W7-F10 stopped-service adapter](wings/W7-F10_BEGINNING_AGAIN.md#stopped-service-adapter-built-and-rehearsed--11-november-2026)
 is implemented with private archives, five-file journalling including the channel
 receipt, stale-plan/runtime checks and exact interrupted rollback. **439 tests
