@@ -2,9 +2,10 @@
 # FILE META — fsbot/cogs/router.py
 # Canonical name: Router (run-channel routing & delivery)
 #
-# Version: v3.6.4
-# Last edited: 2026-01-23 (Australia/Perth)
+# Version: v3.6.5
+# Last edited: 2026-11-11 (Australia/Perth)
 # Amended:
+# - W7-F10: recipient ownership checks, safe adoption, private fallback
 # - Feather A1 (lifecycle invoked from routed send): 2026-01-23 (Australia/Perth)
 # - Feather A2 (run_channel_id string normalization): 2026-01-23 (Australia/Perth)
 # - v3.6.4: harden overwrites + broaden routing allowlist + add extension setup()
@@ -64,6 +65,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import os
 import re
 from typing import Optional, Set
@@ -314,109 +316,146 @@ def _resolve_bot_member(guild: discord.Guild, bot: commands.Bot) -> Optional[dis
     return None
 
 
-async def ensure_player_run_channel(
-    bot: commands.Bot,
-    ctx: commands.Context,
-    user_id: str,
-    char_name: str,
-) -> Optional[discord.TextChannel]:
+def _owned_run_channel(bot, guild, channel, user_id):
+    """Verify a private account channel; labels and character names are not identity.
+
+    Explicit extra human grants are ambiguous (e.g. an invited visitor), so they
+    require operator review. Administrators retain Discord's platform access.
+    This does not change world-presence or event-broadcast audience rules.
     """
-    Ensure a per-player run channel exists under the configured Players category.
-    Returns the channel (discord.TextChannel) or None.
+    try:
+        if not isinstance(channel, discord.TextChannel):
+            return False
+        if channel.guild.id != guild.id:
+            return False
+        category_id = _players_category_id()
+        if category_id:
+            if channel.category_id != category_id:
+                return False
+        elif str(bot.storage.characters.get(user_id, {}).get("run_channel_id")) != str(channel.id):
+            # Legacy saved mappings remain usable without creation configuration.
+            # Missing category never authorises discovery/adoption.
+            return False
+        member = guild.get_member(int(user_id))
+        if not isinstance(member, discord.Member) or member.bot:
+            return False
+        if channel.overwrites_for(guild.default_role).view_channel is not False:
+            return False
+        if channel.overwrites_for(member).view_channel is not True:
+            return False
+        if not channel.permissions_for(member).view_channel:
+            return False
+        for target, overwrite in channel.overwrites.items():
+            if overwrite.view_channel is not True:
+                continue
+            if isinstance(target, discord.Role):
+                if not target.permissions.administrator:
+                    return False
+            elif isinstance(target, discord.Member):
+                if str(target.id) != user_id and not target.bot:
+                    return False
+            else:
+                return False
+        for uid, character in bot.storage.characters.items():
+            if str(uid) != user_id and isinstance(character, dict):
+                if str(character.get("run_channel_id")) == str(channel.id):
+                    return False
+        return True
+    except Exception:
+        return False
 
-    Side-effect: when creating or recovering a run channel, we auto-seed it with
-    guidance + docs (exactly once per channel id).
 
-    Contract: router never creates characters; if user_id has no character, returns None.
-    """
-    cat_id = _players_category_id()
-    if not cat_id:
-        return None
+def _bind_run_channel(bot, user_id, channel):
+    """Do not claim successful attachment after failed persistence."""
+    record = bot.storage.characters[user_id]
+    present = "run_channel_id" in record
+    previous = record.get("run_channel_id")
+    record["run_channel_id"] = str(channel.id)
+    try:
+        bot.storage.save_characters()
+    except Exception:
+        if present:
+            record["run_channel_id"] = previous
+        else:
+            record.pop("run_channel_id", None)
+        return False
+    return True
 
-    guild = ctx.guild
+
+async def ensure_player_run_channel(bot, ctx, user_id, char_name):
+    """Resolve the recipient's private play space, independent of caller/name."""
+    user_id = str(user_id)
+    guild = getattr(ctx, "guild", None)
     if not guild:
         return None
+    # Broadcasts can arrive concurrently. Serialize resolution per guild/account.
+    locks = getattr(bot, "_run_channel_locks", None)
+    if locks is None:
+        locks = bot._run_channel_locks = {}
+    lock = locks.setdefault((guild.id, user_id), asyncio.Lock())
+    async with lock:
+        return await _ensure_player_run_channel_locked(bot, guild, user_id, char_name)
 
-    # Player must already have a character record
+
+async def _ensure_player_run_channel_locked(bot, guild, user_id, char_name):
     try:
         s = bot.storage
-        if user_id not in s.characters or not isinstance(s.characters.get(user_id), dict):
+        if not isinstance(s.characters.get(user_id), dict):
             return None
-    except Exception:
-        return None
-
-    category = guild.get_channel(cat_id)
-    if not isinstance(category, discord.CategoryChannel):
-        # misconfig: fail soft
-        return None
-
-    # If we already know it, reuse it (and seed)
-    try:
+        # Resolve recipient, never ctx.author: caller may be another player.
+        member = guild.get_member(int(user_id))
+        if not isinstance(member, discord.Member) or member.bot:
+            return None
         run_id = s.characters[user_id].get("run_channel_id")
         if run_id:
             existing = guild.get_channel(int(run_id))
-            if isinstance(existing, discord.TextChannel):
-                try:
-                    await _seed_run_channel_once(bot, user_id, existing)
-                except Exception:
-                    pass
-                return existing
-    except Exception:
-        pass
+            # A conflicting saved mapping requires review, not silent replacement.
+            if not _owned_run_channel(bot, guild, existing, user_id):
+                return None
+            await _seed_run_channel_once(bot, user_id, existing)
+            return existing
 
-    channel_name = f"fs-{_slug(char_name)}"
+        category = guild.get_channel(_players_category_id())
+        if not isinstance(category, discord.CategoryChannel):
+            return None
 
-    # Try find existing channel in the category by name
-    for ch in category.channels:
-        if isinstance(ch, discord.TextChannel) and ch.name == channel_name:
-            try:
-                # Feather A2: persist as string
-                s.characters[user_id]["run_channel_id"] = str(ch.id)
-                s.save_characters()
-            except Exception:
-                pass
-            try:
-                await _seed_run_channel_once(bot, user_id, ch)
-            except Exception:
-                pass
-            return ch
-
-    bot_member = _resolve_bot_member(guild, bot)
-
-    overwrites = {
-        guild.default_role: discord.PermissionOverwrite(view_channel=False),
-        ctx.author: discord.PermissionOverwrite(view_channel=True, send_messages=True, read_message_history=True),
-    }
-
-    # Only set bot overwrite if we can resolve bot member
-    if bot_member is not None:
-        overwrites[bot_member] = discord.PermissionOverwrite(
-            view_channel=True, send_messages=True, read_message_history=True
-        )
-
-    try:
-        new_ch = await guild.create_text_channel(
-            name=channel_name,
-            category=category,
-            overwrites=overwrites,
-            reason="Future Sky: auto-create player run channel",
-        )
+        # Legacy/reset recovery uses explicit recipient permissions, never a slug.
+        candidates = [
+            ch for ch in category.channels
+            if _owned_run_channel(bot, guild, ch, user_id)
+        ]
+        if len(candidates) > 1:
+            return None
+        if candidates:
+            channel = candidates[0]
+        else:
+            # If any channel explicitly grants this member access but cannot be
+            # verified, do not create a duplicate and conceal the ambiguity.
+            if any(isinstance(ch, discord.TextChannel)
+                   and ch.overwrites_for(member).view_channel is True
+                   for ch in category.channels):
+                return None
+            bot_member = _resolve_bot_member(guild, bot)
+            if bot_member is None:
+                return None
+            overwrites = {
+                guild.default_role: discord.PermissionOverwrite(view_channel=False),
+                member: discord.PermissionOverwrite(
+                    view_channel=True, send_messages=True, read_message_history=True),
+                bot_member: discord.PermissionOverwrite(
+                    view_channel=True, send_messages=True, read_message_history=True),
+            }
+            channel = await guild.create_text_channel(
+                name=f"fs-{_slug(char_name)}", category=category, overwrites=overwrites,
+                reason="Future Sky: create recipient-owned private run channel")
+            if not _owned_run_channel(bot, guild, channel, user_id):
+                return None
+        if not _bind_run_channel(bot, user_id, channel):
+            return None
+        await _seed_run_channel_once(bot, user_id, channel)
+        return channel
     except Exception:
         return None
-
-    try:
-        # Feather A2: persist as string
-        s.characters[user_id]["run_channel_id"] = str(new_ch.id)
-        s.save_characters()
-    except Exception:
-        pass
-
-    try:
-        await _seed_run_channel_once(bot, user_id, new_ch)
-    except Exception:
-        pass
-
-    return new_ch
 
 
 async def get_run_channel_by_guild_if_any(
@@ -442,7 +481,7 @@ async def get_run_channel_by_guild_if_any(
         run_id = s.characters[user_id].get("run_channel_id")
         if run_id:
             ch = guild.get_channel(int(run_id))
-            if isinstance(ch, discord.TextChannel):
+            if _owned_run_channel(bot, guild, ch, str(user_id)):
                 return ch
     except Exception:
         return None
@@ -523,8 +562,15 @@ class RunRoutedContext(commands.Context):
         if dest and dest.id != self.channel.id:
             return await dest.send(content=content, **kwargs)
 
-        # Otherwise, fall back to current channel
-        return await super().send(content=content, **kwargs)
+        if dest:
+            return await super().send(content=content, **kwargs)
+
+        # Never leak private output into the command's public/other-player channel.
+        # Caller receives its own output by DM; if DM fails, send no payload here.
+        try:
+            return await self.author.send(content=content, **kwargs)
+        except Exception:
+            return None
 
 
 class RouterCog(commands.Cog):

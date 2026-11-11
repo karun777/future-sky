@@ -383,3 +383,99 @@ not establish provenance or external readers for the nested file.
 Next: resolve those lifecycle boundaries, then build the stopped-service adapter
 and its preflight checks. Present the exact Efiishent execution plan before a live
 reset. W7-F10 remains unsealed; W7-F9 parked; 35 sealed unchanged.
+
+## Private play spaces and permeable world — 11 November 2026
+
+Karun reaffirmed the original intention: each player has an isolated play area,
+with a permeable boundary through which the multiplayer experience is delivered.
+The private run channel belongs to the account's play space. A character reset
+must preserve that space and its history while replacing character progression.
+This is operational continuity, not new narrative canon.
+
+### Existing permeability retained
+
+Speech delivers to the run channels of players in the same resolved room;
+characters inside cubes are excluded by that audience selection. Emotes use
+presence to find other room occupants and deliver to their individual channels.
+Whispers require shared room presence; tells address an explicit player.
+Selected creation, movement and combat events use the realm feed. These audience
+rules and shared-world state have not been rewritten in this change.
+
+Channel access is distinct from world interaction. Seeing another player's
+speech or entrance does not require access to their private command history,
+inventory or inward narration. Explicit visitor grants are not automatically
+treated as proof of channel ownership.
+
+### Ownership implementation
+
+[Router](../../bot/fsbot/cogs/router.py) now:
+
+- Resolves the recipient guild member from the target account ID. Previously,
+  creation used ctx.author even when speech/emotes were creating a recipient's
+  channel. That could grant the speaker access instead of the recipient.
+- Checks saved mappings before delivery: same guild; configured category when
+  present; explicit target visibility; everyone denied; no extra human grant,
+  non-admin role visibility grant, or conflicting saved character claim.
+  Bots and Discord administrator access remain platform exceptions.
+- Recovers an unmapped channel only from a unique verified recipient permission
+  pattern in the configured category. A changed/duplicate character name is
+  irrelevant. Ambiguity blocks adoption; permissions/history are not rewritten.
+- Serializes creation per guild/account, rolls back an in-memory mapping when
+  its save fails, and can recover the newly created channel on retry.
+- Uses the same verification for canonical non-creating/background lookup.
+- Sends routed private command output to the caller's DM if no verified run
+  destination can be resolved; failed DM delivery does not expose that payload
+  in the public or another player's command channel.
+
+This is a bounded legacy permission-based ownership check, not a new account
+registry or a general visitor/party permission system. If deliberate visitor
+access is needed later, it requires an explicit owner binding separate from
+permission grants. No existing channel grants were removed.
+
+### Read-only Efiishent Discord evidence
+
+Discord GET requests, canonical stored identity and service configuration were
+checked directly. No messages, edits, invitations or permission changes were
+sent. Credentials and raw account/channel IDs are omitted from Git.
+
+Observed: stored account ID matches the character; account is a guild member;
+saved destination is a text channel in a category of the same guild; exactly one
+saved character claims it; target has explicit view access; everyone is denied;
+no additional human view grant or non-admin role view grant; seeded-channel
+pointer matches. Existing channel ownership is therefore supported by both the
+stored mapping and its permissions. Preserve its ID, history and seeded marker
+in the private reset manifest; verify again immediately before any execution.
+
+**Configuration gap:** FS_PLAYERS_CATEGORY_ID is absent from the running process
+environment and the bot's dotenv file. The earlier audit's category comparison
+returned false because this setting was absent, not because a different configured
+category was found. Existing saved-channel routing historically did not need it.
+The revised router preserves verified saved mappings with that setting absent,
+but refuses new creation/discovery without a configured category. Before reset,
+the operator must configure the verified existing Players category and review all
+mapped destinations against it. No service configuration was changed here.
+
+**DPC clarification:** the account has neither a DPC role nor an administrator
+role, but it is the guild owner. Discord owner permissions therefore still give
+administrator authority; ordinary-user gating remains a separate test claim.
+This supersedes the earlier audit's unverified role limitation.
+
+### Validation and activation boundary
+
+17 fictional router tests cover cross-player creation, duplicate names, renamed
+character recovery, wrong owner/guild/category, conflicting and ambiguous claims,
+public/role/visitor grants, missing member/category, failed persistence, concurrent
+creation, shared speech audiences, background refusal and private DM fallback.
+The full Python suite passes: **394 tests**. Deployment-script output during that
+suite belongs to temporary fixtures; it is not a production deployment.
+
+Only repository source/tests/docs changed. The live service remains active on its
+existing code; Efiishent is untouched. The router change is ready for the reviewed
+deployment procedure, not yet activated. Live ownership is verified as a dated
+observation; post-deployment Discord delivery and reset reattachment remain to be
+observed. This does not certify every historical helper outside the canonical
+router as a complete privacy audit.
+
+Next: supply the missing category in the eventual operator configuration step,
+resolve legacy creation and personal-store/nested-file boundaries, and finish the
+stopped-service reset adapter. W7-F10 stays unsealed; W7-F9 parked.

@@ -6,6 +6,15 @@ Current home/checkpoint: **W7 Engine / W7-F10 — Beginning Again: Character Cre
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
+## Run-channel ownership return — 11 November 2026
+
+[W7-F10 private spaces and permeable world](wings/W7-F10_BEGINNING_AGAIN.md#private-play-spaces-and-permeable-world--11-november-2026)
+records Karun's multiplayer intent, recipient-owned routing fixes, permission-based
+recovery and 394 passing Python tests. Efiishent's existing channel ownership was
+verified read-only in Discord; missing Players category configuration must be
+resolved before reset. Source changes are committed, not deployed. Live character,
+channel permissions/history and service configuration unchanged.
+
 ## Reset transaction rehearsal return — 11 November 2026
 
 [W7-F10 isolated transaction rehearsal](wings/W7-F10_BEGINNING_AGAIN.md#isolated-transaction-rehearsal--11-november-2026)
