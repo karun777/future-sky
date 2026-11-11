@@ -900,3 +900,19 @@ Saved awakening now confirms persistence; preview keeps its temporary-draft foot
 459 Python tests and 25 Node browser-script tests passed. Node tests exercise DOM behavior, not visual browser rendering. Exact three-file installation and rollback passed in temporary code with fictional data. Live baseline verification passed. Service remains active at PID 1028397; no live code/data/channel/receipt/service changes occurred.
 
 Deployment awaits privileged terminal installation; see tools/deploy/w7f10_playcheck/README.md. The historical reset contract remains unchanged and will intentionally refuse another reset/restore after this hotfix until a new runtime contract is reviewed. Do not repeat character reset to test the footer. W7-F10 REVIEW/unsealed, W7-F9 PARKED, 35 seals. Receipt and original archive retained.
+
+## Playcheck corrections live — 11 November 2026
+
+Karun reports completing the privileged installation/restart. Direct read-only
+verification confirms all three delivered files and preserved code/HUD asset pins
+match the reviewed package. Public game.js also matches the delivery bytes.
+Service is active/running with new PID 1029171; its logs record Discord login and
+contain no traceback. Local/public /play/ return 200; anonymous API access returns
+401. The saved character name matches the selected account; run_channel_id and
+run_seeded_channel_id match the retained receipt. No other stored character claims
+that channel. No player records or permissions were changed by these checks.
+
+Player acceptance remains: refresh/sign in to the HUD, confirm hands/garment/pod
+guidance, and inspect hands to compare the familiar-body wording and next choices.
+Do not recreate/reset the character for footer validation. Existing Discord embeds
+retain their old text. Receipt/archive retained; W7-F10 REVIEW, W7-F9 PARKED.

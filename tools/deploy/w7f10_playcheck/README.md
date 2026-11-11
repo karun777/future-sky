@@ -1,6 +1,6 @@
 # W7-F10 playcheck correction
 
-Prepared and tested; not installed. Three files only: arrival_media.py, pod_inspection.py and the live HUD game.js. All other live Python files and HUD assets are hash pinned. Historical lifecycle deployment records stay unchanged.
+Installed and independently verified on 11 November 2026. The installation commands below are historical operator instructions, not a request to repeat installation. Three files only: arrival_media.py, pod_inspection.py and the live HUD game.js. All other live Python files and HUD assets are hash pinned. Historical lifecycle deployment records stay unchanged.
 
 459 Python tests and 25 Node DOM/scheduling tests pass. These are not visual browser tests. The exact three-file package installed and rolled back in temporary code with fictional data using the existing tested transaction engine. Read-only live baseline verification passed.
 
