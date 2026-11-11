@@ -874,3 +874,21 @@ guided draft and review, then awakens. Verify fresh progression, the same privat
 channel without duplicate welcome/creation, and Discord/HUD agreement after login.
 Keep the reset receipt until the replacement binding is durably verified; retain
 the original archive. W7-F10 remains REVIEW/unsealed, W7-F9 PARKED, 35 seals.
+
+## Saved channel verified after awakening — 11 November 2026
+
+Read-only canonical-store verification confirms the saved replacement character's
+account ID and name match the private pre-reset proof. Its run_channel_id and
+run_seeded_channel_id exactly match both that proof and the retained reset receipt.
+No other saved character claims the channel. Receipt validation passes against the
+current character store. This verifies durable binding reuse, not a channel-history
+audit or proof that no duplicate channel exists elsewhere in Discord. No game data,
+Discord permissions or receipt were changed by this check.
+
+Karun's supplied playcheck shows guided creation through awakening, the web handoff,
+correct character profile, empty quest log, and one Rusty Knife plus one Leather
+Jacket with nothing equipped. Discord !look returns the fresh pod opening. Retained
+issues: the post-awakening embed still shows the temporary-draft footer, and the web
+opening suggests panels instead of Discord's hands/garment/pod guidance. These remain
+unresolved; W7-F10 REVIEW/unsealed, W7-F9 PARKED. Receipt retained pending deliberate
+maintenance retirement; original archive retained.
