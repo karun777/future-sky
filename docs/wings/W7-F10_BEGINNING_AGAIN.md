@@ -935,3 +935,28 @@ inspection can record normal activity, but does not add a new hands discovery.
 The previous package manifest remains historical and its HTML pin predates this
 cache correction; do not rerun its installer/rollback without review. Future static
 releases must version changed browser assets. W7-F10 remains REVIEW, pending seal.
+
+
+## Step 1: restore runtime reconciled — 11 November 2026
+
+The adapter now binds new lifecycle plans to a reviewed current runtime manifest:
+the installed lifecycle package plus the two Python playcheck corrections. Every
+other Python pin, including the existing router, is preserved. Historical deployment
+manifests remain immutable; the historical playcheck installer explicitly uses its
+original pre-install contract. Static HUD assets are outside this bot contract.
+
+464 Python tests pass. Five new contract tests rehearse old-archive restoration
+under a new runtime, preservation of another fictional player's later progress,
+replacement-life archival and restoration, stale-plan refusal, source/live/pinned
+code-drift refusal, and continued blocking of unsafe restart flags. The portal test
+expectation was also corrected to the already-published cache-versioned script URL.
+
+Read-only installed-code verification passed: 140 hash entries. The live bot stayed
+active/running with unchanged PID 1029171. No live reset/restore, private-archive
+access, receipt retirement, service restart or player-record edit was performed.
+Actual future restoration still requires fresh privileged maintenance preflight and
+a reviewed new plan; the isolated rehearsal does not claim a live restore occurred.
+
+See [current restore runtime](../../tools/deploy/w7f10/RESTORE_RUNTIME.md).
+Step 1 is complete. The earlier status summary/register still need reconciliation
+and final review before sealing. W7-F10 remains REVIEW; W7-F9 remains PARKED.

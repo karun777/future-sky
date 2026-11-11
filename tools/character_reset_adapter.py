@@ -380,7 +380,23 @@ def verify_runtime_files(source, live_root, manifest):
         hashes[relative] = expected
     return hashes
 
-def runtime_check():
+def runtime_code_check(repo=None, live_root=Path("/opt/futuresky/bot"), manifest_path=None):
+    """Read-only installed-code check, separate from privileged restart preflight.
+
+    Historical deployment manifests remain immutable. New lifecycle plans bind to
+    the current reviewed runtime; archived selected records retain their v1 schema.
+    """
+    repo = Path(repo) if repo is not None else Path(__file__).resolve().parents[1]
+    manifest_path = Path(manifest_path) if manifest_path is not None else repo / "tools/deploy/w7f10/runtime-manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    hashes = {"deployment_manifest": hashlib.sha256(manifest_path.read_bytes()).hexdigest()}
+    hashes.update(verify_runtime_files(repo / "bot", live_root, manifest))
+    for relative in ("tools/character_reset_adapter.py", "tools/character_reset_rehearsal.py"):
+        hashes[relative] = hashlib.sha256((repo / relative).read_bytes()).hexdigest()
+    return hashes
+
+
+def runtime_check(manifest_path=None):
     from dotenv import dotenv_values
     import shlex
     for path in (Path("/opt/futuresky/bot/.env"), Path("/opt/futuresky/web-portal.env")):
@@ -391,15 +407,7 @@ def runtime_check():
                               check=True, capture_output=True, text=True).stdout
     if "FS_RESET_ROOMS_ON_BOOT=1" in shlex.split(settings):
         raise Refused("World reset on restart is enabled in service environment")
-    repo = Path(__file__).resolve().parents[1]
-    source = repo / "bot"
-    manifest_path = repo / "tools/deploy/w7f10/deployment-manifest.json"
-    manifest = json.loads(manifest_path.read_text())
-    hashes = {"deployment_manifest": hashlib.sha256(manifest_path.read_bytes()).hexdigest()}
-    hashes.update(verify_runtime_files(source, Path("/opt/futuresky/bot"), manifest))
-    for relative in ("tools/character_reset_adapter.py", "tools/character_reset_rehearsal.py"):
-        hashes[relative] = hashlib.sha256((repo / relative).read_bytes()).hexdigest()
-    return hashes
+    return runtime_code_check(manifest_path=manifest_path)
 
 
 def main():

@@ -22,7 +22,7 @@ def main():
     if os.geteuid() != 0:
         raise Refused("Privileged operator terminal required")
     if args.operation == "install":
-        runtime_check()
+        runtime_check(manifest_path=HERE.parent / "w7f10/deployment-manifest.json")
     with Deployment(HERE / "delivery", LIVE, LIVE / "data", STATE, manifest, offline_guard) as deployment:
         getattr(deployment, args.operation)()
     print("Playcheck code transaction verified. Service remains stopped; no data/configuration changed.")

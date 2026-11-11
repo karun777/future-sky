@@ -22,4 +22,4 @@ Rollback uses the same module with `rollback` while stopped, only before further
 
 ## Lifecycle contract
 
-After this installation the old reset adapter intentionally refuses further reset/restore operations because two pinned dependencies changed. Review and pin a new runtime contract before another lifecycle transaction. Do not weaken the guard, rewrite the historical deployment manifest or rerun the completed reset. Receipt, archive, channel mappings, grants and player records remain untouched. W7-F10 remains REVIEW.
+The installation initially caused the historical reset contract to refuse further reset/restore operations because two pinned dependencies changed. The subsequently reviewed current runtime contract now includes those exact corrections while preserving all other pins. See [current restore runtime](../w7f10/RESTORE_RUNTIME.md) for verification, archive compatibility and remaining maintenance requirements. Historical deployment manifests remain unchanged; do not rerun the completed reset or installer. Receipt, archive, channel mappings, grants and player records remain untouched. W7-F10 remains REVIEW.
