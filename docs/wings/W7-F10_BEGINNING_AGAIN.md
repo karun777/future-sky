@@ -1,21 +1,21 @@
 # W7-F10 — Beginning Again: Character Creation & Reset
 
-Status: REVIEW / UNSEALED — live reset, recreation and saved-channel verification complete; restore runtime reconciled. Summary refreshed 11 November 2026.
+Status: SEALED — 11 November 2026, on Karun's instruction after final evidence review.
 Home: W7 Engine. Adjacent to W7-F9 — Waking Into the Window.
-Allocated and implemented on Karun's instruction; final evidence review and seal remain pending.
+Bounded creation/reset outcome accepted; operational safeguards and follow-ups retained below.
 Branch: engine/w7-f10-beginning-again. Baseline: 96ac40f.
 Checkout: /home/efiishent/future-sky-worktrees/w7-f8 (folder name retained).
 Authority: [Wing Index](../WING_INDEX.md),
 [eight-wing charter](../current/EIGHT_WINGS_CHARTER.md) and
 [feathering protocol](../archive/process-history/R3GPT_FEATHERING.md).
-W7-F9 is parked and unsealed pending closure of this adjacent creation/reset feather.
+W7-F9 remains parked/unsealed and is the next return checkpoint; this seal does not resume or seal it.
 No reset or deployment is authorised by this document alone.
-Chapter 1 / W4 remains paused. No sealed-count change.
+Chapter 1 / W4 remains paused. 36 sealed wing feathers; W7 has nine.
 
 ## Current review summary — 11 November 2026
 
 Evidence through [1028790](https://github.com/karun777/future-sky/commit/1028790033bd45ae74c04f01c71036b7de3bd983).
-This summary is the current checkpoint. The original scope and dated audit,
+This summary and the seal below are the current checkpoint. The original scope and dated audit,
 preparation and execution entries below retain their historical evidence; their
 pending-action statements do not override this summary.
 
@@ -40,11 +40,38 @@ grants and existing routing behaviour remain preserved; the separate access issu
 is parked. The stricter branch router was not deployed, and Players category
 configuration remains inactive. Shared history is not rewound by this procedure.
 
-**Return checkpoint:** final review for sealing W7-F10. After closure, return to
+**Return checkpoint:** W7-F10 is sealed. Next return to
 W7-F9 for the remaining fresh-character journey: first clothing selection,
 departure and return, with Discord/HUD comparison. New-account onboarding remains
 a separate unverified claim. W7-F9 stays PARKED; Chapter 1 / W4 stays paused;
-35 sealed feathers, including eight in W7, remain unchanged.
+36 sealed feathers, including nine in W7, are now recorded.
+
+## Seal — 11 November 2026
+
+Karun authorised review and sealing. Final review accepted the bounded creation
+contract, targeted archive/reset procedure, isolated restoration/recovery evidence,
+live Efiishent reset and recreation, durable saved-channel reuse, and deployed
+opening corrections. Evidence was reviewed through `e78f491`, including the runtime
+reconciliation at `1028790`: 464 Python tests passed, the earlier 25 Node
+DOM/scheduling tests passed, and installed-code verification matched 140 hash entries.
+These are distinct from the supplied player playchecks and direct browser checks.
+
+The originally requested first-outfit entitlement is covered by automated lifecycle
+checks and fresh starting-state evidence. Live first clothing selection, departure
+and return are explicitly carried into W7-F9; this seal does not claim that broader
+journey is complete. New-account/first OAuth onboarding remains unverified.
+
+The private before-archive and channel receipt are retained. Actual live restoration
+has not been performed and would require a fresh reviewed plan, privileged offline
+checks and restart review; receipt retirement is separate maintenance. The protected
+other-player account/grants and existing live router remain unchanged, with the
+Queen's access issue parked. Historical manifests are preserved.
+
+This seal changes documentation only: no deployment, service restart, reset,
+restoration, permission change or receipt retirement. Source is on
+`engine/w7-f10-beginning-again`; this seal does not claim a merge to main.
+The Wing Index is updated in the same commit: **36 sealed feathers; W7 nine**.
+W7-F9 remains PARKED/unsealed, ready as the next return; Chapter 1 / W4 stays paused.
 
 ## Intention
 

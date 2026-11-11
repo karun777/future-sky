@@ -5,7 +5,7 @@ Home: W7 Engine. Branch: engine/w7-f9-waking-into-the-window.
 Baseline: W7-F8 seal 524411c. Working checkout remains physically at
 /home/efiishent/future-sky-worktrees/w7-f8; the checkout is now on adjacent
 engine/w7-f10-beginning-again. The W7-F9 branch above records this feather's implementation lineage.
-35 sealed feathers; W7 eight. W7-F10 is now allocated; next unallocated W7-F11 and W6-F10.
+36 sealed feathers; W7 nine. Adjacent W7-F10 is sealed; next unallocated W7-F11 and W6-F10.
 Chapter 1 / W4 stays paused.
 
 ## Current return checkpoint — adjacent creation/reset feather
@@ -16,8 +16,9 @@ through adjacent W7-F10 evidence at `1028790`.
 [W7-F10 — Beginning Again](W7-F10_BEGINNING_AGAIN.md#current-review-summary--11-november-2026)
 has completed the separately authorised reset, guided recreation, fresh HUD state
 and saved-channel verification. Opening guidance is deployed and browser-verified;
-restoration is rehearsed under the reconciled runtime contract. W7-F10 remains
-REVIEW/unsealed, and this feather remains PARKED until its closure.
+restoration is rehearsed under the reconciled runtime contract. W7-F10 is now
+SEALED following Karun's final review on 11 November 2026. This feather remains
+PARKED/unsealed and is the next return; its work has not been automatically resumed.
 
 On return, use that existing fresh-character evidence; do not reset again merely
 to manufacture acceptance. Complete first clothing selection, departure and return,
