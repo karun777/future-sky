@@ -168,7 +168,10 @@
       text("inspect-targets", targets.length ? targets.map(t => "inspect " + t).join(" · ") : "");
 
     }
-    const inspectionNotice = inspected.notice === "This first inspection pilot is available in the pod." ? "" : (inspected.notice || "");
+    const walkingNotice = data.walking?.notice || "";
+    // Shared action refusals have one home; retain distinct inspection guidance.
+    const inspectionNotice = inspected.notice === walkingNotice ||
+      inspected.notice === "This first inspection pilot is available in the pod." ? "" : (inspected.notice || "");
     notice("inspect-notice", inspectionNotice);
     el("inspection-options").hidden = !targets.length && !inspectionNotice;
     csrf = data.session.csrf;
@@ -220,7 +223,7 @@
       text("exits", exits.length ? exits.join(" · ") : "none visible");
       exitKey = key;
     }
-    notice("walk-notice", data.walking?.notice || (exits.length ? "" : "No walking exits available in this view."));
+    notice("walk-notice", walkingNotice || (exits.length ? "" : "No walking exits available in this view."));
     text("inventory-guidance", !data.inventory.bag.length && !Object.values(data.inventory.equipped).some(Boolean) && !(data.inventory.personal_delivery || []).length ?
       "Nothing is carried or equipped. If you have returned from recovery, check !pod_delivery in Discord for belongings stored in your pod." :
       "In the pod, type wear <name> to put on clothing you carry.");

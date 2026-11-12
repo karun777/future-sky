@@ -1,9 +1,11 @@
 # HUD encounter warning — next-feather proposal
 
-Status: PROPOSED ONLY — 12 November 2026. No feather allocated.
-Recommended home: W6 Expression; candidate W6-F10 — One Clear Warning.
-W7 supplies the unchanged encounter-gating authority. One home/count if accepted.
-W7-F11 and W6-F10 remain unallocated; 37 sealed feathers, W7 ten.
+Status: ACCEPTED — 12 November 2026. Karun's subsequent “let's go” allocated
+[W6-F10 — One Clear Warning](../wings/W6-F10_ONE_CLEAR_WARNING.md).
+That home record now owns current status and evidence. The proposal and diagnosis
+below are retained as the pre-allocation checkpoint at bcba1e0.
+At that checkpoint W6-F10 and W7-F11 were unallocated; 37 feathers were sealed,
+including ten in W7. W6 owns presentation; W7 supplies unchanged encounter authority.
 
 ## Verified starting point
 

@@ -275,3 +275,77 @@ test('fresh opening guidance survives rendering and follows offered body observa
  await h.tick(8000);
  assert.equal(h.calls.filter(c=>c.url.endsWith('/inspect')).length,1);
 });
+
+test('one shared refusal survives polling and does not expose blocked actions',async()=>{
+ const h=await setup();
+ const warning='A choice or encounter needs your attention in Discord.';
+ h.data.walking={token:'blocked-walk',exits:[],notice:warning};
+ h.data.inspection={token:'blocked-inspect',targets:[],notice:warning};
+ h.data.wardrobe={available:false,options:[]};
+ await h.tick(12000);
+ assert.equal(h.elements['walk-notice'].hidden,false);
+ assert.equal(h.elements['walk-notice'].textContent,warning);
+ assert.equal(h.elements['inspect-notice'].hidden,true);
+ assert.equal(h.elements['inspect-notice'].textContent,'');
+ assert.equal(h.elements['inspection-options'].hidden,true);
+ assert.equal(h.elements.exits.textContent,'none visible');
+ for(const c of ['go west','inspect panels','uniform freeform'])await command(h,c);
+ assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
+ const feedback=h.elements['command-response'].textContent;
+ assert.ok(feedback);
+ await h.tick(8000);
+ assert.equal(h.elements['command-response'].textContent,feedback);
+ assert.equal(h.elements['walk-notice'].textContent,warning);
+ await command(h,'inventory');
+ assert.equal(h.elements['inventory-panel'].open,true);
+});
+
+test('distinct and inspection-only notices remain visible without hiding offered targets',async()=>{
+ const h=await setup();
+ h.data.walking={token:'walk',exits:[],notice:'Your sequence is running. Wait for it to finish.'};
+ h.data.inspection={token:'inspect',targets:[],notice:'Inspection is unavailable while the game connection recovers.'};
+ await h.tick(4000);
+ assert.equal(h.elements['inspect-notice'].hidden,false);
+ assert.equal(h.elements['walk-notice'].hidden,false);
+ assert.equal(h.elements['inspection-options'].hidden,false);
+ assert.equal(h.elements['inspect-notice'].textContent,h.data.inspection.notice);
+ assert.equal(h.elements['walk-notice'].textContent,h.data.walking.notice);
+ h.data.walking={token:'walk',exits:['west'],notice:''};
+ await h.tick(4000);
+ assert.equal(h.elements['inspect-notice'].hidden,false);
+ assert.equal(h.elements['walk-notice'].hidden,true);
+ h.data.walking.exits=[];
+ await h.tick(4000);
+ assert.equal(h.elements['inspect-notice'].hidden,false);
+ assert.equal(h.elements['walk-notice'].textContent,'No walking exits available in this view.');
+ h.data=data();
+ await h.tick(4000);
+ assert.equal(h.elements['inspection-options'].hidden,false);
+ assert.equal(h.elements['inspect-targets'].textContent,'inspect panels');
+ assert.equal(h.elements['inspect-notice'].hidden,true);
+ assert.equal(h.elements['walk-notice'].hidden,true);
+});
+
+test('encounter notice clears and returns with refreshed offers, preserving ordinary commands',async()=>{
+ const h=await setup();
+ const blocked=()=>{
+  h.data.walking={token:'blocked-walk',exits:[],notice:'A choice or encounter needs your attention in Discord.'};
+  h.data.inspection={token:'blocked-inspect',targets:[],notice:h.data.walking.notice};
+ };
+ blocked();await h.tick(4000);
+ assert.equal(h.elements['walk-notice'].hidden,false);
+ h.data=data();await h.tick(4000);
+ assert.equal(h.elements['walk-notice'].hidden,true);
+ assert.equal(h.elements['inspect-notice'].hidden,true);
+ assert.equal(h.elements['inspection-options'].hidden,false);
+ assert.equal(h.elements.exits.textContent,'west');
+ h.handler=async(url)=>url.endsWith('/walk')?response(200,{ok:true,message:'Moved'}):null;
+ await command(h,'go west');
+ assert.equal(h.calls.filter(c=>c.url.endsWith('/walk')).length,1);
+ blocked();await h.tick(4000);
+ assert.equal(h.elements['walk-notice'].hidden,false);
+ assert.equal(h.elements['inspect-notice'].hidden,true);
+ assert.equal(h.elements['inspection-options'].hidden,true);
+ await command(h,'go west');
+ assert.equal(h.calls.filter(c=>c.url.endsWith('/walk')).length,1);
+});

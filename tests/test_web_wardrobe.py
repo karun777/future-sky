@@ -106,6 +106,38 @@ class WebWardrobeTests(unittest.IsolatedAsyncioTestCase):
             self.bot.storage.characters["123"]=original
             self.nav.walking.discard("123")
 
+
+    async def test_encounter_notices_share_refusal_without_allowing_any_action(self):
+        from test_web_walking import WebWalkingTests
+        await self.open()
+        self.bot.storage.rooms["pod_room"]["exits"] = {"west": "a"}
+        warning = "A choice or encounter needs your attention in Discord."
+        for field in ("active_thread_node", "active_encounter_id"):
+            with self.subTest(field=field):
+                original = deepcopy(self.bot.storage.characters["123"])
+                offer = await self.offer()
+                self.bot.storage.characters["123"]["extra"]["thread_nodes"] = {
+                    field: "fictional-warning-check"}
+                before = deepcopy(self.bot.storage.characters)
+                saves = len(self.saved)
+                walk = await WebWalkingTests.move(self, offer, "west")
+                inspect = await self.inspect(offer)
+                wardrobe = await self.act(offer)
+                self.assertEqual([r.status for r in (walk, inspect, wardrobe)],
+                                 [409, 409, 409])
+                self.assertEqual((await walk.json())["message"], warning)
+                self.assertEqual(await inspect.text(), warning)
+                self.assertEqual(await wardrobe.text(), warning)
+                blocked = await self.offer()
+                self.assertEqual(blocked["walking"]["notice"], warning)
+                self.assertEqual(blocked["inspection"]["notice"], warning)
+                self.assertEqual(blocked["walking"]["exits"], [])
+                self.assertEqual(blocked["inspection"]["targets"], [])
+                self.assertFalse(blocked["wardrobe"]["available"])
+                self.assertEqual(self.bot.storage.characters, before)
+                self.assertEqual(len(self.saved), saves)
+                self.bot.storage.characters["123"] = original
+
     async def test_save_failure_restores_selection_and_equipment(self):
         offer=await self.open()
         original=deepcopy(self.bot.storage.characters)
