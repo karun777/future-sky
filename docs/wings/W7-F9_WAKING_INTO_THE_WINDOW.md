@@ -1,6 +1,6 @@
 # W7-F9 — Waking Into the Window
 
-Status: ACTIVE / UNSEALED — 12 November 2026; return correction tested/prepared, awaiting privileged deployment and live retest.
+Status: ACTIVE / UNSEALED — 12 November 2026; correction deployed and owner release verified, awaiting HUD sign-in and return retest.
 Home: W7 Engine. Working branch: engine/w7-f10-beginning-again.
 Original implementation branch: engine/w7-f9-waking-into-the-window.
 Baseline: W7-F8 seal 524411c. Working checkout remains physically at
@@ -19,14 +19,13 @@ inspection evidence are inherited from W7-F10. **Do not reset again.**
 
 First clothing selection, live Discord/HUD outfit and inventory parity, HUD
 departure, and reverse location synchronization are directly verified. However,
-the first return to the pod triggered legacy arrival_awakening_v1 and left the HUD
-blocked on its Discord choice. Efiishent remains in the pod with the correct outfit
-and bag; no choice has been submitted. See the current live comparison below.
-The opening-trigger correction and narrow owner-requested release are now tested
-and packaged; see Correction prepared below. Next is privileged deployment, explicit
-!awaken in the existing private channel, then the live return/persistence retest. Do not reset, choose a
-story option to manufacture acceptance, or clear unrelated encounters. New-account /
-first OAuth onboarding remains separate and unverified.
+the first return to the pod triggered legacy arrival_awakening_v1 and blocked the HUD.
+The correction is now installed; at 17:21 AWST the existing owner's !awaken released
+only the two obsolete scene fields. Efiishent remains in the pod with the correct
+outfit, bag, discoveries and routing. No story choice was submitted or completed.
+Next: finish existing-account Discord sign-in in the HUD tab, then compare clients
+and retest departure, return and persistence. Do not reset or clear unrelated
+encounters. New-account / first OAuth onboarding remains separate and unverified.
 
 Initial read-only connection evidence on 12 November: Neptune Lounge Desktop Commander
 responded; Mac is listed online and Windows offline. Checkout was clean at the seal
@@ -43,6 +42,41 @@ Retain the private original archive and reset receipt. The Dark Rat Queen remain
 another person's protected player character; preserve her account, permissions and
 existing routing, with her access issue parked. Chapter 1 / W4 remains paused.
 W7-F10 remains sealed; W7-F9 is active but unsealed. **36 seals; W7 nine.**
+
+## Deployment and owner release verified — 12 November 2026, 17:17–17:23 AWST
+
+Karun reported completing the reviewed installer. Direct installed-code verification
+passed: three replacement files, preserved dependencies/assets and the current
+140-entry runtime contract. Service restarted at 17:17:40 AWST with PID 1037793;
+Discord login/readiness was logged at 17:17:45, and public /play/ returned HTTP 200.
+Checkout remained clean/synced at 900c746 on engine/w7-f10-beginning-again.
+
+At 17:21, !awaken was sent once in the existing private fs-efiishent channel.
+The bot returned POD // FINDING YOUR BEARINGS and the existing-account HUD handoff.
+Private canonical before/after comparison found exactly two owner record changes:
+extra.thread_nodes.active_thread_node became null and active_presented became false.
+Completed history remained empty and pending_answer remained null. All other owner
+fields, including outfit, bag, first-choice record, discoveries and routing, matched.
+Every other character record matched. Lockers, vault, cubes and the reset receipt
+were byte-for-byte unchanged. No reset, direct player-data edit or choice completion.
+
+[Direct release screenshot](W7-F9_RELEASE_20261112.jpg), SHA-256
+c06b4587b1a1fd6ecd74ab2300ae0c48380d421a4ed902e14fe182e1c34c2a87.
+
+The private original archive was not opened or altered; its permissions prevent this
+remote account from inspecting it, so no new archive hash verification is claimed.
+Private comparison material remains outside Git. Queen account/routing records and
+the pinned router were preserved; Discord permissions were not changed or re-audited.
+
+HUD reload after restart showed Signed out. Its existing Discord sign-in route now
+shows karunicorn / Please log in again. The player must complete this sign-in in the
+retained HUD tab; the separate Discord private-channel tab remains usable. Both tabs
+are retained for continuation. No post-correction movement has yet been attempted,
+and no cross-client return/persistence acceptance is claimed at this checkpoint.
+The legacy scene is safely released; the remaining hold is authentication.
+
+W7-F9 ACTIVE/unsealed; 36 seals, W7 nine. First-time account/OAuth remains unverified.
+Chapter 1 and the Queen's separate access issue remain parked.
 
 ## Correction prepared — 12 November 2026
 
