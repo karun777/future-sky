@@ -1,6 +1,6 @@
 # W7-F9 — Waking Into the Window
 
-Status: ACTIVE / UNSEALED — resumed 12 November 2026, at Karun's request.
+Status: ACTIVE / UNSEALED — 12 November 2026; live return acceptance blocked by legacy awakening trigger.
 Home: W7 Engine. Working branch: engine/w7-f10-beginning-again.
 Original implementation branch: engine/w7-f9-waking-into-the-window.
 Baseline: W7-F8 seal 524411c. Working checkout remains physically at
@@ -17,12 +17,15 @@ Karun explicitly requested resumption of W7-F9 after the W7-F10 seal at
 The completed reset, guided creation, awakening, saved-channel reuse and opening
 inspection evidence are inherited from W7-F10. **Do not reset again.**
 
-First clothing selection is now directly verified through the typed HUD command
-field, with matching canonical saved state and page-reload persistence; see the live
-checkpoint below. Next: restore Discord sign-in and compare !fit / !inventory, then
-departure, return and persistence across the journey. New-account / first OAuth
-onboarding remains separate and unverified. Do not claim the remaining journey
-from fictional tests, page reload alone or prior-character evidence.
+First clothing selection, live Discord/HUD outfit and inventory parity, HUD
+departure, and reverse location synchronization are directly verified. However,
+the first return to the pod triggered legacy arrival_awakening_v1 and left the HUD
+blocked on its Discord choice. Efiishent remains in the pod with the correct outfit
+and bag; no choice has been submitted. See the current live comparison below.
+Next bounded work is the opening-trigger correction and safe handling of this exact
+already-active legacy node, followed by the return retest. Do not reset, choose a
+story option to manufacture acceptance, or clear unrelated encounters. New-account /
+first OAuth onboarding remains separate and unverified.
 
 Initial read-only connection evidence on 12 November: Neptune Lounge Desktop Commander
 responded; Mac is listed online and Windows offline. Checkout was clean at the seal
@@ -39,6 +42,66 @@ Retain the private original archive and reset receipt. The Dark Rat Queen remain
 another person's protected player character; preserve her account, permissions and
 existing routing, with her access issue parked. Chapter 1 / W4 remains paused.
 W7-F10 remains sealed; W7-F9 is active but unsealed. **36 seals; W7 nine.**
+
+## Live comparison and return blocker — 12 November 2026, 16:46–16:53 AWST
+
+After the player restored Discord login, fresh commands in the existing private
+fs-efiishent channel supplied direct evidence:
+
+| Check | Result |
+| --- | --- |
+| Discord !fit and !inventory | Freeform Attire equipped; Leather Jacket x1 and Rusty Knife x1 carried. Matches HUD and saved state. |
+| HUD go west | Arrived at Hostel Hallway — Pod Doors & Quiet Lives; Discord received the web-movement notification. |
+| Hallway reload and Discord !look | HUD retained the hallway after reload. Discord showed the same room description and south/east/down exits. Disk current_room was hostel_hallway; outfit and bag unchanged. |
+| Discord !go east | Location returned to pod_room and HUD synchronized without a manual refresh. The legacy Transit Pod 3417 awakening node started instead of an ordinary return. |
+| Returned belongings | HUD and canonical disk still show Freeform Attire, the original knife/jacket and pod_freeform first-choice record. Opening discoveries remain intact. |
+| Returned interaction | FAIL: active arrival_awakening_v1 leaves no visible HUD exits and displays the Discord-choice refusal twice. No story choice was submitted. |
+
+[Return-blocker screenshot](W7-F9_RETURN_BLOCKER_20261112.jpg), SHA-256
+45eddd92e5b7b3207900690ade88e0654ef9b98da7c7d010350d5153831496c9.
+This is functional location/equipment persistence, not successful return acceptance.
+The live server was not restarted and no fresh live web session was forced.
+
+### Root cause and isolated reproduction
+
+Source/live bytes match for navigation.py, threadnodes.py, arrival.py and
+pod_opening.py. The tracked and live arrival_awakening_v1 trigger both specify
+on_enter_room pod_room and once_per_character true, with no opening-ownership
+requirement. Guided creation records origin guided_creation_v1 and the new opening,
+but does not complete the legacy node. ThreadNodesCog's room-entry selector checks
+legacy completion and trigger requirements without checking the existing opening.
+Consequently the first return starts the older awakening; once-per-character does
+not prevent its first activation. The HUD correctly refuses active encounters.
+
+A one-off isolated reproduction used WebArrivalTests.asyncSetUp, its fictional
+account 123, fake OAuth and real HTTP adapters. It connected Navigation's event
+publication to the real ThreadNodesCog._on_character_entered_room subscriber,
+loaded the tracked node definitions, and substituted captured-message delivery.
+The fixture's return exit was set to pod_room. Discovery, first Freeform selection,
+HTTP departure and shared-navigation return reproduced the active legacy node.
+A new fictional signed-in session still had no walking exits. Captured saved state
+retained the active node and outfit; the other fictional character was unchanged.
+All characters and writes were fixture-only; no live messages or data writes came
+from this reproduction. This is a successful bug reproduction, not a passing return.
+The earlier fresh-arrival HTTP test omitted the thread-node subscriber and return
+leg; its passing result therefore did not cover this interaction.
+
+### Next bounded correction
+
+Prevent this legacy awakening from starting for an already-established guided
+opening, while preserving legacy arrivals and unrelated thread nodes. Add the real
+room-entry subscriber and the return leg to regression coverage. Handle the exact
+erroneously active node separately, preserving discoveries, first-outfit entitlement,
+belongings, completed history and all other players; do not pretend any of its
+choices was played. The duplicate refusal text is a secondary HUD presentation
+finding. Do not bypass encounter gating globally.
+
+No runtime implementation, live node repair, deployment, reset, restore or restart
+has been performed. The active legacy node remains the current live blocker.
+Any code delivery must preserve the live router and reconcile the W7-F10 runtime
+pins before future restore plans. Private archive and reset receipt remain retained;
+Queen account/permissions/routing and Chapter 1 stay outside this work.
+W7-F9 remains ACTIVE/unsealed; 36 seals, W7 nine.
 
 ## Live first clothing selection — 12 November 2026, 16:35–16:41 AWST
 
