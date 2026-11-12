@@ -39,6 +39,22 @@ another person's protected player character; preserve her account, permissions a
 existing routing, with her access issue parked. Chapter 1 / W4 remains paused.
 W7-F10 remains sealed; W7-F9 is active but unsealed. **36 seals; W7 nine.**
 
+## Location-change connection check — 12 November 2026, 16:33 AWST
+
+Karun moved location and requested a state check. Both Mac and Neptune Lounge
+Desktop Commander executed read-only commands successfully; Windows remains offline.
+The public HUD returned HTTP 200 from the Mac with successful TLS verification
+(curl total 0.063 seconds for this request, not a gameplay latency benchmark).
+Server checkout was clean on engine/w7-f10-beginning-again at d96b6b1, matching the
+queried remote branch. Bot remains active/running with unchanged PID 1029171.
+Chrome responds and the existing HUD still displays Signed out. The older private
+Discord tab is listed, but its control attempt timed out; its current content was
+not reverified after the move. Earlier fresh-tab Discord evidence remains historical.
+
+No gameplay, reset, deployment, restart or permission change was made. Next remains
+HUD sign-in, first clothing selection, Discord/HUD comparison, departure, return and
+persistence. W7-F9 ACTIVE/unsealed; W7-F10 sealed; 36 seals, W7 nine; Chapter 1 paused.
+
 ## Historical return checkpoint — adjacent creation/reset feather
 
 Original source checkpoint: `96ac40f`. Return note refreshed 11 November 2026
