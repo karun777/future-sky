@@ -1,0 +1,16 @@
+{
+  "source_review_commit": "4acada289139631a6d443e45f585518021f4cb9d",
+  "copied_code_and_asset_files": 141,
+  "runtime_hash_entries": 140,
+  "results": [
+    "exact two-asset installation and unchanged 140-entry runtime passed",
+    "exact bytes/ownership/mode rollback passed; later fictional progress retained",
+    "reopened rollback after install write 1 passed",
+    "reopened rollback after install write 2 passed",
+    "interrupted rollback retried successfully",
+    "all 139 preserved code/asset pins and fictional state sentinels matched"
+  ],
+  "production_code_assets_unchanged": true,
+  "production_player_stores_read_or_written": false,
+  "temporary_copies_removed": true
+}

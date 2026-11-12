@@ -21,3 +21,15 @@ Actual plan/apply still requires the existing privileged operator workflow, safe
 464 Python tests pass, including five new contract tests. Fictional-store rehearsal restores an archive made under an old contract, archives and restores the replacement life, preserves another player's later progress, and rejects changed manifests, source drift, installed-code drift and pinned-router drift before data writes. Restart-reset flags remain blocking.
 
 Read-only verification of the installed bot passed with 140 hash entries. The bot remained active with the same PID. No actual private archive was restored or opened, no live lifecycle transaction or service restart occurred, and no receipt was retired. Full privileged maintenance preflight remains required for any future real restoration.
+
+
+## W6-F10 static delivery preparation — 12 November 2026
+
+[W6-F10's two-asset package](../w6f10/README.md) is prepared and rehearsed, not live.
+Current bot runtime v3 remains unchanged at SHA-256
+74a2c678be786b41ed03fc194c833e233161604e565de3e275d0833ded78327e.
+Its 140-entry read-only verification passes before/after the isolated static
+installation. Static hashes belong to the new package; this bot-only lifecycle
+contract and all historical manifests retain their bytes. No private archive,
+receipt, schema or restore plan is modified. Actual restoration still requires
+the separate privileged offline procedure above.

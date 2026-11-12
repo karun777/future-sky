@@ -119,8 +119,10 @@ class RuntimeContractTests(unittest.TestCase):
             self.assertEqual(self.sha(root / relative), entry['source'])
             self.assertEqual(self.sha(return_path.parent / 'delivery' / relative), entry['source'])
             expected['files'][bot_relative] = {'source': entry['source']}
-        self.assertEqual(correction['pins']['assets/experiments/w6-f8/live/index.html'],
-                         self.sha(root / 'tools/authoring/w6f8/live/index.html'))
+        # Historical static pins belong to their release, not the bot-only
+        # lifecycle contract. Later static packages bind their own baselines.
+        self.assertFalse(any(r.startswith('assets/') for r in
+                             set(current['files']) | set(current['pins'])))
         self.assertEqual(current['basis']['return_manifest_sha256'], self.sha(return_path))
         self.assertEqual(current['files'], expected['files'])
         self.assertEqual(current['pins'], expected['pins'])

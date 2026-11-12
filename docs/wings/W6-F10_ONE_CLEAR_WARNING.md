@@ -1,6 +1,6 @@
 # W6-F10 — One Clear Warning
 
-Status: ACTIVE / ISOLATED VISUAL REVIEW PASSED — 12 November 2026. Unsealed.
+Status: ACTIVE / STATIC DELIVERY PREPARED AND REHEARSED — 12 November 2026. Unsealed.
 Home: W6 Expression. W7 supplies the unchanged encounter-gating authority.
 Allocated on Karun's “let's go” following the
 [bounded diagnosis and proposal](../handover/HUD_ENCOUNTER_WARNING_PROPOSAL_20261112.md).
@@ -22,12 +22,13 @@ Only the live-client game.js renderer and its HTML cache tag change in productio
 source. The script tag now uses w6f10-b41f6e1f1619. No backend, CSS, frame, API,
 command-gating, permission or player-state implementation changes are included.
 
-The isolated browser review below now passes at native and compact laptop sizes.
-This remains source preparation, not deployment or live acceptance. The installed
-HUD still has its original bytes. Bounded static delivery remains pending; no seal
-is claimed.
+The isolated browser review passes at native and compact laptop sizes. The bounded
+two-asset static package is now prepared and rehearsed; 483 Python tests pass.
+Its preflight preserves 139 code/asset pins and the unchanged 140-entry bot runtime
+contract. This remains preparation, not deployment or live acceptance. The
+installed HUD still has its original bytes; live activation and seal are pending.
 
-## Evidence
+## Source-preparation evidence — historical
 
 The branch and clean baseline were rechecked before editing. This checkout remains
 on engine/w7-f10-beginning-again; no older branch or attachment was used as authority.
@@ -41,7 +42,7 @@ on engine/w7-f10-beginning-again; no older branch or attachment was used as auth
 | Backend adapter suite | 31 Python checks passed across test_web_walking, test_web_inspection and test_web_wardrobe in the server runtime. Expected save-failure logs came from existing failure-path fixtures. |
 | Server gate regression | New test covers fictional active_thread_node and active_encounter_id separately. Previously issued walk/inspect/wardrobe offers receive HTTP 409; a fresh view withholds actions and reports the same refusal. Exact all-character fixture comparison and save count remain unchanged. |
 | Defect detection control | The two duplicate/transition checks both fail against the unchanged baseline client, and pass against the corrected source. They detect the original defect. |
-| Source checks | git diff --check passed; the HTML cache tag matches the corrected script hash. No full Python rerun is claimed; W7-F9's 470-test result remains historical evidence for that reviewed code. |
+| Source checks | git diff --check passed; the HTML cache tag matches the corrected script hash. No full Python rerun was claimed at that source-preparation checkpoint; the later deployment checks below now record the full suite. |
 
 Source hashes:
 - game.js: b41f6e1f1619615be2d2c3639ce0f85f1ebbcf2b69f286ea9fe1c942b2da84cb
@@ -109,17 +110,67 @@ The 28 Node / 31 Python results above are retained, not rerun or inflated here.
 | [Distinct notices, native window](W6-F10_distinct_20261112.jpg) | f419bd9e2dbd8d10a5e4a9e200feaa2dff66db7a66f23ea649024d169b9d44f1 |
 | [Single warning, 1366 × 600](W6-F10_compact_20261112.jpg) | 74c31bee81d0770243c9d1ad7f8b061d91633c3a8a4714c2c490e80b6e30d61a |
 
+## Static delivery prepared and rehearsed — 12 November 2026
+
+[Two-asset package and operator instructions](../../tools/deploy/w6f10/README.md)
+are ready for review. The package changes only the existing game.js and index.html,
+publishing the reviewed script before its cache-versioned HTML. It records exact
+original bytes, modes and ownership in a private asset-only journal. Rollback
+restores HTML first and script second; interrupted installation or rollback can
+recover from the retained transaction. Changed sources, baselines, dependencies,
+captured bytes or unknown live assets block writes.
+
+The read-only preflight passed for both installed baselines and **139 preserved
+code/asset pins**, including the existing router, frame.js and frame.css. No bot or
+nginx restart is needed. The CLI has no service-control, player-store, OAuth or
+reset/restore operation. A privileged operator runs the later live write.
+
+**Runtime reconciliation:** current W7-F10 bot contract v3 explicitly excludes
+static assets and remains byte-for-byte unchanged:
+74a2c678be786b41ed03fc194c833e233161604e565de3e275d0833ded78327e.
+Its **140-entry read-only check** passes before and after the isolated static
+release. Historical manifests remain immutable; this new package owns the next
+static contract. The private archive, receipt and protected player routing remain
+outside its write paths.
+
+### Deployment evidence
+
+- **483 Python tests passed** for this prepared source, including 12 new static
+  package/transaction tests. Existing deployment-test activation messages refer to
+  temporary fixtures, not production. Two outdated cache/static assertions were
+  reconciled: the HTTP test expects the new HTML tag, and the bot-contract test no
+  longer equates a historical static pin with future source. New package tests bind
+  the exact historical baseline to the reviewed static replacement.
+- Tests cover exact installation/rollback order and metadata, lock and duplicate
+  refusal, private journal failure, corrupted journal/foreign-asset refusal,
+  source/baseline/pin drift, changes during byte capture, interrupted writes and
+  untouched fictional archive/receipt/later player progress.
+- The [exact-package rehearsal](../../tools/deploy/w6f10/rehearsal-20261112.json)
+  copied only **141 code/asset files** into a temporary tree. It created fictional
+  state sentinels; no real character records, archive or receipt were copied/read.
+  Installation and rollback passed, as did reopening after interruption at either
+  install write and retrying an interrupted rollback. All 139 preserved pins,
+  fictional later progress and the runtime contract matched.
+- Temporary rehearsal copies were removed. Production code/asset hashes matched
+  before and after; bot PID **1037793** remained active. No live transaction was
+  created, no service/configuration changed and no gameplay command was issued.
+- bash -n passed for the ten-line install wrapper. The corrected client bytes are
+  unchanged from the prior 28-check Node suite and browser review; those results
+  are retained rather than counted as a new run.
+
+The production write is still pending. This preparation does not seal the feather,
+reset anyone, retire a receipt or establish first-time account/OAuth evidence.
+
 ## Next concrete step
 
-Prepare and rehearse the bounded two-asset static delivery for game.js and
-index.html, preserving all other code/assets and reconciling the current runtime
-contract. Present the concrete install/rollback result before live activation.
-The isolated visual review is complete; no live encounter is needed to repeat it.
+On acceptance of the concrete live step, the operator runs the prepared
+tools/deploy/w6f10/install.sh, then verifies public HTML/cache tag and script bytes.
+Reload the existing authorised HUD for ordinary-window acceptance. No bot restart,
+forced live encounter, reset or access expansion is needed.
 
-Any subsequent production delivery must be a bounded static package with reviewed
-baselines, cache verification and current runtime-contract reconciliation.
-Do not rerun an old deployment package or change historical manifests blindly.
-This checkpoint does not install assets, restart services or alter restoration pins.
+The exact command and retained-transaction rollback are in the package README.
+Do not rerun an old deployment package or overwrite an existing transaction.
+W6-F10 remains active and unsealed until the bounded delivery/review is accepted.
 
 ## Retained boundaries and shared return
 
