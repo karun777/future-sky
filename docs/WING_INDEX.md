@@ -6,6 +6,17 @@ Current home/checkpoint: **W7 Engine / W7-F9 — Waking Into the Window, SEALED 
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
+## Next-feather inspection — 12 November 2026
+
+[HUD encounter-warning diagnosis and proposal](handover/HUD_ENCOUNTER_WARNING_PROPOSAL_20261112.md)
+confirms that one shared refusal is rendered separately for walking and inspection.
+Source/live hashes match; fictional HTTP checks preserve all three action gates and
+a minimal-DOM diagnosis reproduces the two notices. Recommended home: W6 Expression,
+candidate **W6-F10 — One Clear Warning**, proposed only. W6-F10 and W7-F11 remain
+unallocated; **37 sealed, W7 ten**. The stale W7 table row is reconciled with the
+existing seal. No runtime or player-state changes; retained protection boundaries
+and Chapter 1 pause stand.
+
 ## W7-F9 sealed — 12 November 2026
 
 [Seal and retained boundaries](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#seal--12-november-2026):
@@ -285,7 +296,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W4 Play | 9 | [W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F13 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 8 | [W6-F9](wings/W6-F9_LEARNING_TO_SEE.md#seal--5-november-2026) | W6-F5 review; live HUD integrated by W7-F8; artwork standards deferred; next unallocated W6-F10 |
-| W7 Engine | 9 | [W7-F10](wings/W7-F10_BEGINNING_AGAIN.md#seal--11-november-2026) | [W7-F9 — active, return blocked](wings/W7-F9_WAKING_INTO_THE_WINDOW.md); pod-delivery collection web adapter remains follow-up; next unallocated W7-F11 |
+| W7 Engine | 10 | [W7-F9](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#seal--12-november-2026) | W7-F10 sealed; first-time account/OAuth onboarding and pod-delivery collection web adapter remain follow-ups; next unallocated W7-F11 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
 [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md) is reviewed and sealed. Karun selected finding one's way through space, memory or relationships as the creative doorway; specific mechanisms remain open.
