@@ -1,0 +1,174 @@
+"""Discord item cards and the explicitly entered pod-opening strand."""
+import discord
+from discord.ext import commands
+from fsbot.web_handoff import window_handoff
+from fsbot.item_inspection import inspect_item
+from fsbot.lounge_arrival import counterkeeper_view
+from fsbot.lounge_media import lounge_image
+from fsbot.rat_messenger import tip as messenger_tip, guidance as messenger_guidance
+from fsbot.performance_tab import claim_tab, balance as tab_balance
+from fsbot.pod_media import pod_image
+from fsbot.pod_opening import (GUIDANCE, opening_state, scene_target, prepare_observation,
+                               pod_bearings, release_superseded_awakening)
+
+
+class InspectionCog(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+
+    async def _pod_view(self, ctx, target=None):
+        storage = self.bot.storage
+        uid = str(ctx.author.id)
+        from fsbot.pod_inspection import inspect_pod
+        try:
+            result = inspect_pod(storage, uid, target)
+        except (ValueError, TypeError, AttributeError, RuntimeError) as exc:
+            await ctx.send(str(exc))
+            return False
+        title, text, guidance = result["title"], result["text"], result["guidance"]
+        embed = discord.Embed(title=title, description=text, color=discord.Color.dark_teal())
+        image_url = result["image"]
+        if image_url:
+            embed.set_image(url=image_url)
+        embed.add_field(name="Your attention", value=guidance, inline=False)
+        if target is None or target == "pod":
+            exits = storage.rooms.get("pod_room", {}).get("exits", {})
+            if isinstance(exits, dict) and exits:
+                embed.add_field(name="Beyond the pod", value=" · ".join(
+                    f"\x60!go {direction}\x60" for direction in exits), inline=False)
+        await ctx.send(embed=embed)
+        return True
+
+    @commands.command(name="awaken")
+    async def awaken(self, ctx):
+        """Enter this performance-arrival strand without resetting a character."""
+        storage = self.bot.storage
+        uid = str(ctx.author.id)
+        character = storage.characters.get(uid)
+        if isinstance(character, dict):
+            released = release_superseded_awakening(character)
+            if released is not character:
+                storage.characters[uid] = released
+                try:
+                    storage.save_characters()
+                except Exception:
+                    storage.characters[uid] = character
+                    await ctx.send("I could not remember your bearings. Please try `!awaken` again.")
+                    return
+                character = released
+            threads = (character.get("extra") or {}).get("thread_nodes") or {}
+            if threads.get("active_thread_node") or threads.get("active_encounter_id"):
+                await ctx.send("A moment is already open. Finish its listed choice before beginning this awakening.")
+                return
+            if opening_state(character) and character.get("current_room") == "pod_room" and not character.get("in_cube"):
+                await self.present_pod_bearings(ctx)
+                handoff = window_handoff(self.bot, ctx.author.id)
+                if handoff:
+                    await ctx.send(handoff)
+                return
+        if await self._pod_view(ctx):
+            handoff = window_handoff(self.bot, ctx.author.id)
+            if handoff:
+                await ctx.send(handoff)
+
+    async def present_pod_bearings(self, ctx):
+        character = self.bot.storage.characters.get(str(ctx.author.id))
+        state = opening_state(character) if isinstance(character, dict) else None
+        if not state or character.get("current_room") != "pod_room" or character.get("in_cube"):
+            return False
+        text = pod_bearings(character)
+        embed = discord.Embed(title="POD // FINDING YOUR BEARINGS", description=text,
+                              color=discord.Color.dark_teal())
+        embed.add_field(name="Your attention", value=GUIDANCE, inline=False)
+        await ctx.send(embed=embed)
+        return True
+
+    @commands.command(name="inspect", aliases=["examine"])
+    async def inspect(self, ctx, *, item: str = ""):
+        storage = self.bot.storage
+        character = storage.characters.get(str(ctx.author.id))
+        if not isinstance(character, dict):
+            await ctx.send("Create a character first.")
+            return
+        messenger = getattr(self.bot, "get_cog", lambda name: None)("RatMessengerCog")
+        if messenger and await messenger.inspect_target(ctx, item):
+            return
+        terrace = getattr(self.bot, "get_cog", lambda name: None)("TerraceCog")
+        if terrace and await terrace.inspect_target(ctx, item):
+            return
+        local_view = counterkeeper_view(character, item)
+        if local_view:
+            try:
+                character, revelation = claim_tab(storage, str(ctx.author.id))
+                credit = tab_balance(character)
+                updated, music_tip = messenger_tip(character)
+                if updated != character:
+                    storage.characters[str(ctx.author.id)] = updated
+                    try:
+                        storage.save_characters()
+                    except Exception:
+                        storage.characters[str(ctx.author.id)] = character
+                        await ctx.send("The counterkeeper’s tip could not be remembered. Please try again.")
+                        return
+                    character = updated
+            except ValueError as exc:
+                await ctx.send(str(exc))
+                return
+            title, text, guidance = local_view
+            if music_tip:
+                text += "\n\n" + music_tip
+            hint = messenger_guidance(character)
+            if hint:
+                guidance = hint[1]
+            if revelation:
+                text += "\n\n" + revelation
+            if (character.get("extra") or {}).get("performance_bar_tab_v1") is not None:
+                guidance += f" Performance tab: **{credit} bar credits**."
+            embed = discord.Embed(title=title, description=text, color=discord.Color.dark_teal())
+            embed.add_field(name="Your attention", value=guidance, inline=False)
+            image_url = lounge_image(character, "counterkeeper")
+            if image_url:
+                embed.set_image(url=image_url)
+            await ctx.send(embed=embed)
+            return
+        target = scene_target(item)
+        if (target and character.get("current_room") == "pod_room"
+                and not character.get("in_cube")):
+            if not opening_state(character):
+                await ctx.send("Begin finding your bearings with `!awaken`.")
+                return
+            await self._pod_view(ctx, target)
+            return
+        room = storage.rooms.get(character.get("current_room"), {})
+        try:
+            item_id, definition, attributes, unlocked = inspect_item(
+                item, character, room, storage.items_db)
+        except (ValueError, TypeError) as exc:
+            await ctx.send(str(exc))
+            return
+        embed = discord.Embed(
+            title=definition.get("name", item_id),
+            description=definition.get("description") or "You examine the object, but learn little.",
+            color=discord.Color.dark_teal())
+        embed.add_field(name="Type", value=str(definition.get("type", "unknown")).title())
+        embed.add_field(name="Rarity", value=str(definition.get("rarity", "unknown")).title())
+        if attributes:
+            embed.add_field(name="Known attributes",
+                            value="\n".join(f"**{k.replace('_', ' ').title()}:** {v}" for k, v in attributes.items()),
+                            inline=False)
+        else:
+            embed.add_field(name="Known attributes", value="None discovered yet.", inline=False)
+        uses = definition.get("uses", [])
+        if isinstance(uses, list) and uses:
+            public_uses = [u.get("label", "") for u in uses
+                           if isinstance(u, dict) and (not u.get("discovery") or u["discovery"] in unlocked)]
+            if public_uses:
+                embed.add_field(name="Known uses", value=", ".join(public_uses), inline=False)
+        image = definition.get("image")
+        if isinstance(image, str) and image.startswith("https://"):
+            embed.set_image(url=image)
+        await ctx.send(embed=embed)
+
+
+async def setup(bot):
+    await bot.add_cog(InspectionCog(bot))

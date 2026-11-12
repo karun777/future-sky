@@ -8,7 +8,8 @@ from fsbot.lounge_media import lounge_image
 from fsbot.rat_messenger import tip as messenger_tip, guidance as messenger_guidance
 from fsbot.performance_tab import claim_tab, balance as tab_balance
 from fsbot.pod_media import pod_image
-from fsbot.pod_opening import (GUIDANCE, opening_state, scene_target, prepare_observation, pod_bearings)
+from fsbot.pod_opening import (GUIDANCE, opening_state, scene_target, prepare_observation,
+                               pod_bearings, release_superseded_awakening)
 
 
 class InspectionCog(commands.Cog):
@@ -41,8 +42,20 @@ class InspectionCog(commands.Cog):
     @commands.command(name="awaken")
     async def awaken(self, ctx):
         """Enter this performance-arrival strand without resetting a character."""
-        character = self.bot.storage.characters.get(str(ctx.author.id))
+        storage = self.bot.storage
+        uid = str(ctx.author.id)
+        character = storage.characters.get(uid)
         if isinstance(character, dict):
+            released = release_superseded_awakening(character)
+            if released is not character:
+                storage.characters[uid] = released
+                try:
+                    storage.save_characters()
+                except Exception:
+                    storage.characters[uid] = character
+                    await ctx.send("I could not remember your bearings. Please try `!awaken` again.")
+                    return
+                character = released
             threads = (character.get("extra") or {}).get("thread_nodes") or {}
             if threads.get("active_thread_node") or threads.get("active_encounter_id"):
                 await ctx.send("A moment is already open. Finish its listed choice before beginning this awakening.")

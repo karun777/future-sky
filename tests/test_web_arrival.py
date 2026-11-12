@@ -81,3 +81,48 @@ class WebArrivalTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual((await self.inspect(await self.offer(), "pod")).status, 200)
         self.assertIn("viewport", (await self.offer())["inspection"]["targets"])
         self.assertNotIn("wardrobe", (await self.offer())["inspection"]["targets"])
+
+    async def test_guided_outfit_departure_and_return_with_real_room_subscriber(self):
+        from unittest.mock import AsyncMock
+        from fsbot.cogs.threadnodes import ThreadNodesCog
+        from fsbot.events import EventBus
+        self.bot.state.ensure_player_records = lambda uid: None
+        self.bot.storage.rooms["a"]["exits"] = {"east": "pod_room"}
+        threads = ThreadNodesCog(self.bot)
+        delivery = SimpleNamespace(send=AsyncMock())
+        threads._event_delivery_context = AsyncMock(return_value=delivery)
+        self.cogs["ThreadNodesCog"] = threads
+        self.bot.events = EventBus()
+        self.bot.events.subscribe("character.entered_room", threads._on_character_entered_room)
+        other = deepcopy(self.bot.storage.characters["456"])
+        for target in ("panels", "display", "wardrobe"):
+            self.assertEqual((await self.inspect(await self.offer(), target)).status, 200)
+        self.assertEqual((await self.act(await self.offer())).status, 200)
+        clothed = await self.offer()
+        opening = deepcopy(opening_state(self.bot.storage.characters["123"]))
+        self.assertEqual((await self.move(clothed, "west")).status, 200)
+        self.assertEqual(self.bot.storage.characters["123"]["current_room"], "a")
+        # Discord and HUD share this actual Navigation operation.
+        self.assertTrue((await self.nav.walk("123", "east"))["ok"])
+        traces = self.bot.events.recent_traces(limit=2, event_type="character.entered_room")
+        self.assertEqual(len(traces), 2)
+        for trace in traces:
+            self.assertEqual(len(trace["subscribers"]), 1)
+            self.assertTrue(trace["subscribers"][0]["ok"], trace)
+        self.assertEqual(traces[0]["event"]["payload"]["to_room_id"], "pod_room")
+        self.assertEqual(traces[0]["subscribers"][0]["status"], "no_match")
+        delivery.send.assert_not_awaited()
+        saved = deepcopy(self.bot.storage.characters["123"])
+        self.assertIsNone(saved["extra"]["thread_nodes"]["active_thread_node"])
+        self.assertNotIn("arrival_awakening_v1", saved["extra"]["thread_nodes"]["events_completed"])
+        self.assertEqual(opening_state(saved), opening)
+        self.assertEqual(self.saved[-1]["123"], saved)
+        self.bot.storage.characters = deepcopy(self.saved[-1])
+        self.token = await self.sign_in()
+        returned = await self.offer()
+        self.assertEqual(returned["location"]["id"], "pod_room")
+        self.assertEqual(returned["inventory"], clothed["inventory"])
+        self.assertEqual(returned["walking"]["exits"], ["west"])
+        self.assertEqual(saved, self.bot.storage.characters["123"])
+        self.assertEqual(other, self.bot.storage.characters["456"])
+        self.assertEqual((await self.move(returned, "west")).status, 200)

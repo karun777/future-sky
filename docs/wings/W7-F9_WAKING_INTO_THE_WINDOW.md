@@ -1,6 +1,6 @@
 # W7-F9 — Waking Into the Window
 
-Status: ACTIVE / UNSEALED — 12 November 2026; live return acceptance blocked by legacy awakening trigger.
+Status: ACTIVE / UNSEALED — 12 November 2026; return correction tested/prepared, awaiting privileged deployment and live retest.
 Home: W7 Engine. Working branch: engine/w7-f10-beginning-again.
 Original implementation branch: engine/w7-f9-waking-into-the-window.
 Baseline: W7-F8 seal 524411c. Working checkout remains physically at
@@ -22,8 +22,9 @@ departure, and reverse location synchronization are directly verified. However,
 the first return to the pod triggered legacy arrival_awakening_v1 and left the HUD
 blocked on its Discord choice. Efiishent remains in the pod with the correct outfit
 and bag; no choice has been submitted. See the current live comparison below.
-Next bounded work is the opening-trigger correction and safe handling of this exact
-already-active legacy node, followed by the return retest. Do not reset, choose a
+The opening-trigger correction and narrow owner-requested release are now tested
+and packaged; see Correction prepared below. Next is privileged deployment, explicit
+!awaken in the existing private channel, then the live return/persistence retest. Do not reset, choose a
 story option to manufacture acceptance, or clear unrelated encounters. New-account /
 first OAuth onboarding remains separate and unverified.
 
@@ -42,6 +43,53 @@ Retain the private original archive and reset receipt. The Dark Rat Queen remain
 another person's protected player character; preserve her account, permissions and
 existing routing, with her access issue parked. Chapter 1 / W4 remains paused.
 W7-F10 remains sealed; W7-F9 is active but unsealed. **36 seals; W7 nine.**
+
+## Correction prepared — 12 November 2026
+
+Karun authorised the bounded fix after the live blocker was identified. Three
+Python files now prevent arrival_awakening_v1 from triggering on room entry when
+the character already has a valid guided_creation_v1 / performance_arrival_v1
+opening. Ordinary legacy arrivals and unrelated thread nodes retain their behavior.
+The existing owner's !awaken can release only that exact obsolete active node:
+active_thread_node becomes null and active_presented false, after a successful
+save. It does not record completion or select an option. Missing/invalid guided
+state, a pending answer, another encounter, cube, other location, combat and bodily
+recovery are refused. Failed save restores the in-memory original.
+
+470 Python tests pass. The added journey includes real HTTP inspection and first
+outfit, departure, shared Navigation return, actual EventBus/ThreadNodes subscriber,
+saved-record reload and a new fictional signed-in session. Disabling the new guard
+reproduces legacy delivery in this test. Separate temporary-file recovery tests
+verify exact changes only, other-player preservation, durable reload, idempotence,
+failure/retry and refusal boundaries. Existing deployment and old-archive restore
+regressions remain green. These are fictional tests, not live acceptance.
+
+[Reviewed package and operator steps](../../tools/deploy/w7f9_return/README.md):
+three replacement files, 138 preserved code/assets, private transactional code
+backup and data-drift checks. The package preserves the W7-F10 router and the
+documented ba884a9 HTML cache correction. Exact install and rollback were rehearsed
+in temporary copies of current code, with fictional player records, receipt and
+archive unchanged. Both old/new 140-entry runtime contracts passed that rehearsal.
+Read-only production code/asset baseline check passes; the bot remains running
+with the original code.
+
+Historical deployment manifests and archive schema remain unchanged. The current
+runtime contract advances to version 3 for the reviewed correction; until installed,
+the default contract intentionally refuses old live code. The package retains the
+previous contract as baseline-runtime.json. No reset or restore is requested.
+
+**Pending privileged step:** remote command access blocks sudo, and restart
+configuration includes a root-readable file. The operator script checks restart
+flags before stopping the service, then installs/verifies code and restarts.
+No production installation, restart, owner !awaken release or return retest has
+occurred at this preparation checkpoint. The live character remains blocked by
+the old node with correct belongings. After readiness, compare private before/after
+state, use !awaken once, then verify HUD/Discord departure, return and persistence.
+
+Duplicate refusal text remains a secondary presentation finding. First-time
+account/OAuth onboarding is unverified. W7-F10 sealed; W7-F9 ACTIVE/unsealed;
+36 seals, W7 nine. Private archive/receipt and Queen account/permissions/routing
+remain protected; Chapter 1 remains paused.
 
 ## Live comparison and return blocker — 12 November 2026, 16:46–16:53 AWST
 
@@ -96,8 +144,9 @@ belongings, completed history and all other players; do not pretend any of its
 choices was played. The duplicate refusal text is a secondary HUD presentation
 finding. Do not bypass encounter gating globally.
 
-No runtime implementation, live node repair, deployment, reset, restore or restart
-has been performed. The active legacy node remains the current live blocker.
+At this diagnosis checkpoint, no implementation or live node repair/deployment had
+been performed. The later Correction prepared section supersedes source status;
+the active legacy node remains the live blocker until installation and explicit release.
 Any code delivery must preserve the live router and reconcile the W7-F10 runtime
 pins before future restore plans. Private archive and reset receipt remain retained;
 Queen account/permissions/routing and Chapter 1 stay outside this work.

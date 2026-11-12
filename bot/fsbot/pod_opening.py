@@ -123,6 +123,39 @@ def opening_state(character):
     return state if isinstance(state, dict) and state.get("id") == OPENING else None
 
 
+LEGACY_AWAKENING = "arrival_awakening_v1"
+
+
+def guided_opening_established(character):
+    """Only the saved guided opening supersedes the older room-entry awakening."""
+    if not isinstance(character, dict):
+        return False
+    state = opening_state(character)
+    return bool(state is not None
+                and isinstance(state.get("discoveries"), list)
+                and character["extra"]["arrival"].get("origin") == "guided_creation_v1")
+
+
+def release_superseded_awakening(character):
+    """Prepare an explicit owner-requested release; never resolve a story choice."""
+    from fsbot.recovery import recovering
+    if (not guided_opening_established(character)
+            or character.get("current_room") != "pod_room"
+            or character.get("in_cube") or character.get("in_combat")
+            or recovering(character)):
+        return character
+    threads = character["extra"].get("thread_nodes")
+    if (not isinstance(threads, dict)
+            or threads.get("active_thread_node") != LEGACY_AWAKENING
+            or threads.get("active_encounter_id")
+            or threads.get("pending_answer") is not None):
+        return character
+    changed = deepcopy(character)
+    changed["extra"]["thread_nodes"]["active_thread_node"] = None
+    changed["extra"]["thread_nodes"]["active_presented"] = False
+    return changed
+
+
 def scene_target(query):
     key = " ".join((query or "").casefold().split()).strip(".!?")
     key = ALIASES.get(key, key)

@@ -26,6 +26,15 @@
     },
     "fsbot/pod_inspection.py": {
       "source": "c09bfd769750fd8c143e7eaf7236cf61d358dcad7da97d2f845f63ce18f432d3"
+    },
+    "fsbot/pod_opening.py": {
+      "source": "5a4ea049a06e75be6a34013230bfa883c9903de6cd3e039fc5477b233d8e9588"
+    },
+    "fsbot/cogs/threadnodes.py": {
+      "source": "c491f25a3352ce188dac6cce4bf8696c74f0b9cb127ac5c6f2f5070a4f5ba8e0"
+    },
+    "fsbot/cogs/inspection.py": {
+      "source": "b8aadfc106edaba4dae416a16a5a73ac34dbd2934a768284e9300d461eb91b39"
     }
   },
   "pins": {
@@ -65,7 +74,6 @@
     "fsbot/cogs/hold.py": "20b9e5b2aa4d55c1dfa529a497ec7ebe13df32f9f152e4d014fd735792a83a17",
     "fsbot/cogs/hud.py": "894f1033e893ff4f35f6249490ee54de001fe711ae21b43fd9a3b84822aa556c",
     "fsbot/cogs/idle_home.py": "b8157a22f12091079083ae7ad6712da1300bf8d724ff6cff291283c075af78e7",
-    "fsbot/cogs/inspection.py": "87998ae781747e3fd1ffff3b8071f01af7f766603066b0ba0fbe7bce87680259",
     "fsbot/cogs/intoxication.py": "4add05b373d85174a9a82739c674e9134e08a4a58f5edf754bd81080fc145f2b",
     "fsbot/cogs/item_transfer.py": "3dfcddb6029c5539f8772fa84fc0650038c47915863b0452347e0c1ab939c55a",
     "fsbot/cogs/item_usage.py": "34c65e387275802a49a91728bdba2957f7dec3e74e5758779e2b649eba540d28",
@@ -85,7 +93,6 @@
     "fsbot/cogs/speech.py": "4069fc6226b058a3594e84a6d07a8bfedf5828fbeec44bdeec4caa5924248b4d",
     "fsbot/cogs/temporal_resolver.py": "cc7c4da706edddc9acc750a09540fcfc29009b1b7bc897762b0965bc90c77cc8",
     "fsbot/cogs/terrace.py": "9055f94a9fff7683e0d89339c60e2019bc843288662fdd0f4f500dc7a6bd61ac",
-    "fsbot/cogs/threadnodes.py": "2b8ef80d602a39b4d4107ca1960235ccd7715989db7b4e9eeb2306dbe6fda047",
     "fsbot/cogs/wardrobe.py": "4e5d1ca761f609d663d2652c061fd8aba1829237240675cb70a82a5133a5ac95",
     "fsbot/cogs/web_portal.py": "33df4d0307709ce5291b3f68b71e7d43fc85b51c1c45d0cbf3a5f963ed92910f",
     "fsbot/cogs/work.py": "b1e7ea3ccdf58ed3463bb2fc14ac281ce8d566b9c765f52eace553c3f367331a",
@@ -120,7 +127,6 @@
     "fsbot/lounge_media.py": "1b83a468f39542ec195f445fdc6b3e19225c4a5489b463eb509c596ed0c6d0ff",
     "fsbot/performance_tab.py": "8655c28124d7f36cf5dbcd56bcef439974c90480ed8ffe9d5c2553e28645d82b",
     "fsbot/pod_media.py": "f3fa7aef648ea0c9901c6b1c154892f96007f40d165ee908f2f90b4ddec44a1e",
-    "fsbot/pod_opening.py": "eb6328639e5fa8f030cd7134ee2806a0430d82f7ea30ce8125dd20f5e0e2e953",
     "fsbot/pod_wardrobe.py": "da567b6ba60655a611196a9b0648b04a50b935ac23780c7a2069e66149b2b890",
     "fsbot/presence.py": "bf083c95940e43d0a26548e74f57d64bf9b9e39098dfbf3fdcbcec28c24c740a",
     "fsbot/queen_audience.py": "1647a8de9befe5cad58602151cfc58e9e0e11ccbe58b52cf0bf9722cab0af662",
@@ -160,10 +166,11 @@
     "tests/test_trajectories.py": "e64caba3a80c6d47c6210a2bd06272b660b81aeed0fd6de091050d14f12200d4",
     "tools/feather31_history_audit.py": "5efee6e9e56f952e89ed12a71d68734eb08c471ff89ecabf1185692fb9ef7106"
   },
-  "contract_version": 2,
+  "contract_version": 3,
   "basis": {
     "lifecycle_manifest_sha256": "3d055f11a32bbae12c8bb62c7428980b587c525e8cc7fd38bf6b8d107eef59ef",
     "playcheck_manifest_sha256": "41c0aede401985ad4556d8465f898da96d7c82d79c7916d4aadc21989334f2e6",
-    "note": "Installed lifecycle plus two reviewed playcheck Python fixes. Router remains pinned. Static HTML cache revision is outside the bot data contract."
+    "note": "Lifecycle plus playcheck and W7-F9 guided-return correction. Router remains pinned. Historical manifests and archive schema unchanged.",
+    "return_manifest_sha256": "b6bb883801841185c4d497290228f3895628fa8ab38ab5379b13255d44eb4658"
   }
 }

@@ -103,6 +103,25 @@ class RuntimeContractTests(unittest.TestCase):
             entry = hot['files']['bot/' + relative]
             self.assertEqual(expected['pins'].pop(relative), entry['live'])
             expected['files'][relative] = {'source': entry['source']}
+        return_path = root / 'tools/deploy/w7f9_return/deployment-manifest.json'
+        baseline_path = return_path.with_name('baseline-runtime.json')
+        baseline = json.loads(baseline_path.read_text())
+        self.assertEqual(baseline['files'], expected['files'])
+        self.assertEqual(baseline['pins'], expected['pins'])
+        correction = json.loads(return_path.read_text())
+        self.assertEqual(correction['basis']['baseline_runtime_sha256'], self.sha(baseline_path))
+        self.assertEqual(set(correction['files']), {
+            'bot/fsbot/pod_opening.py', 'bot/fsbot/cogs/threadnodes.py',
+            'bot/fsbot/cogs/inspection.py'})
+        for relative, entry in correction['files'].items():
+            bot_relative = relative.removeprefix('bot/')
+            self.assertEqual(expected['pins'].pop(bot_relative), entry['live'])
+            self.assertEqual(self.sha(root / relative), entry['source'])
+            self.assertEqual(self.sha(return_path.parent / 'delivery' / relative), entry['source'])
+            expected['files'][bot_relative] = {'source': entry['source']}
+        self.assertEqual(correction['pins']['assets/experiments/w6-f8/live/index.html'],
+                         self.sha(root / 'tools/authoring/w6f8/live/index.html'))
+        self.assertEqual(current['basis']['return_manifest_sha256'], self.sha(return_path))
         self.assertEqual(current['files'], expected['files'])
         self.assertEqual(current['pins'], expected['pins'])
         self.assertEqual(current['basis']['lifecycle_manifest_sha256'], self.sha(old_path))

@@ -39,6 +39,7 @@ from typing import Any, Dict, Optional, Tuple
 
 from fsbot.cogs.router import get_run_channel_by_guild_if_any
 from fsbot.events import EventResult
+from fsbot.pod_opening import LEGACY_AWAKENING, guided_opening_established
 from fsbot.ui.console import thread_embed
 
 import discord
@@ -582,6 +583,9 @@ class ThreadNodesCog(commands.Cog):
             rooms = triggers.get("on_enter_room") or []
             rooms_norm = {str(r).strip().lower() for r in rooms if str(r).strip()}
             if room_id not in rooms_norm:
+                continue
+
+            if node_id == LEGACY_AWAKENING and guided_opening_established(char):
                 continue
 
             if not self._era_matches(node, room_era):
