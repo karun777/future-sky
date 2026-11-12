@@ -1,20 +1,46 @@
 # W6-F10 — One Clear Warning
 
-Status: REVIEW / DEPLOYED AND VERIFIED — seal recommended 13 November 2026. Unsealed.
+Status: SEALED — 13 November 2026. Deployed and verified.
 Home: W6 Expression. W7 supplies the unchanged encounter-gating authority.
 Allocated on Karun's “let's go” following the
 [bounded diagnosis and proposal](../handover/HUD_ENCOUNTER_WARNING_PROPOSAL_20261112.md).
 Baseline: bcba1e0a27c1a38d7e7b7b0f376f333c1d48d15d.
 Branch: engine/w7-f10-beginning-again.
 Checkout: /home/efiishent/future-sky-worktrees/w7-f8 (historical folder name).
-37 sealed feathers; W6 eight, W7 ten. Next unallocated W6-F11 and W7-F11.
+38 sealed feathers; W6 nine, W7 ten. Next unallocated W6-F11 and W7-F11.
 W7-F9 and W7-F10 remain sealed. Chapter 1 / W4 remains paused.
+
+## Seal — 13 November 2026
+
+**SEALED on Karun's acceptance: “seal and i will head to sleep i think”.**
+The accepted review is e5dbc472d8c1d6ae76f4ef2819469951a4a8b485.
+
+W6-F10 delivers one shared encounter warning in the existing game window, with
+distinct guidance and all encounter gates preserved. The corrected two-asset
+release is installed and verified. Evidence includes 28 client checks, 483 Python
+tests, fictional browser transitions at two window sizes, exact-package rollback
+and interruption rehearsal, public asset verification and the ordinary live HUD
+check. The final review found no blocking defect within this scope.
+
+One feather is added in W6 only: **38 sealed total; W6 nine, W7 ten**.
+W7-F9 and W7-F10 remain sealed. This closing checkpoint changes documentation only;
+it does not redeploy, restart, reset, move a player or open the private archive/receipt.
+
+Carry forward the empty “Available exits:” / “Available:” command-feedback wording
+as a separate bounded candidate. First-time account/OAuth onboarding remains
+unverified and needs a separate eligible participant. The Queen's protected account,
+permissions and routing remain preserved; her access issue stays parked.
+Chapter 1 / W4 remains paused. W6-F11 and W7-F11 remain unallocated.
+
+Next session: read the current Wing Index and this seal/carry-forwards first.
+Verify the expected branch and working state in the historical w7-f8 checkout.
+Choose one bounded task in its own chat; no next feather is allocated tonight.
 
 ## Current review summary — 13 November 2026
 
-Recommendation: **accept and seal W6-F10 — One Clear Warning**. No blocking defect
-found within the agreed duplicate-warning scope. This records the review, not
-the author's seal; counts remain 37 sealed, W6 eight and W7 ten.
+Review recommendation: **accept and seal W6-F10 — One Clear Warning**. No blocking
+defect found within the agreed duplicate-warning scope. Karun subsequently accepted
+this recommendation in the seal above. At review, the count was 37, W6 eight, W7 ten.
 
 Reviewed baseline bcba1e0 through a99eb47468cafa894c535d15e9b9d9f675a01de1.
 The expected branch, clean working tree and independently queried origin ref all
@@ -70,8 +96,8 @@ the ordinary authorised HUD loaded the new cache version at 22:09 AWST.
 Efiishent remains in the Pod Room, with Freeform Attire equipped and Rusty Knife /
 Leather Jacket carried. No gameplay command was issued. The 139 preserved pins and
 unchanged 140-entry bot runtime pass; active bot PID 1037793 is unchanged.
-483 Python tests passed during preparation. The 13 November review above recommends
-the seal; author acceptance remains open.
+483 Python tests passed during preparation. The 13 November review and author seal
+above close this bounded delivery.
 
 ## Source-preparation evidence — historical
 
@@ -234,13 +260,12 @@ The private reset archive/receipt were not reopened; protected routing is covere
 by preserved code pins, not a new audit of the Queen's account. Existing discoveries
 retain the W7-F9 verification; no new discovery audit is claimed.
 
-## Next concrete step
+## Return after seal
 
-The bounded review recommends acceptance; on author acceptance, seal W6-F10. The installed
-assets need no further activation. Do not rerun the installer, an old deployment
-package or overwrite the retained transaction. Rollback remains documented in the
-package README. W6-F10 remains in review/unsealed; counts stay 37 total, W6 eight,
-W7 ten. The empty available-offer wording remains a separate follow-up.
+W6-F10 is complete. The installed assets need no further activation. Do not rerun
+the installer, an old deployment package or overwrite the retained transaction.
+Rollback remains documented in the package README. Resume from the current Wing
+Index and the seal/carry-forwards above. No new feather is allocated by this close.
 
 ## Retained boundaries and shared return
 

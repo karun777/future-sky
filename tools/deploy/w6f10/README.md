@@ -1,6 +1,7 @@
 # W6-F10 — two-asset static delivery
 
-Status: INSTALLED AND VERIFIED, 12 November 2026, 22:05–22:09 AWST. Feather unsealed.
+Status: INSTALLED AND VERIFIED, 12 November 2026, 22:05–22:09 AWST.
+W6-F10 sealed on author acceptance, 13 November 2026.
 Operator installation was followed by independent installed/public hash checks
 and passive authorised HUD review. Do not rerun installation. Use verify below.
 Read [the feather checkpoint](../../../docs/wings/W6-F10_ONE_CLEAR_WARNING.md).
