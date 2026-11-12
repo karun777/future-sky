@@ -23,13 +23,15 @@ Actual plan/apply still requires the existing privileged operator workflow, safe
 Read-only verification of the installed bot passed with 140 hash entries. The bot remained active with the same PID. No actual private archive was restored or opened, no live lifecycle transaction or service restart occurred, and no receipt was retired. Full privileged maintenance preflight remains required for any future real restoration.
 
 
-## W6-F10 static delivery preparation — 12 November 2026
+## W6-F10 static delivery verified — 12 November 2026
 
-[W6-F10's two-asset package](../w6f10/README.md) is prepared and rehearsed, not live.
+[W6-F10's two-asset package](../w6f10/README.md) is installed and independently
+verified at 22:05–22:09 AWST. Public delivery and ordinary authorised HUD pass.
 Current bot runtime v3 remains unchanged at SHA-256
 74a2c678be786b41ed03fc194c833e233161604e565de3e275d0833ded78327e.
-Its 140-entry read-only verification passes before/after the isolated static
-installation. Static hashes belong to the new package; this bot-only lifecycle
+Its 140-entry read-only verification passed after the isolated rehearsal and
+again after the live static installation; active bot PID 1037793 was unchanged.
+Static hashes belong to the new package; this bot-only lifecycle
 contract and all historical manifests retain their bytes. No private archive,
 receipt, schema or restore plan is modified. Actual restoration still requires
 the separate privileged offline procedure above.

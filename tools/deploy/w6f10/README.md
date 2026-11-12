@@ -1,6 +1,8 @@
 # W6-F10 — two-asset static delivery
 
-Status: PREPARED AND REHEARSED, 12 November 2026. Not installed.
+Status: INSTALLED AND VERIFIED, 12 November 2026, 22:05–22:09 AWST. Feather unsealed.
+Operator installation was followed by independent installed/public hash checks
+and passive authorised HUD review. Do not rerun installation. Use verify below.
 Read [the feather checkpoint](../../../docs/wings/W6-F10_ONE_CLEAR_WARNING.md).
 
 Only the installed assets below change:
@@ -31,7 +33,20 @@ release, its all-assets verification will correctly see changed static files.
 Use this package for the current static contract and the unchanged W7-F10 runtime
 for bot-only verification; do not rerun old packages.
 
-## Read-only preflight
+## Current read-only verification
+
+From /home/efiishent/future-sky-worktrees/w7-f8:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. /opt/futuresky/.venv-web-pilot-20261029/bin/python -m tools.deploy.w6f10.activate verify
+```
+
+Both new assets, 139 preserved pins and the 140-entry runtime passed after install.
+Public HTML/script hashes and the cache tag matched. The ordinary HUD loaded the
+new client without page scrolling or browser errors; bot PID 1037793 stayed active.
+See the feather checkpoint for the screenshot and evidence limits.
+
+## Historical read-only preflight
 
 From /home/efiishent/future-sky-worktrees/w7-f8:
 
@@ -43,9 +58,10 @@ This makes no backup or live changes. It checks source/cache version, both insta
 baselines, every preserved pin and the bot runtime. Missing files, symlinks, changed
 sources or contract drift block installation.
 
-## Later operator activation
+## Completed operator activation — retained procedure
 
-After author acceptance of the concrete live step, run:
+The accepted installation used the following command. It is recorded for audit;
+do not rerun it against the retained transaction:
 
 ```sh
 sudo bash /home/efiishent/future-sky-worktrees/w7-f8/tools/deploy/w6f10/install.sh
@@ -96,11 +112,13 @@ Installation, rollback, interruption after either install write and rollback ret
 passed. The existing 140-entry runtime contract passed before and after. Temporary
 copies were removed and production code/asset hashes remained unchanged.
 
-Repeat the read-only-production / temporary-write rehearsal from the checkout:
+The pre-install rehearsal was run from the checkout with the command below.
+It expects the original live baseline, so do not rerun it after installation:
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. /opt/futuresky/.venv-web-pilot-20261029/bin/python -m tools.deploy.w6f10.rehearse
 ```
 
-Production remains unmodified. Bot PID 1037793 stayed active. This is not a claim of
-live deployment, new-account onboarding, reset/restore acceptance or a feather seal.
+At rehearsal, production remained unmodified and bot PID 1037793 stayed active.
+The later installation and independent checks are recorded above. Neither step
+establishes new-account onboarding, reset/restore acceptance or a feather seal.

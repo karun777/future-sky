@@ -1,6 +1,6 @@
 # W6-F10 — One Clear Warning
 
-Status: ACTIVE / STATIC DELIVERY PREPARED AND REHEARSED — 12 November 2026. Unsealed.
+Status: ACTIVE / DEPLOYED AND VERIFIED — 12 November 2026. Unsealed.
 Home: W6 Expression. W7 supplies the unchanged encounter-gating authority.
 Allocated on Karun's “let's go” following the
 [bounded diagnosis and proposal](../handover/HUD_ENCOUNTER_WARNING_PROPOSAL_20261112.md).
@@ -12,7 +12,7 @@ W7-F9 and W7-F10 remain sealed. Chapter 1 / W4 remains paused.
 
 ## Current checkpoint — 12 November 2026
 
-The isolated presentation correction and focused regressions are prepared.
+The isolated presentation correction and focused regressions are complete.
 An identical walking/inspection refusal now has one display in the existing
 walk-notice. The matching inspection copy and otherwise empty INSPECT wrapper
 are hidden. Distinct and inspection-only guidance remains visible; polling uses
@@ -23,10 +23,13 @@ source. The script tag now uses w6f10-b41f6e1f1619. No backend, CSS, frame, API,
 command-gating, permission or player-state implementation changes are included.
 
 The isolated browser review passes at native and compact laptop sizes. The bounded
-two-asset static package is now prepared and rehearsed; 483 Python tests pass.
-Its preflight preserves 139 code/asset pins and the unchanged 140-entry bot runtime
-contract. This remains preparation, not deployment or live acceptance. The
-installed HUD still has its original bytes; live activation and seal are pending.
+two-asset static package is now installed and independently verified after Karun's
+operator confirmation. Public HTML and script bytes match the reviewed source;
+the ordinary authorised HUD loaded the new cache version at 22:09 AWST.
+Efiishent remains in the Pod Room, with Freeform Attire equipped and Rusty Knife /
+Leather Jacket carried. No gameplay command was issued. The 139 preserved pins and
+unchanged 140-entry bot runtime pass; active bot PID 1037793 is unchanged.
+483 Python tests passed during preparation. Final bounded review/seal remains open.
 
 ## Source-preparation evidence — historical
 
@@ -158,19 +161,44 @@ outside its write paths.
   unchanged from the prior 28-check Node suite and browser review; those results
   are retained rather than counted as a new run.
 
-The production write is still pending. This preparation does not seal the feather,
-reset anyone, retire a receipt or establish first-time account/OAuth evidence.
+At this historical preparation checkpoint the production write was pending.
+Preparation did not seal the feather, reset anyone, retire a receipt or establish
+first-time account/OAuth evidence.
+
+## Live delivery verified — 12 November 2026, 22:05–22:09 AWST
+
+Karun reported completion of the prepared privileged installer. Independent
+verification used clean source checkpoint 2a08503ec650df7a142c345ee9f71b16ec0bf181
+on engine/w7-f10-beginning-again; no installer rerun or service operation followed.
+
+| Check | Direct evidence |
+| --- | --- |
+| Installed contract, 22:05 | activate verify passed for both replacement assets, 139 preserved code/asset pins and the unchanged 140-entry bot runtime. Active bot PID 1037793 matched preparation. |
+| Public delivery, 22:06 | /play/ and the direct live/index.html each returned HTTP 200 and SHA-256 e8a1e6df857f878031facec83b4a6c05ba0d5d9fc0ae4975a22d599c53fe8486. Both contain the new cache tag. |
+| Versioned script | game.js?v=w6f10-b41f6e1f1619 returned HTTP 200 and SHA-256 b41f6e1f1619615be2d2c3639ce0f85f1ebbcf2b69f286ea9fe1c942b2da84cb. |
+| Anonymous boundary | Unauthenticated /play/api/me still returned HTTP 401. This is an access check, not first-time OAuth evidence. |
+| Existing authorised Chrome tab, 22:09 | Reload loaded the new script URL, showed Up to date and Pod Room — Wakefulness Module, ordinary inspection offers and west. Both notice elements were empty/hidden, with no warning in the clear state. |
+| Passive Inventory | Freeform Attire equipped; Rusty Knife × 1 and Leather Jacket × 1 carried. Opening/closing the reference panel worked and returned command focus. No command was submitted. |
+| Visual/console | 1512 × 783 document equals viewport, no outer scrolling. Room artwork, reading panel, obvious exits, command field and dock remain usable. No browser warning/error entries. |
+
+[Installed ordinary window](W6-F10_live_20261112.jpg), SHA-256
+28ff1696d687a5b637e9b26c00ac7acb868b223c0fddf46cdc3ee659cc50db12.
+
+The real encounter was not forced: single-warning presentation and blocked/clear
+transitions are evidenced by the earlier fictional browser review; server gates
+by the real-adapter fixtures. This live check establishes delivery and ordinary
+window operation, not encounter completion, a new journey or first-time onboarding.
+The private reset archive/receipt were not reopened; protected routing is covered
+by preserved code pins, not a new audit of the Queen's account. Existing discoveries
+retain the W7-F9 verification; no new discovery audit is claimed.
 
 ## Next concrete step
 
-On acceptance of the concrete live step, the operator runs the prepared
-tools/deploy/w6f10/install.sh, then verifies public HTML/cache tag and script bytes.
-Reload the existing authorised HUD for ordinary-window acceptance. No bot restart,
-forced live encounter, reset or access expansion is needed.
-
-The exact command and retained-transaction rollback are in the package README.
-Do not rerun an old deployment package or overwrite an existing transaction.
-W6-F10 remains active and unsealed until the bounded delivery/review is accepted.
+Review the bounded delivered result and, on acceptance, seal W6-F10. The installed
+assets need no further activation. Do not rerun the installer, an old deployment
+package or overwrite the retained transaction. Rollback remains documented in the
+package README. W6-F10 remains active/unsealed; counts stay 37 total, W6 eight,
+W7 ten. The empty available-offer wording remains a separate follow-up.
 
 ## Retained boundaries and shared return
 
@@ -178,10 +206,10 @@ W6 owns presentation; W7 keeps the encounter authority and deployment contract.
 One feather/count only. Preserve image-left/reading-right composition, typed
 commands, reference panels and obvious-exit bearings.
 
-Efiishent's last verified live state remains W7-F9's successful pod-room return,
-Freeform Attire, belongings and discoveries intact. No live character re-audit,
-gameplay command or reset was used here. Do not reset again. Preserve the private
-archive and reset receipt. The Dark Rat Queen remains another person's protected
+The passive live HUD check reconfirms Efiishent in the Pod Room with Freeform Attire
+and the listed belongings. Discoveries retain W7-F9's verification; no character-store
+re-audit, gameplay command or reset was used here. Do not reset again. Preserve
+the private archive and reset receipt. The Dark Rat Queen remains another person's protected
 player character; her account, permissions and routing are untouched and her access
 issue stays parked. Chapter 1 / W4 remains paused. First-time account/OAuth onboarding
 still needs a separate eligible participant and remains unverified.
