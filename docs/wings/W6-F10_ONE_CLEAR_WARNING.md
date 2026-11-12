@@ -1,6 +1,6 @@
 # W6-F10 — One Clear Warning
 
-Status: ACTIVE / DEPLOYED AND VERIFIED — 12 November 2026. Unsealed.
+Status: REVIEW / DEPLOYED AND VERIFIED — seal recommended 13 November 2026. Unsealed.
 Home: W6 Expression. W7 supplies the unchanged encounter-gating authority.
 Allocated on Karun's “let's go” following the
 [bounded diagnosis and proposal](../handover/HUD_ENCOUNTER_WARNING_PROPOSAL_20261112.md).
@@ -10,7 +10,48 @@ Checkout: /home/efiishent/future-sky-worktrees/w7-f8 (historical folder name).
 37 sealed feathers; W6 eight, W7 ten. Next unallocated W6-F11 and W7-F11.
 W7-F9 and W7-F10 remain sealed. Chapter 1 / W4 remains paused.
 
-## Current checkpoint — 12 November 2026
+## Current review summary — 13 November 2026
+
+Recommendation: **accept and seal W6-F10 — One Clear Warning**. No blocking defect
+found within the agreed duplicate-warning scope. This records the review, not
+the author's seal; counts remain 37 sealed, W6 eight and W7 ten.
+
+Reviewed baseline bcba1e0 through a99eb47468cafa894c535d15e9b9d9f675a01de1.
+The expected branch, clean working tree and independently queried origin ref all
+matched a99eb47 before this documentation update.
+
+- **Presentation:** the renderer suppresses only the inspection copy of an
+  identical shared notice, retaining the walking display. Distinct/inspection-only
+  guidance, offered targets and explicit command feedback remain intact.
+- **Authority:** no backend or command-gating source changes. Regression fixtures
+  cover previously issued offers refused with HTTP 409, no fixture character/save
+  changes, and restoration of ordinary controls when authoritative offers return.
+- **Visual acceptance:** reviewed the stored native and compact blocked screenshots;
+  the single warning, room artwork, command field and reference dock remain clear.
+  Prior browser evidence covers distinct notices, Inventory and blocked/clear
+  transitions. All six stored screenshot hashes match their recorded values.
+- **Delivery:** at 00:01 AWST, read-only verification again passed for the two
+  installed assets, 139 preserved pins and unchanged 140-entry bot runtime.
+  The service remained active with PID 1037793. The static installer, rollback,
+  interruption tests and recorded exact-package rehearsal support the bounded
+  release; no installer, rollback or rehearsal was rerun against production.
+- **Validation:** the retained full-suite log reports 483 Python tests passing.
+  Only documentation and the live screenshot changed since that tested source.
+  The 28 client checks, fixture browser review and 12 November public/live checks
+  remain dated evidence; no new test run or live-player walkthrough is claimed.
+  The full feather diff passes git diff --check.
+
+One non-blocking carry-forward remains: refused commands with no offers can end
+with an empty “Available exits:” or “Available:” list. Handle that wording in a
+separate bounded task; it does not duplicate the room warning or weaken a gate.
+
+This review performs no gameplay, reset, restart, account/routing change or private
+archive/receipt access. Real encounter completion and first-time OAuth onboarding
+remain outside the evidence. Efiishent's last direct HUD observation remains the
+12 November 22:09 Pod Room check below; the Queen's access issue stays parked and
+Chapter 1 / W4 stays paused. W6-F11 and W7-F11 remain unallocated.
+
+## Deployment checkpoint — 12 November 2026
 
 The isolated presentation correction and focused regressions are complete.
 An identical walking/inspection refusal now has one display in the existing
@@ -29,7 +70,8 @@ the ordinary authorised HUD loaded the new cache version at 22:09 AWST.
 Efiishent remains in the Pod Room, with Freeform Attire equipped and Rusty Knife /
 Leather Jacket carried. No gameplay command was issued. The 139 preserved pins and
 unchanged 140-entry bot runtime pass; active bot PID 1037793 is unchanged.
-483 Python tests passed during preparation. Final bounded review/seal remains open.
+483 Python tests passed during preparation. The 13 November review above recommends
+the seal; author acceptance remains open.
 
 ## Source-preparation evidence — historical
 
@@ -194,10 +236,10 @@ retain the W7-F9 verification; no new discovery audit is claimed.
 
 ## Next concrete step
 
-Review the bounded delivered result and, on acceptance, seal W6-F10. The installed
+The bounded review recommends acceptance; on author acceptance, seal W6-F10. The installed
 assets need no further activation. Do not rerun the installer, an old deployment
 package or overwrite the retained transaction. Rollback remains documented in the
-package README. W6-F10 remains active/unsealed; counts stay 37 total, W6 eight,
+package README. W6-F10 remains in review/unsealed; counts stay 37 total, W6 eight,
 W7 ten. The empty available-offer wording remains a separate follow-up.
 
 ## Retained boundaries and shared return
