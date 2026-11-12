@@ -1,12 +1,12 @@
 # W7-F9 — Waking Into the Window
 
-Status: REVIEW / UNSEALED — 12 November 2026; bounded journey recommended for acceptance. First-time account/OAuth onboarding remains unverified.
+Status: SEALED — 12 November 2026, following Karun's acceptance of the bounded review recommendation. First-time account/OAuth onboarding remains unverified.
 Home: W7 Engine. Working branch: engine/w7-f10-beginning-again.
 Original implementation branch: engine/w7-f9-waking-into-the-window.
 Baseline: W7-F8 seal 524411c. Working checkout remains physically at
 /home/efiishent/future-sky-worktrees/w7-f8; the checkout is now on adjacent
 engine/w7-f10-beginning-again. The original W7-F9 branch records this feather's implementation lineage.
-36 sealed feathers; W7 nine. Adjacent W7-F10 is sealed; next unallocated W7-F11 and W6-F10.
+37 sealed feathers; W7 ten. Adjacent W7-F10 remains sealed; next unallocated W7-F11 and W6-F10.
 Chapter 1 / W4 stays paused.
 
 ## Current review summary — 12 November 2026
@@ -16,11 +16,12 @@ through [7e41c14](https://github.com/karun777/future-sky/commit/7e41c14e258425aa
 This summary is current; dated preparation, blocker and pending-action statements
 below retain their historical meaning and do not override it.
 
-**Recommendation:** accept and seal the verified guided-awakening-to-window journey
-for the recreated Efiishent on the existing account, carrying first-time account/OAuth
-onboarding as a separate unverified follow-up. No blocking defect was found in that
-reviewed path. This is a review recommendation, not an author-approved seal or a claim
-that the original separate-new-account walkthrough has occurred.
+**Accepted outcome:** the verified guided-awakening-to-window journey for the
+recreated Efiishent on the existing account. Karun accepted the review recommendation
+and moved to closure; the seal below records that bounded outcome. First-time
+account/OAuth onboarding remains a separate unverified follow-up. No blocking
+defect was found in the reviewed path; the separate-new-account walkthrough is
+not claimed complete.
 
 | Review area | Finding and evidence boundary |
 | --- | --- |
@@ -47,11 +48,41 @@ opening discoveries and pod_freeform record intact; no active thread node or pen
 answer. Normal return added narrator-seen bookkeeping without completing the legacy
 scene. Evidence lives in the dated checks and screenshots below.
 
-**Next step:** Karun's acceptance/seal decision at this stated boundary. This review
-changes documentation only. W7-F9 is REVIEW/unsealed; W7-F10 remains sealed; the count
-stays **36 sealed feathers, W7 nine**. No merge to main or new runtime change is implied.
+**Closure:** W7-F9 is SEALED at the stated boundary; W7-F10 remains sealed.
+The Wing Index now records **37 sealed feathers, W7 ten**. No merge to main or new
+runtime change is implied. Remaining follow-ups are retained above.
 
-## Current return checkpoint — resumed 12 November 2026
+## Seal — 12 November 2026
+
+Following the recommendation to seal after review, Karun accepted and requested the
+next step. The bounded guided-awakening/HUD journey is closed: existing-account
+handoff and discovery, first clothing selection, Discord/HUD parity, departure,
+ordinary return and saved persistence are verified.
+
+Review is recorded at fd1c2761bcc9799fe3afb0017d872d3504f67d45, with direct live
+acceptance through 7e41c14 and the return correction at 900c746. The reviewed code
+passed 470 Python tests. Installed-code verification, actual room-entry regression,
+safe owner release, canonical comparisons and four retained screenshots support
+the outcome. W7-F10's creation/reset evidence is inherited, not counted again.
+
+This seal explicitly carries first-time account/OAuth onboarding as unverified.
+The duplicate active-encounter warning remains a presentation follow-up. No new
+participant, access expansion or unrelated encounter clearing is authorised here.
+
+The original private archive and reset receipt remain retained. Queen account,
+permissions and routing are protected; her access issue remains parked. Chapter 1 /
+W4 stays paused. The last verified player position is the pod, wearing Freeform
+Attire with the original knife/jacket and discoveries intact. Do not reset again.
+
+Sealing changes documentation only: no gameplay, deployment, restart, reset,
+restore, permission change or receipt retirement. Source remains on
+engine/w7-f10-beginning-again; main-branch availability is not implied. The Wing
+Index is updated in this same commit: **37 sealed feathers; W7 ten**.
+
+This closes this chat's W7-F9 work. W7-F11 and W6-F10 remain unallocated; carry the
+current Wing Index and this seal into the next selected feather's chat.
+
+## Historical resumption checkpoint — 12 November 2026
 
 Karun explicitly requested resumption of W7-F9 after the W7-F10 seal at
 `26a6270f0a27f525f0879d998911056ec6208ad6`. Continue in the existing checkout on
