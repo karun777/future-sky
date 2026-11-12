@@ -17,13 +17,14 @@ Karun explicitly requested resumption of W7-F9 after the W7-F10 seal at
 The completed reset, guided creation, awakening, saved-channel reuse and opening
 inspection evidence are inherited from W7-F10. **Do not reset again.**
 
-Next bounded live check: first clothing selection through the typed HUD command
-field, compare outfit/inventory with Discord, then departure, return and saved-state
-persistence. Begin by observing current state and offered commands. New-account /
-first OAuth onboarding remains separate and unverified. Do not claim the remaining
-journey from fictional tests or prior-character evidence.
+First clothing selection is now directly verified through the typed HUD command
+field, with matching canonical saved state and page-reload persistence; see the live
+checkpoint below. Next: restore Discord sign-in and compare !fit / !inventory, then
+departure, return and persistence across the journey. New-account / first OAuth
+onboarding remains separate and unverified. Do not claim the remaining journey
+from fictional tests, page reload alone or prior-character evidence.
 
-Read-only connection evidence on 12 November: Neptune Lounge Desktop Commander
+Initial read-only connection evidence on 12 November: Neptune Lounge Desktop Commander
 responded; Mac is listed online and Windows offline. Checkout was clean at the seal
 and the remote branch had the same full SHA. Bot is active/running, PID 1029171;
 public /play/ returned HTTP 200. Chrome connected and a newly opened HUD displayed
@@ -31,13 +32,48 @@ Signed out / Sign in with Discord. A fresh Discord tab opened the existing priva
 fs-efiishent channel while signed in as karunicorn; its 11 November fresh-pod !look
 response is visible. The older tab did not respond to control. No Discord command
 was sent. Player HUD sign-in is required before live acceptance.
-No clothing choice, movement, reset, deployment or service restart has occurred in
-this resumption checkpoint.
+At that initial resumption checkpoint, no clothing choice, movement, reset,
+deployment or service restart had occurred. Later live evidence follows below.
 
 Retain the private original archive and reset receipt. The Dark Rat Queen remains
 another person's protected player character; preserve her account, permissions and
 existing routing, with her access issue parked. Chapter 1 / W4 remains paused.
 W7-F10 remains sealed; W7-F9 is active but unsealed. **36 seals; W7 nine.**
+
+## Live first clothing selection — 12 November 2026, 16:35–16:41 AWST
+
+The existing-account OAuth flow returned to the signed-in HUD during the player
+handoff. Direct HUD inspection confirmed efiishent, Dreamer Technician, in the pod,
+with one Rusty Knife, one Leather Jacket and nothing equipped. This verifies a
+returning account, not first-time account/OAuth onboarding.
+
+Commands were typed through the ordinary HUD field, following visible guidance:
+inspect garment → inspect pod → inspect panels → inspect display → inspect wardrobe
+→ wardrobe → inspect Freeform Attire → uniform freeform. The first-choice prompt
+was present before selection. The action reported the choice recorded; wardrobe
+then showed Freeform Attire worn and the first outfit already issued. No repeat
+selection was submitted, so duplicate-request refusal remains automated evidence.
+
+Read-only canonical-store observations before and after the action confirmed:
+- before: chest empty and pod_uniform_selected absent/null;
+- after: chest itm_pod_uniform_freeform and pod_uniform_selected pod_freeform;
+- bag unchanged: one itm_rusty_knife and one itm_leather_jacket.
+
+HUD Inventory matched those holdings. Quest Log showed the discovered FEED7 signal
+without a performance booking. A full browser page reload retained the discovered
+inspection options and equipped Freeform Attire. This is disk-save and same-session
+page-reload evidence, not a service-restart or fresh-session persistence test.
+
+[Post-reload inventory screenshot](W7-F9_FIRST_OUTFIT_20261112.jpg) is the direct
+browser evidence; SHA-256 ffd7ecbf3cb3fe654baeaa64e122ed561c09e700c8bdd3009a3bb57d1d19f26b.
+
+A fresh tab for fs-efiishent instead reached Discord's account chooser, showing
+karunicorn / Please log in again. Its login form is open for the player. No Discord
+command was sent and no current Discord outfit comparison is claimed. Resume with
+!fit and !inventory in that private channel, then departure, return and persistence.
+Character remains in the pod; no movement, reset, restart or deployment occurred.
+Private archive/receipt, Queen account/grants/routing and the Chapter 1 pause remain
+unchanged. W7-F9 ACTIVE/unsealed; 36 seals, W7 nine.
 
 ## Location-change connection check — 12 November 2026, 16:33 AWST
 
