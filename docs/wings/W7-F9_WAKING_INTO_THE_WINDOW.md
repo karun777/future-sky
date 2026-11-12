@@ -1,6 +1,6 @@
 # W7-F9 — Waking Into the Window
 
-Status: ACTIVE / UNSEALED — 12 November 2026; live returning-character journey passed, ready for bounded review. First-time account/OAuth onboarding remains unverified.
+Status: REVIEW / UNSEALED — 12 November 2026; bounded journey recommended for acceptance. First-time account/OAuth onboarding remains unverified.
 Home: W7 Engine. Working branch: engine/w7-f10-beginning-again.
 Original implementation branch: engine/w7-f9-waking-into-the-window.
 Baseline: W7-F8 seal 524411c. Working checkout remains physically at
@@ -8,6 +8,48 @@ Baseline: W7-F8 seal 524411c. Working checkout remains physically at
 engine/w7-f10-beginning-again. The original W7-F9 branch records this feather's implementation lineage.
 36 sealed feathers; W7 nine. Adjacent W7-F10 is sealed; next unallocated W7-F11 and W6-F10.
 Chapter 1 / W4 stays paused.
+
+## Current review summary — 12 November 2026
+
+Karun requested review after the successful live round trip. Evidence reviewed
+through [7e41c14](https://github.com/karun777/future-sky/commit/7e41c14e258425aacee8752c7aa8daa25f190373).
+This summary is current; dated preparation, blocker and pending-action statements
+below retain their historical meaning and do not override it.
+
+**Recommendation:** accept and seal the verified guided-awakening-to-window journey
+for the recreated Efiishent on the existing account, carrying first-time account/OAuth
+onboarding as a separate unverified follow-up. No blocking defect was found in that
+reviewed path. This is a review recommendation, not an author-approved seal or a claim
+that the original separate-new-account walkthrough has occurred.
+
+| Review area | Finding and evidence boundary |
+| --- | --- |
+| Creation and handoff | W7-F10 supplies the completed guided creation/fresh-state evidence. W7-F9's deployed handoff opens the existing HUD; private-channel !awaken and returning-account sign-in are directly verified. No new reset was needed. |
+| Discovery and first clothing | Visible guidance led to first Freeform selection. Knife/jacket remained in the bag, first-choice record persisted, FEED7 was available and no performance booking was granted. Duplicate first-choice refusal is automated evidence, not a repeated live claim. |
+| Shared authority and persistence | HUD departure, Discord room/exit agreement, Discord return and automatic HUD synchronization passed. Full reloads and canonical records retained location, outfit, belongings and discoveries. |
+| Return defect | The old arrival node no longer triggers for an established guided opening. Exact owner release was saved before presentation and changed only two scene fields; real return then passed. Legacy arrivals, unrelated nodes and release-refusal/failure cases have regression coverage. |
+| Protection and continuity | Other character records and lockers/vault/cubes/reset receipt matched private comparisons. Original archive was not altered or reopened; permissions limited fresh archive inspection. Existing router preserved; Queen permissions were not changed or independently re-audited. |
+| Verification | 470 Python tests passed for the reviewed code at 900c746, including real EventBus subscriber/return and save/reload coverage. Review confirmed bot/test code unchanged since that run, rechecked the installed contract, and matched all four screenshot hashes. Prior 25 frontend tests remain historical evidence; no new frontend implementation was made for the return correction. |
+
+### Carry-forwards
+
+- First-time account/OAuth onboarding remains unverified. A recreated character and
+  fresh session on an existing account do not substitute for it. A future test needs
+  a separately eligible participant; this review does not add one or widen access.
+- The duplicate HUD refusal for a genuinely active encounter remains a small
+  presentation follow-up. It is absent from the now-working return and is not a
+  reason to bypass encounter gating.
+- Queen access remains parked, Chapter 1 / W4 paused, and any real archive restoration
+  remains separate maintenance. No additional work in those areas is included here.
+
+Current character: pod_room, Freeform Attire equipped, original knife/jacket carried,
+opening discoveries and pod_freeform record intact; no active thread node or pending
+answer. Normal return added narrator-seen bookkeeping without completing the legacy
+scene. Evidence lives in the dated checks and screenshots below.
+
+**Next step:** Karun's acceptance/seal decision at this stated boundary. This review
+changes documentation only. W7-F9 is REVIEW/unsealed; W7-F10 remains sealed; the count
+stays **36 sealed feathers, W7 nine**. No merge to main or new runtime change is implied.
 
 ## Current return checkpoint — resumed 12 November 2026
 
@@ -24,8 +66,9 @@ release resolved it. The 18:39–18:43 AWST retest passed through the real HUD a
 private Discord channel, including full reloads and canonical-store comparison.
 Efiishent is back in the pod with Freeform Attire, the original knife/jacket,
 discoveries, first-choice record and routing intact. No story choice was completed.
-Next: bounded W7-F9 review, explicitly retaining first-time account/OAuth onboarding
-as unverified. Do not reset or clear unrelated encounters. No seal has been added.
+The review above now recommends acceptance at that boundary, explicitly retaining
+first-time account/OAuth onboarding as unverified. Do not reset or clear unrelated
+encounters. No seal has been added.
 
 Initial read-only connection evidence on 12 November: Neptune Lounge Desktop Commander
 responded; Mac is listed online and Windows offline. Checkout was clean at the seal

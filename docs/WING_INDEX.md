@@ -1,10 +1,26 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W7 Engine / W7-F9 — Waking Into the Window, ACTIVE / UNSEALED, resumed 12 November 2026 at Karun's request**. [Current return](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#current-return-checkpoint--resumed-12-november-2026). Continue on `engine/w7-f10-beginning-again`, retaining the [W7-F10 seal](wings/W7-F10_BEGINNING_AGAIN.md#seal--11-november-2026) at `26a6270`. Use the completed reset/recreation and saved-channel evidence; do not reset again. First clothing, Discord/HUD parity, departure, ordinary return and reload persistence passed after the bounded legacy-trigger correction. [Successful live return](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#live-return-and-persistence-passed--12-november-2026-18391843-awst). Ready for bounded review; no seal added. New-account/first OAuth onboarding remains unverified. Next unallocated W7-F11 and W6-F10. Chapter 1 / W4 stays paused.
+Current home/checkpoint: **W7 Engine / W7-F9 — Waking Into the Window, REVIEW / UNSEALED, reviewed 12 November 2026 at Karun's request**. [Current return](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#current-return-checkpoint--resumed-12-november-2026). Continue on `engine/w7-f10-beginning-again`, retaining the [W7-F10 seal](wings/W7-F10_BEGINNING_AGAIN.md#seal--11-november-2026) at `26a6270`. Use the completed reset/recreation and saved-channel evidence; do not reset again. First clothing, Discord/HUD parity, departure, ordinary return and reload persistence passed after the bounded legacy-trigger correction. [Successful live return](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#live-return-and-persistence-passed--12-november-2026-18391843-awst). [Review recommendation](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#current-review-summary--12-november-2026): accept the verified journey at its stated boundary; no seal added. New-account/first OAuth onboarding remains unverified. Next unallocated W7-F11 and W6-F10. Chapter 1 / W4 stays paused.
 **36 sealed wing feathers: W4 has nine, W6 eight, W7 nine; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
+
+## W7-F9 review — 12 November 2026
+
+[Current review](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#current-review-summary--12-november-2026)
+recommends accepting the verified guided-awakening/HUD journey for the recreated
+Efiishent on the existing account. Handoff, discovery, first outfit, client parity,
+ordinary return and saved persistence passed. The narrow return correction and
+owner release preserve unrelated state; no blocking defect found in this path.
+Review checked code/evidence through 7e41c14, unchanged tested source at 900c746
+(470 Python tests), installed contract and all four screenshot hashes.
+
+First-time account/OAuth remains unverified and is proposed as a separate follow-up;
+duplicate blocked-encounter wording is a presentation follow-up. Queen access,
+archive restoration and Chapter 1 remain outside this review. W7-F9 REVIEW/unsealed,
+awaiting the author's acceptance/seal decision. Documentation only; **36 seals,
+W7 nine**. W7-F10 seal and protected boundaries remain intact.
 
 ## W7-F9 return and persistence passed — 12 November 2026
 
