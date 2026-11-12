@@ -1,14 +1,45 @@
 # W7-F9 — Waking Into the Window
 
-Status: PARKED / UNSEALED — 9 November 2026, at Karun's request.
-Home: W7 Engine. Branch: engine/w7-f9-waking-into-the-window.
+Status: ACTIVE / UNSEALED — resumed 12 November 2026, at Karun's request.
+Home: W7 Engine. Working branch: engine/w7-f10-beginning-again.
+Original implementation branch: engine/w7-f9-waking-into-the-window.
 Baseline: W7-F8 seal 524411c. Working checkout remains physically at
 /home/efiishent/future-sky-worktrees/w7-f8; the checkout is now on adjacent
-engine/w7-f10-beginning-again. The W7-F9 branch above records this feather's implementation lineage.
+engine/w7-f10-beginning-again. The original W7-F9 branch records this feather's implementation lineage.
 36 sealed feathers; W7 nine. Adjacent W7-F10 is sealed; next unallocated W7-F11 and W6-F10.
 Chapter 1 / W4 stays paused.
 
-## Current return checkpoint — adjacent creation/reset feather
+## Current return checkpoint — resumed 12 November 2026
+
+Karun explicitly requested resumption of W7-F9 after the W7-F10 seal at
+`26a6270f0a27f525f0879d998911056ec6208ad6`. Continue in the existing checkout on
+`engine/w7-f10-beginning-again`; do not switch back to the older W7-F9 branch.
+The completed reset, guided creation, awakening, saved-channel reuse and opening
+inspection evidence are inherited from W7-F10. **Do not reset again.**
+
+Next bounded live check: first clothing selection through the typed HUD command
+field, compare outfit/inventory with Discord, then departure, return and saved-state
+persistence. Begin by observing current state and offered commands. New-account /
+first OAuth onboarding remains separate and unverified. Do not claim the remaining
+journey from fictional tests or prior-character evidence.
+
+Read-only connection evidence on 12 November: Neptune Lounge Desktop Commander
+responded; Mac is listed online and Windows offline. Checkout was clean at the seal
+and the remote branch had the same full SHA. Bot is active/running, PID 1029171;
+public /play/ returned HTTP 200. Chrome connected and a newly opened HUD displayed
+Signed out / Sign in with Discord. A fresh Discord tab opened the existing private
+fs-efiishent channel while signed in as karunicorn; its 11 November fresh-pod !look
+response is visible. The older tab did not respond to control. No Discord command
+was sent. Player HUD sign-in is required before live acceptance.
+No clothing choice, movement, reset, deployment or service restart has occurred in
+this resumption checkpoint.
+
+Retain the private original archive and reset receipt. The Dark Rat Queen remains
+another person's protected player character; preserve her account, permissions and
+existing routing, with her access issue parked. Chapter 1 / W4 remains paused.
+W7-F10 remains sealed; W7-F9 is active but unsealed. **36 seals; W7 nine.**
+
+## Historical return checkpoint — adjacent creation/reset feather
 
 Original source checkpoint: `96ac40f`. Return note refreshed 11 November 2026
 through adjacent W7-F10 evidence at `1028790`.

@@ -1,12 +1,28 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W7 Engine / W7-F10 — Beginning Again: Character Creation & Reset, SEALED 11 November 2026**. [Seal and evidence](wings/W7-F10_BEGINNING_AGAIN.md#seal--11-november-2026). Targeted reset/recreation, saved-channel reuse and restore-runtime reconciliation are accepted. [W7-F9](wings/W7-F9_WAKING_INTO_THE_WINDOW.md) remains PARKED/unsealed and is the next return for first clothing selection, departure and return. Next unallocated W7-F11 and W6-F10. Chapter 1 / W4 stays paused.
+Current home/checkpoint: **W7 Engine / W7-F9 — Waking Into the Window, ACTIVE / UNSEALED, resumed 12 November 2026 at Karun's request**. [Current return](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#current-return-checkpoint--resumed-12-november-2026). Continue on `engine/w7-f10-beginning-again`, retaining the [W7-F10 seal](wings/W7-F10_BEGINNING_AGAIN.md#seal--11-november-2026) at `26a6270`. Use the completed reset/recreation and saved-channel evidence; do not reset again. Next: first clothing selection, Discord/HUD comparison, departure, return and persistence. New-account/first OAuth onboarding remains unverified. Next unallocated W7-F11 and W6-F10. Chapter 1 / W4 stays paused.
 **36 sealed wing feathers: W4 has nine, W6 eight, W7 nine; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
-## Current creation/reset return — 11 November 2026
+## W7-F9 resumed — 12 November 2026
+
+Karun requested resumption after the W7-F10 seal. The existing checkout remains on
+`engine/w7-f10-beginning-again`; clean HEAD and the remote branch matched `26a6270`.
+Neptune Lounge responded, Mac is listed online, Windows offline; bot active/running
+at PID 1029171 and public /play/ HTTP 200. Chrome is connected, but the newly opened
+HUD is signed out. A fresh Discord tab successfully opened the existing private
+fs-efiishent channel as karunicorn. Player HUD sign-in precedes the first-clothing
+live check.
+
+[W7-F9's current return](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#current-return-checkpoint--resumed-12-november-2026)
+owns the remaining acceptance. Private archive and receipt remain retained;
+Queen account/grants/routing and her parked access issue are outside this work.
+No reset, clothing choice, movement, deployment or restart in this checkpoint.
+W7-F9 ACTIVE/unsealed; W7-F10 sealed; 36 seals, W7 nine; Chapter 1 paused.
+
+## Historical creation/reset return — 11 November 2026
 
 W7-F10's authorised reset and guided recreation have completed. The replacement
 character's saved private-channel binding matches the retained proof/receipt;
@@ -165,7 +181,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W4 Play | 9 | [W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F13 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 8 | [W6-F9](wings/W6-F9_LEARNING_TO_SEE.md#seal--5-november-2026) | W6-F5 review; live HUD integrated by W7-F8; artwork standards deferred; next unallocated W6-F10 |
-| W7 Engine | 9 | [W7-F10](wings/W7-F10_BEGINNING_AGAIN.md#seal--11-november-2026) | [W7-F9 — parked, next return](wings/W7-F9_WAKING_INTO_THE_WINDOW.md); pod-delivery collection web adapter remains follow-up; next unallocated W7-F11 |
+| W7 Engine | 9 | [W7-F10](wings/W7-F10_BEGINNING_AGAIN.md#seal--11-november-2026) | [W7-F9 — active, current return](wings/W7-F9_WAKING_INTO_THE_WINDOW.md); pod-delivery collection web adapter remains follow-up; next unallocated W7-F11 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
 [W1-F1 — Manzo: The World We Wake Into](wings/W1-F1_MANZO_THE_WORLD_WE_WAKE_INTO.md) is reviewed and sealed. Karun selected finding one's way through space, memory or relationships as the creative doorway; specific mechanisms remain open.
