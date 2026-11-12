@@ -1,6 +1,6 @@
 # W6-F10 — One Clear Warning
 
-Status: ACTIVE / SOURCE PREPARED — 12 November 2026. Unsealed.
+Status: ACTIVE / ISOLATED VISUAL REVIEW PASSED — 12 November 2026. Unsealed.
 Home: W6 Expression. W7 supplies the unchanged encounter-gating authority.
 Allocated on Karun's “let's go” following the
 [bounded diagnosis and proposal](../handover/HUD_ENCOUNTER_WARNING_PROPOSAL_20261112.md).
@@ -22,9 +22,10 @@ Only the live-client game.js renderer and its HTML cache tag change in productio
 source. The script tag now uses w6f10-b41f6e1f1619. No backend, CSS, frame, API,
 command-gating, permission or player-state implementation changes are included.
 
-This is source preparation, not deployment or live acceptance. The installed HUD
-still has its original bytes. Browser visual review and bounded static delivery
-remain pending; no seal is claimed.
+The isolated browser review below now passes at native and compact laptop sizes.
+This remains source preparation, not deployment or live acceptance. The installed
+HUD still has its original bytes. Bounded static delivery remains pending; no seal
+is claimed.
 
 ## Evidence
 
@@ -60,12 +61,60 @@ Repeat the client checks where Node is available:
 node --test tests/test_web_inspection_window.cjs tests/test_web_live_frame.cjs
 ```
 
+## Isolated browser review passed — 12 November 2026, 20:39–20:43 AWST
+
+Reviewed corrected source 5b1438dbb4216e5820748c64dfc04188184b127d in connected Chrome.
+The [reproducible fixture](../../tools/authoring/w6f10/visual_review.py) ran on the
+Mac at 127.0.0.1:8766. It serves only copied client files and fictional in-memory
+responses, has no OAuth or live API forwarding, and never reads player stores.
+The public existing p01 artwork was loaded read-only. Fixture HTML labels itself
+FICTIONAL REVIEW and permits that image origin; game.js, frame.js and frame.css
+are exact source bytes, and source index.html is copied before fixture-only edits.
+
+| Visible check | Observed result |
+| --- | --- |
+| Native 1512 × 783 window | One encounter warning, no duplicate or empty INSPECT wrapper. Existing image-left/reading-right layout, typed commands and reference dock remain visible. Image loaded; document dimensions equal viewport dimensions, with no outer-page scrolling. |
+| Blocked go west / inspect panels | Refused in the client. The fixture controls showed zero action POSTs. Reference Inventory opened normally while blocked. |
+| Inventory close | Preserved the room and warning, returned focus to command-input. Artwork stayed unobstructed. |
+| Clear encounter | Refresh removed the warning and restored west plus hands/panels inspection offers. |
+| Restored commands | inspect hands opened the fictional observation; look restored the room. go west then go east completed the fictional round trip. The fixture recorded exactly one inspection POST and two walking POSTs. |
+| Different refusals | Inspection-unavailable and sequence-running messages both remained visible, with the INSPECT wrapper retained for its distinct notice. |
+| Reblocked state | A fresh blocked response restored one warning and no offered exits/inspection targets. |
+| Compact 1366 × 600 | One warning, readable commands and dock within the viewport; document dimensions again matched the viewport. Empty inspection wrapper remained hidden. |
+| Browser console and cleanup | No warning/error entries reported for the review tab. The temporary viewport override was reset and confirmed at 1512 × 783; review tabs closed and the loopback server stopped. |
+
+The shorter-viewport override initially affected the separate controls tab; that
+capture is the native-size distinct-notice screenshot. After closing controls,
+the actual game window was measured at 1366 × 600 and captured separately.
+No compact-size result is inferred from the initial override request.
+
+One existing wording rough edge remains outside this correction: rejected typed
+commands with no offers can end in an empty “Available exits:” or “Available:”
+list. The single encounter notice remains visible in the room. Record this as a
+separate wording follow-up; this review does not expand the implemented scope.
+
+This is direct visual evidence with fictional responses. It does not establish
+live deployment, new-account/OAuth onboarding, real encounter completion or a new
+Efiishent journey. The backend-gating evidence remains the earlier real-adapter
+Python fixtures; this local visual server is not a substitute for that authority.
+The 28 Node / 31 Python results above are retained, not rerun or inflated here.
+
+### Screenshots
+
+| View | SHA-256 |
+| --- | --- |
+| [Single warning, native window](W6-F10_blocked_20261112.jpg) | 96962d809d4f2f2f3084999880bce137087ce667f540a1661ba3bfd18782aa00 |
+| [Ordinary window after clearing](W6-F10_clear_20261112.jpg) | 78dcff8ed1b82b68c850fb2f4e4775fdf4745976fc88b5802260383d1d5c5e75 |
+| [Inventory while blocked](W6-F10_inventory_20261112.jpg) | 498574f06c81ce11a0bdc552306aeaba152aa690bfdd60f8fddb177263933695 |
+| [Distinct notices, native window](W6-F10_distinct_20261112.jpg) | f419bd9e2dbd8d10a5e4a9e200feaa2dff66db7a66f23ea649024d169b9d44f1 |
+| [Single warning, 1366 × 600](W6-F10_compact_20261112.jpg) | 74c31bee81d0770243c9d1ad7f8b061d91633c3a8a4714c2c490e80b6e30d61a |
+
 ## Next concrete step
 
-Review the corrected existing game window using a clearly fictional blocked
-fixture and an ordinary fixture. Check the one warning, recovered actions, reference
-panels and persistent commands at the accepted laptop layout. Do not create an
-encounter on Efiishent to obtain this evidence.
+Prepare and rehearse the bounded two-asset static delivery for game.js and
+index.html, preserving all other code/assets and reconciling the current runtime
+contract. Present the concrete install/rollback result before live activation.
+The isolated visual review is complete; no live encounter is needed to repeat it.
 
 Any subsequent production delivery must be a bounded static package with reviewed
 baselines, cache verification and current runtime-contract reconciliation.

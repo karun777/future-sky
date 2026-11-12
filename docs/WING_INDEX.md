@@ -1,12 +1,23 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W6 Expression / W6-F10 — One Clear Warning, ACTIVE, source prepared 12 November 2026**. [Current checkpoint and evidence](wings/W6-F10_ONE_CLEAR_WARNING.md). Karun accepted the bounded duplicate-warning proposal; presentation correction and focused checks are prepared, with visual review and static delivery pending. Continue on `engine/w7-f10-beginning-again`. [W7-F9 seal](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#seal--12-november-2026) at `f2346b1` and [W7-F10 seal](wings/W7-F10_BEGINNING_AGAIN.md#seal--11-november-2026) at `26a6270` remain intact. No reset: retain the archive/receipt and protected Queen account/routing. First-time account/OAuth remains unverified; Chapter 1 / W4 stays paused. Next unallocated W6-F11 and W7-F11.
+Current home/checkpoint: **W6 Expression / W6-F10 — One Clear Warning, ACTIVE, isolated visual review passed 12 November 2026**. [Current checkpoint and evidence](wings/W6-F10_ONE_CLEAR_WARNING.md). Karun accepted the bounded duplicate-warning proposal; presentation correction, focused checks and fictional browser review pass; bounded static delivery remains pending. Continue on `engine/w7-f10-beginning-again`. [W7-F9 seal](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#seal--12-november-2026) at `f2346b1` and [W7-F10 seal](wings/W7-F10_BEGINNING_AGAIN.md#seal--11-november-2026) at `26a6270` remain intact. No reset: retain the archive/receipt and protected Queen account/routing. First-time account/OAuth remains unverified; Chapter 1 / W4 stays paused. Next unallocated W6-F11 and W7-F11.
 **37 sealed wing feathers: W4 has nine, W6 eight, W7 ten; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
-## W6-F10 allocated and source prepared — 12 November 2026
+## W6-F10 isolated visual review passed — 12 November 2026
+
+[Browser evidence and five screenshots](wings/W6-F10_ONE_CLEAR_WARNING.md#isolated-browser-review-passed--12-november-2026-20392043-awst)
+confirm one shared warning, distinct notices retained, blocked commands without
+action requests, restored ordinary commands and usable reference panels. Native
+1512 × 783 and compact 1366 × 600 layouts passed without outer scrolling. Fictional
+loopback fixture only; no live game or account changes. Browser override restored
+and temporary server stopped. Existing empty-offer wording retained as a follow-up.
+Next: prepare/rehearse bounded static delivery. W6-F10 ACTIVE/unsealed; 37 sealed
+unchanged, W6 eight and W7 ten; protected boundaries and Chapter 1 pause stand.
+
+## Historical W6-F10 allocation and source preparation — 12 November 2026
 
 [One Clear Warning](wings/W6-F10_ONE_CLEAR_WARNING.md) is allocated on Karun's
 acceptance. Shared refusal rendered once; distinct notices and encounter gates
@@ -304,7 +315,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
 | W4 Play | 9 | [W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F13 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
-| W6 Expression | 8 | [W6-F9](wings/W6-F9_LEARNING_TO_SEE.md#seal--5-november-2026) | [W6-F10 — active, source prepared](wings/W6-F10_ONE_CLEAR_WARNING.md); W6-F5 review; artwork standards deferred; next unallocated W6-F11 |
+| W6 Expression | 8 | [W6-F9](wings/W6-F9_LEARNING_TO_SEE.md#seal--5-november-2026) | [W6-F10 — active, visual review passed](wings/W6-F10_ONE_CLEAR_WARNING.md); W6-F5 review; artwork standards deferred; next unallocated W6-F11 |
 | W7 Engine | 10 | [W7-F9](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#seal--12-november-2026) | W7-F10 sealed; first-time account/OAuth onboarding and pod-delivery collection web adapter remain follow-ups; next unallocated W7-F11 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
@@ -417,7 +428,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W5 has 2 completed feathers; W5-F3 unallocated. [W1-F3](wings/W1-F3_THE_EIGHT_TIMELINES.md) links this wing for cross-era causality, without allocating a W5 feather. Failed clock persistence advances memory before suppressing publication; later save may include it. Recovery/replay policy remains open. No live time change.
 
 ### W6 — Expression
-- 12 November: [W6-F10 — One Clear Warning](wings/W6-F10_ONE_CLEAR_WARNING.md) is active; duplicate-warning correction and focused checks prepared. Isolated visual review next; no deployment or new seal.
+- 12 November: [W6-F10 — One Clear Warning](wings/W6-F10_ONE_CLEAR_WARNING.md) is active; correction, focused checks and isolated browser review pass. Bounded static delivery preparation next; no deployment or new seal.
 - 4 November: [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md#shared-checkpoints) shares durable pod inspection across Discord/web; tested source awaits activation. No sealed-count increment.
 - 4 November: [W6-F8 shared return](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-return-after-seal) records the sealed live-frame milestone, authoritative interaction boundaries and outstanding player walkthrough. One home/count; shared inspection is proposed next.
 - 29 October: [W6-F7](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#shared-checkpoints) is ACTIVE: readable game window and passive shared-state updates; Chapter 1 paused, counts unchanged.
