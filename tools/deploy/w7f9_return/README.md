@@ -1,6 +1,8 @@
 # W7-F9: guided pod return correction
 
-Prepared 12 November 2026 on engine/w7-f10-beginning-again. This package replaces
+Installed and verified 12 November 2026 on engine/w7-f10-beginning-again.
+Owner release and live departure/return/reload passed; see the current W7-F9 document.
+Do not rerun the installer for acceptance. This package replaces
 only bot/fsbot/pod_opening.py, bot/fsbot/cogs/threadnodes.py and
 bot/fsbot/cogs/inspection.py. It preserves 138 other code/asset pins, including the
 W7-F10 router and the separately reviewed HTML cache correction from ba884a9.

@@ -1,6 +1,6 @@
 # W7-F9 — Waking Into the Window
 
-Status: ACTIVE / UNSEALED — 12 November 2026; correction deployed and owner release verified, awaiting HUD sign-in and return retest.
+Status: ACTIVE / UNSEALED — 12 November 2026; live returning-character journey passed, ready for bounded review. First-time account/OAuth onboarding remains unverified.
 Home: W7 Engine. Working branch: engine/w7-f10-beginning-again.
 Original implementation branch: engine/w7-f9-waking-into-the-window.
 Baseline: W7-F8 seal 524411c. Working checkout remains physically at
@@ -17,15 +17,15 @@ Karun explicitly requested resumption of W7-F9 after the W7-F10 seal at
 The completed reset, guided creation, awakening, saved-channel reuse and opening
 inspection evidence are inherited from W7-F10. **Do not reset again.**
 
-First clothing selection, live Discord/HUD outfit and inventory parity, HUD
-departure, and reverse location synchronization are directly verified. However,
-the first return to the pod triggered legacy arrival_awakening_v1 and blocked the HUD.
-The correction is now installed; at 17:21 AWST the existing owner's !awaken released
-only the two obsolete scene fields. Efiishent remains in the pod with the correct
-outfit, bag, discoveries and routing. No story choice was submitted or completed.
-Next: finish existing-account Discord sign-in in the HUD tab, then compare clients
-and retest departure, return and persistence. Do not reset or clear unrelated
-encounters. New-account / first OAuth onboarding remains separate and unverified.
+First clothing selection, Discord/HUD outfit and inventory parity, departure,
+ordinary return and saved persistence are now directly verified. The first return
+exposed the legacy awakening blocker; the deployed correction and explicit owner
+release resolved it. The 18:39–18:43 AWST retest passed through the real HUD and
+private Discord channel, including full reloads and canonical-store comparison.
+Efiishent is back in the pod with Freeform Attire, the original knife/jacket,
+discoveries, first-choice record and routing intact. No story choice was completed.
+Next: bounded W7-F9 review, explicitly retaining first-time account/OAuth onboarding
+as unverified. Do not reset or clear unrelated encounters. No seal has been added.
 
 Initial read-only connection evidence on 12 November: Neptune Lounge Desktop Commander
 responded; Mac is listed online and Windows offline. Checkout was clean at the seal
@@ -42,6 +42,51 @@ Retain the private original archive and reset receipt. The Dark Rat Queen remain
 another person's protected player character; preserve her account, permissions and
 existing routing, with her access issue parked. Chapter 1 / W4 remains paused.
 W7-F10 remains sealed; W7-F9 is active but unsealed. **36 seals; W7 nine.**
+
+## Live return and persistence passed — 12 November 2026, 18:39–18:43 AWST
+
+The previous tabs had closed. Fresh HUD and existing-private-channel tabs were
+opened in the connected Chrome browser. Discord recognized karunicorn; the normal
+existing-account authorization requested basic identity only and returned to the
+HUD. This establishes a fresh returning-account HUD session, not first-time
+account onboarding. No access-policy, allowlist or permission changes.
+
+| Live check | Direct result |
+| --- | --- |
+| Reconnected pod | Up to date; west exit and discovered inspections available. Old encounter refusal absent. |
+| Before departure | HUD Inventory and fresh Discord !fit / !inventory agree: Freeform Attire equipped; Rusty Knife x1 and Leather Jacket x1 carried. |
+| HUD go west | Arrived at Hostel Hallway — Pod Doors & Quiet Lives. Discord received the movement notice; canonical current_room was hostel_hallway. |
+| Hallway persistence | Full HUD reload retained hallway and south/east/down exits. Fresh Discord !look showed the same room and exits. |
+| Discord !go east | Ordinary pod description and west exit returned. The HUD synchronized automatically without manual refresh. No legacy awakening or choice lock. |
+| Continued interaction | HUD inspect garment succeeded, displaying Freeform Attire and chain/pod follow-ons; west remained available. |
+| Returned persistence | Full HUD reload retained pod, discovered inspections and west exit. HUD Inventory and a fresh Discord !inventory still matched. |
+
+The final canonical comparison confirmed pod_room, unchanged bag/equipment and the
+entire arrival record, including discoveries, no booking and pod_freeform first
+choice. Thread state is inactive, pending_answer null and completed history still
+empty. Relative to the private pre-release snapshot, the only additional owner
+change after the two scene-release fields is extra.narrator.seen: the ordinary
+pod-return recognition line was delivered. This is normal narrative bookkeeping,
+not a completed legacy choice or new opening grant.
+
+All other character records matched the private baseline. Lockers, vault, cubes
+and reset receipt hashes also matched. The installed code contract still passed;
+bot PID remains 1037793. No further deployment, service restart, reset, restore,
+direct data edit or other-player operation occurred during this retest. The original
+private archive was not accessed; its earlier inspection limit remains.
+
+[Returned HUD after reload](W7-F9_RETURN_VERIFIED_20261112.jpg), SHA-256
+bf6ec4d35bf70b8eaf6777a3b8775101e8014c1807ac985c0c95f8f514a1b7a7.
+The retained HUD tab shows the pod and Inventory; the private Discord tab shows the
+successful return and matching inventory.
+
+**Review boundary:** first clothing through return/persistence is now verified for
+the recreated Efiishent on an existing account. First-time account/OAuth remains
+unverified; no separate eligible participant was added. The earlier duplicated
+refusal remains a secondary presentation finding for genuinely blocked encounters;
+this corrected return no longer enters that state. W7-F9 is ready for bounded review,
+not sealed. 36 seals, W7 nine; W7-F10 remains sealed. Queen access issue and Chapter 1
+remain parked.
 
 ## Deployment and owner release verified — 12 November 2026, 17:17–17:23 AWST
 
