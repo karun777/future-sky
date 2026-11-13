@@ -1,6 +1,9 @@
 # Next feather proposal — When the Way Is Closed
 
-Status: PROPOSED ONLY — 13 November 2026. W6-F11 is not allocated.
+Status: ACCEPTED — 13 November 2026. Karun's subsequent “ok let's go” allocated
+[W6-F11 — When the Way Is Closed](../wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md).
+That home record owns current status. The proposal below is the historical
+pre-allocation checkpoint at 9acb8a9.
 Home candidate: W6 Expression; W7 retains the existing command/encounter authority.
 Requested after the sealed W6-F10 review. Current Git is the authority.
 

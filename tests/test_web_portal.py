@@ -201,4 +201,8 @@ class GameFrameReturnTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(response.status, 200)
         html = await response.text()
         self.assertIn('id="command-input"', html)
-        self.assertIn('src="/assets/experiments/w6-f8/live/game.js?v=w6f10-b41f6e1f1619"', html)
+        from hashlib import sha256
+        from pathlib import Path
+        source = Path(__file__).resolve().parents[1] / "tools/authoring/w6f8/live/game.js"
+        digest = sha256(source.read_bytes()).hexdigest()[:12]
+        self.assertRegex(html, r'src="/assets/experiments/w6-f8/live/game\.js\?v=w\d+f\d+-' + digest + r'"')

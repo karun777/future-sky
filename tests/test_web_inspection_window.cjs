@@ -349,3 +349,85 @@ test('encounter notice clears and returns with refreshed offers, preserving ordi
  await command(h,'go west');
  assert.equal(h.calls.filter(c=>c.url.endsWith('/walk')).length,1);
 });
+
+for (const [typed, field] of [['go west','walking'],['inspect panels','inspection'],['wardrobe','wardrobe']]) {
+ test('W6-F11 '+typed+' reports its current refusal without issuing an action',async()=>{
+  const h=await setup();
+  const warning='A choice or encounter needs your attention in Discord.';
+  h.data.walking={exits:[],notice:warning};
+  h.data.inspection={targets:[],notice:warning};
+  h.data.wardrobe={available:false,options:[],notice:warning};
+  await h.tick(4000);await command(h,typed);
+  assert.equal(h.elements['command-response'].textContent,warning);
+  assert.equal(h.elements['command-history'].children[0].children[1].textContent,warning);
+  assert.equal(h.elements['walk-notice'].textContent,warning);
+  assert.equal(h.elements['inspect-notice'].hidden,true);
+  await h.tick(8000);
+  assert.equal(h.elements['command-response'].textContent,warning);
+  const specific='This action is unavailable while its connection recovers.';
+  h.data[field].notice=specific;await h.tick(4000);await command(h,typed);
+  assert.equal(h.elements['command-response'].textContent,specific);
+  await command(h,'inventory');assert.equal(h.elements['inventory-panel'].open,true);
+  assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
+ });
+}
+
+test('W6-F11 empty or absent offers give complete guidance without invented reasons',async()=>{
+ const h=await setup();
+ for(const missing of [false,true]){
+  h.data.walking=missing?undefined:{exits:[],notice:''};
+  h.data.inspection=missing?undefined:{targets:[],notice:''};
+  h.data.wardrobe=missing?undefined:{available:false,options:[]};
+  await h.tick(4000);
+  for(const [typed,expected] of [
+   ['go west','No exits are available from here right now.'],
+   ['inspect panels','No details are available to inspect here right now.'],
+   ['wardrobe','The wardrobe is not available here right now.']]){
+   await command(h,typed);
+   assert.equal(h.elements['command-response'].textContent,expected);
+   assert.equal(h.elements['command-history'].children[0].children[1].textContent,expected);
+  }
+ }
+ assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
+});
+
+test('W6-F11 alternatives follow current offers and only suggest an offered wardrobe',async()=>{
+ const h=await setup();
+ await command(h,'go north');
+ assert.equal(h.elements['command-response'].textContent,'Available exits: west');
+ await command(h,'inspect booking');
+ assert.equal(h.elements['command-response'].textContent,'That inspection is not available here in the web window. Available: panels');
+ await command(h,'wardrobe');
+ assert.equal(h.elements['command-response'].textContent,'The wardrobe is not available here right now. Available details: panels');
+ h.data.inspection.targets=['panels','wardrobe'];await h.tick(4000);await command(h,'wardrobe');
+ assert.equal(h.elements['command-response'].textContent,'Inspect the wardrobe first: inspect wardrobe. Available details: panels, wardrobe');
+ h.data.wardrobe={available:false,notice:'Equipment is unavailable.',options:[]};
+ await h.tick(4000);await command(h,'wardrobe');
+ assert.equal(h.elements['command-response'].textContent,'Equipment is unavailable.');
+ assert.equal(h.calls.filter(c=>c.options.method==='POST').length,0);
+});
+
+test('W6-F11 refreshed offers restore commands and a later block updates feedback',async()=>{
+ const h=await setup();
+ const block=()=>{
+  const notice='A choice or encounter needs your attention in Discord.';
+  h.data.walking={exits:[],notice};h.data.inspection={targets:[],notice};
+  h.data.wardrobe={available:false,options:[],notice};
+ };
+ block();await h.tick(4000);await command(h,'wardrobe');
+ h.data=data();await h.tick(4000);
+ h.handler=async(url)=>url.endsWith('/walk')?response(200,{ok:true,message:'Moved'}):
+  url.endsWith('/inspect')?response(200,{ok:true,observation:{title:'Panels',text:'A handle.'}}):null;
+ await command(h,'go west');await command(h,'inspect panels');
+ await wardrobe(h);await command(h,'wardrobe');
+ assert.equal(h.elements['wardrobe-panel'].hidden,false);
+ assert.equal(h.elements['command-response'].textContent,'Wardrobe opened. Examine an outfit before choosing what to wear.');
+ const actionCount=h.calls.filter(c=>c.options.method==='POST').length;
+ assert.equal(actionCount,2);
+ block();await h.tick(4000);
+ for(const typed of ['go west','inspect panels','wardrobe']){
+  await command(h,typed);
+  assert.equal(h.elements['command-response'].textContent,h.data.walking.notice);
+ }
+ assert.equal(h.calls.filter(c=>c.options.method==='POST').length,actionCount);
+});

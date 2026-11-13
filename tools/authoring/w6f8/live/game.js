@@ -520,18 +520,29 @@
         return;
       }
       if (verb === "go" && argument) {
-        if (!(view.walking?.exits || []).includes(argument)) { commandReply("Available exits: " + (view.walking?.exits || []).join(", ")); return; }
+        const exits = view.walking?.exits || [];
+        if (!exits.includes(argument)) {
+          commandReply(view.walking?.notice || (exits.length ?
+            "Available exits: " + exits.join(", ") : "No exits are available from here right now.")); return;
+        }
         await walk(argument);
       } else if (verb === "inspect" && argument) {
         const target = ({"storage panels":"panels","booking notice":"booking"})[argument] || argument;
-        if (!(view.inspection?.targets || []).includes(target) && examineOutfit(argument)) return;
-        if (!(view.inspection?.targets || []).includes(target)) {
-          commandReply("That inspection is not available here in the web window. Available: " + (view.inspection?.targets || []).join(", ")); return;
+        const targets = view.inspection?.targets || [];
+        if (!targets.includes(target) && examineOutfit(argument)) return;
+        if (!targets.includes(target)) {
+          commandReply(view.inspection?.notice || (targets.length ?
+            "That inspection is not available here in the web window. Available: " + targets.join(", ") :
+            "No details are available to inspect here right now.")); return;
         }
         await inspect(target);
       } else if (verb === "wardrobe") {
         if (!view.wardrobe?.available) {
-          commandReply("Inspect the wardrobe first: inspect wardrobe. Available details: " + (view.inspection?.targets || []).join(", ")); return;
+          const targets = view.inspection?.targets || [];
+          const guidance = targets.includes("wardrobe") ? "Inspect the wardrobe first: inspect wardrobe." :
+            "The wardrobe is not available here right now.";
+          commandReply(view.wardrobe?.notice || (guidance +
+            (targets.length ? " Available details: " + targets.join(", ") : ""))); return;
         }
         if (argument && !argument.startsWith("inspect ")) { commandReply("Use wardrobe or wardrobe inspect <outfit>."); return; }
         if (argument) {

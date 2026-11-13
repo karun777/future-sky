@@ -1,12 +1,23 @@
 # Future Sky — Wing Index
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
-Current home/checkpoint: **W6 Expression / W6-F10 — One Clear Warning, SEALED 13 November 2026**. [Seal and carry-forwards](wings/W6-F10_ONE_CLEAR_WARNING.md#seal--13-november-2026). Karun accepted the reviewed and deployed duplicate-warning correction. One shared warning, distinct guidance and encounter gates are preserved. Fictional browser review, 483 Python / 28 client checks and installed/public/live evidence support the seal. Continue on `engine/w7-f10-beginning-again`. [W7-F9 seal](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#seal--12-november-2026) at `f2346b1` and [W7-F10 seal](wings/W7-F10_BEGINNING_AGAIN.md#seal--11-november-2026) at `26a6270` remain intact. No reset: retain the archive/receipt and protected Queen account/routing. First-time account/OAuth remains unverified; Chapter 1 / W4 stays paused. Next unallocated W6-F11 and W7-F11.
+Current home/checkpoint: **W6 Expression / W6-F11 — When the Way Is Closed, ACTIVE, source prepared 13 November 2026**. [Current checkpoint and evidence](wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md). Karun accepted the bounded command-feedback follow-up. Three refusal paths now give supplied reasons or complete availability guidance; 34 client checks and 483 Python tests pass. Fictional browser review is next; live W6-F10 remains installed. Continue on `engine/w7-f10-beginning-again`. W6-F10, W7-F9 and W7-F10 remain sealed. No reset: retain the archive/receipt and protected Queen account/routing. First-time account/OAuth remains unverified; Chapter 1 / W4 stays paused. Next unallocated W6-F12 and W7-F11.
 **38 sealed wing feathers: W4 has nine, W6 nine, W7 ten; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
-## Morning connection and next proposal — 13 November 2026
+## W6-F11 allocated and source prepared — 13 November 2026
+
+[When the Way Is Closed](wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md) is allocated on
+Karun's acceptance. go, inspect and unavailable-wardrobe feedback uses existing
+authoritative reasons, complete empty-offer guidance and offered alternatives.
+Six new regressions fail on the old client and pass with the correction; all
+34 client checks and 483 Python tests pass. Runtime gates and accepted layout stay
+unchanged. Live W6-F10 assets/pins and bot runtime still match; no deployment.
+Next: fictional browser review, then bounded delivery preparation. W6-F11 ACTIVE /
+unsealed; 38 sealed remain, W6 nine and W7 ten. Next unallocated W6-F12 and W7-F11.
+
+## Historical morning connection and next proposal — 13 November 2026
 
 [Connectivity evidence and bounded proposal](handover/HUD_COMMAND_REFUSAL_PROPOSAL_20261113.md)
 confirm Mac/server/browser connectivity, active bot/nginx, clean expected branch
@@ -374,7 +385,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
 | W4 Play | 9 | [W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F13 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
-| W6 Expression | 9 | [W6-F10](wings/W6-F10_ONE_CLEAR_WARNING.md#seal--13-november-2026) | Empty available-offer wording follow-up; W6-F5 review; artwork standards deferred; next unallocated W6-F11 |
+| W6 Expression | 9 | [W6-F10](wings/W6-F10_ONE_CLEAR_WARNING.md#seal--13-november-2026) | [W6-F11 — active, source prepared](wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md); W6-F5 review; artwork standards deferred; next unallocated W6-F12 |
 | W7 Engine | 10 | [W7-F9](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#seal--12-november-2026) | W7-F10 sealed; first-time account/OAuth onboarding and pod-delivery collection web adapter remain follow-ups; next unallocated W7-F11 |
 | W8 Stewardship | 2 | [W8-F2](wings/W8-F2_BRING_THE_DRAGONS_MEMORY_HOME.md) | W8-F3 |
 
@@ -487,6 +498,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W5 has 2 completed feathers; W5-F3 unallocated. [W1-F3](wings/W1-F3_THE_EIGHT_TIMELINES.md) links this wing for cross-era causality, without allocating a W5 feather. Failed clock persistence advances memory before suppressing publication; later save may include it. Recovery/replay policy remains open. No live time change.
 
 ### W6 — Expression
+- 13 November: [W6-F11 — When the Way Is Closed](wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md) allocated; source prepared, 34 client / 483 Python checks pass. Fictional visual review next; live W6-F10 remains installed. Counts unchanged.
 - 13 November: [W6-F10 — One Clear Warning](wings/W6-F10_ONE_CLEAR_WARNING.md#seal--13-november-2026) is SEALED on Karun's acceptance of the reviewed, deployed correction. W6 nine / 38 total sealed. Empty available-offer wording retained separately; next unallocated W6-F11.
 - 4 November: [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md#shared-checkpoints) shares durable pod inspection across Discord/web; tested source awaits activation. No sealed-count increment.
 - 4 November: [W6-F8 shared return](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-return-after-seal) records the sealed live-frame milestone, authoritative interaction boundaries and outstanding player walkthrough. One home/count; shared inspection is proposed next.
@@ -508,6 +520,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Current: [W6-F3 — The Display Behind Your Eyes](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) is SEALED after its bounded implementation and live checks: consistent truthful HUD states, once-only display notice and brochure crash, shared typing/activity input and idle-choice quiet. First live HUD checks passed. Follow-up adds spaced commands and discovery-based explicit HUD, removes automatic meters; 119 isolated tests pass. Follow-up deployed at 20:19 AWST; Karun confirmed quiet look, discovery-based HUD and spaced controls at 20:21 AWST. Implant/subtle-perception direction is recorded; larger progression remains deferred. W6 completed count is 3; next unallocated W6-F4. W4-F6 remains unallocated.
 
 ### W7 — Engine
+- 13 November: [W6-F11 shared return](wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md) improves command feedback only. Existing authoritative offers, encounter gates and bot runtime remain unchanged. No W7 allocation or live change.
 - 13 November: [W6-F10 shared return](wings/W6-F10_ONE_CLEAR_WARNING.md#seal--13-november-2026) is sealed in W6 only. Presentation correction installed/verified; bot runtime and encounter authority preserved. W7 stays ten sealed; W7-F11 remains unallocated. No reset or access expansion.
 - 4 November: [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md#shared-checkpoints) shares durable pod inspection across Discord/web; tested source awaits activation. No sealed-count increment.
 - 4 November: [W6-F8 shared return](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-return-after-seal) records the sealed live-frame milestone, authoritative interaction boundaries and outstanding player walkthrough. One home/count; shared inspection is proposed next.

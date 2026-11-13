@@ -230,11 +230,15 @@ class ReviewedStaticPackageTests(unittest.TestCase):
         expected.update(previous["pins"])
         self.assertEqual(set(package["files"]), set(ORDER))
         self.assertEqual(package["pins"], {r: h for r, h in expected.items() if r not in ORDER})
+        # Sealed W6-F10 binds its reviewed bytes, not a later client draft.
+        # GameFrameReturnTests checks the current client's cache/hash pairing.
+        reviewed = {
+            ORDER[0]: "b41f6e1f1619615be2d2c3639ce0f85f1ebbcf2b69f286ea9fe1c942b2da84cb",
+            ORDER[1]: "e8a1e6df857f878031facec83b4a6c05ba0d5d9fc0ae4975a22d599c53fe8486",
+        }
         for r, source in SOURCES.items():
             self.assertEqual(package["files"][r]["live"], expected[r])
             self.assertEqual(package["files"][r]["source_path"], source)
-            self.assertEqual(package["files"][r]["source"], sha(ROOT / source))
+            self.assertEqual(package["files"][r]["source"], reviewed[r])
         self.assertEqual(package["basis"]["runtime_sha256"], sha(ROOT / RUNTIME))
         self.assertEqual(package["basis"]["previous_sha256"], sha(ROOT / PREVIOUS))
-        self.assertIn("game.js?v=w6f10-" + package["files"][ORDER[0]]["source"][:12],
-                      (ROOT / SOURCES[ORDER[1]]).read_text())

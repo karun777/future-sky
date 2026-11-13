@@ -1,0 +1,42 @@
+{
+  "feather": "W6-F11",
+  "status": "source_prepared_not_deployed",
+  "recorded_at": "2026-11-13T10:12:48.139009+08:00",
+  "baseline_commit": "9acb8a9af6c44295cdf0cfb1ddd83ef4d2db18b6",
+  "source_sha256": {
+    "tests/test_w6f10_deployment.py": "89b8e20cd7d23eec3696a93e8340436005d3c758e7d7047e743075bbbebed765",
+    "tests/test_web_inspection_window.cjs": "f2585b0b064f79cc819baaba1575bdb18e7dad7382fcaee4bbd611bc26471e95",
+    "tests/test_web_portal.py": "9496c4e51340ca30dafccbe07a58f27f5e20b0765a48abb92a238bb8b4c3b28b",
+    "tools/authoring/w6f8/live/game.js": "baf9b84ce3342de4bd671b3de0bd15828c2d91ce8bd545cc7c75f524f896e502",
+    "tools/authoring/w6f8/live/index.html": "103d149be45bf0232b182bb3f4888e714fe08ba47ea191a777cca6ec87dc3d0b"
+  },
+  "cache_tag": "w6f11-baf9b84ce334",
+  "client": {
+    "tests": 34,
+    "passed": 34,
+    "command": "node --test --test-reporter=tap tests/test_web_inspection_window.cjs tests/test_web_live_frame.cjs",
+    "execution": "hash-verified source copies in local Node runtime; minimal DOM, no browser",
+    "new_regressions": 6,
+    "old_client_failures": 6,
+    "baseline_script_sha256": "b41f6e1f1619615be2d2c3639ce0f85f1ebbcf2b69f286ea9fe1c942b2da84cb"
+  },
+  "python": {
+    "tests": 483,
+    "passed": 483,
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=.:bot:tests /opt/futuresky/.venv-web-pilot-20261029/bin/python -m unittest discover -s tests",
+    "log_sha256": "677a448e163741608bcf8c294a13220f0ca4fab33e16ab98343ab3cb86ff840b"
+  },
+  "live": {
+    "release": "W6-F10",
+    "matched_code_and_asset_hashes": 141,
+    "runtime_hash_entries": 140,
+    "bot_pid": 1037793,
+    "bot_active": true,
+    "w6f11_deployed": false
+  },
+  "pending": [
+    "fictional browser review",
+    "bounded static delivery package and rehearsal",
+    "author review and seal"
+  ]
+}
