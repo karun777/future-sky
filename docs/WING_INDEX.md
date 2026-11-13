@@ -6,6 +6,16 @@ Current home/checkpoint: **W6 Expression / W6-F10 — One Clear Warning, SEALED 
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
+## Morning connection and next proposal — 13 November 2026
+
+[Connectivity evidence and bounded proposal](handover/HUD_COMMAND_REFUSAL_PROPOSAL_20261113.md)
+confirm Mac/server/browser connectivity, active bot/nginx, clean expected branch
+at seal 8f0d182, matching public HUD bytes and the installed W6-F10 contract.
+Candidate **W6-F11 — When the Way Is Closed** addresses empty/unhelpful go, inspect
+and wardrobe refusal feedback while preserving authoritative gates and the accepted
+window. Proposed only; no implementation or allocation. 38 sealed remain, W6 nine,
+W7 ten. Continue the selected next feather in its own chat.
+
 ## W6-F10 sealed — 13 November 2026
 
 [Seal and carry-forwards](wings/W6-F10_ONE_CLEAR_WARNING.md#seal--13-november-2026):
