@@ -6,7 +6,13 @@ Current home/checkpoint: **W6 Expression / W6-F11 — When the Way Is Closed, AC
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
-## Authored seed — pod console and existing workspace · 15 November 2026
+## Efiishent echo handover — W4-F13 allocated READY · 15 November 2026
+
+[W4-F13 — A Workspace Already Waiting](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md) gives the console seed its own **W4 Play** home and [new-chat handover](handover/W4-F13_EFIISHENT_WORKSPACE_HANDOVER.md). Karun requests the echo specifically for Efiishent. Dedicated worktree `/home/efiishent/future-sky-worktrees/w4-f13`, branch `play/w4-f13-a-workspace-already-waiting`. Discovery, note, fictional login, existing records and a voluntary next move are the bounded experience; this is not physical-laptop setup or private-data replication.
+
+**READY, not active, deployed or sealed.** W6-F11 remains the current active source work; wider Chapter 1 / W4 implementation remains paused. No game state, fixture or runtime source changed. W4-F13 is now allocated; next unallocated **W4-F14**. Sealed counts stay 38 total / W4 nine / W6 nine / W7 ten. Earlier unnumbered-seed statements below are history, not the current allocation.
+
+## Historical unnumbered seed — pod console and existing workspace · 15 November 2026
 
 [The console/workspace seed](seeds/POD_CONSOLE_WORKSPACE_20261115.md) records Efiishent discovering a console in the pod, using a password from a note and finding an existing workspace. His ownership assumption remains distinct from world truth. A synthetic seven-record fixture supports review; no private records, runtime actions, allocation, seal or deployment. W6-F11 remains ACTIVE and Chapter 1 / W4 paused. All next IDs and 38 sealed remain unchanged. Shared checkpoints below route to the same seed, not separate feathers.
 
@@ -387,7 +393,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W1 Mythos | 2 | [W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
 | W3 Beings | 2 | [W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
-| W4 Play | 9 | [W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F13 |
+| W4 Play | 9 | [W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | [W4-F13 — READY echo handover](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md); W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F14 |
 | W5 Time | 2 | [W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 9 | [W6-F10](wings/W6-F10_ONE_CLEAR_WARNING.md#seal--13-november-2026) | [W6-F11 — active, source prepared](wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md); W6-F5 review; artwork standards deferred; next unallocated W6-F12 |
 | W7 Engine | 10 | [W7-F9](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#seal--12-november-2026) | W7-F10 sealed; first-time account/OAuth onboarding and pod-delivery collection web adapter remain follow-ups; next unallocated W7-F11 |
@@ -418,6 +424,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Open: ordinary resident atrophy and runtime delivery remain unproven. W1 has 2 completed feathers. [W1-F3 / historical Feather 57 — The Eight Timelines: A Constellation of Possibilities](wings/W1-F3_THE_EIGHT_TIMELINES.md) is allocated and parked (18 October 2026). Source review records seven-line legacy material and October A–G research; the proposed eight-part structure is unresolved. Next unallocated W1-F4. Preparation does not increment the completed count.
 
 ### W2 — Worlds
+- 15 November: [W4-F13 echo handover](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md) READY. Console/note placement links to existing pod surfaces; no room change. One home/count; no seal or activation.
 - 15 November: [Pod-console workspace seed](seeds/POD_CONSOLE_WORKSPACE_20261115.md) records the authored discovery and fictional data boundary; unnumbered, not active gameplay, no count or deployment change.
 - 4 November: [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md#shared-checkpoints) shares durable pod inspection across Discord/web; tested source awaits activation. No sealed-count increment.
 - 4 November: [W6-F8 shared return](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-return-after-seal) records the sealed live-frame milestone, authoritative interaction boundaries and outstanding player walkthrough. One home/count; shared inspection is proposed next.
@@ -443,6 +450,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Return: Worlds has 2 completed feathers; W2-F3 allocated in REVIEW, next unallocated W2-F4. Larger World Engine expansion is on hold under the adopted experience direction. Source checkpoint 48ff5b8; refresh live state before implementation.
 
 ### W3 — Beings
+- 15 November: [W4-F13 echo handover](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md) READY. Ownership belief and inherited records do not establish identity, title or duties. One home/count; no seal or activation.
 - 15 November: [Pod-console workspace seed](seeds/POD_CONSOLE_WORKSPACE_20261115.md) records the authored discovery and fictional data boundary; unnumbered, not active gameplay, no count or deployment change.
 - 4 November: [W6-F7 seal](wings/W6-F7_A_WINDOW_WE_CAN_INHABIT.md#seal--4-november-2026) closes the live interface foundation; [W6-F8 shared checkpoints](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-checkpoints) carry continuing interaction and inhabitability work. One W6 count; Chapter 1 paused.
 - 29 October W6-F6 seal: Discord identity maps to existing Efiishent; no new character or character canon. [Authoritative home checkpoint](wings/W6-F6_TIME_TIMING_AND_TWO_WINDOWS.md#shared-checkpoints-and-return).
@@ -463,6 +471,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W3 completed count is 2; W3-F3 remains unallocated. Preserve identity/role/driver distinctions before deeper character authoring or controller changes.
 
 ### W4 — Play
+- 15 November: [W4-F13 echo handover](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md) READY. Home for Efiishent’s discover/login/inspect/choose-or-leave loop; next unallocated W4-F14. One home/count; no seal or activation.
 - 15 November: [Pod-console workspace seed](seeds/POD_CONSOLE_WORKSPACE_20261115.md) records the authored discovery and fictional data boundary; unnumbered, not active gameplay, no count or deployment change.
 - 4 November: [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md#shared-checkpoints) shares durable pod inspection across Discord/web; tested source awaits activation. No sealed-count increment.
 - 4 November: [W6-F8 shared return](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-return-after-seal) records the sealed live-frame milestone, authoritative interaction boundaries and outstanding player walkthrough. One home/count; shared inspection is proposed next.
@@ -505,6 +514,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W5 has 2 completed feathers; W5-F3 unallocated. [W1-F3](wings/W1-F3_THE_EIGHT_TIMELINES.md) links this wing for cross-era causality, without allocating a W5 feather. Failed clock persistence advances memory before suppressing publication; later save may include it. Recovery/replay policy remains open. No live time change.
 
 ### W6 — Expression
+- 15 November: [W4-F13 echo handover](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md) READY. In-world workspace treatment preserves HUD/FEED7 and command input; W6-F11 unchanged. One home/count; no seal or activation.
 - 15 November: [Pod-console workspace seed](seeds/POD_CONSOLE_WORKSPACE_20261115.md) records the authored discovery and fictional data boundary; unnumbered, not active gameplay, no count or deployment change.
 - 13 November: [W6-F11 — When the Way Is Closed](wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md) allocated; source prepared, 34 client / 483 Python checks pass. Fictional visual review next; live W6-F10 remains installed. Counts unchanged.
 - 13 November: [W6-F10 — One Clear Warning](wings/W6-F10_ONE_CLEAR_WARNING.md#seal--13-november-2026) is SEALED on Karun's acceptance of the reviewed, deployed correction. W6 nine / 38 total sealed. Empty available-offer wording retained separately; next unallocated W6-F11.
@@ -528,6 +538,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Current: [W6-F3 — The Display Behind Your Eyes](wings/W6-F3_THE_DISPLAY_BEHIND_YOUR_EYES.md) is SEALED after its bounded implementation and live checks: consistent truthful HUD states, once-only display notice and brochure crash, shared typing/activity input and idle-choice quiet. First live HUD checks passed. Follow-up adds spaced commands and discovery-based explicit HUD, removes automatic meters; 119 isolated tests pass. Follow-up deployed at 20:19 AWST; Karun confirmed quiet look, discovery-based HUD and spaced controls at 20:21 AWST. Implant/subtle-perception direction is recorded; larger progression remains deferred. W6 completed count is 3; next unallocated W6-F4. W4-F6 remains unallocated.
 
 ### W7 — Engine
+- 15 November: [W4-F13 echo handover](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md) READY. Later bounded persistence and actor-isolation proof, not a new database or runtime deployment. One home/count; no seal or activation.
 - 15 November: [Pod-console workspace seed](seeds/POD_CONSOLE_WORKSPACE_20261115.md) records the authored discovery and fictional data boundary; unnumbered, not active gameplay, no count or deployment change.
 - 13 November: [W6-F11 shared return](wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md) improves command feedback only. Existing authoritative offers, encounter gates and bot runtime remain unchanged. No W7 allocation or live change.
 - 13 November: [W6-F10 shared return](wings/W6-F10_ONE_CLEAR_WARNING.md#seal--13-november-2026) is sealed in W6 only. Presentation correction installed/verified; bot runtime and encounter authority preserved. W7 stays ten sealed; W7-F11 remains unallocated. No reset or access expansion.
@@ -550,6 +561,7 @@ Initial checkpoints below are deliberately lightweight. They describe known stop
 - Parked return: W7 has 2 completed feathers; W7-F3 unallocated. Sequential same-host capture is not an atomic world snapshot or full disaster recovery. Scope exclusions and capsule path are recorded in W7-F2.
 
 ### W8 — Stewardship
+- 15 November: [W4-F13 echo handover](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md) READY. Separate echo handover and scoped return; no private records or automatic sync. One home/count; no seal or activation.
 - 15 November: [Pod-console workspace seed](seeds/POD_CONSOLE_WORKSPACE_20261115.md) records the authored discovery and fictional data boundary; unnumbered, not active gameplay, no count or deployment change.
 - 4 November: [W7-F6](wings/W7-F6_ATTEND_TO_THE_WORLD.md#shared-checkpoints) shares durable pod inspection across Discord/web; tested source awaits activation. No sealed-count increment.
 - 4 November: [W6-F8 shared return](wings/W6-F8_STAYING_IN_THE_WORLD.md#shared-wing-return-after-seal) records the sealed live-frame milestone, authoritative interaction boundaries and outstanding player walkthrough. One home/count; shared inspection is proposed next.

@@ -2,7 +2,7 @@
 
 Seed ID: `POD-CONSOLE-WORKSPACE-20261115` · 15 November 2026
 Status: **AUTHOR DIRECTION RECORDED; FICTIONAL DATA DRAFT. NOT LIVE.**
-Suggested future home: W2 Worlds; linked W3 Beings, W4 Play, W6 Expression, W7 Engine and W8 Stewardship. No feather number allocated; no seal or count change.
+Current handover home: [W4-F13 — A Workspace Already Waiting](../wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md), **READY**, allocated 15 November 2026 for Efiishent. The initial W2 suggestion is superseded for task ownership: W4 owns interaction and agency; W2 remains linked for placement. This seed and its fictional fixture remain drafts, not runtime state or adopted extra canon. No seal or count change.
 Source baseline: `f2da15f93a750b98bea1b8267d1e16de1c813e19`.
 Authoring branch: `design/pod-console-workspace`.
 Bridge key: `pod-workspace-mirror-2026-11`.
@@ -91,7 +91,7 @@ The shared key above identifies a design relationship, **not entity equivalence 
 
 Run `python3 docs/seeds/validate_pod_console_workspace.py` from this repository. It checks the seven-record sample and rejects ten deliberately invalid variants covering mixed realms, invented ownership, stored credentials, spendable archived balances, reciprocal gift debt, assumed role authority, inherited obligations, production loading, acceptance by display and duplicate IDs. These checks validate the sample's declarations; they are **not** a deployed security policy or live gameplay test.
 
-## Return card
+## Historical return card — before W4-F13 allocation
 
 Reached: author direction recorded and a seven-record fictional workspace sample prepared for review. No runtime implementation, player login, reset, inventory grant, money credit, new account, role transfer, world-clock change, deployment or permissions change.
 
