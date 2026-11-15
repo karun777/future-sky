@@ -1,6 +1,6 @@
 # W4-F13 — A Workspace Already Waiting
 
-Status: **READY — echo handover prepared; not active, implemented, deployed or sealed**
+Status: **ACTIVE — isolated authoring and proof, open for review**
 Home: **W4 — Play**. Linked: W2 Worlds, W3 Beings, W6 Expression, W7 Engine, W8 Stewardship.
 Allocated: 15 November 2026, on Karun's request for a Future Sky echo handover “(for efiishent)”.
 Source baseline: `4d33ce0367af9934e522886a757b978e097f2280`.
@@ -8,6 +8,28 @@ Dedicated branch: `play/w4-f13-a-workspace-already-waiting`.
 Dedicated worktree: `/home/efiishent/future-sky-worktrees/w4-f13`.
 Bridge key: `pod-workspace-mirror-2026-11`.
 [Launch handover](../handover/W4-F13_EFIISHENT_WORKSPACE_HANDOVER.md) · [Wing Index](../WING_INDEX.md)
+
+## Interaction treatment for review
+
+Taken up on 15 November 2026 at clean handover `984d36f`. Both remote branch tips matched. W6-F11 keeps the active HUD work and Chapter 1 stays paused. This rehearsal follows an existing fictional stand-in for Efiishent who can already look around the pod.
+
+| Typed action | What Efiishent experiences |
+| --- | --- |
+| `inspect pod` → `inspect berth` | Beside the woven cover, a strip of keys has worn smooth at the edge where a thumb would rest. A small console folds out here. |
+| `inspect console` → `inspect note` | A slip catches against the hinge. On the folded face someone has written *password*. Inside, in smaller letters, *underblue*. No signature. |
+| `console use note` | He keys in the word. A pencil line stops halfway across a sketch. Underneath it sits a slip about a borrowed probe. The workspace opens exactly where someone left it. *Mine, you suppose.* |
+| `inspect probe slip` or `inspect sketch` | The slip says to return the probe before the bench is cleared. The sketch shows a stair with a fork at the foot. One arm of the fork has been rubbed through. Neither scrap names anyone. |
+| `console mark sketch` or `console leave` | After inspecting the sketch, he may keep his place at the fork with a personal reading mark. He can also stand up at any point. Reading the slip leaves the undertaking where he found it. |
+| Leave the room, return, use the note again | The workspace can be reopened. A deliberate mark brings him back to the rubbed-through fork. With no mark, the two scraps wait as before. |
+
+The physical position, password, two scraps and reading mark are review copy. There is no confirmed owner, previous reader, note author, map exit, due date or real-world counterpart. Only the fictional stand-in selected by the rehearsal gets the private affordance. The documentary sample supplies themes and is never loaded into the game.
+
+### Fit with existing source
+
+- `pod_opening.py` already leads from pod to berth. The berth keeps its woven cover, panel seam and search guidance. `inspect panels`, `inspect display`, the booking and `CoreCog.feed7` retain the wall display, local listing when available and transmission link. `inspect hud` and `hud_view.py` retain the implant and its own discoveries.
+- `pod_inspection.inspect_pod` and `InspectionCog.inspect` own shared pod attention. `web_portal.create_app` gets the reader from a verified session, checks current offers, room, movement and encounter gates, and consumes the offer before applying the action. `web_character_view.character_view` returns a curated projection. The room catalogue cannot hold personal workspace content.
+- The full-page HUD takes typed commands in `tools/authoring/w6f8/live/game.js`. `issueCommand` also copies commands and inspection text to client history. The proof uses a fixed `console use note` action. Any later HUD binding must decide how to keep the note and private record text out of history and clear the private view when the reader or room changes. Public Discord `ctx.send` is unsuitable for the private scene.
+- Keep source work under `tools/authoring/w4f13/`. Exercise the private proof with temporary fictional data and existing inspection, navigation and session boundaries. A later production command binding, enrolment and installation are separate review decisions.
 
 ## Purpose and source of authority
 

@@ -2,7 +2,7 @@
 
 Seed ID: `POD-CONSOLE-WORKSPACE-20261115` · 15 November 2026
 Status: **AUTHOR DIRECTION RECORDED; FICTIONAL DATA DRAFT. NOT LIVE.**
-Current handover home: [W4-F13 — A Workspace Already Waiting](../wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md), **READY**, allocated 15 November 2026 for Efiishent. The initial W2 suggestion is superseded for task ownership: W4 owns interaction and agency; W2 remains linked for placement. This seed and its fictional fixture remain drafts, not runtime state or adopted extra canon. No seal or count change.
+Current handover home: [W4-F13 — A Workspace Already Waiting](../wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md), activated for isolated rehearsal on its dedicated branch after allocation on 15 November 2026 for Efiishent. The initial W2 suggestion is superseded for task ownership: W4 owns interaction and agency; W2 remains linked for placement. This seed and its fictional fixture remain drafts, not runtime state or adopted extra canon. No seal or count change.
 Source baseline: `f2da15f93a750b98bea1b8267d1e16de1c813e19`.
 Authoring branch: `design/pod-console-workspace`.
 Bridge key: `pod-workspace-mirror-2026-11`.
