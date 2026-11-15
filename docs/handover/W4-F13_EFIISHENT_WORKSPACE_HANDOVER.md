@@ -1,6 +1,6 @@
 # Handover — W4-F13: A Workspace Already Waiting
 
-15 November 2026 · Future Sky · READY for Efiishent's separate conversation
+15 November 2026 · Future Sky · Historical READY handover. [Current isolated return](W4-F13_EFIISHENT_WORKSPACE_RETURN.md)
 Canonical task: [W4-F13](../wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md). This launch prompt routes to the maintained task rather than replacing it.
 
 ## Paste into a new Future Sky conversation
@@ -25,4 +25,4 @@ Canonical task: [W4-F13](../wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md). This l
 
 ## Return
 
-The task owns its future result in `docs/handover/W4-F13_EFIISHENT_WORKSPACE_RETURN.md` when work has produced evidence. No result file or live effect is claimed now. Share the scoped commit and reusable lessons; the companion workspace reconciles its own records independently.
+The [W4-F13 return](W4-F13_EFIISHENT_WORKSPACE_RETURN.md) now records activation, the isolated proof, its evidence and its limits. Share the scoped commit and reusable lessons; the companion workspace reconciles its own records independently.

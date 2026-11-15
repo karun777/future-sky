@@ -10,7 +10,7 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 
 [W4-F13 — A Workspace Already Waiting](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md) gives the console seed its own **W4 Play** home and [new-chat handover](handover/W4-F13_EFIISHENT_WORKSPACE_HANDOVER.md). Karun requests the echo specifically for Efiishent. Dedicated worktree `/home/efiishent/future-sky-worktrees/w4-f13`, branch `play/w4-f13-a-workspace-already-waiting`. Discovery, note, fictional login, existing records and a voluntary next move are the bounded experience; this is not physical-laptop setup or private-data replication.
 
-**ACTIVE for bounded authoring and isolated proof.** W6-F11 retains the active HUD work. The wider Chapter 1 pause continues. The [feather treatment](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md#interaction-treatment-for-review) records the proposed experience. W4-F13 is now allocated; next unallocated **W4-F14**. Sealed counts stay 38 total / W4 nine / W6 nine / W7 ten. Earlier unnumbered-seed statements below are history, not the current allocation.
+**ACTIVE for bounded authoring and isolated proof.** W6-F11 retains the active HUD work. The wider Chapter 1 pause continues. The [isolated proof and return](handover/W4-F13_EFIISHENT_WORKSPACE_RETURN.md) are ready for author review. Both the marked and unmarked return were exercised on temporary fictional saves. Fourteen feather checks passed. Deployment and player walkthrough remain open. W4-F13 is now allocated; next unallocated **W4-F14**. Sealed counts stay 38 total / W4 nine / W6 nine / W7 ten. Earlier unnumbered-seed statements below are history, not the current allocation.
 
 ## Historical unnumbered seed — pod console and existing workspace · 15 November 2026
 

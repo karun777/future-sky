@@ -16,7 +16,7 @@ The Feather 20 material below is an older architectural checkpoint. Read the [ap
 
 [W4-F13 — A Workspace Already Waiting](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md) owns the bounded console experience and its [new-chat handover](handover/W4-F13_EFIISHENT_WORKSPACE_HANDOVER.md). The [original scene/fictional sample](seeds/POD_CONSOLE_WORKSPACE_20261115.md) remains its authoring source. Dedicated branch `play/w4-f13-a-workspace-already-waiting`, worktree `/home/efiishent/future-sky-worktrees/w4-f13`. This is for Efiishent, not a physical-laptop installation task. No private data is mirrored into the game.
 
-W4-F13 is active for authoring and isolated rehearsal on its dedicated branch. The [Wing Index](WING_INDEX.md) still names W6-F11 as current active source work, retains the wider Chapter 1 pause and 38 seals, and advances the next unallocated W4 ID to W4-F14. Ownership assumptions, record claims and actual grants remain distinct. Read the feather before acting.
+The [isolated proof and return](handover/W4-F13_EFIISHENT_WORKSPACE_RETURN.md) are ready for author review on the dedicated branch. The [Wing Index](WING_INDEX.md) still names W6-F11 as current active source work, retains the wider Chapter 1 pause and 38 seals, and advances the next unallocated W4 ID to W4-F14. Ownership assumptions, record claims and actual grants remain distinct. Read the feather before acting.
 
 ## Awakening return — 18 October 2026
 

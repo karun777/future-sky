@@ -1,6 +1,6 @@
 # W4-F13 — A Workspace Already Waiting
 
-Status: **ACTIVE — isolated authoring and proof, open for review**
+Status: **ACTIVE — isolated proof tested, awaiting author review**
 Home: **W4 — Play**. Linked: W2 Worlds, W3 Beings, W6 Expression, W7 Engine, W8 Stewardship.
 Allocated: 15 November 2026, on Karun's request for a Future Sky echo handover “(for efiishent)”.
 Source baseline: `4d33ce0367af9934e522886a757b978e097f2280`.
@@ -8,6 +8,10 @@ Dedicated branch: `play/w4-f13-a-workspace-already-waiting`.
 Dedicated worktree: `/home/efiishent/future-sky-worktrees/w4-f13`.
 Bridge key: `pod-workspace-mirror-2026-11`.
 [Launch handover](../handover/W4-F13_EFIISHENT_WORKSPACE_HANDOVER.md) · [Wing Index](../WING_INDEX.md)
+
+## Current return — 15 November 2026
+
+[Scene, both returns, evidence and replay command](../handover/W4-F13_EFIISHENT_WORKSPACE_RETURN.md). A single enrolled fictional reader can open the berth console, read the probe slip or sketch, leave a personal reading mark or walk away. The mark survives a fresh process. Opening the desk grants no entitlement. Fourteen feather checks, 483 existing Python checks and 34 HUD client checks passed. Source and terminal rehearsal only. Browser review, production binding, installation and a player walkthrough remain open. W6-F11 retains the HUD work and Chapter 1 stays paused. Review the feeling of the first desk before taking the scene further.
 
 ## Interaction treatment for review
 
@@ -59,7 +63,7 @@ Reconcile the existing [pod features](W2-F3_POD_INSPECTION_AND_RECOGNITION.md), 
 
 Start with current source/connectivity checks and a compact interaction treatment using fictional records. Identify the existing inspection, action, persistence and authenticated projection routes that can carry it. Record unresolved design choices and implementation boundaries rather than ask Karun to reconstruct the premise.
 
-The handover is READY, not a second active runtime job. A separate Efiishent conversation can take up this bounded authoring/isolated-development work, recording activation there. W6-F11 remains the current active source task; the wider Chapter 1 / W4 pause is not lifted by allocating this handover. Do not claim that console source is installed or that Efiishent has already played the scene. Production changes require their own reviewed installation/rollback step.
+At allocation the handover was READY. The current isolated return above supersedes that status. A separate Efiishent conversation can take up this bounded authoring/isolated-development work, recording activation there. W6-F11 remains the current active source task; the wider Chapter 1 / W4 pause is not lifted by allocating this handover. Do not claim that console source is installed or that Efiishent has already played the scene. Production changes require their own reviewed installation/rollback step.
 
 Do not start with a database migration, role-transfer engine, market/currency system, agent platform, private-repository import or operating-system setup. Share concepts and tested patterns, not live data or credentials.
 
@@ -100,7 +104,7 @@ Keep Future Sky facts here. Return a scoped commit and a short record of the sce
 
 The private bridge keeps counterpart mapping. The shared bridge key expresses a design relationship, not cross-repository atomicity, data synchronisation, identical entities or guaranteed shared conversational memory.
 
-## Preparation evidence / return card — 15 November 2026
+## Historical preparation evidence / return card — 15 November 2026
 
 Read current Atlas, Wing Index, charter, active HUD feather, seed and fixture. Verified W4-F13 unallocated at the stated baseline. Reran the existing fixture validator: valid seven-record sample plus ten invalid variants rejected. This is documentary-fixture consistency, not gameplay/security verification. No fixture, runtime-source, asset, live state or existing test file changed by this handover.
 
