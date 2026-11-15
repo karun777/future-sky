@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "realm": "future_sky_fiction",
+  "status": "authoring_fixture_not_live",
+  "source_kind": "synthetic_authored_data",
+  "seed_id": "POD-CONSOLE-WORKSPACE-20261115",
+  "bridge_key": "pod-workspace-mirror-2026-11",
+  "character": "Efiishent",
+  "scenario_moment": "A fictional sample after the author-described login, not a completed player action.",
+  "workspace": {
+    "id": "FS-DEMO-WORKSPACE-001",
+    "label": "Recovered workspace",
+    "account_holder": null,
+    "previous_user": null,
+    "current_user_in_fixture": "Efiishent",
+    "origin": "pre_existing_in_authored_scene",
+    "visibility": "character_scoped_proposed"
+  },
+  "console": {
+    "id": "FS-DEMO-CONSOLE-001",
+    "label": "Pod data console",
+    "location_ref": "pod_room",
+    "true_owner": null,
+    "physical_custody": "found_in_pod_not_taken",
+    "portable": null,
+    "character_belief": {
+      "subject": "Efiishent",
+      "claim": "This is mine.",
+      "basis": "He found it in the pod and the password from the note opened a workspace.",
+      "truth_status": "assumption_not_confirmed"
+    },
+    "session": {
+      "login_in_fixture": "successful",
+      "credential_source": "fictional_note",
+      "credential_value": null,
+      "note_author": null,
+      "permission_scope": "recovered_workspace_read_only_for_this_fixture"
+    },
+    "ownership_transfer": false,
+    "inventory_grant": false
+  },
+  "panels": [
+    {
+      "id": "orientation",
+      "label": "Where am I / what is known?"
+    },
+    {
+      "id": "resources",
+      "label": "What can I draw on?"
+    },
+    {
+      "id": "roles",
+      "label": "What am I authorised to do?"
+    },
+    {
+      "id": "undertakings",
+      "label": "What am I carrying?"
+    },
+    {
+      "id": "knowledge",
+      "label": "What do these records claim?"
+    },
+    {
+      "id": "exchange",
+      "label": "What has moved or been offered?"
+    },
+    {
+      "id": "next_moves",
+      "label": "What can I choose next?"
+    }
+  ],
+  "records": [
+    {
+      "id": "FS-DEMO-RECORD-001",
+      "kind": "resource",
+      "panel": "resources",
+      "title": "Pod data console",
+      "summary": "The note opens an existing workspace. Efiishent assumes the console is his; title and permitted transfer remain unknown.",
+      "subject_ref": "FS-DEMO-CONSOLE-001",
+      "evidence_status": "author_supplied_scene_premise",
+      "accepted_by_character": false,
+      "author_note": "Acceptance flag concerns taking on a recorded responsibility, not whether the character holds the stated belief."
+    },
+    {
+      "id": "FS-DEMO-RECORD-002",
+      "kind": "invitation",
+      "panel": "roles",
+      "title": "Concourse Repair Circle — an invitation",
+      "summary": "An old message invites the workspace user to help catalogue workshop tools. No acceptance or current membership is recorded.",
+      "evidence_status": "synthetic_example_unverified_in_world",
+      "accepted_by_character": false,
+      "authority_granted": false
+    },
+    {
+      "id": "FS-DEMO-RECORD-003",
+      "kind": "legacy_note",
+      "panel": "undertakings",
+      "title": "Return a borrowed diagnostic probe",
+      "summary": "A saved task mentions returning a probe. Who borrowed it, whether it was returned, and whether it concerns Efiishent are unknown.",
+      "evidence_status": "synthetic_example_unverified_in_world",
+      "accepted_by_character": false,
+      "obligation_assigned": false
+    },
+    {
+      "id": "FS-DEMO-RECORD-004",
+      "kind": "knowledge_note",
+      "panel": "knowledge",
+      "title": "Lower-deck workshop directions",
+      "summary": "A locally saved route sketch with no verified date or author. It is a lead, not an authoritative map or an unlocked destination.",
+      "evidence_status": "synthetic_example_unverified_in_world",
+      "accepted_by_character": false,
+      "location_unlocked": false
+    },
+    {
+      "id": "FS-DEMO-RECORD-005",
+      "kind": "historical_balance_claim",
+      "panel": "exchange",
+      "title": "Archived balance: 12 station credits",
+      "summary": "A sample historical balance claim; issuer, account owner and current validity are unverified. Nothing is credited to Efiishent.",
+      "amount": "12.00",
+      "unit": "fictional_station_credit",
+      "spendable": false,
+      "evidence_status": "synthetic_example_unverified_in_world",
+      "accepted_by_character": false
+    },
+    {
+      "id": "FS-DEMO-RECORD-006",
+      "kind": "unconditional_offer",
+      "panel": "exchange",
+      "title": "A repair manual, freely offered",
+      "summary": "A sample message offers a copy of a repair manual with no repayment or favour requested. Opening the message creates no debt.",
+      "reciprocal_obligation": false,
+      "evidence_status": "synthetic_example_unverified_in_world",
+      "accepted_by_character": false
+    },
+    {
+      "id": "FS-DEMO-RECORD-007",
+      "kind": "next_move",
+      "panel": "next_moves",
+      "title": "Find out whose workspace this was",
+      "summary": "Inspect account and record provenance, follow a clue, or leave the console for later. No forced acceptance of its tasks.",
+      "evidence_status": "assistant_proposed_example_for_review",
+      "accepted_by_character": false
+    }
+  ],
+  "boundaries": {
+    "production_load_allowed": false,
+    "private_data_import_allowed": false,
+    "runtime_mutations_allowed": false,
+    "real_world_credential_present": false,
+    "automatic_obligation_inheritance": false,
+    "automatic_currency_credit": false,
+    "automatic_role_assignment": false,
+    "new_locations_created": false
+  }
+}

@@ -12,6 +12,10 @@ For current development position, counts and return checkpoints, read the [Wing 
 
 The Feather 20 material below is an older architectural checkpoint. Read the [approved content-first phase closure](current/PHASE_CLOSURE_EPISTEMIC_FOUNDATIONS_2026-10-15.md) and the index before naming a next feather. Verify repository and live state separately; this navigation does not rewrite architectural authority or promote research.
 
+## Pod-console workspace seed — 15 November 2026
+
+[Pod console — an existing workspace](seeds/POD_CONSOLE_WORKSPACE_20261115.md) records Karun's authored discovery/login/ownership-assumption premise and a fictional-only workspace sample. This is an unnumbered design seed, not a deployed feature or access grant. The [Wing Index](WING_INDEX.md) retains W6-F11 as the active gameplay-source work; no count or Chapter 1 change. Private companion records are not game data.
+
 ## Awakening return — 18 October 2026
 
 For the current content-first work, read [Awakening — a connected reconstruction](handover/AWAKENING_RECONSTRUCTION_20261018.md), [Karun's source notes](handover/AUTHORIAL_NOTES_20261018.md) and the [reconnected source review](handover/AWAKENING_SOURCE_REVIEW_20261018.md). The adopted [preserved-brain awakening canon](current/MANZO_PRESERVED_BRAINS_AND_AWAKENING.md) sits alongside the Red Book; the research branch remains research. The [Wing Index](WING_INDEX.md) owns feather status. The offline logic rehearsal is an authoring demonstration, not a live ScenarioService replacement.
