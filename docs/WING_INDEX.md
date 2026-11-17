@@ -10,7 +10,7 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 
 ## Chapter 2 scenario shell · 17 November 2026
 
-[FS-W4-F14 — Work Finds You](wings/FS-W4-F14_WORK_FINDS_YOU.md) opens a W4 Play proposal. The morning after Chapter 1, a work notification reaches Efiishent’s HUD shortly after he wakes. Karun’s phone images are the next authoring input. Next unallocated Play feather is **FS-W4-F15**.
+[FS-W4-F14 — Work Finds You](wings/FS-W4-F14_WORK_FINDS_YOU.md) opens a W4 Play proposal. The morning after Chapter 1, a work notification reaches Efiishent’s HUD shortly after he wakes. Two notebook pages now ground the Dragonfly Rescue crew call, Neptune Lounge briefing and comet-catching scenario. The opening HUD copy is in review. Next unallocated Play feather is **FS-W4-F15**.
 
 ## Efiishent echo handover — W4-F13 allocated READY · 15 November 2026
 
