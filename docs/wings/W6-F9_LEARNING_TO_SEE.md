@@ -1,5 +1,7 @@
 # W6-F9 — Learning to See: The Future Sky HUD
 
+Project-qualified reference: **FS-W6-F9**.
+
 Status: SEALED — 5 November 2026. Accepted presentation design and isolated browser-tested rehearsal; live integration deferred. See the seal checkpoint below. Next unallocated W6-F10.
 
 ## Purpose

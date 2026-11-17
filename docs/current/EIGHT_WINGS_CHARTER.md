@@ -1,5 +1,7 @@
 # Future Sky — Eight Wings of the Cosmic Golden Dragon
 
+Use **FS-Wn-Fm** in maintained feather references. [Project feather numbering](../FEATHER_IDS.md).
+
 Version 1.1 — adopted 17 October 2026.
 Development framework, explicitly adopted by Karun. This does not establish a literal eight-winged creature in world canon.
 
@@ -30,7 +32,7 @@ Choose a shared outcome when needed, then link contributions from the wings invo
 
 ## Feather identity and counting
 
-New wing feathers use W1-F1, W2-F1 … W8-F1. W8-F777 will always identify Stewardship's 777th allocated feather.
+New wing feathers use FS-W1-F1, FS-W2-F1 … FS-W8-F1. FS-W8-F777 will always identify Stewardship's 777th allocated feather.
 
 - Each feather has exactly one home wing; other affected wings are links, not duplicate counts.
 - Allocate the next unused integer within that wing when a feather is accepted. Never reuse an allocated number.

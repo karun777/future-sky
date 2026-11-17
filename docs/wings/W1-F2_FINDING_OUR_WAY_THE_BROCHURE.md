@@ -1,5 +1,7 @@
 # W1-F2 — Finding Our Way: The Brochure
 
+Project-qualified reference: **FS-W1-F2**.
+
 Home: W1 Mythos. Linked: W3 Beings, W4 Play, W6 Expression.
 Status: COMPLETE — Karun approved the analysis on 17 October 2026.
 Date: 17 October 2026.

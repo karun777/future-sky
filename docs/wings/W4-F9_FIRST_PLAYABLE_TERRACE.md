@@ -1,5 +1,7 @@
 # W4-F9 — First playable terrace passage
 
+Project-qualified reference: **FS-W4-F9**.
+
 Status: **REVIEW — deployed 22 October 2026; actual Discord walkthrough pending.**
 Prepared 22 October 2026, Australia/Perth.
 Home: [W4-F9](W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md).

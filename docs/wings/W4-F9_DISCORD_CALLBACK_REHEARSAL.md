@@ -1,5 +1,7 @@
 # W4-F9 — Discord callback rehearsal
 
+Project-qualified reference: **FS-W4-F9**.
+
 Generated 22 October 2026 using actual command callbacks, production JSON writes and fictional temporary records. No Discord connection or live player state.
 
 > !terrace attend

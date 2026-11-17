@@ -1,5 +1,7 @@
 # W3-F3 — Who Is Waking Up?
 
+Project-qualified reference: **FS-W3-F3**.
+
 Home: **W3 Beings**
 Status: **REVIEW — class/ancestry recovery and arrival-foundation proposal; no runtime changes**
 Allocated: Karun's continuation of arrival/identity work, 20 October 2026.

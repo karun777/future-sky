@@ -1,5 +1,7 @@
 # W6-F6 — Two Windows, One Character
 
+Project-qualified reference: **FS-W6-F6**.
+
 Status: SEALED — author closed this feather on 29 October 2026 following the process report and successful live owner playcheck. Home: W6 Expression. W6 has five sealed feathers; overall total 28. W6-F5 remains REVIEW. Chapter 1 / W4 remains paused.
 
 Original allocated title: **Time, Timing and Two Windows**. The existing filename and feather ID are retained to preserve links and lineage. The timing study remains historical evidence; the seal concerns the bounded outcome below, not a completed game client or general timing system.

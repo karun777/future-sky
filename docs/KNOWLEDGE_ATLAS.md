@@ -1,5 +1,7 @@
 # Future Sky — Knowledge Atlas
 
+Use **FS-Wn-Fm** in maintained feather references. [Project feather numbering](FEATHER_IDS.md).
+
 **Version:** 1.1  
 **Status:** Current documentary entry point  
 **Established:** 2026-08-31  

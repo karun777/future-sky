@@ -1,5 +1,7 @@
 # W4-F6 — Attending to the World
 
+Project-qualified reference: **FS-W4-F6**.
+
 Home: **W4 Play**
 Status: **SEALED — author-approved offline authoring experiment, 20 October 2026**
 Allocated: Karun, 19 October 2026, 10:57 AWST

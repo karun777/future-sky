@@ -1,5 +1,7 @@
 # W7-F7 — From Attention to Agency
 
+Project-qualified reference: **FS-W7-F7**.
+
 Status: SEALED — 5 November 2026. Player equipment-sync acceptance passed; sealed on Karun's instruction.
 Allocated 5 November 2026 on Karun's instruction “let's go W7-F7”.
 Home: W7 Engine. Branch engine/w7-f7-from-attention-to-agency.

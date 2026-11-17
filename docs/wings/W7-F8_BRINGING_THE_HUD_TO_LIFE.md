@@ -1,5 +1,7 @@
 # W7-F8 — Bringing the HUD to Life
 
+Project-qualified reference: **FS-W7-F8**.
+
 Status: SEALED — 9 November 2026, on Karun's instruction. Allocated 5 November 2026.
 Home: W7 Engine. Branch: engine/w7-f8-bringing-the-hud-to-life.
 Baseline: W6-F9 seal 5b18f2f; live W7-F7 file hashes independently matched before changes.

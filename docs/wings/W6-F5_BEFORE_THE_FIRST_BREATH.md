@@ -1,5 +1,7 @@
 # W6-F5 — Before the First Breath
 
+Project-qualified reference: **FS-W6-F5**.
+
 Home: **W6 Expression**
 Status: REVIEW — storyboard and five preview concepts produced; allocated by Karun 20 October 2026, 20:21 AWST.
 Counts unchanged: W6 four completed; total twenty-two. Next unallocated W6-F6.

@@ -1,5 +1,7 @@
 # W4-F13 — A Workspace Already Waiting
 
+Project-qualified reference: **FS-W4-F13**.
+
 Status: **READY — echo handover prepared; not active, implemented, deployed or sealed**
 Home: **W4 — Play**. Linked: W2 Worlds, W3 Beings, W6 Expression, W7 Engine, W8 Stewardship.
 Allocated: 15 November 2026, on Karun's request for a Future Sky echo handover “(for efiishent)”.

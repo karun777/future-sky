@@ -1,5 +1,7 @@
 # W6-F8 — Staying in the World
 
+Project-qualified reference: **FS-W6-F8**.
+
 Status: SEALED — 4 November 2026. Fixed-screen presentation and parallel live pilot delivered and accepted. See seal below for verification boundaries; earlier checkpoints remain historical.
 Home: W6 Expression. Baseline: sealed W6-F7; source 0914578 before documentation seal.
 W6 six sealed; project 30. Next unallocated W6-F9. Chapter 1 / W4 remains paused.

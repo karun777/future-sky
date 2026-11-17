@@ -1,5 +1,7 @@
 # W6-F4 — A Pod We Can Inhabit
 
+Project-qualified reference: **FS-W6-F4**.
+
 Home wing: **W6 Expression**. Allocated by Karun, 18 October 2026, 20:23 AWST.
 Status: **SEALED — first illustrated-pod binding pass, player-verified 20 October 2026**. Earlier review statements below are dated checkpoints; the seal at the end governs current status.
 

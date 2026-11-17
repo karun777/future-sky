@@ -1,5 +1,7 @@
 # W4-F10 — A Rat with Connections
 
+Project-qualified reference: **FS-W4-F10**.
+
 Status: SEALED — functional first pass, author closed 23 October 2026 after live playcheck. W4-F9 remains parked for prose/pacing refinement. Sealed total: 24 (W4: eight).
 
 ## Agreed scope

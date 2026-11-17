@@ -1,5 +1,7 @@
 # W6-F11 — When the Way Is Closed
 
+Project-qualified reference: **FS-W6-F11**.
+
 Status: ACTIVE / SOURCE PREPARED — 13 November 2026. Unsealed; not deployed.
 Home: W6 Expression. W7 supplies unchanged authoritative offers and gates.
 Allocated on Karun's “ok let's go” after the bounded proposal and wing/trajectory context.

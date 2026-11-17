@@ -1,5 +1,7 @@
 # W3-F3 — First Arrival Rehearsal Review
 
+Project-qualified reference: **FS-W3-F3**.
+
 Status: REVIEW. 20 October 2026, 18:18 AWST.
 Home: W3 Beings / W3-F3.
 This is a conversational creation rehearsal, not a live character edit or a completed game feature.

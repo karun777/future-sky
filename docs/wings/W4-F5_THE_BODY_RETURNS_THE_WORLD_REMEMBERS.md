@@ -1,5 +1,7 @@
 # W4-F5 — The Body Returns, the World Remembers
 
+Project-qualified reference: **FS-W4-F5**.
+
 Home: W4 Play. Allocated and sealed 18 October 2026.
 Status: isolated implementation and verification complete; **not deployed**. Efiishent remains unchanged.
 

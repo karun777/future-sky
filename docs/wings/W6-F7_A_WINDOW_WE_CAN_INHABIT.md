@@ -1,5 +1,7 @@
 # W6-F7 — A Window We Can Inhabit
 
+Project-qualified reference: **FS-W6-F7**.
+
 Status: SEALED — author approved closure 4 November 2026, explicitly as a foundation rather than completion of the inhabitable-window ambition.
 Home: W6 Expression. Baseline: sealed W7-F5, 784f4e2.
 Branch: expression/w6-f7-window-we-can-inhabit.

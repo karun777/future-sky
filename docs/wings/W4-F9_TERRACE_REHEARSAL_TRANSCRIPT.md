@@ -1,5 +1,7 @@
 # W4-F9 — Fictional terrace rehearsal transcript
 
+Project-qualified reference: **FS-W4-F9**.
+
 Generated 22 October 2026 from the offline demo. Editorial copy and explicit attention steps are review assumptions. This is not Discord output or a live player record.
 
 ```text

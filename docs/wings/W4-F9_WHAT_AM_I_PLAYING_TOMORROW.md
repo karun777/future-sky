@@ -1,5 +1,7 @@
 # W4-F9 — What Am I Playing Tomorrow?
 
+Project-qualified reference: **FS-W4-F9**.
+
 Home: **W4 Play**  
 Status: **ACTIVE — initial scene draft and connected music/custody map ready for review.**
 Allocated by Karun: 22 October 2026, Australia/Perth.  

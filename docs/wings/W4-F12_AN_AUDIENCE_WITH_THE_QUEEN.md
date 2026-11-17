@@ -1,5 +1,7 @@
 # W4-F12 — An Audience with the Dark Rat Queen
 
+Project-qualified reference: **FS-W4-F12**.
+
 Status: SEALED — functional first pass, author closed 29 October 2026 after live payment and music receipt. Dialogue, fee and aesthetics remain provisional. W4-F11 remains parked, not sealed. Sealed total 25; W4 nine.
 
 ## First playable path

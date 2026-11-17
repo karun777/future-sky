@@ -1,5 +1,7 @@
 # W4-F1 — What Can We Actually Do?
 
+Project-qualified reference: **FS-W4-F1**.
+
 Home: W4 Play. Status: COMPLETE — source-grounded command, requirement and consequence map.
 Date: 17 October 2026. Return: [Wing Index](../WING_INDEX.md).
 Main documentary revision: 71a1c166ce006c453cc8fae5484b4ca2545f6728. Inspected runtime source: /opt/futuresky/bot at 937c007a2981d10b8e1230f293c85b6c72750425.

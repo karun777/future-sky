@@ -1,5 +1,7 @@
 # Proposed W6-F6 — Time, Timing and Two Windows
 
+Project-qualified reference: **FS-W6-F6**.
+
 Status: PROPOSAL for author review, 29 October 2026. Not allocated, implemented or deployed. W6-F5 remains in review; this proposal does not seal or replace it.
 
 ## Author direction

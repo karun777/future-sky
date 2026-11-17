@@ -1,5 +1,7 @@
 # W7-F9 — Waking Into the Window
 
+Project-qualified reference: **FS-W7-F9**.
+
 Status: SEALED — 12 November 2026, following Karun's acceptance of the bounded review recommendation. First-time account/OAuth onboarding remains unverified.
 Home: W7 Engine. Working branch: engine/w7-f10-beginning-again.
 Original implementation branch: engine/w7-f9-waking-into-the-window.

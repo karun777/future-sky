@@ -1,5 +1,7 @@
 # W6-F2 — One Card That Tells the Truth
 
+Project-qualified reference: **FS-W6-F2**.
+
 Home: W6 Expression. Status: COMPLETE — existing Compass inspection card verified in isolation.
 Date: 17 October 2026.
 Previous: [W6-F1](W6-F1_HOW_THE_WORLD_REACHES_US.md). Return: [Wing Index](../WING_INDEX.md).

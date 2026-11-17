@@ -1,5 +1,7 @@
 # W4-F9 — Music, custody and conditions
 
+Project-qualified reference: **FS-W4-F9**.
+
 Status: **REVIEW DRAFT — narrative dependency map, not runtime rules.**  
 Home: [W4-F9 — What Am I Playing Tomorrow?](W4-F9_WHAT_AM_I_PLAYING_TOMORROW.md)  
 Prepared: 22 October 2026, Australia/Perth.  

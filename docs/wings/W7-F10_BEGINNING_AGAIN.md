@@ -1,5 +1,7 @@
 # W7-F10 — Beginning Again: Character Creation & Reset
 
+Project-qualified reference: **FS-W7-F10**.
+
 Status: SEALED — 11 November 2026, on Karun's instruction after final evidence review.
 Home: W7 Engine. Adjacent to W7-F9 — Waking Into the Window.
 Bounded creation/reset outcome accepted; operational safeguards and follow-ups retained below.

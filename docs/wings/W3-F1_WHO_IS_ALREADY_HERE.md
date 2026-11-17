@@ -1,5 +1,7 @@
 # W3-F1 — Who Is Already Here
 
+Project-qualified reference: **FS-W3-F1**.
+
 Home: W3 Beings. Status: COMPLETE — bounded inventory of existing lore, authored cast, source handlers and live stored records.
 Date: 17 October 2026, approximately 14:50–14:53 AWST.
 Links: W1 Mythos, W2 Worlds, W4 Play, W7 Engine. Return: [Wing Index](../WING_INDEX.md).

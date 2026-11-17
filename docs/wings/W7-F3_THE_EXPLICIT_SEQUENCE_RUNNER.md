@@ -1,5 +1,7 @@
 # W7-F3 — The Explicit Sequence Runner
 
+Project-qualified reference: **FS-W7-F3**.
+
 Status: SEALED — author reviewed and closed 29 October 2026 after successful live execution and stop-on-failure playchecks. Significant Engine milestone. Sealed total 26; W7 three.
 
 ## Proposed first-pass interface

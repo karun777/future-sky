@@ -1,5 +1,7 @@
 # W6-F10 — One Clear Warning
 
+Project-qualified reference: **FS-W6-F10**.
+
 Status: SEALED — 13 November 2026. Deployed and verified.
 Home: W6 Expression. W7 supplies the unchanged encounter-gating authority.
 Allocated on Karun's “let's go” following the

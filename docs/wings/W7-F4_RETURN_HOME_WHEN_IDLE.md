@@ -1,5 +1,7 @@
 # W7-F4 — Return Home When Idle
 
+Project-qualified reference: **FS-W7-F4**.
+
 Status: SEALED — functional first pass, author closed 29 October 2026 following live return-home and arrival notification. W4 remains paused. Sealed total 27; W7 four.
 
 ## Author direction

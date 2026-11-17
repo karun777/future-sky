@@ -1,4 +1,6 @@
 # W6-F6 — Website identity and live character pilot
+
+Project-qualified reference: **FS-W6-F6**.
 29 October 2026. SEALED as W6-F6 — Two Windows, One Character. Chapter 1 / W4 remains paused.
 
 ## Current operational summary at seal

@@ -1,5 +1,7 @@
 # W7-F6 — Attend to the World
 
+Project-qualified reference: **FS-W7-F6**.
+
 Status: SEALED — 5 November 2026, following deployed inspection, player feedback and final typography adjustment.
 Allocated 4 November 2026 on Karun's instruction “let's attend to the world”.
 Home: W7 Engine. Baseline W6-F8 seal 4c7383f. Branch engine/w7-f6-attend-to-the-world.

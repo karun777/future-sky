@@ -1,5 +1,7 @@
 # W4-F8 — Into the Lounge
 
+Project-qualified reference: **FS-W4-F8**.
+
 Home: **W4 Play**  
 Status: **SEALED — bounded passage and performance tab approved 22 October 2026.**
 Allocated by Karun: 21 October 2026, Australia/Perth.  

@@ -1,5 +1,7 @@
 # W4-F7 — Getting Dressed
 
+Project-qualified reference: **FS-W4-F7**.
+
 Home: **W4 Play**
 Status: **SEALED — deployed and player-verified, 20 October 2026, 17:03 AWST**
 Allocated by Karun: 20 October 2026, 14:30 AWST.

@@ -1,5 +1,7 @@
 # W3-F3 — First Playable Arrival
 
+Project-qualified reference: **FS-W3-F3**.
+
 Status: REVIEW — deployed and existing-player DM preview verified 20 October 2026.
 20 October 2026. Branch: beings/w3-f3-first-playable-arrival.
 Part of the authorised W3-F3 continuation; not another allocated feather. Counts remain twenty-two.

@@ -1,5 +1,7 @@
 # W3-F3 — First Arrival: Player Walkthrough
 
+Project-qualified reference: **FS-W3-F3**.
+
 **Status: DRAFT FOR REVIEW — 20 October 2026. Not implemented or adopted final copy.**
 Home: W3 Beings / W3-F3 — Who Is Waking Up?
 This is a proposed authoring experience followed by a candidate awakening transition. Names of origins, final class eligibility and interface controls remain unresolved.

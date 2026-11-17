@@ -1,5 +1,7 @@
 # W4-F11 — A Space to Rehearse
 
+Project-qualified reference: **FS-W4-F11**.
+
 Status: ACTIVE — authoring first slice, 28 October 2026. No runtime implementation or deployment in this feather yet. W4-F10 remains sealed; 24 sealed overall.
 
 ## Author direction

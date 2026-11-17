@@ -1,5 +1,7 @@
 # W4-F4 — Whose Hands Are These?
 
+Project-qualified reference: **FS-W4-F4**.
+
 Home wing: W4 Play. Date: 18 October 2026.
 Status: SEALED — isolated implementation and verification complete. Not deployed; Discord delivery and author playtest remain open.
 

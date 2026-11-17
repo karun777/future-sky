@@ -1,5 +1,7 @@
 # W7-F5 — One Action, Two Doors
 
+Project-qualified reference: **FS-W7-F5**.
+
 Status: SEALED — author closed 29 October 2026 after live two-way walking and idle-home playchecks.
 Home: W7 Engine. Shared checkpoints: W4 Play, W5 Time, W6 Expression, W8 Stewardship.
 Source baseline: d58d3da; branch engine/w7-f5-one-action-two-doors.

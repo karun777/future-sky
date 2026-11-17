@@ -1,5 +1,7 @@
 # W6-F1 — How the World Reaches Us
 
+Project-qualified reference: **FS-W6-F1**.
+
 Home: W6 Expression. Status: COMPLETE — bounded inventory of authored media, rendering paths and sampled delivery.
 Date: 17 October 2026, approximately 16:10–16:13 AWST.
 Return: [Wing Index](../WING_INDEX.md).

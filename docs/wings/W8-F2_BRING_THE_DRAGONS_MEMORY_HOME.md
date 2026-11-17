@@ -1,5 +1,7 @@
 # W8-F2 — Bring the Dragon’s Memory Home
 
+Project-qualified reference: **FS-W8-F2**.
+
 Home wing: W8 Stewardship.
 Status: complete; documentation return route verified on Neptune Lounge on 17 October 2026.
 Authorisation: Karun, “let's go w8f2”.

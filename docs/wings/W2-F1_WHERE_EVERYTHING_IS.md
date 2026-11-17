@@ -1,5 +1,7 @@
 # W2-F1 — Where Everything Is
 
+Project-qualified reference: **FS-W2-F1**.
+
 Home: W2 Worlds. Status: COMPLETE — bounded source and on-host disk-geography inspection verified.
 Date: 17 October 2026, approximately 14:40–14:42 AWST.
 Links: W4 Play, W7 Engine. Return: [Wing Index](../WING_INDEX.md).
