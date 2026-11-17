@@ -8,6 +8,10 @@ Current home/checkpoint: **W6 Expression / W6-F11 — When the Way Is Closed, AC
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
+## Chapter 2 scenario shell · 17 November 2026
+
+[FS-W4-F14 — Work Finds You](wings/FS-W4-F14_WORK_FINDS_YOU.md) opens a W4 Play proposal. The morning after Chapter 1, a work notification reaches Efiishent’s HUD shortly after he wakes. Karun’s phone images are the next authoring input. Next unallocated Play feather is **FS-W4-F15**.
+
 ## Efiishent echo handover — W4-F13 allocated READY · 15 November 2026
 
 [FS-W4-F13 — A Workspace Already Waiting](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md) gives the console seed its own **W4 Play** home and [new-chat handover](handover/W4-F13_EFIISHENT_WORKSPACE_HANDOVER.md). Karun requests the echo specifically for Efiishent. Dedicated worktree `/home/efiishent/future-sky-worktrees/w4-f13`, branch `play/w4-f13-a-workspace-already-waiting`. Discovery, note, fictional login, existing records and a voluntary next move are the bounded experience; this is not physical-laptop setup or private-data replication.
@@ -395,7 +399,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W1 Mythos | 2 | [FS-W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [FS-W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [FS-W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [FS-W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
 | W3 Beings | 2 | [FS-W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [FS-W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
-| W4 Play | 9 | [FS-W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | [FS-W4-F13 — READY echo handover](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md); W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated W4-F14 |
+| W4 Play | 9 | [FS-W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | [FS-W4-F13 — READY echo handover](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md); W4-F3 review; W4-F9/F11 parked functional drafts; [FS-W4-F14 — Work Finds You](wings/FS-W4-F14_WORK_FINDS_YOU.md) (Chapter 2 proposal); next unallocated FS-W4-F15 |
 | W5 Time | 2 | [FS-W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 9 | [FS-W6-F10](wings/W6-F10_ONE_CLEAR_WARNING.md#seal--13-november-2026) | [FS-W6-F11 — active, source prepared](wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md); W6-F5 review; artwork standards deferred; next unallocated W6-F12 |
 | W7 Engine | 10 | [FS-W7-F9](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#seal--12-november-2026) | W7-F10 sealed; first-time account/OAuth onboarding and pod-delivery collection web adapter remain follow-ups; next unallocated W7-F11 |
