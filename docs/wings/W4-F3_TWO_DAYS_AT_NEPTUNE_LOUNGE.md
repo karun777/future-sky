@@ -1,5 +1,7 @@
 # W4-F3 — Two Days at Neptune Lounge
 
+Project-qualified reference: **FS-W4-F3**.
+
 **Home wing:** W4 Play  
 **Status:** REVIEW — authored account preserved and conditional mission map ready; no runtime implementation  
 **Allocated / prepared:** 18 October 2026, Australia/Perth  

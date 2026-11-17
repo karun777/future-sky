@@ -1,5 +1,7 @@
 # W6-F4 — A Pod We Can Inhabit
 
+Project-qualified reference: **FS-W6-F4**.
+
 Home wing: **W6 Expression**. Allocated by Karun, 18 October 2026, 20:23 AWST.
 Status: **REVIEW — five-image binding implementation being verified**, no completion increment. Earlier concept-only statements are dated history; deployment evidence will govern installed state.
 

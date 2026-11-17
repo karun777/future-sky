@@ -1,5 +1,7 @@
 # W2-F3 addendum — Preparation, Work Garments and Roles
 
+Project-qualified reference: **FS-W2-F3**.
+
 **Source:** Karun, 18 October 2026, 12:40 Perth; preserved alongside [W4-F3](W4-F3_TWO_DAYS_AT_NEPTUNE_LOUNGE.md).  
 **Home:** [W2-F3](W2-F3_THE_OPENING_WE_CAN_INHABIT.md), still in REVIEW.  
 **Status:** Authorial direction recorded; exact garment designs and implementation pending.

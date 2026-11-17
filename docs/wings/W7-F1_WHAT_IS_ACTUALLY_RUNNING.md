@@ -1,5 +1,7 @@
 # W7-F1 — What Is Actually Running?
 
+Project-qualified reference: **FS-W7-F1**.
+
 Home: W7 Engine. Status: COMPLETE — bounded live operational checkpoint.
 Date: 17 October 2026, approximately 16:18 AWST.
 Return: [Wing Index](../WING_INDEX.md).

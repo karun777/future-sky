@@ -1,5 +1,7 @@
 # W1-F3 — The Eight Timelines: A Constellation of Possibilities
 
+Project-qualified reference: **FS-W1-F3**.
+
 **Historical project label:** Feather 57  
 **Home wing:** W1 Mythos  
 **Linked wing:** W5 Time — temporal relationships and causality  

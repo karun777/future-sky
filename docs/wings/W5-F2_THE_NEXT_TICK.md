@@ -1,5 +1,7 @@
 # W5-F2 — The Next Tick
 
+Project-qualified reference: **FS-W5-F2**.
+
 Home: W5 Time. Status: COMPLETE — isolated phase/resolver/clock-loop integration verified.
 Date: 17 October 2026.
 Previous: [W5-F1](W5-F1_WHAT_TIME_IS_IT_HERE.md). Return: [Wing Index](../WING_INDEX.md).

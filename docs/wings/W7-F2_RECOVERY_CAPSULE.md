@@ -1,5 +1,7 @@
 # W7-F2 — Recovery Capsule
 
+Project-qualified reference: **FS-W7-F2**.
+
 Home: W7 Engine. Status: COMPLETE — bounded capture and disposable restore verified.
 Date: 17 October 2026, verified 16:23:39 AWST.
 Previous: [W7-F1](W7-F1_WHAT_IS_ACTUALLY_RUNNING.md). Return: [Wing Index](../WING_INDEX.md).

@@ -1,5 +1,7 @@
 # W1-F1 — Manzo: The World We Wake Into
 
+Project-qualified reference: **FS-W1-F1**.
+
 Home: W1 Mythos. Links: W2 Worlds, W3 Beings, W4 Play.
 Status: COMPLETE — checkpoint reviewed and orientation direction selected by Karun on 17 October 2026.
 Prepared: 17 October 2026.

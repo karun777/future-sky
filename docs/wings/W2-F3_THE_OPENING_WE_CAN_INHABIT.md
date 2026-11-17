@@ -1,5 +1,7 @@
 # W2-F3 — The Opening We Can Inhabit
 
+Project-qualified reference: **FS-W2-F3**.
+
 **Home:** W2 Worlds  
 **Linked wings:** W1 Mythos, W3 Beings, W4 Play, W5 Time, W6 Expression, W7 Engine, W8 Stewardship  
 **Status:** REVIEW — source walkthrough and one staged passage ready; author review pending  

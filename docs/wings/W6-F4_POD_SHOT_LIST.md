@@ -1,5 +1,7 @@
 # W6-F4 — Pod shot list
 
+Project-qualified reference: **FS-W6-F4**.
+
 Adopted direction: Karun, 18 October 2026, 20:29–20:31 AWST. Home: [A Pod We Can Inhabit](W6-F4_A_POD_WE_CAN_INHABIT.md).
 The first room image is approved as visual direction (“we can implement something like this”), not an instruction to install it or a claim every prop is supported.
 

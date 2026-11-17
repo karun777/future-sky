@@ -1,5 +1,7 @@
 # W4-F2 — One Loop That Holds
 
+Project-qualified reference: **FS-W4-F2**.
+
 Home: W4 Play. Status: COMPLETE — isolated non-combat command/persistence loop verified.
 Date: 17 October 2026.
 Previous: [W4-F1](W4-F1_WHAT_CAN_WE_ACTUALLY_DO.md). Return: [Wing Index](../WING_INDEX.md).

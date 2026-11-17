@@ -1,5 +1,7 @@
 # W5-F1 — What Time Is It Here?
 
+Project-qualified reference: **FS-W5-F1**.
+
 Home: W5 Time. Status: COMPLETE — source trace and narrow live-state/log checkpoint.
 Date: 17 October 2026, approximately 16:00 AWST.
 Return: [Wing Index](../WING_INDEX.md).

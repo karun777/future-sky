@@ -1,5 +1,7 @@
 # W8-F1 — Give the Dragon a Memory
 
+Project-qualified reference: **FS-W8-F1**.
+
 Home wing: W8 Stewardship.
 Status: complete and verified in this revision; branch/main and live-host availability must be checked separately.
 Adopted and authorised: Karun, 17 October 2026.

@@ -1,5 +1,7 @@
 # W6-F3 — The Display Behind Your Eyes
 
+Project-qualified reference: **FS-W6-F3**.
+
 Home wing: **W6 Expression**. Allocated by Karun on 18 October 2026, 18:46 AWST.
 Status: **SEALED — bounded functionality tested, deployed and player-verified**, 18 October 2026, 20:21 AWST. Earlier review/pending statements below are dated history; the seal checkpoint at the end governs current status.
 

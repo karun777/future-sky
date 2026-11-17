@@ -1,5 +1,7 @@
 # W2-F2 — The Local Atlas
 
+Project-qualified reference: **FS-W2-F2**.
+
 Home: W2 Worlds. Status: COMPLETE — 43 rooms and 100 directed exits accounted for.
 Date: 17 October 2026. Previous: [W2-F1](W2-F1_WHERE_EVERYTHING_IS.md).
 Return: [Wing Index](../WING_INDEX.md).
