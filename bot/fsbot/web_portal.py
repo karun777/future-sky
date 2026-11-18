@@ -83,7 +83,7 @@ def cookie(response, name, value, max_age):
                         httponly=True, samesite="Lax", path="/")
 
 
-def create_app(bot, config, *, oauth=None, clock=time.monotonic):
+def create_app(bot, config, *, oauth=None, clock=time.monotonic, participation=None):
     provider = oauth or DiscordOAuth(config)
     pending, sessions = {}, {}
 
@@ -463,6 +463,41 @@ def create_app(bot, config, *, oauth=None, clock=time.monotonic):
         cookie(response, SESSION_COOKIE, "", 0)
         return response
 
+    async def undertaking_view(request):
+        from engine.participation import Refused, Unavailable
+        value = session(request)
+        current_view(value)
+        if request.query:
+            raise web.HTTPBadRequest(text="This view uses your signed-in identity.")
+        try:
+            return web.json_response(participation.view(value["uid"]))
+        except Refused:
+            raise web.HTTPForbidden(text="This undertaking is unavailable.") from None
+        except Unavailable:
+            raise web.HTTPServiceUnavailable(text="The undertaking could not be read.") from None
+
+    async def undertaking_action(request):
+        from engine.participation import Refused, Unavailable
+        value = session(request)
+        supplied = request.headers.get("X-CSRF-Token", "")
+        if (request.headers.get("Origin") != ORIGIN or not supplied
+                or not hmac.compare_digest(value["csrf"].encode(), supplied.encode())):
+            raise web.HTTPForbidden(text="Invalid undertaking request.")
+        current_view(value)
+        if request.query:
+            raise web.HTTPBadRequest(text="Use the offered undertaking action.")
+        try:
+            body = await request.json()
+        except (ValueError, UnicodeDecodeError):
+            raise web.HTTPBadRequest(text="Invalid undertaking request.") from None
+        try:
+            # The shared service rechecks authority and revision in its write transaction.
+            return web.json_response(participation.act(value["uid"], body))
+        except Refused:
+            raise web.HTTPConflict(text="That action is unavailable. Refresh the undertaking.") from None
+        except Unavailable:
+            raise web.HTTPServiceUnavailable(text="The undertaking could not be saved.") from None
+
     app = web.Application(middlewares=[headers], client_max_size=4096)
     app.add_routes([
         web.get("/play/", index),
@@ -475,4 +510,9 @@ def create_app(bot, config, *, oauth=None, clock=time.monotonic):
         web.post("/play/api/inspect", inspect),
         web.post("/play/api/wardrobe", wardrobe_action),
     ])
+    if participation is not None:
+        app.add_routes([
+            web.get("/play/api/undertaking", undertaking_view),
+            web.post("/play/api/undertaking/action", undertaking_action),
+        ])
     return app
