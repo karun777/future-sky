@@ -35,7 +35,7 @@
       },
       "natal_chart": {
         "required": true,
-        "status": "pending_framework_reconciliation",
+        "status": "supplied_report_pending_interpretation",
         "birth_basis": null,
         "birth_date": null,
         "birth_time": null,
@@ -49,10 +49,14 @@
         "placements": null,
         "interpretation_profile": null,
         "provenance": {
-          "kind": "fictional_authoring",
-          "note": "No birth details or chart calculated. Player assignment must preserve character natal identity."
+          "kind": "author_supplied_private_report",
+          "resource_id": "fs-resource-0001",
+          "note": "Use supplied chart; do not calculate a replacement. Personal source details reside in the private manifest. Earlier invented characterization remains provisional."
         }
-      }
+      },
+      "resource_refs": [
+        "fs-resource-0001"
+      ]
     },
     {
       "character_id": "fs-being-0002",

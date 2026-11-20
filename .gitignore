@@ -251,3 +251,6 @@ sandbox/
 /docs/intake/
 /docs/review/*
 !/docs/review/items_recovered_v0.1.json
+
+# Personal character/player source documents; local authoring only
+/resources/private/

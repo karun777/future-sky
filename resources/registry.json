@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "authoring_only",
+  "path_base": "repository_root",
+  "resources": [
+    {
+      "resource_id": "fs-resource-0001",
+      "subject_type": "character",
+      "subject_id": "fs-being-0001",
+      "kind": "natal_chart_report",
+      "access": "author_only",
+      "storage": "local_private",
+      "manifest_path": "resources/private/characters/fs-being-0001/manifest.json",
+      "availability": "requires_local_manifest",
+      "runtime_exposure": false
+    }
+  ]
+}

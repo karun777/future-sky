@@ -186,3 +186,9 @@ Karun has now selected traditional Hellenistic astrology with modern esoteric ad
 ### Sources accepted; AAB kept separate
 
 Karun accepts the source list and retains Alice A. Bailey as a separately referenced body of knowledge. Possible reservation for advanced “mythic” characters is recorded as tentative in the design checkpoint. Baseline cast interpretation remains distinct; no mythic tier, eligibility rule or character assignment is introduced. Framework v0.1 remains the next deliverable within this open feather.
+
+### Supplied report and resource paths — 20 November 2026
+
+Vela now references `fs-resource-0001`, an author-supplied natal report copied byte-for-byte into the isolated worktree. Its supplied chart replaces the planned invented birth-input/calculation exercise for this character. Existing invented characterization remains provisional. Personal identity linkage and source details are retained in the private manifest. No Discord binding or invitation has been made.
+
+[Resource registry](../../resources/registry.json) and [path convention](../../resources/README.md) establish stable character/resource IDs and author-only local source manifests. The private copy is excluded from Git; only the registry and convention travel with the branch. File size and SHA-256 were matched to the original. Preserve/migrate the private directory before worktree removal. Interpretation and resource delivery remain unimplemented; this feather stays open.
