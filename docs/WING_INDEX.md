@@ -8,6 +8,10 @@ Current home/checkpoint: **W6 Expression / W6-F11 — When the Way Is Closed, AC
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
+## Cast and player continuity · 20 November 2026
+
+[FS-W3-F4 — A Cast Worth Becoming](wings/FS-W3-F4_A_CAST_WORTH_BECOMING.md) is ACTIVE in beings/fs-w3-f4-a-cast-worth-becoming. Six cast drafts have stable authoring identities, independent role suggestions and unassigned Discord bindings. Source audit identifies the account-keyed runtime and the required shared resolver. Cast review is next. W3 seals remain two, overall 39. Next unallocated FS-W3-F5.
+
 ## Chapter 2 opening sealed · 20 November 2026
 
 [FS-W4-F14 — Work Finds You](wings/FS-W4-F14_WORK_FINDS_YOU.md#seal--20-november-2026) is SEALED for its isolated waking / notice / inspect / leave-waiting preview at 7db9fef. The wider scenario, live integration and cast remain continuing work. Total seals 39, W4 ten. Next unallocated Play feather FS-W4-F15.
@@ -398,7 +402,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | --- | --- | --- | --- |
 | W1 Mythos | 2 | [FS-W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [FS-W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [FS-W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [FS-W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
-| W3 Beings | 2 | [FS-W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [FS-W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
+| W3 Beings | 2 | [FS-W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [FS-W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); [FS-W3-F4 — A Cast Worth Becoming](wings/FS-W3-F4_A_CAST_WORTH_BECOMING.md) — active; next unallocated FS-W3-F5 |
 | W4 Play | 10 | [FS-W4-F14](wings/FS-W4-F14_WORK_FINDS_YOU.md#seal--20-november-2026) | [FS-W4-F13 — READY echo handover](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md); W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated FS-W4-F15 |
 | W5 Time | 2 | [FS-W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 9 | [FS-W6-F10](wings/W6-F10_ONE_CLEAR_WARNING.md#seal--13-november-2026) | [FS-W6-F11 — active, source prepared](wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md); W6-F5 review; artwork standards deferred; next unallocated W6-F12 |
