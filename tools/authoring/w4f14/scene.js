@@ -8,10 +8,26 @@ let waiting = false;
 let focus = 'waking';
 
 const views = {
-  waking: ['WAKING', 'Before the words.', 'You wake. For a moment there is only the movement of your breath.\n\nThen the sense of something waiting, just behind your eyes.'],
-  notice: ['HUD · NOTICE', 'Work finds you.', 'A few words settle into focus.\n\nDRAGONFLY RESCUE\nCrew call\n\nThe name hangs there while the rest of the morning begins to reach you.'],
-  call: ['HUD · CREW CALL', 'Dragonfly Rescue', 'Routine comet catch out of Triton Central.\n\nDrinks and briefing at Neptune Lounge.\n\nCrew sheet\nPilot · Kitchen · Engineering\nPortal engineering / Navigation\nMedic · DJ\n\nThe call gives you a place to hear more. It leaves the sender and your place aboard unstated.'],
-  left: ['ATTENTION', 'It can wait.', 'You let the words recede. Your breath comes and goes.\n\nThe call is still there if you want to return to it.']
+  "waking": [
+    "WAKING",
+    "The morning after.",
+    "You wake with a little of last night’s music still going round in your head. You follow it for a few beats before you realise the sound is a memory.\n\nYour fingers uncurl. You take a longer breath."
+  ],
+  "notice": [
+    "HUD · NOTICE",
+    "Something has come through.",
+    "A small glimmer catches behind your eyes. You blink, and the words stay with you.\n\nDRAGONFLY RESCUE\nCrew call\n\nWork. Already."
+  ],
+  "call": [
+    "HUD · CREW CALL",
+    "Dragonfly Rescue",
+    "We’re heading out from Triton Central for a routine comet catch.\n\nMeet at Neptune Lounge for a drink and the briefing. We’ll go through the job together.\n\nCome hear what’s involved."
+  ],
+  "left": [
+    "ATTENTION",
+    "A little longer.",
+    "You let the message slip to the edge of your attention.\n\nFor a moment you find the tune again. A few notes, then it escapes you. You stretch your fingers.\n\nThe call can wait."
+  ]
 };
 
 function render() {
@@ -34,7 +50,7 @@ function arrive() {
 
 function panel(name) {
   const entries = {
-    character: ['Efiishent', 'Awake.\n\nCrew berth remains open. Reading the call makes no appointment.'],
+    character: ['Efiishent', 'Awake. A few notes from last night keep returning.'],
     journal: ['Journal', arrived ? 'Dragonfly Rescue — ' + (waiting ? 'left waiting' : read ? 'read' : 'noticed') + '.\n\nNo reply sent. No undertaking accepted.' : 'The morning is beginning.'],
     feed7: ['FEED7', 'FEED7 remains available in the wider HUD. This fictional opening supplies no feed content.'],
     help: ['Commands', 'inspect crew call — read the notice\nleave — let it wait, before or after reading\nlook — return attention to the morning\ncommands — this guide\ncharacter · journal · feed7 — references\n\nAn optional ! prefix is supported. Escape closes a reference.'],
@@ -83,4 +99,4 @@ document.addEventListener('keydown', event => {
   if (event.key === 'Escape') closePanel();
 });
 render();
-setTimeout(arrive, 4500);
+setTimeout(arrive, 10000);

@@ -63,3 +63,9 @@ The loopback listener serves only /, /hud.css and /scene.js. Checks returned 404
 Review URL on Karun's Mac is http://127.0.0.1:8778/ through a dedicated loopback SSH tunnel. Server process began as PID 1111800 and Mac tunnel as PID 32841. Recheck before stopping or restarting either. Refresh replays the waking scene. Type inspect crew call, leave, look or commands.
 
 State remains ACTIVE, awaiting Karun's visible-scene review. No seal or expanded chapter scope. The room-free light and brief delay are provisional visual choices.
+
+## Prose revision for review · 20 November 2026
+
+Karun was unsure what to judge in the first visual study. On his go-ahead, the opening now gives Efiishent a lingering musical phrase, uncurling fingers and a breath before the call. These sensory details are proposed scene prose. The call becomes a short invitation to hear about the job over a drink at Neptune Lounge. The planning-sheet roles and author-facing uncertainty explanation are removed from the visible message. Their authoring questions remain in this document.
+
+The waking interval is now ten seconds to allow the passage to be read. Leaving returns to the half-remembered tune. The existing inspect / leave / look interaction stays bounded to the opening. Review remains open.
