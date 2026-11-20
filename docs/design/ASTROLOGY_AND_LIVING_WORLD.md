@@ -69,11 +69,11 @@ Tests when implementation begins: repeatable calculations, explicitly unknown in
 
 ## Framework direction and source review — 20 November 2026
 
-Karun selects traditional Hellenistic astrology as the foundation, integrating modern esoteric interpretation, particularly the modern planets. This supersedes the earlier statement that no school has been selected. Detailed conventions and modern interpretive sources remain proposed for review. There is sufficient accessible material to proceed with a bounded source-led draft; locating older NL notes remains useful but is no longer a blocking prerequisite.
+Karun selects traditional Hellenistic astrology as the foundation, integrating modern esoteric interpretation, particularly the modern planets. This supersedes the earlier statement that no school has been selected. Karun subsequently accepted the source list below. Detailed calculation and interpretation conventions still need specification. There is sufficient accessible material to proceed with a bounded source-led draft; locating older NL notes remains useful but is no longer a blocking prerequisite.
 
 Proposed first framework: tropical zodiac, whole-sign places with exact angles retained, seven traditional planets and their domicile rulerships, sect, planetary condition, configurations and the Lots of Fortune and Spirit. Uranus, Neptune and Pluto contribute an explicitly modern interpretive layer, initially through placement and relationships with personal planets/angles. Preserve traditional rulerships in the underlying traditional techniques; any modern rulership associations remain separately labelled. These are implementation proposals, not a claim that Hellenistic authors agreed on every technique or that Karun has approved each convention. Orbs, bounds, dignity schemes, weighting and timing techniques require explicit choices rather than silent defaults.
 
-Source shortlist, checked 20 November 2026. This is a reading map, not a claim to have fully read or encoded every book:
+Accepted source list, checked and accepted 20 November 2026. This is a reading map, not a claim to have fully read or encoded every book:
 
 | Source | Proposed use | Review boundary |
 | --- | --- | --- |
@@ -82,6 +82,14 @@ Source shortlist, checked 20 November 2026. This is a reading map, not a claim t
 | [Brennan, The Planetary Joys](https://www.hellenisticastrology.com/the-planetary-joys.pdf) | Accessible focused research on the relationships among joys, places and triplicities | An argued historical reconstruction, not universal consensus. |
 | [Liz Greene interview with Nick Campion](https://www.astro.com/astrologie/in_plut2011_e.htm) | Candidate psychological bridge: unconscious patterns, planetary symbolism and awareness | Search-index excerpt inspected; direct page encounter returned a browser check. Not yet an extracted rule source. |
 | [Dane Rudhyar archival writings](https://www.khaldea.com/rudhyar/astrology.shtml) | Candidate humanistic/transpersonal layer, cycles, development and outer-planet interpretation | Review selected essays before defining mechanics. Modern extension, not ancient doctrine. |
-| [Alice Bailey, Esoteric Astrology, publisher listing](https://www.lucistrust.org/store/item/esoteric_astrology_ebook) | Optional comparison if this is the esoteric branch Karun wants | Not selected by default. Its rays and distinct cosmological scheme must not be silently imported into Future Sky or equated with its existing metaphysics. |
+| [Alice Bailey, Esoteric Astrology, publisher listing](https://www.lucistrust.org/store/item/esoteric_astrology_ebook) | Accepted separate esoteric reference; possible future use for advanced “mythic” characters | Keep distinct from the baseline interpretation. Mythic use is tentative, not an implemented tier or automatic assignment. |
 
 Next deliverable: a compact framework v0.1 with named adopted conventions, source references and unresolved choices, followed by one fictional Vela chart/response study. Avoid copying entire modern works or treating free access as an open licence. No purchases, personal birth-data collection, runtime changes or new feather allocation in this source-review pass.
+
+## Source acceptance and separate AAB reference — 20 November 2026
+
+Karun accepts the listed sources, including Alice A. Bailey (AAB), and explicitly asks that AAB be referenced separately. The baseline develops from Hellenistic foundations with the selected modern psychological/transpersonal material and modern planets. Maintain an identifiable AAB reference layer rather than silently blending its interpretations into every natal profile.
+
+Karun suggests possibly reserving AAB-based interpretations for more advanced “mythic” characters. Preserve this as a promising authoring direction, not a settled eligibility rule. “Mythic” has not yet been defined as a class, level, spiritual rank or engine capability. None of the six current cast drafts receives this layer automatically.
+
+If explored, an explicitly selected mythic interpretation should retain its source/version and remain distinguishable from the character’s baseline chart, history and ordinary interpretation. It does not replace natal identity or remove player agency. The relationship between AAB concepts and Future Sky’s existing cosmology requires its own deliberate reconciliation. Source acceptance authorises study and design; it does not adopt every doctrine or settle technical conventions.

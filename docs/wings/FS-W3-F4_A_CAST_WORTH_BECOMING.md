@@ -182,3 +182,7 @@ Karun’s follow-up frames the natal chart as a possible map of unconscious driv
 ### Foundation selected
 
 Karun has now selected traditional Hellenistic astrology with modern esoteric additions, especially modern planets. The design checkpoint contains a source shortlist for his review and proposed conventions. Earlier statements that no school is selected are superseded; specific conventions and the modern/esoteric source selection remain open. Proceed toward framework v0.1 and a single Vela study within this feather; recovering older NL notes is useful but no longer blocks a source-led draft.
+
+### Sources accepted; AAB kept separate
+
+Karun accepts the source list and retains Alice A. Bailey as a separately referenced body of knowledge. Possible reservation for advanced “mythic” characters is recorded as tentative in the design checkpoint. Baseline cast interpretation remains distinct; no mythic tier, eligibility rule or character assignment is introduced. Framework v0.1 remains the next deliverable within this open feather.
