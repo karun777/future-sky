@@ -1,14 +1,14 @@
 # FS-W3-F4 — A Cast Worth Becoming
 
-**W3 Beings · ACTIVE / cast review · 20 November 2026**
+**W3 Beings · SEALED / bounded foundation · 20 November 2026**
 
 Karun authorised a cast whose characters can participate as NPCs and later be assigned to human players through Discord. F14’s opening preview is sealed at 0f13a2f. This feather owns the cast and the preparation for driver assignment. Linked W4 owns undertaking participation and W7 owns a future shared account resolver.
 
-Dedicated worktree /home/efiishent/future-sky-worktrees/w3-f4, branch beings/fs-w3-f4-a-cast-worth-becoming. Base 0f13a2f. Next unallocated Beings feather FS-W3-F5. W3 completed count remains two, overall seals 39.
+Dedicated worktree /home/efiishent/future-sky-worktrees/w3-f4, branch beings/fs-w3-f4-a-cast-worth-becoming. Base 0f13a2f. Next unallocated Beings feather FS-W3-F5. W3 completed count is three, overall seals 40. Historical progress entries below retain their original status; the seal supersedes them.
 
 ## People to meet
 
-All six names, appearances, histories, inclinations and relationships below are proposed for author review. Their IDs are stable authoring identifiers independent of names, accounts and jobs. They can be renamed while retaining continuity. No real people or private records were used.
+All six names, appearances, histories, inclinations and relationships below are proposed for author review. Their IDs are stable authoring identifiers independent of names, accounts and jobs. They can be renamed while retaining continuity. These initial cast drafts were invented. Subsequent private supplied-chart studies for Vela and Efiishent are recorded below; the initial characterization remains provisional.
 
 The JSON companion preserves the same drafts as structured data. Role suggestions describe possible contributions. The initial draft left seats vacant; the current author-confirmed plan assigns Efiishent as pilot and Vela as navigator. Other seats remain unassigned. Efiishent may contribute wherever the story and his choices take him. Nemi can collaborate with him or take another part in the work.
 
@@ -242,3 +242,15 @@ Authorised next pass adds versioned localStorage saves to the existing loopback 
 Verified in Chrome: close A and reopen, restore its preference and departure, return with recalled reasoning; B begins separately and its drink discussion does not change A; a stale A tab is blocked after another A saves. Final reload and compact-window visual check pass without captured errors. Node harness checks restoration, no implicit acceptance, malformed record preservation, inconsistent-state rejection, failed writes and stale preflight. Source tests run locally with Node 24; server has no Node executable.
 
 Limits: same browser/origin only; slots are not an access-control boundary. Sequential stale-write guards are not atomic concurrency control. Shared server persistence, authenticated character assignment and real player isolation remain future W7 work. This completes the proposed persistence system test for author review; stop here before further implementation. FS-W3-F4 remains ACTIVE / unsealed pending review and explicit scope closure. Content remains provisional; cast/natal/framework carry-forwards remain open.
+
+## Seal — 20 November 2026
+
+Karun explicitly accepted the review and requested sealing and a new-chat handover. Reviewed implementation: 1f5f9963b1ec06b90cff588b6dbc402437b753e6. This documentary seal closes the bounded foundation: stable authoring identities separated from roles/controllers; private resource registry and supplied-chart study workflow; an isolated, typed Vela encounter with choice, disagreement, remembered discussion and browser-local save/restore.
+
+The author-approved scope closure defers the earlier full-cast/natal/framework acceptance additions. It does NOT claim those requirements are complete. Cast biographies, appearances, dialogue and route furniture remain provisional; significant characters still require natal foundations. General interpretive framework v0.1, offworld reconciliation and AAB/mythic treatment carry forward.
+
+Runtime identity mapping, authenticated multiplayer persistence, atomic controller assignment, NPC-to-player handover and Discord bindings are unimplemented. Browser A/B slots are fictional copies, not authenticated users; local stale guards are not server concurrency. No live acceptance, movement, reset, deployment, invitations or account reassignment occurred. F14 and active source work remain preserved.
+
+Verification and implementation limits are recorded in the preceding checkpoints. Documentation-only closure requires no repeat runtime suite. W3 seals increase from two to three; overall 39 to 40. Next unallocated W3-F5. A focused W7 continuity proof is proposed, not allocated; reconcile its current register first.
+
+[New-chat handover](../handover/FS-W3-F4_SEAL_AND_ENGINE_HANDOVER.md) preserves the source/worktree checks, private-resource custody and concrete next-proof requirements.

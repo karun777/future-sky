@@ -14,6 +14,10 @@ For current development position, counts and return checkpoints, read the [Wing 
 
 The Feather 20 material below is an older architectural checkpoint. Read the [approved content-first phase closure](current/PHASE_CLOSURE_EPISTEMIC_FOUNDATIONS_2026-10-15.md) and the index before naming a next feather. Verify repository and live state separately; this navigation does not rewrite architectural authority or promote research.
 
+## Cast foundation and engine handover — 20 November 2026
+
+[FS-W3-F4](wings/FS-W3-F4_A_CAST_WORTH_BECOMING.md#seal--20-november-2026) is sealed for the bounded identity/resource groundwork and fictional encounter rehearsal. Read its [new-chat handover](handover/FS-W3-F4_SEAL_AND_ENGINE_HANDOVER.md) for current worktree protection, private-resource custody and the proposed W7 continuity proof. Cast/content and the interpretation framework remain provisional carry-forwards. The Wing Index records 40 seals, W3 three. Older numeric/status checkpoints below are historical.
+
 ## Efiishent’s workspace echo — W4-F13 READY · 15 November 2026
 
 [W4-F13 — A Workspace Already Waiting](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md) owns the bounded console experience and its [new-chat handover](handover/W4-F13_EFIISHENT_WORKSPACE_HANDOVER.md). The [original scene/fictional sample](seeds/POD_CONSOLE_WORKSPACE_20261115.md) remains its authoring source. Dedicated branch `play/w4-f13-a-workspace-already-waiting`, worktree `/home/efiishent/future-sky-worktrees/w4-f13`. This is for Efiishent, not a physical-laptop installation task. No private data is mirrored into the game.
