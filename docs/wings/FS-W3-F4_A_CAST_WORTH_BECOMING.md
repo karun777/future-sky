@@ -178,3 +178,7 @@ Acceptance additions: reconcile the authoritative framework; choose fictional bi
 ### Interpretive clarification
 
 Karun’s follow-up frames the natal chart as a possible map of unconscious drives, brought into future/off-world play through the Earth-based context of present-day players. The [design checkpoint](../design/ASTROLOGY_AND_LIVING_WORLD.md#author-clarification-earth-context-and-the-unconscious--20-november-2026) distinguishes that psychological premise from local-sky calculation and records shared-framework selection as near-term work. It preserves player agency, character continuity and explicit chart provenance without requiring a complete alien astrology system first. No chart basis or school has yet been selected.
+
+### Foundation selected
+
+Karun has now selected traditional Hellenistic astrology with modern esoteric additions, especially modern planets. The design checkpoint contains a source shortlist for his review and proposed conventions. Earlier statements that no school is selected are superseded; specific conventions and the modern/esoteric source selection remain open. Proceed toward framework v0.1 and a single Vela study within this feather; recovering older NL notes is useful but no longer blocks a source-led draft.

@@ -66,3 +66,22 @@ Within FS-W3-F4: reconcile the intended framework, establish six fictional birth
 Cross-wing engine follow-up: implement one versioned, explainable natal-to-response contract in an isolated fixture first. W1 reviews meaning; W3 reviews portrayal and continuity; W5 resolves time/frame semantics; W7 builds and tests computation and action authority; W4 receives permitted undertaking effects. Allocate its implementation feather after checking the current index for overlap. Do not allocate a broad autonomous-agent programme as a prerequisite.
 
 Tests when implementation begins: repeatable calculations, explicitly unknown inputs, different charts in the same situation, same chart with changed experience, no player compulsion, no author-only knowledge leakage, stale queued work after handover, idempotent retry and persistence-before-event. No production changes, real account assignments or character resets are authorised by this note.
+
+## Framework direction and source review — 20 November 2026
+
+Karun selects traditional Hellenistic astrology as the foundation, integrating modern esoteric interpretation, particularly the modern planets. This supersedes the earlier statement that no school has been selected. Detailed conventions and modern interpretive sources remain proposed for review. There is sufficient accessible material to proceed with a bounded source-led draft; locating older NL notes remains useful but is no longer a blocking prerequisite.
+
+Proposed first framework: tropical zodiac, whole-sign places with exact angles retained, seven traditional planets and their domicile rulerships, sect, planetary condition, configurations and the Lots of Fortune and Spirit. Uranus, Neptune and Pluto contribute an explicitly modern interpretive layer, initially through placement and relationships with personal planets/angles. Preserve traditional rulerships in the underlying traditional techniques; any modern rulership associations remain separately labelled. These are implementation proposals, not a claim that Hellenistic authors agreed on every technique or that Karun has approved each convention. Orbs, bounds, dignity schemes, weighting and timing techniques require explicit choices rather than silent defaults.
+
+Source shortlist, checked 20 November 2026. This is a reading map, not a claim to have fully read or encoded every book:
+
+| Source | Proposed use | Review boundary |
+| --- | --- | --- |
+| [Vettius Valens, Anthologies, Mark Riley translation](https://www.skyscript.co.uk/valens_riley.html) | Primary ancient practice and examples; foundation for tracing techniques | Translation has stated limitations; keep passages and edition identifiable. |
+| [Chris Brennan, Hellenistic Astrology and Valens editions](https://theastrologypodcast.com/books/) | Modern organisation of the historical tradition | Secondary synthesis; distinguish reconstruction and interpretation from ancient text. Book listings verified, full books not read in this pass. |
+| [Brennan, The Planetary Joys](https://www.hellenisticastrology.com/the-planetary-joys.pdf) | Accessible focused research on the relationships among joys, places and triplicities | An argued historical reconstruction, not universal consensus. |
+| [Liz Greene interview with Nick Campion](https://www.astro.com/astrologie/in_plut2011_e.htm) | Candidate psychological bridge: unconscious patterns, planetary symbolism and awareness | Search-index excerpt inspected; direct page encounter returned a browser check. Not yet an extracted rule source. |
+| [Dane Rudhyar archival writings](https://www.khaldea.com/rudhyar/astrology.shtml) | Candidate humanistic/transpersonal layer, cycles, development and outer-planet interpretation | Review selected essays before defining mechanics. Modern extension, not ancient doctrine. |
+| [Alice Bailey, Esoteric Astrology, publisher listing](https://www.lucistrust.org/store/item/esoteric_astrology_ebook) | Optional comparison if this is the esoteric branch Karun wants | Not selected by default. Its rays and distinct cosmological scheme must not be silently imported into Future Sky or equated with its existing metaphysics. |
+
+Next deliverable: a compact framework v0.1 with named adopted conventions, source references and unresolved choices, followed by one fictional Vela chart/response study. Avoid copying entire modern works or treating free access as an open licence. No purchases, personal birth-data collection, runtime changes or new feather allocation in this source-review pass.
