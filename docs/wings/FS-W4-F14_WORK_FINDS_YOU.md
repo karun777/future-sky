@@ -1,6 +1,18 @@
 # FS-W4-F14 — Work Finds You
 
-**W4 Play · Chapter 2 scenario proposal · 17 November 2026**
+**W4 Play · ACTIVE — isolated opening preview · 20 November 2026**
+
+## Activation and scope reconciliation · 20 November 2026
+
+Karun authorised the single waking / notice / inspect / leave-waiting preview following the accepted NL handover. The wider notebook scenario remains author context. This active slice ends with the call still available and no reply or undertaking. Sender, crew berth, workspace ownership, note author, waking location and gift relationship remain open.
+
+Dedicated worktree /home/efiishent/future-sky-worktrees/w4-f14-preview, branch play/fs-w4-f14-morning-preview, based on published 216bd0255f0c91a5f3891ea0764f2df2bbc5e4e9. Shared source df5a555 remains two image-provenance commits ahead and clean. Own-worktree F13 at 57d6ad2 is ACTIVE with a tested isolated proof, superseding this base's older READY pointer. Receiver 909628f supplies design evidence for reading / deliberate choice / current authority, without requiring its acceptance ceremony for this scene.
+
+Authority reconciled against Knowledge Atlas, current index, F13 home/return, FS-W6-F11, accepted W6-F9 / W7-F7 presentation and NL receiving return. No AGENTS.md found in the three source trees or checked parent directories. Existing instructions are docs/CONTRIBUTING.md and the Atlas's bounded feather method. Red Book Keys of Commotion reveal and expand capacity to respond. The preview creates no key token, item equivalence, ownership, currency, role or duty.
+
+The accepted W6-F9 CSS is reused for its full-page image-left / reading-right frame, fixed typed commands and reference panels. A deliberately unlocated field of light substitutes for room artwork. The prose, crew-sheet visibility and 4.5-second arrival delay are review proposals. FEED7 has a reference with an explicit preview availability message. FS-W6-F11's principle of truthful unavailable-action feedback informs unsupported-command responses.
+
+[Preview source](../../tools/authoring/w4f14/index.html). Run python3 tools/authoring/w4f14/serve.py from this worktree. Only three fictional assets are served on 127.0.0.1:8778. No repository-directory serving, game transport, private import, authentication substitute or durable state. Attention is tab-local and reload replays this fictional opening.
 
 ## The morning after
 
@@ -41,3 +53,13 @@ The sketch places Dragonfly Rescue off Triton, with Neptune, a space whale, a po
 The interception starts the chase even after a successful catch. Losing the payload to the rival crew is a possible ending. These later beats are author-facing until Efiishent encounters them in play.
 
 [Wing Index](../WING_INDEX.md)
+
+## Browser review return · 20 November 2026
+
+Chrome on Karun's Mac showed waking, automatic notice arrival, leaving unread, inspecting afterward, opening Journal, Escape back to the reading focus, unsupported accept feedback, and leaving after reading. Reload replayed the fictional waking beat. Command input remained visible with the reference open. At 1512 × 783, outer-page height matched viewport height. No warning/error console entries were returned. Mobile was not reviewed.
+
+The loopback listener serves only /, /hud.css and /scene.js. Checks returned 404 for repository documentation, traversal and a game API path. Browser script has no fetch, game transport or storage calls. Static preview has no authentication or persistence claim.
+
+Review URL on Karun's Mac is http://127.0.0.1:8778/ through a dedicated loopback SSH tunnel. Server process began as PID 1111800 and Mac tunnel as PID 32841. Recheck before stopping or restarting either. Refresh replays the waking scene. Type inspect crew call, leave, look or commands.
+
+State remains ACTIVE, awaiting Karun's visible-scene review. No seal or expanded chapter scope. The room-free light and brief delay are provisional visual choices.

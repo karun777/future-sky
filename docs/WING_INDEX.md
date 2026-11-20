@@ -8,9 +8,9 @@ Current home/checkpoint: **W6 Expression / W6-F11 — When the Way Is Closed, AC
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
-## Chapter 2 scenario shell · 17 November 2026
+## Chapter 2 opening preview · 20 November 2026
 
-[FS-W4-F14 — Work Finds You](wings/FS-W4-F14_WORK_FINDS_YOU.md) opens a W4 Play proposal. The morning after Chapter 1, a work notification reaches Efiishent’s HUD shortly after he wakes. Two notebook pages now ground the Dragonfly Rescue crew call, Neptune Lounge briefing and comet-catching scenario. The opening HUD copy is in review. Next unallocated Play feather is **FS-W4-F15**.
+[FS-W4-F14 — Work Finds You](wings/FS-W4-F14_WORK_FINDS_YOU.md) is ACTIVE for the authorised isolated waking / notice / inspect / leave-waiting preview on play/fs-w4-f14-morning-preview. The morning after Chapter 1, a work notification reaches Efiishent’s HUD shortly after he wakes. Two notebook pages now ground the Dragonfly Rescue crew call, Neptune Lounge briefing and comet-catching scenario. The fictional browser scene awaits author review. W6-F11 retains its source task and the wider Chapter 1 implementation pause continues. Sealed count remains 38. Next unallocated Play feather is **FS-W4-F15**.
 
 ## Efiishent echo handover — W4-F13 allocated READY · 15 November 2026
 

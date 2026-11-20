@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Work Finds You · Future Sky preview</title><link rel="stylesheet" href="hud.css"><script src="scene.js" defer></script></head>
+<body><main class="hud">
+<header><span class="brand">FUTURE SKY <b>HUD</b></span><span class="location">Efiishent · Fictional preview</span><button data-panel="notes">Preview notes</button></header>
+<section class="scene" aria-label="Unfocused morning light; location left open">
+<div class="morning" aria-hidden="true"></div><div class="call-glimpse" id="glimpse" hidden>HUD · CREW CALL<span>Dragonfly Rescue</span></div>
+</section>
+<section class="attention" aria-label="What you perceive" tabindex="0">
+<span class="eyebrow" id="channel">WAKING</span><h1 id="title">Before the words.</h1>
+<p id="prose">You wake. For a moment there is only the movement of your breath.
+ 
+Then the sense of something waiting, just behind your eyes.</p>
+<p id="callStatus"></p><p class="hint" id="hint">Take a breath. The morning can wait a moment.</p>
+</section>
+<section class="console"><form id="commandForm"><label for="command">COMMANDS</label><input id="command" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type commands for help" aria-describedby="feedback"></form>
+<nav aria-label="Reference panels"><button data-panel="character">Character</button><button data-panel="journal">Journal</button><button data-panel="feed7">FEED7</button><button data-panel="help">Help</button></nav>
+<p id="feedback" role="status">A quiet moment.</p></section>
+<dialog id="reference" aria-labelledby="panelTitle"><div class="dialog-head"><h2 id="panelTitle"></h2><button id="closePanel" aria-label="Close reference panel">Close ×</button></div><div id="panelContent"></div></dialog>
+</main></body></html>
