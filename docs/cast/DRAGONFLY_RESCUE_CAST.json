@@ -7,7 +7,7 @@
       "character_id": "fs-being-0001",
       "name": "Vela Marr",
       "pronouns": "she/her",
-      "review_status": "draft",
+      "review_status": "source_grounded_study_pending_author_review",
       "inclination_proposal": "Astro Cartographer",
       "appearance": "A silver braid held with a bent spoon. She turns her cup by its handle before answering.",
       "history": "Once flew freight through the outer settlements. Keeps handwritten arrival notes because she likes knowing who was waiting at the other end.",
@@ -35,7 +35,7 @@
       },
       "natal_chart": {
         "required": true,
-        "status": "supplied_report_pending_interpretation",
+        "status": "supplied_report_study_in_review",
         "birth_basis": null,
         "birth_date": null,
         "birth_time": null,
@@ -55,8 +55,10 @@
         }
       },
       "resource_refs": [
-        "fs-resource-0001"
-      ]
+        "fs-resource-0001",
+        "fs-resource-0002"
+      ],
+      "authoring_note": "Earlier appearance, biography, class and pilot role are provisional proposals; private resource fs-resource-0002 reconsiders these without changing live state."
     },
     {
       "character_id": "fs-being-0002",

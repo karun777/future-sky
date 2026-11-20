@@ -13,6 +13,21 @@
       "manifest_path": "resources/private/characters/fs-being-0001/manifest.json",
       "availability": "requires_local_manifest",
       "runtime_exposure": false
+    },
+    {
+      "resource_id": "fs-resource-0002",
+      "subject_type": "character",
+      "subject_id": "fs-being-0001",
+      "kind": "character_study",
+      "access": "author_only",
+      "storage": "local_private",
+      "manifest_path": "resources/private/characters/fs-being-0001/derived/vela-study-v0.1.manifest.json",
+      "availability": "requires_local_manifest",
+      "runtime_exposure": false,
+      "derived_from": [
+        "fs-resource-0001"
+      ],
+      "status": "review_draft"
     }
   ]
 }

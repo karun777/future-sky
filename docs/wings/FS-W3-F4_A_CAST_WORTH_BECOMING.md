@@ -192,3 +192,9 @@ Karun accepts the source list and retains Alice A. Bailey as a separately refere
 Vela now references `fs-resource-0001`, an author-supplied natal report copied byte-for-byte into the isolated worktree. Its supplied chart replaces the planned invented birth-input/calculation exercise for this character. Existing invented characterization remains provisional. Personal identity linkage and source details are retained in the private manifest. No Discord binding or invitation has been made.
 
 [Resource registry](../../resources/registry.json) and [path convention](../../resources/README.md) establish stable character/resource IDs and author-only local source manifests. The private copy is excluded from Git; only the registry and convention travel with the branch. File size and SHA-256 were matched to the original. Preserve/migrate the private directory before worktree removal. Interpretation and resource delivery remain unimplemented; this feather stays open.
+
+### First source-grounded character study — 20 November 2026
+
+Vela has an author-only review study, `fs-resource-0002`, derived from the complete supplied report `fs-resource-0001`. It distinguishes supplied chart factors, traditional conventions, modern interpretation and new fiction, and contains three short scene sketches: introduction, disagreement and a training difficulty. No chart was recalculated, no AAB layer applied and no scene entered live play.
+
+The earlier invented appearance, freight biography, inclination and pilot role remain provisional. The study is a bounded working method, not a completed general framework v0.1 or NPC implementation. Author review of recognisability, voice and role is next. Personal interpretation and scene drafts remain private local resources; the tracked registry provides their stable references. FS-W3-F4 stays open and seal counts do not change.
