@@ -210,3 +210,9 @@ The private Vela study v0.1 now carries an explicit supersession notice for its 
 ### Regenerated pilot report and private study
 
 The pilot’s supplied report fs-resource-0003 is now revision 2; the prior original and manifest are preserved privately. Transfer checksum and size verified. Source metadata is internally mixed: declared whole signs with the previous Placidus cusp table retained. The text comparison and precise caveat are in the private manifest and fs-resource-0004 study. The new study offers a provisional portrayal and pilot–navigator exchange using supplied positions, explicit whole-sign intent and no recalculation or live effects. Review remains open; no clean whole-sign export is falsely claimed.
+
+### Corrected source and pilot–navigator encounter — 20 November 2026
+
+The corrected pilot report is installed as fs-resource-0003 revision 3. Both labels and the complete cusp table now agree on whole signs. At Karun’s explicit request, obsolete Efiishent report copies were removed from this worktree; historical documentary entries above remain history, not current source warnings. fs-resource-0004 was refreshed against the new digest; the supplied positions and prose are unchanged, so its central interpretation remains applicable.
+
+New private encounter fs-resource-0005 gives the navigator initiative in exploring a route and the pilot a concrete contribution to its flyability. It is a hypothetical author-review rehearsal, not live participation, established mission mechanics or forced player dialogue. Both character resource lists reference it. Review this encounter before further implementation. No seal, deployment, account assignment or live action.

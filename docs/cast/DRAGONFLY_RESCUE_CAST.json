@@ -56,7 +56,8 @@
       },
       "resource_refs": [
         "fs-resource-0001",
-        "fs-resource-0002"
+        "fs-resource-0002",
+        "fs-resource-0005"
       ],
       "authoring_note": "Author confirms navigator for this undertaking. Earlier pilot proposal and freight biography are superseded or provisional; private study v0.1 is superseded on pilot role."
     },
@@ -369,9 +370,10 @@
       "runtime_mapping_status": "not_verified_not_created",
       "resource_refs": [
         "fs-resource-0003",
-        "fs-resource-0004"
+        "fs-resource-0004",
+        "fs-resource-0005"
       ],
-      "natal_chart_status": "regenerated_report_and_provisional_study_in_review",
+      "natal_chart_status": "whole_sign_source_verified_study_in_review",
       "note": "Do not create, reset or replace the existing player character from this authoring record."
     }
   ]
