@@ -28,6 +28,17 @@
         "fs-resource-0001"
       ],
       "status": "review_draft"
+    },
+    {
+      "resource_id": "fs-resource-0003",
+      "subject_type": "character",
+      "subject_id": "fs-being-0007",
+      "kind": "natal_chart_report",
+      "access": "author_only",
+      "storage": "local_private",
+      "manifest_path": "resources/private/characters/fs-being-0007/manifest.json",
+      "availability": "requires_local_manifest",
+      "runtime_exposure": false
     }
   ]
 }

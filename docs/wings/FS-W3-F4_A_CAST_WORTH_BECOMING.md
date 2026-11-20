@@ -10,11 +10,11 @@ Dedicated worktree /home/efiishent/future-sky-worktrees/w3-f4, branch beings/fs-
 
 All six names, appearances, histories, inclinations and relationships below are proposed for author review. Their IDs are stable authoring identifiers independent of names, accounts and jobs. They can be renamed while retaining continuity. No real people or private records were used.
 
-The JSON companion preserves the same drafts as structured data. Role suggestions describe possible contributions. All undertaking seats start vacant. Efiishent may contribute wherever the story and his choices take him. Nemi can collaborate with him or take another part in the work.
+The JSON companion preserves the same drafts as structured data. Role suggestions describe possible contributions. The initial draft left seats vacant; the current author-confirmed plan assigns Efiishent as pilot and Vela as navigator. Other seats remain unassigned. Efiishent may contribute wherever the story and his choices take him. Nemi can collaborate with him or take another part in the work.
 
 ## Vela Marr
 
-fs-being-0001 · she/her · possible pilot · Astro Cartographer inclination
+fs-being-0001 · she/her · navigator (author-confirmed for this undertaking) · Astro Cartographer inclination
 
 A silver braid held with a bent spoon. She turns her cup by its handle before answering.
 
@@ -198,3 +198,11 @@ Vela now references `fs-resource-0001`, an author-supplied natal report copied b
 Vela has an author-only review study, `fs-resource-0002`, derived from the complete supplied report `fs-resource-0001`. It distinguishes supplied chart factors, traditional conventions, modern interpretation and new fiction, and contains three short scene sketches: introduction, disagreement and a training difficulty. No chart was recalculated, no AAB layer applied and no scene entered live play.
 
 The earlier invented appearance, freight biography, inclination and pilot role remain provisional. The study is a bounded working method, not a completed general framework v0.1 or NPC implementation. Author review of recognisability, voice and role is next. Personal interpretation and scene drafts remain private local resources; the tracked registry provides their stable references. FS-W3-F4 stays open and seal counts do not change.
+
+### Pilot, navigator and second source intake — 20 November 2026
+
+Karun explicitly assigns Efiishent as pilot and Vela as navigator in this undertaking. These are authored scenario assignments, not a live acceptance or movement event. The earlier Vela pilot proposal is superseded. The combined portal/navigation slot is separated into navigator (Vela) and portal engineering (unassigned); Ilex remains only a candidate for portal engineering.
+
+`fs-being-0007` is an authoring/resource reference to the existing Efiishent, not a new runtime character. Runtime mapping remains unverified; no reset, replacement or account reassignment occurred. Resource `fs-resource-0003` preserves his supplied report. Source and destination size/SHA-256 match. The original report uses Placidus; the navigator’s supplied report uses whole signs. Both originals and their conventions remain intact, with differences recorded privately. Efiishent’s full interpretive study remains pending.
+
+The private Vela study v0.1 now carries an explicit supersession notice for its pilot possibility and training sketch. Other hypotheses remain in review. Resource validation covers every manifest, file digest, subject and cast reference. Shared source and installed services are unchanged.

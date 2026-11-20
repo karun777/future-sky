@@ -17,7 +17,7 @@
       "briefing_entrance": "At the briefing she asks which part of the return journey everyone has forgotten to plan.",
       "sample_line": "“Getting there is usually the easy bit.”",
       "suggested_roles": [
-        "pilot"
+        "navigator"
       ],
       "driver": {
         "kind": "narrative",
@@ -58,7 +58,7 @@
         "fs-resource-0001",
         "fs-resource-0002"
       ],
-      "authoring_note": "Earlier appearance, biography, class and pilot role are provisional proposals; private resource fs-resource-0002 reconsiders these without changing live state."
+      "authoring_note": "Author confirms navigator for this undertaking. Earlier pilot proposal and freight biography are superseded or provisional; private study v0.1 is superseded on pilot role."
     },
     {
       "character_id": "fs-being-0002",
@@ -176,7 +176,7 @@
       "briefing_entrance": "Leaves a blank sheet in the middle of the table and asks everyone to mark what they think the job involves.",
       "sample_line": "“Show me where our versions stop agreeing.”",
       "suggested_roles": [
-        "portal_navigation"
+        "portal_engineering"
       ],
       "driver": {
         "kind": "narrative",
@@ -211,7 +211,8 @@
           "kind": "fictional_authoring",
           "note": "No birth details or chart calculated. Player assignment must preserve character natal identity."
         }
-      }
+      },
+      "authoring_note": "Portal engineering remains a suggestion only; Vela is the confirmed navigator."
     },
     {
       "character_id": "fs-being-0005",
@@ -322,7 +323,7 @@
       {
         "role_id": "pilot",
         "description": "Flight and approaches",
-        "occupant_character_id": null
+        "occupant_character_id": "fs-being-0007"
       },
       {
         "role_id": "kitchen",
@@ -335,9 +336,10 @@
         "occupant_character_id": null
       },
       {
-        "role_id": "portal_navigation",
-        "description": "Portal engineering and navigation",
-        "occupant_character_id": null
+        "role_id": "navigator",
+        "description": "Navigation and route guidance",
+        "occupant_character_id": "fs-being-0001",
+        "supersedes_role_id": "portal_navigation"
       },
       {
         "role_id": "medic",
@@ -348,7 +350,28 @@
         "role_id": "dj",
         "description": "Music and attention to the crew’s shared rhythm",
         "occupant_character_id": null
+      },
+      {
+        "role_id": "portal_engineering",
+        "description": "Portal engineering; separated from navigation for explicit assignments",
+        "occupant_character_id": null
       }
-    ]
-  }
+    ],
+    "assignment_scope": "author_confirmed_scenario_plan_not_live_state",
+    "role_revision_note": "20 November: Efiishent pilot, Vela navigator. Former combined portal_navigation role split; portal engineering remains unassigned."
+  },
+  "existing_character_references": [
+    {
+      "character_id": "fs-being-0007",
+      "name": "Efiishent",
+      "identity_scope": "authoring_resource_reference_to_existing_character",
+      "runtime_character_id": null,
+      "runtime_mapping_status": "not_verified_not_created",
+      "resource_refs": [
+        "fs-resource-0003"
+      ],
+      "natal_chart_status": "supplied_report_pending_study",
+      "note": "Do not create, reset or replace the existing player character from this authoring record."
+    }
+  ]
 }
