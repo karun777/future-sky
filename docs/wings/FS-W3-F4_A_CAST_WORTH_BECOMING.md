@@ -226,3 +226,11 @@ This selectively adapts private fs-resource-0005 into fictional scene prose; no 
 Verified in connected Chrome: inspect route, optional-prefix inspect exit, suggest wider turn, leave/return with sketch retained, unsupported accept-job refusal, Help, Escape and reload. Visual opening reviewed at desktop size; no browser warnings/errors captured. HTTP checks: three assets 200; registry/private traversal 404; POST rejected 501. Python server syntax compiled; Node syntax CLI unavailable on server, JavaScript instead exercised in browser. Phone layout is authored but not yet visually verified.
 
 Review target: Vela’s initiative and voice, Efiishent’s room to contribute, and whether this feels like an encounter worth continuing. ACTIVE / unsealed; no new feather or seal count.
+
+### Choice and continuity system rehearsal — 20 November 2026
+
+Karun accepts this direction as a system test; dialogue/content remains provisional for later review. Expanded the existing preview with `ask vela why`, `suggest longer route` and `defer`. Vela distinguishes repeated reasoning and suggestions, recalls the current preference after leave/return, and acknowledges reconsideration. The Journal separates discussion memory from discovered route facts. Preferring the longer route preserves the previously explored wider sketch for comparison; no route is selected or validated by discussion.
+
+Memory is tab-local only: reason discussed, latest preference, prior deferral, drink discussed, and existing inspection facts. This is authored branching, not a general memory service or AI agent. Reload intentionally starts the fictional rehearsal afresh. No acceptance transition exists.
+
+Chrome checks exercised curiosity, repeated question, longer-route disagreement before inspection, defer/return, premature wider-turn refusal, inspection and obstruction discovery, changing to wider, repeated wider suggestion, changing back to longer, departure action guard, retained Journal and reload. No browser warning/error was captured. The updated preview remains on loopback 8779. Private sources, sealed F14, live characters and installed services remain untouched. FS-W3-F4 ACTIVE / unsealed; 39 seals unchanged.
