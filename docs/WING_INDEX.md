@@ -10,7 +10,7 @@ First-pass cadence adopted by Karun: two completed feathers per wing before furt
 
 ## Cast and player continuity · 20 November 2026
 
-[FS-W3-F4 — A Cast Worth Becoming](wings/FS-W3-F4_A_CAST_WORTH_BECOMING.md) is ACTIVE in beings/fs-w3-f4-a-cast-worth-becoming. Six cast drafts have stable authoring identities, independent role suggestions and unassigned Discord bindings. Source audit identifies the account-keyed runtime and the required shared resolver. Cast and natal-chart review are next. Significant characters require birth charts; the six records explicitly await framework reconciliation. [Astrology/world-engine checkpoint](design/ASTROLOGY_AND_LIVING_WORLD.md) links W1/W3/W4/W5/W7 and records the unallocated interpretation-engine follow-up. W3 seals remain two, overall 39. Next unallocated FS-W3-F5.
+[FS-W3-F4 — A Cast Worth Becoming](wings/FS-W3-F4_A_CAST_WORTH_BECOMING.md) is ACTIVE in beings/fs-w3-f4-a-cast-worth-becoming. Six cast drafts have stable authoring identities and unassigned Discord bindings. Efiishent is the authored pilot; Vela is navigator. Supplied whole-sign reports and private studies are registered separately from served fiction. A small interactive Vela encounter is ready for review at loopback http://127.0.0.1:8779: typed inspection, route discussion, a wider-turn contribution, and free departure. Authored responses only; no live state or account assignment. The general interpretation framework and runtime shared resolver remain follow-ups. [Astrology/world-engine checkpoint](design/ASTROLOGY_AND_LIVING_WORLD.md) retains their boundaries. W3 seals remain two, overall 39. Next unallocated FS-W3-F5.
 
 ## Chapter 2 opening sealed · 20 November 2026
 

@@ -216,3 +216,13 @@ The pilot’s supplied report fs-resource-0003 is now revision 2; the prior orig
 The corrected pilot report is installed as fs-resource-0003 revision 3. Both labels and the complete cusp table now agree on whole signs. At Karun’s explicit request, obsolete Efiishent report copies were removed from this worktree; historical documentary entries above remain history, not current source warnings. fs-resource-0004 was refreshed against the new digest; the supplied positions and prose are unchanged, so its central interpretation remains applicable.
 
 New private encounter fs-resource-0005 gives the navigator initiative in exploring a route and the pilot a concrete contribution to its flyability. It is a hypothetical author-review rehearsal, not live participation, established mission mechanics or forced player dialogue. Both character resource lists reference it. Review this encounter before further implementation. No seal, deployment, account assignment or live action.
+
+### Interactive encounter preview — 20 November 2026
+
+Authorised continuation implements a bounded, authored Vela encounter in `tools/authoring/w3f4/`, within this isolated cast worktree. Loopback URL http://127.0.0.1:8779 (Mac SSH forward) is separate from sealed F14 on 8778. The inherited visual frame is copied, not modified. Vela invites inspection; typed commands reveal a proposed route, its obstructed exit, a wider-turn suggestion and a quiet exchange. Leave/return preserves tab-local observations without acceptance. Efiishent has no forced dialogue or feelings.
+
+This selectively adapts private fs-resource-0005 into fictional scene prose; no natal data or private resources are served. Route furniture remains provisional. No generic AI response engine, Discord assignment, live movement, service installation or production deployment. Reload resets only this fictional rehearsal.
+
+Verified in connected Chrome: inspect route, optional-prefix inspect exit, suggest wider turn, leave/return with sketch retained, unsupported accept-job refusal, Help, Escape and reload. Visual opening reviewed at desktop size; no browser warnings/errors captured. HTTP checks: three assets 200; registry/private traversal 404; POST rejected 501. Python server syntax compiled; Node syntax CLI unavailable on server, JavaScript instead exercised in browser. Phone layout is authored but not yet visually verified.
+
+Review target: Vela’s initiative and voice, Efiishent’s room to contribute, and whether this feels like an encounter worth continuing. ACTIVE / unsealed; no new feather or seal count.

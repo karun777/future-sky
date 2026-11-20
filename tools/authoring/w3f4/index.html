@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A route between · Vela encounter</title><link rel="stylesheet" href="hud.css"><script src="scene.js" defer></script></head><body><main class="hud">
+<header><span class="brand">FUTURE SKY <b>HUD</b></span><span class="location">Neptune Lounge · Fictional rehearsal</span><button data-panel="notes">Preview notes</button></header>
+<section class="scene" aria-label="A proposed route display on a lounge table">
+<div class="chart"><div class="chart-label">DRAGONFLY RESCUE <span>ROUTE STUDY / UNVERIFIED</span></div>
+<svg viewBox="0 0 800 480" role="img" aria-labelledby="mapTitle mapDesc"><title id="mapTitle">Two routes and a possibility</title><desc id="mapDesc">Two pale routes leave a gap. Vela is considering another approach.</desc>
+<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b3d9da" stroke-opacity=".07"/></pattern></defs>
+<rect width="800" height="480" fill="url(#grid)"/>
+<g fill="none" stroke="#adc6bf" stroke-width="2" opacity=".5"><path d="M75 350C210 350 170 95 410 95S600 230 725 130"/><path d="M75 350C300 440 450 440 725 130"/></g>
+<path id="proposal" d="M75 350C220 350 260 170 445 220S600 240 725 130" fill="none" stroke="#d6b875" stroke-width="3" stroke-dasharray="8 7" hidden/>
+<g id="obstruction" hidden><circle cx="527" cy="231" r="33" fill="#bc7b5533" stroke="#e1a47a"/><path d="m505 209 44 44m0-44-44 44" stroke="#e1a47a"/><text x="485" y="290" fill="#e1a47a" font-size="12">OBSTRUCTION</text></g>
+<g fill="#d5e5df"><circle cx="75" cy="350" r="5"/><circle cx="725" cy="130" r="5"/></g>
+<g fill="#a5bbb5" font-family="monospace" font-size="12"><text x="55" y="385">APPROACH</text><text x="687" y="104">EXIT</text></g></svg>
+<div class="chart-foot"><span id="mapStatus">Two pale lines. A gap between them.</span><span>NOT TO SCALE</span></div></div>
+<div class="table-note">A route between<span>Vela Marr · Navigator</span></div></section>
+<section class="attention" aria-label="What you perceive" tabindex="0"><span class="eyebrow">BEFORE THE BRIEFING</span><h1 id="title"></h1><p id="prose"></p><p id="callStatus"></p><p class="hint" id="hint"></p></section>
+<section class="console"><form id="commandForm"><label for="command">COMMANDS</label><input id="command" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type commands for help" aria-describedby="feedback"></form><nav aria-label="Reference panels"><button data-panel="character">Character</button><button data-panel="journal">Journal</button><button data-panel="help">Help</button></nav><p id="feedback" role="status">Vela’s invitation can wait.</p></section>
+<dialog id="reference" aria-labelledby="panelTitle"><div class="dialog-head"><h2 id="panelTitle"></h2><button id="closePanel" aria-label="Close reference panel">Close ×</button></div><div id="panelContent"></div></dialog>
+</main></body></html>
