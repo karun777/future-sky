@@ -368,9 +368,10 @@
       "runtime_character_id": null,
       "runtime_mapping_status": "not_verified_not_created",
       "resource_refs": [
-        "fs-resource-0003"
+        "fs-resource-0003",
+        "fs-resource-0004"
       ],
-      "natal_chart_status": "supplied_report_pending_study",
+      "natal_chart_status": "regenerated_report_and_provisional_study_in_review",
       "note": "Do not create, reset or replace the existing player character from this authoring record."
     }
   ]

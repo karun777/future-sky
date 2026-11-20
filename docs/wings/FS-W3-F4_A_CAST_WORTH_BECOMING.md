@@ -206,3 +206,7 @@ Karun explicitly assigns Efiishent as pilot and Vela as navigator in this undert
 `fs-being-0007` is an authoring/resource reference to the existing Efiishent, not a new runtime character. Runtime mapping remains unverified; no reset, replacement or account reassignment occurred. Resource `fs-resource-0003` preserves his supplied report. Source and destination size/SHA-256 match. The original report uses Placidus; the navigator’s supplied report uses whole signs. Both originals and their conventions remain intact, with differences recorded privately. Efiishent’s full interpretive study remains pending.
 
 The private Vela study v0.1 now carries an explicit supersession notice for its pilot possibility and training sketch. Other hypotheses remain in review. Resource validation covers every manifest, file digest, subject and cast reference. Shared source and installed services are unchanged.
+
+### Regenerated pilot report and private study
+
+The pilot’s supplied report fs-resource-0003 is now revision 2; the prior original and manifest are preserved privately. Transfer checksum and size verified. Source metadata is internally mixed: declared whole signs with the previous Placidus cusp table retained. The text comparison and precise caveat are in the private manifest and fs-resource-0004 study. The new study offers a provisional portrayal and pilot–navigator exchange using supplied positions, explicit whole-sign intent and no recalculation or live effects. Review remains open; no clean whole-sign export is falsely claimed.

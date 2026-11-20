@@ -39,6 +39,21 @@
       "manifest_path": "resources/private/characters/fs-being-0007/manifest.json",
       "availability": "requires_local_manifest",
       "runtime_exposure": false
+    },
+    {
+      "resource_id": "fs-resource-0004",
+      "subject_type": "character",
+      "subject_id": "fs-being-0007",
+      "kind": "character_study",
+      "access": "author_only",
+      "storage": "local_private",
+      "manifest_path": "resources/private/characters/fs-being-0007/derived/efiishent-study-v0.1.manifest.json",
+      "availability": "requires_local_manifest",
+      "runtime_exposure": false,
+      "derived_from": [
+        "fs-resource-0003"
+      ],
+      "status": "review_draft"
     }
   ]
 }
