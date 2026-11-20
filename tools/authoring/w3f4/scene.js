@@ -1,9 +1,51 @@
 'use strict';
 const el=id=>document.getElementById(id);
 const state={away:false,route:false,exit:false,wide:false,reason:false,preference:null,deferred:false,drink:false};
+const slot=location.hash==='#rehearsal-b'?'b':'a';
+const identity={schema:1,slot,character:'fs-being-0007',partner:'fs-being-0001',encounter:'vela-route-rehearsal-v1'};
+const saveKey='future-sky:preview:w3f4:'+slot+':'+identity.character+':'+identity.encounter;
+let saveBlocked=false;
+let baseline=null;
+function validSave(record){
+if(!record||JSON.stringify(record.identity)!==JSON.stringify(identity))return false;
+const v=record.state;
+if(!v||Object.keys(v).length!==Object.keys(state).length)return false;
+for(const key of Object.keys(state)){
+if(key==='preference'){if(![null,'longer','wider'].includes(v[key]))return false;}
+else if(typeof v[key]!=='boolean')return false;
+}
+return (!v.exit||v.route)&&(!v.wide||v.exit)&&(v.preference!=='wider'||v.wide);
+}
+function saveNotice(message){el('saveStatus').textContent='Rehearsal '+slot.toUpperCase()+' · '+message;}
+function loadSave(){
+try{
+baseline=localStorage.getItem(saveKey);
+if(baseline!==null){
+const record=JSON.parse(baseline);
+if(!validSave(record))throw Error('invalid save');
+Object.assign(state,record.state);
+saveNotice('restored in this browser');
+return true;
+}
+saveNotice('new · saved after your next action');
+}catch(error){saveBlocked=true;saveNotice('save unavailable or incompatible · existing data preserved');}
+return false;
+}
+function persist(){
+if(saveBlocked)return;
+try{
+if(localStorage.getItem(saveKey)!==baseline){saveBlocked=true;saveNotice('changed in another tab · reload before continuing');return;}
+const next=JSON.stringify({identity,state});
+localStorage.setItem(saveKey,next);baseline=next;saveNotice('saved in this browser');
+}catch(error){saveBlocked=true;saveNotice('could not save · this action remains in this tab only');}
+}
+window.addEventListener('storage',event=>{
+if(event.key===saveKey||event.key===null){saveBlocked=true;saveNotice('changed in another tab · reload before continuing');}
+});
+window.addEventListener('hashchange',()=>location.reload());
 const help='look — take in the table\ninspect route — examine Vela’s idea\nask vela about route — hear what she is considering\nask vela why — hear her reasoning\nsuggest longer route — disagree without closing the discussion\ndefer — leave the question open\ninspect exit — look from the other angle\nsuggest wider turn — offer a pilot’s adjustment\nask vela about drink — a quieter exchange\nleave — step away, without accepting anything\nreturn — return to the table\ncommands — show this list\nOptional ! prefixes work.';
 const panels={
-notes:['Preview notes','FS-W3-F4 · A Cast Worth Becoming\n\nA fictional, authored rehearsal. The display and route problem are proposed scene furniture. Responses are written for the commands listed in Help; this is not an open-ended AI conversation.\n\nNothing here accepts work, moves a live character or binds a Discord account. State lasts only in this tab; reloading starts this rehearsal again. Personal chart reports are not served.\n\nSystem rehearsal: test distinct choices, recalled discussion, disagreement and free departure. Dialogue remains provisional.'],
+notes:['Preview notes','FS-W3-F4 · A Cast Worth Becoming\n\nA fictional, authored rehearsal. The display and route problem are proposed scene furniture. Responses are written for the commands listed in Help; this is not an open-ended AI conversation.\n\nNothing here accepts work, moves a live character or binds a Discord account. Fictional saves stay in this browser under separate rehearsal A/B slots. Close and reopen to resume. These slots are not authenticated players, and do not sync to another browser or device. Personal chart reports are not served.\n\nSystem rehearsal: test distinct choices, recalled discussion, disagreement and free departure. Dialogue remains provisional.'],
 character:['Character','Efiishent · Pilot\nVela Marr · Navigator\n\nRoles for this authored undertaking. You choose Efiishent’s actions; his dialogue and feelings are not supplied for you.'],
 journal:['Journal',()=>memory()+'\n\n'+(state.wide?'A wider approach is sketched. Vela still needs to check it. Nothing submitted.':state.exit?'The proposed shortcut meets an obstruction. Nothing submitted.':state.route?'Vela has sketched a possible approach. Its exit is unchecked.': 'Vela has invited you to look at a route. Nothing accepted.')],
 help:['Commands',help]
@@ -94,8 +136,14 @@ show('An empty cup.','Vela reaches for her cup, discovers it is empty, and looks
 }
 el('feedback').textContent='No action taken. This rehearsal has authored commands; type commands to see them.';
 }
-el('commandForm').addEventListener('submit',event=>{event.preventDefault();command(el('command').value);el('command').value='';});
+el('commandForm').addEventListener('submit',event=>{event.preventDefault();const before=JSON.stringify(state);
+try{if(localStorage.getItem(saveKey)!==baseline){saveBlocked=true;saveNotice('changed in another tab · reload before continuing');}}catch(error){saveBlocked=true;saveNotice('storage unavailable · no action taken');}
+if(saveBlocked){el('feedback').textContent='Saving is unavailable or this tab is stale. Reload before continuing; no action taken.';}
+else{command(el('command').value);if(JSON.stringify(state)!==before)persist();}
+el('command').value='';});
 document.querySelectorAll('[data-panel]').forEach(button=>button.addEventListener('click',()=>panel(button.dataset.panel)));
 el('closePanel').addEventListener('click',closePanel);
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&el('reference').open){event.preventDefault();closePanel();}});
+const restored=loadSave();
 look();
+if(restored)el('feedback').textContent='Your saved rehearsal is restored. Nothing accepted.';

@@ -90,3 +90,7 @@ header .location { margin-left:auto; }
 #panelContent { white-space:pre-line; font-size:15px; line-height:1.7; }
 
 .chart{width:86%;max-width:980px;border:1px solid #9ab4aa33;background:#0b191a99;box-shadow:0 35px 90px #0006;transform:perspective(1500px) rotateX(12deg);transition:opacity .2s}.chart svg{width:100%;display:block}.chart-label,.chart-foot{display:flex;justify-content:space-between;gap:12px;padding:20px 24px;font:10px/1.5 ui-monospace,monospace;color:var(--cool);letter-spacing:.08em}.chart-label span,.chart-foot{color:var(--muted)}.table-note{position:absolute;left:7%;bottom:6%;font:20px Georgia,serif;color:var(--ink)}.table-note span{display:block;font:10px monospace;color:var(--gold);margin-top:9px}.chart.away{opacity:.35}.scene{background:radial-gradient(ellipse at 40% 45%,#31545a66,transparent 65%),radial-gradient(ellipse at 0% 100%,#886c3544,transparent 65%),#091318}@media(max-width:650px){.chart{width:80%;max-height:100%;transform:none}.chart svg{max-height:24vh}.chart-label,.chart-foot{padding:7px 10px;font-size:7px}.table-note{display:none}}
+
+#saveStatus{grid-column:1/-1;margin:3px 0 0 82px;font:10px/1.4 ui-monospace,monospace;color:var(--gold)}@media(max-width:650px){header a{display:inline;font-size:8px}header .location{display:none}#saveStatus{margin-left:0}}
+
+.scene{overflow:hidden}.chart{max-height:90%;display:flex;flex-direction:column;transform:none}.chart svg{min-height:0;flex:1}.chart-label,.chart-foot{flex-shrink:0}@media(max-height:650px){.chart-label,.chart-foot{padding:9px 16px}.table-note{display:none}}

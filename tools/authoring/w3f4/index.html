@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A route between · Vela encounter</title><link rel="stylesheet" href="hud.css"><script src="scene.js" defer></script></head><body><main class="hud">
-<header><span class="brand">FUTURE SKY <b>HUD</b></span><span class="location">Neptune Lounge · Fictional rehearsal</span><button data-panel="notes">Preview notes</button></header>
+<header><span class="brand">FUTURE SKY <b>HUD</b></span><span class="location">Neptune Lounge · Fictional rehearsal</span><a href="#rehearsal-a">Rehearsal A</a><a href="#rehearsal-b">Rehearsal B</a><button data-panel="notes">Preview notes</button></header>
 <section class="scene" aria-label="A proposed route display on a lounge table">
 <div class="chart"><div class="chart-label">DRAGONFLY RESCUE <span>ROUTE STUDY / UNVERIFIED</span></div>
 <svg viewBox="0 0 800 480" role="img" aria-labelledby="mapTitle mapDesc"><title id="mapTitle">Two routes and a possibility</title><desc id="mapDesc">Two pale routes leave a gap. Vela is considering another approach.</desc>
@@ -14,6 +14,6 @@
 <div class="chart-foot"><span id="mapStatus">Two pale lines. A gap between them.</span><span>NOT TO SCALE</span></div></div>
 <div class="table-note">A route between<span>Vela Marr · Navigator</span></div></section>
 <section class="attention" aria-label="What you perceive" tabindex="0"><span class="eyebrow">BEFORE THE BRIEFING</span><h1 id="title"></h1><p id="prose"></p><p id="callStatus"></p><p class="hint" id="hint"></p></section>
-<section class="console"><form id="commandForm"><label for="command">COMMANDS</label><input id="command" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type commands for help" aria-describedby="feedback"></form><nav aria-label="Reference panels"><button data-panel="character">Character</button><button data-panel="journal">Journal</button><button data-panel="help">Help</button></nav><p id="feedback" role="status">Vela’s invitation can wait.</p></section>
+<section class="console"><form id="commandForm"><label for="command">COMMANDS</label><input id="command" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type commands for help" aria-describedby="feedback"></form><nav aria-label="Reference panels"><button data-panel="character">Character</button><button data-panel="journal">Journal</button><button data-panel="help">Help</button></nav><p id="saveStatus" role="status"></p><p id="feedback" role="status">Vela’s invitation can wait.</p></section>
 <dialog id="reference" aria-labelledby="panelTitle"><div class="dialog-head"><h2 id="panelTitle"></h2><button id="closePanel" aria-label="Close reference panel">Close ×</button></div><div id="panelContent"></div></dialog>
 </main></body></html>
