@@ -4,13 +4,13 @@ Use **FS-Wn-Fm** in maintained feather references. [Project feather numbering](F
 
 Established 17 October 2026 under [the eight-wing charter](current/EIGHT_WINGS_CHARTER.md).
 Current home/checkpoint: **W6 Expression / W6-F11 — When the Way Is Closed, ACTIVE, source prepared 13 November 2026**. [Current checkpoint and evidence](wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md). Karun accepted the bounded command-feedback follow-up. Three refusal paths now give supplied reasons or complete availability guidance; 34 client checks and 483 Python tests pass. Fictional browser review is next; live W6-F10 remains installed. Continue on `engine/w7-f10-beginning-again`. W6-F10, W7-F9 and W7-F10 remain sealed. No reset: retain the archive/receipt and protected Queen account/routing. First-time account/OAuth remains unverified; Chapter 1 / W4 stays paused. Next unallocated W6-F12 and W7-F11.
-**38 sealed wing feathers: W4 has nine, W6 nine, W7 ten; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
+**39 sealed wing feathers: W4 has ten, W6 nine, W7 ten; each other wing has two. The 16-feather chassis first pass is complete.** W6-F5, W2-F3 and W4-F3 retain their review status; historical checkpoints below do not override this current register.
 
 First-pass cadence adopted by Karun: two completed feathers per wing before further deepening, revisable by the author. This chassis pass is now complete; it is not a permanent cap. W1-F3 is allocated and parked; W2-F3 and W4-F3 are allocated and in review; other next IDs remain unallocated.
 
-## Chapter 2 opening preview · 20 November 2026
+## Chapter 2 opening sealed · 20 November 2026
 
-[FS-W4-F14 — Work Finds You](wings/FS-W4-F14_WORK_FINDS_YOU.md) is ACTIVE for the authorised isolated waking / notice / inspect / leave-waiting preview on play/fs-w4-f14-morning-preview. The morning after Chapter 1, a work notification reaches Efiishent’s HUD shortly after he wakes. Two notebook pages now ground the Dragonfly Rescue crew call, Neptune Lounge briefing and comet-catching scenario. The fictional browser scene awaits author review. W6-F11 retains its source task and the wider Chapter 1 implementation pause continues. Sealed count remains 38. Next unallocated Play feather is **FS-W4-F15**.
+[FS-W4-F14 — Work Finds You](wings/FS-W4-F14_WORK_FINDS_YOU.md#seal--20-november-2026) is SEALED for its isolated waking / notice / inspect / leave-waiting preview at 7db9fef. The wider scenario, live integration and cast remain continuing work. Total seals 39, W4 ten. Next unallocated Play feather FS-W4-F15.
 
 ## Efiishent echo handover — W4-F13 allocated READY · 15 November 2026
 
@@ -399,7 +399,7 @@ Read [the close-out handoff](handover/FUTURE_SKY_SESSION_CLOSE_20261018_2137.md)
 | W1 Mythos | 2 | [FS-W1-F2](wings/W1-F2_FINDING_OUR_WAY_THE_BROCHURE.md) | [FS-W1-F3 / Feather 57 — parked](wings/W1-F3_THE_EIGHT_TIMELINES.md); next unallocated W1-F4 |
 | W2 Worlds | 2 | [FS-W2-F2](wings/W2-F2_THE_LOCAL_ATLAS.md) | [FS-W2-F3 — review](wings/W2-F3_THE_OPENING_WE_CAN_INHABIT.md); next unallocated W2-F4 |
 | W3 Beings | 2 | [FS-W3-F2](wings/W3-F2_WHO_CARRIES_WHOM.md) | [FS-W3-F3 — review](wings/W3-F3_WHO_IS_WAKING_UP.md); next unallocated W3-F4 |
-| W4 Play | 9 | [FS-W4-F12](wings/W4-F12_AN_AUDIENCE_WITH_THE_QUEEN.md) | [FS-W4-F13 — READY echo handover](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md); W4-F3 review; W4-F9/F11 parked functional drafts; [FS-W4-F14 — Work Finds You](wings/FS-W4-F14_WORK_FINDS_YOU.md) (Chapter 2 proposal); next unallocated FS-W4-F15 |
+| W4 Play | 10 | [FS-W4-F14](wings/FS-W4-F14_WORK_FINDS_YOU.md#seal--20-november-2026) | [FS-W4-F13 — READY echo handover](wings/W4-F13_A_WORKSPACE_ALREADY_WAITING.md); W4-F3 review; W4-F9/F11 parked functional drafts; next unallocated FS-W4-F15 |
 | W5 Time | 2 | [FS-W5-F2](wings/W5-F2_THE_NEXT_TICK.md) | W5-F3 |
 | W6 Expression | 9 | [FS-W6-F10](wings/W6-F10_ONE_CLEAR_WARNING.md#seal--13-november-2026) | [FS-W6-F11 — active, source prepared](wings/W6-F11_WHEN_THE_WAY_IS_CLOSED.md); W6-F5 review; artwork standards deferred; next unallocated W6-F12 |
 | W7 Engine | 10 | [FS-W7-F9](wings/W7-F9_WAKING_INTO_THE_WINDOW.md#seal--12-november-2026) | W7-F10 sealed; first-time account/OAuth onboarding and pod-delivery collection web adapter remain follow-ups; next unallocated W7-F11 |

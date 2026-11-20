@@ -1,6 +1,6 @@
 # FS-W4-F14 — Work Finds You
 
-**W4 Play · ACTIVE — isolated opening preview · 20 November 2026**
+**W4 Play · SEALED — bounded opening preview · 20 November 2026**
 
 ## Activation and scope reconciliation · 20 November 2026
 
@@ -69,3 +69,11 @@ State remains ACTIVE, awaiting Karun's visible-scene review. No seal or expanded
 Karun was unsure what to judge in the first visual study. On his go-ahead, the opening now gives Efiishent a lingering musical phrase, uncurling fingers and a breath before the call. These sensory details are proposed scene prose. The call becomes a short invitation to hear about the job over a drink at Neptune Lounge. The planning-sheet roles and author-facing uncertainty explanation are removed from the visible message. Their authoring questions remain in this document.
 
 The waking interval is now ten seconds to allow the passage to be read. Leaving returns to the half-remembered tune. The existing inspect / leave / look interaction stays bounded to the opening. Review remains open.
+
+## Seal · 20 November 2026
+
+Karun authorised closure with “let's go” following the recommendation to seal this opening and begin FS-W3-F4. Reviewed source is 7db9fef. The sealed deliverable is the loopback fictional waking, notice, inspection and leave-waiting scene, with typed commands and voluntary attention. Revised waking / inspect / leave passages were checked in Chrome and Karun supplied the revised call screenshot.
+
+The wider Chapter 2 notebook is continuing author context. Scenery, precise timing and prose can develop in later work. Durable state, real delivery, NPC control, account assignment, mobile review and production integration remain open. Existing services and characters were not changed. This seal adds one W4 completion, bringing W4 to ten and total seals to 39.
+
+Next home is FS-W3-F4 — A Cast Worth Becoming, for cast drafts and character / undertaking role / driver continuity. F14 retains the opening and wider scenario references.
