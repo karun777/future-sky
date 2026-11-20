@@ -23,6 +23,22 @@ The separate Neptune Lounge repository at `/home/efiishent/projects/neptune-loun
 
 Do not pretend an Earth tropical geocentric calculation automatically describes a Triton birth or every era. Select the frame and the meaning of birth before computing the six drafts. Reanimation need not erase a natal record. Unknown inputs must not become falsely precise facts. A noon/UTC fallback is an assumption, not a known birth time.
 
+## Author clarification: Earth context and the unconscious — 20 November 2026
+
+Karun places the interpretive starting point with players here on Earth in 2026. They bring Earth-based astrological language and data into play while assuming a character situated in a future, potentially non-Earth environment. Their reasonable assumption of Earth origin supplies a bridge into the fiction; it does not establish every character’s birthplace or require us to invent an alien zodiac before proceeding.
+
+The proposed working premise is to imagine a natal chart as a map of the unconscious: a structured vocabulary for underlying drives, conditions, dispositions, tensions and habitual responses. Future Sky can explore the complexity articulated by that body of knowledge without requiring participants to accept its claims as gospel. This is an interpretive design premise, not a scientific validation claim or a diagnosis of a player.
+
+Under this premise, an Earth-referenced chart can supply a psychological foundation whose expression is shaped by future embodiment, culture, relationships, experience and immediate circumstances. Literal local-sky calculation is a separate question. The earlier frame warning concerns labelling calculations honestly; it must not become a requirement to solve extraterrestrial astrology before exploring character psychology. Whether a given chart represents an Earth-origin birth, an authored symbolic foundation or another agreed basis remains a recorded design choice. Do not manufacture historical birth facts to justify a symbolic chart.
+
+Keep three layers distinct: the human player’s present context, the character’s enduring natal/psychological foundation, and the character’s current fictional environment. Their relationship needs explicit authoring. This clarification does not automatically substitute an account holder’s personal chart into an existing character, nor make player birth-data collection a prerequisite. A transferable character retains continuity across drivers.
+
+The interpretive framework must preserve complexity: interacting tendencies, inner conflicts, different expressions under pressure, and growth through awareness and experience. Avoid one-sign personality labels, fixed moral judgements or predetermined responses. NPC response logic should make room for the interplay of chart, memory, circumstance and choice; human players retain agency.
+
+Karun regards the astrological tradition as a rich, openly accessible knowledge resource while recognising competing branches, inconsistencies and what he considers distortions or corruptions. We therefore need to agree a coherent shared framework rather than blending incompatible schools opportunistically. Public availability is not a blanket licence for modern texts, datasets or software; retain source and reuse provenance as materials are selected.
+
+Near-term design work: locate/recover the intended framework; agree its vocabulary, chart basis, selected interpretive relationships and exclusions; distinguish calculation conventions from interpretation; version that agreement; then examine one character in a few concrete situations. This remains a carry-forward within the existing FS-W3-F4 checkpoint and its cross-wing engine follow-up. It is future work close enough to guide the cast now, not an invitation to expand this pass into a complete astrology engine.
+
 ## What exists and what comes next
 
 The source already has structured files, authored world definitions, character storage, a canonical clock, event dispatch, opportunities, observation, durable event history and neutral pattern queries. Current runtime persistence includes JSON; this checkpoint does not claim SQL migration or live-service verification.
