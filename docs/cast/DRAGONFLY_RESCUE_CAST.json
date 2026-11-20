@@ -32,6 +32,26 @@
           }
         ],
         "possessions": []
+      },
+      "natal_chart": {
+        "required": true,
+        "status": "pending_framework_reconciliation",
+        "birth_basis": null,
+        "birth_date": null,
+        "birth_time": null,
+        "time_precision": null,
+        "timezone_or_time_standard": null,
+        "birth_place": null,
+        "era_and_calendar": null,
+        "reference_frame": null,
+        "framework_ref": null,
+        "calculation_version": null,
+        "placements": null,
+        "interpretation_profile": null,
+        "provenance": {
+          "kind": "fictional_authoring",
+          "note": "No birth details or chart calculated. Player assignment must preserve character natal identity."
+        }
       }
     },
     {
@@ -63,6 +83,26 @@
           }
         ],
         "possessions": []
+      },
+      "natal_chart": {
+        "required": true,
+        "status": "pending_framework_reconciliation",
+        "birth_basis": null,
+        "birth_date": null,
+        "birth_time": null,
+        "time_precision": null,
+        "timezone_or_time_standard": null,
+        "birth_place": null,
+        "era_and_calendar": null,
+        "reference_frame": null,
+        "framework_ref": null,
+        "calculation_version": null,
+        "placements": null,
+        "interpretation_profile": null,
+        "provenance": {
+          "kind": "fictional_authoring",
+          "note": "No birth details or chart calculated. Player assignment must preserve character natal identity."
+        }
       }
     },
     {
@@ -94,6 +134,26 @@
           }
         ],
         "possessions": []
+      },
+      "natal_chart": {
+        "required": true,
+        "status": "pending_framework_reconciliation",
+        "birth_basis": null,
+        "birth_date": null,
+        "birth_time": null,
+        "time_precision": null,
+        "timezone_or_time_standard": null,
+        "birth_place": null,
+        "era_and_calendar": null,
+        "reference_frame": null,
+        "framework_ref": null,
+        "calculation_version": null,
+        "placements": null,
+        "interpretation_profile": null,
+        "provenance": {
+          "kind": "fictional_authoring",
+          "note": "No birth details or chart calculated. Player assignment must preserve character natal identity."
+        }
       }
     },
     {
@@ -125,6 +185,26 @@
           }
         ],
         "possessions": []
+      },
+      "natal_chart": {
+        "required": true,
+        "status": "pending_framework_reconciliation",
+        "birth_basis": null,
+        "birth_date": null,
+        "birth_time": null,
+        "time_precision": null,
+        "timezone_or_time_standard": null,
+        "birth_place": null,
+        "era_and_calendar": null,
+        "reference_frame": null,
+        "framework_ref": null,
+        "calculation_version": null,
+        "placements": null,
+        "interpretation_profile": null,
+        "provenance": {
+          "kind": "fictional_authoring",
+          "note": "No birth details or chart calculated. Player assignment must preserve character natal identity."
+        }
       }
     },
     {
@@ -156,6 +236,26 @@
           }
         ],
         "possessions": []
+      },
+      "natal_chart": {
+        "required": true,
+        "status": "pending_framework_reconciliation",
+        "birth_basis": null,
+        "birth_date": null,
+        "birth_time": null,
+        "time_precision": null,
+        "timezone_or_time_standard": null,
+        "birth_place": null,
+        "era_and_calendar": null,
+        "reference_frame": null,
+        "framework_ref": null,
+        "calculation_version": null,
+        "placements": null,
+        "interpretation_profile": null,
+        "provenance": {
+          "kind": "fictional_authoring",
+          "note": "No birth details or chart calculated. Player assignment must preserve character natal identity."
+        }
       }
     },
     {
@@ -187,6 +287,26 @@
           }
         ],
         "possessions": []
+      },
+      "natal_chart": {
+        "required": true,
+        "status": "pending_framework_reconciliation",
+        "birth_basis": null,
+        "birth_date": null,
+        "birth_time": null,
+        "time_precision": null,
+        "timezone_or_time_standard": null,
+        "birth_place": null,
+        "era_and_calendar": null,
+        "reference_frame": null,
+        "framework_ref": null,
+        "calculation_version": null,
+        "placements": null,
+        "interpretation_profile": null,
+        "provenance": {
+          "kind": "fictional_authoring",
+          "note": "No birth details or chart calculated. Player assignment must preserve character natal identity."
+        }
       }
     }
   ],

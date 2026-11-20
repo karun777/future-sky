@@ -164,3 +164,13 @@ These are the concrete requirements for W7 implementation after cast review. No 
 Review the people first, then settle the first meeting and select the smallest assignment rehearsal. FS-W3-F4 remains unsealed. F14’s loopback preview is preserved.
 
 [Wing Index](../WING_INDEX.md) · [Who Carries Whom](W3-F2_WHO_CARRIES_WHOM.md) · [Opening](FS-W4-F14_WORK_FINDS_YOU.md)
+
+## Natal foundation — 20 November 2026
+
+Karun requires a birth chart for every significant individual character. For NPCs it will inform the underlying logic of responses, alongside memory, relationships, needs, current circumstances and choice. This is now an acceptance requirement of FS-W3-F4, not a new duplicate cast feather. The six drafts carry explicit pending natal records; no chart has been invented or calculated from their proposed personalities.
+
+The chart belongs to the stable character, independent of role or driver. Assigning a Discord player does not replace it with the account holder’s chart. The older Red Book real-player birth-chart premise needs explicit reconciliation with transferable fictional characters; no real tester birth data is requested by this change. Birth, stasis, reanimation and awakening are distinct events until the framework specifies their meanings.
+
+[Astrology and the living world](../design/ASTROLOGY_AND_LIVING_WORLD.md) records verified source, missing interpretation machinery, system boundaries and the bounded follow-up. W3 owns character natal identity and portrayal; W1 owns meaning; W5 owns temporal/reference-frame reconciliation; W7 owns computation and eventual response execution; W4 consumes permitted effects in undertakings. Existing feathers retain their counts and status. The shared interpretation-engine implementation is a named carry-forward, not an allocated or sealed feather.
+
+Acceptance additions: reconcile the authoritative framework; choose fictional birth inputs with their precision and provenance; calculate reproducible charts; review their interpretation against the cast; demonstrate differing responses to the same situation without deterministic fate or player compulsion. A driver handover preserves natal identity and continuity. Missing time/place must remain explicit uncertainty.
