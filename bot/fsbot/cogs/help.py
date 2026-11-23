@@ -133,6 +133,9 @@ class HelpCog(commands.Cog):
 
         out.append("✅ **Available now**")
         out.extend(fmt(c) for c in available_now)
+        from fsbot.vela import view as vela_view
+        if vela_view(char):
+            out.append("- `!vela` — Attend to the Dragonfly crew call.")
 
         if discovered:
             out.append("\n🗝️ **Discovered**")
