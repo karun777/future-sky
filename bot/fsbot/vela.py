@@ -50,7 +50,8 @@ def journal(memory):
 
 def _scene(room, memory):
     if room == POD and "read" not in memory.seen:
-        return "Behind your eyes, the words DRAGONFLY RESCUE glimmer. A crew call is waiting.", ["read crew call"]
+        return (SCRIPT["morning"] + "\n\nBehind your eyes, the words DRAGONFLY RESCUE glimmer. "
+                "A crew call is waiting."), ["read crew call"]
     actions = ["read crew call"]
     if room == TABLE:
         actions.append("inspect chart")
