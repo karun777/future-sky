@@ -325,6 +325,7 @@ EXTENSIONS = [
     "fsbot.cogs.rumours",
     "fsbot.cogs.navigation",
     "fsbot.cogs.scenario_engine",
+    "fsbot.cogs.vela",
     "fsbot.cogs.astrological_clock",
     "fsbot.cogs.comet_cycle",
     "fsbot.cogs.comet_observation",

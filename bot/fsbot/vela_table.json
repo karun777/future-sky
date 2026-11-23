@@ -1,0 +1,46 @@
+{
+  "table": "At Neptune Lounge, Vela Marr is trying to fly a pencil with one hand and slide a sugar packet across a chart with the other. She needs a third hand for the saucer.\n\n“That’s meant to be the comet.” She nods at the packet. “I want to know if we’ll see it in time to turn.”\n\nShe taps the saucer twice and nudges it within reach.",
+  "shared": "You answer her on the rim. “The beacon,” Vela says. “Every time you hear that, you can see the comet.”\n\nShe gives you the pencil. Its point is Dragonfly’s nose. As you reach the crease in her chart, the sugar packet is crossing your bow. The saucer is quiet.\n\nYou can turn here or carry on until the next flash.",
+  "after": "Vela has her drink at last. When she sees you, she puts one finger inside the circle you made together. The pencil stays on the table.",
+  "recalled": "The saucer is where you left it. Vela sets the pencil beside it. “Want another go? Or you give me the beacon and I’ll fly it twice.”",
+  "invitation": "We’re heading out from Triton Central for a routine comet catch.\n\nMeet at Neptune Lounge for a drink and the briefing. We’ll go through the job together.\n\nCome hear what’s involved.",
+  "briefing": "Drinks move down the joined tables. A woman sets a net reel between two empty glasses. “Routine pickup out of Triton Central. Vela brings us alongside the comet. I put the portal net around it. Then we can see what it’s carrying.”\n\nShe lays the approach card in the middle. “Before I copy this to the ship, does anybody want a line changed?” Vela leaves the pencil where you can reach it.",
+  "quiet": "You pass the pencil on. Over by the reel they read the working orders back, one line at a time. Someone slides you a drink. There’s room to sit and listen.",
+  "chart": "The saucer pins the corner flat. The pencil lies below the inner mark. At the fold, the solid pencil line meets the dotted track of the blue sugar packet.",
+  "observations": [
+    {
+      "id": "contact",
+      "play": "turn at crease",
+      "report": "show torn packet",
+      "scene": "You turn where the paper buckles. Vela keeps the packet moving. Tap, tap. Your pencil point has caught a corner of the wrapper. A few grains of sugar fall into the crease.\n\n“On time,” she says, picking one off the point. “Closer than I’d care to fly it.” She pencils a little cross where you touched.",
+      "note": "Turning at the crease brought you alongside in the dark. Your pencil nicked the packet.",
+      "mark": "A cross at the fold marks where the pencil nicked the packet.",
+      "draft": "Cross at the crease.",
+      "order": "Cross with room between the bow and the payload.",
+      "reply": "You pass the torn packet down the table. A few grains land on the ink. The woman holding the net reel puts her thumb over the crossing. “That was our cargo?” Vela nods. The woman draws a new line around her thumb."
+    },
+    {
+      "id": "runup",
+      "play": "wait for flash",
+      "report": "unfold the chart",
+      "scene": "You keep the pencil straight. Tap, tap. Now you turn. The packet is in clear sight and already past the catch mark. There’s a thumb’s width of table between you.\n\nVela flattens the folded edge of the chart. “If we wait for the light, I owe you this much more approach.” She draws the extra length.",
+      "note": "Waiting for the flash put you a thumb’s width behind. Vela lengthened the approach on the sketch.",
+      "mark": "A fresh line reaches back past the inner mark. Vela has written “start here” at the new end.",
+      "draft": "Start at the inner mark.",
+      "order": "Start the approach one mark farther out.",
+      "reply": "You lift Vela’s cup and unfold the extra thumb’s width of chart. She holds the two edges together for everyone to see. Someone shifts the starting pin back that distance. “We can give you that much run-up,” comes a voice from the end of the table."
+    },
+    {
+      "id": "gap",
+      "play": "count with vela",
+      "report": "tap the interval",
+      "scene": "You tap the beacon interval on the saucer. Vela flies the pencil down the long approach. First pass, the point reaches the mark on your tap. Second pass, it comes down in the silence.\n\nShe puts a small circle around the gap. “That’s the bit I kept flying through.” She leaves the pencil between you.",
+      "note": "On the first pass the beacon is lit. On the next it is already dark. You and Vela circled the missing interval.",
+      "mark": "You and Vela circled the missing beat just beyond the turn.",
+      "draft": "Open the net on the flash.",
+      "order": "Wait for Vela to call the lit pass before opening the net.",
+      "reply": "You tap the two passes on the saucer. Where the next flash ought to be, your hand hangs still. The woman at the reel has already moved her thumb. She takes it off the switch. “Right. Vela calls the light. Then I open.”"
+    }
+  ],
+  "morning": "You wake with a little of last night’s music still going round in your head. You follow it for a few beats before you realise the sound is a memory.\n\nYour fingers uncurl. You take a longer breath."
+}

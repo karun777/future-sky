@@ -127,6 +127,7 @@ ROUTE_GAMEPLAY_COMMANDS: Set[str] = {
     "combat_status",
 
     # Thread nodes / encounters
+    "vela",
     "respond",
     "choose",
 
